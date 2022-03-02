@@ -7,19 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pakistan Islamia Higher Secondary School</title>
+
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/base-style.css">
 </head>
 <body>
-    <header>
-        <nav></nav>
+    <header class="header" id="header">
+        <div class="logo">
+        </div>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        <nav class="nav" id="nav">
+            <!-- Still incomplete, not sure if this is the right implementation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="our-school.html">Our School</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="">Login</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
         <section id="hero-banner">
             <img id="hero-image">
             <h1>Four walls and a future inside</h1>
         </section>
-        
         <!-- TODO: Decide if whether hero-banner and intro-thingy should be merged -->
-
         <section id="intro-thingy">
             <h1>Welcome to PIHSS</h1>
             <p>We at Pakistan Islamia Higher Secondary School are proud of catering to the educational needs of the Pakistani community.</p>
@@ -86,5 +106,7 @@
         </div>
     </main>
     <footer></footer>
+    
+    <script src="assets/js/cssScripts.js"></script>
 </body>
 </html>

@@ -1,0 +1,218 @@
+/* This is just a sample style for the header
+  - Ideally I want to redo this from scratch
+  - I don't think I can bother re-reading my code enough to fix it lmao
+  TODO: Redo from scratch
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+  font-family: "Manrope", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header,
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 12vh;
+  z-index: 1;
+  color: #000000;
+}
+
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  display: flex;
+}
+
+.logo h4 {
+  display: inline;
+  align-self: center;
+}
+.logo img {
+  width: 50px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  width: 50%;
+  align-self: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  list-style: none;
+}
+.nav-links li {
+  padding: 5px 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+}
+.nav-links li a:hover {
+  color: rgb(255, 163, 88);
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(255, 163, 88);
+}
+
+.burger {
+  display: none;
+}
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+main {
+  height: fit-content;
+}
+
+main h1 {
+  margin-top: 50px;
+  font-size: 250%;
+  padding: 30px;
+  align-self: flex-start;
+}
+
+/* Footer */
+footer {
+  padding: 30px;
+  color: #ffffff;
+  background-color: rgb(27, 27, 27);
+  height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.footer-section {
+  margin-left: 50px;
+}
+
+footer li {
+  list-style: none;
+  text-indent: 10px;
+}
+
+/* Responsive 1024- */
+@media screen and (max-width: 1024px) {
+  nav {
+    width: 60%;
+  }
+  .nav-links {
+    width: 100%;
+  }
+}
+
+/* Responsive 768- */
+@media screen and (max-width: 768px) {
+  /* Header */
+  nav,
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+  nav {
+    width: 40%;
+    transform: translateX(100%);
+    transition: transform 0.15s ease-in;
+  }
+  .nav-links {
+    top: 0;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .logo {
+    right: 0px;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* Footer */
+  footer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    font-size: 140%;
+  }
+
+  footer h3 {
+    font-size: 150%;
+  }
+
+  footer li {
+    text-indent: 0%;
+  }
+
+  .footer-section {
+    margin-left: 5px;
+    margin-top: 20px;
+  }
+}
+
+/* Toggling navigation */
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* Turns Burger into X */
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-3px, 7px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-3px, -7px);
+}

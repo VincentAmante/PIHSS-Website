@@ -17,12 +17,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/base-style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <!-- Still incomplete, not sure if this is the right implementation -->
-            <ul>
+    <header class="header" id="header">
+        <div class="logo">
+        </div>
+        <!-- Burger -->
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        <nav class="nav" id="nav">
+            <!-- TODO: figure out implementation of sub-pages -->
+            <ul class="nav-links">
                 <li>Home</li>
                 <li>About Us</li>
                 <li>Our School</li>
@@ -30,6 +41,14 @@
                 <li>Gallery</li>
                 <li>Login</li>
                 <li>Contact Us</li>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="our-school.html">Our School</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="">Login</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -37,6 +56,7 @@
     <main>
     </main>
 
-    <footer></footer>
+    <footer>
+    </footer>
 </body>
 </html>
