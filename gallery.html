@@ -1,35 +1,90 @@
+<!-- 
+    TODO: Add the rest of the images
+    TODO: Fill the alt of images with image descriptions
+    ? Is this the best way to implement an interactive gallery?
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Pakistan Islamia Higher Secondary School</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+    <!-- Remove this once stylesheets are implemented -->
+    <style>
+        .item img {
+            object-fit: cover;
+            height: 300px;
+        }
+    </style>
+
+  </head>
+  <body>
     <main>
-        <h1>Gallery</h1>
+      <h1>Gallery</h1>
 
-        <!-- TODO: Add the images -->
-        <section class="history">
-            <h2>History of PIHSS</h2>
-            <div class="img-container"></div>
-        </section>
+      <section class="history">
+        <h2>History of PIHSS</h2>
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="item col-sm-6 col-md-4 mb-3">
+                    <a href="assets/images/gallery/history-1.png" class="fancybox" data-fancybox="gallery1">
+                        <img src="assets/images/gallery/history-1.png" width="100%" height="100%" alt="">
+                    </a>
+                </div>
 
-        <section class="national-day">
-            <h2>UAE National Day 2018</h2>
-            <div class="img-container"></div>
-        </section>
+                <div class="item col-sm-6 col-md-4 mb-3">
+                    <a href="assets/images/gallery/history-2.png" class="fancybox" data-fancybox="gallery1">
+                        <img src="assets/images/gallery/history-2.png" width="100%" height="100%" alt="">
+                    </a>
+                </div>
 
-        <section class="sandwich-competition">
-            <h2>Sandwich Competition</h2>
-            <div class="img-container"></div>
-        </section>
-  
-        <section class="salad-competition">
-            <h2>Salad Competition</h2>
-            <div class="img-container"></div>
-        </section>
+                <div class="item col-sm-6 col-md-4 mb-3">
+                    <a href="assets/images/gallery/history-3.png" class="fancybox" data-fancybox="gallery1">
+                        <img src="assets/images/gallery/history-3.png" width="100%" height="100%" alt="">
+                    </a>
+                </div>
+
+                <div class="item col-sm-6 col-md-4 mb-3">
+                    <a href="assets/images/gallery/history-4.png" class="fancybox" data-fancybox="gallery1">
+                        <img src="assets/images/gallery/history-4.png" width="100%" height="100%" alt="">
+                    </a>
+                </div>
+
+                <div class="item col-sm-6 col-md-4 mb-3">
+                    <a href="assets/images/gallery/history-5.png" class="fancybox" data-fancybox="gallery1">
+                        <img src="assets/images/gallery/history-5.png" width="100%" height="100%" alt="">
+                    </a>
+                </div>
+
+                <div class="item col-sm-6 col-md-4 mb-3">
+                    <a href="assets/images/gallery/history-6.png" class="fancybox" data-fancybox="gallery1">
+                        <img src="assets/images/gallery/history-6.png" width="100%" height="auto" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="national-day">
+        <h2>UAE National Day 2018</h2>
+        <div class="img-container"></div>
+      </section>
+
+      <section class="sandwich-competition">
+        <h2>Sandwich Competition</h2>
+        <div class="img-container"></div>
+      </section>
+
+      <section class="salad-competition">
+        <h2>Salad Competition</h2>
+        <div class="img-container"></div>
+      </section>
     </main>
-</body>
+  </body>
 </html>
