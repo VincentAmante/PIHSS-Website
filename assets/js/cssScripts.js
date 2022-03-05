@@ -1,4 +1,5 @@
 // This is code for handling the burger menu
+// TODO: Re-do if needed
 
 const navSlide = () => {
   const burger = document.querySelector(".burger");

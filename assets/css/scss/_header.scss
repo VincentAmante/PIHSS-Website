@@ -1,0 +1,28 @@
+@import "./_variables.scss";
+
+// * Not the actual implementation
+
+header, nav {
+    display: flex;
+    width: 100%;
+}
+
+.nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+    li {
+        a {
+            text-decoration: none;
+            color: inherit;
+          }
+
+          a:hover {
+            color: $hover-colour;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $hover-colour;
+          }
+      }
+  }

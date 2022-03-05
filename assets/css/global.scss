@@ -1,11 +1,22 @@
-// This is a tiny style-reset
-// TODO: Consider Princelle's reset css
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+// * Modules
+
+// Normalises css, for a good base
+// We could switch to reset.css instead, but normalise has better commenting 
+@import "./scss/_normalise.scss";
+
+@import "./scss/_variables.scss";
+@import "./scss/_header.scss";
+
 
 html {
-    box-sizing: border-box;
+    // font-size makes 1 em = 10px on default browser settings
+    // makes it easier to use rem for relative sizing
+    font-size: 62.5%;
+
+    font-family: sans-serif;
+    background-color: $bg-colour;
+}
+
+ul {
+    list-style: none;
 }
