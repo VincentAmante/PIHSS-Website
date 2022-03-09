@@ -1,22 +1,69 @@
 @import "./_variables.scss";
+@import "./normalise";
 
 // * Not the actual implementation
 
 header, nav {
     display: flex;
-    width: 100%;
+}
+
+header {
+    flex-direction: column;
+    width: 100vw;
+
+    .top-header{
+        display: flex;
+        background-color: $white;
+        padding: 1vw;
+
+        .header-logo {
+            border: 0;
+            margin: 0vh 2vw;
+
+            img {
+                width: 4vw;
+            }
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            > * {
+                text-transform: uppercase;
+                color: $main-colour; // TODO: Change this to utilise the right variable
+                font-size: 2rem;
+            }
+
+            h1 {
+                margin: 0;
+                font-weight: 400;
+            }
+            h2 {
+                margin: 0;
+                font-weight: 600;
+                font-size: 1.2rem;
+            }
+        }
+    }
 }
 
 .nav-links {
-    width: 100%;
+    margin: 0;
+    width: 100vw;
+    padding: 2vh 5vw;
+
     display: flex;
     justify-content: space-around;
     list-style: none;
 
     li {
+        flex-grow: 1;
         a {
             text-decoration: none;
             color: inherit;
+            font-size: 1.5rem
           }
 
           a:hover {

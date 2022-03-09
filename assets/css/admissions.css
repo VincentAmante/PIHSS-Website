@@ -1,0 +1,15 @@
+table, th, td {
+  border-collapse: collapse;
+  border: 0 black solid;
+  border-spacing: 0;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: .4rem .8rem;
+}
+
+th {
+  background-color: lightgreen;
+}
+/*# sourceMappingURL=admissions.css.map */

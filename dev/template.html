@@ -5,9 +5,6 @@
     - If some elements apply to most but not all pages, leave comments as to 
     where they should be placed 
 
-    ? QUESTION: Will it be a good idea to mark which parts are global in the actual pages
-    ?           or would it be bloating content?
-
     TODO: Decide on global content 
 -->
 <!DOCTYPE html>
@@ -21,8 +18,16 @@
     <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 <body>
+    <!-- TODO: Modify header on scroll -->
     <header class="header" id="header">
-        <div class="logo">
+        <div class="top-header">
+            <div class="header-logo">
+                <img src="" alt="Logo of the school">
+            </div>
+            <div class="header-title">
+                <h1>Pakistan Islamia</h1>
+                <h2>Higher Secondary School</h2>
+            </div>
         </div>
         <!-- Burger -->
         <div class="burger">
@@ -33,14 +38,6 @@
         <nav class="nav" id="nav">
             <!-- TODO: figure out implementation of sub-pages -->
             <ul class="nav-links">
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Our School</li>
-                <li>Admissions</li>
-                <li>Gallery</li>
-                <li>Login</li>
-                <li>Contact Us</li>
-
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="our-school.html">Our School</a></li>

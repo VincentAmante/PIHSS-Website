@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,EAAE,EAAE,EAAE,EAAE,CAAC;EACV,eAAe,EAAE,QAAQ;EACzB,MAAM,EAAE,aAAa;EACrB,cAAc,EAAE,CAAC;CACpB;;AAED,AAAA,EAAE,EAAE,EAAE,CAAC;EACH,MAAM,EAAE,eAAe;EACvB,OAAO,EAAE,WAAW;CACvB;;AAED,AAAA,EAAE,CAAC;EACC,gBAAgB,EAAE,UAAU;CAC/B",
+    "sources": [
+        "admissions.scss"
+    ],
+    "names": [],
+    "file": "admissions.css"
+}
