@@ -17,21 +17,24 @@
 <body>
     <header class="header" id="header">
         <div class="top-header">
-            <div class="header-logo">
-                <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
+            <div class="logo-container">    
+                <div class="header-logo">
+                    <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
+                </div>
+                <div class="header-title">
+                    <h1>Pakistan Islamia</h1>
+                    <h2>Higher Secondary School</h2>
+                </div>
             </div>
-            <div class="header-title">
-                <h1>Pakistan Islamia</h1>
-                <h2>Higher Secondary School</h2>
-            </div>
+            <!-- Burger -->
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
         </div>
-        <!-- Burger -->
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
         <nav class="nav" id="nav">
+            
             <!-- TODO: figure out implementation of sub-pages -->
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -44,13 +47,21 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <section id="hero-banner">
-            <img id="hero-image">
-            <h1>Four walls and a future inside</h1>
+            <div class="hero-banner-container">
+                <img id="hero-logo" src="./assets/images/homepage/logo_white.png">
+                <div class="hero-school-name">
+                   <h2>Pakistan Islamia</h2>
+                   <p>Higher Secondary School</p> 
+                </div>
+                <div class="hero-school-info">
+                    <h2>Four Walls and a Future Inside</h2>
+                    <p>Established in 1974 Pakistan Islamia Higher Secondary School Sharjah, has provided quality education to the children of UAE.</p>
+                </div>
+            </div>
         </section>
-        <!-- TODO: Decide if whether hero-banner and intro-thingy should be merged -->
+        
         <section id="intro-thingy">
             <h1>Welcome to PIHSS</h1>
             <p>We at Pakistan Islamia Higher Secondary School are proud of catering to the educational needs of the Pakistani community.</p>

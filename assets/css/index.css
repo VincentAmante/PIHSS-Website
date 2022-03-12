@@ -2,13 +2,96 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100vw;
-  height: 70vh;
+  text-align: center;
+  background-size: cover;
+  background-image: url("../images/homepage/image-4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'EB Garamond';
+  color: aliceblue;
+}
+
+#hero-banner .hero-banner-container {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 2, 3, 0.73)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(0deg, rgba(0, 2, 3, 0.73) 0%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.5rem;
+  padding: 5vw;
+}
+
+#hero-banner .hero-banner-container img {
+  margin: 2em;
+  width: 10em;
+}
+
+#hero-banner .hero-banner-container .hero-school-name {
+  text-transform: uppercase;
+}
+
+#hero-banner .hero-banner-container .hero-school-name h2 {
+  margin: 0;
+  font-weight: bold;
+}
+
+#hero-banner .hero-banner-container .hero-school-name p {
+  margin: 0;
+  font-weight: lighter;
+}
+
+#hero-banner .hero-banner-container .hero-school-info {
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#hero-banner .hero-banner-container .hero-school-info h2 {
+  margin: 0;
+  line-height: 1;
+  font-size: 5rem;
+  font-weight: 100;
+}
+
+#hero-banner .hero-banner-container .hero-school-info p {
+  margin: 0;
+  line-height: 1;
+  font-size: 2rem;
+  font-family: 'Raleway', sans-serif;
+  width: 60%;
 }
 /*# sourceMappingURL=index.css.map */

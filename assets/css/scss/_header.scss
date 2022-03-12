@@ -1,61 +1,71 @@
 @import "./_variables.scss";
 @import "./normalise";
 
-// * Not the actual implementation
-
 header, nav {
     display: flex;
 }
 
 header {
     flex-direction: column;
-    width: 100vw;
+    background-color: #d4d4d4;
 
     .top-header{
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         background-color: $white;
-        padding: 1vw;
 
-        .header-logo {
-            border: 0;
-            margin: 0vh 2vw;
+        padding: .3em;
+        padding-left: .75em;
 
-            img {
-                width: 4vw;
-            }
-        }
+        font-size: 2rem;
 
-        .header-title {
+        .logo-container {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            
-            > * {
-                text-transform: uppercase;
-                color: $main-colour; // TODO: Change this to utilise the right variable
-                font-size: 2rem;
+
+            .header-logo {
+                border: 0;
+                img {
+                    width: 5em;
+                    max-width: 6rem;
+                }
             }
 
-            h1 {
-                margin: 0;
-                font-weight: 400;
-            }
-            h2 {
-                margin: 0;
-                font-weight: 600;
-                font-size: 1.2rem;
+            .header-title {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                margin-left: .75em;
+                
+                > * {
+                    text-transform: uppercase;
+                    color: $main-colour; // TODO: Change this to utilise the right variable
+                }
+
+                h1 {
+                    margin: 0;
+                    font-size: 1em;
+                    font-weight: 400;
+                }
+                h2 {
+                    margin: 0;
+                    font-weight: 800;
+                    font-size: .5em;
+                }
             }
         }
     }
 }
 
 .nav-links {
-    margin: 0;
-    width: 100vw;
-    padding: 2vh 5vw;
-
     display: flex;
     justify-content: space-around;
+
+    width: 100%;
+    margin: 0;
+    padding: 2vh 5vw;
+
     list-style: none;
 
     li {
@@ -71,5 +81,25 @@ header {
             padding-bottom: 5px;
             border-bottom: 1px solid $hover-colour;
           }
+      }
+  }
+  
+  //  TODO: Set this to a proper width for switching to burger
+  @media (max-width: 991.98px) {
+      .nav-links {
+        //   Relocate with burger
+          display: none;
+      }
+
+      .burger {
+          margin-right: 4vw;
+          cursor: pointer;
+      }
+
+      .burger > div {
+          width: 4rem;
+          height: .45rem;
+          margin-top: .7rem;
+          background-color: black;
       }
   }

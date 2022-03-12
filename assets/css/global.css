@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -696,27 +696,41 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100vw;
+  background-color: #d4d4d4;
 }
 
 header .top-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: aliceblue;
-  padding: 1vw;
+  padding: .3em;
+  padding-left: .75em;
+  font-size: 2rem;
 }
 
-header .top-header .header-logo {
+header .top-header .logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .top-header .logo-container .header-logo {
   border: 0;
-  margin: 0vh 2vw;
 }
 
-header .top-header .header-logo img {
-  width: 4vw;
+header .top-header .logo-container .header-logo img {
+  width: 5em;
+  max-width: 6rem;
 }
 
-header .top-header .header-title {
+header .top-header .logo-container .header-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -727,34 +741,35 @@ header .top-header .header-title {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-left: .75em;
 }
 
-header .top-header .header-title > * {
+header .top-header .logo-container .header-title > * {
   text-transform: uppercase;
   color: #383838;
-  font-size: 2rem;
 }
 
-header .top-header .header-title h1 {
+header .top-header .logo-container .header-title h1 {
   margin: 0;
+  font-size: 1em;
   font-weight: 400;
 }
 
-header .top-header .header-title h2 {
+header .top-header .logo-container .header-title h2 {
   margin: 0;
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: .5em;
 }
 
 .nav-links {
-  margin: 0;
-  width: 100vw;
-  padding: 2vh 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 100%;
+  margin: 0;
+  padding: 2vh 5vw;
   list-style: none;
 }
 
@@ -776,6 +791,32 @@ header .top-header .header-title h2 {
   border-bottom: 1px solid #61865c;
 }
 
+@media (max-width: 991.98px) {
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    margin-right: 4vw;
+    cursor: pointer;
+  }
+  .burger > div {
+    width: 4rem;
+    height: .45rem;
+    margin-top: .7rem;
+    background-color: black;
+  }
+}
+
+body, html {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 62.5%;
   font-family: 'Raleway', sans-serif;
@@ -784,9 +825,5 @@ html {
 
 ul {
   list-style: none;
-}
-
-main {
-  width: 100vw;
 }
 /*# sourceMappingURL=global.css.map */
