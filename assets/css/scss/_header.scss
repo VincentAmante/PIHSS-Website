@@ -15,10 +15,10 @@ header {
         align-items: center;
         background-color: $white;
 
-        padding: .3em;
+        padding: .1em;
         padding-left: .75em;
 
-        font-size: 2rem;
+        font-size: 1.15rem;
 
         .logo-container {
             display: flex;
@@ -27,7 +27,7 @@ header {
                 border: 0;
                 img {
                     width: 5em;
-                    max-width: 6rem;
+                    max-width: 5rem;
                 }
             }
 
@@ -73,12 +73,12 @@ header {
         a {
             text-decoration: none;
             color: inherit;
-            font-size: 1.5rem
+            font-size: 1rem
           }
 
           a:hover {
             color: $hover-colour;
-            padding-bottom: 5px;
+            padding-bottom: .15em;
             border-bottom: 1px solid $hover-colour;
           }
       }
@@ -97,9 +97,9 @@ header {
       }
 
       .burger > div {
-          width: 4rem;
-          height: .45rem;
-          margin-top: .7rem;
+          width: 2rem;
+          height: .15rem;
+          margin-top: .5rem;
           background-color: black;
       }
   }

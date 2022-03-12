@@ -17,7 +17,7 @@ body, html {
 html {
     // font-size makes 1 em = 10px on default browser settings
     // makes it easier to use rem for relative sizing
-    font-size: 62.5%;
+    // font-size: 62.5%;
     font-family: 'Raleway', sans-serif;
     background-color: $bg-colour;
 }
@@ -25,4 +25,8 @@ html {
 
 ul {
     list-style: none;
+}
+
+section {
+    padding: 1rem;
 }
