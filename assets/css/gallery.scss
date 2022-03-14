@@ -1,8 +1,14 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px 300px;
-  grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 300px 400px;
+  grid-gap: 15px;
+
+  .grid-item:nth-child(7n),
+  .grid-item:nth-child(7n - 1),
+  .grid-item:nth-child(7n - 2) {
+    grid-column: span 4;
+  }
 }
 
 .grid-item {
@@ -10,11 +16,13 @@
   height: 100%;
   position: relative;
   background-color: black;
+  grid-column: span 3;
 
   .item-image {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    opacity: 0.4;
 
     img {
       width: 100%;
@@ -23,12 +31,15 @@
       object-position: 50% 50%;
       cursor: pointer;
       transition: 0.5s ease-in-out;
-      opacity: 0.4;
     }
   }
 
   &:hover .item-image img {
     transform: scale(1.1);
+  }
+
+  .section-image {
+    opacity: 1;
   }
 
   .item-text {
@@ -43,3 +54,5 @@
     z-index: 4; // Adjust later
   }
 }
+
+
