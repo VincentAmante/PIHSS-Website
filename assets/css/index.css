@@ -107,6 +107,10 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 90vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #about-us .about-us-content {
@@ -118,10 +122,21 @@ section {
           align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: green;
+  color: white;
 }
 
 #about-us .about-us-content .about-us-text {
   padding: 2rem;
-  background-color: green;
+}
+
+#about-us .about-us-content .about-us-img {
+  margin: 0vw 15vw;
+}
+
+#about-us .about-us-content .about-us-img img {
+  max-width: 100%;
+  -webkit-transform: scale(3);
+          transform: scale(3);
 }
 /*# sourceMappingURL=index.css.map */
