@@ -23,7 +23,6 @@ section {
     color: $white;
 
     .hero-banner-container {
-        // TODO: Turn this into a gradient
         background: linear-gradient(0deg, rgba(0,2,3,0.73) 0%, rgba(0,0,0,0) 100%);
         width: 100%;
 
@@ -83,13 +82,12 @@ section {
     }
 }
 
+// TODO: 2022-03-26 22:20:29 | Phase most of these into desktop media query
 #about-us {
     display: flex;
     flex-direction: column;
     height: 90vh;
     justify-content: center;
-
-    // * THIS IS DECEPTIVELY HARDER THAN I IMAGINED
 
     .about-us-content {
         display: flex;
