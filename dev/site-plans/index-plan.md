@@ -23,7 +23,8 @@
 
 ## Why PIHSS?
 
-- Implementation of Scrolling thing -> ***NONE YET***
+- Implementation of Scrolling thing:
+  - [Lightbox Method](https://codepen.io/ind88/pen/MzoKzP?css-preprocessor=none) - Figure out how to modify this
 - Staggered grid-like layout on desktop, flexbox or grid?
   - Likely flexbox due to that offset
 - Might need to use `position: relative` or `absolute` to go over the yellow stripe again
