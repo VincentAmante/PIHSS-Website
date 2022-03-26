@@ -2,13 +2,11 @@
 
 - **NOTE:** Ditch the desktop view for now, focus on mobile since the prototype for it is already there
 
-
 ## Hero Banner
 
 - Nothing too complex, `display: flex` and `flex-direction: column` should be enough for this in both mobile and desktop view
 - Think about the styling
 - Perhaps a slideshow element will be implemented, look into codepens for this
-
 
 ## About Us
 
@@ -16,7 +14,6 @@
 - Best idea is to use `transform: scale` on the image to go over the green stripe
 - The stat-block might be better off being `position: relative`
   - though first check if it can go over the image, another way of styling may be better
-
 
 ## History
 
