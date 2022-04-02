@@ -696,7 +696,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #d4d4d4;
+  background-color: #FFFFFF;
 }
 
 header .top-header {
@@ -746,7 +746,7 @@ header .top-header .logo-container .header-title {
 
 header .top-header .logo-container .header-title > * {
   text-transform: uppercase;
-  color: #383838;
+  color: #0F6938;
 }
 
 header .top-header .logo-container .header-title h1 {
@@ -819,7 +819,8 @@ body, html {
 
 html {
   font-family: 'Raleway', sans-serif;
-  background-color: #dddddd;
+  background-color: #FFFFFF;
+  color: #383838;
 }
 
 ul {

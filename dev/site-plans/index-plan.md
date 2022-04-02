@@ -19,7 +19,7 @@
 
 - Implementation of Pagination -> [Sample Link](https://codepen.io/bcarvalho/pen/WXmwBq)
   - Look into this not just for pagination but also examples of how it can be applied to the gallery stuff
-- Everything else is simple to style
+- Everything else is simple to style  
 
 ## Why PIHSS?
 

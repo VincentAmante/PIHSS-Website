@@ -1,42 +1,78 @@
-// TODO: - Fix the markup and css for the about-us portion, move it to desktop breakpoint
-
 @import "./scss/_variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-section {
-    padding: 0;
-}
-
-#hero-banner {
+@mixin flex-centered {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
 
+html {
+	scroll-behavior: smooth;
+}
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    margin-bottom: 5vmax;
+    width: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover
+}
+
+.slider-btn {
+    margin: 2vmax;
+
+    background: none;
+    border: none;
+
+    font-family: 'Poppins';
+    font-size: clamp(1.5rem, 10vmin, 1.4rem);
+    color: $primary-secondary;
+
+    background-color: $dark;
+    box-shadow: none;
+    line-height: 0;
     text-align: center;
+    padding: clamp(3px, .9rem, 5vw);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
+.slider-btn:hover {
+    transform: scale(1.05);
+}
+
+
+// Hero Banner
+.hero-banner {
+    @include flex-centered;
+    width: 100%;
+    
+    // Background
     background-size: cover;
     background-image: url("../images/homepage/image-4.png");
     background-repeat: no-repeat;
     background-position: center;
-
-    font-family:  'EB Garamond';
-    color: $white;
+    
+    font-family:  $font-primary;
+    color: $primary-secondary;
 
     .hero-banner-container {
-        background: linear-gradient(0deg, rgba(0,2,3,0.73) 0%, rgba(0,0,0,0) 100%);
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-
-        font-size: 1.15rem;
-        padding: 5vw;
-
+        @include flex-centered;
         
+        
+        padding: 10vw 10vw;
+        align-self: stretch;
+        text-align: center;
+        background: linear-gradient(0deg, rgba(0,2,3,0.73) 25%, rgba(0,0,0,0) 100%);
+
         img {
             margin: 2em;
             width: 10em;
@@ -56,58 +92,226 @@ section {
         }
 
         .hero-school-info {
-            margin-top: 2em;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            @include flex-centered;
+            margin-top: 10vh;
+            margin-bottom: 2vh;
 
             h2 {
                 margin: 0;
                 line-height: 1;
-                font-size: 3rem;
+                font-size: 1.5rem;
                 font-weight: 100;
             }
             p {
-                
                 margin: 0;
                 line-height: 1;
-                font-size: 1rem;
-                font-family: 'Raleway', sans-serif;
-
-                // TODO: Edit this
-                width: 60%;
+                font-size: .9rem;
+                font-family: $font-secondary;
             }
         }
     }
 }
 
-// TODO: 2022-03-26 22:20:29 | Phase most of these into desktop media query
-#about-us {
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    justify-content: center;
+// About Us
+.about-us {
+    @include flex-centered;
+    padding: 0;
 
-    .about-us-content {
-        display: flex;
-        align-items: center;
-        box-sizing: border-box;
-        background-color: green;
-        color: white;
+    .about-us-content { 
+        padding: 0;
+    }
+    .about-us-text {
+        
+        background-color: $dark;
+        padding: 5vw;
+        color: $primary-secondary;
+        font-family: $font-secondary;
 
-        .about-us-text {
-            padding: 2rem;
-            // TODO: set colour to variable
+        h1 {
+            font-family: $font-primary;
+            font-weight: 500;
         }
+    }
 
-        .about-us-img{
-            margin: 0vw 15vw;
+    .about-us-statblock {
+        background-color: $accent;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: .5rem;
 
-            img{
-                max-width: 100%;
-                transform: scale(3);
+        transform: translateY(-2rem);
+
+        .stat {
+            padding: 1em 2em;
+            text-align: center;
+            line-height: 0;
+            .number {
+                font-size: 2rem;
+                font-weight: bold;
             }
         }
     }
+}
+
+// TODO: Figure this out
+.more-info {
+    background-color: $other;
+
+    .more-info-text {
+        padding: 2em;
+        font-weight: 500;
+
+        * {
+            margin-bottom: 2em 0em;
+        }
+    }
+
+    .more-info-slideshow {
+        @include flex-centered;
+
+        .scroll {
+            @include flex-centered;
+
+            width: 90vw;
+            overflow: scroll hidden;
+            .card {
+                img {
+                    max-width: 200px;
+                }
+            }
+        }
+
+        .paginator {
+            margin: .5em 0em;
+            width: clamp(10vmax, 20vmax, 10vmax);
+            display: flex;
+            justify-content: space-around;
+
+            span {
+                padding: clamp(1px, .2rem, 2vw);
+                border-radius: 50%;
+                
+                aspect-ratio: 1/1;
+                line-height: 0;
+                border: .2rem solid $dark;
+                cursor: pointer;
+            }
+
+            .filled {
+                background-color: $dark;
+            }
+        }
+    }
+}
+
+.why-pihss {
+    background-color: $accent;
+    @include flex-centered;
+
+    .why-pihss-container {
+        padding: 2vmax;
+    }
+
+    .why-pihss-description {
+        .content {
+            h1 {
+                font-family: $font-primary;
+            }
+        }
+
+        .btn {
+            margin: 1.5em;
+            button {
+                background: none;
+                border: none;
+        
+                padding: .75em 2em;
+                background-color: $primary-secondary;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                border-radius: .5em;
+        
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .why-pihss-selection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            background-color: $primary-secondary;
+            border-radius: .5em;
+            padding: 1.5em 1em;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            aspect-ratio: 1/1;
+            max-width: 200px;
+
+            .colour {
+                border-radius: .5em;
+                aspect-ratio: 1/1;
+                width: 20%;
+            }
+            .colour-1 {
+                background-color: $dark;
+            }
+
+            .content {
+                h1 {
+                    font-family: $font-primary;
+                    font-size: clamp(24px, 1.5vw, 2rem);
+                }
+                p {
+                    font-size: clamp(18px, 1.25vw, 2rem);
+                }
+            }
+        }
+    }
+}
+
+.administrative-affairs {
+    .aac-affairs-container {
+        padding: 1em;
+    }
+
+    h1 {
+        font-family: $font-primary;
+        font-weight: 500;
+        text-align: center;
+
+        font-size: clamp(16px, 3vmax, 2rem);
+    }
+
+    .aac-slider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .staff {
+            ul {
+                padding: 0;
+                li {
+                    background-color: $primary-secondary;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                    p {
+                        margin: 0;
+                    }
+                    
+                    .aac-person {
+                        padding: 1em;
+                        text-align: center;
+    
+                        .name {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // TODO: Fix gradient
+    background: linear-gradient(0deg, rgba(207,236,193,0.73) 100%, rgba(213,237,223,0) 0%);
 }

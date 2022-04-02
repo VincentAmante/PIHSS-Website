@@ -1,4 +1,24 @@
+// Switch these out eventually
 $bg-colour: #dddddd;
 $white: aliceblue;
 $main-colour: #383838;
 $hover-colour: #61865c;
+
+// Key colours
+$primary-main: #1B9B55;
+$primary-secondary: #FFFFFF;
+$accent: #FAD662;
+$dark: #0F6938;
+$other: #CFECC1;
+
+// Fonts
+$font-primary: 'EB Garamond', serif;
+$font-secondary: 'Raleway', sans-serif;
+$font-colour: #383838;
+
+// Breakpoints (for media queries)
+$breakpoint-mobile: 428px;
+$breakpoint-tablet-potrait: 768px;
+$breakpoint-tablet-landscape: 1024px;
+$breakpoint-desktop-small: 1200px;
+$breakpoint-desktop-large: 1400px;

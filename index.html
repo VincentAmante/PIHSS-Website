@@ -48,9 +48,9 @@
         </nav>
     </header>
     <main>
-        <section id="hero-banner">
+        <section class="hero-banner">
             <div class="hero-banner-container">
-                <img id="hero-logo" src="./assets/images/homepage/logo_white.png">
+                <img class="hero-logo" src="./assets/images/homepage/logo_white.png">
                 <div class="hero-school-name">
                    <h2>Pakistan Islamia</h2>
                    <p>Higher Secondary School</p> 
@@ -62,10 +62,8 @@
             </div>
         </section>
         
-        <section id="about-us">
+        <section class="about-us">
             <div class="about-us-content">
-
-
                 <!-- TODO: FIX THIS -->
                 <div class="about-us-text">
                     <h1>About Us</h1>
@@ -84,52 +82,117 @@
                     <img src="./assets/images/homepage/random-image.png" alt="">
                 </div>
             </div>
+            <div class="about-us-statblock">
+                <div class="stat">
+                    <p class="number">4</p>
+                    <p class="label">Buildings</p>
+                </div>
+                <div class="stat">
+                    <p class="number">72</p>
+                    <p class="label">Classrooms</p>
+                </div>
+                <div class="stat">
+                    <p class="number">1800</p>
+                    <p class="label">Employees</p>
+                </div>
+                <div class="stat">
+                    <p class="number">1900+</p>
+                    <p class="label">Alumni</p>
+                </div>
+            </div>
         </section>
 
-        <section id="history">
-            <div id="history-slideshow">
+        <section class="more-info">
+            <div class="more-info-text">
+                <img src="./assets/icons/comma.svg" alt="">
+                <p>
+                    Vitae auctor eu augue ut lectus arcu. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Aliquam etiam erat velit scelerisque in. Pharetra vel turpis nunc eget lorem dolor sed viverra ipsum. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est. 
+                </p>
+                <p>
+                    Maecenas sed enim ut sem viverra aliquet eget. Urna et pharetra pharetra massa massa ultricies. Rutrum quisque non tellus orci ac auctor. Sollicitudin nibh sit amet commodo nulla facilisi. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus.
+                </p>
             </div>
-            <p>
-                We at PIHSS are very proud of our history because 
-                slay what you wanna slay and let the slay slay out 
-                honestlay i wanna see you slay slay
-            </p>
-            <div id="history-counters">
-                <!-- ? Does this even belong here -->
+            <div class="more-info-slideshow">
+                <div class="scroll">
+                    <div class="card">
+                        <div class="card-image"><img src="./assets/images/homepage/random-image.png" alt="" loading="lazy"></div>
+                    </div>
+                    <!-- <div class="card">
+                        <div class="card-image"><img src="./assets/images/homepage/random-image.png" alt="" loading="lazy"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"><img src="./assets/images/homepage/random-image.png" alt="" loading="lazy"></div>
+                    </div> -->
+                </div>
+                <div class="paginator">
+                    <span></span>
+                    <span class="filled"></span>
+                    <span class="filled"></span>
+                    <span class="filled"></span>
+                </div>
             </div>
         </section>
 
-        <section id="administrative-affairs">
-            <h1>Administrative Affairs Committee</h1>
-            <p>
-                <strong>
-                    Administrative Affairs Committee (AAC) comprises of the following honourable members:
-                </strong>
-            </p>
+        <section class="why-pihss">
+            <div class="why-pihss-container">
+                <div class="why-pihss-description">
+                    <div class="content">
+                        <h1>Why Pihss?</h1>
+                        <p>Tellus id interdum velit laoreet id donec ultrices. Nulla aliquet porttitor lacus luctus accumsan tortor posuere. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Sit amet dictum sit amet justo. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</p>
+                        <p>Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit.</p>
+                    </div>
+                    <div class="btn">
+                        <button type="button">Enroll Now</button>
+                    </div>
+                </div>
+                <!-- TODO: Have a better name for this -->
+                <div class="why-pihss-selection">
+                    <button class="slider-btn" id="wp-btn-left" type="button"><</button>
+                    <div class="card">
+                        <div class="colour colour-1"></div>
+                        <div class="content">
+                            <h1>Facilities</h1>
+                            <p>Avail full-fledged facilities offered by our school.</p>
+                        </div>
+                    </div>
+                    <button class="slider-btn" id="wp-btn-right" type="button">></button>
+                </div>
+            </div>
+        </section>
 
-            <!-- I have a feeling this would require images, so I added it -->
-            <ul>
-                <li>
-                    <span class="aac-name">Mr. Hamid Sultan Hamid Al Abdouli – Managing Director / Chairman <abbr title="Administrative Affairs Committee">AAC</abbr></span>
-                    <img class="aac-image">
-                </li>
-                <li>
-                    <span class="aac-name">Mr. Ebrahim Tily</span>
-                    <img class="aac-image">
-                </li>
-                <li>
-                    <span class="aac-name">Mr. Farooq Ahmed</span>
-                    <img class="aac-image">
-                </li>   
-                <li>
-                    <span class="aac-name">Mr. Mohammad Amin Tariq</span>
-                    <img class="aac-image">
-                </li>
-                <li>
-                    <span class="aac-name">Mr. Gulzar Rana</span>
-                    <img class="aac-image">
-                </li> 
-            </ul>
+        <section class="administrative-affairs">
+            <div class="aac-affairs-container">
+                <h1>Administrative Affairs Committee (AAC)</h1>
+                <div class="aac-slider">
+                    <button class="slider-btn" id="aac-btn-left" type="button"><</button>
+                    <div class="staff">
+                    <ul>
+                        <li>
+                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                            <div class="aac-person"><p class="name">Mr. Hamid Sultan Hamid Al Abdouli</p><p>Managing Director / Chairman <abbr title="Administrative Affairs Committee">AAC</abbr></p></div>
+                        </li>
+                        <!-- <li>
+                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                            <div class="aac-person"><p class="name">Mr. Ebrahim Tily</p></div>
+                        </li>
+                        <li>
+                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                            <div class="aac-person"><p class="name">Mr. Farooq Ahmed</p></div>
+                        </li>
+                        <li>
+                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                            <div class="aac-person"><p class="name">Mr. Mohammad Amin Tariq</p></div>
+                        </li>
+                        <li>
+                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                            <div class="aac-person"><p class="name">Mr. Gulzar Rana</p></div>
+                        </li> -->
+                    </ul>
+                    </div>
+                    <button class="slider-btn" id="aac-btn-right" type="button">></button>
+                </div>
+                <!-- I have a feeling this would require images, so I added it -->
+            </div>
         </section>
         
         <!-- TODO: Figure out how this will operate -->

@@ -12,14 +12,13 @@ body, html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
 
 html {
-    // font-size makes 1 em = 10px on default browser settings
-    // makes it easier to use rem for relative sizing
-    // font-size: 62.5%;
     font-family: 'Raleway', sans-serif;
-    background-color: $bg-colour;
+    background-color: $primary-secondary;
+    color: $font-colour;
 }
 
 
