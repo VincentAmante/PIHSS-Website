@@ -1,9 +1,8 @@
 // This is code for handling the burger menu
-// TODO: Re-do if needed
+const burger = document.querySelector(".burger");
+const nav = document.querySelector("nav");
 
 const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector("nav");
   const navLinks = document.querySelectorAll(".nav-links li");
 
   burger.addEventListener("click", () => {
@@ -26,51 +25,58 @@ const navSlide = () => {
 
 navSlide();
 
+// Clicks out
+document.addEventListener('click', function(event) {
+  var clickedNav = nav.contains(event.target);
+  var clickedBurger = burger.contains(event.target);
 
-// Horizontal Scroll
-const scroll = document.querySelector(".scroll");
-var isDown = false;
-var scrollX;
-var scrollLeft;
-
-// Mouse Up Function
-scroll.addEventListener("mouseup", () => {
-	isDown = false;
-	scroll.classList.remove("active");
+  if (!clickedNav && !clickedBurger) {
+    nav.classList.remove("nav-active")
+  }
 });
 
-// Mouse Leave Function
-scroll.addEventListener("mouseleave", () => {
-	isDown = false;
-	scroll.classList.remove("active");
-});
+// Change header on scroll 
+window.onscroll = function() {scrollFunction()};
 
-// Mouse Down Function
-scroll.addEventListener("mousedown", (e) => {
-	e.preventDefault();
-	isDown = true;
-	scroll.classList.add("active");
-	scrollX = e.pageX - scroll.offsetLeft;
-	scrollLeft = scroll.scrollLeft;
-});
-
-// Mouse Move Function
-scroll.addEventListener("mousemove", (e) => {
-	if (!isDown) return;
-	e.preventDefault();
-	var element = e.pageX - scroll.offsetLeft;
-	var scrolling = (element - scrollX) * 2;
-	scroll.scrollLeft = scrollLeft - scrolling;
-});
-
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("top-header").style.display = "flex";
+  } else {
+    document.getElementById("top-header").style.display = "none";
+  }
+}
 
 // AAC-Slider Code
-var aac_indexValue = 1;
-aac_showImg(aac_indexValue);
-function aac_side_slide(e){showImg(aac_indexValue += e);}
-function aac_showImg(e){
-  var i;
-  const img = document.querySelectorAll('img');
-  const sliders = document.querySelectorAll('.aac-slider ul li');
-  console.log(sliders);
-}
+// TODO: Move to its own file
+const prev = document.getElementById('aac-btn-left');
+const next = document.getElementById('aac-btn-right');
+const slider = document.querySelector('.slider');
+let step;
+
+next.addEventListener('click' , () => {
+  step = 1 ;
+  slider.style.transform = 'translateX(-240px)'
+})
+
+prev.addEventListener('click' , async () => {
+  step = -1 ;
+  slider.style.transition = await 'none';
+  slider.prepend(slider.lastElementChild);
+  slider.style.transform = 'translateX(-240px)'
+  setTimeout(async () => {
+    slider.style.transition = await '.3s ease-in-out';
+    slider.style.transform = 'translateX(0)'
+  })
+})
+
+slider.addEventListener('transitionend' , async () => {
+  if (step === 1) {
+    
+    slider.style.transition = await 'none';
+    slider.append(slider.firstElementChild);
+    slider.style.transform  = await 'translateX(0)';
+    setTimeout(() => {
+      slider.style.transition = '.3s ease-in-out';
+    })
+  }
+})

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Pakistan Islamia Higher Secondary School</title>
 
     <link rel="stylesheet" href="/assets/css/global.css">
@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="header" id="header">
-        <div class="top-header">
+        <div class="top-header" id="top-header">
             <div class="logo-container">    
                 <div class="header-logo">
                     <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
@@ -124,12 +124,6 @@
                         <div class="card-image"><img src="./assets/images/homepage/random-image.png" alt="" loading="lazy"></div>
                     </div> -->
                 </div>
-                <div class="paginator">
-                    <span></span>
-                    <span class="filled"></span>
-                    <span class="filled"></span>
-                    <span class="filled"></span>
-                </div>
             </div>
         </section>
 
@@ -148,11 +142,33 @@
                 <!-- TODO: Have a better name for this -->
                 <div class="why-pihss-selection">
                     <button class="slider-btn" id="wp-btn-left" type="button"><</button>
-                    <div class="card">
-                        <div class="colour colour-1"></div>
-                        <div class="content">
-                            <h1>Facilities</h1>
-                            <p>Avail full-fledged facilities offered by our school.</p>
+                    <div class="why-pihss-slider">
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <div class="colour colour-1"></div>
+                                <div class="content">
+                                    <h1>Facilities</h1>
+                                    <p>Avail full-fledged facilities offered by our school.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <div class="colour colour-1"></div>
+                                <div class="content">
+                                    <h1>Facilities</h1>
+                                    <p>Avail full-fledged facilities offered by our school.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <div class="colour colour-1"></div>
+                                <div class="content">
+                                    <h1>Facilities</h1>
+                                    <p>Avail full-fledged facilities offered by our school.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <button class="slider-btn" id="wp-btn-right" type="button">></button>
@@ -166,28 +182,28 @@
                 <div class="aac-slider">
                     <button class="slider-btn" id="aac-btn-left" type="button"><</button>
                     <div class="staff">
-                    <ul>
-                        <li>
-                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
-                            <div class="aac-person"><p class="name">Mr. Hamid Sultan Hamid Al Abdouli</p><p>Managing Director / Chairman <abbr title="Administrative Affairs Committee">AAC</abbr></p></div>
-                        </li>
-                        <!-- <li>
-                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
-                            <div class="aac-person"><p class="name">Mr. Ebrahim Tily</p></div>
-                        </li>
-                        <li>
-                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
-                            <div class="aac-person"><p class="name">Mr. Farooq Ahmed</p></div>
-                        </li>
-                        <li>
-                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
-                            <div class="aac-person"><p class="name">Mr. Mohammad Amin Tariq</p></div>
-                        </li>
-                        <li>
-                            <img class="aac-image" src="./assets/images/homepage/random-image.png">
-                            <div class="aac-person"><p class="name">Mr. Gulzar Rana</p></div>
-                        </li> -->
-                    </ul>
+                        <ul class="slider">
+                            <li id="aac-1">
+                                <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                                <div class="aac-person"><p class="name">Mr. Hamid Sultan Hamid Al Abdouli</p><p>Managing Director / Chairman <abbr title="Administrative Affairs Committee">AAC</abbr></p></div>
+                            </li>
+                            <li id="aac-2">
+                                <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                                <div class="aac-person"><p class="name">Mr. Ebrahim Tily</p></div>
+                            </li>
+                            <li id="aac-3">
+                                <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                                <div class="aac-person"><p class="name">Mr. Farooq Ahmed</p></div>
+                            </li>
+                            <li id="aac-4">
+                                <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                                <div class="aac-person"><p class="name">Mr. Mohammad Amin Tariq</p></div>
+                            </li>
+                            <li id="aac-5">
+                                <img class="aac-image" src="./assets/images/homepage/random-image.png">
+                                <div class="aac-person"><p class="name">Mr. Gulzar Rana</p></div>
+                            </li>
+                        </ul>
                     </div>
                     <button class="slider-btn" id="aac-btn-right" type="button">></button>
                 </div>
@@ -199,7 +215,21 @@
         <div id="news-and-events">
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <!-- TODO: Finish this -->
+        <div class="footer-logo">
+            <div class="footer-logo-img">
+                <!-- <img src="./assets/images/global/logo_main.png" alt="Logo of the school"> -->
+            </div>
+            <div class="footer-title">
+                <h1>Pakistan Islamia</h1>
+                <h2>Higher Secondary School</h2>
+            </div>
+        </div>
+        <div class="footer-contacts"></div>
+        <div class="footer-nav-admissions"></div>
+        <div class="footer-nav-quick-links"></div>
+    </footer>
     
     <script src="assets/js/cssScripts.js"></script>
 </body>

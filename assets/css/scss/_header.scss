@@ -2,19 +2,23 @@
 @import "./normalise";
 
 header, nav {
+    width: 100%;
     display: flex;
+    z-index: 2;
 }
 
 header {
+    position: fixed;   
     flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
     background-color: $primary-secondary;
 
     .top-header{
-        display: flex;
+        display: none;
         justify-content: space-between;
         align-items: center;
-        background-color: $white;
-
         padding: .1em;
         padding-left: .75em;
 
@@ -59,6 +63,8 @@ header {
 }
 
 .nav-links {
+    background-color: $dark;
+    color: $primary-secondary;
     display: flex;
     justify-content: space-around;
 
@@ -84,11 +90,41 @@ header {
       }
   }
   
-  //  TODO: Set this to a proper width for switching to burger
-  @media (max-width: 991.98px) {
+  @media (max-width: $breakpoint-tablet-potrait) {
+
+      .nav {
+          position: fixed;
+          transform: translateX(200vw);
+          height: 120vh;
+          background-color: $dark;
+          padding: 0;
+          
+          border-radius: 1vw 0 0 0;
+          font-weight: 500;
+          transition: transform 0.55s ease-in;
+      }
+      .nav-active {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          transform: translateX(60vw);
+      }
       .nav-links {
         //   Relocate with burger
-          display: none;
+        padding: 0vw;
+          display: flex;
+          flex-direction: column;
+          justify-self: flex-end;
+
+          position: fixed;
+
+          li {
+              padding: 3vh 5vw;
+
+              &:hover {
+                  background-color: hsla(0, 0%, 100%, 0.25);
+              }
+
+              border-bottom: 1px solid hsla(0, 0%, 100%, 0.45);;
+          }
       }
 
       .burger {

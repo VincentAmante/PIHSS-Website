@@ -8,8 +8,9 @@
     align-items: center;
 }
 
-html {
+body, html {
 	scroll-behavior: smooth;
+    height: 100%
 }
 
 main, section {
@@ -26,7 +27,7 @@ img {
 }
 
 .slider-btn {
-    margin: 2vmax;
+    // margin: 1vmax;
 
     background: none;
     border: none;
@@ -66,8 +67,7 @@ img {
 
     .hero-banner-container {
         @include flex-centered;
-        
-        
+
         padding: 10vw 10vw;
         align-self: stretch;
         text-align: center;
@@ -195,10 +195,10 @@ img {
                 line-height: 0;
                 border: .2rem solid $dark;
                 cursor: pointer;
-            }
 
-            .filled {
-                background-color: $dark;
+                &:focus {
+                    background-color: black;
+                }
             }
         }
     }
@@ -209,6 +209,7 @@ img {
     @include flex-centered;
 
     .why-pihss-container {
+        @include flex-centered;
         padding: 2vmax;
     }
 
@@ -240,7 +241,29 @@ img {
         display: flex;
         align-items: center;
         justify-content: center;
+        max-width: 90vw;
 
+        .why-pihss-slider {
+            display: flex;
+            scroll-behavior: smooth;
+            scroll-snap-type: inline mandatory;
+            overflow: scroll hidden;
+            padding: 5vw 0vw;
+
+            // Hide scrollbar
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+              }
+        }
+        .card-wrapper {
+            width: 100%;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+        }
         .card {
             background-color: $primary-secondary;
             border-radius: .5em;
@@ -288,13 +311,35 @@ img {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 90vw;
 
         .staff {
-            ul {
-                padding: 0;
+            overflow: hidden;
+            
+            .slider {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                // overflow: hidden;
+                transition : .3s ease-in-out;
+                
+                padding: 0; 
                 li {
+                    position: relative;
+                    flex-shrink: 0;
+                    background: rgb(0,20,20);
+                    border-radius: 6px 6px 0 0 ;
+                    z-index: 1;
+                    margin-right: 20px;
+                    width: 220px;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+                    img {
+                        width: 100%;
+                    }
+                    max-width: initial;
                     background-color: $primary-secondary;
-                    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                    
                     p {
                         margin: 0;
                     }
