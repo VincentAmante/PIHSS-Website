@@ -1,7 +1,8 @@
+/* Image gallery */
 .container {
+  // margin: 0 60px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 300px 400px;
   grid-gap: 15px;
 
   .grid-item:nth-child(7n),
@@ -13,12 +14,18 @@
 
 .grid-item {
   width: 100%;
-  height: 100%;
+  // height: 100%;
+  padding-bottom: 100%;
   position: relative;
   background-color: black;
   grid-column: span 3;
 
   .item-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -54,5 +61,96 @@
     z-index: 4; // Adjust later
   }
 }
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #383838;
+}
+
+/* Modal Header */
+.modal-header {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100vw;
+  background-color: #38383877;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+
+  .number-text {
+    color: white;
+  }
+
+  .modal-header-icons {
+    img {
+      padding-left: 20px;
+      width: 20px;
+    }
+
+    .close {
+      width: 17px;
+    }
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .slide-container {
+    flex: 1;
+    
+    .mySlides {
+      position: relative;
+      height: 100vh;
+      width: auto;
+      object-fit: contain;
+    
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+/* Icons */
+.prev:hover,
+.next:hover,
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  margin: 50px;
+  border-radius: 3px;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: #38383877;
+  width: 30px;
+  padding: 10px;
+}
+
 
 

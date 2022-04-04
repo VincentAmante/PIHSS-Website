@@ -1,3 +1,9 @@
+<!-- 
+    CONTACT US
+    TODO: Replace icons (currently looks wonky on browser)
+    TODO: Needs to be responsive (look particularly into the map embed)
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,39 +13,75 @@
     <title>Contact Us - Pakistan Islamia Higher Secondary School</title>
 
     <link rel="stylesheet" href="/assets/css/global.css" />
+    <link rel="stylesheet" href="/assets/css/contact-us.css" />
   </head>
   <body>
     <main>
-      <!-- TODO: Fix layout  -->
       <section class="contact-us">
+        <h1>Pakistan Islamia Higher Secondary School</h1>
+
         <div class="container">
-          <div class="contact-text">
-            <h1>Contact Us</h1>
-            <p>You can reach us from Sun-Thu between 7:30am - 1:30pm</p>
-            <p>Tel: 06-5670700 / 06-5670464</p>
-            <p>Fax: 06-5661912</p>
-            <p>Email: info@pihss-shj.com</p>
-            <p>
-              You can also reach us by filling in the below form and we will get
-              back to you as soon as possible.
-            </p>
+          <div class="contact-details">
+            <div class="timings">
+              <h2>Office Timings</h2>
+              <p>Sun-Thu: 7:30am - 1:30pm</p>
+            </div>
+
+            <div class="info">
+              <div class="icon-text telephone">
+                <img src="/assets/icons/contact-telephone.svg" alt="" />
+                <p>06 - 5670700 | 06 - 5670464</p>
+              </div>
+              <div class="icon-text fax">
+                <img src="/assets/icons/contact-fax.svg" alt="" />
+                <p>06 - 5661912</p>
+              </div>
+              <div class="icon-text location">
+                <img src="/assets/icons/contact-location.svg" alt="" />
+                <p>P O Box 1493, Al Ghubaiba, Sharjah, UAE</p>
+              </div>
+              <div class="icon-text email">
+                <img src="/assets/icons/contact-email.svg" alt="" />
+                <p>info@pihss-shj.com</p>
+              </div>
+            </div>
           </div>
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
 
-          <!-- TODO: Include input restrictions  -->
-          <div class="contact-form">
-            <form>
-              <label for="name">Name</label>
+      <section class="contact-form">
+        <h2>Do you have any queries?</h2>
+
+        <div class="form-container">
+          <form>
+            <div class="form-item">
+              <label for="name">Name*</label>
               <input type="text" id="name" name="name" required />
+            </div>
 
-              <label for="email">Email</label>
+            <div class="form-item">
+              <label for="email">Email*</label>
               <input type="email" id="email" name="email" required />
+            </div>
 
-              <label for="tel">Phone number</label>
+            <div class="form-item">
+              <label for="tel">Phone number*</label>
               <input type="tel" id="tel" name="tel" required />
+            </div>
 
+            <div class="form-item">
               <label for="subject">Subject</label>
               <input type="text" id="subject" name="subject" />
+            </div>
 
+            <div class="form-item">
               <label for="message">Message</label>
               <textarea
                 name="message"
@@ -47,22 +89,12 @@
                 cols="30"
                 rows="10"
               ></textarea>
+            </div>
 
-              <input type="submit" value="Send" />
-            </form>
-          </div>
-
-          <div class="contact-map">
-            <p>Locate us on Google Maps</p>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae"
-              width="500"
-              height="350"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
+            <div class="submit-button">
+              <input type="submit" value="SUBMIT" />
+            </div>
+          </form>
         </div>
       </section>
     </main>
