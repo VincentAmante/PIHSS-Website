@@ -777,26 +777,30 @@ header .top-header .logo-container .header-title h2 {
       justify-content: space-around;
   width: 100%;
   margin: 0;
-  padding: 2vh 5vw;
   list-style: none;
 }
 
 .nav-links li {
+  padding: 1.05vw 2vw;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  height: 100%;
+  text-align: center;
 }
 
 .nav-links li a {
+  opacity: 1;
   text-decoration: none;
   color: inherit;
   font-size: 1rem;
+  height: 100%;
 }
 
 .nav-links li a:hover {
-  color: #61865c;
+  color: #FFFFFF;
   padding-bottom: .15em;
-  border-bottom: 1px solid #61865c;
+  border-bottom: 1px solid #FFFFFF;
 }
 
 @media (max-width: 768px) {

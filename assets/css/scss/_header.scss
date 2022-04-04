@@ -70,22 +70,29 @@ header {
 
     width: 100%;
     margin: 0;
-    padding: 2vh 5vw;
 
     list-style: none;
 
     li {
+        padding: 1.05vw 2vw;
         flex-grow: 1;
+        height: 100%;
+        text-align: center;
+        &:hover {
+        }
+
         a {
+            opacity: 1;
             text-decoration: none;
             color: inherit;
-            font-size: 1rem
-          }
+            font-size: 1rem;
+            height: 100%;
 
-          a:hover {
-            color: $hover-colour;
-            padding-bottom: .15em;
-            border-bottom: 1px solid $hover-colour;
+            &:hover {
+                color: $primary-secondary;
+                padding-bottom: .15em;
+                border-bottom: 1px solid $primary-secondary;
+              }
           }
       }
   }
