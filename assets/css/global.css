@@ -858,12 +858,133 @@ footer {
   background: -webkit-gradient(linear, left bottom, left top, from(#0f6938), to(rgba(15, 105, 56, 0.75)));
   background: linear-gradient(0deg, #0f6938 0%, rgba(15, 105, 56, 0.75) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#0f6938",GradientType=1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0vw 10vw;
+}
+
+footer .footer-logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer-logo-container .footer-logo {
+  padding: 5vmin 1vw;
+  padding-right: 2vw;
+}
+
+footer .footer-logo-container .footer-logo img {
+  max-width: 5rem;
+}
+
+footer .footer-logo-container .footer-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.15rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "EB Garamond", serif;
+}
+
+footer .footer-logo-container .footer-title h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+footer .footer-logo-container .footer-title h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: .9em;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1.15em 0em;
+}
+
+footer ul li * {
+  margin: 1vmin;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: clamp(16px, 1vw, 1.2rem);
+}
+
+footer .footer-nav h2 {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(16px, 4vw, 1.6rem);
+  border-bottom: 0.01em solid #FFFFFF;
+  padding-bottom: 2vw;
+}
+
+footer .footer-contact-map {
+  width: 35%;
+  position: relative;
+  overflow: hidden;
+}
+
+footer .footer-contact-map iframe {
+  border: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 2vmax;
+  }
 }
 
 body, html {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -878,9 +999,5 @@ html {
 
 ul {
   list-style: none;
-}
-
-section {
-  padding: 1rem;
 }
 /*# sourceMappingURL=global.css.map */

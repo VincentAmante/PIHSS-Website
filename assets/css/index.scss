@@ -120,16 +120,24 @@ img {
     .about-us-content { 
         padding: 0;
     }
+
+    .about-us-img {
+        img {
+            width: 100%;
+        }
+    }
     .about-us-text {
-        
         background-color: $dark;
-        padding: 5vw;
+        padding: 5vmin;
         color: $primary-secondary;
         font-family: $font-secondary;
 
         h1 {
             font-family: $font-primary;
             font-weight: 500;
+        }
+        p {
+            margin: 1em 0;
         }
     }
 
@@ -138,16 +146,34 @@ img {
         display: grid;
         grid-template-columns: 1fr 1fr;
         border-radius: .5rem;
-
-        transform: translateY(-2rem);
+        width: 100%;
 
         .stat {
             padding: 1em 2em;
             text-align: center;
-            line-height: 0;
             .number {
                 font-size: 2rem;
                 font-weight: bold;
+            }
+
+            $stat-border: .01rem solid #B5872E;
+
+            &:nth-of-type(1){
+              border-right: $stat-border;  
+              border-bottom: $stat-border;
+            }
+            &:nth-of-type(2){
+                border-left: $stat-border;  
+                border-bottom: $stat-border;  
+            }
+            &:nth-of-type(3){
+                
+              border-right: $stat-border;  
+                border-top: $stat-border;  
+            }
+            &:nth-of-type(4){
+                border-left: $stat-border;  
+                border-top: $stat-border;  
             }
         }
     }
@@ -166,20 +192,76 @@ img {
         }
     }
 
+    .more-info-comma {
+        padding: 2vw;
+    }
+
     .more-info-slideshow {
         @include flex-centered;
 
-        .scroll {
-            @include flex-centered;
+        .more-info-comma {
+            display: none
+        }
 
-            width: 90vw;
-            overflow: scroll hidden;
-            .card {
-                img {
-                    max-width: 200px;
+        .selection {
+            @include flex-centered;
+            overflow-x: hidden;
+            max-width: 90vw;
+
+            .slider {
+                display: flex;
+                scroll-behavior: smooth;
+                scroll-snap-type: inline mandatory;
+                overflow-x: scroll;
+                padding: 2vw 0vw;
+    
+                // Hide scrollbar
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                &::-webkit-scrollbar {
+                    display: none;
+                  }
+    
+                .card-wrapper {
+                    width: 100%;
+                    scroll-snap-align: start;
+                    flex-shrink: 0;
+                    display: flex;
+                    justify-content: center;
+                }
+    
+                .card {
+                    background-color: black;
+                    width: 200px;
+                    position: relative;
+    
+                    .card-image {
+                        opacity: 0.4;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            cursor: pointer;
+                            transition: 0.25s ease-in-out;
+                        }
+                    }
+
+                    &:hover .card-image img {
+                        transform: scale(1.1);
+                    }
+    
+                    .card-text {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        text-align: center;
+                        color: $primary-secondary;
+                    }
                 }
             }
+    
         }
+
 
         .paginator {
             margin: .5em 0em;
@@ -187,7 +269,7 @@ img {
             display: flex;
             justify-content: space-around;
 
-            span {
+            * {
                 padding: clamp(1px, .2rem, 2vw);
                 border-radius: 50%;
                 
@@ -247,8 +329,8 @@ img {
             display: flex;
             scroll-behavior: smooth;
             scroll-snap-type: inline mandatory;
-            overflow: scroll hidden;
-            padding: 5vw 0vw;
+            overflow-x: scroll;
+            padding: 2vmax 0vw;
 
             // Hide scrollbar
             -ms-overflow-style: none;
@@ -257,6 +339,7 @@ img {
                 display: none;
               }
         }
+
         .card-wrapper {
             width: 100%;
             scroll-snap-align: start;
@@ -272,13 +355,22 @@ img {
             aspect-ratio: 1/1;
             max-width: 200px;
 
-            .colour {
+            .color {
                 border-radius: .5em;
                 aspect-ratio: 1/1;
                 width: 20%;
             }
-            .colour-1 {
+            .color-1 {
                 background-color: $dark;
+            }
+            .color-2 {
+                background-color: #0E9447;
+            }
+            .color-3 {
+                background-color: #3AB44B;
+            }
+            .color-4 {
+                background-color: #6BBB41;
             }
 
             .content {
@@ -307,49 +399,60 @@ img {
         font-size: clamp(16px, 3vmax, 2rem);
     }
 
-    .aac-slider {
+    .staff {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        width: 90vw;
+        justify-content: center;
+        max-width: 90vw;
 
-        .staff {
+        .aac-slider-wrapper {
             overflow: hidden;
             
-            .slider {
+            .aac-slider {
                 display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                // overflow: hidden;
+                scroll-behavior: smooth;
+                scroll-snap-type: inline mandatory;
+                overflow-x: scroll;
                 transition : .3s ease-in-out;
-                
+                padding: 5vw 0vw;
+
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                &::-webkit-scrollbar {
+                    display: none;
+                  }
                 padding: 0; 
                 li {
-                    position: relative;
                     flex-shrink: 0;
-                    background: rgb(0,20,20);
-                    border-radius: 6px 6px 0 0 ;
-                    z-index: 1;
-                    margin-right: 20px;
-                    width: 220px;
-                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                    // background: rgb(0,20,20);
+                    // box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                    width: 100%;
+                    scroll-snap-align: start;
+                    flex-shrink: 0;
+                    display: flex;
+                    justify-content: center;
+                    padding: 5vw 0vw;
 
-                    img {
-                        width: 100%;
-                    }
-                    max-width: initial;
-                    background-color: $primary-secondary;
-                    
-                    p {
-                        margin: 0;
-                    }
-                    
-                    .aac-person {
-                        padding: 1em;
-                        text-align: center;
-    
-                        .name {
-                            font-weight: bold;
+                    .card {
+                        background-color: $primary-secondary;
+                        
+                        border-radius: 6px 6px 0 0 ;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                        aspect-ratio: 1/1;
+                        max-width: 200px;
+                        
+                        p {
+                            margin: 0;
+                        }
+                        
+                        .aac-person {
+                            padding: 1em;
+                            text-align: center;
+                            background-color: $primary-secondary;
+        
+                            .name {
+                                font-weight: bold;
+                            }
                         }
                     }
                 }
@@ -359,4 +462,82 @@ img {
 
     // TODO: Fix gradient
     background: linear-gradient(0deg, rgba(207,236,193,0.73) 100%, rgba(213,237,223,0) 0%);
+}
+
+@media screen and (min-width: $breakpoint-tablet-landscape){
+    .about-us-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        
+        .stripe {
+            position: absolute;
+            background-color: $dark;
+            height: 100%;
+            width: 100%;
+        }
+
+        .about-us-text {
+            max-width: 60%;
+            background: none;
+            z-index: 1;
+        }
+
+        .about-us-img {
+            z-index: 1;
+            width: 100%;
+            margin: 0 10vw;
+            margin-left: 1vw;
+        }
+    }
+
+    .more-info {
+        display: flex;
+        flex-direction: row; 
+        justify-content: flex-start;
+        padding: 2vmax;
+
+        .more-info-text {
+            .more-info-comma {
+                display: none;
+            }
+            max-width: 50%;
+        }
+
+        .more-info-slideshow {
+            .more-info-comma {
+                display: initial;
+                align-self: flex-start;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    .why-pihss {
+        .why-pihss-container {
+            flex-direction: row-reverse;
+
+            .why-pihss-description {
+                max-width: 40%;
+                margin-left: 5vmax;
+            }
+
+            .slider-btn {
+                display: none;
+            }
+
+            .why-pihss-selection {
+                .why-pihss-slider {
+                    overflow-x: visible;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1vw;
+
+                    .card-wrapper {
+                    }
+                }
+            }
+        }
+    }
 }

@@ -10,6 +10,101 @@ footer {
     background: -webkit-linear-gradient(0deg, rgba(15,105,56,1) 0%, rgba(15,105,56,0.75) 100%);
     background: linear-gradient(0deg, rgba(15,105,56,1) 0%, rgba(15,105,56,0.75) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#0f6938",GradientType=1);
-
     
+    display: flex;
+    flex-direction: column;
+    
+    padding: 0vw 10vw;
+
+    .footer-logo-container {
+        display: flex;
+        align-items: center;
+
+        .footer-logo {
+            padding: 5vmin 1vw;
+            padding-right: 2vw;
+            img {
+                max-width: 5rem;
+            }
+        }
+        
+        .footer-title {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 1.15rem;
+            margin: 0;
+            text-transform: uppercase   ;
+
+            font-family: $font-primary;
+            
+            h1 {
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 800;
+            }
+            h2 {
+                margin: 0;
+                font-weight: 400;
+                font-size: .9em;
+            }
+        }
+    }
+
+
+    ul {
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            margin: 1.15em 0em;
+
+            * {
+                margin: 1vmin;
+            }
+
+            a {
+                text-decoration: none;
+                color: $primary-secondary;
+                font-weight: 300;
+                font-size: clamp(16px, 1vw, 1.2rem);
+            }
+        }
+    }
+
+    .footer-nav {
+        h2 {
+            font-family: $font-primary;
+            font-weight: 500;
+            
+            font-size: clamp(16px, 4vw, 1.6rem);
+
+            border-bottom: .01em solid $primary-secondary;
+            padding-bottom: 2vw;
+        }
+    }
+
+    .footer-contact-map {
+        width: 35%;
+        position: relative;
+        overflow: hidden;
+  
+        iframe {
+          border: 0;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+}
+
+@media screen and (min-width: $breakpoint-tablet-landscape) {
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 2vmax;
+    }
 }
