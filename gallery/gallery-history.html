@@ -2,13 +2,18 @@
     GALLERY
     TODO: Add other subpages once sections are finalized
     TODO: Add the rest of the images
-    TODO: Adjust layout once mobile design is confirmed
+    TODO: Insert icen's header and footer
+    TODO: Work out banner and breadcrumb navigation
 
     LIGHTBOX
     TODO: Make the rest of the buttons functional (zoom and pan)
-    TODO: Replace icons (currently looks wonky on browser)
+    TODO: Find a way to clean up the icons (remove weird white outline)
+    TODO: Allow swipe / touch gestures as input
+    TODO: Implement animations (zoom in when opened/closed, swiping when switching slides)
+    TODO: Stop lightbox from closing when clicking on the image specifically
 
     ? Are captions required for images in lightbox?
+    ? How to make the lightbox image draggable / pan
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -44,8 +49,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-1.png"
-                onclick="openModal();currentSlide(1)"
+                data-imagesrc="/assets/images/gallery/history-1.png"
                 alt="insert desc"
               />
             </div>
@@ -53,8 +59,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-2.png"
-                onclick="openModal();currentSlide(2)"
+                data-imagesrc="/assets/images/gallery/history-2.png"
                 alt="insert desc"
               />
             </div>
@@ -62,8 +69,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-3.png"
-                onclick="openModal();currentSlide(3)"
+                data-imagesrc="/assets/images/gallery/history-3.png"
                 alt="insert desc"
               />
             </div>
@@ -71,8 +79,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-4.png"
-                onclick="openModal();currentSlide(4)"
+                data-imagesrc="/assets/images/gallery/history-4.png"
                 alt=""
               />
             </div>
@@ -80,8 +89,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-5.png"
-                onclick="openModal();currentSlide(5)"
+                data-imagesrc="/assets/images/gallery/history-5.png"
                 alt=""
               />
             </div>
@@ -89,8 +99,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-6.png"
-                onclick="openModal();currentSlide(6)"
+                data-imagesrc="/assets/images/gallery/history-6.png"
                 alt=""
               />
             </div>
@@ -98,8 +109,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-7.png"
-                onclick="openModal();currentSlide(7)"
+                data-imagesrc="/assets/images/gallery/history-7.png"
                 alt=""
               />
             </div>
@@ -107,8 +119,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-8.png"
-                onclick="openModal();currentSlide(8)"
+                data-imagesrc="/assets/images/gallery/history-8.png"
                 alt=""
               />
             </div>
@@ -116,8 +129,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-9.png"
-                onclick="openModal();currentSlide(9)"
+                data-imagesrc="/assets/images/gallery/history-9.png"
                 alt=""
               />
             </div>
@@ -125,8 +139,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-10.png"
-                onclick="openModal();currentSlide(10)"
+                data-imagesrc="/assets/images/gallery/history-10.png"
                 alt=""
               />
             </div>
@@ -134,8 +149,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-9.png"
-                onclick="openModal();currentSlide(9)"
+                data-imagesrc="/assets/images/gallery/history-9.png"
                 alt=""
               />
             </div>
@@ -143,8 +159,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-10.png"
-                onclick="openModal();currentSlide(10)"
+                data-imagesrc="/assets/images/gallery/history-10.png"
                 alt=""
               />
             </div>
@@ -152,8 +169,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-9.png"
-                onclick="openModal();currentSlide(9)"
+                data-imagesrc="/assets/images/gallery/history-9.png"
                 alt=""
               />
             </div>
@@ -161,8 +179,9 @@
           <div class="grid-item">
             <div class="item-image section-image">
               <img
+                class="lightbox-enabled"
                 src="/assets/images/gallery/history-10.png"
-                onclick="openModal();currentSlide(10)"
+                data-imagesrc="/assets/images/gallery/history-10.png"
                 alt=""
               />
             </div>
@@ -171,123 +190,66 @@
 
         <!-- Modal/Lightbox -->
         <div id="myModal" class="modal">
-
           <!-- Modal Header -->
           <div class="modal-header">
-            <div id="slide-number" class="number-text">1 / 10</div>
+            <div id="slide-number" class="number-text"></div>
 
             <div class="modal-header-icons">
-              <img src="/assets/icons/magnifying-glass-out.svg" alt="">
-              <img src="/assets/icons/magnifying-glass-in.svg" alt="">
-              <a id="download" href="#" download><img src="/assets/icons/download.svg" alt=""></a>
-              <img class="close" onclick="closeModal()" src="/assets/icons/close.svg" alt="">
-              <!-- //<span class="close" onclick="closeModal()">&times;</span> -->
+              <img
+                id="zoom-out"
+                src="/assets/icons/magnifying-glass-out.svg"
+                alt=""
+              />
+              <img
+                id="zoom-in"
+                src="/assets/icons/magnifying-glass-in.svg"
+                alt=""
+              />
+              <a id="download" href="#" download
+                ><img src="/assets/icons/download.svg" alt=""
+              /></a>
+              <img
+                id="close"
+                src="/assets/icons/close.svg"
+                alt=""
+              />
             </div>
           </div>
 
           <!-- Modal Content -->
           <div class="modal-content">
             <!-- Previous Slide -->
-            <img class="prev" onclick="plusSlides(-1)" src="/assets/icons/left-arrow.svg" alt="">
-            <!-- //<a class="prev" onclick="plusSlides(-1)">&#10094;</a> -->
+            <img
+              class="lightbox-btn"
+              id="prev"
+              src="/assets/icons/left-arrow.svg"
+              alt=""
+            />
 
             <!-- Slide Container -->
             <div class="slide-container">
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-1.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-2.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-3.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-4.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-5.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-6.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-7.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-8.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-9.png" />
-              </div>
-              <div class="mySlides">
-                <img src="/assets/images/gallery/history-10.png" />
+              <div class="lightbox-slide">
+                <img
+                  class="lightbox-image"
+                  src="/assets/images/gallery/history-1.png"
+                  data-imagesrc="/assets/images/gallery/history-1.png"
+                />
               </div>
             </div>
 
             <!-- Next Slide -->
-            <img class="next" onclick="plusSlides(1)" src="/assets/icons/right-arrow.svg" alt="">
-            <!-- //<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+            <img
+              class="lightbox-btn"
+              id="next"
+              src="/assets/icons/right-arrow.svg"
+              alt=""
+            />
           </div>
         </div>
       </section>
     </main>
 
     <!-- Lightbox script -->
-    <!-- TODO: Put into seperate js file -->
-    <script>
-      function openModal() {
-        // Displays modal
-        document.getElementById("myModal").style.display = "block";
-
-        // Disable scroll
-        document.querySelector("body").style.overflow = "hidden";
-      }
-
-      function closeModal() {
-        // Hides modal
-        document.getElementById("myModal").style.display = "none";
-
-        // Enable scroll
-        document.querySelector("body").style.overflow = "auto";
-      }
-
-      var slideIndex = 1;
-      showSlides(slideIndex);
-
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
-
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var slideNum = document.getElementById("slide-number");
-        var download = document.getElementById("download");
-
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-
-        // Displays current slide
-        slides[slideIndex - 1].style.display = "block";
-
-        // Adjusts slide number accordingly
-        slideNum.innerHTML = slideIndex + " / " + slides.length;
-
-        // Adjusts download link
-        download.href = slides[slideIndex - 1].children[0].src;
-      }
-    </script>
+    <script src="/assets/js/gallery-scripts.js"></script>
   </body>
 </html>

@@ -1,3 +1,7 @@
+section {
+  margin: 5% 10%;
+}
+
 .contact-us .container {
   background-color: #FAD662;
   width: 100%;
@@ -21,7 +25,7 @@
   -webkit-box-shadow: 4px 4px 4px #0000003f;
           box-shadow: 4px 4px 4px #0000003f;
   border-radius: 15px 0px 0px 15px;
-  padding: 5px 20px;
+  padding: 5%;
   width: 50%;
   margin-left: auto;
   margin-right: 0;
@@ -32,7 +36,7 @@
 }
 
 .contact-us .container .contact-details .info {
-  padding: 0 50px;
+  padding: 20px 50px;
 }
 
 .contact-us .container .contact-details .info .icon-text {
@@ -54,7 +58,7 @@
 .contact-us .container .contact-map {
   width: 50%;
   position: relative;
-  padding-bottom: 40%;
+  padding-bottom: 41%;
   height: 0;
   overflow: hidden;
 }
@@ -70,6 +74,7 @@
 }
 
 .contact-form {
+  margin: 10% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,7 +89,7 @@
       -ms-flex-align: center;
           align-items: center;
   background: url(/assets/images/temp/bg_test.png);
-  background-size: 100% 40%;
+  background-size: 100 40%;
   background-position: center;
   background-repeat: no-repeat;
 }

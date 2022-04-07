@@ -1,5 +1,10 @@
+main {
+  margin: 20px 50px;
+}
+
 /* Image gallery */
 .container {
+  margin-top: 20px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[12];
@@ -7,18 +12,12 @@
   grid-gap: 15px;
 }
 
-.container .grid-item:nth-child(7n),
-.container .grid-item:nth-child(7n - 1),
-.container .grid-item:nth-child(7n - 2) {
-  grid-column: span 4;
-}
-
 .grid-item {
   width: 100%;
   padding-bottom: 100%;
   position: relative;
   background-color: black;
-  grid-column: span 3;
+  grid-column: span 12;
 }
 
 .grid-item .item-image {
@@ -31,6 +30,8 @@
   height: 100%;
   overflow: hidden;
   opacity: 0.4;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .grid-item .item-image img {
@@ -43,6 +44,10 @@
   cursor: pointer;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
+}
+
+.grid-item:hover .item-image {
+  opacity: 1;
 }
 
 .grid-item:hover .item-image img {
@@ -69,7 +74,6 @@
 
 /* The Modal (background) */
 .modal {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -78,10 +82,13 @@
   height: 100vh;
   overflow: hidden;
   background-color: #383838;
+  opacity: 0;
+  pointer-events: none;
+  /* Modal Header */
+  /* Modal Content */
 }
 
-/* Modal Header */
-.modal-header {
+.modal .modal-header {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
@@ -104,79 +111,101 @@
   padding: 15px 40px;
 }
 
-.modal-header .number-text {
+.modal .modal-header .number-text {
   color: white;
 }
 
-.modal-header .modal-header-icons img {
+.modal .modal-header .modal-header-icons *:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal .modal-header .modal-header-icons img {
   padding-left: 20px;
-  width: 20px;
+  width: 45px;
 }
 
-.modal-header .modal-header-icons .close {
-  width: 17px;
+.modal .modal-header .modal-header-icons #close {
+  width: 40px;
 }
 
-/* Modal Content */
-.modal-content {
+.modal .modal-content {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: relative;
+  /* Previous & Next Buttons */
 }
 
-.modal-content .slide-container {
+.modal .modal-content .slide-container {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.modal-content .slide-container .mySlides {
-  position: relative;
+.modal .modal-content .slide-container .lightbox-slide {
   height: 100vh;
   width: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.modal-content .slide-container .mySlides img {
+.modal .modal-content .slide-container .lightbox-slide img {
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-/* Icons */
-.prev:hover,
-.next:hover,
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
+.modal .modal-content #prev,
+.modal .modal-content #next {
   cursor: pointer;
-}
-
-.prev,
-.next {
-  cursor: pointer;
-  margin: 50px;
   border-radius: 3px;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
   -webkit-user-select: none;
-  background-color: #38383877;
-  width: 30px;
+  background-color: #38383895;
+  width: 50px;
   padding: 10px;
+  margin: 3%;
+  position: absolute;
+  top: 50%;
+  margin-top: -2.5%;
+  z-index: 5;
+}
+
+.modal .modal-content #next {
+  right: 0;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media screen and (min-width: 768px) {
+  .container .grid-item {
+    grid-column: span 6;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .container .grid-item {
+    grid-column: span 4;
+  }
+  .container .grid-item:nth-child(5n),
+  .container .grid-item:nth-child(5n - 1) {
+    grid-column: span 6;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container .grid-item {
+    grid-column: span 3;
+  }
+  .container .grid-item:nth-child(7n),
+  .container .grid-item:nth-child(7n - 1),
+  .container .grid-item:nth-child(7n - 2) {
+    grid-column: span 4;
+  }
 }
 /*# sourceMappingURL=gallery.css.map */
