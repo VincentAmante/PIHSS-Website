@@ -1,14 +1,50 @@
-table, th, td {
+@import "./scss/_variables.scss";
+
+
+body, html {
+	scroll-behavior: smooth;
+    height: 100%
+}
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    margin-bottom: 5vmax;
+    width: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover
+}
+
+
+.admissions-container {
+    padding: 1vw;
+    // overflow-x: hidden;
+}
+
+table {
     border-collapse: collapse;
     border: 0 black solid;
     border-spacing: 0;
+
+    td {
+        @extend table;
+        border: 1px solid black;
+        padding: .4em .8em;
+        font-size: clamp(12px, 1vw, 1.5rem);
+
+        font-weight: 400;
+    }
+    
+    th {
+        @extend td;
+        background-color: $accent;
+    }
 }
 
-th, td {
-    border: 1px solid black;
-    padding: .4rem .8rem;
-}
-
-th {
-    background-color: lightgreen;
+@media screen and (min-width: $breakpoint-tablet-landscape) {
+    
 }

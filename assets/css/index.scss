@@ -1,13 +1,6 @@
 @import "./scss/_variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@mixin flex-centered {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 body, html {
 	scroll-behavior: smooth;
     height: 100%
@@ -142,13 +135,16 @@ img {
     }
 
     .about-us-statblock {
+        
         background-color: $accent;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-content: center;
         border-radius: .5rem;
         width: 100%;
 
         .stat {
+            flex-grow: 1;
             padding: 1em 2em;
             text-align: center;
             .number {
@@ -287,10 +283,11 @@ img {
 }
 
 .why-pihss {
-    background-color: $accent;
+    // Make smaller
     @include flex-centered;
 
     .why-pihss-container {
+        background-color: $accent;
         @include flex-centered;
         padding: 2vmax;
     }
@@ -304,9 +301,17 @@ img {
 
         .btn {
             margin: 1.5em;
-            button {
-                background: none;
-                border: none;
+            display: flex;
+
+            .btn-wrapper {
+                display: flex;
+                justify-content: center;
+                
+                transition : .25s ease-in-out;
+
+                a {
+                cursor: pointer;
+                text-decoration: none;
         
                 padding: .75em 2em;
                 background-color: $primary-secondary;
@@ -316,6 +321,11 @@ img {
                 text-transform: uppercase;
                 font-weight: 600;
             }
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+            
         }
     }
 
@@ -421,12 +431,13 @@ img {
                 &::-webkit-scrollbar {
                     display: none;
                   }
-                padding: 0; 
+                padding: 0;
+
                 li {
                     flex-shrink: 0;
                     // background: rgb(0,20,20);
                     // box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-                    width: 100%;
+                    width: clamp(5rem, 100%, 350px);
                     scroll-snap-align: start;
                     flex-shrink: 0;
                     display: flex;
@@ -465,30 +476,63 @@ img {
 }
 
 @media screen and (min-width: $breakpoint-tablet-landscape){
-    .about-us-content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: relative;
-        
-        .stripe {
-            position: absolute;
-            background-color: $dark;
-            height: 100%;
-            width: 100%;
-        }
+    .about-us {
+        .about-us-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            
+            .stripe {
+                position: absolute;
+                background-color: $dark;
+                height: 80%;
+                width: 100%;
+            }
+    
+            .about-us-text {
+                max-width: 60%;
+                background: none;
+                z-index: 1;
+            }
+    
+            .about-us-img {
+                z-index: 1;
+                width: 100%;
+                margin: 0 10vw;
+                margin-left: 1vw;
+            }
+        }    
 
-        .about-us-text {
-            max-width: 60%;
-            background: none;
-            z-index: 1;
-        }
+        .about-us-statblock {
+            display: flex;
 
-        .about-us-img {
-            z-index: 1;
-            width: 100%;
-            margin: 0 10vw;
-            margin-left: 1vw;
+            .stat {
+                border: none;
+
+                &:nth-of-type(1){
+                    border-right: none;  
+                    border-bottom: none;
+                  }
+                  &:nth-of-type(2){
+                      border-left: none;  
+                      border-bottom: none;  
+                  }
+                  &:nth-of-type(3){
+                      
+                    border-right: none;  
+                      border-top: none;  
+                  }
+                  &:nth-of-type(4){
+                      border-left: none;  
+                      border-top: none;  
+                  }
+
+                  
+                &:nth-child(1){
+                    border: none;
+                }
+            }
         }
     }
 
@@ -544,4 +588,5 @@ img {
             }
         }
     }
+    
 }

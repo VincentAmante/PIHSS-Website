@@ -20,5 +20,8 @@ aac_left.onclick = () => {
 };
 aac_right.onclick = () => {
   aac_slider.scrollLeft += (aac_slider.scrollWidth / 6);
+  if ((aac_slider.scrollLeft + aac_slider.scrollWidth / 6) > aac_slider.scrollLeft){
+    aac_slider.scrollLeft = 0;
+  }
 };
 

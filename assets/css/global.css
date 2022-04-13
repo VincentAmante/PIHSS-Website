@@ -838,6 +838,7 @@ header .top-header .logo-container .header-title h2 {
   }
   .nav-links li {
     padding: 3vh 5vw;
+    text-align: left;
     border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   }
   .nav-links li:hover {

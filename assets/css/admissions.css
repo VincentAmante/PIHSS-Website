@@ -1,15 +1,52 @@
-table, th, td {
+body, html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+main, section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin-bottom: 5vmax;
+  width: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.admissions-container {
+  padding: 1vw;
+}
+
+table, table td, table th {
   border-collapse: collapse;
   border: 0 black solid;
   border-spacing: 0;
 }
 
-th, td {
+table td, table th {
   border: 1px solid black;
-  padding: .4rem .8rem;
+  padding: .4em .8em;
+  font-size: clamp(12px, 1vw, 1.5rem);
+  font-weight: 400;
 }
 
-th {
-  background-color: lightgreen;
+table th {
+  background-color: #FAD662;
 }
 /*# sourceMappingURL=admissions.css.map */

@@ -8,7 +8,7 @@ header, nav {
 }
 
 header {
-    position: fixed;   
+    position: fixed;
     flex-direction: column;
     transition: transform 0.5s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -17,6 +17,7 @@ header {
 
     .top-header{
         display: none;
+
         justify-content: space-between;
         align-items: center;
         padding: .1em;
@@ -78,9 +79,7 @@ header {
         flex-grow: 1;
         height: 100%;
         text-align: center;
-        &:hover {
-        }
-
+        
         a {
             opacity: 1;
             text-decoration: none;
@@ -98,7 +97,6 @@ header {
   }
   
   @media (max-width: $breakpoint-tablet-potrait) {
-
       .nav {
           position: fixed;
           transform: translateX(200vw);
@@ -120,11 +118,11 @@ header {
           display: flex;
           flex-direction: column;
           justify-self: flex-end;
-
           position: fixed;
 
           li {
               padding: 3vh 5vw;
+              text-align: left;
 
               &:hover {
                   background-color: hsla(0, 0%, 100%, 0.25);
