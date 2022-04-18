@@ -1,0 +1,152 @@
+body, html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+main, section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin-bottom: 5vmax;
+  width: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+h1, h2 {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.facilities-overview {
+  padding: 5vw;
+}
+
+.facilities-overview .h1-border span {
+  padding: .00vw 5ch;
+  border-bottom: 0.5rem solid #0F6938;
+}
+
+.facilities-overview .internal-nav {
+  display: hidden;
+}
+
+.facilities .facilities-list > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #CFECC1;
+  margin-bottom: 20em;
+}
+
+.facilities .facilities-list img {
+  border-radius: 1.5rem;
+  margin-inline: 5em;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.facilities .facilities-list .content {
+  max-width: 30%;
+  padding: 1em 0em;
+}
+
+.facilities .facilities-list .content .text {
+  text-align: left;
+}
+
+.facilities .facilities-list .content .text ul li {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.facilities .facilities-list .content .text ul {
+  list-style-type: '- ';
+  padding-left: 1em;
+}
+
+.facilities .facilities-list .content .text ol {
+  list-style-type: decimal;
+  padding-left: 2em;
+}
+
+.facilities .facilities-list .content .text p, .facilities .facilities-list .content .text h3 {
+  margin-bottom: 1em;
+}
+
+.facilities .facilities-list > li:nth-of-type(2n) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+@media screen and (min-width: 768px) {
+  .facilities-overview {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .facilities-overview .content {
+    max-width: 60%;
+  }
+  .facilities-overview .internal-nav {
+    z-index: 2;
+    right: 5em;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    background-color: white;
+  }
+  .facilities-overview .internal-nav div {
+    border-left: 0.3rem solid #0F6938;
+    padding-left: 1em;
+  }
+  .facilities-overview .internal-nav h2 {
+    font-weight: 500;
+  }
+  .facilities-overview .internal-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  .facilities-overview .internal-nav ul li {
+    padding-bottom: 1ch;
+  }
+  .facilities-overview .internal-nav ul li a {
+    text-decoration: none;
+  }
+}
+/*# sourceMappingURL=our-school.css.map */

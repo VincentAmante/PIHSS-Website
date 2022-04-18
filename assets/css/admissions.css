@@ -29,24 +29,292 @@ img {
      object-fit: cover;
 }
 
+h1, h2 {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.admissions-overview .internal-nav {
+  display: hidden;
+}
+
+.table-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 90vw;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.admissions {
+  margin: 0;
+  border-bottom: 0.1rem solid rgba(56, 56, 56, 0.7);
+}
+
 .admissions-container {
-  padding: 1vw;
+  padding: 5vw;
+}
+
+.admissions-container div {
+  margin-bottom: 5vh;
+}
+
+.admissions-overview .h1-border span {
+  padding: .00vw 5ch;
+  border-bottom: 0.5rem solid #0F6938;
+}
+
+.admissions-overview ul {
+  padding-left: 1em;
+  list-style: '- ';
+}
+
+.admissions-overview p {
+  margin-bottom: 1em;
+}
+
+.admissions-requirements h2 {
+  color: #0F6938;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.admissions-requirements ol {
+  padding-left: 1em;
+}
+
+.admissions-process ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+.admissions-process ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: relative;
+}
+
+.admissions-process ul li .card-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: .4em solid #DDEDD5;
+  border-radius: 50%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  z-index: 1;
+  -webkit-transform: translateY(1.5em);
+          transform: translateY(1.5em);
+  background-color: #BFDFAF;
+  aspect-ratio: 1;
+  text-align: center;
+  width: 3.2em;
+}
+
+.admissions-process ul li .card-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #DDEDD5;
+  max-width: 20rem;
+  padding: 2em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-radius: 1em;
+  padding: 3em 2em;
+}
+
+.admissions-process ul li .card-content p {
+  margin-top: 1em;
 }
 
 table, table td, table th {
   border-collapse: collapse;
   border: 0 black solid;
   border-spacing: 0;
+  margin-bottom: 1em;
+  overflow-x: scroll;
 }
 
 table td, table th {
-  border: 1px solid black;
-  padding: .4em .8em;
-  font-size: clamp(12px, 1vw, 1.5rem);
+  border: .01rem solid black;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1vw 4vw;
+  font-size: clamp(12px, 1.1vw, 2rem);
+  text-align: center;
   font-weight: 400;
+  overflow-x: initial;
 }
 
 table th {
   background-color: #FAD662;
+}
+
+.fee-structure {
+  padding: 5vw;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.fee-structure .table-wrapper {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.fee-structure div {
+  margin-bottom: 5vh;
+}
+
+.fee-structure .discounts-refunds {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fee-structure .discounts-refunds div > * {
+  margin-bottom: 1em;
+}
+
+.fee-structure ul {
+  padding-left: 1em;
+  list-style: disc;
+}
+
+.fee-structure h2, .fee-structure h3 {
+  color: #0F6938;
+}
+
+.fee-structure h2 {
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .admissions-overview {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .admissions-overview .content {
+    max-width: 60%;
+  }
+  .admissions-overview .internal-nav {
+    z-index: 2;
+    right: 5em;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    background-color: white;
+  }
+  .admissions-overview .internal-nav div {
+    border-left: 0.3rem solid #0F6938;
+    padding-left: 1em;
+  }
+  .admissions-overview .internal-nav h2 {
+    font-weight: 500;
+  }
+  .admissions-overview .internal-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  .admissions-overview .internal-nav ul li {
+    padding-bottom: 1ch;
+  }
+  .admissions-overview .internal-nav ul li a {
+    text-decoration: none;
+  }
+  .admissions-process ul {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+  .table-wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .table-wrapper:after {
+    background-image: none;
+  }
+  .fee-structure .discounts-refunds {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 /*# sourceMappingURL=admissions.css.map */

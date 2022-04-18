@@ -19,24 +19,148 @@ img {
     object-fit: cover
 }
 
+h1 {
+    font-family: $font-primary;
+    font-weight: 500;
+}
+h2 {
+    @extend h1;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+
+.admissions-overview {
+    .internal-nav {
+        display: hidden;
+    }
+}
+
+.table-wrapper {
+    @include flex-centered;
+    max-width: 90vw;
+    align-items: flex-start;
+    position: relative;
+    overflow-x: scroll;
+    
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+}
+
+.admissions {
+    margin: 0;
+    border-bottom: .1rem solid hsla(0, 0%, 22%, 0.70);
+}
 
 .admissions-container {
-    padding: 1vw;
-    // overflow-x: hidden;
+    padding: 5vw;
+
+    div {
+        margin-bottom: 5vh;
+    }
+}
+
+.admissions-overview {
+    .h1-border {
+        span {
+            padding: .00vw 5ch;
+            border-bottom: .5rem solid $dark;
+        }
+    }
+
+    ul {
+        padding-left: 1em;
+        list-style: '- ';
+    }
+
+
+    p {
+        margin-bottom: 1em;
+    }
+}
+
+.admissions-requirements {
+    h2 {
+        color: $dark;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+    }
+
+    
+    ol {
+        padding-left: 1em;
+    }
+}
+
+.admissions-process {
+
+    ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+
+        li {
+            @include flex-centered;
+            justify-content: flex-start;
+            position: relative;
+
+            .card-number {
+                @include flex-centered;
+                // position: absolute;
+                font-size: 1.8rem;
+                font-weight: bold;
+
+                
+                border: .4em solid #DDEDD5;
+                border-radius: 50%;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+                z-index: 1;
+                transform: translateY(1.5em);
+
+                background-color: #BFDFAF;
+                aspect-ratio: 1;
+                text-align: center;
+                width: 3.2em;
+            }
+
+            .card-content {
+                @include flex-centered;
+                text-align: center;
+                background-color: #DDEDD5;
+                max-width: 20rem;
+                padding: 2em;
+                flex-grow: 1;
+                border-radius: 1em;
+                padding: 3em 2em;
+
+                p {
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
 }
 
 table {
     border-collapse: collapse;
     border: 0 black solid;
     border-spacing: 0;
+    margin-bottom: 1em;
+    overflow-x: scroll;
 
     td {
         @extend table;
-        border: 1px solid black;
-        padding: .4em .8em;
-        font-size: clamp(12px, 1vw, 1.5rem);
-
+        border: .01rem solid black;
+        width: max-content;
+        padding: 1vw 4vw;
+        font-size: clamp(12px, 1.1vw, 2rem);
+        text-align: center;
         font-weight: 400;
+
+        overflow-x: initial;
     }
     
     th {
@@ -45,6 +169,98 @@ table {
     }
 }
 
-@media screen and (min-width: $breakpoint-tablet-landscape) {
+
+.fee-structure {
+    padding: 5vw;
+    align-items: flex-start;
+
+    .table-wrapper {
+        align-self: center;
+    }
+
+    div {
+        margin-bottom: 5vh;
+    }
+
+    .discounts-refunds {
+        display: flex;
+        flex-direction: column;
+
+        div > * {
+            margin-bottom: 1em;
+        }
+    }
+
+    ul {
+        padding-left: 1em;
+        list-style:disc;
+    }
     
+    h2, h3 {
+        color: $dark;
+    }
+
+    h2 {
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: $breakpoint-tablet-portrait) {
+    .admissions-overview {
+        
+        display: flex;
+        justify-content: space-between;
+        .content {
+            max-width: 60%;
+        }
+
+        .internal-nav {
+            z-index: 2;
+            right: 5em;
+            align-self: flex-start;
+    
+            background-color: white;
+    
+            div {
+                border-left: .3rem solid $dark;  
+                padding-left: 1em;
+            }
+    
+            h2 {
+                font-weight: 500;
+            }
+    
+            ul {
+                list-style: none;
+                padding: 0;
+    
+                li {
+                    padding-bottom: 1ch;
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .admissions-process {
+        ul {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .table-wrapper {
+        align-items: center;
+
+        &:after {
+            background-image:none;
+        }
+    }
+
+    .fee-structure {
+        .discounts-refunds {
+            flex-direction: row;
+        }
+    }
 }

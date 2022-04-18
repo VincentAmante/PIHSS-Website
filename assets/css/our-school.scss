@@ -1,0 +1,136 @@
+@import "./scss/_variables.scss";
+
+
+body, html {
+	scroll-behavior: smooth;
+    height: 100%;
+}
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    margin-bottom: 5vmax;
+    width: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover
+}
+
+h1 {
+    font-family: $font-primary;
+    font-weight: 500;
+}
+h2 {
+    @extend h1;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+
+.facilities-overview {
+    padding: 5vw;
+
+    .h1-border {
+        span {
+            padding: .00vw 5ch;
+            border-bottom: .5rem solid $dark;
+        }
+    }
+
+    .internal-nav {
+        display: hidden;
+    }
+}
+
+.facilities {
+    .facilities-list {
+        & > li {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: $other;
+            margin-bottom: 20em;
+        }
+
+        img {
+            border-radius: 1.5rem;
+            margin-inline: 5em;
+            transform: scale(1.5);    
+        }
+
+        .content {
+            max-width: 30%;
+            padding: 1em 0em;
+
+            .text {
+                text-align: left;
+                ul {
+                    li {
+                        align-items: flex-start;
+                    }
+                }
+
+                ul {
+                    list-style-type: '- ';
+                    padding-left: 1em;
+                }
+                ol {
+                    list-style-type: decimal;
+                    padding-left: 2em;
+                }
+
+                p, h3 {
+                    margin-bottom: 1em;
+                }
+            }
+        }
+
+        & > li:nth-of-type(2n){
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-tablet-portrait) {
+    .facilities-overview {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .content {
+            max-width: 60%;
+        }
+
+        .internal-nav {
+            z-index: 2;
+            right: 5em;
+            align-self: flex-start;
+    
+            background-color: white;
+    
+            div {
+                border-left: .3rem solid $dark;  
+                padding-left: 1em;
+            }
+    
+            h2 {
+                font-weight: 500;
+            }
+    
+            ul {
+                list-style: none;
+                padding: 0;
+    
+                li {
+                    padding-bottom: 1ch;
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
