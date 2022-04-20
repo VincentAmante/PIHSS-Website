@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/global.css">s
     <link rel="stylesheet" href="./assets/css/about-us.css">
 </head>
 <body>
@@ -14,31 +14,39 @@
         <nav></nav>
     </header>
     <main>
+        
         <section class="about-us-container">
             <div class="about-us">
                 <div class="image content-container">
-                    <div class="why-pihss active">
+                    <div class="tab-content active" id="why-pihss-img">
                         <img src="./assets/images/homepage/random-image.png" alt="">
                     </div>
-                    <div>
-                        <img src="" alt="">
+                    <div class="tab-content" id="our-history-img">
+                        <img src="./assets/images/homepage/random-image.png" alt="">
                     </div>
-                    <div>
-                        <img src="" alt="">
+                    <div class="tab-content" id="mission-vision-img">
+                        <img src="./assets/images/homepage/random-image.png" alt="">
                     </div>
-                    <div>
-                        <img src="" alt="">
+                    <div class="tab-content" id="principal-message-img">
+                        <img src="./assets/images/homepage/random-image.png" alt="">
                     </div>
                 </div>
-                <div class="content content-container">
-                    <div class="content-headers content-container">
-                        <div class="button active">Why Pihss</div>
-                        <div class="button">Our History</div>
-                        <div class="button">Mission and Vision</div>
-                        <div class="button">Principal's Message</div>
+                <div class="content">
+                    <div id="about-us-tabs" class="content-headers">
+                        <input type="radio" id="tab-why-pihss" value="why-pihss" name="about-us-group" class="tab" checked>
+                        <label for="tab-why-pihss">Why Pihss</label>
+                    
+                        <input type="radio" id="tab-our-history" value="our-history" name="about-us-group" class="tab">
+                        <label for="tab-our-history">Our History</label>
+                    
+                        <input type="radio" id="tab-mission-vision" value="mission-vision" name="about-us-group" class="tab">
+                        <label for="tab-mission-vision">Mission and Vision</label>
+                
+                        <input type="radio" id="tab-principal-message" value="principal-message" name="about-us-group" class="tab">
+                        <label for="tab-principal-message">Principal's Message</label>
                     </div>
-                    <div class="content-text content-container">
-                        <div class="why-pihss active">
+                    <div class="content-text">
+                        <div id="why-pihss-content" class="tab-content active">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Sagittis orci a scelerisque purus semper eget duis at. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Est sit amet facilisis magna etiam tempor orci eu lobortis. Gravida neque convallis a cras semper auctor neque vitae tempus. Aliquam ultrices sagittis orci a scelerisque purus semper. Netus et malesuada fames ac turpis egestas integer eget aliquet. Ultrices mi tempus imperdiet nulla malesuada pellentesque. Viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas erat imperdiet. Nunc id cursus metus aliquam eleifend mi in.
                             </p>
@@ -46,8 +54,12 @@
                                 Ipsum dolor sit amet consectetur adipiscing. At volutpat diam ut venenatis tellus in metus. Praesent elementum facilisis leo vel fringilla est. Sed velit dignissim sodales ut eu sem. Facilisi morbi tempus iaculis urna id volutpat. Tristique magna sit amet purus gravida quis blandit turpis cursus. Pellentesque habitant morbi tristique senectus et netus. Dignissim enim sit amet venenatis. Ante metus dictum at tempor commodo ullamcorper a lacus vestibulum. Velit aliquet sagittis id consectetur purus. Nullam ac tortor vitae purus faucibus. Facilisi morbi tempus iaculis urna id volutpat lacus. Vestibulum lorem sed risus ultricies tristique. Sed libero enim sed faucibus turpis in eu mi. Facilisis magna etiam tempor orci eu lobortis elementum. Accumsan sit amet nulla facilisi. Sed adipiscing diam donec adipiscing tristique risus. Molestie a iaculis at erat pellentesque adipiscing commodo elit. Aliquet porttitor lacus luctus accumsan tortor posuere.
                             </p>
                         </div>
-                        <div class="history"></div>
-                        <div class="mission-and-vision">
+                        <div id="our-history-content" class="tab-content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Sagittis orci a scelerisque purus semper eget duis at. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Est sit amet facilisis magna etiam tempor orci eu lobortis. Gravida neque convallis a cras semper auctor neque vitae tempus. Aliquam ultrices sagittis orci a scelerisque purus semper. Netus et malesuada fames ac turpis egestas integer eget aliquet. Ultrices mi tempus imperdiet nulla malesuada pellentesque. Viverra accumsan in nisl nisi scelerisque eu. Amet est placerat in egestas erat imperdiet. Nunc id cursus metus aliquam eleifend mi in.
+                            </p>
+                        </div>
+                        <div id="mission-vision-content" class="tab-content">
                             <div>
                                 <h1>Vision</h1>
                                 <p>‘PIHSS’ be looked upon as a prestigious learning institute of choice for the community.</p>
@@ -66,7 +78,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="principals-message">
+                        <div id="principal-message-content" class="tab-content">
                             <h1>Principal's Message</h1>
                             <p>
                                 <span class="date">
@@ -117,6 +129,28 @@
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer></footer>   
+
+    <script>
+        const tabs = document.querySelectorAll('input[name="about-us-group"]');
+
+        let selectedTab = "why-pihss";
+
+        const tab_container = document.getElementById('about-us-tabs');
+        tab_container.addEventListener("click", () => {
+            for (const btn of tabs){
+                if (btn.checked){
+                    document.getElementById(selectedTab + "-content").classList.remove("active");
+                    document.getElementById(selectedTab + "-img").classList.remove("active");
+
+                    const value = btn.getAttribute("value");
+                    document.getElementById(value + "-content").classList.add("active");
+                    document.getElementById(value + "-img").classList.add("active");
+
+                    selectedTab = value;    
+                }
+            }
+            });
+    </script>
 </body>
 </html>

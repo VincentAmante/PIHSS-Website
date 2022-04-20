@@ -32,7 +32,7 @@ main, section {
   display: flex;
 }
 
-.about-us-container .about-us div:not(.active):not(.content-container):not(.button) {
+.about-us-container .about-us .tab-content:not(.active):not(.content-container) {
   display: none;
 }
 
@@ -68,7 +68,11 @@ main, section {
       grid-template-columns: repeat(4, 1fr);
 }
 
-.about-us-container .about-us .content .content-headers div {
+.about-us-container .about-us .content .content-headers .tab {
+  display: none;
+}
+
+.about-us-container .about-us .content .content-headers label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
