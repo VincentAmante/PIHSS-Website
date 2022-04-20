@@ -13,29 +13,63 @@ main, section {
 }
 
 
-.about-us-container {
+.h1-border {
+    padding-left: 1em;
+
+    span {
+        padding: .00vw 5ch;
+        border-bottom: .5rem solid $dark;
+    }
+}
+
+.about-us-wrapper {
     padding: 1vw;
+    max-width: 1920px;
+    width: 80vw;
+    min-width: 480px;
+}
+
+.about-us-container {
+    transition: all .15s ease-in-out;
 
     .about-us {
         display: flex;
+        gap: 0;
         
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }   
+
         .tab-content:not(.active):not(.content-container) {
-            display: none;  
+            display: none;
+
+            // background-color: transparent;
+            // position: absolute;
+            // width: 100%;
+            // z-index: -1;
+            // opacity: 0;
+            // left: 0;
         }
 
         .image {
+            flex-grow: 1;
+            overflow-x: hidden;
+
             div {
+                width: 100%;
                 height: 100%;
+                transition: all .15s ease-in-out;
             }
             img {
-                max-width: 100% ;
+                
+                // width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
         }
 
         .content {
-            max-width: 60%;
+            width: 70%;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -54,12 +88,24 @@ main, section {
                     align-items: center;
                     justify-content: center;
                     text-align: center;
+                    cursor: pointer;
 
                     padding: 10%;
                     background-color: #BFDFAF;
+
+                    transition: all ease-in-out .15s;
+                    border-bottom: .01rem solid rgba(56, 56, 56, 0.30);;
+
+                    &:hover {
+                        background-color: lighten(#BFDFAF, 10%);
+                    }
+
+                    &:not(:last-of-type){
+                        border-right: .01rem solid rgba(56, 56, 56, 0.30);
+                    }
                 }
 
-                .active + label {
+                input:checked + label {
                     background-color: #F1F8ED;
                 }
             }
@@ -70,6 +116,7 @@ main, section {
                 align-items: center;
                 justify-content: center;
                 flex-grow: 2;
+                transition: all .5s ease-in;
 
                 padding: 2rem;
                 background-color: #DDEDD5;

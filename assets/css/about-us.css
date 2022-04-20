@@ -22,33 +22,65 @@ main, section {
   width: 100%;
 }
 
-.about-us-container {
+.h1-border {
+  padding-left: 1em;
+}
+
+.h1-border span {
+  padding: .00vw 5ch;
+  border-bottom: 0.5rem solid #0F6938;
+}
+
+.about-us-wrapper {
   padding: 1vw;
+  max-width: 1920px;
+  width: 80vw;
+  min-width: 480px;
+}
+
+.about-us-container {
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
 }
 
 .about-us-container .about-us {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 0;
+}
+
+.about-us-container .about-us:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .about-us-container .about-us .tab-content:not(.active):not(.content-container) {
   display: none;
 }
 
+.about-us-container .about-us .image {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow-x: hidden;
+}
+
 .about-us-container .about-us .image div {
+  width: 100%;
   height: 100%;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
 }
 
 .about-us-container .about-us .image img {
-  max-width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .about-us-container .about-us .content {
-  max-width: 60%;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,11 +115,23 @@ main, section {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  cursor: pointer;
   padding: 10%;
   background-color: #BFDFAF;
+  -webkit-transition: all ease-in-out .15s;
+  transition: all ease-in-out .15s;
+  border-bottom: 0.01rem solid rgba(56, 56, 56, 0.3);
 }
 
-.about-us-container .about-us .content .content-headers .active + label {
+.about-us-container .about-us .content .content-headers label:hover {
+  background-color: #dceed3;
+}
+
+.about-us-container .about-us .content .content-headers label:not(:last-of-type) {
+  border-right: 0.01rem solid rgba(56, 56, 56, 0.3);
+}
+
+.about-us-container .about-us .content .content-headers input:checked + label {
   background-color: #F1F8ED;
 }
 
@@ -108,6 +152,8 @@ main, section {
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
   padding: 2rem;
   background-color: #DDEDD5;
 }
