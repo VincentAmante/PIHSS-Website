@@ -1,0 +1,78 @@
+@import "./scss/_variables.scss";
+
+body, html {
+	scroll-behavior: smooth;
+    height: 100%
+}
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    margin-bottom: 5vmax;
+    width: 100%;
+}
+
+
+.about-us-container {
+    padding: 1vw;
+
+    .about-us {
+        display: flex;
+        
+        div:not(.active):not(.content-container):not(.button) {
+            display: none;
+        }
+
+        .image {
+
+            div {
+                height: 100%;
+            }
+            img {
+                max-width: 100% ;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .content {
+            max-width: 60%;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            .content-headers {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+
+                    padding: 10%;
+                    background-color: #BFDFAF;
+                }
+            }
+
+            .content-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                flex-grow: 2;
+
+                padding: 2rem;
+                background-color: #DDEDD5;
+
+                p {
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+
+    
+}
+
