@@ -58,6 +58,10 @@ main, section {
                     padding: 10%;
                     background-color: #BFDFAF;
                 }
+
+                .active + label {
+                    background-color: #F1F8ED;
+                }
             }
 
             .content-text {

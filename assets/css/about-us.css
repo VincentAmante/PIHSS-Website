@@ -87,6 +87,10 @@ main, section {
   background-color: #BFDFAF;
 }
 
+.about-us-container .about-us .content .content-headers .active + label {
+  background-color: #F1F8ED;
+}
+
 .about-us-container .about-us .content .content-text {
   display: -webkit-box;
   display: -ms-flexbox;
