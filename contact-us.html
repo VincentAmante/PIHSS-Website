@@ -2,6 +2,7 @@
     CONTACT US
     TODO: Replace icons (currently looks wonky on browser)
     TODO: Needs to be responsive (look particularly into the map embed)
+    TODO: Improve markup structure
 -->
 
 <!DOCTYPE html>
@@ -17,9 +18,29 @@
   </head>
   <body>
     <main>
-      <section class="contact-us">
-        <h1>Pakistan Islamia Higher Secondary School</h1>
+      <!-- Overview -->
+      <section id="contact-banner" class="contact-banner">
+        <h1>Contact Us</h1>
+      </section>
 
+      <section class="contact-overview">
+        <div class="nav-breadcrumbs">
+          <ul>
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="javascript:window.location.reload(true)">CONTACT US</a></li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="h1-border">
+              <span></span>
+              <h1>Pakistan Islamia Higher Secondary School</h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Information -->
+      <section class="contact-us">
         <div class="container">
           <div class="contact-details">
             <div class="timings">
@@ -28,22 +49,13 @@
             </div>
 
             <div class="info">
-              <div class="icon-text telephone">
-                <img src="/assets/icons/contact-telephone.svg" alt="" />
-                <p>06 - 5670700 | 06 - 5670464</p>
-              </div>
-              <div class="icon-text fax">
-                <img src="/assets/icons/contact-fax.svg" alt="" />
-                <p>06 - 5661912</p>
-              </div>
-              <div class="icon-text location">
-                <img src="/assets/icons/contact-location.svg" alt="" />
-                <p>P O Box 1493, Al Ghubaiba, Sharjah, UAE</p>
-              </div>
-              <div class="icon-text email">
-                <img src="/assets/icons/contact-email.svg" alt="" />
-                <p>info@pihss-shj.com</p>
-              </div>
+              <ul>
+                <!-- TODO: Confirm contact details -->
+                <li><img src="/assets/icons/contact-telephone.svg" alt=""><a href="tel:+065670700">06 - 5670700</a> | <a href="tel:+065670464">06 - 5670464</a></li>
+                <li><img src="/assets/icons/contact-fax.svg" alt=""><a href="tel:+065661912">06 - 5661912</a></li> <!-- Confirm if fax link is correct -->
+                <li><img src="/assets/icons/contact-location.svg" alt="">P O Box 1493, Al Ghubaiba, Sharjah, UAE</li>
+                <li><img src="/assets/icons/contact-email.svg" alt=""><a href="mailto:info@pihss-shj.com">info@pihss-shj.com</a></li>
+              </ul>
             </div>
           </div>
           <div class="contact-map">
@@ -56,6 +68,7 @@
         </div>
       </section>
 
+      <!-- Contact Form -->
       <section class="contact-form">
         <h2>Do you have any queries?</h2>
 

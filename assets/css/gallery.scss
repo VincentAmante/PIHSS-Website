@@ -1,16 +1,106 @@
 @import "./scss/variables";
 
-// TODO: Decide on default margin, padding, etc
-main {
-  margin: 20px 50px;
+body,
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+main,
+section {
+  // @include flex-centered;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+}
+
+section {
+  padding: 2vw 5vw;
+}
+
+h1 {
+  font-family: $font-primary;
+  font-weight: 500;
+}
+
+h2 {
+  @extend h1;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+/* Banner */
+.gallery-banner {
+  background-color: rgb(190, 190, 190); // Adjust color later
+  height: 40vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Gallery Overview */
+.gallery-overview {
+  .nav-breadcrumbs {
+    padding: 1em 0;
+
+    li {
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: $font-colour;
+        font-weight: 600;
+        font-size: 0.8em;
+      }
+    }
+
+    li + li ::before {
+      padding: 1vw;
+      color: $font-colour;
+      content: ">>\00a0";
+    }
+  }
+
+  .h1-border {
+    align-self: flex-start;
+
+    span {
+      padding: 0vw 5ch;
+      border-bottom: 0.5rem solid $dark;
+    }
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #c4c4c4;
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  background-color: #c4c4c4;
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: $primary-main;
+  border-radius: 20px;
 }
 
 /* Image gallery */
 .container {
-  margin-top: 20px;
   display: grid;
+  padding: 0vh 2vw 0vh 5vw;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 15px;
+  margin-bottom: 5em;
+  width: 95vw;
+
+  height: 600px; // Adjust value later
+  overflow-y: scroll;
+  overflow-x: hidden;
+
 }
 
 .grid-item {
@@ -29,7 +119,7 @@ main {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    opacity: 0.4;
+    opacity: 0.6;
     transition: 0.5s ease-in-out;
 
     img {
@@ -63,7 +153,11 @@ main {
     color: #fff;
     font-size: 0.7rem;
     pointer-events: none;
-    z-index: 4; // Adjust later
+    // z-index: 0; // Adjust later
+
+    h2 {
+      font-family: $font-secondary;
+    }
   }
 }
 
@@ -118,6 +212,7 @@ main {
   /* Modal Content */
   .modal-content {
     height: 100vh;
+    width: auto;
     position: relative;
 
     .slide-container {
@@ -125,13 +220,29 @@ main {
 
       .lightbox-slide {
         // position: relative;
+        cursor: grab;
         height: 100vh;
         width: auto;
+        overflow: visible;
+        transition: 0s;
+        will-change: transform;
         object-fit: contain;
 
+        transform-origin: 0px 0px;
+        transform: scale(1) translate(0px, 0px);
+
+        // TODO: Figure out why this doesnt work
+        // &:active {
+        //   cursor: grabbing;
+        // }
+
         img {
+          position: absolute;
           height: 100%;
           width: 100%;
+          will-change: transform;
+          // transition: 0.4s ease-in-out;
+          transform: scale(1);
           object-fit: contain;
         }
       }

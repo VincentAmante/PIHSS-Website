@@ -2,7 +2,6 @@
     TODO: Replace images and text
     TODO: Fill the alt of images with image descriptions
     TODO: Implement custom scrollbar
-    TODO: Make grid items square and responsive
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,20 +15,64 @@
     <link rel="stylesheet" href="./assets/css/gallery.css" />
   </head>
   <body>
-    <main>
-      <section class="gallery">
-        <div class="gallery-text">
-          <h1>Our Gallery</h1>
-          <p>
-            Take a look through our collections to see some of the exciting
-            learning that takes place at Pakistan Islamia Higher Secondary
-            School. Take a look through our collections to see some of the
-            exciting learning that takes place at Pakistan Islamia Higher
-            Secondary School.
-          </p>
-        </div>
+    <header class="header" id="header">
+      <div class="top-header" id="top-header">
+          <div class="logo-container">    
+              <div class="header-logo">
+                  <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
+              </div>
+              <div class="header-title">
+                  <h1>Pakistan Islamia</h1>
+                  <h2>Higher Secondary School</h2>
+              </div>
+          </div>
+          <!-- Burger -->
+          <div class="burger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+      </div>
+      <nav class="nav" id="nav">
+          
+          <!-- TODO: figure out implementation of sub-pages -->
+          <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="our-school.html">Our School</a></li>
+              <li><a href="admissions.html">Admissions</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="">Login</a></li>
+              <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+      </nav>
+    </header>
 
-        <div class="container">
+    <main>
+
+        <!-- ? Set banner style in global.scss to use globally -->
+        <!-- Overview -->
+        <section id="gallery-banner" class="gallery-banner">
+          <h1>Gallery</h1>
+        </section>
+
+        <section class="gallery-overview">
+          <div id="nav-breadcrumbs" class="nav-breadcrumbs">
+            <ul>
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="javascript:window.location.reload(true)">GALLERY</a></li>
+            </ul>
+          </div>
+
+          <div class="content">
+            <div class="h1-border">
+                <span></span>
+                <h1>Our Gallery</h1>
+            </div>
+          </div>
+        </section>
+
+        <section class="container custom-scrollbar">
           <div class="grid-item">
             <div class="item-image">
               <a href="./gallery/gallery-history.html">
@@ -150,8 +193,60 @@
                 <h2>Recent Event</h2>
                 <p>DD/MM/YY</p>
             </div>
-        </div>
-      </section>
+          </section>
     </main>
+
+    <footer>
+      <!-- TODO: Finish this -->
+      <div class="footer-info">
+          <div class="footer-logo-container">    
+              <div class="footer-logo">
+                  <img src="./assets/images/global/logo_white.png" alt="Logo of the school">
+              </div>
+              <div class="footer-title">
+                  <h1>Pakistan Islamia</h1>
+                  <h2>Higher Secondary School</h2>
+              </div>
+          </div>
+          <div class="footer-contacts">
+              <ul>
+                  <!-- TODO: Get contacts -->
+                  <!-- TODO: Change to svgs -->
+                  <li> <img src="./assets/icons/footer-location.png" alt=""> Al Ghubaiba Sharjah, UAE</li>
+                  <li> <img src="./assets/icons/footer-telephone.png" alt=""><a href="tel:+">0000000</a></li>
+                  <li> <img src="./assets/icons/footer-email.png" alt=""><a href="mailto:info@pihss-shj.com">info@pihss-shj.com</a></li>
+              </ul>
+          </div>
+      </div>
+     
+      <div class="footer-nav">
+          <div class="footer-nav-admissions">
+              <h2>Admissions</h2>
+              <ul>
+                  <li><a href="">Requirements</a></li>
+                  <li><a href="">Fee Structure</a></li>
+                  <li><a href="">Registration</a></li>
+              </ul>
+          </div>
+          <div class="footer-nav-quick-links">
+              <h2>Quick Links</h2>
+              <ul>
+                  <li><a href="">Contact Us</a></li>
+                  <li><a href="">Co-Curricular</a></li>
+                  <li><a href="">Student Code of Behaviour</a></li>
+                  <li><a href="">School Leaving Certificate</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+  </footer>
+  
+  <script src="assets/js/global-scripts.js"></script>
   </body>
 </html>

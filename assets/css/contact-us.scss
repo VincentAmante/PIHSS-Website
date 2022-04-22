@@ -1,28 +1,94 @@
 @import "./scss/_variables.scss";
 
+body,
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+main,
 section {
-  margin: 5% 10%;
+  // @include flex-centered;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+}
+
+section {
+  padding: 2vw 5vw;
+}
+
+h1 {
+  font-family: $font-primary;
+  font-weight: 500;
+}
+
+h2 {
+  @extend h1;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+/* Banner */
+.contact-banner {
+  background-color: rgb(190, 190, 190); // Adjust color later
+  height: 40vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Contact Us Overview */
+.contact-overview {
+  .nav-breadcrumbs {
+    padding: 1em 0;
+    
+    li {
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: $font-colour;
+        font-weight: 600;
+        font-size: 0.8em;
+      }
+    }
+
+    li + li ::before {
+      padding: 1vw;
+      color: $font-colour;
+      content: ">>\00a0";
+    }
+  }
+
+  .h1-border {
+    span {
+      padding: 0vw 5ch;
+      border-bottom: 0.5rem solid $dark;
+    }
+  }
 }
 
 .contact-us {
+  // margin: 10vw;
+  @include flex-centered;
+
   .container {
     background-color: $accent;
-    width: 100%;
-    // height: 80vh;
-    border-radius: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    border-radius: 15px;
 
     .contact-details {
-      width: 50%;
-      padding: 30px 0;
+      width: 100%;
+      padding-top: 2em;
 
       .timings {
-        background-color: $white;
-        box-shadow: 4px 4px 4px #0000003f;
+        background-color: white;
+        box-shadow: -4px 4px 4px -3px #0000003f;
         border-radius: 15px 0px 0px 15px;
-        padding: 5%;
-        width: 50%;
+        padding: 1.15em;
+        width: 70%;
         margin-left: auto;
         margin-right: 0;
 
@@ -32,61 +98,79 @@ section {
       }
 
       .info {
-        padding: 20px 50px;
-        .icon-text {
-          padding: 10px;
-          display: flex;
-          flex-direction: row;
+        padding: 1.5em 3em;
 
-          img {
-            padding-right: 20px;
-            width: 9vmin;
+        ul {
+          padding: 0;
+
+          li {
+            display: flex;
+            align-items: center;
+            margin: 0.5em 0em;
+
+            img {
+              padding-right: 20px;
+              width: 9vmin;
+            }
+
+            * {
+              margin: 1vmin;
+            }
+
+            a {
+              color: $font-colour;
+
+              text-decoration: none;
+              font-size: clamp(16px, 1vw, 1.2rem);
+            }
           }
         }
       }
     }
 
     .contact-map {
-      width: 50%;
+      width: 100%;
       position: relative;
-      padding-bottom: 41%;
+      padding-bottom: 50vh;
       height: 0;
       overflow: hidden;
 
       iframe {
         border: 0;
-        border-radius: 0 15px 15px 0;
+        border-radius: 15px;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
+        height: 100% !important;
       }
     }
   }
 }
 
 .contact-form {
-  margin: 10% 0;
+  margin-top: 2em;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  // Attempt for funky background, not settled on
+  // TODO: Change this later
   background: url(/assets/images/temp/bg_test.png);
   background-size: 100 40%;
   background-position: center;
   background-repeat: no-repeat;
 
   .form-container {
-    margin-top: 10px;
-    background-color: $bg-colour;
+    background-color: #efefef; //adjust later
     border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
 
     form {
-      width: 40vw;
-      min-width: 350px;
+      // width: 40vw;
+      // min-width: 350px;
       padding: 40px 10vmin;
 
       .form-item {
@@ -118,6 +202,29 @@ section {
           border-radius: 5px;
           font-weight: 600;
         }
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES
+@media screen and (min-width: $breakpoint-tablet-landscape) {
+  .contact-us {
+    .container {
+      flex-direction: row;
+      width: 100%;
+
+      .contact-details {
+        width: 45%;
+
+        .timings {
+          width: 50%;
+        }
+      }
+
+      .contact-map {
+        width: 55%;
+        padding-bottom: 70vh;
       }
     }
   }
