@@ -1039,6 +1039,8 @@ ul {
 }
 
 .nav-breadcrumbs {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   padding: 1em 0;
 }
 

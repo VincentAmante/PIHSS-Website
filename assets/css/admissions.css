@@ -43,6 +43,12 @@ h2 {
   display: hidden;
 }
 
+.nav-breadcrumbs {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 5vw;
+}
+
 .table-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

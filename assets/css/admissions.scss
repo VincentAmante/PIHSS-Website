@@ -36,6 +36,11 @@ h2 {
     }
 }
 
+.nav-breadcrumbs {
+    align-self: flex-start;
+    margin-left: 5vw;
+}
+
 .table-wrapper {
     @include flex-centered;
     max-width: 90vw;
