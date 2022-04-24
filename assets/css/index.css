@@ -68,7 +68,7 @@ img {
           align-items: center;
   width: 100%;
   background-size: cover;
-  background-image: url("../images/homepage/image-4.png");
+  background-image: url("../images/homepage/hero-banner.png");
   background-repeat: no-repeat;
   background-position: center;
   font-family: "EB Garamond", serif;
@@ -89,7 +89,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10vw 10vw;
+  height: 100vh;
   -ms-flex-item-align: stretch;
       align-self: stretch;
   text-align: center;
@@ -99,7 +99,8 @@ img {
 
 .hero-banner .hero-banner-container img {
   margin: 2em;
-  width: 10em;
+  width: 50vmin;
+  width: clamp(5em, 50vmin, 15em);
 }
 
 .hero-banner .hero-banner-container .hero-school-name {
@@ -321,6 +322,14 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
+}
+
+.more-info .more-info-slideshow .selection .slider .card-wrapper .card-anchor {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -50vh;
 }
 
 .more-info .more-info-slideshow .selection .slider .card {

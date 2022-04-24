@@ -43,7 +43,6 @@ function scrollFunction() {
 
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     document.getElementById("top-header").style.display = "flex";
-
     if (burger.classList.contains("burger-alone")){
       burger.classList.remove("burger-alone");
     }
