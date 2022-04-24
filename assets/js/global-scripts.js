@@ -39,9 +39,19 @@ document.addEventListener('click', function(event) {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+  let burger = document.getElementById('burger');
+
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     document.getElementById("top-header").style.display = "flex";
+
+    if (burger.classList.contains("burger-alone")){
+      burger.classList.remove("burger-alone");
+    }
   } else {
     document.getElementById("top-header").style.display = "none";
+    
+    if (!burger.classList.contains("burger-alone")){
+      burger.classList.add("burger-alone");
+    }
   }
 }

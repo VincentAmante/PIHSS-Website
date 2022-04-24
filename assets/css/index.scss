@@ -122,12 +122,14 @@ img {
     .about-us-text {
         background-color: $dark;
         padding: 5vmin;
+        padding-left: 10vmin;
         color: $primary-secondary;
         font-family: $font-secondary;
 
         h1 {
             font-family: $font-primary;
             font-weight: 500;
+            font-size: clamp(18px, 10vw, 1.5rem);
         }
         p {
             margin: 1em 0;
@@ -175,7 +177,6 @@ img {
     }
 }
 
-// TODO: Figure this out
 .more-info {
     background-color: $other;
 
@@ -208,6 +209,7 @@ img {
                 display: flex;
                 scroll-behavior: smooth;
                 scroll-snap-type: inline mandatory;
+                scroll-snap-align: none;
                 overflow-x: scroll;
                 padding: 2vw 0vw;
     
@@ -227,19 +229,22 @@ img {
                 }
     
                 .card {
-                    background-color: black;
-                    width: 200px;
+                    max-width: 200px;
                     position: relative;
     
                     .card-image {
-                        opacity: 0.4;
+                        opacity: 1;
                         overflow: hidden;
+
                         img {
                             width: 100%;
                             cursor: pointer;
                             transition: 0.25s ease-in-out;
                         }
+
+                        
                     }
+                    
 
                     &:hover .card-image img {
                         transform: scale(1.1);
@@ -247,11 +252,22 @@ img {
     
                     .card-text {
                         position: absolute;
+                        height: 100%;
+                        width: 100%;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
                         text-align: center;
+
+                        @include flex-centered;
+
                         color: $primary-secondary;
+
+                        background: rgb(15,105,56);
+                        background: -moz-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,0.75) 100%);
+                        background: -webkit-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,0.75) 100%);
+                        background: linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,0.75) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#000000",GradientType=1);
                     }
                 }
             }
@@ -265,17 +281,19 @@ img {
             display: flex;
             justify-content: space-around;
 
-            * {
+            .paginator-item {
                 padding: clamp(1px, .2rem, 2vw);
                 border-radius: 50%;
                 
                 aspect-ratio: 1/1;
                 line-height: 0;
                 border: .2rem solid $dark;
+                background-color: $dark;
                 cursor: pointer;
 
-                &:focus {
-                    background-color: black;
+                &:hover {
+                    border: .2rem solid lighten($dark, 10%);
+                    background-color: lighten($dark, 10%);
                 }
             }
         }
@@ -285,10 +303,12 @@ img {
 .why-pihss {
     // Make smaller
     @include flex-centered;
-
+    
     .why-pihss-container {
-        background-color: $accent;
         @include flex-centered;
+        
+        background-color: $accent;
+        height: min-content;
         padding: 2vmax;
     }
 
@@ -330,7 +350,9 @@ img {
     }
 
     .why-pihss-selection {
+        position: static;
         display: flex;
+        // display: none;
         align-items: center;
         justify-content: center;
         max-width: 90vw;
@@ -397,6 +419,13 @@ img {
 }
 
 .administrative-affairs {
+
+    background: rgb(15,105,56);
+    background: -moz-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(207,236,193,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(207,236,193,1) 100%);
+    background: linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(207,236,193,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#cfecc1",GradientType=1);
+
     .aac-affairs-container {
         padding: 1em;
     }
@@ -441,7 +470,7 @@ img {
                     scroll-snap-align: start;
                     flex-shrink: 0;
                     display: flex;
-                    justify-content: center;
+                    justify-content: center;    
                     padding: 5vw 0vw;
 
                     .card {
@@ -472,7 +501,6 @@ img {
     }
 
     // TODO: Fix gradient
-    background: linear-gradient(0deg, rgba(207,236,193,0.73) 100%, rgba(213,237,223,0) 0%);
 }
 
 @media screen and (min-width: $breakpoint-tablet-landscape){
@@ -555,12 +583,24 @@ img {
                 align-self: flex-start;
                 padding-bottom: 0;
             }
+            .selection {
+                .slider {
+                    .card-wrapper {
+                        width: 50%;
+                    }
+                }
+            }
         }
     }
 
     .why-pihss {
+        margin-block: 10em;
+
         .why-pihss-container {
             flex-direction: row-reverse;
+            justify-content: flex-start;    
+            position: relative;
+            padding-right: 15vw;
 
             .why-pihss-description {
                 max-width: 40%;
@@ -572,6 +612,9 @@ img {
             }
 
             .why-pihss-selection {
+                position: absolute;
+                left: 15vmin;
+
                 .why-pihss-slider {
                     overflow-x: visible;
                     display: grid;
@@ -579,10 +622,10 @@ img {
                     gap: 1vw;
 
                     .card-wrapper:nth-child(1n){
-                        transform: translateY(-2.5vw);
+                        transform: translateY(-3vw);
                     }
                     .card-wrapper:nth-child(2n) {
-                        transform: translateY(2.5vw);
+                        transform: translateY(3vw);
                     }
                 }
             }

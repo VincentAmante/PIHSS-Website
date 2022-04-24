@@ -1,0 +1,119 @@
+@import "./scss/_variables.scss";
+
+body, html {
+	scroll-behavior: smooth;
+    height: 100%
+}
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    margin-bottom: 5vmax;
+    width: 100%;
+}
+
+.news-container {
+    @include flex-centered;
+    width: max-content;
+
+    .h1-border {
+        align-self: flex-start;
+        span {
+            padding: .00vw 5ch;
+            border-bottom: .5rem solid $dark;
+        }
+    }
+
+
+    .news {
+        @include flex-centered;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2em;
+        row-gap: 1em;
+
+        article {
+            position: relative;
+
+            border-radius: 0em 2em 0em 2em;
+
+            overflow: hidden;
+            aspect-ratio: 5/4;
+            transition: all .5 ease-in-out;
+            
+            &:hover {
+                img {
+                transform: scale(1.1);  
+                }
+            }
+
+            .article-image {
+                height: 100%;
+
+                img {
+                    height: 100%;
+                    
+                    transition: all .5s ease-in-out;
+                    object-fit: cover;
+                }
+
+            }
+
+
+            .article-btn {
+                // margin: 1vmax;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+                background: none;
+                border: none;
+            
+                font-family: 'Poppins';
+                font-size: clamp(1.5rem, 10vmin, 1.4rem);
+                color: $primary-secondary;
+            
+                background-color: $dark;
+                box-shadow: none;
+                line-height: 0;
+                text-align: center;
+                padding: clamp(3px, .9rem, 5vw);
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                cursor: pointer;
+                vertical-align: top;
+            }
+
+            .article-content {
+                height: 100%;
+                width: 100%;
+
+                position: absolute;
+                bottom: 0;
+
+                display: flex;
+                align-items: flex-end;
+
+                    padding-bottom: 1em;
+                    padding-left: 1em;
+
+                color: $primary-secondary;
+                background: rgb(0, 0, 0);
+                background: -moz-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+                background: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+                background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+
+
+                .content-wrapper {
+                    flex-grow: 1;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}

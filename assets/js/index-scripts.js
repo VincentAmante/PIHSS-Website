@@ -24,4 +24,3 @@ aac_right.onclick = () => {
     aac_slider.scrollLeft = 0;
   }
 };
-

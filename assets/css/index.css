@@ -176,6 +176,7 @@ img {
 .about-us .about-us-text {
   background-color: #0F6938;
   padding: 5vmin;
+  padding-left: 10vmin;
   color: #FFFFFF;
   font-family: "Raleway", sans-serif;
 }
@@ -183,6 +184,7 @@ img {
 .about-us .about-us-text h1 {
   font-family: "EB Garamond", serif;
   font-weight: 500;
+  font-size: clamp(18px, 10vw, 1.5rem);
 }
 
 .about-us .about-us-text p {
@@ -297,6 +299,7 @@ img {
   scroll-behavior: smooth;
   -ms-scroll-snap-type: inline mandatory;
       scroll-snap-type: inline mandatory;
+  scroll-snap-align: none;
   overflow-x: scroll;
   padding: 2vw 0vw;
   -ms-overflow-style: none;
@@ -321,13 +324,12 @@ img {
 }
 
 .more-info .more-info-slideshow .selection .slider .card {
-  background-color: black;
-  width: 200px;
+  max-width: 200px;
   position: relative;
 }
 
 .more-info .more-info-slideshow .selection .slider .card .card-image {
-  opacity: 0.4;
+  opacity: 1;
   overflow: hidden;
 }
 
@@ -345,12 +347,31 @@ img {
 
 .more-info .more-info-slideshow .selection .slider .card .card-text {
   position: absolute;
+  height: 100%;
+  width: 100%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #FFFFFF;
+  background: #0f6938;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(15, 105, 56, 0)), to(rgba(0, 0, 0, 0.75)));
+  background: linear-gradient(180deg, rgba(15, 105, 56, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#000000",GradientType=1);
 }
 
 .more-info .more-info-slideshow .paginator {
@@ -363,17 +384,19 @@ img {
       justify-content: space-around;
 }
 
-.more-info .more-info-slideshow .paginator * {
+.more-info .more-info-slideshow .paginator .paginator-item {
   padding: clamp(1px, 0.2rem, 2vw);
   border-radius: 50%;
   aspect-ratio: 1/1;
   line-height: 0;
   border: 0.2rem solid #0F6938;
+  background-color: #0F6938;
   cursor: pointer;
 }
 
-.more-info .more-info-slideshow .paginator *:focus {
-  background-color: black;
+.more-info .more-info-slideshow .paginator .paginator-item:hover {
+  border: 0.2rem solid #159650;
+  background-color: #159650;
 }
 
 .why-pihss {
@@ -393,7 +416,6 @@ img {
 }
 
 .why-pihss .why-pihss-container {
-  background-color: #FAD662;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,6 +429,10 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #FAD662;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   padding: 2vmax;
 }
 
@@ -450,6 +476,7 @@ img {
 }
 
 .why-pihss .why-pihss-selection {
+  position: static;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -534,8 +561,10 @@ img {
 }
 
 .administrative-affairs {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(100%, rgba(207, 236, 193, 0.73)), color-stop(0%, rgba(213, 237, 223, 0)));
-  background: linear-gradient(0deg, rgba(207, 236, 193, 0.73) 100%, rgba(213, 237, 223, 0) 0%);
+  background: #0f6938;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(15, 105, 56, 0)), to(#cfecc1));
+  background: linear-gradient(180deg, rgba(15, 105, 56, 0) 0%, #cfecc1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#cfecc1",GradientType=1);
 }
 
 .administrative-affairs .aac-affairs-container {
@@ -707,11 +736,22 @@ img {
         align-self: flex-start;
     padding-bottom: 0;
   }
+  .more-info .more-info-slideshow .selection .slider .card-wrapper {
+    width: 50%;
+  }
+  .why-pihss {
+    margin-block: 10em;
+  }
   .why-pihss .why-pihss-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative;
+    padding-right: 15vw;
   }
   .why-pihss .why-pihss-container .why-pihss-description {
     max-width: 40%;
@@ -719,6 +759,10 @@ img {
   }
   .why-pihss .why-pihss-container .slider-btn {
     display: none;
+  }
+  .why-pihss .why-pihss-container .why-pihss-selection {
+    position: absolute;
+    left: 15vmin;
   }
   .why-pihss .why-pihss-container .why-pihss-selection .why-pihss-slider {
     overflow-x: visible;
@@ -729,12 +773,12 @@ img {
     gap: 1vw;
   }
   .why-pihss .why-pihss-container .why-pihss-selection .why-pihss-slider .card-wrapper:nth-child(1n) {
-    -webkit-transform: translateY(-2.5vw);
-            transform: translateY(-2.5vw);
+    -webkit-transform: translateY(-3vw);
+            transform: translateY(-3vw);
   }
   .why-pihss .why-pihss-container .why-pihss-selection .why-pihss-slider .card-wrapper:nth-child(2n) {
-    -webkit-transform: translateY(2.5vw);
-            transform: translateY(2.5vw);
+    -webkit-transform: translateY(3vw);
+            transform: translateY(3vw);
   }
 }
 /*# sourceMappingURL=index.css.map */
