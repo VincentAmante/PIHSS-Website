@@ -31,3 +31,39 @@ html {
 ul {
     list-style: none;
 }
+
+.subpage-banner {
+    background-color: rgb(190, 190, 190); // Adjust color later
+    height: 40vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 2vw 5vw;
+
+    h1 {
+        font-family: $font-primary;
+        font-weight: 500;
+      }
+  }
+  
+
+.nav-breadcrumbs {
+    padding: 1em 0;
+
+    li {
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: $font-colour;
+        font-weight: 600;
+        font-size: 0.8em;
+      }
+    }
+
+    li + li ::before {
+      padding: 1vw;
+      color: $font-colour;
+      content: ">>\00a0";
+    }
+  }

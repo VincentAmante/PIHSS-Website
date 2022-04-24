@@ -6,14 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="./assets/css/global.css">s
+    <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/about-us.css">
 </head>
 <body>
-    <header>
-        <nav></nav>
+    <header class="header" id="header">
+        <div class="top-header" id="top-header">
+            <div class="logo-container">    
+                <div class="header-logo">
+                    <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
+                </div>
+                <div class="header-title">
+                    <h1>Pakistan Islamia</h1>
+                    <h2>Higher Secondary School</h2>
+                </div>
+            </div>
+        </div>
+        <nav class="nav" id="nav">        
+            <!-- TODO: figure out implementation of sub-pages -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="our-school.html">Our School</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="">Login</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <!-- Burger -->
+        <div class="burger burger-alone" id="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </header>
     <main>
+        <section class="subpage-banner">
+            <h1>About Us</h1>
+        </section>
         <div class="about-us-wrapper">
             <div class="h1-border">
                 <span></span>

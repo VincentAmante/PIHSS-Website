@@ -8,6 +8,7 @@ header, nav {
 }
 
 header {
+    z-index: 10;
     position: fixed;
     flex-direction: column;
     transition: transform 0.5s ease-in-out;
