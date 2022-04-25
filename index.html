@@ -15,7 +15,7 @@
 <body>
     <header class="header" id="header">
         <div class="top-header" id="top-header">
-            <div class="logo-container">    
+            <a class="logo-container" href="./index.html">    
                 <div class="header-logo">
                     <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
                 </div>
@@ -23,18 +23,24 @@
                     <h1>Pakistan Islamia</h1>
                     <h2>Higher Secondary School</h2>
                 </div>
-            </div>
+            </a>
         </div>
         <nav class="nav" id="nav">        
             <!-- TODO: figure out implementation of sub-pages -->
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="our-school.html">Our School</a></li>
-                <li><a href="admissions.html">Admissions</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="">Login</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+                <li class="nav-element"><a href="index.html">Home</a></li>
+                <li class="nav-element"><a href="about-us.html">About Us</a></li>
+                <li class="nav-element nav-sub-list"><a href="our-school.html">Our School</a>
+                    <ul>
+                        <li><a href="">Facilities</a></li>
+                        <li><a href="">Co-Curricular Activities</a></li>
+                        <li><a href="">Student Code of Behaviour</a></li>
+                    </ul>
+                </li>
+                <li class="nav-element"><a href="admissions.html">Admissions</a></li>
+                <li class="nav-element"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-element"><a href="">Login</a></li>
+                <li class="nav-element"><a href="contact-us.html">Contact Us</a></li>
             </ul>
         </nav>
         <!-- Burger -->
@@ -116,43 +122,42 @@
                     <div class="slider">
                         <div class="card-wrapper">
                             <div class="card-anchor"  id="mi-slider-about-us"></div>
-                            <div class="card">
+                            <a class="card" href="./about-us.html">
                                 <div class="card-image">
-                                    <a href="./about-us.html">
+                                    <div>
                                         <img src="./assets/images/homepage/random-image.png" alt="" loading="lazy">
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="card-text">
                                     <span>From the Principal's Desk</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="card-wrapper">
                             <div class="card-anchor" id="mi-slider-mission-vision"></div>
-                            <div class="card">
+                            <a class="card" href="./about-us.html">
                                 <div class="card-image">
-                                    <a href="./about-us.html">
+                                    <div>
                                         <img src="./assets/images/homepage/random-image.png" alt="" loading="lazy">
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="card-text">
                                     <span>Mission and Vision</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="card-wrapper">
-                            <div class="card">
-                                
+                            <a class="card" href="./about-us.html">
                             <div class="card-anchor" id="mi-slider-registration"></div>
                                 <div class="card-image">
-                                    <a href="./about-us.html">
+                                    <div>
                                         <img src="./assets/images/homepage/random-image.png" alt="" loading="lazy">
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="card-text">
                                     <span>Registration</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <!-- TODO: Reposition where the anchor tags go so the clicks are smooth -->
@@ -182,7 +187,7 @@
                 </div>
                 <!-- TODO: Have a better name for this -->
                 <div class="why-pihss-selection">
-                    <button class="slider-btn" id="wp-btn-left" type="button"><</button>
+                    <button class="slider-btn" id="wp-btn-left" type="button">&lt;</button>
                     <div class="why-pihss-slider" id="why-pihss-slider">
                         <div class="card-wrapper">
                             <div class="card">
@@ -230,7 +235,7 @@
             <div class="aac-affairs-container">
                 <h1>Administrative Affairs Committee (AAC)</h1>
                 <div class="staff">
-                    <button class="slider-btn" id="aac-btn-left" type="button"><</button>
+                    <button class="slider-btn" id="aac-btn-left" type="button">&lt;</button>
                     <div class="aac-slider-wrapper">
                         <ul class="aac-slider" id="aac-slider">
                             <li id="aac-1">

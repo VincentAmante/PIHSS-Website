@@ -13,7 +13,7 @@
     <!-- TODO: Figure out layout of Our School page -->
     <header class="header" id="header">
         <div class="top-header" id="top-header">
-            <div class="logo-container">    
+            <a class="logo-container" href="./index.html">    
                 <div class="header-logo">
                     <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
                 </div>
@@ -21,18 +21,24 @@
                     <h1>Pakistan Islamia</h1>
                     <h2>Higher Secondary School</h2>
                 </div>
-            </div>
+            </a>
         </div>
         <nav class="nav" id="nav">        
             <!-- TODO: figure out implementation of sub-pages -->
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="our-school.html">Our School</a></li>
-                <li><a href="admissions.html">Admissions</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="">Login</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+                <li class="nav-element"><a href="index.html">Home</a></li>
+                <li class="nav-element"><a href="about-us.html">About Us</a></li>
+                <li class="nav-element nav-sub-list"><a href="our-school.html">Our School</a>
+                    <ul>
+                        <li><a href="">Facilities</a></li>
+                        <li><a href="">Co-Curricular Activities</a></li>
+                        <li><a href="">Student Code of Behaviour</a></li>
+                    </ul>
+                </li>
+                <li class="nav-element"><a href="admissions.html">Admissions</a></li>
+                <li class="nav-element"><a href="gallery.html">Gallery</a></li>
+                <li class="nav-element"><a href="">Login</a></li>
+                <li class="nav-element"><a href="contact-us.html">Contact Us</a></li>
             </ul>
         </nav>
         <!-- Burger -->
