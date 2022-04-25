@@ -16,6 +16,16 @@ footer {
     
     padding: 0vw 10vw;
 
+    li {
+        cursor: pointer;
+        padding-left: .1rem;
+
+        &:hover {
+            border-radius: .5em;
+            // background-color: $dark;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    }
     .footer-logo-container {
         display: flex;
         align-items: center;
@@ -59,7 +69,8 @@ footer {
         li {
             display: flex;
             align-items: center;
-            margin: 1.15em 0em;
+            margin-block: .5em;
+            padding: .8em 0em;
 
             * {
                 margin: 1vmin;

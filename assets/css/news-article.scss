@@ -1,0 +1,13 @@
+@import "./scss/_variables.scss";
+
+body, html {
+	scroll-behavior: smooth;
+    height: 100%
+}
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    margin-bottom: 5vmax;
+    width: 100%;
+}

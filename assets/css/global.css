@@ -937,6 +937,17 @@ footer {
   padding: 0vw 10vw;
 }
 
+footer li {
+  cursor: pointer;
+  padding-left: .1rem;
+}
+
+footer li:hover {
+  border-radius: .5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 footer .footer-logo-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -995,7 +1006,8 @@ footer ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1.15em 0em;
+  margin-block: .5em;
+  padding: .8em 0em;
 }
 
 footer ul li * {
@@ -1094,6 +1106,7 @@ ul {
   -ms-flex-item-align: start;
       align-self: flex-start;
   padding: 1em 0;
+  text-transform: uppercase;
 }
 
 .nav-breadcrumbs li {

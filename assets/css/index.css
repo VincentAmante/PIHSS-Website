@@ -662,6 +662,216 @@ img {
   font-weight: bold;
 }
 
+.news-and-events-container {
+  padding: 15vh 10vw;
+}
+
+.news-and-events-container .nac-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
+.news-and-events-container .nac-events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 2em;
+          column-gap: 2em;
+  margin-right: 2em;
+}
+
+.news-and-events-container article {
+  position: relative;
+  border-radius: 0em 2em 0em 2em;
+  overflow: hidden;
+  aspect-ratio: 5/4;
+  -webkit-transition: all .5 ease-in-out;
+  transition: all .5 ease-in-out;
+}
+
+.news-and-events-container article:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.news-and-events-container article .article-image {
+  height: 100%;
+}
+
+.news-and-events-container article .article-image img {
+  height: 100%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.news-and-events-container article .article-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 3.5rem;
+  max-height: 3.5rem;
+  background: none;
+  border: none;
+  font-family: 'Poppins';
+  font-size: clamp(1.5rem, 10vmin, 1.4rem);
+  color: #FFFFFF;
+  background-color: #62AC3B;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  line-height: 0;
+  text-align: center;
+  padding: clamp(1px, 0.5rem, 5vw);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.news-and-events-container article .article-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 12rem;
+}
+
+.news-and-events-container article .article-text p {
+  margin-bottom: .5em;
+}
+
+.news-and-events-container article .article-content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  color: #FFFFFF;
+  background: black;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.75)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+.news-and-events-container article .article-content .content-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-inline: 2em;
+}
+
+.news-and-events-container .nac-upcoming-events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+}
+
+.news-and-events-container .nac-upcoming-events article .article-content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  background: rgba(11, 96, 48, 0.7);
+}
+
+.news-and-events-container .nac-upcoming-events article .article-content .content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.news-and-events-container .nac-upcoming-events article .article-content .content-wrapper .icon {
+  width: 5rem;
+}
+
+.news-and-events-container .nac-upcoming-events article .article-content .content-wrapper .btn {
+  text-decoration: none;
+  background-color: #FFFFFF;
+  color: black;
+  border-radius: .5em;
+  padding: .75em 1.25em;
+  margin: .5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
 @media screen and (min-width: 1024px) {
   .about-us .about-us-content {
     display: -webkit-box;
@@ -675,12 +885,8 @@ img {
         -ms-flex-align: center;
             align-items: center;
     position: relative;
-  }
-  .about-us .about-us-content .stripe {
-    position: absolute;
-    background-color: #0F6938;
-    height: 80%;
-    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, transparent), color-stop(10%, #0F6938), color-stop(90%, #0F6938), color-stop(90%, transparent));
+    background: linear-gradient(transparent 10%, #0F6938 10%, #0F6938 90%, transparent 90%);
   }
   .about-us .about-us-content .about-us-text {
     max-width: 60%;

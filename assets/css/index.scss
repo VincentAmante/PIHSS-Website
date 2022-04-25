@@ -508,8 +508,159 @@ img {
             }
         }
     }
+}
 
-    // TODO: Fix gradient
+.news-and-events-container {
+    padding: 15vh 10vw;
+
+    .nac-cards {
+        @include flex-centered;
+        flex-direction: row
+    }
+
+    .nac-events {
+        @include flex-centered;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        // grid-auto-rows: 1fr;
+        column-gap: 2em;
+        
+        margin-right: 2em;
+    }
+
+
+    article {
+        position: relative;
+
+        border-radius: 0em 2em 0em 2em;
+
+        overflow: hidden;
+        aspect-ratio: 5/4;
+        transition: all .5 ease-in-out;
+        
+        &:hover {
+            img {
+            transform: scale(1.1);  
+            }
+        }
+
+        .article-image {
+            height: 100%;
+
+            img {
+                height: 100%;
+                
+                transition: all .5s ease-in-out;
+                object-fit: cover;
+            }
+
+        }
+
+
+        .article-btn {
+            // margin: 1vmax;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            max-width: 3.5rem;
+            max-height: 3.5rem;
+        
+            background: none;
+            border: none;
+        
+            font-family: 'Poppins';
+            font-size: clamp(1.5rem, 10vmin, 1.4rem);
+            color: $primary-secondary;
+        
+            background-color: #62AC3B;
+            box-shadow: none;
+            line-height: 0;
+            text-align: center;
+            padding: clamp(1px, .5rem, 5vw);
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            cursor: pointer;
+            vertical-align: top;
+        }
+
+        .article-text {
+            display: flex;
+            flex-direction: column;
+            max-width: 12rem;
+
+            p {
+                margin-bottom: .5em;
+            }
+        }
+
+        .article-content {
+            height: 100%;
+            width: 100%;
+
+            position: absolute;
+            bottom: 0;
+
+            display: flex;
+            align-items: flex-end;
+            
+
+                padding-bottom: 1em;
+                padding-left: 1em;
+
+            color: $primary-secondary;
+            background: rgb(0, 0, 0);
+            background: -moz-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+            background: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+
+
+            .content-wrapper {
+                flex-grow: 1;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-inline: 2em;
+            }
+        }
+    }
+
+    
+    .nac-upcoming-events {
+        @include flex-centered;
+        display: grid;
+
+        article {
+            .article-content {
+                align-items: center;
+                padding: 0;
+                background: hsla(146, 80%, 21%, 0.70);    
+
+                .content-wrapper {
+                    @include flex-centered;
+
+                    .icon {
+                        width: 5rem;
+                    }
+
+                    .btn {
+                        text-decoration: none;
+                        background-color: $primary-secondary;
+                        color: black;
+                        border-radius: .5em;
+                        padding: .75em 1.25em;
+                        margin: .5em;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: $breakpoint-tablet-landscape){
@@ -519,13 +670,14 @@ img {
             flex-direction: row;
             align-items: center;
             position: relative;
-            
-            .stripe {
-                position: absolute;
-                background-color: $dark;
-                height: 80%;
-                width: 100%;
-            }
+            background: linear-gradient(transparent 10%, $dark 10%, $dark 90%, transparent 90%);
+
+            // .stripe {
+            //     position: absolute;
+            //     background-color: $dark;
+            //     height: 80%;
+            //     width: 100%;
+            // }
     
             .about-us-text {
                 max-width: 60%;
@@ -640,5 +792,4 @@ img {
             }
         }
     }
-    
 }

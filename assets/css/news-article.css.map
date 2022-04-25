@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,EAAE,IAAI,CAAC;EACV,eAAe,EAAE,MAAM;EACpB,MAAM,EAAE,IACZ;CAAC;;AAED,AAAA,IAAI,EAAE,OAAO,CAAC;ECcV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EDfnB,OAAO,EAAE,CAAC;EACV,aAAa,EAAE,KAAK;EACpB,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "news-article.scss",
+        "scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "news-article.css"
+}

@@ -66,6 +66,9 @@ main, section {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                max-width: 3.5rem;
+                max-height: 3.5rem;
             
                 background: none;
                 border: none;
@@ -74,15 +77,25 @@ main, section {
                 font-size: clamp(1.5rem, 10vmin, 1.4rem);
                 color: $primary-secondary;
             
-                background-color: $dark;
+                background-color: #62AC3B;
                 box-shadow: none;
                 line-height: 0;
                 text-align: center;
-                padding: clamp(3px, .9rem, 5vw);
+                padding: clamp(1px, .5rem, 5vw);
                 aspect-ratio: 1/1;
                 border-radius: 50%;
                 cursor: pointer;
                 vertical-align: top;
+            }
+
+            .article-text {
+                display: flex;
+                flex-direction: column;
+                max-width: 12rem;
+
+                p {
+                    margin-bottom: .5em;
+                }
             }
 
             .article-content {
@@ -94,6 +107,7 @@ main, section {
 
                 display: flex;
                 align-items: flex-end;
+                
 
                     padding-bottom: 1em;
                     padding-left: 1em;
@@ -112,6 +126,7 @@ main, section {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    padding-inline: 2em;
                 }
             }
         }
