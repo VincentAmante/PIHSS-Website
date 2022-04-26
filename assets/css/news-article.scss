@@ -1,4 +1,5 @@
 @import "./scss/_variables.scss";
+@import "./scss/_slider-btn.scss";
 
 body, html {
 	scroll-behavior: smooth;
@@ -8,14 +9,69 @@ body, html {
 main, section {
     @include flex-centered;
     padding: 0;
-    margin-bottom: 5vmax;
+    // margin-bottom: 5vmax;
     width: 100%;
 }
 
-.h1-border {
-    align-self: flex-start;
-    span {
-        padding: .00vw 5ch;
-        border-bottom: .5rem solid $dark;
+.article-overview {
+    padding-inline: 15vmin;
+    .h1-border {
+        align-self: flex-start;
+        span {
+            padding: .00vw 5ch;
+            border-bottom: .5rem solid $dark;
+        }
+    }
+}
+
+.article-viewer-wrapper {
+    background-color: #F5F5F5;
+    padding: 5vw 10vh;
+    height: 60vh;
+    margin-bottom: 20vh;
+
+    .article-viewer {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+
+        .content {
+            display: flex;
+            margin-inline: 2em;
+
+            .article-img {  
+                position: relative;
+                border-radius: 0em 2em 0em 2em;
+                overflow: hidden;
+                aspect-ratio: 5/4;
+                transition: all .5 ease-in-out;
+                    
+                &:hover {
+                    img {
+                    transform: scale(1.1);  
+                    }
+                }
+        
+                img {
+                    height: 100%;                        
+                    transition: all .5s ease-in-out;
+                    object-fit: cover;
+                }        
+        }
+
+            .article-text {
+                margin-left: 2.5vw;
+                display: flex;
+                flex-direction: column;
+                max-width: 65%;
+
+                .heading {
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: bold;
+                    margin-bottom: 2em;
+                }
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 @import "./scss/_variables.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "./scss/_slider-btn.scss";
 
 body, html {
 	scroll-behavior: smooth;
@@ -19,29 +19,6 @@ img {
     object-fit: cover
 }
 
-.slider-btn {
-    // margin: 1vmax;
-
-    background: none;
-    border: none;
-
-    font-family: 'Poppins';
-    font-size: clamp(1.5rem, 10vmin, 1.4rem);
-    color: $primary-secondary;
-
-    background-color: $dark;
-    box-shadow: none;
-    line-height: 0;
-    text-align: center;
-    padding: clamp(3px, .9rem, 5vw);
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.slider-btn:hover {
-    transform: scale(1.05);
-}
 
 
 // Hero Banner
@@ -493,13 +470,17 @@ img {
                         
                         border-radius: 6px 6px 0 0 ;
                         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-                        aspect-ratio: 1/1;
+                        aspect-ratio: 4/5;
                         max-width: 200px;
                         
                         p {
                             margin: 0;
                         }
                         
+                        .aac-image {
+                            object-fit: cover;
+                        }
+
                         .aac-person {
                             padding: 1em;
                             text-align: center;
@@ -559,34 +540,6 @@ img {
 
         }
 
-
-        .article-btn {
-            // margin: 1vmax;
-            
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            max-width: 3.5rem;
-            max-height: 3.5rem;
-        
-            background: none;
-            border: none;
-        
-            font-family: 'Poppins';
-            font-size: clamp(1.5rem, 10vmin, 1.4rem);
-            color: $primary-secondary;
-        
-            background-color: #62AC3B;
-            box-shadow: none;
-            line-height: 0;
-            text-align: center;
-            padding: clamp(1px, .5rem, 5vw);
-            aspect-ratio: 1/1;
-            border-radius: 50%;
-            cursor: pointer;
-            vertical-align: top;
-        }
 
         .article-text {
             display: flex;

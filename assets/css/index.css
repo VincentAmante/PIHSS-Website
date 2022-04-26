@@ -1,4 +1,61 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.slider-btn, .news-btn {
+  border-radius: 50%;
+  background-color: #0F6938;
+  min-width: 3rem;
+  width: 40%;
+  max-width: 5rem;
+  color: #FFFFFF;
+  text-align: center;
+  border: 0.2rem solid rgba(255, 255, 255, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition: all ease-in .25s;
+  transition: all ease-in .25s;
+}
+
+.slider-btn .icon, .news-btn .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slider-btn:hover, .news-btn:hover {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.2rem solid #0F6938;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #0F6938;
+}
+
+.news-btn {
+  background-color: #62AC3B;
+  min-width: 2rem;
+  width: 30%;
+  max-width: 4rem;
+}
+
+.news-btn:hover {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.2rem solid #62AC3B;
+  background-color: rgba(236, 236, 236, 0.1);
+  color: #62AC3B;
+}
+
 body, html {
   scroll-behavior: smooth;
   height: 100%;
@@ -28,28 +85,6 @@ img {
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.slider-btn {
-  background: none;
-  border: none;
-  font-family: 'Poppins';
-  font-size: clamp(1.5rem, 10vmin, 1.4rem);
-  color: #FFFFFF;
-  background-color: #0F6938;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  line-height: 0;
-  text-align: center;
-  padding: clamp(3px, 0.9rem, 5vw);
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.slider-btn:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
 }
 
 .hero-banner {
@@ -650,12 +685,17 @@ img {
   border-radius: 6px 6px 0 0;
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/5;
   max-width: 200px;
 }
 
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card p {
   margin: 0;
+}
+
+.administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card .aac-image {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card .aac-person {
@@ -733,35 +773,6 @@ img {
   transition: all .5s ease-in-out;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.news-and-events-container article .article-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  max-width: 3.5rem;
-  max-height: 3.5rem;
-  background: none;
-  border: none;
-  font-family: 'Poppins';
-  font-size: clamp(1.5rem, 10vmin, 1.4rem);
-  color: #FFFFFF;
-  background-color: #62AC3B;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  line-height: 0;
-  text-align: center;
-  padding: clamp(1px, 0.5rem, 5vw);
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  cursor: pointer;
-  vertical-align: top;
 }
 
 .news-and-events-container article .article-text {
@@ -974,7 +985,7 @@ img {
     max-width: 40%;
     margin-left: 5vmax;
   }
-  .why-pihss .why-pihss-container .slider-btn {
+  .why-pihss .why-pihss-container .slider-btn, .why-pihss .why-pihss-container .news-btn {
     display: none;
   }
   .why-pihss .why-pihss-container .why-pihss-selection {
