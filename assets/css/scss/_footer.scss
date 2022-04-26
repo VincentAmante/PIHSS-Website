@@ -70,13 +70,15 @@ footer {
             display: flex;
             align-items: center;
             margin-block: .5em;
-            padding: .8em 0em;
 
             * {
                 margin: 1vmin;
             }
 
             a {
+                height: 10%;
+                width: 10%;
+                padding: .8em 0em;
                 text-decoration: none;
                 color: $primary-secondary;
                 font-weight: 300;

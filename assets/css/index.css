@@ -110,11 +110,13 @@ img {
 .hero-banner .hero-banner-container .hero-school-name h2 {
   margin: 0;
   font-weight: bold;
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
 }
 
 .hero-banner .hero-banner-container .hero-school-name p {
   margin: 0;
-  font-weight: lighter;
+  font-weight: 100;
+  font-size: clamp(0.8rem, 1.3vw, 1.5rem);
 }
 
 .hero-banner .hero-banner-container .hero-school-info {
@@ -138,14 +140,14 @@ img {
 .hero-banner .hero-banner-container .hero-school-info h2 {
   margin: 0;
   line-height: 1;
-  font-size: 1.5rem;
   font-weight: 100;
 }
 
 .hero-banner .hero-banner-container .hero-school-info p {
-  margin: 0;
+  margin-top: .7em;
   line-height: 1;
-  font-size: .9rem;
+  max-width: 70%;
+  font-size: clamp(0.9rem, 1.25vw, 2rem);
   font-family: "Raleway", sans-serif;
 }
 
@@ -325,11 +327,8 @@ img {
   position: relative;
 }
 
-.more-info .more-info-slideshow .selection .slider .card-wrapper .card-anchor {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: -50vh;
+.more-info .more-info-slideshow .selection .slider .card-wrapper:last-of-type {
+  margin-right: 100%;
 }
 
 .more-info .more-info-slideshow .selection .slider .card {
@@ -347,6 +346,13 @@ img {
   cursor: pointer;
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
+}
+
+.more-info .more-info-slideshow .selection .slider .card .card-anchor {
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: -50vh;
 }
 
 .more-info .more-info-slideshow .selection .slider .card:hover .card-image img {
@@ -663,7 +669,8 @@ img {
 }
 
 .news-and-events-container {
-  padding: 15vh 10vw;
+  padding-block: 15vh;
+  max-width: 1080px;
 }
 
 .news-and-events-container .nac-cards {
@@ -680,8 +687,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-direction: row;
-      flex-direction: row;
 }
 
 .news-and-events-container .nac-events {
@@ -700,11 +705,8 @@ img {
           align-items: center;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 2em;
-          column-gap: 2em;
-  margin-right: 2em;
+  margin-bottom: 2em;
+  row-gap: 2em;
 }
 
 .news-and-events-container article {
@@ -994,6 +996,20 @@ img {
   .why-pihss .why-pihss-container .why-pihss-selection .why-pihss-slider .card-wrapper:nth-child(2n) {
     -webkit-transform: translateY(3vw);
             transform: translateY(3vw);
+  }
+  .news-and-events-container .nac-cards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .news-and-events-container .nac-events {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 2em;
+            column-gap: 2em;
+    margin-bottom: 0em;
+    margin-right: 2em;
   }
 }
 /*# sourceMappingURL=index.css.map */

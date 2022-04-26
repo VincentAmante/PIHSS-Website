@@ -21,4 +21,14 @@ main, section {
   margin-bottom: 5vmax;
   width: 100%;
 }
+
+.h1-border {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.h1-border span {
+  padding: .00vw 5ch;
+  border-bottom: 0.5rem solid #0F6938;
+}
 /*# sourceMappingURL=news-article.css.map */

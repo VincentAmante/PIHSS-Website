@@ -1007,7 +1007,6 @@ footer ul li {
       -ms-flex-align: center;
           align-items: center;
   margin-block: .5em;
-  padding: .8em 0em;
 }
 
 footer ul li * {
@@ -1015,6 +1014,9 @@ footer ul li * {
 }
 
 footer ul li a {
+  height: 10%;
+  width: 10%;
+  padding: .8em 0em;
   text-decoration: none;
   color: #FFFFFF;
   font-weight: 300;

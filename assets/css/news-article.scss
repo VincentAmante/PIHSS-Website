@@ -11,3 +11,11 @@ main, section {
     margin-bottom: 5vmax;
     width: 100%;
 }
+
+.h1-border {
+    align-self: flex-start;
+    span {
+        padding: .00vw 5ch;
+        border-bottom: .5rem solid $dark;
+    }
+}
