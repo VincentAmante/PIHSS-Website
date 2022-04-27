@@ -31,6 +31,8 @@ const addActive = (activeSection) => {
   document.querySelector("#" + activeSection + "-header").classList.add("active");
   document.querySelector("#" + activeSection + "-overview").classList.add("active");
   document.querySelector("#" + activeSection).classList.add("active");
+  
+  // document.querySelector("#btn-" + activeSection).classList.add("selected");
 };
 
 /* EVENT LISTENERS */

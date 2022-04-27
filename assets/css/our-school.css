@@ -36,7 +36,9 @@ h3 {
 }
 
 /* Tab Styling */
-.tab-header, .tab-overview, .tab-content {
+.tab-header,
+.tab-overview,
+.tab-content {
   display: none;
 }
 
@@ -50,13 +52,9 @@ h3 {
       align-self: flex-start;
 }
 
-.our-school-overview .h1-border span {
-  padding: 0vw 5ch;
-  border-bottom: 0.5rem solid #0F6938;
-}
-
 .our-school-overview .internal-nav {
   padding: 2em 0em;
+  min-width: 18vw;
   display: hidden;
 }
 
@@ -276,29 +274,11 @@ h3 {
   .our-school-overview .content-text {
     max-width: 60%;
   }
-  .our-school-overview .internal-nav {
-    z-index: 2;
-    right: 5em;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
-    background-color: white;
-  }
   .our-school-overview .internal-nav div {
-    border-left: 0.3rem solid #0F6938;
     padding-left: 1em;
-  }
-  .our-school-overview .internal-nav h2 {
-    font-weight: 500;
-  }
-  .our-school-overview .internal-nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  .our-school-overview .internal-nav ul li {
-    padding-bottom: 1ch;
-  }
-  .our-school-overview .internal-nav ul li a {
-    text-decoration: none;
+    border-left: 0.3rem solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
   /* Facilities */
   #facilities .facilities-list > li {

@@ -37,7 +37,9 @@ h3 {
 }
 
 /* Tab Styling */
-.tab-header, .tab-overview, .tab-content {
+.tab-header,
+.tab-overview,
+.tab-content {
   display: none;
 }
 
@@ -50,14 +52,15 @@ h3 {
   .h1-border {
     align-self: flex-start;
 
-    span {
-      padding: 0vw 5ch;
-      border-bottom: 0.5rem solid $dark;
-    }
+    // span {
+    //   padding: 0vw 5ch;
+    //   border-bottom: 0.5rem solid $dark;
+    // }
   }
 
   .internal-nav {
     padding: 2em 0em;
+    min-width: 18vw;
     display: hidden;
   }
 }
@@ -113,7 +116,6 @@ h3 {
 
 /* Co-Curricular Activities */
 #co-curricular {
-
   .co-curricular-list {
     @include flex-centered;
 
@@ -195,7 +197,6 @@ h3 {
 
 /* Student Code of Behaviour */
 #student-code {
-
   p,
   ol,
   ul {
@@ -232,33 +233,11 @@ h3 {
     }
 
     .internal-nav {
-      z-index: 2;
-      right: 5em;
-      align-self: flex-start;
-
-      background-color: white;
-
-      // TODO: Change bg into linear gradient
       div {
-        border-left: 0.3rem solid $dark;
         padding-left: 1em;
-      }
-
-      h2 {
-        font-weight: 500;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-          padding-bottom: 1ch;
-
-          a {
-            text-decoration: none;
-          }
-        }
+        border-left: 0.3rem solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient($dark, #62ac3b);
       }
     }
   }

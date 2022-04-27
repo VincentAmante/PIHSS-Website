@@ -8,6 +8,7 @@
 @import "./scss/_footer.scss";
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Base Styling */
 body, html {
     min-width: fit-content;
     box-sizing: border-box;
@@ -32,6 +33,7 @@ ul {
     list-style: none;
 }
 
+/* Subpage Banner */
 .subpage-banner {
     background-color: rgb(190, 190, 190); // Adjust color later
     height: 40vh;
@@ -46,7 +48,7 @@ ul {
       }
   }
   
-
+/* Navigation Breadcrumbs */
 .nav-breadcrumbs {
     align-self: flex-start;
     width: 100%;
@@ -68,5 +70,60 @@ ul {
       padding: 1vw;
       color: $font-colour;
       content: ">>\00a0";
+    }
+  }
+
+  /* Heading Border */
+  .h1-border {
+    span {
+      padding: 0vw 5ch;
+      border-bottom: 0.5rem solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(to right, $dark , #62AC3B);
+    }
+  }
+
+  /* Internal Navigation */
+  .internal-nav {
+    z-index: 2;
+    align-self: flex-start;
+
+    background-color: white;
+
+    h2 {
+      font-weight: 500;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding-bottom: 1ch;
+
+        a {
+          text-decoration: none;
+
+          &:link, &:visited {
+            color: $font-colour;
+          }
+
+          &:hover, &:active, &:focus {
+            color: $primary-main;
+            font-weight:500;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-tablet-portrait) {
+    .internal-nav {
+      div {
+        padding-left: 1em;
+        border-left: 0.3rem solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient($dark, #62ac3b);
+      }
     }
   }
