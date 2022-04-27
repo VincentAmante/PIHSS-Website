@@ -119,10 +119,11 @@
             <div class="more-info-slideshow">
                 <img class="more-info-comma" src="./assets/icons/comma.svg" alt="">
                 <div class="selection">
-                    <div class="slider">
-                        <div class="card-wrapper">
-                            <div class="card-anchor"  id="mi-slider-about-us"></div>
+                    <div class="slider" id="more-info-selection">
+                        <div class="card-wrapper" >
                             <a class="card" href="./about-us.html">
+                                
+                            <div class="card-anchor"  id="mi-slider-about-us"></div>
                                 <div class="card-image">
                                     <div>
                                         <img src="./assets/images/homepage/random-image.png" alt="" loading="lazy">
@@ -134,8 +135,9 @@
                             </a>
                         </div>
                         <div class="card-wrapper">
-                            <div class="card-anchor" id="mi-slider-mission-vision"></div>
                             <a class="card" href="./about-us.html">
+                                
+                            <div class="card-anchor" id="mi-slider-mission-vision"></div>
                                 <div class="card-image">
                                     <div>
                                         <img src="./assets/images/homepage/random-image.png" alt="" loading="lazy">
@@ -159,13 +161,26 @@
                                 </div>
                             </a>
                         </div>
+                        <div class="card-wrapper">
+                            <a class="card" href="./about-us.html">
+                            <div class="card-anchor" id="mi-slider-registration"></div>
+                                <div class="card-image">
+                                    <div>
+                                        <img src="./assets/images/homepage/random-image.png" alt="" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="card-text">
+                                    <span>Hi Frankie</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     <!-- TODO: Reposition where the anchor tags go so the clicks are smooth -->
                     <div class="paginator">
-                        <a class="paginator-item" href="#mi-slider-about-us"></a>
-                        <a class="paginator-item" href="#mi-slider-mission-vision"></a>
-                        <a class="paginator-item" href="#mi-slider-registration"></a>
-                        <a class="paginator-item" href=""></a>
+                        <a id="paginator-1" class="paginator-item" ></a>
+                        <a id="paginator-2" class="paginator-item"></a>
+                        <a id="paginator-3" class="paginator-item"></a>
+                        <a id="paginator-4" class="paginator-item" ></a>
                     </div>
                 </div>
             </div>
@@ -187,7 +202,13 @@
                 </div>
                 <!-- TODO: Have a better name for this -->
                 <div class="why-pihss-selection">
-                    <button class="slider-btn" id="wp-btn-left" type="button">&lt;</button>
+                    <button class="slider-btn" id="wp-btn-left" type="button">
+                        <div class="icon">
+                            <svg style="width:100%;height:100%" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                            </svg>
+                        </div>
+                    </button>
                     <div class="why-pihss-slider" id="why-pihss-slider">
                         <div class="card-wrapper">
                             <div class="card">
@@ -226,7 +247,11 @@
                             </div>
                         </div>
                     </div>
-                    <button class="slider-btn" id="wp-btn-right" type="button">></button>
+                    <button class="slider-btn" id="wp-btn-right" type="button">
+                        <svg style="width:100%;height:100%" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -235,7 +260,13 @@
             <div class="aac-affairs-container">
                 <h1>Administrative Affairs Committee (AAC)</h1>
                 <div class="staff">
-                    <button class="slider-btn" id="aac-btn-left" type="button">&lt;</button>
+                    <button class="slider-btn" id="aac-btn-left" type="button">
+                        <div class="icon">
+                            <svg style="width:100%;height:100%" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                            </svg>
+                        </div>
+                    </button>
                     <div class="aac-slider-wrapper">
                         <ul class="aac-slider" id="aac-slider">
                             <li id="aac-1">
@@ -270,27 +301,84 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="slider-btn" id="aac-btn-right" type="button">></button>
+                    <button class="slider-btn" id="aac-btn-right" type="button">
+                        <svg style="width:100%;height:100%" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                        </svg>
+                    </button>
                 </div>
                 <!-- I have a feeling this would require images, so I added it -->
             </div>
         </section>
         
         <!-- TODO: Figure out how this will operate -->
-        <!-- <div id="news-and-events">
+        <div id="news-and-events">
             <div class="news-and-events-container">
                 <h1>News and Events</h1>
                 <div class="nac-cards">
-                    <div class="nac-events">    
-                        <div class="card"><img src="./assets/images/homepage/random-image.png" alt=""></div>
-                        <div class="card"><img src="./assets/images/homepage/random-image.png" alt=""></div>
+                    <div class="nac-events">
+                        <article>
+                            <a href="./articles/news-article.html">
+                                <div class="article-image">
+                                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
+                                </div>
+                                <div class="article-content">
+                                    <div class="content-wrapper">
+                                        <div class="article-text">
+                                            <p>Lorem ipsum dolor sit.</p>
+                                            <p>Available Now</p>
+                                        </div>
+                                        <div class="news-btn">
+                                            <svg style="width:100%;height:100%" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="./articles/news-article.html">
+                                <div class="article-image">
+                                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
+                                </div>
+                                <div class="article-content">
+                                    <div class="content-wrapper">
+                                        <div class="article-text">
+                                            <p>Lorem ipsum dolor sit.</p>
+                                            <p>Available Now</p>
+                                        </div>
+                                        <div class="news-btn">
+                                            <svg style="width:100%;height:100%" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
                     </div>
                     <div class="nac-upcoming-events">
-                        <div class="card">Sample</div>
+                        <article>
+                            <div class="article-image">
+                                <img src="./assets/images/homepage/random-image-landscape.png" alt="">
+                            </div>
+                            <div class="article-content">
+                                <div class="content-wrapper">
+                                    <div class="icon">
+                                        <svg style="width:100%;height:100%" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3,4.9 3,6V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V6A2,2 0 0,0 19,4M19,20H5V10H19V20M19,8H5V6H19V8M12,13H17V18H12V13Z" />
+                                        </svg>
+                                    </div>
+                                    <h4>Upcoming Events</h4>
+                                    <a href="./articles/news-article.html" class="btn">View Details</a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </main>
     <footer>
         <!-- TODO: Finish this -->
@@ -309,7 +397,7 @@
                     <!-- TODO: Get contacts -->
                     <!-- TODO: Change to svgs -->
                     <li> <img src="./assets/icons/footer-location.png" alt=""> Al Ghubaiba Sharjah, UAE</li>
-                    <li> <img src="./assets/icons/footer-telephone.png" alt=""><a href="tel:+">0000000</a></li>
+                    <li> <img src="./assets/icons/footer-telephone.png" alt=""><a href="tel:+">06-5670700 | 06-5670464</a></li>
                     <li> <img src="./assets/icons/footer-email.png" alt=""><a href="mailto:info@pihss-shj.com">info@pihss-shj.com</a></li>
                 </ul>
             </div>
@@ -319,17 +407,17 @@
             <div class="footer-nav-admissions">
                 <h2>Admissions</h2>
                 <ul>
-                    <li><a href="">Requirements</a></li>
-                    <li><a href="">Fee Structure</a></li>
-                    <li><a href="">Registration</a></li>
+                    <li><a href="./admissions.html">Requirements</a></li>
+                    <li><a href="./admissions.html">Fee Structure</a></li>
+                    <li><a href="./admissions.html">Registration</a></li>
                 </ul>
             </div>
             <div class="footer-nav-quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="">Contact Us</a></li>
-                    <li><a href="">Co-Curricular</a></li>
-                    <li><a href="">Student Code of Behaviour</a></li>
+                    <li><a href="./contact-us.html">Contact Us</a></li>
+                    <li><a href="./about-us.html">Co-Curricular</a></li>
+                    <li><a href="./about-us.html">Student Code of Behaviour</a></li>
                     <li><a href="">School Leaving Certificate</a></li>
                 </ul>
             </div>

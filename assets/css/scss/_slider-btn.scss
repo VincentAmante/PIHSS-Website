@@ -1,0 +1,50 @@
+@import "./_variables.scss";
+
+$colour-news-btn: #62AC3B;
+    .slider-btn {
+            border-radius: 50%;
+            background-color: $dark;
+
+            min-width: 3rem;
+            width: 40%;
+            max-width: 5rem;
+
+            color: $primary-secondary;
+            text-align: center;
+            
+            border: .2rem solid rgba(255, 255, 255, 0);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all ease-in .25s;
+
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &:hover {
+                box-sizing: border-box;
+                border: .2rem solid $dark;
+                background-color: rgba(0, 0, 0, 0.1);
+                color: $dark;
+            }
+    }
+
+    .news-btn {
+        @extend .slider-btn;
+        background-color: $colour-news-btn;
+        min-width: 2rem;
+        width: 30%;
+        max-width: 4rem;
+
+        &:hover {
+            box-sizing: border-box;
+            border: .2rem solid $colour-news-btn;
+            background-color: rgba(236, 236, 236, 0.1);
+            color: $colour-news-btn;
+        }
+    }
