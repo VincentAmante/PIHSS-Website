@@ -1,9 +1,72 @@
-body, html {
+body,
+html {
   scroll-behavior: smooth;
   height: 100%;
 }
 
-main, section {
+main,
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+  width: 100%;
+}
+
+section {
+  padding: 2vw 5vw;
+}
+
+h1, h2, h3 {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+h3 {
+  margin-bottom: 1em;
+}
+
+/* Tab Styling */
+.tab-header, .tab-overview, .tab-content {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+/* Our School Overview */
+.our-school-overview .h1-border {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.our-school-overview .h1-border span {
+  padding: 0vw 5ch;
+  border-bottom: 0.5rem solid #0F6938;
+}
+
+.our-school-overview .internal-nav {
+  padding: 2em 0em;
+  display: hidden;
+}
+
+/* Facilities */
+#facilities {
+  padding: 0;
+}
+
+#facilities .facilities-list > li {
+  padding: 5vw 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,136 +80,291 @@ main, section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0;
-  margin-bottom: 5vmax;
-  width: 100%;
+  background-color: #CFECC1;
 }
 
-img {
-  display: block;
-  max-width: 100%;
+#facilities .facilities-list > li img {
+  width: 100%;
+  height: 60vh;
+  border-radius: 1.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-h1, h2 {
-  font-family: "EB Garamond", serif;
-  font-weight: 500;
-}
-
-h2 {
-  font-weight: 700;
-  margin-bottom: 1em;
-}
-
-.facilities-overview {
-  padding: 5vw;
-}
-
-.facilities-overview .h1-border span {
-  padding: .00vw 5ch;
-  border-bottom: 0.5rem solid #0F6938;
-}
-
-.facilities-overview .internal-nav {
-  display: hidden;
-}
-
-.facilities .facilities-list > li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background-color: #CFECC1;
-  margin-bottom: 20em;
-}
-
-.facilities .facilities-list img {
-  border-radius: 1.5rem;
-  margin-inline: 5em;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-}
-
-.facilities .facilities-list .content {
-  max-width: 30%;
-  padding: 1em 0em;
-}
-
-.facilities .facilities-list .content .text {
+#facilities .facilities-list > li .content {
+  padding: 2em 0;
   text-align: left;
 }
 
-.facilities .facilities-list .content .text ul li {
+#facilities .facilities-list > li .content ul li {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
-.facilities .facilities-list .content .text ul {
-  list-style-type: '- ';
+#facilities .facilities-list > li .content ul {
+  list-style-type: "- ";
   padding-left: 1em;
 }
 
-.facilities .facilities-list .content .text ol {
+#facilities .facilities-list > li .content ol {
   list-style-type: decimal;
   padding-left: 2em;
 }
 
-.facilities .facilities-list .content .text p, .facilities .facilities-list .content .text h3 {
+#facilities .facilities-list > li .content p,
+#facilities .facilities-list > li .content h3 {
   margin-bottom: 1em;
 }
 
-.facilities .facilities-list > li:nth-of-type(2n) {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+#facilities .facilities-list > li:nth-of-type(2n) {
+  background-color: white;
+}
+
+/* Co-Curricular Activities */
+#co-curricular .co-curricular-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#co-curricular .co-curricular-list .activity-container {
+  position: relative;
+  background-color: rgba(250, 214, 98, 0.15);
+  border-radius: 1em;
+  border: 1px solid rgba(56, 56, 56, 0.4);
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  margin-bottom: 5%;
+  -webkit-box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+#co-curricular .co-curricular-list .activity-container .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#co-curricular .co-curricular-list .activity-container .content .decorated {
+  display: block;
+  overflow: hidden;
+}
+
+#co-curricular .co-curricular-list .activity-container .content .decorated > span {
+  position: relative;
+  display: inline-block;
+}
+
+#co-curricular .co-curricular-list .activity-container .content .decorated > span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  border-bottom: 2px solid;
+  width: 100vw;
+  margin: 0 20px;
+  left: 100%;
+}
+
+#co-curricular .co-curricular-list .activity-container .content .activity-images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  gap: 1em;
+  height: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+#co-curricular .co-curricular-list .activity-container .content .activity-images img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  grid-row: span 2;
+}
+
+#co-curricular .co-curricular-list .activity-container .content .activity-images > img:nth-of-type(2) {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / span 3;
+}
+
+#co-curricular .co-curricular-list .activity-container .content button {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 4;
+  grid-row: 4;
+  padding: 10px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid rgba(56, 56, 56, 0.4);
+  border-radius: 4px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+/* Student Code of Behaviour */
+#student-code p,
+#student-code ol,
+#student-code ul {
+  padding-bottom: 1.5em;
+}
+
+#student-code ol,
+#student-code ul {
+  padding-left: 2.5em;
+}
+
+#student-code ul {
+  list-style-type: disc;
+}
+
+#student-code h3 {
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
 }
 
 @media screen and (min-width: 768px) {
-  .facilities-overview {
+  .our-school-overview {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .our-school-overview .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .facilities-overview .content {
+  .our-school-overview .content-text {
     max-width: 60%;
   }
-  .facilities-overview .internal-nav {
+  .our-school-overview .internal-nav {
     z-index: 2;
     right: 5em;
     -ms-flex-item-align: start;
         align-self: flex-start;
     background-color: white;
   }
-  .facilities-overview .internal-nav div {
+  .our-school-overview .internal-nav div {
     border-left: 0.3rem solid #0F6938;
     padding-left: 1em;
   }
-  .facilities-overview .internal-nav h2 {
+  .our-school-overview .internal-nav h2 {
     font-weight: 500;
   }
-  .facilities-overview .internal-nav ul {
+  .our-school-overview .internal-nav ul {
     list-style: none;
     padding: 0;
   }
-  .facilities-overview .internal-nav ul li {
+  .our-school-overview .internal-nav ul li {
     padding-bottom: 1ch;
   }
-  .facilities-overview .internal-nav ul li a {
+  .our-school-overview .internal-nav ul li a {
     text-decoration: none;
+  }
+  /* Facilities */
+  #facilities .facilities-list > li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #facilities .facilities-list > li img {
+    width: 45vw;
+  }
+  #facilities .facilities-list > li .content {
+    max-width: 40%;
+  }
+  #facilities .facilities-list li:nth-of-type(2n) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  /* Co-curricular Activities */
+  #co-curricular .co-curricular-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #co-curricular .co-curricular-list .activity-container {
+    width: 47%;
+    padding-bottom: 47%;
+  }
+  #co-curricular .co-curricular-list .activity-container:nth-of-type(2n) {
+    margin-left: 5%;
+  }
+  /* Student Code of Behaviour */
+  #student-code {
+    max-width: 65%;
+    margin-top: -8em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* Facilities */
+  #facilities .facilities-list > li {
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(20%, #CFECC1), color-stop(80%, transparent));
+    background: linear-gradient(transparent 0% 20%, #CFECC1 20% 80%, transparent 80% 100%);
+  }
+  #facilities .facilities-list > li:last-child {
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(10%, #CFECC1), color-stop(90%, transparent));
+    background: linear-gradient(transparent 0% 10%, #CFECC1 10% 90%, transparent 90% 100%);
+  }
+  /* Co-curricular Activities */
+  #co-curricular .co-curricular-list .activity-container .content button {
+    width: 75%;
+  }
+  /* Student Code of Behaviour */
+  #student-code {
+    max-width: 75%;
   }
 }
 /*# sourceMappingURL=our-school.css.map */

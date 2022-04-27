@@ -1,185 +1,406 @@
+<!-- 
+    OUR SCHOOL
+    - Confirm what method to use for short bgs
+    - Confirm method for switching content
+
+    BUGS
+    - Not sure if it's just on my end but sometimes the internal nav links can't be clicked on (particularly on desktop view)
+    
+    ? Are captions required for images in lightbox?
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our School - Pakistan Islamia Higher Secondary School</title>
-    
+
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/our-school.css" />
-</head>
-<body>
-    <!-- TODO: Figure out layout of Our School page -->
+  </head>
+  <body>
     <header class="header" id="header">
-        <div class="top-header" id="top-header">
-            <a class="logo-container" href="./index.html">    
-                <div class="header-logo">
-                    <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
-                </div>
-                <div class="header-title">
-                    <h1>Pakistan Islamia</h1>
-                    <h2>Higher Secondary School</h2>
-                </div>
-            </a>
-        </div>
-        <nav class="nav" id="nav">        
-            <!-- TODO: figure out implementation of sub-pages -->
-            <ul class="nav-links">
-                <li class="nav-element"><a href="index.html">Home</a></li>
-                <li class="nav-element"><a href="about-us.html">About Us</a></li>
-                <li class="nav-element nav-sub-list"><a href="our-school.html">Our School</a>
-                    <ul>
-                        <li><a href="">Facilities</a></li>
-                        <li><a href="">Co-Curricular Activities</a></li>
-                        <li><a href="">Student Code of Behaviour</a></li>
-                    </ul>
-                </li>
-                <li class="nav-element"><a href="admissions.html">Admissions</a></li>
-                <li class="nav-element"><a href="gallery.html">Gallery</a></li>
-                <li class="nav-element"><a href="">Login</a></li>
-                <li class="nav-element"><a href="contact-us.html">Contact Us</a></li>
+      <div class="top-header" id="top-header">
+        <a class="logo-container" href="./index.html">
+          <div class="header-logo">
+            <img
+              src="./assets/images/global/logo_main.png"
+              alt="Logo of the school"
+            />
+          </div>
+          <div class="header-title">
+            <h1>Pakistan Islamia</h1>
+            <h2>Higher Secondary School</h2>
+          </div>
+        </a>
+      </div>
+      <nav class="nav" id="nav">
+        <!-- TODO: figure out implementation of sub-pages -->
+        <ul class="nav-links">
+          <li class="nav-element"><a href="index.html">Home</a></li>
+          <li class="nav-element"><a href="about-us.html">About Us</a></li>
+          <li class="nav-element nav-sub-list">
+            <a href="our-school.html">Our School</a>
+            <ul>
+              <li><a href="">Facilities</a></li>
+              <li><a href="">Co-Curricular Activities</a></li>
+              <li><a href="">Student Code of Behaviour</a></li>
             </ul>
-        </nav>
-        <!-- Burger -->
-        <div class="burger burger-alone" id="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+          </li>
+          <li class="nav-element"><a href="admissions.html">Admissions</a></li>
+          <li class="nav-element"><a href="gallery.html">Gallery</a></li>
+          <li class="nav-element"><a href="">Login</a></li>
+          <li class="nav-element"><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <!-- Burger -->
+      <div class="burger burger-alone" id="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </header>
     <main>
+      <!-- Banner -->
+      <section id="our-school-banner" class="subpage-banner">
+        <h1>Our School</h1>
+      </section>
 
-        <section id="admissions-banner" class="admissions-banner">
-            <h1>Admissions</h1>
-        </section>
-        <section class="facilities-overview">
+      <!-- Overview -->
+      <section class="our-school-overview">
+        <div id="nav-breadcrumbs" class="nav-breadcrumbs">
+          <ul>
+            <li><a href="./index.html">HOME</a></li>
+            <li>
+              <a href="javascript:window.location.reload(true)">OUR SCHOOL</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="content-text">
+            <div class="h1-border">
+              <span></span>
+
+              <!-- Headers based on which tab is selected -->
+              <h1 class="active tab-header" id="facilities-header">Facilities</h1>
+              <h1 class="tab-header" id="co-curricular-header">Co-Curricular Activities</h1>
+              <h1 class="tab-header" id="student-code-header">Student Code of Behavior</h1>
+            </div>
+
+            <!-- Overview based on which tab is selected -->
+            <p class="active tab-overview" id="facilities-overview">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Molestiae mollitia accusamus delectus velit recusandae adipisci
+              possimus voluptatem, ipsam laboriosam animi odit similique
+              reprehenderit natus unde a eos? Nemo, dolorem sapiente!
+            </p>
+            <p class="tab-overview" id="co-curricular-overview">
+              Co-Curricular activities are an essential part of education
+              process. It enriches and broadens student’s mind and forms an
+              integral part of the curriculum. The school is implementing
+              activities/interactive based teaching strategies. It helps to
+              develop an all-round personality of the students to face the
+              challenges of the fast changing world. Experience and accolades
+              gained through many of these activities help them during
+              internships and other work programs.
+            </p>
+            <p class="tab-overview" id="student-code-overview"></p>
+          </div>
+
+          <div class="internal-nav">
+            <div>
+              <h2>Our School</h2>
+              <ul>
+                <li><a id="btn-facilities" class="tab-button" href="#facilities">Facilities</a></li>
+                <li><a id="btn-co-curricular" class="tab-button" href="#co-curricular">Co-Curricular Activities</a></li>
+                <li><a id="btn-student-code" class="tab-button" href="#student-code">Student Code of Behaviour</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Facilities -->
+      <section class="active tab-content" id="facilities">
+        <ul class="facilities-list">
+          <li>
             <div class="content">
-                <div class="h1-border">
-                    <span></span>
-                    <h1>Facilities</h1>
-                </div>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae mollitia accusamus delectus velit recusandae adipisci possimus voluptatem, ipsam laboriosam animi odit similique reprehenderit natus unde a eos? Nemo, dolorem sapiente!
-                </p>
+              <h2>Auditorium</h2>
+              <p>
+                Commodious auditorium that can house more than 500 people;
+                complete with a well-equipped and fully designed audio-visual
+                system to showcase the students’ diverse talents
+              </p>
             </div>
-            <div class="internal-nav">
-                <div>
-                    <h2>Our School</h2>
-                    <ul>
-                        <li><a href="#admissions">Facilities</a></li>
-                        <li><a href="#fee-structure">Co-Curricular Activities</a></li>
-                        <li><a href="">Student Code of Behaviour</a></li>
-                    </ul>
-                </div>
+            <img src="./assets/images/our-school/auditorium-1.png" alt="" />
+          </li>
+          <li>
+            <div class="content">
+              <h2>Clinic</h2>
+              <p>
+                Two fully-equipped clinics with trained and experienced nurses
+                guided by a qualified doctor to provide first-aid and basic
+                health facilities to students. The clinic staff work
+                consistently with up-to-date programmes from the UAE Ministry of
+                Health.
+              </p>
             </div>
-        </section>
+            <img src="./assets/images/our-school/clinic-1.png" alt="" />
+          </li>
+          <li>
+            <div class="content">
+              <h2>Junior's Activities</h2>
+              <p>
+                Activity room with space to accommodate fun-filled and
+                curiosity-centered learning. There is an art corner, audio
+                visual area, play corner, and fairytale corner for the student
+                to wander and hone their skills through interactive play and
+                hands-on activities.
+              </p>
+            </div>
+            <img
+              src="./assets/images/our-school/junior-activities-1.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <div class="content">
+              <h2>Laboratories</h2>
+              <p>
+                Spacious and well-equipped Biology, Chemistry, Computer &
+                Physics laboratories in the boys’ and girls’ sections, and a
+                Home Economics laboratory in the girls’ section - all supervised
+                by highly qualified science teachers and laboratory assistants.
+              </p>
+            </div>
+            <img src="./assets/images/our-school/laboratories-1.png" alt="" />
+          </li>
+          <li>
+            <div class="content">
+              <h2>Libraries</h2>
+              <p>
+                A well-stocked library that boasts roughly 10,000 books on
+                varied subjects, managed by qualified librarians. The school
+                often sends groups of teachers to book fairs and add new books
+                to the library’s collection to provide students with an
+                assortment of reading choices.
+              </p>
+            </div>
+            <img src="./assets/images/our-school/libraries-1.png" alt="" />
+          </li>
+          <li>
+            <div class="content">
+              <h2>Sports</h2>
+              <p>
+                Numerous sports facilities to help students learn and develop
+                the concept of “teamwork” as young athletes. There are
+                facilities for the boys’ and girls’ sections for Cricket,
+                Football, Basketball, Badminton, and Volleyball.
+              </p>
+            </div>
+            <img src="./assets/images/our-school/sports-1.png" alt="" />
+          </li>
+          <li>
+            <div class="content">
+              <h2>Transport</h2>
+              <p>
+                The school’s own fleet of air-conditioned buses to provide safe
+                and secure transportation.
+              </p>
+              <h3>NOTE:</h3>
+              <ul>
+                <li>
+                  Parents should escort the students to and from the bus stop.
+                </li>
+                <li>
+                  Parents should preferably choose a bus stop where a group of
+                  students are available.
+                </li>
+                <li>
+                  Parents having any complaint against the school transport can
+                  contact the transport in charge.
+                </li>
+                <li>
+                  The students will not be permitted to avail the school
+                  transport services under the following circumstances:
+                  <ol>
+                    <li>
+                      Persistent misbehaviour with the staff or students in bus
+                    </li>
+                    <li>Being habitually late.</li>
+                    <li>
+                      Intentionally damaging the school bus and other fixtures.
+                    </li>
+                    <li>
+                      Activities that may endanger the students in the bus.
+                    </li>
+                    <li>Defaulting in bus fee payment.</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+            <img src="./assets/images/our-school/transport-1.png" alt="" />
+          </li>
+        </ul>
+      </section>
 
-        <section class="facilities" id="facilities">
-            <ul class="facilities-list">
-                <li>
-                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
-                    <div class="content">
-                        <h2>Auditorium</h2>
-                        <div class="text">
-                            <p>
-                                Commodious auditorium that can house more than 500 people; complete with a well-equipped and fully designed audio-visual system to showcase the students’ diverse talents
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
-                    <div class="content">
-                        <h2>Clinic</h2>
-                        <div class="text">
-                            <p>
-                                Two fully-equipped clinics with trained and experienced  nurses guided by a qualified doctor to provide first-aid and basic health facilities to students. The clinic staff work consistently with up-to-date programmes from the UAE Ministry of Health. 
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
-                    <div class="content">
-                        <h2>Junior's Activities</h2>
-                        <div class="text">
-                            <p>
-                                Activity room with space to accommodate fun-filled and curiosity-centered learning. There is an art corner, audio visual area, play corner, and fairytale corner for the student to wander and hone their skills through interactive play and hands-on activities. 
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
-                    <div class="content">
-                        <h2>Laboratories</h2>
-                        <div class="text">
-                            <p>
-                                Spacious and well-equipped Biology, Chemistry, Computer & Physics laboratories in the boys’ and girls’ sections, and a Home Economics laboratory in the girls’ section - all supervised by highly qualified science teachers and laboratory assistants.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
-                    <div class="content">
-                        <h2>Libraries</h2>
-                        <div class="text">
-                            <p>
-                                A well-stocked library that boasts roughly 10,000 books on varied subjects, managed by qualified librarians. The school often sends groups of teachers to book fairs and add new books to the library’s collection to provide students with an assortment of reading choices.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
-                    <div class="content">
-                        <h2>Sports</h2>
-                        <div class="text">
-                            <p>
-                                Numerous sports facilities to help students learn and develop the concept of “teamwork” as young athletes. There are facilities for the boys’ and girls’ sections for Cricket, Football, Basketball, Badminton, and Volleyball.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="./assets/images/homepage/random-image-landscape.png" alt="">
-                    <div class="content">
-                        <h2>Transport</h2>
-                        <div class="text">
-                            <p>
-                                The school’s own fleet of air-conditioned buses to provide safe and secure transportation.
-                            </p>
-                            <h3>NOTE:</h3>
-                            <ul>
-                                <li>
-                                    Parents should escort the students to and from the bus stop.
-                                </li>
-                                <li>
-                                    Parents should preferably choose a bus stop where a group of students are available.
-                                </li>
-                                <li>
-                                    Parents having any complaint against the school transport can contact the transport in charge.
-                                </li>
-                                <li>
-                                    The students will not be permitted to avail the school transport services under the following circumstances:
-                                    <ol>
-                                        <li>Persistent misbehaviour with the staff or students in bus</li>
-                                        <li>Being habitually late.</li>
-                                        <li>Intentionally damaging the school bus and other fixtures.</li>
-                                        <li>Activities that may endanger the students in the bus.</li>
-                                        <li>Defaulting in bus fee payment.</li>
-                                    </ol>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
+      <!-- Co-curricular Activities-->
+      <section class="tab-content" id="co-curricular">
+        <div class="co-curricular-list">
+          <div class="activity-container">
+            <div class="content">
+              <div class="activity-heading">
+                <h3 class="decorated"><span>Sandwich Competition</span></h3>
+              </div>
+
+              <div class="activity-images">
+                <img src="./assets/images/gallery/sandwich-c-1.png" alt="" />
+                <img src="./assets/images/gallery/sandwich-c-2.png" alt="" />
+                <img src="./assets/images/gallery/sandwich-c-3.png" alt="" />
+
+                <button>View More >></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-container">
+            <div class="content">
+              <div class="activity-heading">
+                <h3 class="decorated"><span>Salad Competition</span></h3>
+              </div>
+
+              <div class="activity-images">
+                <img src="./assets/images/gallery/salad-c-1.png" alt="" />
+                <img src="./assets/images/gallery/salad-c-2.png" alt="" />
+                <img src="./assets/images/gallery/salad-c-3.png" alt="" />
+
+                <button>View More >></button>
+              </div>
+            </div>
+          </div>
+          <div class="activity-container">
+            <div class="content">
+              <div class="activity-heading">
+                <h3 class="decorated"><span>Sandwich Competition</span></h3>
+              </div>
+
+              <div class="activity-images">
+                <img src="./assets/images/gallery/sandwich-c-1.png" alt="" />
+                <img src="./assets/images/gallery/sandwich-c-2.png" alt="" />
+                <img src="./assets/images/gallery/sandwich-c-3.png" alt="" />
+
+                <button>View More >></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-container">
+            <div class="content">
+              <div class="activity-heading">
+                <h3 class="decorated"><span>Salad Competition</span></h3>
+              </div>
+
+              <div class="activity-images">
+                <img src="./assets/images/gallery/salad-c-1.png" alt="" />
+                <img src="./assets/images/gallery/salad-c-2.png" alt="" />
+                <img src="./assets/images/gallery/salad-c-3.png" alt="" />
+
+                <button>View More >></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Student Code of Behaviour -->
+      <section class="tab-content" id="student-code">
+        <p>It is important for parents and students to understand and abide by the school rules and regulations in order to maintain the school discipline. Our emphasis is upon rewarding positive behaviour.</p>
+        <p>Parents and students are advised to carefully read and understand the following rules. Violation of these rules is likely to result in unpleasant consequences after consultation with the Ministry of Education.</p>
+
+        <ol>
+            <li>Failing to satisfy the requirements of local Ministry of Education / Federal Board of Intermediate and Secondary Education, Islamabad.</li>
+            <li>Any act involving moral turpitude.</li>
+            <li>Cheating / Stealing or making false statements or accusations.</li>
+            <li>Willfully and deliberately damaging the school property.</li>
+            <li>Rudeness to any member of the staff.</li>
+            <li>Smoking.</li>  
+            <li>Irregular attendance in classes or unpunctuality.</li>
+            <li>Parents should promptly report and explain absences and tardiness to the Vice Principal.</li>
+            <li>Unclean and shabby appearances.</li>
+            <li>Failure to pay the fee within the extended time limit.</li>
+            <li>Bringing fire arms / knives or any other lethal weapon to the school.</li>
+            <li>Bringing cosmetics / ornaments / toys which can cause disturbance.</li>
+            <li>Mobile phones / electronic gadgets.</li>
+            <li>Home work assigned must be completed in time and signed by the respective teachers.</li>
+            <li>Lost or damaged library books and materials should be replaced</li>
+        </ol>
+
+        <h3>Note:</h3>
+
+        <ul>
+            <li>Offences under sub para 1, 2, 3, 4, 5 will be dealt with as per rules of Ministry of Education without reference to the parents.</li>
+            <li>Any offence by a student against another student will be dealt with severity.</li>
+            <li>Non compliance of the above stated student code of behaviour shall be stipulated for one week’s suspension as per Ministry of Education rules.</li>
+            <li>Rustication shall always mean the loss of one academic year. The period of absence from the institution will, however, depend upon the time of the year when the penalty is imposed. The student may at the discretion of the Principal be permitted to rejoin the class in the same institute at the beginning of the next academic year.</li>
+            <li>A student expelled from the institute shall not be re-admitted.</li>
+        </ul>
+      </section>
     </main>
-    
+
+    <footer>
+      <!-- TODO: Finish this -->
+      <div class="footer-info">
+          <div class="footer-logo-container">    
+              <div class="footer-logo">
+                  <img src="./assets/images/global/logo_white.png" alt="Logo of the school">
+              </div>
+              <div class="footer-title">
+                  <h1>Pakistan Islamia</h1>
+                  <h2>Higher Secondary School</h2>
+              </div>
+          </div>
+          <div class="footer-contacts">
+              <ul>
+                  <!-- TODO: Get contacts -->
+                  <!-- TODO: Change to svgs -->
+                  <li> <img src="./assets/icons/footer-location.png" alt=""> Al Ghubaiba Sharjah, UAE</li>
+                  <li> <img src="./assets/icons/footer-telephone.png" alt=""><a href="tel:+">0000000</a></li>
+                  <li> <img src="./assets/icons/footer-email.png" alt=""><a href="mailto:info@pihss-shj.com">info@pihss-shj.com</a></li>
+              </ul>
+          </div>
+      </div>
+     
+      <div class="footer-nav">
+          <div class="footer-nav-admissions">
+              <h2>Admissions</h2>
+              <ul>
+                  <li><a href="">Requirements</a></li>
+                  <li><a href="">Fee Structure</a></li>
+                  <li><a href="">Registration</a></li>
+              </ul>
+          </div>
+          <div class="footer-nav-quick-links">
+              <h2>Quick Links</h2>
+              <ul>
+                  <li><a href="">Contact Us</a></li>
+                  <li><a href="">Co-Curricular</a></li>
+                  <li><a href="">Student Code of Behaviour</a></li>
+                  <li><a href="">School Leaving Certificate</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="footer-contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+  </footer>
+
     <script src="assets/js/global-scripts.js"></script>
-</body>
+    <script src="assets/js/our-school-scripts.js"></script>
+  </body>
 </html>
