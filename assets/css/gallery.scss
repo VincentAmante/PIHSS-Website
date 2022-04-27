@@ -30,37 +30,8 @@ h2 {
   margin-bottom: 1em;
 }
 
-/* Banner */
-.gallery-banner {
-  background-color: rgb(190, 190, 190); // Adjust color later
-  height: 40vh;
-  display: flex;
-  justify-content: flex-end;
-}
-
 /* Gallery Overview */
 .gallery-overview {
-  .nav-breadcrumbs {
-    padding: 1em 0;
-
-    li {
-      display: inline;
-
-      a {
-        text-decoration: none;
-        color: $font-colour;
-        font-weight: 600;
-        font-size: 0.8em;
-      }
-    }
-
-    li + li ::before {
-      padding: 1vw;
-      color: $font-colour;
-      content: ">>\00a0";
-    }
-  }
-
   .h1-border {
     align-self: flex-start;
 
@@ -100,7 +71,6 @@ h2 {
   height: 600px; // Adjust value later
   overflow-y: scroll;
   overflow-x: hidden;
-
 }
 
 .grid-item {
@@ -228,20 +198,22 @@ h2 {
         will-change: transform;
         object-fit: contain;
 
-        transform-origin: 0px 0px;
-        transform: scale(1) translate(0px, 0px);
+        // transform-origin: 0px 0px;
+        // transform: scale(1) translate(0px, 0px);
 
         // TODO: Figure out why this doesnt work
-        // &:active {
-        //   cursor: grabbing;
-        // }
+        &:active {
+          cursor: grabbing;
+          cursor: -moz-grabbing;
+          cursor: -webkit-grabbing;
+        }
 
         img {
           position: absolute;
           height: 100%;
           width: 100%;
           will-change: transform;
-          // transition: 0.4s ease-in-out;
+          transition: 0.4s ease-in-out;
           transform: scale(1);
           object-fit: contain;
         }

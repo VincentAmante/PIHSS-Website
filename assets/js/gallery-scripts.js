@@ -27,12 +27,14 @@ let changeZoom = 1;
 const showLightBox = () => {
   lightboxContainer.classList.add("active");
   document.querySelector("body").style.overflow = "hidden";
+  document.querySelector(".lightbox-slide").style.cursor = "grab";
   document.querySelector("#header").style.display = "none";
 };
 
 const hideLightBox = () => {
   lightboxContainer.classList.remove("active");
   document.querySelector("body").style.overflow = "auto";
+  document.querySelector(".lightbox-slide").style.cursor = "default";
   document.querySelector("#header").style.display = "flex";
 };
 

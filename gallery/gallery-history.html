@@ -5,16 +5,17 @@
     TODO: Adjust the links for all subpages
 
     LIGHTBOX
-    TODO: Make the rest of the buttons functional (zoom and pan)
     TODO: Find a way to clean up the icons (remove weird white outline)
     TODO: Lower opacity of icons when it cant be used
     TODO: Allow swipe / touch / pinch gestures as input
     TODO: Allow zoom on double click, mousewheel
     TODO: Implement animations (zoom in when opened/closed, swiping when switching slides)
-    TODO: Stop lightbox from closing when clicking on the image specifically
 
+    BUGS
+    - Pan behavior is awkward when grabbing an image multiple times
+    - Active grabbing cursor not showing when dragging
+    
     ? Are captions required for images in lightbox?
-    ? How to make the lightbox image draggable / pan
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +33,7 @@
       <div class="top-header" id="top-header">
           <a class="logo-container" href="./index.html">    
               <div class="header-logo">
-                  <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
+                  <img src="../assets/images/global/logo_main.png" alt="Logo of the school">
               </div>
               <div class="header-title">
                   <h1>Pakistan Islamia</h1>
@@ -43,19 +44,19 @@
       <nav class="nav" id="nav">        
           <!-- TODO: figure out implementation of sub-pages -->
           <ul class="nav-links">
-              <li class="nav-element"><a href="index.html">Home</a></li>
-              <li class="nav-element"><a href="about-us.html">About Us</a></li>
-              <li class="nav-element nav-sub-list"><a href="our-school.html">Our School</a>
+              <li class="nav-element"><a href="../index.html">Home</a></li>
+              <li class="nav-element"><a href="../about-us.html">About Us</a></li>
+              <li class="nav-element nav-sub-list"><a href="../our-school.html">Our School</a>
                   <ul>
                       <li><a href="">Facilities</a></li>
                       <li><a href="">Co-Curricular Activities</a></li>
                       <li><a href="">Student Code of Behaviour</a></li>
                   </ul>
               </li>
-              <li class="nav-element"><a href="admissions.html">Admissions</a></li>
-              <li class="nav-element"><a href="gallery.html">Gallery</a></li>
+              <li class="nav-element"><a href="../admissions.html">Admissions</a></li>
+              <li class="nav-element"><a href="../gallery.html">Gallery</a></li>
               <li class="nav-element"><a href="">Login</a></li>
-              <li class="nav-element"><a href="contact-us.html">Contact Us</a></li>
+              <li class="nav-element"><a href="../contact-us.html">Contact Us</a></li>
           </ul>
       </nav>
       <!-- Burger -->
@@ -67,7 +68,7 @@
   </header>
     <main>
       <!-- Overview -->
-      <section id="gallery-banner" class="gallery-banner">
+      <section id="gallery-banner" class="subpage-banner">
         <h1>History of PIHSS</h1>
       </section>
 

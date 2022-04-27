@@ -139,6 +139,7 @@ h2 {
 .contact-us .container .contact-details .info ul li img {
   padding-right: 20px;
   width: 9vmin;
+  max-width: 5rem;
 }
 
 .contact-us .container .contact-details .info ul li * {
@@ -170,7 +171,7 @@ h2 {
 }
 
 .contact-form {
-  margin-top: 2em;
+  margin: 2em 0em;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,10 +186,8 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url(/assets/images/temp/bg_test.png);
-  background-size: 100 40%;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(25%, #0F6938), color-stop(75%, transparent));
+  background: linear-gradient(transparent 0% 25%, #0F6938 25% 75%, transparent 75% 100%);
 }
 
 .contact-form .form-container {

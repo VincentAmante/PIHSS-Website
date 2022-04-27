@@ -42,7 +42,7 @@ h2 {
 .contact-overview {
   .nav-breadcrumbs {
     padding: 1em 0;
-    
+
     li {
       display: inline;
 
@@ -111,6 +111,7 @@ h2 {
             img {
               padding-right: 20px;
               width: 9vmin;
+              max-width: 5rem;
             }
 
             * {
@@ -149,18 +150,25 @@ h2 {
 }
 
 .contact-form {
-  margin-top: 2em;
+  margin: 2em 0em;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  // TODO: Change this later
-  background: url(/assets/images/temp/bg_test.png);
-  background-size: 100 40%;
-  background-position: center;
-  background-repeat: no-repeat;
+  // TODO: Confirm which version is better to use
+  // background: linear-gradient(transparent 25%, $dark 25%, $dark 50%, transparent 50%);
+  background: linear-gradient(
+    transparent 0% 25%,
+    $dark 25% 75%,
+    transparent 75% 100%
+  );
+
+  // background: url(/assets/images/temp/bg_test.png);
+  // background-size: 100 40%;
+  // background-position: center;
+  // background-repeat: no-repeat;
 
   .form-container {
     background-color: #efefef; //adjust later

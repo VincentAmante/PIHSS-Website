@@ -31,40 +31,7 @@ h2 {
   margin-bottom: 1em;
 }
 
-/* Banner */
-.gallery-banner {
-  background-color: #bebebe;
-  height: 40vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
 /* Gallery Overview */
-.gallery-overview .nav-breadcrumbs {
-  padding: 1em 0;
-}
-
-.gallery-overview .nav-breadcrumbs li {
-  display: inline;
-}
-
-.gallery-overview .nav-breadcrumbs li a {
-  text-decoration: none;
-  color: #383838;
-  font-weight: 600;
-  font-size: 0.8em;
-}
-
-.gallery-overview .nav-breadcrumbs li + li ::before {
-  padding: 1vw;
-  color: #383838;
-  content: ">>\00a0";
-}
-
 .gallery-overview .h1-border {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -251,10 +218,11 @@ h2 {
   will-change: transform;
   -o-object-fit: contain;
      object-fit: contain;
-  -webkit-transform-origin: 0px 0px;
-          transform-origin: 0px 0px;
-  -webkit-transform: scale(1) translate(0px, 0px);
-          transform: scale(1) translate(0px, 0px);
+}
+
+.modal .modal-content .slide-container .lightbox-slide:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
 }
 
 .modal .modal-content .slide-container .lightbox-slide img {
@@ -262,6 +230,8 @@ h2 {
   height: 100%;
   width: 100%;
   will-change: transform;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
   -webkit-transform: scale(1);
           transform: scale(1);
   -o-object-fit: contain;
