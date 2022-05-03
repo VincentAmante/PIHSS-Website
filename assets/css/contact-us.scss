@@ -175,11 +175,25 @@ h2 {
     border-radius: 15px;
     width: 100%;
     max-width: 600px;
+    padding: 40px 10vmin;
+
+    span {
+      color: red;
+      font-weight: 700;
+    }
+
+    .form-note {
+      font-size: small;
+      width: 100%;
+      text-align: center;
+
+    }
 
     form {
       // width: 40vw;
       // min-width: 350px;
-      padding: 40px 10vmin;
+      padding: 10px 0;
+      
 
       .form-item {
         width: 100%;

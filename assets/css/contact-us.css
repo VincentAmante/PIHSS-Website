@@ -195,10 +195,22 @@ h2 {
   border-radius: 15px;
   width: 100%;
   max-width: 600px;
+  padding: 40px 10vmin;
+}
+
+.contact-form .form-container span {
+  color: red;
+  font-weight: 700;
+}
+
+.contact-form .form-container .form-note {
+  font-size: small;
+  width: 100%;
+  text-align: center;
 }
 
 .contact-form .form-container form {
-  padding: 40px 10vmin;
+  padding: 10px 0;
 }
 
 .contact-form .form-container form .form-item {
