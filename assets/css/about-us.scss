@@ -129,3 +129,33 @@ main, section {
     }   
 }
 
+@media screen and (max-width: $breakpoint-tablet-landscape) {
+
+    .about-us-wrapper {
+        padding: 0;
+
+        & > div {
+          padding-inline: 1em;  
+        }
+    }
+
+    .about-us-container {
+        .about-us {
+            flex-direction: column-reverse;
+
+            .image {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .content {
+                width: auto;
+
+                .content-headers {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }       
+        }
+    }
+}
