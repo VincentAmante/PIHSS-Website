@@ -71,7 +71,7 @@ h2 {
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  margin: 2.5em;
+  margin-block: 2.5em;
 }
 
 .table-wrapper::-webkit-scrollbar {

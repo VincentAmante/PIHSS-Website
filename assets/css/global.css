@@ -717,7 +717,7 @@ header .top-header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .5em;
+  padding: .3em;
   padding-left: .75em;
   font-size: 1.15rem;
 }
@@ -728,6 +728,7 @@ header .top-header .logo-container {
   display: flex;
   cursor: pointer;
   text-decoration: none;
+  margin-left: 2.5vw;
 }
 
 header .top-header .logo-container .header-logo {
@@ -735,7 +736,7 @@ header .top-header .logo-container .header-logo {
 }
 
 header .top-header .logo-container .header-logo img {
-  width: 5em;
+  width: 3.5em;
   max-width: 5rem;
 }
 
@@ -771,7 +772,7 @@ header .top-header .logo-container .header-title h2 {
 }
 
 .nav-links {
-  padding-inline: 4em;
+  padding-inline: 10em;
   background-color: #0F6938;
   color: #FFFFFF;
   display: -webkit-box;
@@ -785,7 +786,7 @@ header .top-header .logo-container .header-title h2 {
 }
 
 .nav-links .nav-element, .nav-links .nav-sub-list:hover ul li {
-  padding: 1.1em 1em;
+  padding: .8em 1em;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -805,7 +806,7 @@ header .top-header .logo-container .header-title h2 {
   opacity: 1;
   text-decoration: none;
   color: inherit;
-  font-size: 1rem;
+  font-size: .9rem;
   height: 100%;
 }
 
@@ -1066,6 +1067,11 @@ body, html {
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+main {
+  font-size: .95rem;
+  line-height: 26px;
 }
 
 * {

@@ -21,7 +21,7 @@ header {
 
         justify-content: space-between;
         align-items: center;
-        padding: .5em;
+        padding: .3em;
         padding-left: .75em;
 
         font-size: 1.15rem;
@@ -30,11 +30,12 @@ header {
             display: flex;
             cursor: pointer;
             text-decoration: none;
+            margin-left: 2.5vw;
 
             .header-logo {
                 border: 0;
                 img {
-                    width: 5em;
+                    width: 3.5em;
                     max-width: 5rem;
                 }
             }
@@ -68,7 +69,7 @@ header {
 
 
 .nav-links {
-    padding-inline: 4em;
+    padding-inline: 10em;
     background-color: $dark;
     color: $primary-secondary;
     display: flex;
@@ -80,7 +81,7 @@ header {
     list-style: none;
 
     .nav-element {
-        padding: 1.1em 1em;
+        padding: .8em 1em;
         flex-grow: 1;
         height: 100%;
         text-align: center;
@@ -96,7 +97,7 @@ header {
             opacity: 1;
             text-decoration: none;
             color: inherit;
-            font-size: 1rem;
+            font-size: .9rem;
             height: 100%;
           }
 

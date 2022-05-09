@@ -54,7 +54,7 @@ h2 {
       }
 
 
-    margin: 2.5em;
+    margin-block: 2.5em;
 }
 
 .admissions {
@@ -90,12 +90,12 @@ h2 {
 }
 
 .admissions-requirements {
+
     h2 {
         color: $dark;
         text-transform: uppercase;
         font-size: 1.1rem;
     }
-
     
     ol {
         padding-left: 1em;
