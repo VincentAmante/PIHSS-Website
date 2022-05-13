@@ -1,9 +1,9 @@
 .slider-btn, .news-btn {
   border-radius: 50%;
   background-color: #0F6938;
-  min-width: 3rem;
+  min-width: 2rem;
   width: 40%;
-  max-width: 5rem;
+  max-width: 3rem;
   color: #FFFFFF;
   text-align: center;
   border: 0.2rem solid rgba(255, 255, 255, 0);
