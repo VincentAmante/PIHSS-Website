@@ -63,7 +63,6 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 90vw;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -87,7 +86,7 @@ h2 {
   padding: 5vw;
 }
 
-.admissions-container div {
+.admissions-container > div {
   margin-bottom: 5vh;
 }
 
@@ -188,7 +187,7 @@ h2 {
           align-items: center;
   text-align: center;
   background-color: #DDEDD5;
-  max-width: 20rem;
+  width: 100%;
   padding: 2em;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -306,8 +305,8 @@ table th {
     text-decoration: none;
   }
   .admissions-process ul {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
   .table-wrapper {
     -webkit-box-align: center;
@@ -322,6 +321,13 @@ table th {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .admissions-process ul {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
 }
 /*# sourceMappingURL=admissions.css.map */

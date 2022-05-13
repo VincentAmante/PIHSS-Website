@@ -7,22 +7,28 @@ header, nav {
     z-index: 2;
 }
 
+
 header {
     z-index: 10;
     position: fixed;
     flex-direction: column;
-    transition: transform 0.5s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    .header-content {
+        transform: translateY(-100%);
+        transition: transform 0.25s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    }
 
 
     .top-header{
         background-color: $primary-secondary;
-        display: none;  
+        display: flex;
 
+        transition: transform 0.5s ease-in-out;
         justify-content: space-between;
         align-items: center;
-        padding: .3em;
-        padding-left: .75em;
+        padding-block: .3em;
+        padding-left: 0;
 
         font-size: 1.15rem;
 
@@ -30,7 +36,7 @@ header {
             display: flex;
             cursor: pointer;
             text-decoration: none;
-            margin-left: 2.5vw;
+            margin-left: $global-margin;
 
             .header-logo {
                 border: 0;
@@ -64,12 +70,49 @@ header {
                 }
             }
         }
+
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+            margin-right: $global-margin;
+
+            .contact {
+                display: flex;
+                align-items: center;
+                
+                text-decoration: none;
+                
+                transition: all .25s ease-in-out;
+
+                padding-inline: .5em;
+                padding-block: 1em;
+
+                svg {
+                    color: $dark;
+                }
+
+                span {
+                    font-size: .9rem;
+                    margin-left: .4em;
+                    color: black;
+                }
+
+                &:hover {   
+                    background-color: $dark;
+
+                   * {
+                        color: $primary-secondary;
+                    }
+                }
+            }
+        }
     }
 }
 
 
 .nav-links {
-    padding-inline: 10em;
+    padding-inline: $global-margin;
     background-color: $dark;
     color: $primary-secondary;
     display: flex;
@@ -136,8 +179,54 @@ header {
 
 
   @media screen and (max-width: $breakpoint-tablet-portrait) {
+
+    .burger {
+        position: absolute;
+        margin-right: 4vw;
+        cursor: pointer;
+        right: .5vw;
+        top: 1.2rem;
+        transition: opacity 0.25s ease-in-out;
+
+        div {
+          width: 2rem;
+          height: .15rem;
+          margin-top: .5rem;
+          background-color: black;
+      }
+    }
+
+    .burger-alone {
+        div {
+            background-color: $primary-secondary;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+    }
+
+    .toggle {
+        opacity: 0;
+    }
+
+    header {
+        .header-content {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .top-header {
+            transform: none;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+            .header-contacts {
+                display: none;
+            }
+        }
+    }
+
       .nav {
-          position: fixed;
+         z-index: 100;
+         position: absolute;
+        top:0;
           transform: translateX(200vw);
           height: 120vh;
           background-color: $dark;
@@ -148,12 +237,12 @@ header {
           transition: transform 0.55s ease-in;
       }
       .nav-active {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
           transform: translateX(60vw);
       }
       
       .nav-links {
-          //   Relocate with burger
           padding: 0vw;   
           display: flex;
           flex-direction: column;
@@ -205,25 +294,5 @@ header {
           padding-right: 5em;
       }
 
-      .burger {
-          position: absolute;
-          margin-right: 4vw;
-          cursor: pointer;
-          right: .5vw;
-          top: 1.8rem;
 
-          div {
-            width: 2rem;
-            height: .15rem;
-            margin-top: .5rem;
-            background-color: black;
-        }
-      }
-
-      .burger-alone {
-          div {
-              background-color: $primary-secondary;
-              box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-          }
-      }
   }

@@ -213,8 +213,8 @@ img {
 
 .about-us .about-us-text {
   background-color: #0F6938;
-  padding: 5vmin;
-  padding-left: 10vmin;
+  padding-block: 5vmin;
+  padding-inline: 5vw;
   color: #FFFFFF;
   font-family: "Raleway", sans-serif;
 }
@@ -238,7 +238,6 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: .5rem;
   width: 100%;
 }
 
@@ -280,7 +279,8 @@ img {
 }
 
 .more-info .more-info-text {
-  padding: 2em;
+  padding-block: 2em;
+  margin-inline: 5vw;
   font-weight: 500;
 }
 
@@ -483,7 +483,7 @@ img {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  padding: 2vmax;
+  padding-block: 2vmax;
 }
 
 .why-pihss .why-pihss-description .content h1 {
@@ -909,7 +909,7 @@ img {
   .about-us .about-us-content .about-us-img {
     z-index: 1;
     width: 100%;
-    margin: 0 10vw;
+    margin-right: 5vw;
     margin-left: 1vw;
   }
   .about-us .about-us-statblock {
@@ -950,13 +950,16 @@ img {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    padding: 2vmax;
+    padding-block: 2vmax;
   }
   .more-info .more-info-text {
     max-width: 50%;
   }
   .more-info .more-info-text .more-info-comma {
     display: none;
+  }
+  .more-info .more-info-slideshow {
+    margin-right: 5vw;
   }
   .more-info .more-info-slideshow .more-info-comma {
     display: initial;
@@ -967,9 +970,6 @@ img {
   .more-info .more-info-slideshow .selection .slider .card-wrapper {
     width: 50%;
   }
-  .why-pihss {
-    margin-block: 10em;
-  }
   .why-pihss .why-pihss-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -979,18 +979,19 @@ img {
         -ms-flex-pack: start;
             justify-content: flex-start;
     position: relative;
-    padding-right: 15vw;
   }
   .why-pihss .why-pihss-container .why-pihss-description {
     max-width: 40%;
     margin-left: 5vmax;
+    margin-right: 5vw;
+    text-align: justify;
   }
   .why-pihss .why-pihss-container .slider-btn, .why-pihss .why-pihss-container .news-btn {
     display: none;
   }
   .why-pihss .why-pihss-container .why-pihss-selection {
     position: absolute;
-    left: 15vmin;
+    left: 5vw;
   }
   .why-pihss .why-pihss-container .why-pihss-selection .why-pihss-slider {
     overflow-x: visible;

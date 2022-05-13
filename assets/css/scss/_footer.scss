@@ -1,7 +1,6 @@
 @import "./_variables.scss";
 
 footer {
-    padding: 1vw;
     color: $primary-secondary;
 
     // Gradient Background
@@ -14,7 +13,7 @@ footer {
     display: flex;
     flex-direction: column;
     
-    padding: 0vw 10vw;
+    padding-inline: $global-margin;
 
     li {
         cursor: pointer;
@@ -22,8 +21,7 @@ footer {
 
         &:hover {
             border-radius: .5em;
-            // background-color: $dark;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            background-color: $primary-main;
         }
     }
     .footer-logo-container {
@@ -32,7 +30,7 @@ footer {
 
         .footer-logo {
             padding: 5vmin 1vw;
-            padding-right: 2vw;
+            // padding-right: 2vw;
             img {
                 max-width: 5rem;
             }
@@ -45,7 +43,7 @@ footer {
             justify-content: center;
             font-size: 1.15rem;
             margin: 0;
-            text-transform: uppercase   ;
+            text-transform: uppercase;
 
             font-family: $font-primary;
             
@@ -69,16 +67,17 @@ footer {
         li {
             display: flex;
             align-items: center;
-            margin-block: .5em;
+            padding-block: .2em;
+            transition: all .25s ease-in-out;
 
             * {
-                margin: 1vmin;
+                margin: .5vmin;
             }
 
             a {
                 height: 100%;
                 width: 100%;
-                padding: .8em 0em;
+                padding: .2em 0em;
                 text-decoration: none;
                 color: $primary-secondary;
                 font-weight: 300;
@@ -95,7 +94,8 @@ footer {
             font-size: clamp(16px, 4vw, 1.6rem);
 
             border-bottom: .01em solid $primary-secondary;
-            padding-bottom: 2vw;
+            padding-block: .5vw;
+            margin-top: 1em;
         }
     }
 
@@ -117,7 +117,7 @@ footer {
 @media screen and (min-width: $breakpoint-tablet-landscape) {
     footer {
         flex-direction: row;
-        justify-content: space-around;
-        padding: 2vmax;
+        justify-content: space-between;
+        padding-block: 2vmax;
     }
 }

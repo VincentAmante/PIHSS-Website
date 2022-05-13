@@ -102,8 +102,8 @@ img {
     }
     .about-us-text {
         background-color: $dark;
-        padding: 5vmin;
-        padding-left: 10vmin;
+        padding-block: 5vmin;
+        padding-inline: $global-margin;
         color: $primary-secondary;
         font-family: $font-secondary;
 
@@ -123,7 +123,7 @@ img {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
-        border-radius: .5rem;
+        // border-radius: .5rem;
         width: 100%;
 
         .stat {
@@ -162,7 +162,8 @@ img {
     background-color: $other;
 
     .more-info-text {
-        padding: 2em;
+        padding-block: 2em;
+        margin-inline: $global-margin;
         font-weight: 500;
 
         * {
@@ -301,7 +302,7 @@ img {
         
         background-color: $accent;
         height: min-content;
-        padding: 2vmax;
+        padding-block: 2vmax;
     }
 
     .why-pihss-description {
@@ -627,13 +628,6 @@ img {
             align-items: center;
             position: relative;
             background: linear-gradient(transparent 10%, $dark 10%, $dark 90%, transparent 90%);
-
-            // .stripe {
-            //     position: absolute;
-            //     background-color: $dark;
-            //     height: 80%;
-            //     width: 100%;
-            // }
     
             .about-us-text {
                 max-width: 60%;
@@ -644,7 +638,7 @@ img {
             .about-us-img {
                 z-index: 1;
                 width: 100%;
-                margin: 0 10vw;
+                margin-right: $global-margin;
                 margin-left: 1vw;
             }
         }    
@@ -685,7 +679,7 @@ img {
         display: flex;
         flex-direction: row; 
         justify-content: flex-start;
-        padding: 2vmax;
+        padding-block: 2vmax;
 
         .more-info-text {
             .more-info-comma {
@@ -695,6 +689,8 @@ img {
         }
 
         .more-info-slideshow {
+            margin-right: $global-margin;
+
             .more-info-comma {
                 display: initial;
                 align-self: flex-start;
@@ -711,17 +707,19 @@ img {
     }
 
     .why-pihss {
-        margin-block: 10em;
+        // margin-block: 10em;
 
         .why-pihss-container {
             flex-direction: row-reverse;
             justify-content: flex-start;    
             position: relative;
-            padding-right: 15vw;
+            // padding-right: 15vw;
 
             .why-pihss-description {
                 max-width: 40%;
                 margin-left: 5vmax;
+                margin-right: $global-margin;
+                text-align: justify;
             }
 
             .slider-btn {
@@ -730,7 +728,7 @@ img {
 
             .why-pihss-selection {
                 position: absolute;
-                left: 15vmin;
+                left: $global-margin;
 
                 .why-pihss-slider {
                     overflow-x: visible;

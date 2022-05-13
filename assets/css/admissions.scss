@@ -42,7 +42,6 @@ h2 {
 
 .table-wrapper {
     @include flex-centered;
-    max-width: 90vw;
     align-items: flex-start;
     position: relative;
     overflow-x: scroll;
@@ -65,7 +64,7 @@ h2 {
 .admissions-container {
     padding: 5vw;
 
-    div {
+    & > div {
         margin-bottom: 5vh;
     }
 }
@@ -103,7 +102,6 @@ h2 {
 }
 
 .admissions-process {
-
     ul {
         display: grid;
         grid-template-columns: 1fr;
@@ -116,7 +114,6 @@ h2 {
 
             .card-number {
                 @include flex-centered;
-                // position: absolute;
                 font-size: 1.8rem;
                 font-weight: bold;
 
@@ -137,7 +134,8 @@ h2 {
                 @include flex-centered;
                 text-align: center;
                 background-color: #DDEDD5;
-                max-width: 20rem;
+                // max-width: 20rem;
+                width: 100%;
                 padding: 2em;
                 flex-grow: 1;
                 border-radius: 1em;
@@ -253,7 +251,7 @@ table {
 
     .admissions-process {
         ul {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -268,6 +266,14 @@ table {
     .fee-structure {
         .discounts-refunds {
             flex-direction: row;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-desktop-small){
+    .admissions-process {
+        ul {
+            grid-template-columns: repeat(4, 1fr);
         }
     }
 }
