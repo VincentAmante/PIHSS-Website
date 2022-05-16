@@ -898,10 +898,12 @@ header .top-header .header-contacts .contact:hover * {
     cursor: pointer;
     right: .5vw;
     top: 1.2rem;
-    -webkit-transition: opacity 0.25s ease-in-out;
-    transition: opacity 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
   }
   .burger div {
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
     width: 2rem;
     height: .15rem;
     margin-top: .5rem;
@@ -1102,7 +1104,7 @@ footer ul li a {
 footer .footer-nav h2 {
   font-family: "EB Garamond", serif;
   font-weight: 500;
-  font-size: clamp(16px, 4vw, 1.6rem);
+  font-size: clamp(1.25rem, 4vw, 1.6rem);
   border-bottom: 0.01em solid #FFFFFF;
   padding-block: .5vw;
   margin-top: 1em;

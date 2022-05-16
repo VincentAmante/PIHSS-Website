@@ -419,6 +419,8 @@ img {
     background: linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(207,236,193,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#cfecc1",GradientType=1);
 
+    width: 100%;
+
     .aac-affairs-container {
         padding: 1em;
     }
@@ -436,7 +438,7 @@ img {
         align-items: center;
         justify-content: center;
 
-        max-width: 90vw;
+        // max-width: 90vw;
         .aac-slider-wrapper {
             overflow: hidden;
             
@@ -446,7 +448,7 @@ img {
                 scroll-snap-type: inline mandatory;
                 overflow-x: scroll;
                 transition : .3s ease-in-out;
-                padding: 5vw 0vw;
+                // padding: 5vw 0vw;
 
                 -ms-overflow-style: none;
                 scrollbar-width: none;

@@ -615,6 +615,7 @@ img {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(15, 105, 56, 0)), to(#cfecc1));
   background: linear-gradient(180deg, rgba(15, 105, 56, 0) 0%, #cfecc1 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#cfecc1",GradientType=1);
+  width: 100%;
 }
 
 .administrative-affairs .aac-affairs-container {
@@ -638,7 +639,6 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 90vw;
 }
 
 .administrative-affairs .staff .aac-slider-wrapper {
@@ -655,7 +655,6 @@ img {
   overflow-x: scroll;
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
-  padding: 5vw 0vw;
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding: 0;

@@ -15,7 +15,8 @@ main, section {
 
 .news-container {
     @include flex-centered;
-    width: max-content;
+    width: 100%;
+    padding-inline: $global-margin;
 
     .h1-border {
         align-self: flex-start;
@@ -25,9 +26,10 @@ main, section {
         }
     }
 
-
     .news {
         @include flex-centered;
+        
+    width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 2em;
@@ -39,6 +41,7 @@ main, section {
             overflow: hidden;
             aspect-ratio: 5/4;
             transition: all .5 ease-in-out;
+            max-width: 30vw;
             
             &:hover {
                 img {
@@ -98,6 +101,29 @@ main, section {
                     justify-content: space-between;
                     padding-inline: 2em;
                 }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: $breakpoint-tablet-landscape){
+    .news-container {
+        .news {
+            grid-template-columns: repeat(2, 1fr);
+            article {
+                max-width: 45vw;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-tablet-portrait) {
+    .news-container {
+        .news {
+            grid-template-columns: 1fr;
+            article {
+                max-width: 90vw;
             }
         }
     }

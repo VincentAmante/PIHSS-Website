@@ -186,9 +186,11 @@ header {
         cursor: pointer;
         right: .5vw;
         top: 1.2rem;
-        transition: opacity 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
 
         div {
+            
+        transition: all 0.25s ease-in-out;
           width: 2rem;
           height: .15rem;
           margin-top: .5rem;
