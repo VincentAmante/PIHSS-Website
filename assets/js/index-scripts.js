@@ -1,50 +1,51 @@
-// Why-Pihss Slider Code
-const wp_left = document.getElementById('wp-btn-left');
-const wp_right = document.getElementById('wp-btn-right');
-const wp_slider = document.getElementById('why-pihss-slider');
 
-wp_left.onclick = () => {
-  wp_slider.scrollLeft -= (wp_slider.scrollWidth / 3);
-  if (wp_slider.scrollLeft - document.body.clientWidth * .6 < 0){
-    wp_slider.scrollLeft = wp_slider.scrollWidth;
+// Carousel Template
+// - Imperfect but should be capable of adapting to all carousels
+const createCarousel = (leftBtn, rightBtn, slider, rightOffset = 0) => {
+  leftBtn = document.getElementById(leftBtn);
+  rightBtn = document.getElementById(rightBtn);
+  let elementWidth = document.getElementById(slider).children[0].clientWidth;
+  slider = document.getElementById(slider);
+
+  const scrollLeft = () => {
+    if (slider.scrollLeft - elementWidth / 2 < 0){
+      slider.insertBefore(slider.lastElementChild, slider.children[0]);
+    }
+    slider.scrollLeft -= elementWidth;
   }
-};
+  const scrollRight = () => {
+    if ((slider.scrollLeft + slider.clientWidth + elementWidth) > slider.scrollWidth){
 
-wp_right.onclick = () => {
-  wp_slider.scrollLeft += (wp_slider.scrollWidth / 3);
-  if ((wp_slider.scrollLeft + document.body.clientWidth * .7) > wp_slider.scrollWidth){
-    wp_slider.scrollLeft = 0;
-  }
-};
+      // Smoothens out going to the right by ensuring scroll is not at maximum
+      // - Not sure why this works
+      if (rightOffset > 0){
+        slider.scrollLeft -= elementWidth / rightOffset;
+      }
+      
+      slider.insertBefore(slider.firstElementChild, slider.lastElementChild.nextSibling);
+    }
+    slider.scrollLeft += elementWidth;
+  };
 
-// AAC Slider Code
-const aac_left = document.getElementById('aac-btn-left');
-const aac_right = document.getElementById('aac-btn-right');
-const aac_slider = document.getElementById('aac-slider');
+  leftBtn.onclick = () => {scrollLeft()};
+  rightBtn.onclick = () => {scrollRight()};
 
-aac_left.onclick = () => {
-  aac_slider.scrollLeft -= (aac_slider.scrollWidth / 6);
-  console.log(aac_slider.scrollLeft - (aac_slider.scrollWidth / 6) < 0);
+  // slider.addEventListener('scroll', () => {
+  //   if (slider.scrollLeft = 0) {scrollLeft()};
+  //   if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){scrollRight()};
+  // })
+}
 
-  if (aac_slider.scrollLeft - (aac_slider.scrollWidth / 6) < 0){
-    aac_slider.scrollLeft = aac_slider.scrollWidth;
-  }
-};
-aac_right.onclick = () => {
-  aac_slider.scrollLeft += (aac_slider.scrollWidth / 6);
+// Why Pihss Slider
+createCarousel('wp-btn-left', 'wp-btn-right', 'why-pihss-slider');
 
-  if ((aac_slider.scrollLeft + document.body.clientWidth * .7) > aac_slider.scrollWidth){
-    aac_slider.scrollLeft = 0;
-  }
-};
-
+// Administrative Affairs Slider
+createCarousel('aac-btn-left', 'aac-btn-right', 'aac-slider', 3);
 
 // More Info Paginator
 // TODO: Automate this lmfao
-
 const mi_slider = document.getElementById('more-info-selection');
-const mi_slider_max = 4 + 1;
-
+const mi_slider_max = mi_slider.children.length + 1;
 document.getElementById('paginator-1').onclick = () => {
   console.log('registered click')
   console.log(mi_slider.scrollLeft)

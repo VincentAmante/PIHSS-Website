@@ -435,8 +435,8 @@ img {
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 90vw;
 
+        max-width: 90vw;
         .aac-slider-wrapper {
             overflow: hidden;
             
@@ -459,7 +459,7 @@ img {
                     flex-shrink: 0;
                     // background: rgb(0,20,20);
                     // box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-                    width: clamp(5rem, 100%, 350px);
+                    width: clamp(2rem, 100%, 350px);
                     scroll-snap-align: start;
                     flex-shrink: 0;
                     display: flex;
@@ -473,6 +473,7 @@ img {
                         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
                         aspect-ratio: 4/5;
                         max-width: 200px;
+                        line-height: initial;
                         
                         p {
                             margin: 0;
