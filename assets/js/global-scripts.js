@@ -57,7 +57,6 @@ window.onresize = () => {
 function scrollFunction() {
 
   let topHeaderHeight = document.getElementById('top-header').clientHeight + 5;
-
   let burger = document.getElementById('burger');
 
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -73,9 +72,12 @@ function scrollFunction() {
       document.getElementById("top-header").style.transform = "translate(0,0)"
     }
 
+    // Changes colour of burger based on whether there is header or not
     if (burger.classList.contains("burger-alone")){
       burger.classList.remove("burger-alone");
     }
+
+
   } else {
 
     
