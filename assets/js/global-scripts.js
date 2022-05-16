@@ -1,12 +1,3 @@
-// Jquery Inclusion
-// var script = document.createElement('script');
-
-// // Update src when possible
-// script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
-
-// script.type = 'text/javascript';
-// document.getElementsByTagName('head')[0].appendChild(script);
-
 // This is code for handling the burger menu
 const burger = document.querySelector(".burger");
 const nav = document.querySelector("nav");
@@ -45,19 +36,28 @@ document.addEventListener('click', function(event) {
   }
 });
 
-// Gets height of the top header
-var topHeaderHeight = document.getElementById('top-header').clientHeight + 5;
 
-// Change header on scroll to hide when scrolled to top, and show when scrolled down 
+
+
+
+// * Change header on scroll to hide when scrolled to top, and show when scrolled down 
+
+// Gets height of the top header
+
+// Updates constantly
 window.onscroll = () => {scrollFunction()};
 window.onload = () => {scrollFunction()};
+window.onreset = () => {scrollFunction()};
 window.onresize = () => {
   scrollFunction();
+  // Update size on resize
   topHeaderHeight = document.getElementById('top-header').clientHeight + 5; 
 }
-window.onreset = () => {scrollFunction()};
 
 function scrollFunction() {
+
+  let topHeaderHeight = document.getElementById('top-header').clientHeight + 5;
+
   let burger = document.getElementById('burger');
 
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -77,15 +77,17 @@ function scrollFunction() {
       burger.classList.remove("burger-alone");
     }
   } else {
+
+    
     // document.getElementById("top-header").style.display = "none";
-  
     if (window.innerWidth >= 768){
       document.getElementById("header-content").style.transform = 'translate(0,-' + topHeaderHeight + 'px)'
     } else {
-      
       console.log("And of height");
       document.getElementById("top-header").style.transform = 'translate(0,-' + topHeaderHeight + 'px)'
     }
+
+
     if (!burger.classList.contains("burger-alone")){
       burger.classList.add("burger-alone");
     }
