@@ -299,6 +299,8 @@ img {
     .why-pihss-container {
         @include flex-centered;
         
+        padding-inline: $global-margin;
+        
         height: min-content;
         padding-block: 15vh;
         background: rgb(15,105,56);
@@ -504,6 +506,8 @@ img {
 
 .news-and-events-container {
     padding-block: 15vh; 
+    
+    padding-inline: $global-margin;
     max-width: 1080px;
 
     .nac-cards {
@@ -694,7 +698,6 @@ img {
             flex-direction: row-reverse;
             justify-content: flex-start;    
             position: relative;
-            // padding-right: 15vw;
 
             .why-pihss-description {
                 max-width: 40%;
