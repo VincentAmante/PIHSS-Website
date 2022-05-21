@@ -9,7 +9,7 @@ body, html {
 main, section {
     @include flex-centered;
     padding: 0;
-    margin-bottom: 8vmax;
+    // margin-bottom: 8vmax;
     width: 100%;
 }
 
@@ -19,17 +19,13 @@ img {
     object-fit: cover
 }
 
-
-
 // Hero Banner
 .hero-banner {
     @include flex-centered;
     width: 100%;
     
-    // Background
+    background: url('../images/homepage/hero-banner.png') repeat fixed 100%;
     background-size: cover;
-    background-image: url("../images/homepage/hero-banner.png");
-    background-repeat: no-repeat;
     background-position: center;
     
     font-family:  $font-primary;
@@ -41,7 +37,10 @@ img {
         // padding: 10vw 10vw;
         align-self: stretch;
         text-align: center;
-        background: linear-gradient(0deg, rgba(0,2,3,0.73) 25%, rgba(0,0,0,0) 100%);
+        background: rgb(15,105,56);
+        background: -moz-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,1) 100%);
 
         img {
             margin: 2em;
@@ -89,6 +88,8 @@ img {
 // About Us
 .about-us {
     @include flex-centered;
+    
+    background-color: $dark;
     padding: 0;
 
     .about-us-content { 
@@ -101,7 +102,6 @@ img {
         }
     }
     .about-us-text {
-        background-color: $dark;
         padding-block: 5vmin;
         padding-inline: $global-margin;
         color: $primary-secondary;
@@ -110,10 +110,12 @@ img {
         h1 {
             font-family: $font-primary;
             font-weight: 500;
-            font-size: clamp(18px, 10vw, 1.5rem);
+            font-size: clamp(18px, 10vw, 1.75rem);
         }
         p {
             margin: 1em 0;
+            font-size: clamp(8px, 1.15vw, 1.5rem);
+            text-align: justify;
         }
     }
 
@@ -123,38 +125,33 @@ img {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
-        // border-radius: .5rem;
-        width: 100%;
+        flex-direction: column;
+        z-index: 1;
+        padding-inline: 1em;
+        border-radius: .5em;
 
-        .stat {
-            flex-grow: 1;
-            padding: 1em 2em;
-            text-align: center;
+
+            &>div {
+                @include flex-centered;
+                vertical-align: middle;
+                padding-block: 1em;
+                &:first-of-type {
+                    border-right: .01rem solid #B5872E;
+                }
+            }
+
             .number {
-                font-size: 2rem;
-                font-weight: bold;
+                padding-block: .5em;
+                font-weight: 700;
+                font-size: 1.5rem;
+                padding-inline: 1.5em;
             }
-
-            $stat-border: .01rem solid #B5872E;
-
-            &:nth-of-type(1){
-              border-right: $stat-border;  
-              border-bottom: $stat-border;
-            }
-            &:nth-of-type(2){
-                border-left: $stat-border;  
-                border-bottom: $stat-border;  
-            }
-            &:nth-of-type(3){
+            .label {
+                padding-block: .5em;
+                padding-left: 1em;
                 
-              border-right: $stat-border;  
-                border-top: $stat-border;  
+                padding-inline: 1.5em;
             }
-            &:nth-of-type(4){
-                border-left: $stat-border;  
-                border-top: $stat-border;  
-            }
-        }
     }
 }
 
@@ -296,17 +293,24 @@ img {
 .why-pihss {
     // Make smaller
     @include flex-centered;
+    background: url('../images/homepage/image_61.jpg') repeat fixed 100%;
+    background-size: cover;
     
     .why-pihss-container {
         @include flex-centered;
         
-        background-color: $accent;
         height: min-content;
-        padding-block: 2vmax;
+        padding-block: 15vh;
+        background: rgb(15,105,56);
+        background: -moz-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(0,0,0,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#000000",GradientType=1);
     }
 
     .why-pihss-description {
         .content {
+            color: $primary-secondary;
             h1 {
                 font-family: $font-primary;
             }
@@ -413,16 +417,12 @@ img {
 
 .administrative-affairs {
 
-    background: rgb(15,105,56);
-    background: -moz-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(207,236,193,1) 100%);
-    background: -webkit-linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(207,236,193,1) 100%);
-    background: linear-gradient(180deg, rgba(15,105,56,0) 0%, rgba(207,236,193,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#cfecc1",GradientType=1);
+    background: $accent;
 
-    width: 100%;
 
     .aac-affairs-container {
         padding: 1em;
+        max-width: 100vw;
     }
 
     h1 {
@@ -437,6 +437,7 @@ img {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-inline: $global-margin;
 
         // max-width: 90vw;
         .aac-slider-wrapper {
@@ -448,7 +449,7 @@ img {
                 scroll-snap-type: inline mandatory;
                 overflow-x: scroll;
                 transition : .3s ease-in-out;
-                // padding: 5vw 0vw;
+                padding: 5vw 0vw;
 
                 -ms-overflow-style: none;
                 scrollbar-width: none;
@@ -629,8 +630,7 @@ img {
             display: flex;
             flex-direction: row;
             align-items: center;
-            position: relative;
-            background: linear-gradient(transparent 10%, $dark 10%, $dark 90%, transparent 90%);
+            padding-block: 10vh;
     
             .about-us-text {
                 max-width: 60%;
@@ -640,44 +640,22 @@ img {
     
             .about-us-img {
                 z-index: 1;
-                width: 100%;
                 margin-right: $global-margin;
-                margin-left: 1vw;
+                margin-left: 5vw;
+                position: relative;
+                margin-bottom: 10vw;
             }
         }    
 
         .about-us-statblock {
-            display: flex;
-
-            .stat {
-                border: none;
-
-                &:nth-of-type(1){
-                    border-right: none;  
-                    border-bottom: none;
-                  }
-                  &:nth-of-type(2){
-                      border-left: none;  
-                      border-bottom: none;  
-                  }
-                  &:nth-of-type(3){
-                      
-                    border-right: none;  
-                      border-top: none;  
-                  }
-                  &:nth-of-type(4){
-                      border-left: none;  
-                      border-top: none;  
-                  }
-
-                  
-                &:nth-child(1){
-                    border: none;
-                }
-            }
+            
+            position: absolute;
+            bottom: -10%;
+            left: -25%;
         }
     }
 
+    
     .more-info {
         display: flex;
         flex-direction: row; 
@@ -730,7 +708,7 @@ img {
             }
 
             .why-pihss-selection {
-                position: absolute;
+                // position: absolute;
                 left: $global-margin;
 
                 .why-pihss-slider {
@@ -763,4 +741,5 @@ img {
         }
 
     }
+    
 }

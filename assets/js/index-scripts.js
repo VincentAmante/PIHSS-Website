@@ -60,3 +60,30 @@ document.getElementById('paginator-3').onclick = () => {
 document.getElementById('paginator-4').onclick = () => {
   mi_slider.scrollLeft = (mi_slider.scrollWidth / mi_slider_max) * 3 ;
 }
+
+
+// Counter
+
+const createCounter = (counter_id) => {
+  let counter = document.getElementById(counter_id)
+  let count = 0
+  
+  const countUp = setInterval(() => {
+    let numCount = counter.dataset.count
+    if(count == numCount) clearInterval(countUp)
+    counter.innerHTML = count + counter.dataset.unit
+
+    if (numCount >= 10){
+      count = count + Math.floor((numCount/50))
+    }
+    else {
+      count = numCount;
+    }
+    if(count > numCount) count = numCount
+  }, 20)
+}
+
+createCounter("building-count");
+createCounter("classroom-count");
+createCounter("employee-count");
+createCounter("alumni-count");

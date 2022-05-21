@@ -87,7 +87,7 @@ h2 {
 }
 
 .contact-us .container {
-  background-color: #FAD662;
+  background-color: #EEE1B2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -238,7 +238,7 @@ h2 {
 }
 
 .contact-form .form-container form .submit-button input {
-  background-color: #FAD662;
+  background-color: #EEE1B2;
   padding: 10px 50px;
   border-radius: 5px;
   font-weight: 600;
