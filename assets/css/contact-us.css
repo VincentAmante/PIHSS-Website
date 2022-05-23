@@ -31,16 +31,11 @@ h2 {
   margin-bottom: 1em;
 }
 
-/* Banner */
-.contact-banner {
-  background-color: #bebebe;
-  height: 40vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+/* Subpage Banner */
+.subpage-banner {
+  background: url("../images/banners/banner-2.jpg") repeat fixed 100%;
+  background-size: cover;
+  background-position: bottom;
 }
 
 /* Contact Us Overview */

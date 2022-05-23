@@ -16,7 +16,7 @@ section {
 }
 
 section {
-  padding: 2vw 5vw;
+  padding: 2vw $global-margin;
 }
 
 h1 {
@@ -30,12 +30,11 @@ h2 {
   margin-bottom: 1em;
 }
 
-/* Banner */
-.contact-banner {
-  background-color: rgb(190, 190, 190); // Adjust color later
-  height: 40vh;
-  display: flex;
-  justify-content: flex-end;
+/* Subpage Banner */
+.subpage-banner {
+	background: url("../images/banners/banner-2.jpg") repeat fixed 100%;
+  background-size:cover;
+	background-position: bottom;
 }
 
 /* Contact Us Overview */

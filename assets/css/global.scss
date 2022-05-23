@@ -1,135 +1,170 @@
 // * Modules
-
 // Normalises css, for a good base
-// We could switch to reset.css instead, but normalise has better commenting 
+// We could switch to reset.css instead, but normalise has better commenting
 @import "./scss/_normalise.scss";
 @import "./scss/_variables.scss";
 @import "./scss/_header.scss";
 @import "./scss/_footer.scss";
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Base Styling */
-body, html {
-    min-width: fit-content;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+body,
+html {
+	min-width: fit-content;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 main {
-  font-size: .95rem;
-  line-height: 26px;
+	font-size: 0.95rem;
+	line-height: 26px;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-    font-family: 'Raleway', sans-serif;
-    background-color: $primary-secondary;
-    color: $font-colour;
+	font-family: "Raleway", sans-serif;
+	background-color: $primary-secondary;
+	color: $font-colour;
 }
 
-
 ul {
-    list-style: none;
+	list-style: none;
 }
 
 /* Subpage Banner */
+
 .subpage-banner {
-    background-color: rgb(190, 190, 190); // Adjust color later
-    height: 40vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: 2vw 5vw;
+	width: 100%;
+	height: 60vh;
+	padding: 0;
 
-    h1 {
-        font-family: $font-primary;
-        font-weight: 500;
-      }
-  }
-  
+	// TODO: Change banner picture based on page
+	background: url("../images/banners/banner-1.jpg") repeat fixed 100%;
+	background-size:cover;
+	background-position: bottom;
+
+	.banner-container { // TODO: Add container div within banner section
+		background-color: rgb(181, 181, 181); // Adjust color later
+		background: -moz-linear-gradient(
+			180deg,
+			rgba(15, 105, 56, 0) 0%,
+			rgba(0, 0, 0, 0.8) 100%
+		);
+		background: -webkit-linear-gradient(
+			180deg,
+			rgba(15, 105, 56, 0) 0%,
+			rgba(0, 0, 0, 0.8) 100%
+		);
+		background: linear-gradient(
+			180deg,
+			rgba(15, 105, 56, 0) 0%,
+			rgba(0, 0, 0, 0.8) 100%
+		);
+
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-end;
+
+		h1 {
+			font-family: $font-primary;
+			color: $primary-secondary;
+			margin: 1em $global-margin;
+
+			font-weight: 400;
+			font-size: 2.7em;
+		}
+	}
+}
+
 /* Navigation Breadcrumbs */
+
 .nav-breadcrumbs {
-    align-self: flex-start;
-    // width: 100%;
-    padding: 1em 0;
-    text-transform: uppercase;
+	align-self: flex-start;
+	// width: 100%;
+	padding: 1em 0;
+	text-transform: uppercase;
 
-    li {
-      display: inline;
+	li {
+		display: inline;
 
-      a {
-        text-decoration: none;
-        color: $font-colour;
-        font-weight: 600;
-        font-size: 0.8em;
-      }
-    }
+		a {
+			text-decoration: none;
+			color: $font-colour;
+			font-weight: 600;
+			font-size: 0.8em;
+		}
+	}
 
-    li + li ::before {
-      padding: 1vw;
-      color: $font-colour;
-      content: ">>\00a0";
-    }
-  }
+	li + li ::before {
+		padding: 1vw;
+		color: $font-colour;
+		content: ">>\00a0";
+	}
+}
 
-  /* Heading Border */
-  .h1-border {
-    span {
-      padding: 0vw 5ch;
-      border-bottom: 0.5rem solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(to right, $dark , #62AC3B);
-    }
-  }
+/* Heading Border */
 
-  /* Internal Navigation */
-  .internal-nav {
-    z-index: 2;
-    align-self: flex-start;
+.h1-border {
+	span {
+		padding: 0vw 5ch;
+		border-bottom: 0.5rem solid;
+		border-image-slice: 1;
+		border-image-source: linear-gradient(to right, $dark, #62ac3b);
+	}
+}
 
-    background-color: white;
+/* Internal Navigation */
 
-    h2 {
-      font-weight: 500;
-    }
+.internal-nav {
+	z-index: 2;
+	align-self: flex-start;
+	background-color: white;
 
-    ul {
-      list-style: none;
-      padding: 0;
+	h2 {
+		font-weight: 500;
+	}
 
-      li {
-        padding-bottom: 1ch;
+	ul {
+		list-style: none;
+		padding: 0;
 
-        a {
-          text-decoration: none;
+		li {
+			padding-bottom: 1ch;
 
-          &:link, &:visited {
-            color: $font-colour;
-          }
+			a {
+				text-decoration: none;
+				&:link,
+				&:visited {
+					color: $font-colour;
+				}
 
-          &:hover, &:active, &:focus {
-            color: $primary-main;
-            font-weight:500;
-          }
-        }
-      }
-    }
-  }
+				&:hover,
+				&:active,
+				&:focus {
+					color: $primary-main;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
 
-  @media screen and (min-width: $breakpoint-tablet-portrait) {
-    .internal-nav {
-      div {
-        padding-left: 1em;
-        border-left: 0.3rem solid;
-        border-image-slice: 1;
-        border-image-source: linear-gradient($dark, #62ac3b);
-      }
-    }
-  }
+@media screen and (min-width: $breakpoint-tablet-portrait) {
+	.internal-nav {
+		div {
+			padding-left: 1em;
+			border-left: 0.3rem solid;
+			border-image-slice: 1;
+			border-image-source: linear-gradient($dark, #62ac3b);
+		}
+	}
+}

@@ -26,6 +26,8 @@ let changeZoom = 1;
 /* FUNCTIONS */
 const showLightBox = () => {
   lightboxContainer.classList.add("active");
+  // lightboxImage.classList.add("open-zoom");
+  lightboxImage.style.transform = "scale(1)";
   document.querySelector("body").style.overflow = "hidden";
   document.querySelector(".lightbox-slide").style.cursor = "grab";
   document.querySelector("#header").style.display = "none";
@@ -33,13 +35,15 @@ const showLightBox = () => {
 
 const hideLightBox = () => {
   lightboxContainer.classList.remove("active");
+  // lightboxImage.classList.remove("open-zoom");
+  lightboxImage.style.transform = "scale(0.5)";
   document.querySelector("body").style.overflow = "auto";
   document.querySelector(".lightbox-slide").style.cursor = "default";
   document.querySelector("#header").style.display = "flex";
 };
 
 const setActiveImage = (image) => {
-  lightboxImage.style.transform = "scale(1)";
+  // lightboxImage.style.transform = "scale(1)"; // added translateX(0%)
   lightboxSlide.style.transform = "none";
   changeZoom = 1;
 
@@ -136,6 +140,8 @@ window.addEventListener("keydown", (e) => {
 // IMAGE PANNING
 // TODO: Fix awkward behavior
 // TODO: Organise code
+// TODO: Make touch events work on pan
+// TODO: Stop image from automatically dragging when reopening the modal
 
 // Distance between last and new position
 var state = { distX: 0, distY: 0 };
