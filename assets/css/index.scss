@@ -24,12 +24,27 @@ img {
     @include flex-centered;
     width: 100%;
     
-    background: url('../images/homepage/hero-banner.png') repeat fixed 100%;
     background-size: cover;
     background-position: center;
     
     font-family:  $font-primary;
     color: $primary-secondary;
+
+    .video-container {
+        z-index: -1;
+        position: fixed;
+        max-width: 100vw;
+        overflow: hidden;
+        object-fit: contain;
+        
+        @include flex-centered;
+
+        video {
+            // width: 100%;
+            height: 100%;
+            overflow-x: hidden
+        }
+    }
 
     .hero-banner-container {
         @include flex-centered;
@@ -504,11 +519,15 @@ img {
     }
 }
 
+.news-and-events {
+    @include flex-centered;
+    background-color: #FFF;
+    padding-inline: $global-margin;
+    width: 100%;
+}
 .news-and-events-container {
     padding-block: 15vh; 
-    
-    padding-inline: $global-margin;
-    max-width: 1080px;
+
 
     .nac-cards {
         @include flex-centered;

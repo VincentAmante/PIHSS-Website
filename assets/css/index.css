@@ -101,11 +101,37 @@ img {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background: url("../images/homepage/hero-banner.png") repeat fixed 100%;
   background-size: cover;
   background-position: center;
   font-family: "EB Garamond", serif;
   color: #FFFFFF;
+}
+
+.hero-banner .video-container {
+  z-index: -1;
+  position: fixed;
+  max-width: 100vw;
+  overflow: hidden;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-banner .video-container video {
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .hero-banner .hero-banner-container {
@@ -726,10 +752,27 @@ img {
   font-weight: bold;
 }
 
+.news-and-events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FFF;
+  padding-inline: 5vw;
+  width: 100%;
+}
+
 .news-and-events-container {
   padding-block: 15vh;
-  padding-inline: 5vw;
-  max-width: 1080px;
 }
 
 .news-and-events-container .nac-cards {

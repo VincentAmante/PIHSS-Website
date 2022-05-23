@@ -87,3 +87,34 @@ createCounter("building-count");
 createCounter("classroom-count");
 createCounter("employee-count");
 createCounter("alumni-count");
+
+
+const fadeSlider = (cardClassName, containerName) => {
+  let card = document.getElementsByClassName(cardClassName); //grabs all the elements with .card class
+  let container = document.getElementsByClassName(containerName)[0]; //grabs the div with .second-container class
+
+  function isInViewport(el) {
+    let result = [];
+    for (var i = 0; i < el.length; i++) {
+      const rect = el[i].getBoundingClientRect();
+      // console.log(i, el.length);
+      result.push(
+        rect.left >= 0 &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+      ); // checks whether a div with the .card class is out of the viewport and stores the value in result[]
+    }
+    return result; // returns an array of boolean values for each element with .card class
+  }
+
+  container.addEventListener("scroll", function () {
+    //listens to scroll event inside second-container
+    const result = isInViewport(card);
+    for (var i = 0; i < result.length; i++) {
+      // Below code adds/removes .card-inactive class
+      if (!result[i]) {
+        card[i].classList.add("card-inactive");
+      } else card[i].classList.remove("card-inactive");
+    }
+  });
+}
