@@ -23,6 +23,9 @@ footer {
             border-radius: .5em;
             background-color: $primary-main;
         }
+        img{
+            width: 1em;
+        }
     }
     .footer-logo-container {
         display: flex;
@@ -32,7 +35,7 @@ footer {
             padding: 5vmin 1vw;
             // padding-right: 2vw;
             img {
-                max-width: 5rem;
+                max-width: 4rem;
             }
         }
         
@@ -45,17 +48,17 @@ footer {
             margin: 0;
             text-transform: uppercase;
 
-            font-family: $font-primary;
+            font-family: $font-secondary;
             
             h1 {
                 margin: 0;
-                font-size: 1.5rem;
-                font-weight: 800;
+                font-size: 1.25em;
+                font-weight: 400;
             }
             h2 {
                 margin: 0;
-                font-weight: 400;
-                font-size: .9em;
+                font-weight: 800;
+                font-size: .75em;
             }
         }
     }
@@ -98,6 +101,10 @@ footer {
             margin-top: 1em;
         }
     }
+
+    // .footer-contacts{
+    //     padding-left: 3em;
+    // }
 
     .footer-contact-map {
         width: 35%;
