@@ -86,6 +86,11 @@ img {
      object-fit: cover;
 }
 
+header .header-content {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
 .hero-banner {
   display: -webkit-box;
   display: -ms-flexbox;

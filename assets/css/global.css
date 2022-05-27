@@ -703,8 +703,6 @@ header {
 }
 
 header .header-content {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
   transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;

@@ -19,6 +19,12 @@ img {
     object-fit: cover;
 }
 
+header {
+    .header-content {
+        transform: translateY(-100%);
+    }
+}
+
 // Hero Banner
 .hero-banner {
     @include flex-centered;
