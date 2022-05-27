@@ -63,6 +63,7 @@ main, section {
       -ms-flex-positive: 1;
           flex-grow: 1;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .about-us-container .about-us .image div {

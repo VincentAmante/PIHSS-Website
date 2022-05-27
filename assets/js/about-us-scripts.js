@@ -15,7 +15,6 @@ tab_container.addEventListener("click", () => {
             document.getElementById(value + "-content").classList.add("active");
             document.getElementById(value + "-img").classList.add("active");
             document.getElementById("tab-" + value).classList.add("active");
-
             selectedTab = value;    
         }
     }

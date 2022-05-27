@@ -179,7 +179,6 @@ header {
 
 
   @media screen and (max-width: $breakpoint-tablet-portrait) {
-
     .burger {
         position: absolute;
         margin-right: 4vw;
@@ -196,13 +195,6 @@ header {
           margin-top: .5rem;
           background-color: black;
       }
-    }
-
-    .burger-alone {
-        div {
-            background-color: $primary-secondary;
-            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-        }
     }
 
     .toggle {
