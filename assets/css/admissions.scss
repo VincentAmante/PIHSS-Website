@@ -229,12 +229,12 @@ table {
             flex: 1;
         }
 
-        label:not(.file-button) {
+        label {
             font-weight: 600;
             width: 15vw;
             flex-shrink: 0;
 
-            &::after {
+            &::after:not(.file-button) {
                content: "*";
                color: red; 
             }
@@ -285,6 +285,38 @@ table {
                 }
             }
         }
+
+        .file-upload {
+            @include flex-centered;
+            align-items: flex-start;
+            gap: 1.5vh;
+            
+            .upload-button {
+                border: .01rem solid #959595;
+                padding: .2em 2em;
+                border-radius: .5em;
+                background-color: #DDDDDD;
+                cursor: pointer;
+
+                &:hover {
+                    border-color: #DDDDDD;
+                    background-color: rgba(255, 255, 255, 0.5)
+                }
+            }
+
+            .image-drop {
+                @include flex-centered;
+                border: .01rem solid #C9C9C9;
+                text-align: center;
+                padding-inline: 5vw;
+                padding-block: 5vh;
+                border-radius: .5em;
+            }
+
+            input[type="file"]{
+                display: none;
+            }
+        }
         
         .form-button {
             border: none;
@@ -319,15 +351,12 @@ table {
             }
         }
     }
+    
 
     .form-item-empty {
         label {
             user-select: none;
             opacity: 0;
-            &::after {
-               content: "";
-               color: red; 
-            }
         }
     }
 }

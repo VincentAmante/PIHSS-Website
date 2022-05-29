@@ -302,14 +302,14 @@ table th {
           flex: 1;
 }
 
-.registration-form .form-item label:not(.file-button) {
+.registration-form .form-item label {
   font-weight: 600;
   width: 15vw;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 
-.registration-form .form-item label:not(.file-button)::after {
+.registration-form .form-item label::after:not(.file-button) {
   content: "*";
   color: red;
 }
@@ -369,6 +369,64 @@ table th {
   background-color: #C9C9C9;
 }
 
+.registration-form .form-item .file-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1.5vh;
+}
+
+.registration-form .form-item .file-upload .upload-button {
+  border: .01rem solid #959595;
+  padding: .2em 2em;
+  border-radius: .5em;
+  background-color: #DDDDDD;
+  cursor: pointer;
+}
+
+.registration-form .form-item .file-upload .upload-button:hover {
+  border-color: #DDDDDD;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.registration-form .form-item .file-upload .image-drop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: .01rem solid #C9C9C9;
+  text-align: center;
+  padding-inline: 5vw;
+  padding-block: 5vh;
+  border-radius: .5em;
+}
+
+.registration-form .form-item .file-upload input[type="file"] {
+  display: none;
+}
+
 .registration-form .form-item .form-button {
   border: none;
   -webkit-box-flex: .25;
@@ -412,11 +470,6 @@ table th {
       -ms-user-select: none;
           user-select: none;
   opacity: 0;
-}
-
-.registration-form .form-item-empty label::after {
-  content: "";
-  color: red;
 }
 
 @media screen and (min-width: 768px) {
