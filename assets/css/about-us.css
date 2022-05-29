@@ -37,12 +37,8 @@ main, section {
   margin-inline: 5vw;
 }
 
-.about-us-container {
-  -webkit-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
-}
-
 .about-us-container .about-us {
+  width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,23 +60,26 @@ main, section {
           flex-grow: 1;
   overflow-x: hidden;
   overflow-y: hidden;
+  position: relative;
 }
 
 .about-us-container .about-us .image div {
+  position: absolute;
   width: 100%;
-  height: 100%;
-  -webkit-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
-}
-
-.about-us-container .about-us .image img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+.about-us-container .about-us .image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .about-us-container .about-us .content {
-  width: 70%;
+  max-width: 50vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,12 +170,17 @@ main, section {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    min-height: 70vh;
+  }
+  .about-us-container .about-us .image div {
+    position: initial;
   }
   .about-us-container .about-us .image img {
     width: 100%;
   }
   .about-us-container .about-us .content {
     width: auto;
+    max-width: initial;
   }
   .about-us-container .about-us .content .content-headers {
     -ms-grid-columns: (1fr)[2];

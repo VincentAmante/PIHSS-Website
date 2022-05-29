@@ -240,8 +240,28 @@ header .header-content {
   padding: 0;
 }
 
+.about-us .about-us-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .about-us .about-us-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
+  height: 100%;
+  aspect-ratio: 4/6;
 }
 
 .about-us .about-us-text {
@@ -259,12 +279,15 @@ header .header-content {
 
 .about-us .about-us-text p {
   margin: 1em 0;
-  font-size: clamp(8px, 1.15vw, 1.5rem);
+  font-size: clamp(12px, 1.15vw, 1.5rem);
   text-align: justify;
 }
 
 .about-us .about-us-statblock {
   background-color: #EEE1B2;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -279,6 +302,9 @@ header .header-content {
   z-index: 1;
   padding-inline: 1em;
   border-radius: .5em;
+  width: 70%;
+  -webkit-transform: translateY(-5vh);
+          transform: translateY(-5vh);
 }
 
 .about-us .about-us-statblock > div {
@@ -419,7 +445,11 @@ header .header-content {
 }
 
 .more-info .more-info-slideshow .selection .slider .card .card-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
+  height: 100%;
+  aspect-ratio: 4/6;
   cursor: pointer;
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
@@ -523,7 +553,6 @@ header .header-content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-inline: 5vw;
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
@@ -532,6 +561,10 @@ header .header-content {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(15, 105, 56, 0)), to(black));
   background: linear-gradient(180deg, rgba(15, 105, 56, 0) 0%, black 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#000000",GradientType=1);
+}
+
+.why-pihss .why-pihss-description {
+  padding-inline: 5vw;
 }
 
 .why-pihss .why-pihss-description .content {
@@ -556,11 +589,12 @@ header .header-content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  color: black;
 }
 
 .why-pihss .why-pihss-description .btn .btn-wrapper a {
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
   cursor: pointer;
   text-decoration: none;
   padding: .75em 2em;
@@ -572,9 +606,13 @@ header .header-content {
   font-weight: 600;
 }
 
-.why-pihss .why-pihss-description .btn .btn-wrapper:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+.why-pihss .why-pihss-description .btn .btn-wrapper a:visited {
+  color: black;
+}
+
+.why-pihss .why-pihss-description .btn .btn-wrapper a:hover {
+  background-color: #1B9B55;
+  color: #FFFFFF;
 }
 
 .why-pihss .why-pihss-selection {
@@ -667,8 +705,8 @@ header .header-content {
 }
 
 .administrative-affairs .aac-affairs-container {
-  padding: 1em;
-  max-width: 100vw;
+  padding: 1vw;
+  max-width: 95vw;
 }
 
 .administrative-affairs h1 {
@@ -689,6 +727,7 @@ header .header-content {
       -ms-flex-pack: center;
           justify-content: center;
   margin-inline: 5vw;
+  max-width: 95vw;
 }
 
 .administrative-affairs .staff .aac-slider-wrapper {
@@ -748,6 +787,8 @@ header .header-content {
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card .aac-image {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  aspect-ratio: 4/6;
 }
 
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card .aac-person {
@@ -839,11 +880,13 @@ header .header-content {
 }
 
 .news-and-events-container article .article-image img {
-  height: 100%;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/6;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .news-and-events-container article .article-text {
@@ -991,6 +1034,7 @@ header .header-content {
     margin-bottom: 10vw;
   }
   .about-us .about-us-statblock {
+    width: initial;
     position: absolute;
     bottom: -10%;
     left: -25%;
@@ -1038,7 +1082,7 @@ header .header-content {
   }
   .why-pihss .why-pihss-container .why-pihss-description {
     max-width: 40%;
-    margin-left: 5vmax;
+    margin-left: 5vw;
     margin-right: 5vw;
     text-align: justify;
   }
@@ -1047,6 +1091,7 @@ header .header-content {
   }
   .why-pihss .why-pihss-container .why-pihss-selection {
     left: 5vw;
+    max-width: 95vw;
   }
   .why-pihss .why-pihss-container .why-pihss-selection .why-pihss-slider {
     overflow-x: visible;

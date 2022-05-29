@@ -479,17 +479,28 @@
           </div>
         </div>
       </section>
-<!-- 
+
       <section id="registration" class="registration">
-        <form class="registration-form" id="registration-form">
+        <form class="registration-form" id="registration-form" action="./assets/php/registration-submit.php" method="POST">
           <div class="form-item">
             <label for="student-name">Student Name</label>
             <input type="text" id="student-name" name="student-name" spellcheck="false">
           </div>
           <div class="form-item">
             <label for="gender">Gender</label>
-            <input type="radio" name="gender" value="female">Female
-            <input type="radio" name="gender" value="male">Male
+            <div class="radio-group">  
+              <div class="input-group">
+                <!-- <label for="gender-female"></label> -->
+                <input id="gender-female" type="radio" name="gender" value="f">
+                Female
+              </div>
+              
+              <div class="input-group">  
+                <!-- <label for="gender-female"></label> -->
+                <input id="gender-male" type="radio" name="gender" value="m">
+                Male
+              </div>
+            </div>
           </div>
           <div class="form-item">
             <label for="date-of-birth">Date of Birth</label>
@@ -516,15 +527,23 @@
             <input type="file" name="eid-copy-back" id="">
           </div>
           <div class="form-item">
-            <label for="passport-copy"></label>
-            <input type="file" name="passport-copy" id="">
+            <label for="passport-copy">Passport Copy</label>
+            <label class="file-button" for="">
+              Insert File
+              <input type="file" name="passport-copy" id="">
+            </label>
           </div>
           <div class="form-item">
-            <label for="student-class"></label>
+            <label for="student-class">Student Class</label>
             <input type="text" name="student-class" id="">
           </div>
+          <div class="form-item form-item-empty">
+            <label for="form-submit">Form Buttons</label>
+            <input class="form-button form-submit" type="submit" value="Submit">
+            <input class="form-button form-reset" type="reset" value="Clear All">
+          </div>
         </form>
-      </section> -->
+      </section>
     </main>
 
     <footer>

@@ -119,8 +119,13 @@ header {
     }
 
     .about-us-img {
+        @include flex-centered;
+
         img {
+            object-fit: cover;
             width: 100%;
+            height: 100%;
+            aspect-ratio: 4/6;
         }
     }
     .about-us-text {
@@ -136,7 +141,7 @@ header {
         }
         p {
             margin: 1em 0;
-            font-size: clamp(8px, 1.15vw, 1.5rem);
+            font-size: clamp(12px, 1.15vw, 1.5rem);
             text-align: justify;
         }
     }
@@ -144,6 +149,7 @@ header {
     .about-us-statblock {
         
         background-color: $accent;
+        flex-grow: 1;
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
@@ -151,7 +157,8 @@ header {
         z-index: 1;
         padding-inline: 1em;
         border-radius: .5em;
-
+        width: 70%;
+        transform: translateY(-5vh);
 
             &>div {
                 @include flex-centered;
@@ -242,7 +249,11 @@ header {
                         overflow: hidden;
 
                         img {
+                            object-fit: cover;
                             width: 100%;
+                            height: 100%;
+                            aspect-ratio: 4/6;
+
                             cursor: pointer;
                             transition: 0.25s ease-in-out;
                         }
@@ -321,8 +332,6 @@ header {
     .why-pihss-container {
         @include flex-centered;
         
-        padding-inline: $global-margin;
-        
         height: min-content;
         padding-block: 15vh;
         background: rgb(15,105,56);
@@ -333,6 +342,7 @@ header {
     }
 
     .why-pihss-description {
+        padding-inline: $global-margin;
         .content {
             color: $primary-secondary;
             h1 {
@@ -347,10 +357,10 @@ header {
             .btn-wrapper {
                 display: flex;
                 justify-content: center;
-                
-                transition : .25s ease-in-out;
+                color: black;
 
                 a {
+                transition : .25s ease-in-out;
                 cursor: pointer;
                 text-decoration: none;
         
@@ -361,10 +371,17 @@ header {
         
                 text-transform: uppercase;
                 font-weight: 600;
-            }
-                &:hover {
-                    transform: scale(1.05);
+
+                &:visited {
+                    color: black;
                 }
+
+                
+                &:hover {
+                    background-color: $primary-main;
+                    color: $primary-secondary;
+                }
+            }
             }
             
         }
@@ -445,8 +462,8 @@ header {
 
 
     .aac-affairs-container {
-        padding: 1em;
-        max-width: 100vw;
+        padding: 1vw;
+        max-width: 95vw;
     }
 
     h1 {
@@ -463,7 +480,7 @@ header {
         justify-content: center;
         margin-inline: $global-margin;
 
-        // max-width: 90vw;
+        max-width: 95vw;
         .aac-slider-wrapper {
             overflow-x: hidden;
             overflow-y: hidden;
@@ -509,6 +526,8 @@ header {
                         
                         .aac-image {
                             object-fit: cover;
+                            width: 100%;
+                            aspect-ratio: 4/6;
                         }
 
                         .aac-person {
@@ -535,7 +554,6 @@ header {
 }
 .news-and-events-container {
     padding-block: 15vh; 
-
 
     .nac-cards {
         @include flex-centered;
@@ -569,10 +587,12 @@ header {
             height: 100%;
 
             img {
+                object-fit: cover;
+                width: 100%;
                 height: 100%;
+                aspect-ratio: 4/6;
                 
                 transition: all .5s ease-in-out;
-                object-fit: cover;
             }
 
         }
@@ -690,6 +710,7 @@ header {
 
         .about-us-statblock {
             
+        width: initial;
             position: absolute;
             bottom: -10%;
             left: -25%;
@@ -737,7 +758,7 @@ header {
 
             .why-pihss-description {
                 max-width: 40%;
-                margin-left: 5vmax;
+                margin-left: $global-margin;
                 margin-right: $global-margin;
                 text-align: justify;
             }
@@ -749,6 +770,7 @@ header {
             .why-pihss-selection {
                 // position: absolute;
                 left: $global-margin;
+                max-width: 95vw;
 
                 .why-pihss-slider {
                     overflow-x: visible;

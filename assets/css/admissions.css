@@ -68,6 +68,7 @@ h2 {
           align-items: flex-start;
   position: relative;
   overflow-x: scroll;
+  max-width: 85vw;
   -ms-overflow-style: none;
   scrollbar-width: none;
   margin-block: 2.5em;
@@ -269,36 +270,153 @@ table th {
   text-transform: uppercase;
 }
 
-.registration-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.registration {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+}
+
+.registration-form {
+  margin-inline: 5vw;
+  min-width: 50vw;
 }
 
 .registration-form .form-item {
-  margin: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-block: 1em;
+}
+
+.registration-form .form-item > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.registration-form .form-item label:not(.file-button) {
+  font-weight: 600;
+  width: 15vw;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.registration-form .form-item label:not(.file-button)::after {
+  content: "*";
+  color: red;
+}
+
+.registration-form .form-item input[type="text"], .registration-form .form-item input[type="date"] {
+  padding: .5em;
+  border-color: #C9C9C9;
+  border-style: solid;
+  border-radius: .5em;
+  border-width: .09rem;
+}
+
+.registration-form .form-item input[type="date"] {
+  text-transform: uppercase;
+}
+
+.registration-form .form-item .radio-group {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.registration-form .form-item .radio-group .input-group {
+  margin-right: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registration-form .form-item .radio-group .input-group label::after {
+  content: none;
+}
+
+.registration-form .form-item .radio-group .input-group input[type="radio"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  border: 1px solid #C9C9C9;
+  border-radius: 50%;
+  margin-right: .5em;
+  padding: .5em;
+}
+
+.registration-form .form-item .radio-group .input-group input[type="radio"]:checked {
+  background-color: #C9C9C9;
+}
+
+.registration-form .form-item .form-button {
+  border: none;
+  -webkit-box-flex: .25;
+      -ms-flex-positive: .25;
+          flex-grow: .25;
+  padding: 2vmin 3vw;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  border-radius: .5em;
+  cursor: pointer;
+  border: .01rem solid none;
+}
+
+.registration-form .form-item .form-submit {
+  background-color: #65B9E1;
+  margin-left: 10vw;
+  margin-right: 2.5vw;
+}
+
+.registration-form .form-item .form-submit:hover {
+  background-color: rgba(102, 186, 225, 0.1);
+  color: #65B9E1;
+  border: .01rem solid #65B9E1;
+}
+
+.registration-form .form-item .form-reset {
+  font-weight: bold;
+  color: #FF1F1F;
+  border: .01rem solid #DDDDDD;
+}
+
+.registration-form .form-item .form-reset:hover {
+  background-color: #FF1F1F;
+  color: #FFFFFF;
+  border: .01rem solid #FF1F1F;
+}
+
+.registration-form .form-item-empty label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0;
+}
+
+.registration-form .form-item-empty label::after {
+  content: "";
+  color: red;
 }
 
 @media screen and (min-width: 768px) {

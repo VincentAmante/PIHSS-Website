@@ -158,7 +158,6 @@ function scrollFunction() {
 
   } else {
 
-    
     // document.getElementById("top-header").style.display = "none";
     if (window.innerWidth >= 768){
       document.getElementById("header-content").style.transform = 'translate(0,-' + topHeaderHeight + 'px)'

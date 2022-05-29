@@ -45,6 +45,7 @@ h2 {
     align-items: flex-start;
     position: relative;
     overflow-x: scroll;
+    max-width: 85vw;
     
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -210,15 +211,124 @@ table {
     }
 }
 
-.registration-form {
-    @include flex-centered;
+.registration {
     align-items: flex-start;
-    flex-grow: 1;
+}
+.registration-form {
+    margin-inline: $global-margin;
+    min-width: 50vw;
 
     .form-item {
-        margin: 1em;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
+
+        padding-block: 1em;
+        & > * {
+            flex: 1;
+        }
+
+        label:not(.file-button) {
+            font-weight: 600;
+            width: 15vw;
+            flex-shrink: 0;
+
+            &::after {
+               content: "*";
+               color: red; 
+            }
+        }
+
+        input[type="text"], input[type="date"] {
+            padding: .5em;
+            border-color: #C9C9C9;
+            border-style: solid;
+            border-radius: .5em;
+            border-width: .09rem;
+        }
+
+        input[type="date"]{
+            text-transform: uppercase;
+        }
+
+        .radio-group {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            .input-group {
+                margin-right: 1em;
+                display: flex;
+                align-items: center;
+
+                label {
+                    &::after {
+                        content: none;
+                    }
+                }
+
+                input[type="radio"]{
+                    appearance: none;
+
+                    display: inline-block;
+                    width: 1.25em;
+                    height: 1.25em;
+                    border: 1px solid #C9C9C9;
+                    border-radius: 50%;
+                    margin-right: .5em;
+                    padding: .5em;
+
+                    &:checked {
+                        background-color: #C9C9C9;
+                    }
+                }
+            }
+        }
+        
+        .form-button {
+            border: none;
+            flex-grow: .25;
+            padding: 2vmin 3vw;
+            color: $primary-secondary;
+            text-transform: uppercase;
+            border-radius: .5em;
+            cursor: pointer;
+            border: .01rem solid none;
+        }
+        .form-submit {
+            background-color: #65B9E1;
+            margin-left: 10vw;
+            margin-right: 2.5vw;
+
+            &:hover {
+                background-color: hsla(199, 67%, 64%, 0.10);
+                color: #65B9E1;
+                border: .01rem solid #65B9E1;
+            }
+        }
+        .form-reset {
+            font-weight: bold;
+            color: #FF1F1F;
+            border: .01rem solid #DDDDDD;
+
+            &:hover {
+                background-color: #FF1F1F;
+                color: $primary-secondary;
+                border: .01rem solid #FF1F1F;
+            }
+        }
+    }
+
+    .form-item-empty {
+        label {
+            user-select: none;
+            opacity: 0;
+            &::after {
+               content: "";
+               color: red; 
+            }
+        }
     }
 }
 
