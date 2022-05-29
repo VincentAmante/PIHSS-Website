@@ -97,7 +97,7 @@ h2 {
       }
 
       .info {
-        padding: 1.5em 3em;
+        padding: 1em 3em;
 
         ul {
           padding: 0;
@@ -107,10 +107,13 @@ h2 {
             align-items: center;
             margin: 0.5em 0em;
 
-            img {
-              padding-right: 20px;
-              width: 9vmin;
-              max-width: 5rem;
+            i {
+              color: $dark;
+              height: 2em;
+              width: 2em;
+              padding-top: 0.45em;
+              border: 1px solid $dark;
+              border-radius: 50%;
             }
 
             * {
@@ -120,6 +123,7 @@ h2 {
             a {
               color: $font-colour;
 
+              padding-left: 1em;
               text-decoration: none;
               font-size: clamp(16px, 1vw, 1.2rem);
             }
@@ -131,7 +135,7 @@ h2 {
     .contact-map {
       width: 100%;
       position: relative;
-      padding-bottom: 50vh;
+      padding-bottom: 70vh;
       height: 0;
       overflow: hidden;
 
@@ -179,6 +183,7 @@ h2 {
     span {
       color: red;
       font-weight: 700;
+      font-size: large;
     }
 
     .form-note {
@@ -210,6 +215,7 @@ h2 {
           min-height: 40px;
           border-radius: 5px;
           margin-top: 10px;
+          resize: none;
         }
       }
 
@@ -245,7 +251,7 @@ h2 {
 
       .contact-map {
         width: 55%;
-        padding-bottom: 70vh;
+        padding-bottom: 80vh;
       }
     }
   }
