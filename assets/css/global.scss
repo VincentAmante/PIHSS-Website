@@ -48,13 +48,12 @@ ul {
 	height: 60vh;
 	padding: 0;
 
-	// TODO: Change banner picture based on page
 	background: url("../images/banners/banner-1.jpg") repeat fixed 100%;
 	background-size:cover;
 	background-position: bottom;
 
-	.banner-container { // TODO: Add container div within banner section
-		background-color: rgb(181, 181, 181); // Adjust color later
+	.banner-container {
+		background-color: rgb(181, 181, 181);
 		background: -moz-linear-gradient(
 			180deg,
 			rgba(15, 105, 56, 0) 0%,
