@@ -35,3 +35,40 @@ document.addEventListener('click', function(event) {
     burger.classList.remove("toggle");
   }
 });
+
+// Carousel Template
+// - Imperfect but should be capable of adapting to all carousels
+const createCarousel = (leftBtn, rightBtn, slider, rightOffset = 0) => {
+  leftBtn = document.getElementById(leftBtn);
+  rightBtn = document.getElementById(rightBtn);
+  let elementWidth = document.getElementById(slider).children[0].clientWidth;
+  slider = document.getElementById(slider);
+
+  const scrollLeft = () => {
+    if (slider.scrollLeft - elementWidth / 2 < 0){
+      slider.insertBefore(slider.lastElementChild, slider.children[0]);
+    }
+    slider.scrollLeft -= elementWidth;
+  }
+  const scrollRight = () => {
+    if ((slider.scrollLeft + slider.clientWidth + elementWidth) > slider.scrollWidth){
+
+      // Smoothens out going to the right by ensuring scroll is not at maximum
+      // - Not sure why this works
+      if (rightOffset > 0){
+        slider.scrollLeft -= elementWidth / rightOffset;
+      }
+      
+      slider.insertBefore(slider.firstElementChild, slider.lastElementChild.nextSibling);
+    }
+    slider.scrollLeft += elementWidth;
+  };
+
+  leftBtn.onclick = () => {scrollLeft()};
+  rightBtn.onclick = () => {scrollRight()};
+
+  // slider.addEventListener('scroll', () => {
+  //   if (slider.scrollLeft = 0) {scrollLeft()};
+  //   if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){scrollRight()};
+  // })
+}

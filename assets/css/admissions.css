@@ -525,6 +525,7 @@ table th {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    gap: 5vw;
   }
 }
 

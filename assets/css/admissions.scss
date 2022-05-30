@@ -415,8 +415,9 @@ table {
     }
 
     .fee-structure {
-        .discounts-refunds {
+        .discounts-refunds {    
             flex-direction: row;
+            gap: 5vw;
         }
     }
 }

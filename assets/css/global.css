@@ -726,7 +726,7 @@ header .top-header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-block: .3em;
+  padding-block: .2em;
   padding-left: 0;
   font-size: 1.15rem;
 }
