@@ -238,7 +238,7 @@ h2 {
   text-align: center;
 }
 
-.contact-form .form-container form .submit-button input {
+.contact-form .form-container form .submit-button button {
   background-color: #EEE1B2;
   padding: 10px 50px;
   border-radius: 5px;

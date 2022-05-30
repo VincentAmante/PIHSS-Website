@@ -182,7 +182,7 @@
 						<em><span>*</span> indicates a required field</em>
 					</div>
 
-					<form>
+					<form class="form" action="./assets/php/contact-submit.php" method="POST">
 						<div class="form-item">
 							<label for="name">Name <span>*</span></label>
 							<input type="text" id="name" name="name" required />
@@ -214,7 +214,8 @@
 						</div>
 
 						<div class="submit-button">
-							<input type="submit" value="SUBMIT" />
+							<!-- <input type="submit" name="submit" value="SUBMIT" /> -->
+							<button type="submit" name="submit">SUBMIT</button>
 						</div>
 					</form>
 				</div>
