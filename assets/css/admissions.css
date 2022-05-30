@@ -40,7 +40,7 @@ h2 {
 }
 
 .admissions-overview .internal-nav {
-  display: hidden;
+  display: none;
 }
 
 .nav-breadcrumbs {
@@ -485,6 +485,7 @@ table th {
     max-width: 60%;
   }
   .admissions-overview .internal-nav {
+    display: initial;
     z-index: 2;
     right: 5em;
     -ms-flex-item-align: start;

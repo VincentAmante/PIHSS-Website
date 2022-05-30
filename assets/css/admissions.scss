@@ -28,11 +28,10 @@ h2 {
     margin-bottom: 1em;
 }
 
-
 .admissions-overview {
     .internal-nav {
-        display: hidden;
-    }
+        display: none;
+    }   
 }
 
 .nav-breadcrumbs {
@@ -371,6 +370,7 @@ table {
         }
 
         .internal-nav {
+            display: initial;
             z-index: 2;
             right: 5em;
             align-self: flex-start;
