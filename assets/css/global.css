@@ -766,18 +766,19 @@ header .top-header .logo-container .header-title {
 header .top-header .logo-container .header-title > * {
   text-transform: uppercase;
   color: #0F6938;
+  margin: 0;
 }
 
 header .top-header .logo-container .header-title h1 {
-  margin: 0;
   font-size: 1em;
   font-weight: 400;
+  font-family: "Raleway", sans-serif !important;
 }
 
 header .top-header .logo-container .header-title h2 {
-  margin: 0;
   font-weight: 800;
   font-size: .5em;
+  font-family: "Raleway", sans-serif !important;
 }
 
 header .top-header .header-contacts {
@@ -832,17 +833,24 @@ header .top-header .header-contacts .contact:hover * {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  min-height: 6vh;
   width: 100%;
   margin: 0;
   list-style: none;
 }
 
 .nav-links .nav-element, .nav-links .nav-sub-list:hover ul li {
-  padding: .8em 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  height: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   text-align: center;
   -webkit-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
@@ -855,11 +863,23 @@ header .top-header .header-contacts .contact:hover * {
 }
 
 .nav-links .nav-element a, .nav-links .nav-sub-list:hover ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .8em 1em;
   opacity: 1;
   text-decoration: none;
   color: inherit;
   font-size: .9rem;
   height: 100%;
+  width: 100%;
+  vertical-align: middle;
 }
 
 .nav-links .nav-element:hover, .nav-links .nav-sub-list:hover ul li:hover {
@@ -887,6 +907,12 @@ header .top-header .header-contacts .contact:hover * {
 
 .nav-links .nav-sub-list:hover ul li:hover {
   background-color: #23c66d;
+}
+
+.nav-links .nav-sub-list:hover ul li a {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 @media screen and (max-width: 768px) {
@@ -960,29 +986,33 @@ header .top-header .header-contacts .contact:hover * {
     position: fixed;
   }
   .nav-links .nav-element, .nav-links .nav-sub-list:hover ul li {
-    padding: 3vh 5vw;
     text-align: left;
     border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  }
+  .nav-links .nav-element a, .nav-links .nav-sub-list:hover ul li a {
+    padding: 3vh 5vw;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .nav-links .nav-element:hover, .nav-links .nav-sub-list:hover ul li:hover {
     background-color: rgba(255, 255, 255, 0.25);
   }
   .nav-links .nav-sub-list:hover {
-    padding-top: 3vh;
     padding-bottom: 0;
     padding-left: 0;
   }
-  .nav-links .nav-sub-list:hover > a {
-    padding-left: 5vw;
-  }
   .nav-links .nav-sub-list:hover ul {
+    display: none;
     position: initial;
     top: 100%;
     left: 0;
     margin-top: 1.1em;
     background-color: #1B9B55;
     width: 100%;
-    display: block;
   }
   .nav-links .nav-sub-list:hover ul li {
     padding: 3vh 5vw;
@@ -1060,12 +1090,14 @@ footer .footer-logo-container .footer-title h1 {
   margin: 0;
   font-size: 1.25em;
   font-weight: 400;
+  font-family: "Raleway", sans-serif !important;
 }
 
 footer .footer-logo-container .footer-title h2 {
   margin: 0;
   font-weight: 800;
   font-size: .75em;
+  font-family: "Raleway", sans-serif !important;
 }
 
 footer ul {

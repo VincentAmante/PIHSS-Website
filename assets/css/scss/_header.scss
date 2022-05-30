@@ -18,7 +18,6 @@ header {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     }
 
-
     .top-header{
         background-color: $primary-secondary;
         display: flex;
@@ -48,24 +47,25 @@ header {
             .header-title {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: center;           
 
                 margin-left: .75em;
                 
-                > * {
+                & > * {
                     text-transform: uppercase;
                     color: $dark;
+                    margin: 0;
                 }
 
                 h1 {
-                    margin: 0;
                     font-size: 1em;
-                    font-weight: 400;
+                    font-weight: 400; 
+                    font-family: "Raleway", sans-serif !important;
                 }
                 h2 {
-                    margin: 0;
                     font-weight: 800;
                     font-size: .5em;
+                    font-family: "Raleway", sans-serif !important;
                 }
             }
         }
@@ -116,6 +116,7 @@ header {
     color: $primary-secondary;
     display: flex;
     justify-content: space-around;
+    min-height: 6vh;
 
     width: 100%;
     margin: 0;
@@ -123,9 +124,11 @@ header {
     list-style: none;
 
     .nav-element {
-        padding: .8em 1em;
+        display: flex;
+        justify-content: center;
+
         flex-grow: 1;
-        height: 100%;
+        flex-shrink: 0;
         text-align: center;
         transition: background-color .3s ease-in-out;
         position: relative;
@@ -136,11 +139,17 @@ header {
         }
         
         a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .8em 1em;
             opacity: 1;
             text-decoration: none;
             color: inherit;
             font-size: .9rem;
             height: 100%;
+            width: 100%;
+            vertical-align: middle;
           }
 
           &:hover {
@@ -169,6 +178,10 @@ header {
 
                     &:hover {
                         background-color: lighten(#1B9B55, 10%);
+                    }
+
+                    a {
+                        justify-content: flex-start;
                     }
                 }
             }
@@ -243,9 +256,14 @@ header {
           position: fixed;
 
           .nav-element {
-              padding: 3vh 5vw;
               text-align: left;
               border-bottom: 1px solid hsla(0, 0%, 100%, 0.45);
+
+              a {
+                  padding: 3vh 5vw;
+                  align-items: flex-start;
+                  justify-content: flex-start;
+              }
 
               &:hover {
                 background-color: hsla(0, 0%, 100%, 0.25);
@@ -254,26 +272,20 @@ header {
 
         .nav-sub-list {
             &:hover {
-                padding-top: 3vh;
+                // padding-top: 3vh;
                 padding-bottom: 0;
                 padding-left: 0;
 
-                & > a {  
-                  padding-left: 5vw; 
-                }
-
 
               ul {
-                //   display: block;
+                //   TODO: Make it visible on mobile
+                  display: none;
                   position: initial;
                   top: 100%;
                   left: 0;
                   margin-top: 1.1em;
                   background-color: #1B9B55;
                   width: 100%;
-                  
-                  // position: absolute;
-                  display: block;
 
                   li {
                       padding: 3vh 5vw; 
