@@ -360,6 +360,10 @@ h3 {
 }
 
 /* Student Code of Behaviour */
+#student-code {
+  padding: 0 5vw;
+}
+
 #student-code p,
 #student-code ol,
 #student-code ul {
@@ -435,6 +439,9 @@ h3 {
     max-width: 40%;
   }
   /* Co-curricular Activities */
+  #co-curricular {
+    padding: 2vw 5vw;
+  }
   #co-curricular .co-curricular-list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

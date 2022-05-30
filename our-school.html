@@ -26,7 +26,7 @@
 			type="image/x-icon"
 		/>
 	</head>
-	<body>
+	<body onload="selectionHandler(window.location.hash)">
 		<header class="header top-header-up" id="header">
 			<div class="header-content" id="header-content">
 				<div class="top-header" id="top-header">
@@ -115,9 +115,9 @@
 					<ul>
 						<li><a href="./index.html">HOME</a></li>
 						<li>
-							<a href="javascript:window.location.reload(true)">OUR SCHOOL</a>
+							<a href="our-school.html#facilities">OUR SCHOOL</a>
 						</li>
-						<li><a href="#" class="tab-breadcrumb">FACILITIES</a></li>
+						<li><a href="#" class="tab-breadcrumb"></a></li>
 					</ul>
 				</div>
 
@@ -127,7 +127,7 @@
 							<span></span>
 
 							<!-- Headers based on which tab is selected -->
-							<h1 class="active tab-header" id="facilities-header">
+							<h1 class="tab-header" id="facilities-header">
 								Facilities
 							</h1>
 							<h1 class="tab-header" id="co-curricular-header">
@@ -139,7 +139,7 @@
 						</div>
 
 						<!-- Overview based on which tab is selected -->
-						<p class="active tab-overview" id="facilities-overview">
+						<p class="tab-overview" id="facilities-overview">
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 							Molestiae mollitia accusamus delectus velit recusandae adipisci
 							possimus voluptatem, ipsam laboriosam animi odit similique
@@ -203,7 +203,7 @@
       </section> -->
 
 			<!-- Facilities -->
-			<section class="active tab-content" id="facilities">
+			<section class="tab-content" id="facilities">
 				<div class="facilities-slideshow">
 					<button class="slider-btn" id="wp-btn-left" type="button">
 						<div class="icon">

@@ -255,6 +255,8 @@ h3 {
 
 /* Student Code of Behaviour */
 #student-code {
+	padding: 0 $global-margin;
+
 	p,
 	ol,
 	ul {
@@ -329,6 +331,8 @@ h3 {
 
 	/* Co-curricular Activities */
 	#co-curricular {
+		padding: 2vw $global-margin;
+
 		.co-curricular-list {
 			flex-direction: row;
 			flex-wrap: wrap;

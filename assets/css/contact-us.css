@@ -225,6 +225,7 @@ h2 {
 
 .contact-form .form-container form .form-item input,
 .contact-form .form-container form .form-item textarea {
+  padding: 1vw;
   width: 100%;
   border: 1px solid #0F6938;
   min-height: 40px;

@@ -1,57 +1,60 @@
-/* QUERY SELECTORS, VARIABLES */
-const btnTab = document.querySelectorAll(".tab-button");
+// /* QUERY SELECTORS, VARIABLES */
 const breadcrumbTab = document.querySelector(".tab-breadcrumb");
 const headerTab = document.querySelectorAll(".tab-header");
 const overviewTab = document.querySelectorAll(".tab-overview");
 const contentTab = document.querySelectorAll(".tab-content");
-var activeSection = "facilities";
+const subpageBanner = document.querySelector(".subpage-banner");
+var activeSection;
 
-/* FUNCTIONS */
 const selectionHandler = (e) => {
-  if (e == "btn-facilities") {
-    activeSection = "facilities";
-    breadcrumbTab.innerHTML = "FACILITIES";
-  } else if (e == "btn-co-curricular") {
-    activeSection = "co-curricular";
-    breadcrumbTab.innerHTML = "CO-CURRICULAR ACTIVITIES";
-  } else if (e == "btn-student-code") {
-    activeSection = "student-code";
-    breadcrumbTab.innerHTML = "STUDENT CODE OF BEHAVIOR";
-  }
+	if (e) {
+		const sectionID = e.substring(1);
 
-  removeActive();
-  addActive(activeSection);
+		if (sectionID == "facilities") {
+			activeSection = "facilities";
+		} else if (sectionID == "co-curricular") {
+			activeSection = "co-curricular";
+		} else if (sectionID == "student-code") {
+			activeSection = "student-code";
+		} else {
+      activeSection = "facilities";
+		}
+	} else {
+    activeSection = "facilities";
+	}
+
+	breadcrumbTab.innerHTML = activeSection;
+	breadcrumbTab.href = "our-school.html#" + activeSection;
+
+	removeActive();
+	addActive(activeSection);
 };
 
 const removeActive = () => {
-  for (i = 0; i < 3; i++) {
-    headerTab[i].classList.remove("active");
-    overviewTab[i].classList.remove("active");
-    contentTab[i].classList.remove("active");
-  }
+	for (i = 0; i < 3; i++) {
+		headerTab[i].classList.remove("active");
+		overviewTab[i].classList.remove("active");
+		contentTab[i].classList.remove("active");
+	}
 };
 
 const addActive = (activeSection) => {
-  document
-    .querySelector("#" + activeSection + "-header")
-    .classList.add("active");
-  document
-    .querySelector("#" + activeSection + "-overview")
-    .classList.add("active");
-  document.querySelector("#" + activeSection).classList.add("active");
-
-  // document.querySelector("#btn-" + activeSection).classList.add("selected");
+	document
+		.querySelector("#" + activeSection + "-header")
+		.classList.add("active");
+	document
+		.querySelector("#" + activeSection + "-overview")
+		.classList.add("active");
+	document.querySelector("#" + activeSection).classList.add("active");
 };
 
 /* EVENT LISTENERS */
-btnTab.forEach((a) => {
-  a.addEventListener("click", (e) => {
-    e.stopPropagation();
-    selectionHandler(e.currentTarget.id);
-  });
+
+window.addEventListener("hashchange", function () {
+	selectionHandler(window.location.hash);
 });
 
 //-------------------------------------------------
 
 // Why Pihss Slider
-createCarousel('wp-btn-left', 'wp-btn-right', 'facilities-slider');
+createCarousel("wp-btn-left", "wp-btn-right", "facilities-slider");
