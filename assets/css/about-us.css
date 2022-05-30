@@ -150,6 +150,8 @@ main, section {
           flex-grow: 2;
   -webkit-transition: all .5s ease-in;
   transition: all .5s ease-in;
+  overflow-y: scroll;
+  height: 70vh;
   padding: 2rem;
   background-color: #DDEDD5;
 }

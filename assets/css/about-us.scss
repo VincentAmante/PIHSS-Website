@@ -112,6 +112,8 @@ main, section {
                 // justify-content: center;
                 flex-grow: 2;
                 transition: all .5s ease-in;
+                overflow-y: scroll;
+                height: 70vh;
 
                 padding: 2rem;
                 background-color: #DDEDD5;
