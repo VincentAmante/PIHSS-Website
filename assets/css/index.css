@@ -663,12 +663,12 @@ header .header-content {
 .why-pihss .why-pihss-selection .card {
   background-color: #FFFFFF;
   border-radius: .5em;
-  padding: 1.5em;
+  padding: 1.25em;
   -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
           box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   aspect-ratio: 1/1;
-  max-width: 225px;
-  max-height: 225px;
+  width: clamp(225px, 15vw, 275px);
+  height: clamp(225px, 15vw, 275px);
 }
 
 .why-pihss .why-pihss-selection .card .color {
