@@ -1,8 +1,7 @@
 
 
 // Why Pihss Slider
-createCarousel('wp-btn-left', 'wp-btn-right', 'why-pihss-slider');
-
+createCarousel('wp-btn-left', 'wp-btn-right', 'why-pihss-slider', 2);
 // Administrative Affairs Slider
 createCarousel('aac-btn-left', 'aac-btn-right', 'aac-slider', 3);
 
