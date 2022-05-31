@@ -28,6 +28,10 @@ h2 {
     margin-bottom: 1em;
 }
 
+.subpage-banner {
+    background-image: url('../images/placeholders/DSC07466.jpg') ;
+}
+
 .admissions-overview {
     .internal-nav {
         display: none;
@@ -176,8 +180,10 @@ table {
 
 
 .fee-structure {
-    padding: 5vw;
+    padding: $global-margin;
     align-items: flex-start;
+    margin-bottom: 1vh;
+    padding-bottom: 1vh;
 
     .table-wrapper {
         align-self: center;
@@ -211,12 +217,16 @@ table {
 }
 
 .registration {
+    padding-inline: $global-margin;
     align-items: flex-start;
+
+    h2 {
+        color: $dark;
+        font-weight: 500;
+    }
 }
 .registration-form {
-    margin-inline: $global-margin;
-    min-width: 50vw;
-
+    min-width: 100%;
     .form-item {
         display: flex;
         flex-wrap: wrap;
@@ -233,10 +243,16 @@ table {
             width: 15vw;
             flex-shrink: 0;
 
-            &::after:not(.file-button) {
+            &::after {
                content: "*";
-               color: red; 
+               color: $alert; 
             }
+        }
+
+        .file-upload {
+            &::after {
+                content: "";
+             }
         }
 
         input[type="text"], input[type="date"] {
@@ -245,6 +261,11 @@ table {
             border-style: solid;
             border-radius: .5em;
             border-width: .09rem;
+
+            &:invalid {
+                border-color: $alert;
+                border-width: .1rem;
+            }
         }
 
         input[type="date"]{
@@ -280,6 +301,9 @@ table {
 
                     &:checked {
                         background-color: #C9C9C9;
+                    }
+                    &:invalid {
+                        border-color: $alert;
                     }
                 }
             }
@@ -320,7 +344,7 @@ table {
         .form-button {
             border: none;
             flex-grow: .25;
-            padding: 2vmin 3vw;
+            padding: 1em 1.5em;
             color: $primary-secondary;
             text-transform: uppercase;
             border-radius: .5em;
@@ -329,7 +353,7 @@ table {
         }
         .form-submit {
             background-color: #65B9E1;
-            margin-left: 10vw;
+            margin-left: 0vw;
             margin-right: 2.5vw;
 
             &:hover {
@@ -340,13 +364,13 @@ table {
         }
         .form-reset {
             font-weight: bold;
-            color: #FF1F1F;
+            color: $alert;
             border: .01rem solid #DDDDDD;
 
             &:hover {
-                background-color: #FF1F1F;
+                background-color: $alert;
                 color: $primary-secondary;
-                border: .01rem solid #FF1F1F;
+                border: .01rem solid $alert;
             }
         }
     }
@@ -427,5 +451,9 @@ table {
         ul {
             grid-template-columns: repeat(4, 1fr);
         }
+    }
+    
+    .registration-form {
+        min-width: 50vw;
     }
 }

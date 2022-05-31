@@ -22,6 +22,10 @@ main, section {
   width: 100%;
 }
 
+.subpage-banner {
+  background-image: url("../images/placeholders/DSC07455.jpg");
+}
+
 .h1-border {
   padding-left: 1em;
 }

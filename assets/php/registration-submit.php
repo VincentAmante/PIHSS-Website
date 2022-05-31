@@ -28,4 +28,8 @@
         $stmt->close();
         $conn->close();
     }
+
+    // Returns to page
+    $referer = $_SERVER['HTTP_REFERER'];
+    header("Location: $referer");
 ?>

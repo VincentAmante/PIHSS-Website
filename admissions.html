@@ -477,49 +477,51 @@
       </section>
 
       <section id="registration" class="registration">
+        <h1>Registration</h1>
+        <h2>Student Registration Form</h2>
         <form class="registration-form" id="registration-form" action="./assets/php/registration-submit.php" method="POST">
           <div class="form-item">
             <label for="student-name">Student Name</label>
-            <input type="text" id="student-name" name="student-name" spellcheck="false">
+            <input type="text" id="student-name" name="student-name" spellcheck="false" autocomplete="off" required>
           </div>
           <div class="form-item">
             <label for="gender">Gender</label>
             <div class="radio-group">  
               <div class="input-group">
                 <!-- <label for="gender-female"></label> -->
-                <input id="gender-female" type="radio" name="gender" value="f">
+                <input id="gender-female" type="radio" name="gender" value="f" required>
                 Female
               </div>
               
               <div class="input-group">  
                 <!-- <label for="gender-female"></label> -->
-                <input id="gender-male" type="radio" name="gender" value="m">
+                <input id="gender-male" type="radio" name="gender" value="m" required>
                 Male
               </div>
             </div>
           </div>
           <div class="form-item">
             <label for="date-of-birth">Date of Birth</label>
-            <input type="date" name="date-of-birth">
+            <input type="date" name="date-of-birth" required>
           </div>
           <div class="form-item">
             <label for="eid-number">Emirates ID Number</label>
-            <input type="text" name="eid-number">
+            <input type="text" name="eid-number" required autocomplete="off" minlength="15" maxlength="15">
           </div>
           <div class="form-item">
             <label for="eid-issue">EID Issue Date</label>
-            <input type="date" name="eid-issue">
+            <input type="date" name="eid-issue" required>
           </div>
           <div class="form-item">
             <label for="eid-expiry">EID Expiry Date</label>
-            <input type="date" name="eid-expiry">
+            <input type="date" name="eid-expiry" required>
           </div>
           <div class="form-item">
             <label for="eid-copy-front">Upload EID - Frontview</label>
             <label class="file-upload">
               <div class="upload-button">Add Files</div>
               <div class="image-drop">Drop files here to add</div>
-              <input type="file" name="eid-copy-front" class="image-dropzone">
+              <input type="file" name="eid-copy-front" class="image-dropzone" required>
             </label>
           </div>
           <div class="form-item">
@@ -527,7 +529,7 @@
             <label class="file-upload">
               <div class="upload-button">Add Files</div>
               <div class="image-drop">Drop files here to add</div>
-              <input type="file" name="eid-copy-back" id="" class="image-dropzone">
+              <input type="file" name="eid-copy-back" id="" class="image-dropzone" required>
             </label>
           </div>
           <div class="form-item form-item-file">
@@ -535,17 +537,17 @@
             <label class="file-upload" for="">
               <div class="upload-button">Add Files</div>
               <div class="image-drop">Drop files here to add</div>
-              <input type="file" name="passport-copy" id="" class="image-dropzone">
+              <input type="file" name="passport-copy" id="" class="image-dropzone" required>
             </label>
           </div>
           <div class="form-item">
             <label for="student-class">Student Class</label>
-            <input type="text" name="student-class" id="">
+            <input type="text" name="student-class" id="" required>
           </div>
           <div class="form-item form-item-empty">
             <label for="form-submit">Form Buttons</label>
             <input class="form-button form-submit" type="submit" value="Submit">
-            <input class="form-button form-reset" type="reset" value="Clear All">
+            <input class="form-button form-reset" type="reset" value="Clear All" required>
           </div>
         </form>
       </section>
