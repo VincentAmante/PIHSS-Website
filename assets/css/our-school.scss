@@ -302,32 +302,6 @@ h3 {
 		}
 	}
 
-	/* Facilities */
-	#facilities {
-		.facilities-slideshow {
-			padding: 5vh $global-margin;
-
-			.slider-btn {
-				background-color: $dark;
-				color: $primary-secondary;
-			}
-
-			.card {
-				flex-direction: row;
-				align-items: center;
-				justify-content: space-between;
-
-				img {
-					height: 50vh;
-					width: 40vw;
-				}
-
-				.content {
-					max-width: 40%;
-				}
-			}
-		}
-	}
 
 	/* Co-curricular Activities */
 	#co-curricular {
@@ -360,6 +334,33 @@ h3 {
 }
 
 @media screen and (min-width: $breakpoint-tablet-landscape) {
+	/* Facilities */
+	#facilities {
+		.facilities-slideshow {
+			padding: 5vh $global-margin;
+
+			.slider-btn {
+				background-color: $dark;
+				color: $primary-secondary;
+			}
+
+			.card {
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+
+				img {
+					height: 50vh;
+					width: 40vw;
+				}
+
+				.content {
+					max-width: 40%;
+				}
+			}
+		}
+	}
+	
 	/* Co-curricular Activities */
 	#co-curricular {
 		.co-curricular-list {

@@ -411,33 +411,6 @@ h3 {
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
-  /* Facilities */
-  #facilities .facilities-slideshow {
-    padding: 5vh 5vw;
-  }
-  #facilities .facilities-slideshow .slider-btn, #facilities .facilities-slideshow .news-btn {
-    background-color: #0F6938;
-    color: #FFFFFF;
-  }
-  #facilities .facilities-slideshow .card {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  #facilities .facilities-slideshow .card img {
-    height: 50vh;
-    width: 40vw;
-  }
-  #facilities .facilities-slideshow .card .content {
-    max-width: 40%;
-  }
   /* Co-curricular Activities */
   #co-curricular {
     padding: 2vw 5vw;
@@ -469,6 +442,33 @@ h3 {
 }
 
 @media screen and (min-width: 1024px) {
+  /* Facilities */
+  #facilities .facilities-slideshow {
+    padding: 5vh 5vw;
+  }
+  #facilities .facilities-slideshow .slider-btn, #facilities .facilities-slideshow .news-btn {
+    background-color: #0F6938;
+    color: #FFFFFF;
+  }
+  #facilities .facilities-slideshow .card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #facilities .facilities-slideshow .card img {
+    height: 50vh;
+    width: 40vw;
+  }
+  #facilities .facilities-slideshow .card .content {
+    max-width: 40%;
+  }
   /* Co-curricular Activities */
   #co-curricular .co-curricular-list .activity-container .content button {
     width: 75%;
