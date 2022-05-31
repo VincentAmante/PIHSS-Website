@@ -167,13 +167,13 @@ h2 {
 				cursor: pointer;
 			}
 
-			img {
+			i {
 				padding-left: 20px;
-				width: 45px;
+				color: $primary-secondary;
 			}
 
-			#close {
-				width: 40px;
+			a {
+				color:rgba(255, 255, 255, 0);
 			}
 		}
 	}
@@ -227,8 +227,9 @@ h2 {
 			user-select: none;
 			-webkit-user-select: none;
 			background-color: #38383895;
-			width: 50px;
-			padding: 10px;
+			color: $primary-secondary;
+			// width: 50px;
+			padding: 5vh 1.5vw;
 			margin: 3%;
 			position: absolute;
 			top: 50%;

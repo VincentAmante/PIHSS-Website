@@ -185,13 +185,13 @@ h2 {
   cursor: pointer;
 }
 
-.modal .modal-header .modal-header-icons img {
+.modal .modal-header .modal-header-icons i {
   padding-left: 20px;
-  width: 45px;
+  color: #FFFFFF;
 }
 
-.modal .modal-header .modal-header-icons #close {
-  width: 40px;
+.modal .modal-header .modal-header-icons a {
+  color: rgba(255, 255, 255, 0);
 }
 
 .modal .modal-content {
@@ -247,8 +247,8 @@ h2 {
        user-select: none;
   -webkit-user-select: none;
   background-color: #38383895;
-  width: 50px;
-  padding: 10px;
+  color: #FFFFFF;
+  padding: 5vh 1.5vw;
   margin: 3%;
   position: absolute;
   top: 50%;

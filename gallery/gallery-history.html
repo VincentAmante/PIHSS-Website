@@ -226,8 +226,8 @@
           <div class="item-image section-image">
             <img
               class="lightbox-enabled"
-              src="/assets/images/gallery/history-11.png"
-              data-imagesrc="/assets/images/gallery/history-11.png"
+              src="../assets/images/gallery/history-11.png"
+              data-imagesrc="../assets/images/gallery/history-11.png"
               alt=""
             />
           </div>
@@ -236,8 +236,8 @@
           <div class="item-image section-image">
             <img
               class="lightbox-enabled"
-              src="/assets/images/gallery/history-12.png"
-              data-imagesrc="/assets/images/gallery/history-12.png"
+              src="../assets/images/gallery/history-12.png"
+              data-imagesrc="../assets/images/gallery/history-12.png"
               alt=""
             />
           </div>
@@ -246,8 +246,8 @@
           <div class="item-image section-image">
             <img
               class="lightbox-enabled"
-              src="/assets/images/gallery/history-13.png"
-              data-imagesrc="/assets/images/gallery/history-13.png"
+              src="../assets/images/gallery/history-13.png"
+              data-imagesrc="../assets/images/gallery/history-13.png"
               alt=""
             />
           </div>
@@ -256,8 +256,8 @@
           <div class="item-image section-image">
             <img
               class="lightbox-enabled"
-              src="/assets/images/gallery/history-14.png"
-              data-imagesrc="/assets/images/gallery/history-14.png"
+              src="../assets/images/gallery/history-14.png"
+              data-imagesrc="../assets/images/gallery/history-14.png"
               alt=""
             />
           </div>
@@ -271,32 +271,20 @@
           <div id="slide-number" class="number-text"></div>
 
           <div class="modal-header-icons">
-            <img
-              id="zoom-out"
-              src="../assets/icons/magnifying-glass-out.svg"
-              alt=""
-            />
-            <img
-              id="zoom-in"
-              src="../assets/icons/magnifying-glass-in.svg"
-              alt=""
-            />
-            <a id="download" href="#" download
-              ><img src="../assets/icons/download.svg" alt=""
-            /></a>
-            <img id="close" src="../assets/icons/close.svg" alt="" />
+            <!-- TODO: Check if these load when uploaded -->
+            <i id="zoom-out" class="fa-solid fa-magnifying-glass-minus fa-xl"></i>
+            <i id="zoom-in" class="fa-solid fa-magnifying-glass-plus fa-xl"></i>
+            <a id="download" href="#" download>
+              <i class="fa-solid fa-download fa-xl"></i>
+            </a>
+            <i id="close" class="fa-solid fa-xmark fa-2xl"></i>
           </div>
         </div>
 
         <!-- Modal Content -->
         <div class="modal-content">
           <!-- Previous Slide -->
-          <img
-            class="lightbox-btn"
-            id="prev"
-            src="../assets/icons/left-arrow.svg"
-            alt=""
-          />
+          <i id="prev" class="lightbox-btn fa-solid fa-arrow-left-long fa-2xl"></i>
 
           <!-- Slide Container -->
           <div class="slide-container">
@@ -310,12 +298,7 @@
           </div>
 
           <!-- Next Slide -->
-          <img
-            class="lightbox-btn"
-            id="next"
-            src="../assets/icons/right-arrow.svg"
-            alt=""
-          />
+          <i id="next" class="lightbox-btn fa-solid fa-arrow-right-long fa-2xl"></i>
         </div>
       </div>
     </main>
@@ -325,7 +308,7 @@
       <div class="footer-info">
           <div class="footer-logo-container">    
               <div class="footer-logo">
-                  <img src="./assets/images/global/logo_white.png" alt="Logo of the school">
+                  <img src="../assets/images/global/logo_white.png" alt="Logo of the school">
               </div>
               <div class="footer-title">
                   <h1>Pakistan Islamia</h1>

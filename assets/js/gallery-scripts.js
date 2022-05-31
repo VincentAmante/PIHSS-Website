@@ -43,7 +43,7 @@ const hideLightBox = () => {
 };
 
 const setActiveImage = (image) => {
-  // lightboxImage.style.transform = "scale(1)"; // added translateX(0%)
+  lightboxImage.style.transform = "scale(1)";
   lightboxSlide.style.transform = "none";
   changeZoom = 1;
 
