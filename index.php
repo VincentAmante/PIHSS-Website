@@ -88,7 +88,7 @@
                 <div class="selection">
                     <div class="slider" id="more-info-selection">
                         <div class="card-wrapper" >
-                            <a class="card" href="./about-us.html">
+                            <a class="card" href="./about-us.php">
                                 
                             <div class="card-anchor"  id="mi-slider-about-us"></div>
                                 <div class="card-image">
@@ -102,7 +102,7 @@
                             </a>
                         </div>
                         <div class="card-wrapper">
-                            <a class="card" href="./about-us.html">
+                            <a class="card" href="./about-us.php">
                                 
                             <div class="card-anchor" id="mi-slider-mission-vision"></div>
                                 <div class="card-image">
@@ -116,7 +116,7 @@
                             </a>
                         </div>
                         <div class="card-wrapper">
-                            <a class="card" href="./about-us.html">
+                            <a class="card" href="./about-us.php">
                             <div class="card-anchor" id="mi-slider-registration"></div>
                                 <div class="card-image">
                                     <div>
@@ -129,7 +129,7 @@
                             </a>
                         </div>
                         <div class="card-wrapper">
-                            <a class="card" href="./about-us.html">
+                            <a class="card" href="./about-us.php">
                             <div class="card-anchor" id="mi-slider-other"></div>
                                 <div class="card-image">
                                     <div>
@@ -163,7 +163,7 @@
                     </div>
                     <div class="btn">
                         <div class="btn-wrapper">
-                            <a href="./admissions.html">Enroll Now</a>
+                            <a href="./admissions.php">Enroll Now</a>
                         </div>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
                 <div class="nac-cards">
                     <div class="nac-events">
                         <article>
-                            <a href="./articles/news-article.html">
+                            <a href="./articles/news-article.php">
                                 <div class="article-image">
                                     <img src="./assets/images/placeholders/DSC07512.jpg" alt="">
                                 </div>
@@ -305,7 +305,7 @@
                             </a>
                         </article>
                         <article>
-                            <a href="./articles/news-article.html">
+                            <a href="./articles/news-article.php">
                                 <div class="article-image">
                                     <img src="./assets/images/placeholders/DSC07402.jpg" alt="">
                                 </div>
@@ -338,7 +338,7 @@
                                         </svg>
                                     </div>
                                     <h4>Upcoming Events</h4>
-                                    <a href="./articles/news-article.html" class="btn">View Details</a>
+                                    <a href="./articles/news-article.php" class="btn">View Details</a>
                                 </div>
                             </div>
                         </article>

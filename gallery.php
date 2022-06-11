@@ -33,7 +33,7 @@
         <section class="gallery-overview">
             <div id="nav-breadcrumbs" class="nav-breadcrumbs">
                 <ul>
-                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./index.php">HOME</a></li>
                     <li><a href="javascript:window.location.reload(true)">GALLERY</a></li>
                 </ul>
             </div>
@@ -50,7 +50,7 @@
         <section class="container custom-scrollbar">
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="assets/images/gallery/history-1.png" alt="" />
                     </a>
                 </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="assets/images/gallery/national-day-2018-1.png" alt="" />
                     </a>
                 </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="assets/images/gallery/sandwich-c-1.png" alt="" />
                     </a>
                 </div>
@@ -83,7 +83,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="assets/images/gallery/salad-c-1.png" alt="" />
                     </a>
                 </div>
@@ -94,7 +94,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="https://source.unsplash.com/1600x900/?running" alt="" />
                     </a>
                 </div>
@@ -105,7 +105,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="https://source.unsplash.com/1600x900/?kids Sports" alt="" />
                     </a>
                 </div>
@@ -116,7 +116,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="https://source.unsplash.com/1600x900/?museum" alt="" />
                     </a>
                 </div>
@@ -127,7 +127,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="https://source.unsplash.com/1600x900/?auditorium" alt="" />
                     </a>
                 </div>
@@ -138,7 +138,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="https://source.unsplash.com/1600x900/?school bus" alt="" />
                     </a>
                 </div>
@@ -149,7 +149,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="https://source.unsplash.com/1600x900/?earth day" alt="" />
                     </a>
                 </div>
@@ -160,7 +160,7 @@
             </div>
             <div class="grid-item">
                 <div class="item-image">
-                    <a href="./gallery/gallery-history.html">
+                    <a href="./gallery/gallery-history.php">
                         <img src="https://source.unsplash.com/1600x900/?student Council" alt="" />
                     </a>
                 </div>

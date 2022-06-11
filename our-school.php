@@ -41,9 +41,9 @@
 			<section class="our-school-overview">
 				<div id="nav-breadcrumbs" class="nav-breadcrumbs">
 					<ul>
-						<li><a href="./index.html">HOME</a></li>
+						<li><a href="./index.php">HOME</a></li>
 						<li>
-							<a href="our-school.html#facilities">OUR SCHOOL</a>
+							<a href="our-school.php#facilities">OUR SCHOOL</a>
 						</li>
 						<li><a href="#" class="tab-breadcrumb"></a></li>
 					</ul>

@@ -23,7 +23,7 @@
         <section id="news" class="news-container">
             <div id="nav-breadcrumbs" class="nav-breadcrumbs">
                 <ul>
-                  <li><a href="./index.html">HOME</a></li>
+                  <li><a href="./index.php">HOME</a></li>
                   <li><a href="javascript:window.location.reload(true)">News and Events</a></li>
                 </ul>
               </div>
@@ -144,7 +144,7 @@
                     </div>
                 </article>
                 <article>
-                    <a href="./articles/news-article.html">
+                    <a href="./articles/news-article.php">
                         <div class="article-image">
                             <img src="./assets/images/homepage/random-image-landscape.png" alt="">
                         </div>

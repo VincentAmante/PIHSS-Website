@@ -21,7 +21,7 @@
       </section>
       <div id="nav-breadcrumbs" class="nav-breadcrumbs">
         <ul>
-          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./index.php">HOME</a></li>
           <li><a href="javascript:window.location.reload(true)">About Us</a></li>
         </ul>
       </div>
