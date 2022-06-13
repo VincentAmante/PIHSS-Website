@@ -11636,4 +11636,8 @@ ul {
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
 }
+
+footer {
+  background-color: black;
+}
 /*# sourceMappingURL=global.css.map */

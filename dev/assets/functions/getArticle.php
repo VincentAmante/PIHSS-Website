@@ -24,7 +24,7 @@
     <li>
         <article>
             <div class="article-img">
-                <img src="../assets/images/placeholders/student_group_outdoors.jpg" alt="">
+                <img src=<?php echo $data['img']?> alt="">
             </div>
             <div class="article-text">
                 <div class="heading">

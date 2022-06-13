@@ -1,0 +1,42 @@
+@import "../../../assets/css/scss/_variables.scss";
+
+
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+table {
+    @include flex-centered;
+    border: .01rem solid black;
+
+    tbody, thead {
+        padding-block: 0;
+        width: 100%;
+        
+        .row-item {
+            display: flex;
+            flex-direction: row;
+            // justify-content: space-around;
+
+            &>* {
+                width: 20vw;
+                display: block;
+                padding-block: .5em;
+                flex-grow: 1;
+                text-align: center;
+                border-top: .01rem solid black;
+
+                &:not(:first-child){
+                    border-left: .01rem solid black;
+                }
+            }
+        }
+    }
+
+    tfoot {
+        @include flex-centered;
+        width: 100%;
+        border-top: .01rem solid black;
+    }
+}
