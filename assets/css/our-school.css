@@ -56,6 +56,7 @@
   color: #62AC3B;
 }
 
+/* Base Styling */
 body,
 html {
   scroll-behavior: smooth;
@@ -122,9 +123,16 @@ h3 {
   display: hidden;
 }
 
+#facilities,
+#co-curricular,
+#student-code {
+  margin-bottom: 20vh;
+}
+
 /* Facilities */
 #facilities {
   padding: 0;
+  /* Facilities Slider */
 }
 
 #facilities .facilities-slideshow {
@@ -193,7 +201,7 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 5vw;
+  padding: 0 4vw;
 }
 
 #facilities .facilities-slideshow .card img {
@@ -205,16 +213,32 @@ h3 {
 }
 
 #facilities .facilities-slideshow .card .content {
-  padding: 2em 0;
+  padding: 2em 2em 2em 0;
   text-align: left;
   max-height: 300px;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  overflow-y: auto;
+  /* Custom Scrollbar */
+  -ms-overflow-style: auto;
+  /* IE and Edge */
+  scrollbar-width: auto;
+  /* Firefox */
+}
+
+#facilities .facilities-slideshow .card .content::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
 }
 
 #facilities .facilities-slideshow .card .content::-webkit-scrollbar {
-  display: none;
+  width: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: block;
+}
+
+#facilities .facilities-slideshow .card .content::-webkit-scrollbar-thumb {
+  background-color: #1B9B55;
+  border-radius: 10px;
 }
 
 #facilities .facilities-slideshow .card .content h1, #facilities .facilities-slideshow .card .content h2, #facilities .facilities-slideshow .card .content h3 {
@@ -358,6 +382,13 @@ h3 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+#co-curricular .co-curricular-list .activity-container .content button:hover {
+  cursor: pointer;
+  border: 1px solid #383838;
 }
 
 /* Student Code of Behaviour */
@@ -386,6 +417,7 @@ h3 {
 }
 
 @media screen and (min-width: 768px) {
+  /* Our-School Overview */
   .our-school-overview {
     display: -webkit-box;
     display: -ms-flexbox;

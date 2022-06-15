@@ -1,3 +1,4 @@
+/* Base Styling */
 body,
 html {
   scroll-behavior: smooth;
@@ -43,17 +44,6 @@ h2 {
 }
 
 /* Custom Scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.custom-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
 /* Image gallery */
 .container {
   display: -ms-grid;
@@ -63,10 +53,6 @@ h2 {
       grid-template-columns: repeat(12, 1fr);
   grid-gap: 15px;
   margin-bottom: 5em;
-  width: 100vw;
-  height: 600px;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .grid-item {
@@ -266,34 +252,10 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    padding: 0vh 2vw 0vh 5vw;
-    width: 95vw;
-  }
   .container .grid-item {
     grid-column: span 6;
   }
   /* Custom Scrollbar */
-  .custom-scrollbar {
-    -ms-overflow-style: scrollbar;
-    /* IE and Edge */
-    scrollbar-width: auto;
-    /* Firefox */
-  }
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background-color: #c4c4c4;
-    border-radius: 20px;
-  }
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 10px;
-    background-color: #c4c4c4;
-    border-radius: 20px;
-    display: block;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #1B9B55;
-    border-radius: 20px;
-  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {

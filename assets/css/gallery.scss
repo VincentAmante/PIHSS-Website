@@ -1,5 +1,7 @@
+// Import global variables
 @import "./scss/variables";
 
+/* Base Styling */
 body,
 html {
 	scroll-behavior: smooth;
@@ -43,27 +45,31 @@ h2 {
 }
 
 /* Custom Scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-	display: none;
-}
+// .custom-scrollbar::-webkit-scrollbar {
+// 	display: none;
+// }
 
-.custom-scrollbar {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
+// .custom-scrollbar {
+// 	-ms-overflow-style: none; /* IE and Edge */
+// 	scrollbar-width: none; /* Firefox */
+// }
+
+// .progress-indicator {
+// 	position: fixed;
+// 	right: 0;
+// 	height: 0;
+// 	width: 10px;
+// 	background-image: linear-gradient(120deg, #f27121, #e94057, #8a2387);
+// 	transition: height 0.1s ease;
+// }
 
 /* Image gallery */
 .container {
 	display: grid;
-	padding: 0vh 5vw;
+	padding: 0vh $global-margin;
 	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 15px;
 	margin-bottom: 5em;
-	width: 100vw;
-
-	height: 600px; // Adjust value later
-	overflow-y: scroll;
-	overflow-x: hidden;
 }
 
 .grid-item {
@@ -139,8 +145,6 @@ h2 {
 	height: 100vh;
 	overflow: hidden;
 	background-color: #383838c2;
-	// background-color: #383838;
-
 	opacity: 0;
 	pointer-events: none;
 
@@ -173,7 +177,7 @@ h2 {
 			}
 
 			a {
-				color:rgba(255, 255, 255, 0);
+				color: rgba(255, 255, 255, 0);
 			}
 		}
 	}
@@ -196,9 +200,6 @@ h2 {
 				transition: 0s;
 				will-change: transform;
 				object-fit: contain;
-
-				// transform-origin: 0px 0px;
-				// transform: scale(1) translate(0px, 0px);
 
 				// TODO: Figure out why this doesnt work
 				&:active {
@@ -252,8 +253,8 @@ h2 {
 // MEDIA QUERIES
 @media screen and (min-width: $breakpoint-tablet-portrait) {
 	.container {
-		padding: 0vh 2vw 0vh 5vw;
-		width: 95vw;
+		// padding: 0vh 2vw 0vh 5vw;
+		// width: 95vw;
 
 		.grid-item {
 			grid-column: span 6;
@@ -261,28 +262,27 @@ h2 {
 	}
 
 	/* Custom Scrollbar */
+	// .custom-scrollbar {
+	// 	-ms-overflow-style: scrollbar; /* IE and Edge */
+	// 	scrollbar-width: auto; /* Firefox */
+	// }
 
-	.custom-scrollbar {
-		-ms-overflow-style: scrollbar; /* IE and Edge */
-		scrollbar-width: auto; /* Firefox */
-	}
+	// .custom-scrollbar::-webkit-scrollbar-track {
+	// 	background-color: #c4c4c4;
+	// 	border-radius: 20px;
+	// }
 
-	.custom-scrollbar::-webkit-scrollbar-track {
-		background-color: #c4c4c4;
-		border-radius: 20px;
-	}
+	// .custom-scrollbar::-webkit-scrollbar {
+	// 	width: 10px;
+	// 	background-color: #c4c4c4;
+	// 	border-radius: 20px;
+	// 	display: block;
+	// }
 
-	.custom-scrollbar::-webkit-scrollbar {
-		width: 10px;
-		background-color: #c4c4c4;
-		border-radius: 20px;
-		display: block;
-	}
-
-	.custom-scrollbar::-webkit-scrollbar-thumb {
-		background-color: $primary-main;
-		border-radius: 20px;
-	}
+	// .custom-scrollbar::-webkit-scrollbar-thumb {
+	// 	background-color: $primary-main;
+	// 	border-radius: 20px;
+	// }
 }
 
 @media screen and (min-width: $breakpoint-tablet-landscape) and (max-width: $breakpoint-desktop-small) {

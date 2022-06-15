@@ -25,116 +25,135 @@ let changeZoom = 1;
 
 /* FUNCTIONS */
 const showLightBox = () => {
-  lightboxContainer.classList.add("active");
-  // lightboxImage.classList.add("open-zoom");
-  lightboxImage.style.transform = "scale(1)";
-  document.querySelector("body").style.overflow = "hidden";
-  document.querySelector(".lightbox-slide").style.cursor = "grab";
-  document.querySelector("#header").style.display = "none";
+	lightboxContainer.classList.add("active");
+	// lightboxImage.classList.add("open-zoom");
+	lightboxImage.style.transform = "scale(1)";
+	document.querySelector("body").style.overflow = "hidden";
+	document.querySelector(".lightbox-slide").style.cursor = "grab";
+	document.querySelector("#header").style.display = "none";
 };
 
 const hideLightBox = () => {
-  lightboxContainer.classList.remove("active");
-  // lightboxImage.classList.remove("open-zoom");
-  lightboxImage.style.transform = "scale(0.5)";
-  document.querySelector("body").style.overflow = "auto";
-  document.querySelector(".lightbox-slide").style.cursor = "default";
-  document.querySelector("#header").style.display = "flex";
+	lightboxContainer.classList.remove("active");
+	// lightboxImage.classList.remove("open-zoom");
+	lightboxImage.style.transform = "scale(0.5)";
+	document.querySelector("body").style.overflow = "auto";
+	document.querySelector(".lightbox-slide").style.cursor = "default";
+	document.querySelector("#header").style.display = "flex";
 };
 
 const setActiveImage = (image) => {
-  lightboxImage.style.transform = "scale(1)";
-  lightboxSlide.style.transform = "none";
-  changeZoom = 1;
+	lightboxImage.style.transform = "scale(1)";
+	lightboxSlide.style.transform = "none";
+	changeZoom = 1;
 
-  lightboxImage.src = image.dataset.imagesrc;
-  activeImage = lightboxArray.indexOf(image);
+	lightboxImage.src = image.dataset.imagesrc;
+	activeImage = lightboxArray.indexOf(image);
 
-  lightboxSlideNum.innerHTML = activeImage + 1 + " / " + lightboxArray.length;
+	lightboxSlideNum.innerHTML = activeImage + 1 + " / " + lightboxArray.length;
 };
 
 const transitionSlidePrev = () => {
-  activeImage === 0
-    ? setActiveImage(lightboxArray[lastImage])
-    : setActiveImage(lightboxArray[activeImage - 1]);
+	activeImage === 0
+		? setActiveImage(lightboxArray[lastImage])
+		: setActiveImage(lightboxArray[activeImage - 1]);
 };
 
 const transitionSlideNext = () => {
-  activeImage === lastImage
-    ? setActiveImage(lightboxArray[0])
-    : setActiveImage(lightboxArray[activeImage + 1]);
+	activeImage === lastImage
+		? setActiveImage(lightboxArray[0])
+		: setActiveImage(lightboxArray[activeImage + 1]);
 };
 
 const transitionSlideHandler = (moveItem) => {
-  moveItem.includes("prev") ? transitionSlidePrev() : transitionSlideNext();
+	moveItem.includes("prev") ? transitionSlidePrev() : transitionSlideNext();
 };
 
 const downloadSlide = (image) => {
-  lightboxBtnDownload.href = lightboxArray[image].src;
+	lightboxBtnDownload.href = lightboxArray[image].src;
 };
 
 const zoomSlide = (changeZoom) => {
-  console.log(changeZoom);
-  lightboxImage.style.transform = "scale(" + changeZoom + ")";
+	console.log(changeZoom);
+	lightboxImage.style.transform = "scale(" + changeZoom + ")";
 };
 
 /* EVENT LISTENERS */
 // Click input
 lightboxEnabled.forEach((image) => {
-  image.addEventListener("click", (e) => {
-    showLightBox();
-    setActiveImage(image);
-  });
+	image.addEventListener("click", (e) => {
+		showLightBox();
+		setActiveImage(image);
+	});
 });
 
 lightboxBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    transitionSlideHandler(e.currentTarget.id);
-  });
+	btn.addEventListener("click", (e) => {
+		e.stopPropagation();
+		transitionSlideHandler(e.currentTarget.id);
+	});
 });
 
 [lightboxBtnZoomIn, lightboxBtnZoomOut].forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    changeZoom = Math.round(changeZoom * 10) / 10;
+	btn.addEventListener("click", (e) => {
+		changeZoom = Math.round(changeZoom * 10) / 10;
 
-    if (e.currentTarget.id.includes("zoom-in")) {
-      console.log("zoom in");
-      if (changeZoom < 3) {
-        changeZoom += 0.2;
-      }
-    } else if (e.currentTarget.id.includes("zoom-out")) {
-      console.log("zoom out");
-      if (changeZoom > 0.2) {
-        changeZoom -= 0.2;
-      }
-    }
+		if (e.currentTarget.id.includes("zoom-in")) {
+			console.log("zoom in");
+			if (changeZoom < 3) {
+				changeZoom += 0.2;
+			}
+		} else if (e.currentTarget.id.includes("zoom-out")) {
+			console.log("zoom out");
+			if (changeZoom > 0.2) {
+				changeZoom -= 0.2;
+			}
+		}
 
-    zoomSlide(changeZoom);
-  });
+		zoomSlide(changeZoom);
+	});
 });
 
 lightboxBtnClose.addEventListener("click", () => {
-  hideLightBox();
+	hideLightBox();
 });
 
 lightboxBtnDownload.addEventListener("click", () => {
-  downloadSlide(activeImage);
+	downloadSlide(activeImage);
 });
 
 // Keyboard input
 window.addEventListener("keydown", (e) => {
-  console.log(e.key);
+	console.log(e.key);
 
-  if (e.key.includes("Left") || e.key.includes("Right")) {
-    e.preventDefault();
-    transitionSlideHandler(e.key.toLowerCase());
-  }
+	if (e.key.includes("Left") || e.key.includes("Right")) {
+		e.preventDefault();
+		transitionSlideHandler(e.key.toLowerCase());
+	}
 
-  if (e.key.includes("Esc")) {
-    hideLightBox();
-  }
+	if (e.key.includes("Esc")) {
+		hideLightBox();
+	}
 });
+
+//-----------------------------------------
+//SCROLL
+//TODO: Make it functional
+// var scrollElement = document.querySelector("#progress-indicator");
+
+// // window.addEventListener("scroll", function () {
+// // 	var winScroll = document.body.scrollHeight;
+// // 	var scrolledPixels = this.scrollY;
+// // 	var height = ((scrolledPixels / winScroll) * 100).toFixed(2);
+// // 	scrollElement.style.height = height + "%";
+// // });
+
+// window.addEventListener("scroll", function () {
+// 	var height = document.body.scrollHeight - this.innerHeight;
+// 	var scrolledPixels = this.scrollY;
+// 	var width = ((scrolledPixels / height) * 100).toFixed(2);
+// 	scrollElement.style.width = width + "%";
+// });
 
 // -----------------------------
 // IMAGE PANNING
@@ -147,37 +166,37 @@ window.addEventListener("keydown", (e) => {
 var state = { distX: 0, distY: 0 };
 
 function onDown(e) {
-  // Stop bubbling, this is important to avoid
-  // unexpected behaviours on mobile browsers:
-  e.preventDefault();
+	// Stop bubbling, this is important to avoid
+	// unexpected behaviours on mobile browsers:
+	e.preventDefault();
 
-  // Get the correct event source regardless the device:
-  var evt = e.type === "touchstart" ? e.changedTouches[0] : e;
+	// Get the correct event source regardless the device:
+	var evt = e.type === "touchstart" ? e.changedTouches[0] : e;
 
-  // Get the distance of the x/y
-  state.distX = Math.abs(lightboxSlide.offsetLeft - evt.clientX);
-  state.distY = Math.abs(lightboxSlide.offsetTop - evt.clientY);
+	// Get the distance of the x/y
+	state.distX = Math.abs(lightboxSlide.offsetLeft - evt.clientX);
+	state.distY = Math.abs(lightboxSlide.offsetTop - evt.clientY);
 
-  // Disable pointer events in the circle to avoid
-  // a bug whenever it's moving.
-  lightboxSlide.style.pointerEvents = "none";
+	// Disable pointer events in the circle to avoid
+	// a bug whenever it's moving.
+	lightboxSlide.style.pointerEvents = "none";
 }
 function onUp(e) {
-  // Re-enable the "pointerEvents" in the circle element.
-  // If this is not enabled, then the element won't move.
-  lightboxSlide.style.pointerEvents = "initial";
+	// Re-enable the "pointerEvents" in the circle element.
+	// If this is not enabled, then the element won't move.
+	lightboxSlide.style.pointerEvents = "initial";
 }
 function onMove(e) {
-  // Update the position x/y
-  if (lightboxSlide.style.pointerEvents === "none") {
-    // Get the correct event source regardless the device:
-    var evt = e.type === "touchmove" ? e.changedTouches[0] : e;
+	// Update the position x/y
+	if (lightboxSlide.style.pointerEvents === "none") {
+		// Get the correct event source regardless the device:
+		var evt = e.type === "touchmove" ? e.changedTouches[0] : e;
 
-    // Update top/left directly in the dom element:
-    lightboxSlide.style.transform = `translate(${
-      evt.clientX - state.distX
-    }px, ${evt.clientY - state.distY}px)`;
-  }
+		// Update top/left directly in the dom element:
+		lightboxSlide.style.transform = `translate(${
+			evt.clientX - state.distX
+		}px, ${evt.clientY - state.distY}px)`;
+	}
 }
 
 // FOR MOUSE DEVICES:
