@@ -1,5 +1,5 @@
 <?php
-    require "./assets/functions/connect.php";
+    require "./assets/functions/header.php";
     $articleId = $_GET['id'];
 
     if ($conn->connect_error){
@@ -7,6 +7,7 @@
     } else {
         $articleQuery = $conn->query("SELECT * from articles WHERE id='$articleId'");
         $article = mysqli_fetch_assoc($articleQuery);
+        $articleHtml = $article['articleHtml'];
     }
 
     if (isset($_POST['update-article'])){
@@ -14,7 +15,7 @@
 
         $articleTitle = $_POST['article-title'];
         $articleCreationDate = $_POST['article-doc'];
-        $articleContent = $_POST['article-content'];
+        // $articleContent = $_POST['article-content'];
         
         $updateQuery = $conn->prepare("UPDATE articles 
         SET title = '$articleTitle',
@@ -24,7 +25,6 @@
         $updateQuery->execute();
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,12 +34,12 @@
     <title>Admin Page</title>
 
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="./assets/styles/addContent.css">
+    <link rel="stylesheet" href="./assets/styles/add-article.css">
 </head>
 <body>
     <main>
         <div class="form-wrapper">
-            <form class="article-form" id="article-form" action="<?php echo 'updateArticle.php?id=' . $article['ID'];?>" method="POST" enctype="multipart/form-data">
+            <form class="article-form" id="article-form" action="<?php echo 'update-article.php?id=' . $article['ID'];?>" method="POST" enctype="multipart/form-data">
                 <div class="form-item">
                     <label for="article-title">Title</label>
                     <input type="text" id="article-title" name="article-title" spellcheck="false" autocomplete="off" required value="<?php echo $article['title']?>">
@@ -49,24 +49,37 @@
                     <input type="date" name="article-doc" required value=<?php echo $article['creationDate']?>>
                 </div>
                 <div class="form-item">
-                    <label for="article-content">Content</label>
-                    <input type="text" id="article-content" name="article-content" spellcheck="false" autocomplete="off" required value="<?php echo $article['content']?>">
+                    <label for="article-content">Content</label>                
+                    <input name="input-delta" type="hidden">
+                    <input name="input-html" type="hidden">
+                    <div id="editor-container">
+
+                    </div>
                 </div>
-                <!-- <div class="form-item">
+                <div class="form-item">
                     <label for="articleImg">Article Image</label>
-                        <input type="file" name="article_image" id="article_image" class="image-dropzone" required>   
-                    <label class="file-upload">
+                        <!-- <input type="file" name="article_image" id="article_image" class="image-dropzone" required>    -->
+                    <!-- <label class="file-upload">
                         <div class="upload-button">Add Image</div>
                         <div class="image-drop">Drop image here to add</div>
-                    </label>
-                </div> -->
+                    </label> -->
+                </div>
                 <div class="form-item form-item-empty">
                     <label for="form-submit">Form Buttons</label>
-                    <input class="form-button form-submit" type="submit" name="update-article" value="Update">
+                    <button class="form-button form-submit" name="publish-article">Publish</button>
                     <input class="form-button form-reset" type="reset" value="Clear All" required>
                 </div>
             </form>
         </div>
     </main>
+
+    
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/scripts/rich-text.js"></script>
+    <script>
+        setQuill("<?php echo $articleHtml?>");
+    </script>
 </body>
 </html>

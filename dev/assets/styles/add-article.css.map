@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAC;ECoBD,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EDrBnB,MAAM,EAAE,KAAK;CAChB;;AACD,AAAA,aAAa,CAAC;EACV,SAAS,EAAE,GAAG;CACjB",
+    "sources": [
+        "add-article.scss",
+        "../../../assets/css/scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "add-article.css"
+}

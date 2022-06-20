@@ -132,7 +132,7 @@
         $(document).ready(() => {
             $.ajax({
                 type: "GET",
-                url: "./assets/functions/getArticle.php",
+                url: "./assets/functions/get-article.php",
                 dataType: "html",
                 success: (data) => {
                     $('#article-slider').html(data);

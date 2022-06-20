@@ -3,6 +3,28 @@ html {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header {
+  position: static;
+}
+
+body {
+  width: 100%;
+  padding-inline: 5vw;
 }
 
 table {
@@ -19,7 +41,12 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: .01rem solid black;
+  background-color: #d6d6d6;
+  width: 100%;
+}
+
+table thead {
+  background-color: #a2a2a2;
 }
 
 table tbody, table thead {
@@ -38,18 +65,17 @@ table tbody .row-item, table thead .row-item {
 }
 
 table tbody .row-item > *, table thead .row-item > * {
-  width: 20vw;
+  width: 20%;
   display: block;
   padding-block: .5em;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   text-align: center;
-  border-top: .01rem solid black;
 }
 
-table tbody .row-item > *:not(:first-child), table thead .row-item > *:not(:first-child) {
-  border-left: .01rem solid black;
+table tbody .row-item:nth-of-type(2) {
+  background-color: #f2f2f2;
 }
 
 table tfoot {
@@ -67,6 +93,6 @@ table tfoot {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  border-top: .01rem solid black;
+  padding: 1em;
 }
-/*# sourceMappingURL=managePages.css.map */
+/*# sourceMappingURL=manage-pages.css.map */

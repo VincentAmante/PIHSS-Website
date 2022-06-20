@@ -1,0 +1,9 @@
+@import "../../../assets/css/scss/_variables.scss";
+
+main {
+    @include flex-centered;
+    height: 100vh;
+}
+.form-wrapper {
+    max-width: 60%;
+}

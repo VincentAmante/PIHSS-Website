@@ -1,3 +1,7 @@
+<?php
+    include './assets/functions/header.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +11,12 @@
     <title>Admin Page</title>
 
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="./assets/styles/addContent.css">
+    <link rel="stylesheet" href="./assets/styles/add-article.css">
 </head>
 <body>
     <main>
         <div class="form-wrapper">
-            <form class="article-form" id="article-form" action="./assets/functions/submitArticle.php" method="POST" enctype="multipart/form-data">
+            <form class="article-form" id="article-form" action="./assets/functions/submit-article.php" method="POST" enctype="multipart/form-data">
                 <div class="form-item">
                     <label for="article-title">Title</label>
                     <input type="text" id="article-title" name="article-title" spellcheck="false" autocomplete="off" required>
@@ -22,8 +26,11 @@
                     <input type="date" name="article-doc" required>
                 </div>
                 <div class="form-item">
-                    <label for="article-content">Content</label>
-                    <input type="text" id="article-content" name="article-content" spellcheck="false" autocomplete="off" required>
+                    <label for="article-content">Content</label>                
+                    <input name="input-delta" type="hidden">
+                    <input name="input-html" type="hidden">
+                    <div id="editor-container">
+                    </div>
                 </div>
                 <div class="form-item">
                     <label for="articleImg">Article Image</label>
@@ -35,11 +42,19 @@
                 </div>
                 <div class="form-item form-item-empty">
                     <label for="form-submit">Form Buttons</label>
-                    <input class="form-button form-submit" type="submit" name="publish-article" value="Publish">
+                    <button class="form-button form-submit" name="publish-article">Publish</button>
                     <input class="form-button form-reset" type="reset" value="Clear All" required>
                 </div>
             </form>
         </div>
+
+        <div id="editorjs"></div>
     </main>
+    
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/scripts/rich-text.js"></script>
 </body>
 </html>
