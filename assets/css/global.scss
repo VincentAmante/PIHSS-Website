@@ -18,10 +18,13 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+
+	text-align: justify;
 }
 
 main {
-	font-size: 0.95rem;
+	// font-size: 0.95rem;
+	font-size: clamp(14px, 1vmax, 20vw);
 	line-height: 26px;
 }
 

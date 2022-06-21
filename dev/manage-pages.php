@@ -48,7 +48,6 @@
         <table>
             <thead>
                 <tr class="row-item">
-                    <th>ID</th>
                     <th>Title</th>
                     <th>Date</th>
                     <th></th>

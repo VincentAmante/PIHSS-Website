@@ -20,17 +20,16 @@ body {
 
 table {
     @include flex-centered;
-    background-color: #d6d6d6;
     width: 100%;
 
     thead {
-        background-color: #a2a2a2;
+        border: .01rem solid $form-border-color;
+        border-bottom: none;
     }
 
     tbody, thead {
         padding-block: 0;
         width: 100%;
-        
         .row-item {
             display: flex;
             flex-direction: row;
@@ -45,9 +44,11 @@ table {
             }
         }
     }
+    
 
     tbody {
         .row-item {
+            border: .01rem solid $form-border-color;
             &:nth-of-type(2){
                 background-color: #f2f2f2;
             }
@@ -56,6 +57,8 @@ table {
 
     tfoot {
         @include flex-centered;
+        border: .01rem solid $form-border-color;
+        border-top: none;
         width: 100%;
         padding: 1em;
     }

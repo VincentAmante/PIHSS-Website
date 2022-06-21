@@ -12,7 +12,6 @@
     while ($data = $articles->fetch_assoc()):?>
     <?php $updateUrl = "update-article.php?id=" . $data['ID'];?>
     <div class="row-item">
-        <div class="id"><?php echo $data['ID']?></div>
         <div class="title"><?php echo $data['title']?></div>
         <div class="date"><?php echo $data['creationDate']?></div>
         <a href=<?php echo $updateUrl?>>Edit Article</button>

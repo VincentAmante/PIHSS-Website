@@ -1,7 +1,6 @@
 <?php
     include './assets/functions/header.php'
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,33 +18,34 @@
             <form class="article-form" id="article-form" action="./assets/functions/submit-article.php" method="POST" enctype="multipart/form-data">
                 <div class="form-item">
                     <label for="article-title">Title</label>
-                    <input type="text" id="article-title" name="article-title" spellcheck="false" autocomplete="off" required>
+                    <input type="text" id="article-title" name="article-title" spellcheck="false" autocomplete="off" required placeholder="Article Title">
                 </div>
                 <div class="form-item">
-                    <label for="article-doc">Date of Creation</label>
-                    <input type="date" name="article-doc" required>
+                    <label for="article-doc">Publishing Date</label>
+                    <input type="date" name="article-doc" required value="<?php echo date("Y-m-d")?>" readonly>
                 </div>
                 <div class="form-item">
-                    <label for="article-content">Content</label>                
-                    <input name="input-delta" type="hidden">
-                    <input name="input-html" type="hidden">
-                    <div id="editor-container">
+                    <label for="article-content">Content</label>
+                    <div>
+                        <input name="input-delta" type="hidden">
+                        <input name="input-html" type="hidden">
+                        <div class="editor-container" id="editor-container">
+                        </div>                
                     </div>
                 </div>
                 <div class="form-item">
-                    <label for="articleImg">Article Image</label>
-                        <input type="file" name="article_image" id="article_image" class="image-dropzone" required>   
-                    <!-- <label class="file-upload">
-                        <div class="upload-button">Add Image</div>
-                        <div class="image-drop">Drop image here to add</div>
-                    </label> -->
+                    <label for="article_image">Article Image</label>
+                        <input type="file" name="article_image" id="article_image" class="image-dropzone" required>
                 </div>
                 <div class="form-item form-item-empty">
                     <label for="form-submit">Form Buttons</label>
-                    <button class="form-button form-submit" name="publish-article">Publish</button>
-                    <input class="form-button form-reset" type="reset" value="Clear All" required>
+                    <div class="buttons">
+                        <button class="form-button form-submit" name="publish-article">Publish</button>
+                        <button class="form-button form-reset" type="reset" value="Clear All" required>Clear</button>
+                    </div>
                 </div>
             </form>
+
         </div>
 
         <div id="editorjs"></div>

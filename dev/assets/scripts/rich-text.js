@@ -7,7 +7,7 @@ const quill = new Quill('#editor-container', {
         [{ list: 'ordered' }, { list: 'bullet' }]
       ]
     },
-    placeholder: 'Compose an epic...',
+    placeholder: 'Write your thoughts here!',
     theme: 'snow'
   });
   

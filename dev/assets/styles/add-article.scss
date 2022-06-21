@@ -5,5 +5,55 @@ main {
     height: 100vh;
 }
 .form-wrapper {
-    max-width: 60%;
+    min-width: 70%;
+    padding: 5vw;
+}
+
+header {
+    position: static;
+}
+
+
+.article-form {
+    padding: 2em;
+    border: .01rem solid $form-border-color;
+    border-radius: 1em;
+    font-family: $font-secondary;
+
+    .form-item {
+        padding-block: .5em;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        input {
+            padding: .75em;
+            align-self: flex-start;
+            border: .01rem solid $form-border-color;
+
+            &[type="text"]{
+                min-width: 50%;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+
+        button {
+            background: none;
+            padding: .75em;
+            padding-inline: 1.25em;
+            text-transform: uppercase;
+            border: .01rem solid $form-border-color;
+        }
+        .editor-container {
+            min-height: 30vh;
+        }
+    }
 }

@@ -16,6 +16,61 @@ main {
 }
 
 .form-wrapper {
-  max-width: 60%;
+  min-width: 70%;
+  padding: 5vw;
+}
+
+header {
+  position: static;
+}
+
+.article-form {
+  padding: 2em;
+  border: 0.01rem solid #ccc;
+  border-radius: 1em;
+  font-family: "Raleway", sans-serif;
+}
+
+.article-form .form-item {
+  padding-block: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.article-form .form-item label {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.article-form .form-item input {
+  padding: .75em;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  border: 0.01rem solid #ccc;
+}
+
+.article-form .form-item input[type="text"] {
+  min-width: 50%;
+}
+
+.article-form .form-item input:focus {
+  outline: none;
+}
+
+.article-form .form-item button {
+  background: none;
+  padding: .75em;
+  padding-inline: 1.25em;
+  text-transform: uppercase;
+  border: 0.01rem solid #ccc;
+}
+
+.article-form .form-item .editor-container {
+  min-height: 30vh;
 }
 /*# sourceMappingURL=add-article.css.map */

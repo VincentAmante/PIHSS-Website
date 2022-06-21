@@ -41,12 +41,12 @@ table {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #d6d6d6;
   width: 100%;
 }
 
 table thead {
-  background-color: #a2a2a2;
+  border: 0.01rem solid #ccc;
+  border-bottom: none;
 }
 
 table tbody, table thead {
@@ -74,6 +74,10 @@ table tbody .row-item > *, table thead .row-item > * {
   text-align: center;
 }
 
+table tbody .row-item {
+  border: 0.01rem solid #ccc;
+}
+
 table tbody .row-item:nth-of-type(2) {
   background-color: #f2f2f2;
 }
@@ -92,6 +96,8 @@ table tfoot {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 0.01rem solid #ccc;
+  border-top: none;
   width: 100%;
   padding: 1em;
 }
