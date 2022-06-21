@@ -1,17 +1,8 @@
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
@@ -30,47 +21,33 @@ header {
   border-radius: 1em;
   font-family: "Raleway", sans-serif;
 }
-
 .article-form .form-item {
-  padding-block: .5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding-block: 0.5em;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .article-form .form-item label {
   text-transform: uppercase;
   font-weight: 500;
 }
-
 .article-form .form-item input {
-  padding: .75em;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  padding: 0.75em;
+  align-self: flex-start;
   border: 0.01rem solid #ccc;
 }
-
-.article-form .form-item input[type="text"] {
+.article-form .form-item input[type=text] {
   min-width: 50%;
 }
-
 .article-form .form-item input:focus {
   outline: none;
 }
-
 .article-form .form-item button {
   background: none;
-  padding: .75em;
+  padding: 0.75em;
   padding-inline: 1.25em;
   text-transform: uppercase;
   border: 0.01rem solid #ccc;
 }
-
 .article-form .form-item .editor-container {
   min-height: 30vh;
-}
-/*# sourceMappingURL=add-article.css.map */
+}/*# sourceMappingURL=add-article.css.map */

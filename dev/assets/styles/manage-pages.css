@@ -1,21 +1,11 @@
 html {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
@@ -28,77 +18,44 @@ body {
 }
 
 table {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
-
 table thead {
   border: 0.01rem solid #ccc;
   border-bottom: none;
 }
-
 table tbody, table thead {
   padding-block: 0;
   width: 100%;
 }
-
 table tbody .row-item, table thead .row-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
-
 table tbody .row-item > *, table thead .row-item > * {
   width: 20%;
   display: block;
-  padding-block: .5em;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  padding-block: 0.5em;
+  flex-grow: 1;
   text-align: center;
 }
-
 table tbody .row-item {
   border: 0.01rem solid #ccc;
 }
-
 table tbody .row-item:nth-of-type(2) {
   background-color: #f2f2f2;
 }
-
 table tfoot {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 0.01rem solid #ccc;
   border-top: none;
   width: 100%;
   padding: 1em;
-}
-/*# sourceMappingURL=manage-pages.css.map */
+}/*# sourceMappingURL=manage-pages.css.map */

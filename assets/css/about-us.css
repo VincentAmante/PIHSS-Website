@@ -4,19 +4,10 @@ body, html {
 }
 
 main, section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin-bottom: 5vmax;
   width: 100%;
@@ -29,9 +20,8 @@ main, section {
 .h1-border {
   padding-left: 1em;
 }
-
 .h1-border span {
-  padding: .00vw 5ch;
+  padding: 0vw 5ch;
   border-bottom: 0.5rem solid #0F6938;
 }
 
@@ -43,30 +33,21 @@ main, section {
 
 .about-us-container .about-us {
   width: 90vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 0;
 }
-
 .about-us-container .about-us:hover {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
 .about-us-container .about-us .tab-content:not(.active):not(.content-container) {
   display: none;
 }
-
 .about-us-container .about-us .image {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
 }
-
 .about-us-container .about-us .image div {
   position: absolute;
   width: 100%;
@@ -74,92 +55,56 @@ main, section {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .about-us-container .about-us .image img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
-
 .about-us-container .about-us .content {
   max-width: 50vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-direction: column;
+  flex-grow: 1;
 }
-
 .about-us-container .about-us .content .content-headers {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
-
 .about-us-container .about-us .content .content-headers .tab {
   display: none;
 }
-
 .about-us-container .about-us .content .content-headers label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   cursor: pointer;
   padding: 10%;
   background-color: #BFDFAF;
-  -webkit-transition: all ease-in-out .15s;
-  transition: all ease-in-out .15s;
+  transition: all ease-in-out 0.15s;
   border-bottom: 0.01rem solid rgba(56, 56, 56, 0.3);
 }
-
 .about-us-container .about-us .content .content-headers label:hover {
   background-color: #dceed3;
 }
-
 .about-us-container .about-us .content .content-headers label:not(:last-of-type) {
   border-right: 0.01rem solid rgba(56, 56, 56, 0.3);
 }
-
 .about-us-container .about-us .content .content-headers input:checked + label {
   background-color: #F1F8ED;
 }
-
 .about-us-container .about-us .content .content-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
-  -webkit-transition: all .5s ease-in;
-  transition: all .5s ease-in;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 2;
+  transition: all 0.5s ease-in;
   overflow-y: scroll;
   height: 70vh;
   padding: 2rem;
   background-color: #DDEDD5;
 }
-
 .about-us-container .about-us .content .content-text p {
   margin-bottom: 1em;
 }
@@ -171,11 +116,9 @@ main, section {
   .about-us-wrapper > div {
     padding-inline: 1em;
   }
+
   .about-us-container .about-us {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
     min-height: 70vh;
   }
   .about-us-container .about-us .image div {
@@ -189,8 +132,6 @@ main, section {
     max-width: initial;
   }
   .about-us-container .about-us .content .content-headers {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-/*# sourceMappingURL=about-us.css.map */
+}/*# sourceMappingURL=about-us.css.map */
