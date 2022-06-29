@@ -101,7 +101,9 @@ h3 {
 }
 
 .active {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /* Subpage Banner */
@@ -132,62 +134,12 @@ h3 {
 /* Facilities */
 #facilities {
   padding: 0;
-  /* Facilities Slider */
 }
 
-#facilities .facilities-slideshow {
+.slideshow-wrapper {
   background-color: #CFECC1;
-  position: static;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0 3vw;
-  padding-inline: 1vw;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 3vh 5vw;
   max-width: 100vw;
-}
-
-#facilities .facilities-slideshow .slider-btn, #facilities .facilities-slideshow .news-btn {
-  background-color: #FFFFFF;
-  color: #0F6938;
-}
-
-#facilities .facilities-slideshow .facilities-slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  scroll-behavior: smooth;
-  -ms-scroll-snap-type: inline mandatory;
-      scroll-snap-type: inline mandatory;
-  overflow-x: scroll;
-  padding: 2vmax 0vw;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-#facilities .facilities-slideshow .facilities-slider::-webkit-scrollbar {
-  display: none;
-}
-
-#facilities .facilities-slideshow .card-wrapper {
-  width: 100%;
-  scroll-snap-align: start;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#facilities .facilities-slideshow .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,79 +153,120 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 4vw;
 }
 
-#facilities .facilities-slideshow .card img {
+.slideshow-wrapper .facilities-slideshow {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow-x: hidden;
+}
+
+.slideshow-wrapper .facilities-slideshow .facilities-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 80vw;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  scroll-behavior: smooth;
+  -ms-scroll-snap-type: inline mandatory;
+      scroll-snap-type: inline mandatory;
+}
+
+.slideshow-wrapper .facilities-slideshow .facilities-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slideshow-wrapper .facilities-slideshow .facilities-slider li {
+  width: 100%;
+  scroll-snap-align: start;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.slideshow-wrapper .facilities-slideshow .facilities-slider .card {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5vw 3vw;
+}
+
+.slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 1rem;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: 5vw;
 }
 
-#facilities .facilities-slideshow .card .content {
-  padding: 2em 2em 2em 0;
+.slideshow-wrapper .facilities-slideshow .facilities-slider .card .content {
   text-align: left;
-  max-height: 300px;
+}
+
+.slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p {
+  padding-right: 0.5em;
+  max-height: 250px;
   overflow-y: auto;
-  /* Custom Scrollbar */
   -ms-overflow-style: auto;
   /* IE and Edge */
   scrollbar-width: auto;
   /* Firefox */
 }
 
-#facilities .facilities-slideshow .card .content::-webkit-scrollbar-track {
+.slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p::-webkit-scrollbar-track {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
+  border: solid 3px transparent;
 }
 
-#facilities .facilities-slideshow .card .content::-webkit-scrollbar {
+.slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p::-webkit-scrollbar {
   width: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   display: block;
 }
 
-#facilities .facilities-slideshow .card .content::-webkit-scrollbar-thumb {
+.slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p::-webkit-scrollbar-thumb {
   background-color: #1B9B55;
   border-radius: 10px;
-}
-
-#facilities .facilities-slideshow .card .content h1, #facilities .facilities-slideshow .card .content h2, #facilities .facilities-slideshow .card .content h3 {
-  font-family: "EB Garamond", serif;
-  font-size: clamp(24px, 1.5vw, 2rem);
-}
-
-#facilities .facilities-slideshow .card .content p {
-  font-size: clamp(12px, 2vmax, 1rem);
-}
-
-#facilities .facilities-slideshow .card .content ul li {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-#facilities .facilities-slideshow .card .content ul {
-  list-style-type: "- ";
-  padding-left: 1em;
-}
-
-#facilities .facilities-slideshow .card .content ol {
-  list-style-type: decimal;
-  padding-left: 2em;
-}
-
-#facilities .facilities-slideshow .card .content p,
-#facilities .facilities-slideshow .card .content h3 {
-  margin-bottom: 1em;
 }
 
 /* Co-Curricular Activities */
 #co-curricular {
   padding: 0;
+}
+
+#co-curricular .co-curricular-heading {
+  margin: 0 5vw 2em;
 }
 
 #co-curricular .co-curricular-list {
@@ -444,10 +437,16 @@ h3 {
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
-  /* Co-curricular Activities */
-  #co-curricular {
-    padding: 2vw 5vw;
+  /* Facilities */
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
+    aspect-ratio: initial;
+    height: 50vh;
+    margin-bottom: 0;
   }
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p {
+    max-height: 100%;
+  }
+  /* Co-curricular Activities */
   #co-curricular .co-curricular-list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -455,6 +454,7 @@ h3 {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    padding: 2em 5vw;
   }
   #co-curricular .co-curricular-list .activity-container {
     border-radius: 1em;
@@ -476,31 +476,25 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   /* Facilities */
-  #facilities .facilities-slideshow {
-    padding: 5vh 5vw;
-  }
-  #facilities .facilities-slideshow .slider-btn, #facilities .facilities-slideshow .news-btn {
-    background-color: #0F6938;
-    color: #FFFFFF;
-  }
-  #facilities .facilities-slideshow .card {
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  #facilities .facilities-slideshow .card img {
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
     height: 50vh;
     width: 40vw;
+    margin-bottom: 0;
   }
-  #facilities .facilities-slideshow .card .content {
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content {
     max-width: 40%;
+  }
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p {
+    max-height: 100%;
   }
   /* Co-curricular Activities */
   #co-curricular .co-curricular-list .activity-container .content button {

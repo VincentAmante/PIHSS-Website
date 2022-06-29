@@ -17,10 +17,10 @@ const selectionHandler = (e) => {
 		} else if (sectionID == "student-code") {
 			activeSection = "student-code";
 		} else {
-      activeSection = "facilities";
+			activeSection = "facilities";
 		}
 	} else {
-    activeSection = "facilities";
+		activeSection = "facilities";
 	}
 
 	breadcrumbTab.innerHTML = activeSection;

@@ -4,6 +4,7 @@ const lightboxArray = Array.from(lightboxEnabled);
 const lastImage = lightboxArray.length - 1;
 
 // Lightbox header
+const lightboxHeader = document.querySelector("#header");
 const lightboxSlideNum = document.querySelector("#slide-number");
 const lightboxBtnZoomIn = document.querySelector("#zoom-in");
 const lightboxBtnZoomOut = document.querySelector("#zoom-out");
@@ -25,26 +26,26 @@ let changeZoom = 1;
 
 /* FUNCTIONS */
 const showLightBox = () => {
-	lightboxContainer.classList.add("active");
-	// lightboxImage.classList.add("open-zoom");
-	lightboxImage.style.transform = "scale(1)";
 	document.querySelector("body").style.overflow = "hidden";
-	document.querySelector(".lightbox-slide").style.cursor = "grab";
-	document.querySelector("#header").style.display = "none";
+	lightboxContainer.classList.add("active");
+	lightboxImage.style.transform = "scale(1)";
+	lightboxHeader.style.display = "none";
+	lightboxSlide.style.cursor = "grab";
+	lightboxSlide.style.pointerEvents = "initial";
 };
 
 const hideLightBox = () => {
-	lightboxContainer.classList.remove("active");
-	// lightboxImage.classList.remove("open-zoom");
-	lightboxImage.style.transform = "scale(0.5)";
 	document.querySelector("body").style.overflow = "auto";
-	document.querySelector(".lightbox-slide").style.cursor = "default";
-	document.querySelector("#header").style.display = "flex";
+	lightboxContainer.classList.remove("active");
+	lightboxImage.style.transform = "scale(0.5)";
+	lightboxHeader.style.display = "flex";
+	lightboxSlide.style.cursor = "default";
 };
 
 const setActiveImage = (image) => {
 	lightboxImage.style.transform = "scale(1)";
 	lightboxSlide.style.transform = "none";
+	lightboxSlide.style.transition = "0.4s ease-in-out";
 	changeZoom = 1;
 
 	lightboxImage.src = image.dataset.imagesrc;
@@ -180,6 +181,9 @@ function onDown(e) {
 	// Disable pointer events in the circle to avoid
 	// a bug whenever it's moving.
 	lightboxSlide.style.pointerEvents = "none";
+
+	// Remove delay when dragging image
+	lightboxSlide.style.transition = "0s";
 }
 function onUp(e) {
 	// Re-enable the "pointerEvents" in the circle element.

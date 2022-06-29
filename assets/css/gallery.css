@@ -199,8 +199,6 @@ h2 {
   height: 100vh;
   width: auto;
   overflow: visible;
-  -webkit-transition: 0s;
-  transition: 0s;
   will-change: transform;
   -o-object-fit: contain;
      object-fit: contain;
