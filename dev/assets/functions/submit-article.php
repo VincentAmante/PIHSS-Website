@@ -1,5 +1,4 @@
 <?php
-
     if (isset($_POST['publish-article'])){
         require "connect.php";
 
@@ -10,11 +9,11 @@
 
         // IMAGE HANDLING
         $imgValid = true;
-        $imgName = $_FILES['article_image']['name'];
-        if ($imgName == null){
-            exit();
-        }
-        echo $imgName;
+        $imgName = $_FILES['article-image']['name'];
+        
+        // if ($imgName == null){
+        //     exit();
+        // }
 
         if ($imgName != ""){
              // Directory = Where image will end up when uploaded in the directory
@@ -22,7 +21,7 @@
             $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
             $imgName = $imgDirectory . uniqid() .basename($imgName);
 
-            if($_FILES['article_image']['size'] > 10000000000){
+            if($_FILES['article-image']['size'] > 10000000000){
                 echo "FILE TOO LARGE";
                 $imgValid = false;
             }
@@ -42,7 +41,7 @@
 
 
             if ($imgValid){
-                if (move_uploaded_file($_FILES['article_image']['tmp_name'], "../../" . $imgName)){
+                if (move_uploaded_file($_FILES['article-image']['tmp_name'], "../../" . $imgName)){
                     // Img uploaded
                 }
                 else {
@@ -59,9 +58,9 @@
             } else {
                 $stmt = $conn->prepare("INSERT INTO articles(title, creationDate, articleDelta, articleHtml, img) VALUES('$articleTitle','$articleCreationDate','$articleDelta', '$articleHtml', '$imgName')");
                 $stmt->execute();
-                echo "article is submitted";
                 $stmt->close();
                 $conn->close();
+                
             }
         
             // Returns to page

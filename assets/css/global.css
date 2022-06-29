@@ -701,9 +701,9 @@ header .top-header {
   transition: transform 0.5s ease-in-out;
   justify-content: space-between;
   align-items: center;
-  padding-block: 0.2em;
+  padding-block: 0.95vmin;
   padding-left: 0;
-  font-size: 1.15rem;
+  font-size: clamp(18px, 1.35vw, 12rem);
 }
 header .top-header .logo-container {
   display: flex;
@@ -715,8 +715,8 @@ header .top-header .logo-container .header-logo {
   border: 0;
 }
 header .top-header .logo-container .header-logo img {
-  width: 3.5em;
-  max-width: 5rem;
+  width: clamp(25px, 3vw, 20rem);
+  max-width: 20rem;
 }
 header .top-header .logo-container .header-title {
   display: flex;
@@ -757,7 +757,7 @@ header .top-header .header-contacts .contact svg {
   color: #0F6938;
 }
 header .top-header .header-contacts .contact span {
-  font-size: 0.9rem;
+  font-size: clamp(10px, 1vw, 9rem);
   margin-left: 0.4em;
   color: black;
 }
@@ -800,7 +800,7 @@ header .top-header .header-contacts .contact:hover * {
   opacity: 1;
   text-decoration: none;
   color: inherit;
-  font-size: 0.9rem;
+  font-size: clamp(10px, 1vw, 9rem);
   height: 100%;
   width: 100%;
   vertical-align: middle;
@@ -857,6 +857,7 @@ header .top-header .header-contacts .contact:hover * {
     box-shadow: none;
   }
   header .top-header {
+    padding-block: 3.5vh;
     transform: none;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   }
@@ -11284,12 +11285,12 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  text-align: justify;
 }
 
 main {
-  font-size: clamp(14px, 1vmax, 20vw);
-  line-height: 26px;
+  font-size: clamp(14px, 5vmin, 10%);
+  line-height: clamp(26px, 4vh, 10rem);
+  font-size: clamp(12px, 1.15vw, 10rem);
 }
 
 * {
@@ -11331,7 +11332,7 @@ ul {
   color: #FFFFFF;
   margin: 1em 5vw;
   font-weight: 400;
-  font-size: 2.7em;
+  font-size: clamp(2.7em, 1.4vw, 13rem);
 }
 
 /* Navigation Breadcrumbs */

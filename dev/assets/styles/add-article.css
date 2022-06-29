@@ -1,13 +1,67 @@
-main {
+.uploader-single {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efefef;
+  background-color: rgba(0, 0, 0, 0.02);
+  height: 300px;
+  outline: 0.01rem solid #ccc;
+  outline-offset: 5px;
+  position: relative;
+  width: 300px;
+  cursor: pointer;
+}
+.uploader-single input {
+  display: none;
+}
+.uploader-single img, .uploader-single .icon {
+  pointer-events: none;
+}
+.uploader-single .icon {
+  color: #eee;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 5em;
+}
+.uploader-single .dragging {
+  outline-color: orangered;
+}
+.uploader-single .dragging .icon {
+  color: orangered;
+}
+.uploader-single img {
+  opacity: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 300ms ease-in;
+  max-height: 100%;
+  max-width: 100%;
+}
+.uploader-single img .loaded {
+  opacity: 1;
+}
+
+body, html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+main, section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 0;
+  width: 100%;
 }
 
 .form-wrapper {
   min-width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 5vw;
 }
 
@@ -20,6 +74,7 @@ header {
   border: 0.01rem solid #ccc;
   border-radius: 1em;
   font-family: "Raleway", sans-serif;
+  width: 70%;
 }
 .article-form .form-item {
   padding-block: 0.5em;
@@ -41,12 +96,18 @@ header {
 .article-form .form-item input:focus {
   outline: none;
 }
-.article-form .form-item button {
+.article-form .form-item .form-button {
   background: none;
   padding: 0.75em;
   padding-inline: 1.25em;
   text-transform: uppercase;
-  border: 0.01rem solid #ccc;
+  border: none;
+  background-color: #1B9B55;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.article-form .form-item .form-button:hover {
+  background-color: #23c66d;
 }
 .article-form .form-item .editor-container {
   min-height: 30vh;

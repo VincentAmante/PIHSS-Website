@@ -2,18 +2,42 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body, html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+main, section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  width: 100%;
 }
 
 header {
   position: static;
 }
 
+.section-container {
+  width: 100%;
+  flex-shrink: 0;
+  padding-bottom: 5em;
+}
+.section-container h1 {
+  font-size: clamp(18px, 1.35vw, 12rem);
+  text-transform: uppercase;
+}
+
 body {
   width: 100%;
+}
+
+main {
   padding-inline: 5vw;
 }
 
@@ -24,7 +48,26 @@ table {
   align-items: center;
   width: 100%;
 }
+table a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #0F6938;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+}
+table a.delete {
+  color: #FF1F1F;
+  font-weight: 800;
+}
+table a:hover {
+  transform: scale(1.1);
+}
 table thead {
+  display: grid;
   border: 0.01rem solid #ccc;
   border-bottom: none;
 }
@@ -33,21 +76,39 @@ table tbody, table thead {
   width: 100%;
 }
 table tbody .row-item, table thead .row-item {
-  display: flex;
+  text-transform: uppercase;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr 1fr;
   flex-direction: row;
+  overflow-y: hidden;
+  position: relative;
+  padding: 0.5em;
 }
 table tbody .row-item > *, table thead .row-item > * {
-  width: 20%;
-  display: block;
   padding-block: 0.5em;
-  flex-grow: 1;
   text-align: center;
 }
+table tbody .row-item img, table thead .row-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transform: scale(1.5);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+          mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+table tbody .row-item .title, table thead .row-item .title {
+  font-weight: bold;
+  font-size: clamp(16px, 1.15vw, 5rem);
+}
 table tbody .row-item {
+  padding-block: 2em;
   border: 0.01rem solid #ccc;
 }
 table tbody .row-item:nth-of-type(2) {
-  background-color: #f2f2f2;
+  background-color: rgb(250, 250, 250);
 }
 table tfoot {
   display: flex;

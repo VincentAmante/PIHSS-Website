@@ -1,0 +1,58 @@
+.uploader-single {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #efefef;
+    background-color: rgba(0, 0, 0, 0.02);
+
+    height: 300px;
+    outline: .01rem solid $form-border-color;
+    outline-offset: 5px;
+    position: relative;
+    width: 300px;
+
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    img, .icon {
+        pointer-events: none;
+    }
+
+    .icon {
+        color: #eee;
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 5em;
+    }
+
+    .dragging {    
+        outline-color: orangered;
+
+        .icon {       
+            color: orangered;   
+        }
+    }
+
+    img {
+        opacity: 1;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        z-index: -1;
+        transition: all 300ms ease-in;
+
+        max-height: 100%;
+        max-width: 100%;
+        
+        .loaded {
+            opacity: 1;
+        }
+    }
+}
+

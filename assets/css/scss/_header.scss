@@ -7,7 +7,6 @@ header, nav {
     z-index: 2;
 }
 
-
 header {
     z-index: 10;
     position: fixed;
@@ -25,10 +24,10 @@ header {
         transition: transform 0.5s ease-in-out;
         justify-content: space-between;
         align-items: center;
-        padding-block: .2em;
+        padding-block: .95vmin;
         padding-left: 0;
 
-        font-size: 1.15rem;
+        font-size: $font-size-large;
 
         .logo-container {
             display: flex;
@@ -39,8 +38,8 @@ header {
             .header-logo {
                 border: 0;
                 img {
-                    width: 3.5em;
-                    max-width: 5rem;
+                    width: $font-size-huge;
+                    max-width: 20rem;
                 }
             }
 
@@ -92,7 +91,7 @@ header {
                 }
 
                 span {
-                    font-size: .9rem;
+                    font-size: $font-size-small;
                     margin-left: .4em;
                     color: black;
                 }
@@ -146,7 +145,7 @@ header {
             opacity: 1;
             text-decoration: none;
             color: inherit;
-            font-size: .9rem;
+            font-size: $font-size-small;
             height: 100%;
             width: 100%;
             vertical-align: middle;
@@ -220,6 +219,7 @@ header {
         }
 
         .top-header {
+            padding-block: 3.5vh;
             transform: none;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 

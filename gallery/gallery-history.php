@@ -32,7 +32,7 @@
     <header class="header top-header-up" id="header">
       <div class="header-content" id="header-content">
           <div class="top-header" id="top-header">
-              <a class="logo-container" href="./index.html">    
+              <a class="logo-container" href="./index.php">    
                   <div class="header-logo">
                       <img src="../assets/images/global/logo_main.png" alt="Logo of the school">
                   </div>
@@ -58,7 +58,7 @@
           </div>
           <nav class="nav" id="nav">        
               <ul class="nav-links">
-                  <li class="nav-element"><a href="../index.html">Home</a></li>
+                  <li class="nav-element"><a href="../index.php">Home</a></li>
                   <li class="nav-element"><a href="../about-us.html">About Us</a></li>
                   <li class="nav-element nav-sub-list"><a href="../our-school.html">Our School</a>
                       <ul>
@@ -97,7 +97,7 @@
       <section class="gallery-overview">
         <div class="nav-breadcrumbs">
           <ul>
-            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../index.php">HOME</a></li>
             <li><a href="../gallery.html">GALLERY</a></li>
             <li>
               <a href="javascript:window.location.reload(true)"

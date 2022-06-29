@@ -77,11 +77,11 @@
   background: #d8d8d8;
 }
 .login-form .action button:nth-child(2) {
-  background: #2d3b55;
+  background: #0F6938;
   color: #fff;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 4px;
 }
 .login-form .action button:nth-child(2):hover {
-  background: #3c4d6d;
+  background: #159650;
 }/*# sourceMappingURL=admin-page.css.map */

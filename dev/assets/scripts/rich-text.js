@@ -1,3 +1,5 @@
+const quillEditorId = '.ql-editor';
+
 // Creates Rich Text Editor (Quill.js)
 const quill = new Quill('#editor-container', {
     modules: {
@@ -20,7 +22,7 @@ form.onsubmit = () => {
     inputDelta.value = JSON.stringify(quill.getContents());
 
     // Saves the input html, this is for displaying the content
-    let quillContent = document.querySelector('.ql-editor').innerHTML;
+    let quillContent = document.querySelector(quillEditorId).innerHTML;
     let inputHtml = document.querySelector('input[name=input-html]');
     inputHtml.value = quillContent;
 
@@ -28,7 +30,10 @@ form.onsubmit = () => {
 };
 
 const setQuill = (content) => {
-  let quillContent = document.querySelector('.ql-editor');
+  let quillContent = document.querySelector(quillEditorId);
   quillContent.innerHTML = content;
+}
+
+form.onreset = () => {
 }
 

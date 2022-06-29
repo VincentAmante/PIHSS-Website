@@ -1,7 +1,6 @@
 <?php
     include "./assets/functions/header.php";
 
-
     // Delete Article
     if (isset($_GET['delete-article'])){
         $articleId = $_GET['delete-article'];
@@ -31,40 +30,94 @@
             }
         }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Content Manager</title>
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/manage-pages.css">
+    <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
 </head>
 <body>
     <main>
-        <h1>Articles</h1>
-        <table>
-            <thead>
-                <tr class="row-item">
-                    <th>Title</th>
-                    <th>Date</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="articles-collection">
+        <section>
+            <div class="section-container">
+                <h1>Articles</h1>
+                <table>
+                    <thead>
+                        <tr class="row-item">
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="articles-collection">
 
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>
-                        <a href="./add-article.php">Add Article</a>
-                    </th>
-                </tr>
-            </tfoot>
-        </table>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                <a href="./add-article.php">Add Article</a>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        <section>
+            <div class="section-container">
+                <h1>Galleries</h1>
+                <table>
+                    <thead>
+                        <tr class="row-item">
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="galleries-collection">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                <a href="./add-gallery.php">Add Gallery</a>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        <section>
+            <div class="section-container">
+                <h1>Publications</h1>
+                <table>
+                    <thead>
+                        <tr class="row-item">
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="galleries-collection">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                <a href="./add-gallery.php">Add Gallery</a>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

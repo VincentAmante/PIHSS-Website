@@ -1,11 +1,24 @@
 @import "../../../assets/css/scss/_variables.scss";
+@import "../../../assets/css/scss/_file-uploader.scss";
 
-main {
-    @include flex-centered;
-    height: 100vh;
+body, html {
+	scroll-behavior: smooth;
+    height: 100%;
 }
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    // margin-bottom: 8vmax;
+    width: 100%;
+}
+
+
 .form-wrapper {
     min-width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 5vw;
 }
 
@@ -13,12 +26,12 @@ header {
     position: static;
 }
 
-
 .article-form {
     padding: 2em;
     border: .01rem solid $form-border-color;
     border-radius: 1em;
     font-family: $font-secondary;
+    width: 70%;
 
     .form-item {
         padding-block: .5em;
@@ -45,12 +58,19 @@ header {
         }
 
 
-        button {
+        .form-button {
             background: none;
             padding: .75em;
             padding-inline: 1.25em;
             text-transform: uppercase;
-            border: .01rem solid $form-border-color;
+            border: none;
+            background-color: $primary-main;
+            color: $primary-secondary;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten($primary-main, 10%);
+            }
         }
         .editor-container {
             min-height: 30vh;

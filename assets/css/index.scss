@@ -138,11 +138,11 @@ header {
         h1 {
             font-family: $font-primary;
             font-weight: 500;
-            font-size: clamp(18px, 10vw, 1.75rem);
+            font-size: $font-size-heading;
         }
         p {
             margin: 1em 0;
-            font-size: clamp(12px, 1.15vw, 1.5rem);
+            font-size: $font-size-normal;
             text-align: justify;
         }
     }
@@ -173,7 +173,7 @@ header {
             .number {
                 padding-block: .5em;
                 font-weight: 700;
-                font-size: 1.5rem;
+                font-size: $font-size-large;
                 padding-inline: 1.5em;
             }
             .label {
@@ -189,6 +189,7 @@ header {
     background-color: $other;
 
     .more-info-text {
+        font-size: $font-size-normal;
         padding-block: 2em;
         margin-inline: $global-margin;
         font-weight: 500;

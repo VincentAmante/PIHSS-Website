@@ -1,3 +1,5 @@
+@import "../../../assets/css/scss/_variables.scss";
+
 // Basic reset
 * {
     margin: 0;
@@ -77,16 +79,15 @@
         }
         
         &:nth-child(2) {
-          background: #2d3b55;
+          background: $dark;
           color: #fff;
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 4px;
           
           &:hover {
-            background: #3c4d6d;
+            background: lighten($dark, 10%);
           }
         }
       }
     }
-    
   }
