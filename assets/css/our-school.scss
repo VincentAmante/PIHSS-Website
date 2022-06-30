@@ -291,6 +291,104 @@ h3 {
 	}
 }
 
+/* Study Programme */
+#study-programme {
+	.shift-container {
+		.card-wrapper {
+			@include flex-centered;
+
+			.card {
+				@include flex-centered;
+
+				background-color: rgba($other, 0.4);
+				margin: $global-margin;
+				padding: $global-margin;
+				border-radius: 0.5em;
+				width: 100%;
+				height: 250px;
+				flex-grow: 1;
+
+				h2 {
+					text-align: center;
+					width: 90%;
+					padding-bottom: 1em;
+					border-bottom: black 1px solid;
+				}
+			}
+		}
+	}
+
+	.programme-container {
+		p,
+		ol,
+		ul,
+		.card-list {
+			margin-bottom: 1.5em;
+		}
+
+		ol {
+			padding-left: 1em;
+
+			li::marker,
+			h2 {
+				color: $dark;
+				font-weight: bold;
+			}
+		}
+
+		ul {
+			padding-left: 2.5em;
+			list-style-type: disc;
+		}
+
+		h3 {
+			font-weight: bold;
+		}
+
+		.programme-list {
+			display: flex;
+			flex-wrap: wrap;
+
+			& > * {
+				margin-bottom: 1.5em;
+			}
+
+			li {
+				flex-grow: 1;
+			}
+		}
+
+		.card-list {
+			display: grid;
+			grid-template-columns: 1fr;
+			background-color: rgba($other, 0.4);
+			border-radius: 0.5em;
+			width: 100%;
+
+			.card:first-child {
+				border: none;
+			}
+
+			.card {
+				padding: $global-margin;
+				border: black solid;
+				border-width: 1px 0 0 0;
+
+				h3 {
+					text-align: center;
+				}
+
+				& > ol {
+					& > li {
+						list-style-type: none;
+						padding-left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
 // MEDIA QUERIES
 @media screen and (min-width: $breakpoint-tablet-portrait) {
 	/* Our-School Overview */
@@ -367,6 +465,46 @@ h3 {
 	#student-code {
 		max-width: 65%;
 		margin-top: -8em;
+	}
+
+	/* Study Programme */
+	#study-programme {
+		.shift-container {
+			margin-top: -8em;
+
+			p {
+				max-width: 65%;
+			}
+
+			.card-wrapper {
+				flex-direction: row;
+
+				.card {
+					justify-content: flex-start;
+				}
+			}
+		}
+
+		.programme-container {
+			.col-2 {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			// TODO: Find out way to add whitespace on tablets
+			.col-3 {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			.card-list {
+				.card:first-child {
+					border: none;
+				}
+
+				.card {
+					border-width: 0 0 0 1px;
+				}
+			}
+		}
 	}
 }
 

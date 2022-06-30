@@ -409,6 +409,128 @@ h3 {
   font-family: "Raleway", sans-serif;
 }
 
+/* Study Programme */
+#study-programme .shift-container .card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#study-programme .shift-container .card-wrapper .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(207, 236, 193, 0.4);
+  margin: 5vw;
+  padding: 5vw;
+  border-radius: 0.5em;
+  width: 100%;
+  height: 250px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#study-programme .shift-container .card-wrapper .card h2 {
+  text-align: center;
+  width: 90%;
+  padding-bottom: 1em;
+  border-bottom: black 1px solid;
+}
+
+#study-programme .programme-container p,
+#study-programme .programme-container ol,
+#study-programme .programme-container ul,
+#study-programme .programme-container .card-list {
+  margin-bottom: 1.5em;
+}
+
+#study-programme .programme-container ol {
+  padding-left: 1em;
+}
+
+#study-programme .programme-container ol li::marker,
+#study-programme .programme-container ol h2 {
+  color: #0F6938;
+  font-weight: bold;
+}
+
+#study-programme .programme-container ul {
+  padding-left: 2.5em;
+  list-style-type: disc;
+}
+
+#study-programme .programme-container h3 {
+  font-weight: bold;
+}
+
+#study-programme .programme-container .programme-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#study-programme .programme-container .programme-list > * {
+  margin-bottom: 1.5em;
+}
+
+#study-programme .programme-container .programme-list li {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#study-programme .programme-container .card-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  background-color: rgba(207, 236, 193, 0.4);
+  border-radius: 0.5em;
+  width: 100%;
+}
+
+#study-programme .programme-container .card-list .card:first-child {
+  border: none;
+}
+
+#study-programme .programme-container .card-list .card {
+  padding: 5vw;
+  border: black solid;
+  border-width: 1px 0 0 0;
+}
+
+#study-programme .programme-container .card-list .card h3 {
+  text-align: center;
+}
+
+#study-programme .programme-container .card-list .card > ol > li {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 @media screen and (min-width: 768px) {
   /* Our-School Overview */
   .our-school-overview {
@@ -471,6 +593,38 @@ h3 {
   #student-code {
     max-width: 65%;
     margin-top: -8em;
+  }
+  /* Study Programme */
+  #study-programme .shift-container {
+    margin-top: -8em;
+  }
+  #study-programme .shift-container p {
+    max-width: 65%;
+  }
+  #study-programme .shift-container .card-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #study-programme .shift-container .card-wrapper .card {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  #study-programme .programme-container .col-2 {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  #study-programme .programme-container .col-3 {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  #study-programme .programme-container .card-list .card:first-child {
+    border: none;
+  }
+  #study-programme .programme-container .card-list .card {
+    border-width: 0 0 0 1px;
   }
 }
 

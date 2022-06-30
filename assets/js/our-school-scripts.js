@@ -14,6 +14,8 @@ const selectionHandler = (e) => {
 			activeSection = "facilities";
 		} else if (sectionID == "co-curricular") {
 			activeSection = "co-curricular";
+		} else if (sectionID == "study-programme") {
+			activeSection = "study-programme";
 		} else if (sectionID == "student-code") {
 			activeSection = "student-code";
 		} else {
@@ -31,7 +33,7 @@ const selectionHandler = (e) => {
 };
 
 const removeActive = () => {
-	for (i = 0; i < 3; i++) {
+	for (i = 0; i < 4; i++) {
 		headerTab[i].classList.remove("active");
 		overviewTab[i].classList.remove("active");
 		contentTab[i].classList.remove("active");
