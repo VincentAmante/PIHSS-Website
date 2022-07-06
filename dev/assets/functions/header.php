@@ -1,13 +1,20 @@
 <?php
     require 'connect.php';
-
     // Handles timed session
     if (!isset($_SESSION['SessionTime'])) {
         $_SESSION['SessionTime'] = time();
     } else if (time() - $_SESSION['SessionTime'] > 1800) {
-        // session started more than 30 minutes ago
-        session_regenerate_id(true);    // change session ID for the current session and invalidate old session ID
-        $_SESSION['SessionTime'] = time();  // update creation time
+         // Logs out after 30 mins
+
+        // starts and destroys the session to logout
+        session_start();
+        session_destroy();
+        header("Location: index.php");
+        die();
+    } else {
+        // Updates on switching pages before 30 mins
+        session_regenerate_id(true);
+        $_SESSION['SessionTime'] = time();
     }
 
     // Ensure user is a logged in admin before rendering the rest of the page

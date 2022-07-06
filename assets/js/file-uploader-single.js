@@ -16,7 +16,6 @@
       this.$el = document.querySelector(selector);
       this.$fileInput = this.$el.querySelector('input');
       this.$img = this.$el.querySelector('img');
-      
       this.suscribe();
     }
 

@@ -132,6 +132,16 @@
                 }
             })
         });
+        $(document).ready(() => {
+            $.ajax({
+                type: "GET",
+                url: "./assets/functions/get-galleries.php",
+                dataType: "html",
+                success: (data) => {
+                    $('#galleries-collection').html(data);
+                }
+            })
+        });
     </script>
 </body>
 </html>
