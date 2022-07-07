@@ -13,13 +13,14 @@ section {
 	// @include flex-centered;
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 5vmax;
 	padding: 0;
 	width: 100%;
 }
 
-section {
-	padding: 2vw $global-margin;
-}
+// section {
+// 	padding: 2vw $global-margin;
+// }
 
 h1 {
 	font-family: $font-primary;
@@ -34,6 +35,8 @@ h2 {
 
 /* Gallery Overview */
 .gallery-overview {
+	padding: 2.5vmax $global-margin 0;
+
 	.h1-border {
 		align-self: flex-start;
 
@@ -55,12 +58,14 @@ h2 {
 // }
 
 // .progress-indicator {
+// 	z-index: 3;
 // 	position: fixed;
-// 	right: 0;
-// 	height: 0;
-// 	width: 10px;
-// 	background-image: linear-gradient(120deg, #f27121, #e94057, #8a2387);
-// 	transition: height 0.1s ease;
+// 	bottom: 0;
+// 	left: 0;
+// 	width: 0px;
+// 	height: 6px;
+// 	background-color: pink;
+// 	// transition: height 0.1s ease;
 // }
 
 /* Image gallery */

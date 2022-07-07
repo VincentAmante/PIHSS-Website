@@ -11,13 +11,14 @@ main,
 section {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 5vmax;
 	padding: 0;
 	width: 100%;
 }
 
-section {
-	padding: 2vw $global-margin;
-}
+// section {
+// 	padding: 2vw $global-margin;
+// }
 
 h1 {
 	font-family: $font-primary;
@@ -39,42 +40,19 @@ h2 {
 
 /* Contact Us Overview */
 .contact-overview {
-	.nav-breadcrumbs {
-		padding: 1em 0;
-
-		li {
-			display: inline;
-
-			a {
-				text-decoration: none;
-				color: $font-colour;
-				font-weight: 600;
-				font-size: 0.8em;
-			}
-		}
-
-		li + li ::before {
-			padding: 1vw;
-			color: $font-colour;
-			content: ">>\00a0";
-		}
-	}
-
-	.h1-border {
-		span {
-			padding: 0vw 5ch;
-			border-bottom: 0.5rem solid $dark;
-		}
-	}
+	padding: 2.5vmax $global-margin 0;
 }
 
 /* Contact Information */
 .contact-us {
+	padding: 0 $global-margin;
 	@include flex-centered;
 
 	.container {
 		background-color: $accent;
 		display: flex;
+		width: 100%;
+		max-width: 600px;
 		flex-direction: column;
 		border-radius: 15px;
 
@@ -156,14 +134,14 @@ h2 {
 
 /* Contact Form */
 .contact-form {
-	margin: 2em 0;
+	padding: 2.5vmax $global-margin;
 	@include flex-centered;
 
 	.form-container {
 		background-color: #efefef; //adjust later
 		border-radius: 15px;
 		width: 100%;
-		max-width: 700px;
+		max-width: 600px;
 		padding: 40px 8vmin;
 
 		span {
@@ -228,7 +206,7 @@ h2 {
 	.contact-us {
 		.container {
 			flex-direction: row;
-			width: 100%;
+			max-width: 100%;
 
 			.contact-details {
 				width: 45%;

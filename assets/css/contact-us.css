@@ -14,12 +14,9 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 5vmax;
   padding: 0;
   width: 100%;
-}
-
-section {
-  padding: 2vw 5vw;
 }
 
 h1, h2 {
@@ -40,34 +37,13 @@ h2 {
 }
 
 /* Contact Us Overview */
-.contact-overview .nav-breadcrumbs {
-  padding: 1em 0;
-}
-
-.contact-overview .nav-breadcrumbs li {
-  display: inline;
-}
-
-.contact-overview .nav-breadcrumbs li a {
-  text-decoration: none;
-  color: #383838;
-  font-weight: 600;
-  font-size: 0.8em;
-}
-
-.contact-overview .nav-breadcrumbs li + li ::before {
-  padding: 1vw;
-  color: #383838;
-  content: ">>\00a0";
-}
-
-.contact-overview .h1-border span {
-  padding: 0vw 5ch;
-  border-bottom: 0.5rem solid #0F6938;
+.contact-overview {
+  padding: 2.5vmax 5vw 0;
 }
 
 /* Contact Information */
 .contact-us {
+  padding: 0 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,6 +64,8 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  max-width: 600px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -175,7 +153,7 @@ h2 {
 
 /* Contact Form */
 .contact-form {
-  margin: 2em 0;
+  padding: 2.5vmax 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,7 +173,7 @@ h2 {
   background-color: #efefef;
   border-radius: 15px;
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   padding: 40px 8vmin;
 }
 
@@ -261,7 +239,7 @@ h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    width: 100%;
+    max-width: 100%;
   }
   .contact-us .container .contact-details {
     width: 45%;

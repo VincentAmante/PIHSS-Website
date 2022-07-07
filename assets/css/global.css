@@ -11565,7 +11565,7 @@ ul {
 .nav-breadcrumbs {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  padding: 1em 0;
+  padding: 0vh 5vw;
   text-transform: uppercase;
 }
 
@@ -11587,8 +11587,14 @@ ul {
 }
 
 /* Heading Border */
+.h1-border {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .h1-border span {
-  padding: 0vw 5ch;
+  padding: 0ch 5ch;
   border-bottom: 0.5rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right, #0F6938, #62ac3b);
