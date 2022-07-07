@@ -1,10 +1,13 @@
-// /* QUERY SELECTORS, VARIABLES */
+/* QUERY SELECTORS, VARIABLES */
+
 const breadcrumbTab = document.querySelector(".tab-breadcrumb");
 const headerTab = document.querySelectorAll(".tab-header");
 const overviewTab = document.querySelectorAll(".tab-overview");
 const contentTab = document.querySelectorAll(".tab-content");
 const subpageBanner = document.querySelector(".subpage-banner");
 var activeSection;
+
+/* FUNCTIONS */
 
 const selectionHandler = (e) => {
 	if (e) {
@@ -16,8 +19,6 @@ const selectionHandler = (e) => {
 			activeSection = "co-curricular";
 		} else if (sectionID == "study-programme") {
 			activeSection = "study-programme";
-		} else if (sectionID == "student-code") {
-			activeSection = "student-code";
 		} else {
 			activeSection = "facilities";
 		}
@@ -33,7 +34,7 @@ const selectionHandler = (e) => {
 };
 
 const removeActive = () => {
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < 3; i++) {
 		headerTab[i].classList.remove("active");
 		overviewTab[i].classList.remove("active");
 		contentTab[i].classList.remove("active");
