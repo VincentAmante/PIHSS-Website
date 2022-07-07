@@ -41,6 +41,10 @@ h2 {
   margin-bottom: 1em;
 }
 
+h3 {
+  font-weight: 600;
+}
+
 .subpage-banner {
   background-image: url("../images/placeholders/DSC07466.jpg");
 }
@@ -294,9 +298,6 @@ table th {
 .fee-structure h2,
 .fee-structure h3 {
   color: #0F6938;
-}
-
-.fee-structure h2 {
   text-transform: uppercase;
 }
 
@@ -339,6 +340,7 @@ table th {
 
 .student-code-container h3 {
   font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
 }
 
 .registration {
