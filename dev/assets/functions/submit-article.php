@@ -10,10 +10,6 @@
         // IMAGE HANDLING
         $imgValid = true;
         $imgName = $_FILES['article-image']['name'];
-        
-        // if ($imgName == null){
-        //     exit();
-        // }
 
         if ($imgName != ""){
              // Directory = Where image will end up when uploaded in the directory
@@ -63,6 +59,7 @@
                 
             }
         
+
             // Returns to page
             $referer = $_SERVER['HTTP_REFERER'];
             header("Location: $referer");

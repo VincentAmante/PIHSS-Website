@@ -74,7 +74,7 @@ header {
   border: 0.01rem solid #ccc;
   border-radius: 1em;
   font-family: "Raleway", sans-serif;
-  width: 70%;
+  width: 80%;
 }
 .article-form .form-item {
   padding-block: 0.5em;
@@ -111,4 +111,25 @@ header {
 }
 .article-form .form-item .editor-container {
   min-height: 30vh;
+}
+.article-form .multiple-file-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  padding: 1vw;
+  border: 0.01vw solid #ccc;
+  transition: all 0.15s ease-in-out;
+}
+.article-form .multiple-file-preview .img-preview-container {
+  margin: 0.5em;
+  background-color: black;
+  cursor: pointer;
+}
+.article-form .multiple-file-preview .img-preview-container img {
+  max-width: 100%;
+  max-height: 100%;
+  transition: all 0.15s ease-in-out;
+}
+.article-form .multiple-file-preview .img-preview-container img:hover {
+  opacity: 75%;
 }/*# sourceMappingURL=add-article.css.map */

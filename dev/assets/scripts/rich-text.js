@@ -14,9 +14,8 @@ const quill = new Quill('#editor-container', {
   });
   
 // Handler for Submitting forms
-const form = document.querySelector('form');
+var form = document.querySelector('form');
 form.onsubmit = () => {
-
     // Saves the input delta, this is for re-editing the content
     let inputDelta = document.querySelector('input[name=input-delta]');
     inputDelta.value = JSON.stringify(quill.getContents());
@@ -35,5 +34,5 @@ const setQuill = (content) => {
 }
 
 form.onreset = () => {
-}
 
+}

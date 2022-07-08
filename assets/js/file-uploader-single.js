@@ -100,16 +100,7 @@ new FileUploader('.uploader-single');
 // END OF ACQUIRED CODE
 
 // Code to reset img src
-if (form){
-  form.onreset = () => {
-    let imgSelector = document.querySelector('#form-img')
-    imgSelector.src = "";
-  }
-}
-else {
-  let form = document.querySelector("form");
-  form.onreset = () => {
-    let imgSelector = document.querySelector('#form-img')
-    imgSelector.src = "";
-  }
+var form = document.querySelector("form");
+form.onreset = () => {
+  document.getElementById('gallery').innerHTML = "";
 }

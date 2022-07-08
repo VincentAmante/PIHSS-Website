@@ -10,11 +10,9 @@
             $articleQuery = $conn->query("SELECT * from articles WHERE id='$articleId'");
             $article = mysqli_fetch_assoc($articleQuery);
         }  
-    
 
         if ($article != NULL){
             if (unlink($article['img'])){
-                echo 'File deleted successfully' . '<br>';
             }
             else {
                 echo 'File not deleted';
@@ -26,9 +24,27 @@
                 echo "Record deleted successfully" . '<br>';
               } else {
                 echo "Error deleting record: " . $conn->error . '<br>';
-              }
             }
         }
+    }
+
+    if (isset($_GET['delete-gallery'])){
+        $galleryId = $_GET['delete-gallery'];
+        if ($conn->connect_error){
+            die('Connection Failure : ' + $conn->connect_error);
+        } else {
+            $articleQuery = $conn->query("SELECT * from gallery WHERE id='$galleryId'");
+            $gallery = mysqli_fetch_assoc($galleryQuery);
+        }
+
+        if ($gallery != NULL){
+            // GET PATH OF FOLDER
+
+            // DELETE ALL FILES INSIDE FOLDER
+
+            // THEN DELETE FOLDER
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

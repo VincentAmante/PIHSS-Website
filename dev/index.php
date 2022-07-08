@@ -20,7 +20,6 @@
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
 
-    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/admin-page.css">
 </head>
 <body>

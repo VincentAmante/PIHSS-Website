@@ -31,7 +31,7 @@ header {
     border: .01rem solid $form-border-color;
     border-radius: 1em;
     font-family: $font-secondary;
-    width: 70%;
+    width: 80%;
 
     .form-item {
         padding-block: .5em;
@@ -74,6 +74,31 @@ header {
         }
         .editor-container {
             min-height: 30vh;
+        }
+    }
+    
+    .multiple-file-preview {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        flex-wrap: wrap;
+        padding: 1vw;
+        border: .01vw solid $form-border-color;
+        transition: all .15s ease-in-out;
+
+        .img-preview-container {
+            margin: .5em;
+            background-color: black;
+            cursor: pointer;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                transition: all .15s ease-in-out;
+
+                &:hover {
+                    opacity: 75%;
+                }
+            }
         }
     }
 }
