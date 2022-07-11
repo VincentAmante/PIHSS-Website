@@ -9,6 +9,7 @@
             die('Connection Failure : ' + $conn->connect_error);
         } else {
             $articleQuery = $conn->query("SELECT * from articles WHERE id='$articleId'");
+            
             $article = mysqli_fetch_assoc($articleQuery);
         }  
 
@@ -122,7 +123,7 @@
         </section>
         <section>
             <div class="section-container">
-                <h1>Publications</h1>
+                <h1>Co-Curricular Activities</h1>
                 <table>
                     <thead>
                         <tr class="row-item">
@@ -132,13 +133,13 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody id="galleries-collection">
+                    <tbody id="activities-collection">
 
-                    </tbody>
+                    </tbody>  
                     <tfoot>
                         <tr>
                             <th>
-                                <a href="./add-gallery.php">Add Gallery</a>
+                                <a href="./add-activity.php">Add Gallery</a>
                             </th>
                         </tr>
                     </tfoot>

@@ -1,46 +1,4 @@
-<?php
-    include "./assets/functions/header.php";
-    if (isset($_SESSION['admin-is-primary'])){
-        $isPrimary = $_SESSION['admin-is-primary'];
-        if (!$isPrimary){
-            header("Location: ./manage-pages.php");
-            exit();
-        }
-    }
 
-    if (isset($_GET['delete-account'])){
-        $canDelete = true;
-
-        $deleteId = $_GET['delete-account'];
-        $getAccount = "SELECT * FROM admins WHERE ID= '$deleteId'";
-
-        $getAccount_stmt = $conn->prepare($getAccount);
-        $getAccount_stmt->execute(); 
-        $accountToDelete = mysqli_fetch_assoc($getAccount_stmt->get_result());
-
-
-        if ($accountToDelete != null){    
-            if ($accountToDelete['isPrimary']){
-                $primaryAccountsQuery = "SELECT * FROM admins WHERE isPrimary = 1";
-                $stmt = $conn->prepare($primaryAccountsQuery);
-                $stmt->execute(); 
-                $queryResult = mysqli_num_rows($stmt->get_result());
-                
-                if ($queryResult <= 1){
-                    $canDelete = false;
-                }
-            }
-
-            if ($canDelete){
-                // If all checks are safe, begin deletion
-                $deleteQuery = "DELETE FROM admins WHERE ID='$deleteId'";
-                $deleteQuery_stmt = $conn->prepare($deleteQuery);
-                $deleteQuery_stmt->execute();
-            }
-        }
-
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,8 +9,16 @@
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/manage-pages.css">
     <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+<?php
+    include "./assets/functions/header.php";
+    include "./assets/functions/handle-accounts.php";
+?>
     <main>
         <section>
             <div class="section-container">
@@ -84,9 +50,6 @@
 
         </section>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(() => {
             $.ajax({

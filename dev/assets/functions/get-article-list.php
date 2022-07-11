@@ -29,8 +29,14 @@
         </a>
     </div>
 <?php endwhile;?>
+<!-- Check manage-pages.php for where this is implemented -->
+<!-- Note: You need jQuery and the sweet alerts cdn for this,  -->
 <script>
+    
+    // All list items here will have this onclick event
      $('.delete-article').click(e => {
+
+            // Ensures the click doesn't do anything else
             event.preventDefault();
 
             Swal.fire({
@@ -43,6 +49,9 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed){
+
+                    // If confirmed is press, the window will switch pages
+                    // Here it's going to the click's targeted link
                     window.location = e.currentTarget.href;
                 }
             })
