@@ -17,6 +17,19 @@
     
     ? Are captions required for images in lightbox?
 -->
+<?php
+    include "../dev/assets/functions/connect.php";
+    $galleryId = $_GET['id'];
+
+    if ($conn->connect_error){
+        die('Connection Failure : ' + $conn->connect_error);
+    } else {
+        $galleryQuery = $conn->query("SELECT * from galleries WHERE id='$galleryId'");
+        $gallery = mysqli_fetch_assoc($galleryQuery);
+
+        $galleryImages = json_decode($gallery['images']);
+    }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -110,163 +123,29 @@
         <div class="content">
           <div class="h1-border">
             <span></span>
-            <h1>History of PIHSS</h1>
+            <h1><?php echo $gallery['title']?></h1>
           </div>
           <p>
-            Description of this event. Description of this event. Description of
-            this event. Description of this event. Description of this event.
-            Description of this event. Description of this event. Description of
-            this event. Description of this event. Description of this event.
-            Description of this event. Description of this event. Description of
-            this event. Description of this event. Description of this event.
-            Description of this event. Description of this event. Description of
-            this event. Description of this event. Description of event.
+            <?php echo $gallery['description']?>
           </p>
         </div>
       </section>
 
       <!-- Gallery Content -->
       <section class="container custom-scrollbar">
+        
+      <?php foreach($galleryImages as $index => $image):?>
         <div class="grid-item">
           <div class="item-image section-image">
             <img
               class="lightbox-enabled"
-              src="../assets/images/gallery/history-1.png"
-              data-imagesrc="../assets/images/gallery/history-1.png"
+              src="<?php echo '../dev' . $image->path?>"
+              data-imagesrc="<?php echo '../dev' . $image->path?>"
               alt="insert desc"
             />
           </div>
         </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-2.png"
-              data-imagesrc="../assets/images/gallery/history-2.png"
-              alt="insert desc"
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-3.png"
-              data-imagesrc="../assets/images/gallery/history-3.png"
-              alt="insert desc"
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-4.png"
-              data-imagesrc="../assets/images/gallery/history-4.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-5.png"
-              data-imagesrc="../assets/images/gallery/history-5.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-6.png"
-              data-imagesrc="../assets/images/gallery/history-6.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-7.png"
-              data-imagesrc="../assets/images/gallery/history-7.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-8.png"
-              data-imagesrc="../assets/images/gallery/history-8.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-9.png"
-              data-imagesrc="../assets/images/gallery/history-9.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-10.png"
-              data-imagesrc="../assets/images/gallery/history-10.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-11.png"
-              data-imagesrc="../assets/images/gallery/history-11.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-12.png"
-              data-imagesrc="../assets/images/gallery/history-12.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-13.png"
-              data-imagesrc="../assets/images/gallery/history-13.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="grid-item">
-          <div class="item-image section-image">
-            <img
-              class="lightbox-enabled"
-              src="../assets/images/gallery/history-14.png"
-              data-imagesrc="../assets/images/gallery/history-14.png"
-              alt=""
-            />
-          </div>
-        </div>
+      <?php endforeach;?>
       </section>
 
       <!-- Modal/Lightbox -->

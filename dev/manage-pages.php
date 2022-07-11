@@ -1,5 +1,6 @@
 <?php
     include "./assets/functions/header.php";
+    include "./assets/functions/delete-gallery.php";
 
     // Delete Article
     if (isset($_GET['delete-article'])){
@@ -21,7 +22,7 @@
             $sql = "DELETE FROM articles WHERE id='$articleId'";
         
             if ($conn->query($sql) === TRUE) {
-                echo "Record deleted successfully" . '<br>';
+                // echo "Record deleted successfully" . '<br>';
               } else {
                 echo "Error deleting record: " . $conn->error . '<br>';
             }
@@ -33,16 +34,26 @@
         if ($conn->connect_error){
             die('Connection Failure : ' + $conn->connect_error);
         } else {
-            $articleQuery = $conn->query("SELECT * from gallery WHERE id='$galleryId'");
+            $galleryQuery = $conn->query("SELECT * from galleries WHERE id='$galleryId'");
             $gallery = mysqli_fetch_assoc($galleryQuery);
         }
 
         if ($gallery != NULL){
-            // GET PATH OF FOLDER
+            $deleteSuccessful = removeFolder('gallery-folders', $gallery['ID'] . '_' . $gallery['title']);
 
-            // DELETE ALL FILES INSIDE FOLDER
+            if ($deleteSuccessful){
+                if (!unlink($gallery['thumbnail'])){
+                    echo 'ERROR: Thumbnail was not deleted';
+                }
 
-            // THEN DELETE FOLDER
+                $sql = "DELETE FROM galleries WHERE id='$galleryId'";
+            
+                if ($conn->query($sql) === TRUE) {
+                    // echo "Record deleted successfully" . '<br>';
+                  } else {
+                    echo "Error deleting record: " . $conn->error . '<br>';
+                }
+            }
         }
     }
 ?>
@@ -137,6 +148,7 @@
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(() => {
             $.ajax({
@@ -151,7 +163,7 @@
         $(document).ready(() => {
             $.ajax({
                 type: "GET",
-                url: "./assets/functions/get-galleries.php",
+                url: "./assets/functions/get-galleries-list.php",
                 dataType: "html",
                 success: (data) => {
                     $('#galleries-collection').html(data);

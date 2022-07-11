@@ -12,11 +12,7 @@
     // Class for storing image types
     class Image {
         public $path;
-
-        // For when alt text is needed
-        public $description;
-
-
+        public $description; // For when alt text is implemented
         function __construct($path)
         {
             $this->path = $path;
@@ -146,7 +142,7 @@
     <main>
         <section>
             <div class="form-wrapper" id="drop-area">
-                <form class="article-form" id="article-form" 
+                <form class="admin-form" id="admin-form" 
                     action="<?php echo 'update-gallery-content.php?id=' . $gallery['ID'];?>" 
                     method="POST" 
                     enctype="multipart/form-data">
@@ -212,7 +208,7 @@
             deleteInput.setAttribute('value', currentFiles[i]['path']);
             deleteInput.setAttribute('name', 'deletion-entries[]');
 
-            document.getElementById('article-form').appendChild(deleteInput);
+            document.getElementById('admin-form').appendChild(deleteInput);
             document.getElementById('img-container-' + i).remove();
         }
     </script>

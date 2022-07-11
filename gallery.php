@@ -22,7 +22,6 @@
     <?php include('./assets/php/header.php')?>
 
     <main>
-
         <!-- Overview -->
         <section id="gallery-banner" class="subpage-banner">
             <div class="banner-container">
@@ -47,134 +46,27 @@
         </section>
 
         <!-- Image Gallery -->
-        <section class="container custom-scrollbar">
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="assets/images/gallery/history-1.png" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>History of PIHSS</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="assets/images/gallery/national-day-2018-1.png" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>UAE National Day</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="assets/images/gallery/sandwich-c-1.png" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>Sandwich Competition</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="assets/images/gallery/salad-c-1.png" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>Salad Competition</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="https://source.unsplash.com/1600x900/?running" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>Dubai Fitness 30X30</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="https://source.unsplash.com/1600x900/?kids Sports" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>KG Sports Day</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="https://source.unsplash.com/1600x900/?museum" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>EXPO 2020</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="https://source.unsplash.com/1600x900/?auditorium" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>School Play</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="https://source.unsplash.com/1600x900/?school bus" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>Field Trip</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="https://source.unsplash.com/1600x900/?earth day" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>Earth Day</h2>
-                    <p>DD/MM/YY</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="item-image">
-                    <a href="./gallery/gallery-history.php">
-                        <img src="https://source.unsplash.com/1600x900/?student Council" alt="" />
-                    </a>
-                </div>
-                <div class="item-text">
-                    <h2>Student Council</h2>
-                    <p>DD/MM/YY</p>
-                </div>
+        <section class="container custom-scrollbar" id="gallery-pages">
+           
         </section>
     </main>
     
     <!-- Footer -->
     <?php include('./assets/php/footer.php')?>
 
-    <script src="assets/js/global-scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $.ajax({
+                type: "GET",
+                url: "./dev/assets/functions/get-galleries.php",
+                dataType: "html",
+                success: (data) => {
+                    $('#gallery-pages').html(data);
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>

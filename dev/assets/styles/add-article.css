@@ -69,34 +69,34 @@ header {
   position: static;
 }
 
-.article-form {
+.admin-form {
   padding: 2em;
   border: 0.01rem solid #ccc;
   border-radius: 1em;
   font-family: "Raleway", sans-serif;
   width: 80%;
 }
-.article-form .form-item {
+.admin-form .form-item {
   padding-block: 0.5em;
   display: flex;
   flex-direction: column;
 }
-.article-form .form-item label {
+.admin-form .form-item label {
   text-transform: uppercase;
   font-weight: 500;
 }
-.article-form .form-item input {
+.admin-form .form-item input {
   padding: 0.75em;
   align-self: flex-start;
   border: 0.01rem solid #ccc;
 }
-.article-form .form-item input[type=text] {
+.admin-form .form-item input[type=text] {
   min-width: 50%;
 }
-.article-form .form-item input:focus {
+.admin-form .form-item input:focus {
   outline: none;
 }
-.article-form .form-item .form-button {
+.admin-form .form-item .form-button {
   background: none;
   padding: 0.75em;
   padding-inline: 1.25em;
@@ -106,13 +106,13 @@ header {
   color: #FFFFFF;
   cursor: pointer;
 }
-.article-form .form-item .form-button:hover {
+.admin-form .form-item .form-button:hover {
   background-color: #23c66d;
 }
-.article-form .form-item .editor-container {
+.admin-form .form-item .editor-container {
   min-height: 30vh;
 }
-.article-form .multiple-file-preview {
+.admin-form .multiple-file-preview {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   flex-wrap: wrap;
@@ -120,16 +120,16 @@ header {
   border: 0.01vw solid #ccc;
   transition: all 0.15s ease-in-out;
 }
-.article-form .multiple-file-preview .img-preview-container {
+.admin-form .multiple-file-preview .img-preview-container {
   margin: 0.5em;
   background-color: black;
   cursor: pointer;
 }
-.article-form .multiple-file-preview .img-preview-container img {
+.admin-form .multiple-file-preview .img-preview-container img {
   max-width: 100%;
   max-height: 100%;
   transition: all 0.15s ease-in-out;
 }
-.article-form .multiple-file-preview .img-preview-container img:hover {
+.admin-form .multiple-file-preview .img-preview-container img:hover {
   opacity: 75%;
 }/*# sourceMappingURL=add-article.css.map */

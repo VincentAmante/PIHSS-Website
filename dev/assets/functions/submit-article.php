@@ -4,7 +4,6 @@
 
         $articleTitle = $_POST['article-title'];
         $articleCreationDate = $_POST['article-doc'];
-        $articleDelta = $_POST['input-delta'];
         $articleHtml = $_POST['input-html'];
 
         // IMAGE HANDLING
@@ -52,14 +51,12 @@
             if ($conn->connect_error){
                 die('Connection Failure : ' + $conn->connect_error);
             } else {
-                $stmt = $conn->prepare("INSERT INTO articles(title, creationDate, articleDelta, articleHtml, img) VALUES('$articleTitle','$articleCreationDate','$articleDelta', '$articleHtml', '$imgName')");
+                $stmt = $conn->prepare("INSERT INTO articles(title, creationDate, articleHtml, img) VALUES('$articleTitle','$articleCreationDate', '$articleHtml', '$imgName')");
                 $stmt->execute();
                 $stmt->close();
                 $conn->close();
-                
             }
-        
-
+    
             // Returns to page
             $referer = $_SERVER['HTTP_REFERER'];
             header("Location: $referer");

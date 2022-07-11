@@ -17,7 +17,7 @@
         <section>
             
         <div class="form-wrapper">
-            <form class="article-form dropzone" id="article-form" action="./assets/functions/submit-article.php" method="POST" enctype="multipart/form-data">
+            <form class="admin-form dropzone" id="admin-form" action="./assets/functions/submit-article.php" method="POST" enctype="multipart/form-data">
                 <div class="form-item">
                     <label for="article-title">Title</label>
                     <input type="text" id="article-title" name="article-title" spellcheck="false" autocomplete="off" required placeholder="Article Title">

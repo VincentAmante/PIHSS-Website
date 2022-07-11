@@ -5,18 +5,20 @@
     $adminUser = $_POST['pihss-admin-username'];
     $adminPass = $_POST['pihss-admin-password'];
 
-    $checkCredentials = mysqli_query($conn, "SELECT * FROM admins WHERE user = '$adminUser' AND password = '$adminPass'");
-    $queryResult = mysqli_num_rows($checkCredentials);
+    $checkCredentials = "SELECT * FROM admins WHERE user = '$adminUser'";
+    $stmt = $conn->prepare($checkCredentials);
+    $stmt->execute();
+    $queryResult = mysqli_fetch_assoc($stmt->get_result());
 
-    if ($queryResult == 1){
-        echo 'Login worked';
+    if (password_verify($adminPass, $queryResult['password'])){
         $_SESSION['admin-user'] = $adminUser;
-        echo $_SESSION['admin-user'];
+        $_SESSION['admin-is-primary'] = $queryResult['isPrimary'];
         header("Location: manage-pages.php");
         exit();
     }
     else {
-        echo 'Login failed;';
+        var_dump($queryResult);
+        // Login failed
     }
 }
 ?>
@@ -46,8 +48,8 @@
             <!-- <a href="#" class="link">Forgot Your Password?</a> -->
             </div>
             <div class="action">
-            <button><a href="./manage-pages.php">Skip This</a></button>
             <button name="login-btn">Sign in</button>
+            <button>Forgot Password</button>
             </div>
         </form>
     </section>

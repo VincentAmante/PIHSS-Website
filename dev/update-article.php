@@ -5,8 +5,10 @@
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
-        $articleQuery = $conn->query("SELECT * from articles WHERE id='$articleId'");
-        $article = mysqli_fetch_assoc($articleQuery);
+        $articleQuery = "SELECT * from articles WHERE id='$articleId'";
+        $stmt = $conn->prepare($articleQuery);
+        $stmt->execute();
+        $article = mysqli_fetch_assoc($stmt->get_result());
         $articleHtml = $article['articleHtml'];
     }
 
@@ -39,7 +41,7 @@
 <body>
     <main>
         <div class="form-wrapper">
-            <form class="article-form" id="article-form" action="<?php echo 'update-article.php?id=' . $article['ID'];?>" method="POST" enctype="multipart/form-data">
+            <form class="admin-form" id="admin-form" action="<?php echo 'update-article.php?id=' . $article['ID'];?>" method="POST" enctype="multipart/form-data">
                 <div class="form-item">
                     <label for="article-title">Title</label>
                     <input type="text" id="article-title" name="article-title" spellcheck="false" autocomplete="off" required value="<?php echo $article['title']?>">
