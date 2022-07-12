@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -7,10 +8,8 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -45,13 +44,9 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -59,10 +54,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -79,13 +72,10 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -103,10 +93,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -156,14 +144,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -171,8 +155,7 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -181,8 +164,7 @@ input {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -190,9 +172,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -200,9 +182,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -211,9 +193,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -231,19 +213,12 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -264,20 +239,17 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type="checkbox"],
-[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -285,17 +257,15 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -304,10 +274,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -350,10 +318,8 @@ template {
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -388,13 +354,9 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -402,10 +364,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -422,13 +382,10 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -446,10 +403,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -499,14 +454,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -514,8 +465,7 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -524,8 +474,7 @@ input {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -533,9 +482,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -543,9 +492,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -554,9 +503,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -574,19 +523,12 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -607,20 +549,17 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type="checkbox"],
-[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -628,17 +567,15 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -647,10 +584,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -687,8 +622,6 @@ template {
 
 header, nav {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   z-index: 2;
 }
@@ -696,130 +629,81 @@ header, nav {
 header {
   z-index: 10;
   position: fixed;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 header .header-content {
-  -webkit-transition: -webkit-transform 0.25s ease-in-out;
-  transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
-  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
-
 header .top-header {
   background-color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-block: .2em;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.2em;
   padding-left: 0;
   font-size: 1.15rem;
 }
-
 header .top-header .logo-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   cursor: pointer;
   text-decoration: none;
   margin-left: 5vw;
 }
-
 header .top-header .logo-container .header-logo {
   border: 0;
 }
-
 header .top-header .logo-container .header-logo img {
   width: 3.5em;
   max-width: 5rem;
 }
-
 header .top-header .logo-container .header-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-left: .75em;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0.75em;
 }
-
 header .top-header .logo-container .header-title > * {
   text-transform: uppercase;
   color: #0F6938;
   margin: 0;
 }
-
 header .top-header .logo-container .header-title h1 {
   font-size: 1em;
   font-weight: 400;
   font-family: "Raleway", sans-serif !important;
 }
-
 header .top-header .logo-container .header-title h2 {
   font-weight: 800;
-  font-size: .5em;
+  font-size: 0.5em;
   font-family: "Raleway", sans-serif !important;
 }
-
 header .top-header .header-contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   vertical-align: middle;
   margin-right: 5vw;
 }
-
 header .top-header .header-contacts .contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   text-decoration: none;
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  padding-inline: .5em;
+  transition: all 0.25s ease-in-out;
+  padding-inline: 0.5em;
   padding-block: 1em;
 }
-
 header .top-header .header-contacts .contact svg {
   color: #0F6938;
 }
-
 header .top-header .header-contacts .contact span {
-  font-size: .9rem;
-  margin-left: .4em;
+  font-size: 0.9rem;
+  margin-left: 0.4em;
   color: black;
 }
-
 header .top-header .header-contacts .contact:hover {
   background-color: #0F6938;
 }
-
 header .top-header .header-contacts .contact:hover * {
   color: #FFFFFF;
 }
@@ -828,69 +712,46 @@ header .top-header .header-contacts .contact:hover * {
   padding-inline: 5vw;
   background-color: #0F6938;
   color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   min-height: 6vh;
   width: 100%;
   margin: 0;
   list-style: none;
 }
-
 .nav-links .nav-element, .nav-links .nav-sub-list:hover ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  justify-content: center;
+  flex-grow: 1;
+  flex-shrink: 0;
   text-align: center;
-  -webkit-transition: background-color .3s ease-in-out;
-  transition: background-color .3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   position: relative;
 }
-
 .nav-links .nav-element ul, .nav-links .nav-sub-list:hover ul li ul {
   background-color: #0F6938;
   display: none;
 }
-
 .nav-links .nav-element a, .nav-links .nav-sub-list:hover ul li a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: .8em 1em;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8em 1em;
   opacity: 1;
   text-decoration: none;
   color: inherit;
-  font-size: .9rem;
+  font-size: 0.9rem;
   height: 100%;
   width: 100%;
   vertical-align: middle;
 }
-
 .nav-links .nav-element:hover, .nav-links .nav-sub-list:hover ul li:hover {
   background-color: #159650;
   cursor: pointer;
 }
-
 .nav-links .nav-sub-list {
   position: relative;
 }
-
 .nav-links .nav-sub-list:hover ul {
   display: block;
   position: absolute;
@@ -898,21 +759,16 @@ header .top-header .header-contacts .contact:hover * {
   left: 0;
   width: 100%;
 }
-
 .nav-links .nav-sub-list:hover ul li {
   background-color: #1B9B55;
   text-align: left;
-  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  border-top: 1px solid hsla(0deg, 0%, 100%, 0.45);
 }
-
 .nav-links .nav-sub-list:hover ul li:hover {
   background-color: #23c66d;
 }
-
 .nav-links .nav-sub-list:hover ul li a {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 @media screen and (max-width: 768px) {
@@ -920,33 +776,27 @@ header .top-header .header-contacts .contact:hover * {
     position: absolute;
     margin-right: 4vw;
     cursor: pointer;
-    right: .5vw;
+    right: 0.5vw;
     top: 1.2rem;
-    -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
   }
   .burger div {
-    -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
     width: 2rem;
-    height: .15rem;
-    margin-top: .5rem;
+    height: 0.15rem;
+    margin-top: 0.5rem;
     background-color: black;
   }
   .toggle {
     opacity: 0;
   }
   header .header-content {
-    -webkit-transform: none;
-            transform: none;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    transform: none;
+    box-shadow: none;
   }
   header .top-header {
-    -webkit-transform: none;
-            transform: none;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    transform: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   }
   header .top-header .header-contacts {
     display: none;
@@ -955,51 +805,36 @@ header .top-header .header-contacts .contact:hover * {
     z-index: 100;
     position: absolute;
     top: 0;
-    -webkit-transform: translateX(200vw);
-            transform: translateX(200vw);
+    transform: translateX(200vw);
     height: 120vh;
     background-color: #0F6938;
     padding: 0;
     border-radius: 1vw 0 0 0;
     font-weight: 500;
-    -webkit-transition: -webkit-transform 0.55s ease-in;
-    transition: -webkit-transform 0.55s ease-in;
     transition: transform 0.55s ease-in;
-    transition: transform 0.55s ease-in, -webkit-transform 0.55s ease-in;
   }
   .nav-active {
-    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    -webkit-transform: translateX(60vw);
-            transform: translateX(60vw);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: translateX(60vw);
   }
   .nav-links {
     padding: 0vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     justify-self: flex-end;
     position: fixed;
   }
   .nav-links .nav-element, .nav-links .nav-sub-list:hover ul li {
     text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    border-bottom: 1px solid hsla(0deg, 0%, 100%, 0.45);
   }
   .nav-links .nav-element a, .nav-links .nav-sub-list:hover ul li a {
     padding: 3vh 5vw;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .nav-links .nav-element:hover, .nav-links .nav-sub-list:hover ul li:hover {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: hsla(0deg, 0%, 100%, 0.25);
   }
   .nav-links .nav-sub-list:hover {
     padding-bottom: 0;
@@ -1021,130 +856,91 @@ header .top-header .header-contacts .contact:hover * {
     padding-right: 5em;
   }
 }
-
 footer {
   color: #FFFFFF;
-  background: #0f6938;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(100%, #0f6938), to(rgba(15, 105, 56, 0.75)));
-  background: linear-gradient(0deg, #0f6938 100%, rgba(15, 105, 56, 0.75) 100%);
+  background: rgb(15, 105, 56);
+  background: linear-gradient(0deg, rgb(15, 105, 56) 100%, rgba(15, 105, 56, 0.75) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#0f6938",GradientType=1);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding-inline: 5vw;
 }
-
 footer li {
   cursor: pointer;
-  padding-left: .1rem;
+  padding-left: 0.1rem;
 }
-
 footer li:hover {
-  border-radius: .5em;
+  border-radius: 0.5em;
   background-color: #1B9B55;
 }
-
 footer li img {
   width: 1em;
 }
-
 footer .footer-logo-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 footer .footer-logo-container .footer-logo {
   padding: 5vmin 1vw;
 }
-
 footer .footer-logo-container .footer-logo img {
   max-width: 4rem;
 }
-
 footer .footer-logo-container .footer-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   font-size: 1.15rem;
   margin: 0;
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
 }
-
 footer .footer-logo-container .footer-title h1 {
   margin: 0;
   font-size: 1.25em;
   font-weight: 400;
   font-family: "Raleway", sans-serif !important;
 }
-
 footer .footer-logo-container .footer-title h2 {
   margin: 0;
   font-weight: 800;
-  font-size: .75em;
+  font-size: 0.75em;
   font-family: "Raleway", sans-serif !important;
 }
-
 footer ul {
   padding: 0;
 }
-
 footer ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-block: .2em;
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  align-items: center;
+  padding-block: 0.2em;
+  transition: all 0.25s ease-in-out;
 }
-
 footer ul li * {
-  margin: .5vmin;
+  margin: 0.5vmin;
 }
-
 footer ul li a {
   height: 100%;
   width: 100%;
-  padding: .2em 0em;
+  padding: 0.2em 0em;
   text-decoration: none;
   color: #FFFFFF;
   font-weight: 300;
   font-size: clamp(16px, 1vw, 1.2rem);
 }
-
 footer .footer-nav h2 {
   font-family: "EB Garamond", serif;
   font-weight: 500;
   font-size: clamp(1.25rem, 4vw, 1.6rem);
   border-bottom: 0.01em solid #FFFFFF;
-  padding-block: .5vw;
+  padding-block: 0.5vw;
   margin-top: 1em;
 }
-
 footer .footer-contact-map {
   width: 35%;
   position: relative;
   overflow: hidden;
 }
-
 footer .footer-contact-map iframe {
   border: 0;
   top: 0;
@@ -1155,17 +951,11 @@ footer .footer-contact-map iframe {
 
 @media screen and (min-width: 1024px) {
   footer {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-between;
     padding-block: 2vmax;
   }
 }
-
 /*!
  * Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -1246,14 +1036,14 @@ footer .footer-contact-map iframe {
 
 .fa-xs {
   font-size: 0.75em;
-  line-height: 0.08333em;
+  line-height: 0.0833333337em;
   vertical-align: 0.125em;
 }
 
 .fa-sm {
   font-size: 0.875em;
-  line-height: 0.07143em;
-  vertical-align: 0.05357em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
 }
 
 .fa-lg {
@@ -1264,7 +1054,7 @@ footer .footer-contact-map iframe {
 
 .fa-xl {
   font-size: 1.5em;
-  line-height: 0.04167em;
+  line-height: 0.0416666682em;
   vertical-align: -0.125em;
 }
 
@@ -1284,7 +1074,6 @@ footer .footer-contact-map iframe {
   margin-left: var(--fa-li-margin, 2.5em);
   padding-left: 0;
 }
-
 .fa-ul > li {
   position: relative;
 }
@@ -1439,297 +1228,227 @@ footer .footer-contact-map iframe {
 
 @media (prefers-reduced-motion: reduce) {
   .fa-beat,
-  .fa-bounce,
-  .fa-fade,
-  .fa-beat-fade,
-  .fa-flip,
-  .fa-pulse,
-  .fa-shake,
-  .fa-spin,
-  .fa-spin-pulse {
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
     -webkit-animation-delay: -1ms;
             animation-delay: -1ms;
     -webkit-animation-duration: 1ms;
             animation-duration: 1ms;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-    -webkit-transition-delay: 0s;
-            transition-delay: 0s;
-    -webkit-transition-duration: 0s;
-            transition-duration: 0s;
+    transition-delay: 0s;
+    transition-duration: 0s;
   }
 }
-
 @-webkit-keyframes fa-beat {
   0%, 90% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   45% {
-    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
-            transform: scale(var(--fa-beat-scale, 1.25));
+    transform: scale(var(--fa-beat-scale, 1.25));
   }
 }
-
 @keyframes fa-beat {
   0%, 90% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   45% {
-    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
-            transform: scale(var(--fa-beat-scale, 1.25));
+    transform: scale(var(--fa-beat-scale, 1.25));
   }
 }
-
 @-webkit-keyframes fa-bounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   10% {
-    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
   }
   30% {
-    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
   }
   50% {
-    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
   }
   57% {
-    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
   }
   64% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   100% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
 }
-
 @keyframes fa-bounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   10% {
-    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
   }
   30% {
-    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
   }
   50% {
-    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
   }
   57% {
-    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
   }
   64% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   100% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
 }
-
 @-webkit-keyframes fa-fade {
   50% {
     opacity: var(--fa-fade-opacity, 0.4);
   }
 }
-
 @keyframes fa-fade {
   50% {
     opacity: var(--fa-fade-opacity, 0.4);
   }
 }
-
 @-webkit-keyframes fa-beat-fade {
   0%, 100% {
     opacity: var(--fa-beat-fade-opacity, 0.4);
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     opacity: 1;
-    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
-            transform: scale(var(--fa-beat-fade-scale, 1.125));
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
   }
 }
-
 @keyframes fa-beat-fade {
   0%, 100% {
     opacity: var(--fa-beat-fade-opacity, 0.4);
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     opacity: 1;
-    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
-            transform: scale(var(--fa-beat-fade-scale, 1.125));
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
   }
 }
-
 @-webkit-keyframes fa-flip {
   50% {
-    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
-            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
   }
 }
-
 @keyframes fa-flip {
   50% {
-    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
-            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
   }
 }
-
 @-webkit-keyframes fa-shake {
   0% {
-    -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
   4% {
-    -webkit-transform: rotate(15deg);
-            transform: rotate(15deg);
+    transform: rotate(15deg);
   }
   8%, 24% {
-    -webkit-transform: rotate(-18deg);
-            transform: rotate(-18deg);
+    transform: rotate(-18deg);
   }
   12%, 28% {
-    -webkit-transform: rotate(18deg);
-            transform: rotate(18deg);
+    transform: rotate(18deg);
   }
   16% {
-    -webkit-transform: rotate(-22deg);
-            transform: rotate(-22deg);
+    transform: rotate(-22deg);
   }
   20% {
-    -webkit-transform: rotate(22deg);
-            transform: rotate(22deg);
+    transform: rotate(22deg);
   }
   32% {
-    -webkit-transform: rotate(-12deg);
-            transform: rotate(-12deg);
+    transform: rotate(-12deg);
   }
   36% {
-    -webkit-transform: rotate(12deg);
-            transform: rotate(12deg);
+    transform: rotate(12deg);
   }
   40%, 100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
-
 @keyframes fa-shake {
   0% {
-    -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
   4% {
-    -webkit-transform: rotate(15deg);
-            transform: rotate(15deg);
+    transform: rotate(15deg);
   }
   8%, 24% {
-    -webkit-transform: rotate(-18deg);
-            transform: rotate(-18deg);
+    transform: rotate(-18deg);
   }
   12%, 28% {
-    -webkit-transform: rotate(18deg);
-            transform: rotate(18deg);
+    transform: rotate(18deg);
   }
   16% {
-    -webkit-transform: rotate(-22deg);
-            transform: rotate(-22deg);
+    transform: rotate(-22deg);
   }
   20% {
-    -webkit-transform: rotate(22deg);
-            transform: rotate(22deg);
+    transform: rotate(22deg);
   }
   32% {
-    -webkit-transform: rotate(-12deg);
-            transform: rotate(-12deg);
+    transform: rotate(-12deg);
   }
   36% {
-    -webkit-transform: rotate(12deg);
-            transform: rotate(12deg);
+    transform: rotate(12deg);
   }
   40%, 100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
-
 @-webkit-keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-
 .fa-rotate-90 {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
-  -webkit-transform: scale(-1, 1);
-          transform: scale(-1, 1);
+  transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
-  -webkit-transform: scale(1, -1);
-          transform: scale(1, -1);
+  transform: scale(1, -1);
 }
 
 .fa-flip-both,
 .fa-flip-horizontal.fa-flip-vertical {
-  -webkit-transform: scale(-1, -1);
-          transform: scale(-1, -1);
+  transform: scale(-1, -1);
 }
 
 .fa-rotate-by {
-  -webkit-transform: rotate(var(--fa-rotate-angle, none));
-          transform: rotate(var(--fa-rotate-angle, none));
+  transform: rotate(var(--fa-rotate-angle, none));
 }
 
 .fa-stack {
@@ -1765,47 +1484,47 @@ footer .footer-contact-map iframe {
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
 readers do not read off random characters that represent icons */
 .fa-0::before {
-  content: "\30";
+  content: "\30 ";
 }
 
 .fa-1::before {
-  content: "\31";
+  content: "\31 ";
 }
 
 .fa-2::before {
-  content: "\32";
+  content: "\32 ";
 }
 
 .fa-3::before {
-  content: "\33";
+  content: "\33 ";
 }
 
 .fa-4::before {
-  content: "\34";
+  content: "\34 ";
 }
 
 .fa-5::before {
-  content: "\35";
+  content: "\35 ";
 }
 
 .fa-6::before {
-  content: "\36";
+  content: "\36 ";
 }
 
 .fa-7::before {
-  content: "\37";
+  content: "\37 ";
 }
 
 .fa-8::before {
-  content: "\38";
+  content: "\38 ";
 }
 
 .fa-9::before {
-  content: "\39";
+  content: "\39 ";
 }
 
 .fa-a::before {
-  content: "\41";
+  content: "A";
 }
 
 .fa-address-book::before {
@@ -2305,11 +2024,11 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-asterisk::before {
-  content: "\2a";
+  content: "\*";
 }
 
 .fa-at::before {
-  content: "\40";
+  content: "\@";
 }
 
 .fa-atom::before {
@@ -2329,7 +2048,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-b::before {
-  content: "\42";
+  content: "B";
 }
 
 .fa-baby::before {
@@ -2961,7 +2680,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-c::before {
-  content: "\43";
+  content: "C";
 }
 
 .fa-cake-candles::before {
@@ -3893,7 +3612,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-d::before {
-  content: "\44";
+  content: "D";
 }
 
 .fa-database::before {
@@ -4013,15 +3732,15 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-dollar-sign::before {
-  content: "\24";
+  content: "\$";
 }
 
 .fa-dollar::before {
-  content: "\24";
+  content: "\$";
 }
 
 .fa-usd::before {
-  content: "\24";
+  content: "\$";
 }
 
 .fa-dolly::before {
@@ -4121,7 +3840,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-e::before {
-  content: "\45";
+  content: "E";
 }
 
 .fa-ear-deaf::before {
@@ -4249,7 +3968,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-equals::before {
-  content: "\3d";
+  content: "\=";
 }
 
 .fa-eraser::before {
@@ -4273,7 +3992,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-exclamation::before {
-  content: "\21";
+  content: "\!";
 }
 
 .fa-expand::before {
@@ -4313,7 +4032,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-f::before {
-  content: "\46";
+  content: "F";
 }
 
 .fa-face-angry::before {
@@ -4977,7 +4696,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-g::before {
-  content: "\47";
+  content: "G";
 }
 
 .fa-gamepad::before {
@@ -5121,7 +4840,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-greater-than::before {
-  content: "\3e";
+  content: "\>";
 }
 
 .fa-greater-than-equal::before {
@@ -5165,7 +4884,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-h::before {
-  content: "\48";
+  content: "H";
 }
 
 .fa-hammer::before {
@@ -5397,7 +5116,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-hashtag::before {
-  content: "\23";
+  content: "\#";
 }
 
 .fa-hat-cowboy::before {
@@ -5757,7 +5476,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-i::before {
-  content: "\49";
+  content: "I";
 }
 
 .fa-i-cursor::before {
@@ -5857,7 +5576,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-j::before {
-  content: "\4a";
+  content: "J";
 }
 
 .fa-jar::before {
@@ -5893,7 +5612,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-k::before {
-  content: "\4b";
+  content: "K";
 }
 
 .fa-kaaba::before {
@@ -5933,7 +5652,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-l::before {
-  content: "\4c";
+  content: "L";
 }
 
 .fa-land-mine-on::before {
@@ -6009,7 +5728,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-less-than::before {
-  content: "\3c";
+  content: "\<";
 }
 
 .fa-less-than-equal::before {
@@ -6149,7 +5868,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-m::before {
-  content: "\4d";
+  content: "M";
 }
 
 .fa-magnet::before {
@@ -6561,7 +6280,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-n::before {
-  content: "\4e";
+  content: "N";
 }
 
 .fa-naira-sign::before {
@@ -6597,7 +6316,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-o::before {
-  content: "\4f";
+  content: "O";
 }
 
 .fa-object-group::before {
@@ -6633,7 +6352,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-p::before {
-  content: "\50";
+  content: "P";
 }
 
 .fa-pager::before {
@@ -6789,11 +6508,11 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-percent::before {
-  content: "\25";
+  content: "\%";
 }
 
 .fa-percentage::before {
-  content: "\25";
+  content: "\%";
 }
 
 .fa-person::before {
@@ -7173,11 +6892,11 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-plus::before {
-  content: "\2b";
+  content: "\+";
 }
 
 .fa-add::before {
-  content: "\2b";
+  content: "\+";
 }
 
 .fa-plus-minus::before {
@@ -7241,7 +6960,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-q::before {
-  content: "\51";
+  content: "Q";
 }
 
 .fa-qrcode::before {
@@ -7249,7 +6968,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-question::before {
-  content: "\3f";
+  content: "\?";
 }
 
 .fa-quote-left::before {
@@ -7269,7 +6988,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-r::before {
-  content: "\52";
+  content: "R";
 }
 
 .fa-radiation::before {
@@ -7545,7 +7264,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-s::before {
-  content: "\53";
+  content: "S";
 }
 
 .fa-sack-dollar::before {
@@ -8337,7 +8056,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-t::before {
-  content: "\54";
+  content: "T";
 }
 
 .fa-table::before {
@@ -8925,7 +8644,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-u::before {
-  content: "\55";
+  content: "U";
 }
 
 .fa-umbrella::before {
@@ -9165,7 +8884,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-v::before {
-  content: "\56";
+  content: "V";
 }
 
 .fa-van-shuttle::before {
@@ -9309,7 +9028,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-w::before {
-  content: "\57";
+  content: "W";
 }
 
 .fa-walkie-talkie::before {
@@ -9473,7 +9192,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-x::before {
-  content: "\58";
+  content: "X";
 }
 
 .fa-x-ray::before {
@@ -9505,7 +9224,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-y::before {
-  content: "\59";
+  content: "Y";
 }
 
 .fa-yen-sign::before {
@@ -9533,7 +9252,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-z::before {
-  content: "\5a";
+  content: "Z";
 }
 
 .sr-only,
@@ -9572,16 +9291,15 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Font Awesome 6 Free';
+  font-family: "Font Awesome 6 Free";
   font-style: normal;
   font-weight: 900;
   font-display: block;
   src: url("/assets/webfonts/fa-solid-900.woff2") format("woff2"), url("/assets/webfonts/fa-solid-900.ttf") format("truetype");
 }
-
 .fas,
 .fa-solid {
-  font-family: 'Font Awesome 6 Free';
+  font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
 
@@ -9595,16 +9313,15 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Font Awesome 6 Brands';
+  font-family: "Font Awesome 6 Brands";
   font-style: normal;
   font-weight: 400;
   font-display: block;
   src: url("/assets/webfonts/fa-brands-400.woff2") format("woff2"), url("/assets/webfonts/fa-brands-400.ttf") format("truetype");
 }
-
 .fab,
 .fa-brands {
-  font-family: 'Font Awesome 6 Brands';
+  font-family: "Font Awesome 6 Brands";
   font-weight: 400;
 }
 
@@ -11498,8 +11215,7 @@ html {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -11510,8 +11226,7 @@ main {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -11535,24 +11250,15 @@ ul {
   background-size: cover;
   background-position: bottom;
 }
-
 .subpage-banner .banner-container {
-  background-color: #b5b5b5;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(15, 105, 56, 0)), to(rgba(0, 0, 0, 0.8)));
+  background-color: rgb(181, 181, 181);
   background: linear-gradient(180deg, rgba(15, 105, 56, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
   height: 100%;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
-
 .subpage-banner .banner-container h1 {
   font-family: "EB Garamond", serif;
   color: #FFFFFF;
@@ -11563,36 +11269,29 @@ ul {
 
 /* Navigation Breadcrumbs */
 .nav-breadcrumbs {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   padding: 0vh 5vw;
   text-transform: uppercase;
 }
-
 .nav-breadcrumbs li {
   display: inline;
 }
-
 .nav-breadcrumbs li a {
   text-decoration: none;
   color: #383838;
   font-weight: 600;
   font-size: 0.8em;
 }
-
 .nav-breadcrumbs li + li ::before {
   padding: 1vw;
   color: #383838;
-  content: ">>\00a0";
+  content: ">> ";
 }
 
 /* Heading Border */
 .h1-border {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
-
 .h1-border span {
   padding: 0ch 5ch;
   border-bottom: 0.5rem solid;
@@ -11603,32 +11302,25 @@ ul {
 /* Internal Navigation */
 .internal-nav {
   z-index: 2;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   background-color: white;
 }
-
 .internal-nav h2 {
   font-weight: 500;
 }
-
 .internal-nav ul {
   list-style: none;
   padding: 0;
 }
-
 .internal-nav ul li {
   padding-bottom: 1ch;
 }
-
 .internal-nav ul li a {
   text-decoration: none;
 }
-
 .internal-nav ul li a:link, .internal-nav ul li a:visited {
   color: #383838;
 }
-
 .internal-nav ul li a:hover, .internal-nav ul li a:active, .internal-nav ul li a:focus {
   color: #1B9B55;
   font-weight: 500;
@@ -11641,5 +11333,4 @@ ul {
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
-}
-/*# sourceMappingURL=global.css.map */
+}/*# sourceMappingURL=global.css.map */

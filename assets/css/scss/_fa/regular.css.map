@@ -1,11 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA;;;;GAIG;AAIH,AAAA,KAAK,EAAE,KAAK,CAAC;EACX,iBAAgC,CAAe,uCAAC;CACjD;;AAED,UAAU;EACR,WAAW,EAAE,qBAAqB;EAClC,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,GAAG;EAChB,YAAY,EE+BY,KAAK;EF9B7B,GAAG,EAAE,4CAA4C,CAAC,eAAe,EAC/D,0CAA0C,CAAC,kBAAkB;;;AAGjE,AAAA,IAAI;AACJ,WAAW,CAAgB;EACzB,WAAW,EAAE,qBAAqB;EAClC,WAAW,EAAE,GAAG;CACjB",
-    "sources": [
-        "regular.scss",
-        "_functions.scss",
-        "_variables.scss"
-    ],
-    "names": [],
-    "file": "regular.css"
-}
+{"version":3,"sources":["regular.scss","regular.css","_variables.scss"],"names":[],"mappings":"AAAA;;;;EAAA;AAQA;EACE,yDAAA;ACFF;;ADKA;EACE,kCAAA;EACA,kBAAA;EACA,gBAAA;EACA,mBE+BwB;EF9BxB,gIAAA;ACFF;ADMA;;EAEE,kCAAA;EACA,gBAAA;ACJF","file":"regular.css"}

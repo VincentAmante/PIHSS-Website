@@ -7,13 +7,8 @@ html {
 
 main,
 section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-bottom: 5vmax;
   padding: 0;
   width: 100%;
@@ -33,12 +28,9 @@ h2 {
 .gallery-overview {
   padding: 2.5vmax 5vw 0;
 }
-
 .gallery-overview .h1-border {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
-
 .gallery-overview .h1-border span {
   padding: 0vw 5ch;
   border-bottom: 0.5rem solid #0F6938;
@@ -47,11 +39,9 @@ h2 {
 /* Custom Scrollbar */
 /* Image gallery */
 .container {
-  display: -ms-grid;
   display: grid;
   padding: 0vh 5vw;
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 15px;
   margin-bottom: 5em;
 }
@@ -63,7 +53,6 @@ h2 {
   background-color: black;
   grid-column: span 12;
 }
-
 .grid-item .item-image {
   position: absolute;
   top: 0;
@@ -74,10 +63,8 @@ h2 {
   height: 100%;
   overflow: hidden;
   opacity: 0.6;
-  -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-
 .grid-item .item-image img {
   width: 100%;
   height: 100%;
@@ -86,42 +73,33 @@ h2 {
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
   cursor: pointer;
-  -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-
 .grid-item:hover .item-image {
   opacity: 1;
 }
-
 .grid-item:hover .item-image img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 .grid-item .section-image {
   opacity: 1;
 }
-
 .grid-item .item-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #FFFFFF;
   font-size: 0.7rem;
   pointer-events: none;
 }
-
 .grid-item .item-text h2 {
   font-family: "Raleway", sans-serif;
 }
-
 .grid-item .item-text h2,
 .grid-item .item-text p {
-  text-shadow: 1px 1px 5px #000000af;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6862745098);
 }
 
 /* The Modal (background) */
@@ -133,67 +111,47 @@ h2 {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #383838c2;
+  background-color: rgba(56, 56, 56, 0.7607843137);
   opacity: 0;
   pointer-events: none;
   /* Modal Header */
   /* Modal Content */
 }
-
 .modal .modal-header {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   width: 100vw;
-  background-color: #38383877;
+  background-color: rgba(56, 56, 56, 0.4666666667);
   z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px 40px;
 }
-
 .modal .modal-header .number-text {
   color: white;
 }
-
 .modal .modal-header .modal-header-icons *:hover {
   text-decoration: none;
   cursor: pointer;
 }
-
 .modal .modal-header .modal-header-icons i {
   padding-left: 20px;
   color: #FFFFFF;
 }
-
 .modal .modal-header .modal-header-icons a {
   color: rgba(255, 255, 255, 0);
 }
-
 .modal .modal-content {
   height: 100vh;
   width: auto;
   position: relative;
   /* Previous & Next Buttons */
 }
-
 .modal .modal-content .slide-container {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
-
 .modal .modal-content .slide-container .lightbox-slide {
   cursor: -webkit-grab;
   cursor: grab;
@@ -204,25 +162,20 @@ h2 {
   -o-object-fit: contain;
      object-fit: contain;
 }
-
 .modal .modal-content .slide-container .lightbox-slide:active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
 }
-
 .modal .modal-content .slide-container .lightbox-slide img {
   position: absolute;
   height: 100%;
   width: 100%;
   will-change: transform;
-  -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
   -o-object-fit: contain;
      object-fit: contain;
 }
-
 .modal .modal-content #prev,
 .modal .modal-content #next {
   cursor: pointer;
@@ -231,7 +184,7 @@ h2 {
    -ms-user-select: none;
        user-select: none;
   -webkit-user-select: none;
-  background-color: #38383895;
+  background-color: rgba(56, 56, 56, 0.5843137255);
   color: #FFFFFF;
   padding: 5vh 1.5vw;
   margin: 3%;
@@ -240,7 +193,6 @@ h2 {
   margin-top: -2.5%;
   z-index: 5;
 }
-
 .modal .modal-content #next {
   right: 0;
 }
@@ -256,25 +208,22 @@ h2 {
   }
   /* Custom Scrollbar */
 }
-
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .container .grid-item {
     grid-column: span 4;
   }
   .container .grid-item:nth-child(5n),
-  .container .grid-item:nth-child(5n - 1) {
+.container .grid-item:nth-child(5n-1) {
     grid-column: span 6;
   }
 }
-
 @media screen and (min-width: 1200px) {
   .container .grid-item {
     grid-column: span 3;
   }
   .container .grid-item:nth-child(7n),
-  .container .grid-item:nth-child(7n - 1),
-  .container .grid-item:nth-child(7n - 2) {
+.container .grid-item:nth-child(7n-1),
+.container .grid-item:nth-child(7n-2) {
     grid-column: span 4;
   }
-}
-/*# sourceMappingURL=gallery.css.map */
+}/*# sourceMappingURL=gallery.css.map */

@@ -1,11 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA;;;;GAIG;AAIH,AAAA,KAAK,EAAE,KAAK,CAAC;EACX,eAA8B,CAAa,uCAAC;CAC7C;;AAED,UAAU;EACR,WAAW,EAAE,qBAAqB;EAClC,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,GAAG;EAChB,YAAY,EE+BY,KAAK;EF9B7B,GAAG,EAAE,0CAA0C,CAAC,eAAe,EAC7D,wCAAwC,CAAC,kBAAkB;;;AAG/D,AAAA,IAAI;AACJ,SAAS,CAAgB;EACvB,WAAW,EAAE,qBAAqB;EAClC,WAAW,EAAE,GAAG;CACjB",
-    "sources": [
-        "solid.scss",
-        "_functions.scss",
-        "_variables.scss"
-    ],
-    "names": [],
-    "file": "solid.css"
-}
+{"version":3,"sources":["solid.scss","solid.css","_variables.scss"],"names":[],"mappings":"AAAA;;;;EAAA;AAQA;EACE,uDAAA;ACFF;;ADKA;EACE,kCAAA;EACA,kBAAA;EACA,gBAAA;EACA,mBE+BwB;EF9BxB,4HAAA;ACFF;ADMA;;EAEE,kCAAA;EACA,gBAAA;ACJF","file":"solid.css"}

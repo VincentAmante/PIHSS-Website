@@ -6,19 +6,10 @@ html {
 
 main,
 section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin-bottom: 5vmax;
   width: 100%;
@@ -55,22 +46,11 @@ h3 {
 }
 
 .table-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
   position: relative;
   overflow-x: scroll;
   max-width: 85vw;
@@ -78,7 +58,6 @@ h3 {
   scrollbar-width: none;
   margin-block: 2.5em;
 }
-
 .table-wrapper::-webkit-scrollbar {
   display: none;
 }
@@ -87,13 +66,12 @@ h3 {
 .fee-structure,
 .student-code {
   margin: 0;
-  border-bottom: 0.1rem solid rgba(56, 56, 56, 0.7);
+  border-bottom: 0.1rem solid hsla(0deg, 0%, 22%, 0.7);
 }
 
 .admissions-container {
   padding: 2.5vmax 5vw 5vw;
 }
-
 .admissions-container > div {
   margin-bottom: 5vh;
 }
@@ -102,136 +80,86 @@ h3 {
   padding-left: 1em;
   list-style: "- ";
 }
-
 .admissions-overview p {
   margin-bottom: 1em;
 }
 
 .admissions-process ul {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   gap: 1em;
 }
-
 .admissions-process ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
   position: relative;
 }
-
 .admissions-process ul li .card-number {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.8rem;
   font-weight: bold;
   border: 0.4em solid #ddedd5;
   border-radius: 50%;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   z-index: 1;
-  -webkit-transform: translateY(1.5em);
-          transform: translateY(1.5em);
+  transform: translateY(1.5em);
   background-color: #bfdfaf;
   aspect-ratio: 1;
   text-align: center;
   width: 3.2em;
 }
-
 .admissions-process ul li .card-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background-color: #ddedd5;
   width: 100%;
   padding: 2em;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   border-radius: 1em;
   padding: 3em 2em;
 }
-
 .admissions-process ul li .card-content p {
   margin-top: 1em;
 }
 
 .admissions-requirements {
   padding: 5vw 0 0;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
-
 .admissions-requirements h2,
 .admissions-requirements h3 {
   font-family: "EB Garamond", serif;
   text-transform: uppercase;
   margin-block: 2em;
 }
-
 .admissions-requirements h2 {
   color: #0F6938;
 }
-
 .admissions-requirements a {
   color: #383838;
 }
-
 .admissions-requirements ol {
   padding-left: 1em;
 }
-
 .admissions-requirements ol li::marker {
   font-weight: 600;
 }
-
 .admissions-requirements ul {
   list-style-type: disc;
   padding-left: 2em;
 }
-
 .admissions-requirements ul ol {
   padding: 0 1.5em;
 }
-
 .admissions-requirements ul ol li::marker {
   content: "(" counter(list-item, lower-roman) ")  ";
 }
@@ -243,7 +171,6 @@ table, table td, table th {
   margin-bottom: 1em;
   overflow-x: scroll;
 }
-
 table td, table th {
   border: 0.01rem solid black;
   width: -webkit-max-content;
@@ -255,46 +182,34 @@ table td, table th {
   font-weight: 400;
   overflow-x: initial;
 }
-
 table th {
   background-color: #EEE1B2;
 }
 
 .fee-structure {
   padding: 5vw;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
-
 .fee-structure > div {
   margin-bottom: 5vh;
 }
-
 .fee-structure .table-wrapper {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
-
 .fee-structure .transport-note {
   margin: 5vh 0 0;
 }
-
 .fee-structure ul {
   padding-left: 1em;
   list-style: disc;
 }
-
 .fee-structure ul ol {
   padding: 0 1.5em;
 }
-
 .fee-structure ul ol li::marker {
   content: counter(list-item, lower-alpha) ")  ";
   font-weight: 600;
 }
-
 .fee-structure h2,
 .fee-structure h3 {
   color: #0F6938;
@@ -303,41 +218,32 @@ table th {
 
 .student-code-container {
   padding: 5vw;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
-
 .student-code-container > div {
   margin-bottom: 5vh;
 }
-
 .student-code-container p,
 .student-code-container ol,
 .student-code-container ul {
   padding-bottom: 1.5em;
 }
-
 .student-code-container ul {
   list-style-type: disc;
   padding-left: 1.5em;
 }
-
 .student-code-container ol {
   padding-left: 1.25em;
 }
-
 .student-code-container ol li::marker {
   content: counter(list-item, lower-alpha) ")  ";
   font-weight: 600;
 }
-
 .student-code-container h2,
 .student-code-container h3 {
   color: #0F6938;
   text-transform: uppercase;
 }
-
 .student-code-container h3 {
   font-family: "Raleway", sans-serif;
   font-size: 1.1rem;
@@ -345,11 +251,8 @@ table th {
 
 .registration {
   padding: 5vw;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
-
 .registration h2 {
   color: #0F6938;
   font-weight: 500;
@@ -358,90 +261,58 @@ table th {
 .registration-form {
   min-width: 100%;
 }
-
 .registration-form .form-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   padding-block: 1em;
 }
-
 .registration-form .form-item > * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
-
 .registration-form .form-item label {
   font-weight: 600;
   width: 15vw;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
 }
-
 .registration-form .form-item label::after {
   content: "*";
   color: #FF1F1F;
 }
-
 .registration-form .form-item .file-upload::after {
   content: "";
 }
-
-.registration-form .form-item input[type="text"],
-.registration-form .form-item input[type="date"] {
+.registration-form .form-item input[type=text],
+.registration-form .form-item input[type=date] {
   padding: 0.5em;
   border-color: #c9c9c9;
   border-style: solid;
   border-radius: 0.5em;
   border-width: 0.09rem;
 }
-
-.registration-form .form-item input[type="text"]:invalid,
-.registration-form .form-item input[type="date"]:invalid {
+.registration-form .form-item input[type=text]:invalid,
+.registration-form .form-item input[type=date]:invalid {
   border-color: #FF1F1F;
   border-width: 0.1rem;
 }
-
-.registration-form .form-item input[type="date"] {
+.registration-form .form-item input[type=date] {
   text-transform: uppercase;
 }
-
 .registration-form .form-item .radio-group {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .registration-form .form-item .radio-group .input-group {
   margin-right: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .registration-form .form-item .radio-group .input-group label::after {
   content: none;
 }
-
-.registration-form .form-item .radio-group .input-group input[type="radio"] {
+.registration-form .form-item .radio-group .input-group input[type=radio] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -453,35 +324,20 @@ table th {
   margin-right: 0.5em;
   padding: 0.5em;
 }
-
-.registration-form .form-item .radio-group .input-group input[type="radio"]:checked {
+.registration-form .form-item .radio-group .input-group input[type=radio]:checked {
   background-color: #c9c9c9;
 }
-
-.registration-form .form-item .radio-group .input-group input[type="radio"]:invalid {
+.registration-form .form-item .radio-group .input-group input[type=radio]:invalid {
   border-color: #FF1F1F;
 }
-
 .registration-form .form-item .file-upload {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
   gap: 1.5vh;
 }
-
 .registration-form .form-item .file-upload .upload-button {
   border: 0.01rem solid #959595;
   padding: 0.2em 2em;
@@ -489,42 +345,27 @@ table th {
   background-color: #dddddd;
   cursor: pointer;
 }
-
 .registration-form .form-item .file-upload .upload-button:hover {
   border-color: #dddddd;
   background-color: rgba(255, 255, 255, 0.5);
 }
-
 .registration-form .form-item .file-upload .image-drop {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 0.01rem solid #c9c9c9;
   text-align: center;
   padding-inline: 5vw;
   padding-block: 5vh;
   border-radius: 0.5em;
 }
-
-.registration-form .form-item .file-upload input[type="file"] {
+.registration-form .form-item .file-upload input[type=file] {
   display: none;
 }
-
 .registration-form .form-item .form-button {
   border: none;
-  -webkit-box-flex: 0.25;
-      -ms-flex-positive: 0.25;
-          flex-grow: 0.25;
+  flex-grow: 0.25;
   padding: 1em 1.5em;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -532,31 +373,26 @@ table th {
   cursor: pointer;
   border: 0.01rem solid none;
 }
-
 .registration-form .form-item .form-submit {
   background-color: #65b9e1;
   margin-left: 0vw;
   margin-right: 2.5vw;
 }
-
 .registration-form .form-item .form-submit:hover {
-  background-color: rgba(102, 186, 225, 0.1);
+  background-color: hsla(199deg, 67%, 64%, 0.1);
   color: #65b9e1;
   border: 0.01rem solid #65b9e1;
 }
-
 .registration-form .form-item .form-reset {
   font-weight: bold;
   color: #FF1F1F;
   border: 0.01rem solid #dddddd;
 }
-
 .registration-form .form-item .form-reset:hover {
   background-color: #FF1F1F;
   color: #FFFFFF;
   border: 0.01rem solid #FF1F1F;
 }
-
 .registration-form .form-item-empty label {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -567,37 +403,27 @@ table th {
 
 @media screen and (min-width: 768px) {
   .admissions-overview {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
   }
   .admissions-overview .content {
     max-width: 60%;
   }
   .admissions-process ul {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .table-wrapper {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .table-wrapper:after {
     background-image: none;
   }
 }
-
 @media screen and (min-width: 1200px) {
   .admissions-process ul {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   .registration-form {
     min-width: 50vw;
   }
-}
-/*# sourceMappingURL=admissions.css.map */
+}/*# sourceMappingURL=admissions.css.map */

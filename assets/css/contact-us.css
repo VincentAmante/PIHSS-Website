@@ -7,13 +7,8 @@ html {
 
 main,
 section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-bottom: 5vmax;
   padding: 0;
   width: 100%;
@@ -44,75 +39,48 @@ h2 {
 /* Contact Information */
 .contact-us {
   padding: 0 5vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 .contact-us .container {
   background-color: #EEE1B2;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   max-width: 600px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   border-radius: 15px;
   /* Contact Information */
   /* Contact Map */
 }
-
 .contact-us .container .contact-details {
   width: 100%;
   padding-top: 2em;
 }
-
 .contact-us .container .contact-details .timings {
   background-color: white;
-  -webkit-box-shadow: -4px 4px 4px -3px #0000003f;
-          box-shadow: -4px 4px 4px -3px #0000003f;
+  box-shadow: -4px 4px 4px -3px rgba(0, 0, 0, 0.2470588235);
   border-radius: 15px 0px 0px 15px;
   padding: 1.15em;
   width: 70%;
   margin-left: auto;
   margin-right: 0;
 }
-
 .contact-us .container .contact-details .timings p {
   color: #0F6938;
 }
-
 .contact-us .container .contact-details .info {
   padding: 1em 3em;
 }
-
 .contact-us .container .contact-details .info ul {
   padding: 0;
 }
-
 .contact-us .container .contact-details .info ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0.5em 0em;
 }
-
 .contact-us .container .contact-details .info ul li i {
   color: #0F6938;
   height: 2em;
@@ -121,18 +89,15 @@ h2 {
   border: 1px solid #0F6938;
   border-radius: 50%;
 }
-
 .contact-us .container .contact-details .info ul li * {
   margin: 1vmin;
 }
-
 .contact-us .container .contact-details .info ul li a {
   color: #383838;
   padding-left: 1em;
   text-decoration: none;
   font-size: clamp(16px, 1vw, 1.2rem);
 }
-
 .contact-us .container .contact-map {
   width: 100%;
   position: relative;
@@ -140,7 +105,6 @@ h2 {
   height: 0;
   overflow: hidden;
 }
-
 .contact-us .container .contact-map iframe {
   border: 0;
   border-radius: 15px;
@@ -154,21 +118,11 @@ h2 {
 /* Contact Form */
 .contact-form {
   padding: 2.5vmax 5vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 .contact-form .form-container {
   background-color: #efefef;
   border-radius: 15px;
@@ -176,33 +130,27 @@ h2 {
   max-width: 600px;
   padding: 40px 8vmin;
 }
-
 .contact-form .form-container span {
   color: red;
   font-weight: 700;
   font-size: large;
 }
-
 .contact-form .form-container .form-note {
   font-size: small;
   width: 100%;
   text-align: center;
 }
-
 .contact-form .form-container form {
   padding: 10px 0;
 }
-
 .contact-form .form-container form .form-item {
   width: 100%;
   padding: 8px;
 }
-
 .contact-form .form-container form .form-item label {
   display: block;
   font-weight: 600;
 }
-
 .contact-form .form-container form .form-item input,
 .contact-form .form-container form .form-item textarea {
   padding: 1vw;
@@ -213,21 +161,17 @@ h2 {
   margin-top: 10px;
   resize: none;
 }
-
 .contact-form .form-container form .submit-button {
   margin-top: 30px;
   text-align: center;
 }
-
 .contact-form .form-container form .submit-button button {
   background-color: #EEE1B2;
   padding: 10px 50px;
   border-radius: 5px;
   font-weight: 600;
-  -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-
 .contact-form .form-container form .submit-button button:hover {
   cursor: pointer;
   background-color: #e9d99d;
@@ -235,10 +179,7 @@ h2 {
 
 @media screen and (min-width: 1024px) {
   .contact-us .container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     max-width: 100%;
   }
   .contact-us .container .contact-details {
@@ -251,5 +192,4 @@ h2 {
     width: 55%;
     padding-bottom: 550px;
   }
-}
-/*# sourceMappingURL=contact-us.css.map */
+}/*# sourceMappingURL=contact-us.css.map */
