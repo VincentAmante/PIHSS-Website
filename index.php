@@ -352,5 +352,6 @@
     <?php include('./assets/php/footer.php')?>
     <script src="assets/js/global-scripts.js"></script>
     <script src="assets/js/index-scripts.js"></script>
+    <?php include('./testFirebase.php')?>
 </body>
 </html>

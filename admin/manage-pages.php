@@ -14,7 +14,7 @@
         }  
 
         if ($article != NULL){
-            if (unlink($article['img'])){
+            if (unlink('../' . $article['img'])){
             }
             else {
                 echo 'File not deleted';
@@ -146,10 +146,35 @@
                 </table>
             </div>
         </section>
+        <section>
+            <div class="section-container">    
+                <table id="table_id" class="display">
+                    <thead>
+                        <tr class="row-item">
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Row 1 Data 1</td>
+                            <td>Row 1 Data 2</td>
+                        </tr>
+                        <tr>
+                            <td>Row 2 Data 1</td>
+                            <td>Row 2 Data 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
     <script>
         $(document).ready(() => {
             $.ajax({
@@ -171,6 +196,9 @@
                 }
             })
         });
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
     </script>
 </body>
 </html>

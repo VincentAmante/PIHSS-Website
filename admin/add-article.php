@@ -17,7 +17,7 @@
         <section>
             
         <div class="form-wrapper">
-            <form class="admin-form dropzone" id="admin-form" action="./assets/functions/submit-article.php" method="POST" enctype="multipart/form-data">
+            <form class="admin-form" id="admin-form" action="./assets/functions/submit-article.php" method="POST" enctype="multipart/form-data">
                 <div class="form-item">
                     <label for="article-title">Title</label>
                     <input type="text" id="article-title" name="article-title" spellcheck="false" autocomplete="off" required placeholder="Article Title">
@@ -56,12 +56,9 @@
     
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/scripts/rich-text.js"></script>
     <script src="../assets/js/file-uploader-single.js"></script>
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
     <script>
         Dropzone.options.articleForm = { // camelized version of the `id`

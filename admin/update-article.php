@@ -56,7 +56,7 @@
                         <input name="input-delta" type="hidden">
                         <input name="input-html" type="hidden">
                         <div class="editor-container" id="editor-container">
-
+                            
                         </div>
                     </div>
                 </div>

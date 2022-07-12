@@ -1,27 +1,3 @@
-<?php
-    require './assets/functions/connect.php';
-
-    if(isset($_POST['login-btn'])){
-    $adminUser = $_POST['pihss-admin-username'];
-    $adminPass = $_POST['pihss-admin-password'];
-
-    $checkCredentials = "SELECT * FROM admins WHERE user = '$adminUser'";
-    $stmt = $conn->prepare($checkCredentials);
-    $stmt->execute();
-    $queryResult = mysqli_fetch_assoc($stmt->get_result());
-
-    if (password_verify($adminPass, $queryResult['password'])){
-        $_SESSION['admin-user'] = $adminUser;
-        $_SESSION['admin-is-primary'] = $queryResult['isPrimary'];
-        header("Location: manage-pages.php");
-        exit();
-    }
-    else {
-        var_dump($queryResult);
-        // Login failed
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +8,12 @@
 
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/admin-page.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <?php include './assets/functions/login.php'?>
     <main>
     <section class="login-form">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">

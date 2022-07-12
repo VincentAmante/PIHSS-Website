@@ -69,7 +69,7 @@
                   <li class="nav-element"><a href="manage-pages.php">Manage Pages</a></li>
                   <li class="nav-element"><a href="add-article.php">Add Article</a></li>
                   <li class="nav-element"><a href="add-gallery.php">Add Gallery Content</a></li>
-                  <li class="nav-element"><a href="news-article.php">Articles View</a></li>
+                  <li class="nav-element"><a href="../news-article.php">Articles View</a></li>
                   <li class="nav-element"><a href="./assets/functions/logout.php">Log Out</a></li>
               </ul>
           </nav>

@@ -9,110 +9,46 @@
         $gallery = mysqli_fetch_assoc($galleryQuery);
     }
 
-    // Class for storing image types
-    class Image {
-        public $path;
-        public $description; // For when alt text is implemented
-        function __construct($path)
-        {
-            $this->path = $path;
-        }
-    };
-
-    $imgArr = array();
-
     // UPLOADS IMAGE CONTENTS
-    if (!empty($_FILES) 
+    if (!empty($_FILES)
         && isset($_POST['save-gallery-content'])
-        && $_POST['rand-check'] == $_SESSION['rand']
+        && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
         && $galleryId != null){
+        include './assets/functions/image-class.php';
+        include './assets/functions/handle-images.php';
 
         // Verifies images first
-        $images = "";
-        $imgCount = 0;
         $imagesValid = true;
         $finalOutput = " ";
+        $imgArr = array();
 
-        
-        foreach($_FILES['gallery_images']['name'] as $index => $imgName){
-            // echo $index . ' : ' . '<b>IMAGE NAME:</b> ' . $imgName .  ' | <b>TEMP NAME:</b> ' . $_FILES['image']['tmp_name'][$index] . '<br>';
+        $imgDirectory = "./assets/gallery-folders/" . $gallery['ID'] . '_' . $gallery['title'] . '/';
+        $getImgFrom = 'gallery_images';
 
+        foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
             if ($imgName != ""){
-                // Directory = Where image will end up when uploaded in the directory
-               $imgDirectory = "./assets/gallery-folders/" . $gallery['ID'] . '_' . $gallery['title'] . '/';
-               $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
-               $imgName = $imgDirectory . uniqid() .basename($imgName);
-   
-               if($_FILES['gallery_images']['size'][$index] > 10000000000){
-                   echo "FILE TOO LARGE";
-                   $imagesValid = false;
-               }
-   
-               // Valid image types
-               switch(strtolower($imgType)){
-                   case 'jpeg':
-                   case 'png':
-                   case 'jpg':
-                   case 'jfif':
-                   case 'gif':
-                   break;
-                   default:
-                   echo 'Invalid filetype';
-                   $imagesValid = false;
-               }
-   
-               if ($imagesValid){
-                   if (move_uploaded_file($_FILES['gallery_images']['tmp_name'][$index], $imgName)){
-                    
-                        // Image uploaded, move to new image array
-                        $newImg = new Image($imgName);
-                        array_push($imgArr, $newImg);
-                   }
-                   else {
-                       // Img failed
-                       $imagesValid = false;
-                   }
-               }
+                $result = uploadImage($imgDirectory, $imgName, $getImgFrom, $index);
+                if ($result != false){
+                    array_push($imgArr, new Image($result));
+                }
            }
         }
 
-
         $finalOutput = json_encode($imgArr);
         $galleryFiles = json_decode($gallery['images']);
-
         // Handles entries for deletion
         // Locates entries to be deleted, before updating the array
         if (isset($_POST['deletion-entries'])){
-            $deletionEntries = $_POST['deletion-entries'];
-            foreach ($deletionEntries as $deletionIndex => $entry) {
-                foreach ($galleryFiles as $galleryIndex => $record){
-                    $imgPath = get_object_vars($record)['path'];
-                    if ($imgPath == $entry){
-                        array_splice($galleryFiles, $galleryIndex, 1);
-                        // Deletes image from folder
-                        if (unlink($imgPath)){
-                            // Deletion successful
-                        }
-                        else {
-                            echo 'File not deleted';
-                        }
-                    }
-                }
-            }
+            deleteImages($galleryFiles, $_POST['deletion-entries']);
         }
 
         if ($galleryFiles != null){
             $finalOutput = json_encode(array_merge($galleryFiles, $imgArr));
         }
 
-        $updateQuery = $conn->prepare("
-                UPDATE galleries
-                SET images = '$finalOutput'
-                WHERE id='$galleryId'
-        ");
+        $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput' WHERE id='$galleryId'");
         $updateQuery->execute();
 
-        
         // Repeats query to match update
         if ($conn->connect_error){
             die('Connection Failure : ' + $conn->connect_error);
@@ -121,6 +57,13 @@
             $gallery = mysqli_fetch_assoc($galleryQuery);
         }
         unset($_POST);
+    }
+
+    // Edits the gallery's text content
+    if (isset($_POST['save-gallery-content'])
+    && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
+    && $galleryId != null){
+        
     }
 
     $currentFiles = $gallery['images'];
@@ -151,9 +94,24 @@
                         $_SESSION['rand'] = $rand;
                     ?>
                     <div class="form-item">
-                        <label for="gallery-title"><?php echo $gallery['title']?></label>
+                        <label for="gallery-title">Title</label>
+                        <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required value="<?php echo $gallery['title']?>">
+                    </div>    
+                    <div class="form-item">
+                        <label for="article-doc">Date of Creation</label>
+                        <input type="date" name="article-doc" required value=<?php echo $gallery['creationDate']?>>
                     </div>
                     <div class="form-item">
+                        <label for="article-content">Content</label>
+                        <div>          
+                            <input name="input-delta" type="hidden">
+                            <input name="input-html" type="hidden">
+                            <div class="editor-container" id="editor-container">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-item" id="gallery-view">
                         <label for="fileElem">Upload images to the gallery</label>
                         <input type="file" 
                             accept="image/*" 
@@ -167,7 +125,7 @@
                     <div class="multiple-file-preview" id="gallery">
 
                     </div>
-                    
+
                     <h2>Existing Images</h2>
                     <div class="multiple-file-preview" id="current-gallery">
 
@@ -183,33 +141,27 @@
             </div>
         </section>
     </main>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Handles rich text -->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="./assets/scripts/rich-text.js"></script>
+
+    <!-- For handling the form gallery (displaying, deletion, addition) -->
     <script src="../assets/js/file-uploader-multiple.js"></script>
+    <script src="./assets/scripts/handle-form-gallery.js"></script> 
     <script>
+        // Handles gallery
         let currentFiles = JSON.parse(`<?php echo "$currentFiles"?>`);
         let currentGallery = document.getElementById("current-gallery");
-        for (let i = 0; i < currentFiles.length; i++){
-            let img = document.createElement('img');
-            let div = document.createElement('div');
-            
-            div.className = "img-preview-container";
-            img.src = currentFiles[i]['path'];
-            div.setAttribute('id', 'img-container-' + i);
-            div.appendChild(img);
-            div.setAttribute('onclick', 'deleteEntry(' + i + ')');
-
-            currentGallery.appendChild(div)
+        if (currentGallery != null){
+            displayCurrentImages(currentFiles, currentGallery);
         }
 
-        function deleteEntry(i){
-            let deleteInput = document.createElement('input');
-            deleteInput.setAttribute('type', 'hidden');
-            deleteInput.setAttribute('value', currentFiles[i]['path']);
-            deleteInput.setAttribute('name', 'deletion-entries[]');
-
-            document.getElementById('admin-form').appendChild(deleteInput);
-            document.getElementById('img-container-' + i).remove();
-        }
+        // Handles redisplaying the description
+        setQuill("<?php echo $gallery['description']?>");
     </script>
 </body>
 </html>

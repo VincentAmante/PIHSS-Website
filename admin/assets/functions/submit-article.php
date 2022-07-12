@@ -8,42 +8,20 @@
 
         // IMAGE HANDLING
         $imgValid = true;
-        $imgName = $_FILES['article-image']['name'];
+        $imgName = $_FILES['article-image']['name'];    
 
         if ($imgName != ""){
+            include "./handle-images.php";
              // Directory = Where image will end up when uploaded in the directory
             $imgDirectory = "./assets/article-posts/";
-            $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
-            $imgName = $imgDirectory . uniqid() .basename($imgName);
 
-            if($_FILES['article-image']['size'] > 10000000000){
-                echo "FILE TOO LARGE";
-                $imgValid = false;
-            }
+            $result = uploadImage($imgDirectory, $imgName, 'article-image', -1, true);
+            var_dump($result);
 
-            // Valid image types
-            switch(strtolower($imgType)){
-                case 'jpeg':
-                case 'png':
-                case 'jpg':
-                case 'jfif':
-                case 'gif':
-                break;
-                default:
-                echo 'Invalid filetype';
-                $imgValid = false;
-            }
-
-
-            if ($imgValid){
-                if (move_uploaded_file($_FILES['article-image']['tmp_name'], "../../" . $imgName)){
-                    // Img uploaded
-                }
-                else {
-                    // Img failed
-                    $imgValid = false;
-                    exit();
-                }
+            if ($result != false){
+                $imgName = $result;
+            } else {
+                exit();
             }
         }
 

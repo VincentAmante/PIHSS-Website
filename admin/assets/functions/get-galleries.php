@@ -11,8 +11,8 @@
 <?php while ($data = $galleries->fetch_assoc()):?>
     <div class="grid-item">
         <div class="item-image">
-            <a href="<?php echo './gallery/gallery-history.php?id=' . $data['ID']?>">
-                <img src="<?php echo  './dev/' . $data['thumbnail']?>" alt="" />
+            <a href="<?php echo './gallery-history.php?id=' . $data['ID']?>">
+                <img src="<?php echo  './admin/' . $data['thumbnail']?>" alt="" />
             </a>
         </div>
         <div class="item-text">

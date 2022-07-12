@@ -61,7 +61,7 @@
         $(document).ready(() => {
             $.ajax({
                 type: "GET",
-                url: "./assets/functions/get-article.php",
+                url: "./admin/assets/functions/get-article.php",
                 dataType: "html",
                 success: (data) => {
                     $('#article-slider').html(data);

@@ -11,7 +11,7 @@
 while ($data = $articles->fetch_assoc()):?>
 <?php $updateUrl = "update-article.php?id=" . $data['ID'];?>
 <div class="row-item">
-    <img src="<?php echo $data['img']?>">
+    <img src="<?php echo '../' . $data['img']?>">
     <div class="title"><?php echo $data['title']?></div>
     <div class="date"><?php echo $data['creationDate']?></div>
     <a href=<?php echo $updateUrl?>>
@@ -20,7 +20,7 @@ while ($data = $articles->fetch_assoc()):?>
         </svg>
         <p>Edit</p>
     </a>
-    <a class="delete delete-article" href="<?php echo "?delete-article=" . $data['ID']?>">                      
+    <a class="delete delete-article" href="<?php echo '?delete-article=' . $data['ID']?>">                      
         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
             <path fill="currentColor" d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
         </svg>
@@ -31,10 +31,8 @@ while ($data = $articles->fetch_assoc()):?>
 <!-- Check manage-pages.php for where this is implemented -->
 <!-- Note: You need jQuery and the sweet alerts cdn for this,  -->
 <script>
-    
     // All list items here will have this onclick event
      $('.delete-article').click(e => {
-
             // Ensures the click doesn't do anything else
             event.preventDefault();
 

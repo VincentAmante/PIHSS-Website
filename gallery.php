@@ -66,7 +66,7 @@
         $(document).ready(() => {
             $.ajax({
                 type: "GET",
-                url: "./dev/assets/functions/get-galleries.php",
+                url: "./admin/assets/functions/get-galleries.php",
                 dataType: "html",
                 success: (data) => {
                     $('#gallery-pages').html(data);
@@ -75,6 +75,6 @@
         });
     </script>
     
-    <script src="assets/js/global-scripts.js"></script>
+    <script src="./assets/js/global-scripts.js"></script>
 </body>
 </html>
