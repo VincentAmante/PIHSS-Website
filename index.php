@@ -7,77 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Pakistan Islamia Higher Secondary School</title>
+    
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
 </head>
 <body>
     <!-- Header -->
-    <header class="header top-header-up" id="header">
-        <div class="header-content" id="header-content">
-            <div class="top-header" id="top-header">
-                <a class="logo-container" href="./index.html">    
-                    <div class="header-logo">
-                        <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
-                    </div>
-                    <div class="header-title">
-                        <h1>Pakistan Islamia</h1>
-                        <h2>Higher Secondary School</h2>
-                    </div>
-                </a>
-                <div class="header-contacts">
-                    <a href="mailto:info@pihss-shj.com" class="contact">
-                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
-                        </svg>
-                        <span>info@pihss-shj.com</span>
-                    </a>
-                    <a href="tel:+" class="contact">
-                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
-                        </svg>
-                    <span >06-5670700 | 06-5670464</span>
-                    </a>
-                  </div>
-            </div>
-            <nav class="nav" id="nav">        
-                <ul class="nav-links">
-                    <li class="nav-element"><a href="index.html">Home</a></li>
-                    <li class="nav-element"><a href="about-us.html">About Us</a></li>
-                    <li class="nav-element nav-sub-list"><a href="our-school.html">Our School</a>
-                        <ul>
-                            <li><a href="our-school.html#facilities">Facilities</a></li>
-                            <li><a href="our-school.html#co-curricular">Co-Curricular Activities</a></li>
-                            <li><a href="our-school.html#student-code">Student Code of Behaviour</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-element"><a href="admissions.html">Admissions</a></li>
-                    <li class="nav-element"><a href="gallery.html">Gallery</a></li>
-                    <li class="nav-element nav-sub-list"><a href="">Login</a>
-                        <ul>
-                            <li><a href="https://orison.school/">Parents Portal</a></li>
-                            <li><a href="https://orison.school/">Staff Portal</a></li>
-                            <li><a href="http://mail.pihss-shj.com:2095/">Staff Email</a></li>
-                        </ul></li>
-                    <li class="nav-element"><a href="contact-us.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!-- Burger -->
-        <div class="burger burger-alone" id="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </header>
+    <?php include('./assets/php/header.php')?>
 
     <main>
         <section class="hero-banner">
-            <div class="video-container">
-                <video autoplay muted loop>
+        <video autoplay muted loop>
                     <source src="./assets/videos/hero.mp4" type="video/mp4">
                 </video>
-                <video></video>
+            <div class="video-container">
+                
             </div>
             <div class="hero-banner-container">
                 <img class="hero-logo" src="./assets/images/global/logo_white.png">
@@ -144,7 +89,7 @@
                 <div class="selection">
                     <div class="slider" id="more-info-selection">
                         <div class="card-wrapper" >
-                            <a class="card" href="./about-us.html">
+                            <a class="card" href="./about-us.php">
                                 
                             <div class="card-anchor"  id="mi-slider-about-us"></div>
                                 <div class="card-image">
@@ -158,7 +103,7 @@
                             </a>
                         </div>
                         <div class="card-wrapper">
-                            <a class="card" href="./about-us.html">
+                            <a class="card" href="./about-us.php">
                                 
                             <div class="card-anchor" id="mi-slider-mission-vision"></div>
                                 <div class="card-image">
@@ -172,7 +117,7 @@
                             </a>
                         </div>
                         <div class="card-wrapper">
-                            <a class="card" href="./about-us.html">
+                            <a class="card" href="./about-us.php">
                             <div class="card-anchor" id="mi-slider-registration"></div>
                                 <div class="card-image">
                                     <div>
@@ -185,7 +130,7 @@
                             </a>
                         </div>
                         <div class="card-wrapper">
-                            <a class="card" href="./about-us.html">
+                            <a class="card" href="./about-us.php">
                             <div class="card-anchor" id="mi-slider-other"></div>
                                 <div class="card-image">
                                     <div>
@@ -219,7 +164,7 @@
                     </div>
                     <div class="btn">
                         <div class="btn-wrapper">
-                            <a href="./admissions.html">Enroll Now</a>
+                            <a href="./admissions.php">Enroll Now</a>
                         </div>
                     </div>
                 </div>
@@ -341,7 +286,7 @@
                 <div class="nac-cards">
                     <div class="nac-events">
                         <article>
-                            <a href="./articles/news-article.html">
+                            <a href="./articles/news-article.php">
                                 <div class="article-image">
                                     <img src="./assets/images/placeholders/DSC07512.jpg" alt="">
                                 </div>
@@ -361,7 +306,7 @@
                             </a>
                         </article>
                         <article>
-                            <a href="./articles/news-article.html">
+                            <a href="./articles/news-article.php">
                                 <div class="article-image">
                                     <img src="./assets/images/placeholders/DSC07402.jpg" alt="">
                                 </div>
@@ -394,7 +339,7 @@
                                         </svg>
                                     </div>
                                     <h4>Upcoming Events</h4>
-                                    <a href="./articles/news-article.html" class="btn">View Details</a>
+                                    <a href="./articles/news-article.php" class="btn">View Details</a>
                                 </div>
                             </div>
                         </article>
@@ -403,56 +348,10 @@
             </div>
         </div>
     </main>
-    <footer>
-        <!-- TODO: Finish this -->
-        <div class="footer-info">
-            <div class="footer-logo-container">    
-                <div class="footer-logo">
-                    <img src="./assets/images/global/logo_white.png" alt="Logo of the school">
-                </div>
-                <div class="footer-title">
-                    <h1>Pakistan Islamia</h1>
-                    <h2>Higher Secondary School</h2>
-                </div>
-            </div>
-            <div class="footer-contacts">
-                <ul>
-                    <!-- TODO: Get contacts -->
-                    <li> <span class="fa-li"><i class="fa-solid fa-location-dot"></i></span><a href="https://goo.gl/maps/5H9LAeGYbvQU86bU8">Al Ghubaiba Sharjah, UAE</a></li>
-                    <li> <span class="fa-li"><i class="fa-solid fa-phone"></i></span> <a href="tel:+">06-5670700 | 06-5670464</a></li>
-                    <li> <span class="fa-li"><i class="fa-solid fa-envelope"></i></span> <a href="mailto:info@pihss-shj.com">info@pihss-shj.com</a></li>
-                </ul>
-            </div>
-        </div>
-       
-        <div class="footer-nav">
-            <div class="footer-nav-admissions">
-                <h2>Admissions</h2>
-                <ul>
-                    <li><a href="./admissions.html">Requirements</a></li>
-                    <li><a href="./admissions.html">Fee Structure</a></li>
-                    <li><a href="./admissions.html">Registration</a></li>
-                </ul>
-            </div>
-            <div class="footer-nav-quick-links">
-                <h2>Quick Links</h2>
-                <ul>
-                    <li><a href="./contact-us.html">Contact Us</a></li>
-                    <li><a href="./ .html">Co-Curricular</a></li>
-                    <li><a href="./about-us.html">Student Code of Behaviour</a></li>
-                    <li><a href="">School Leaving Certificate</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-contact-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae"
-              allowfullscreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
-    </footer>
+    <!-- Footer -->
+    <?php include('./assets/php/footer.php')?>
     <script src="assets/js/global-scripts.js"></script>
     <script src="assets/js/index-scripts.js"></script>
+    <?php include('./testFirebase.php')?>
 </body>
 </html>

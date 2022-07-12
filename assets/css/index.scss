@@ -3,7 +3,7 @@
 
 body, html {
 	scroll-behavior: smooth;
-    height: 100%
+    height: 100%;
 }
 
 main, section {
@@ -29,28 +29,22 @@ header {
 .hero-banner {
     @include flex-centered;
     width: 100%;
-    
+    position: relative;
+
     background-size: cover;
     background-position: center;
     
     font-family:  $font-primary;
     color: $primary-secondary;
 
-    .video-container {
+    video {
         z-index: -1;
         position: fixed;
-        max-width: 100vw;
+        object-fit: contain;
+        min-width: 100%;
+        min-height: 100%;
         overflow-x: hidden;
         overflow-y: hidden;
-        object-fit: contain;
-        
-        @include flex-centered;
-
-        video {
-            // width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-        }
     }
 
     .hero-banner-container {
@@ -138,11 +132,11 @@ header {
         h1 {
             font-family: $font-primary;
             font-weight: 500;
-            font-size: clamp(18px, 10vw, 1.75rem);
+            font-size: $font-size-heading;
         }
         p {
             margin: 1em 0;
-            font-size: clamp(12px, 1.15vw, 1.5rem);
+            font-size: $font-size-normal;
             text-align: justify;
         }
     }
@@ -173,7 +167,7 @@ header {
             .number {
                 padding-block: .5em;
                 font-weight: 700;
-                font-size: 1.5rem;
+                font-size: $font-size-large;
                 padding-inline: 1.5em;
             }
             .label {
@@ -189,6 +183,7 @@ header {
     background-color: $other;
 
     .more-info-text {
+        font-size: $font-size-normal;
         padding-block: 2em;
         margin-inline: $global-margin;
         font-weight: 500;
@@ -333,6 +328,7 @@ header {
     .why-pihss-container {
         @include flex-centered;
         
+        width: 100%;
         height: min-content;
         padding-block: 15vh;
         background: rgb(15,105,56);

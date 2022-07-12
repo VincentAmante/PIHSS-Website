@@ -641,9 +641,9 @@ header .top-header {
   transition: transform 0.5s ease-in-out;
   justify-content: space-between;
   align-items: center;
-  padding-block: 0.2em;
+  padding-block: 0.95vmin;
   padding-left: 0;
-  font-size: 1.15rem;
+  font-size: clamp(18px, 1.35vw, 12rem);
 }
 header .top-header .logo-container {
   display: flex;
@@ -655,8 +655,8 @@ header .top-header .logo-container .header-logo {
   border: 0;
 }
 header .top-header .logo-container .header-logo img {
-  width: 3.5em;
-  max-width: 5rem;
+  width: clamp(25px, 3vw, 20rem);
+  max-width: 20rem;
 }
 header .top-header .logo-container .header-title {
   display: flex;
@@ -697,7 +697,7 @@ header .top-header .header-contacts .contact svg {
   color: #0F6938;
 }
 header .top-header .header-contacts .contact span {
-  font-size: 0.9rem;
+  font-size: clamp(10px, 1vw, 9rem);
   margin-left: 0.4em;
   color: black;
 }
@@ -740,7 +740,7 @@ header .top-header .header-contacts .contact:hover * {
   opacity: 1;
   text-decoration: none;
   color: inherit;
-  font-size: 0.9rem;
+  font-size: clamp(10px, 1vw, 9rem);
   height: 100%;
   width: 100%;
   vertical-align: middle;
@@ -11333,4 +11333,7 @@ ul {
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
+}
+footer {
+  background-color: black;
 }/*# sourceMappingURL=global.css.map */

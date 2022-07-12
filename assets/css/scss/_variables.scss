@@ -7,10 +7,21 @@ $other: #CFECC1;
 
 $alert: #FF1F1F;
 
+$form-border-color: #ccc;
+
 // Fonts
 $font-primary: 'EB Garamond', serif;
 $font-secondary: 'Raleway', sans-serif;
 $font-colour: #383838;
+
+
+// Font-Sizes
+$font-size-small: clamp(10px, 1vw, 9rem);
+$font-size-normal: clamp(12px, 1.15vw, 10rem);
+$font-size-large: clamp(18px, 1.35vw, 12rem);
+$font-size-heading: clamp(18px, 2.1vw, 15rem);
+
+$font-size-huge: clamp(25px, 3vw, 20rem);
 
 // Breakpoints (for media queries)
 $breakpoint-mobile: 428px;

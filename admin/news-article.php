@@ -14,7 +14,7 @@
     <header class="header top-header-up" id="header">
         <div class="header-content" id="header-content">
             <div class="top-header" id="top-header">
-                <a class="logo-container" href="./index.html">    
+                <a class="logo-container" href="./index.php">    
                     <div class="header-logo">
                         <img src="../assets/images/global/logo_main.png" alt="Logo of the school">
                     </div>
@@ -40,7 +40,7 @@
             </div>
             <nav class="nav" id="nav">        
                 <ul class="nav-links">
-                    <li class="nav-element"><a href="../index.html">Home</a></li>
+                    <li class="nav-element"><a href="../index.php">Home</a></li>
                     <li class="nav-element"><a href="../about-us.html">About Us</a></li>
                     <li class="nav-element nav-sub-list"><a href="../our-school.html">Our School</a>
                         <ul>
@@ -79,7 +79,7 @@
         <section class="article-overview">
             <div id="nav-breadcrumbs" class="nav-breadcrumbs">
                 <ul>
-                  <li><a href="./index.html">HOME</a></li>
+                  <li><a href="./index.php">HOME</a></li>
                   <li><a href="../news-and-events.html">News and Events</a></li>
                   <li><a href="javascript:window.location.reload(true)">Article</a></li>
                 </ul>
@@ -99,55 +99,7 @@
                     </div>
                 </div>
                 <ul class="content" id="article-slider">
-                    <li>
-                        <article>
-                            <div class="article-img">
-                                <img src="../assets/images/placeholders/student_group_outdoors.jpg" alt="">
-                            </div>
-                            <div class="article-text">
-                                <div class="heading">
-                                    <div class="title">Title Here</div>
-                                    <div class="date">Date here</div>
-                                </div>
-                                <div class="main-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum nulla aut id vero dignissimos soluta esse praesentium! Doloremque, animi odit. Quo est quaerat, tempore praesentium provident incidunt facilis recusandae corporis!
-                                </div>
-                            </div>
-                        </article>
-                    </li>
-                    <li>
-                        
-                        <article>
-                            <div class="article-img">
-                                <img src="../assets/images/placeholders/group-staff.jpg" alt="">
-                            </div>
-                            <div class="article-text">
-                                <div class="heading">
-                                    <div class="title">Title Here</div>
-                                    <div class="date">Date here</div>
-                                </div>
-                                <div class="main-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum nulla aut id vero dignissimos soluta esse praesentium! Doloremque, animi odit. Quo est quaerat, tempore praesentium provident incidunt facilis recusandae corporis!
-                                </div>
-                            </div>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <div class="article-img">
-                                <img src="../assets/images/placeholders/desk-coffee.jpg" alt="">
-                            </div>
-                            <div class="article-text">
-                                <div class="heading">
-                                    <div class="title">Title Here</div>
-                                    <div class="date">Date here</div>
-                                </div>
-                                <div class="main-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum nulla aut id vero dignissimos soluta esse praesentium! Doloremque, animi odit. Quo est quaerat, tempore praesentium provident incidunt facilis recusandae corporis!
-                                </div>
-                            </div>
-                        </article>
-                    </li>
+                    
                 </ul>
                 <div class="slider-btn" id="article-btn-right">
                     <div class="icon">
@@ -159,6 +111,20 @@
             </div>
         </section>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $.ajax({
+                type: "GET",
+                url: "./assets/functions/get-article.php",
+                dataType: "html",
+                success: (data) => {
+                    $('#article-slider').html(data);
+                }
+            })
+        });
+    </script>
 
     <footer>
         <!-- TODO: Finish this -->
