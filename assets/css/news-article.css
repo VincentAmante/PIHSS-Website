@@ -38,12 +38,14 @@
   color: #62AC3B;
 }
 
-body, html {
+body,
+html {
   scroll-behavior: smooth;
   height: 100%;
 }
 
-main, section {
+main,
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,7 +66,7 @@ main, section {
 }
 
 .article-viewer-wrapper {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   padding-block: 5vh;
   max-height: 60vh;
   margin-bottom: 20vh;

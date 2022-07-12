@@ -1,3 +1,4 @@
+/* Base Styling */
 body,
 html {
   scroll-behavior: smooth;
@@ -8,12 +9,9 @@ main,
 section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 5vmax;
   padding: 0;
   width: 100%;
-}
-
-section {
-  padding: 2vw 5vw;
 }
 
 h1, h2 {
@@ -27,6 +25,9 @@ h2 {
 }
 
 /* Gallery Overview */
+.gallery-overview {
+  padding: 2.5vmax 5vw 0;
+}
 .gallery-overview .h1-border {
   align-self: flex-start;
 }
@@ -36,17 +37,6 @@ h2 {
 }
 
 /* Custom Scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.custom-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
 /* Image gallery */
 .container {
   display: grid;
@@ -54,10 +44,6 @@ h2 {
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 15px;
   margin-bottom: 5em;
-  width: 100vw;
-  height: 600px;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .grid-item {
@@ -172,7 +158,6 @@ h2 {
   height: 100vh;
   width: auto;
   overflow: visible;
-  transition: 0s;
   will-change: transform;
   -o-object-fit: contain;
      object-fit: contain;
@@ -218,38 +203,10 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    padding: 0vh 2vw 0vh 5vw;
-    width: 95vw;
-  }
   .container .grid-item {
     grid-column: span 6;
   }
-
   /* Custom Scrollbar */
-  .custom-scrollbar {
-    -ms-overflow-style: scrollbar;
-    /* IE and Edge */
-    scrollbar-width: auto;
-    /* Firefox */
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background-color: #c4c4c4;
-    border-radius: 20px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 10px;
-    background-color: #c4c4c4;
-    border-radius: 20px;
-    display: block;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #1B9B55;
-    border-radius: 20px;
-  }
 }
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .container .grid-item {

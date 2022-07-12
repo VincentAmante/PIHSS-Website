@@ -18,7 +18,6 @@ if (isset($_POST['submit'])) {
 
     mail($mailTo, $subject, $txt, $headers)
         or die("Error!");
-
     
     // Returns to page
     $referer = $_SERVER['HTTP_REFERER'];

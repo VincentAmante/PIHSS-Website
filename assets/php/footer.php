@@ -37,7 +37,7 @@
                     <li><a href="./ .html">Co-Curricular</a></li>
                     <li><a href="./about-us.html">Student Code of Behaviour</a></li>
                     <li><a href="">School Leaving Certificate</a></li>
-                    <li><a href="./dev/index.php">Admin Page</a></li>
+                    <li><a href="./admin/index.php">Admin Page</a></li>
                 </ul>
             </div>
         </div>

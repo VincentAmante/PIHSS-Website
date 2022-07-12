@@ -18,11 +18,11 @@
 
     <main>
         <section class="hero-banner">
-            <div class="video-container">
-                <video autoplay muted loop>
+        <video autoplay muted loop>
                     <source src="./assets/videos/hero.mp4" type="video/mp4">
                 </video>
-                <video></video>
+            <div class="video-container">
+                
             </div>
             <div class="hero-banner-container">
                 <img class="hero-logo" src="./assets/images/global/logo_white.png">

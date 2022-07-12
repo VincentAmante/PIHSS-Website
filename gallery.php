@@ -22,21 +22,23 @@
     <?php include('./assets/php/header.php')?>
 
     <main>
-        <!-- Overview -->
+        <!-- Banner -->
         <section id="gallery-banner" class="subpage-banner">
             <div class="banner-container">
                 <h1>Gallery</h1>
             </div>
         </section>
 
-        <section class="gallery-overview">
-            <div id="nav-breadcrumbs" class="nav-breadcrumbs">
-                <ul>
-                    <li><a href="./index.php">HOME</a></li>
-                    <li><a href="javascript:window.location.reload(true)">GALLERY</a></li>
-                </ul>
-            </div>
+        <!-- Navigation Breadcrumbs -->
+        <div id="nav-breadcrumbs" class="nav-breadcrumbs">
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="javascript:window.location.reload(true)">GALLERY</a></li>
+            </ul>
+        </div>
 
+        <!-- Overview -->
+        <section class="gallery-overview">
             <div class="content">
                 <div class="h1-border">
                     <span></span>
@@ -45,9 +47,14 @@
             </div>
         </section>
 
+        <!-- TODO: Add vertical progress indicator -->
+        <!-- Scroll Progress Indicator -->
+        <!-- <div class="progress-indicator" id="progress-indicator"></div> -->
+
+        <!-- ** Majority of the gallery sub-pages are replaced with placeholder images and text  -->
         <!-- Image Gallery -->
         <section class="container custom-scrollbar" id="gallery-pages">
-           
+            
         </section>
     </main>
     
@@ -67,6 +74,7 @@
             })
         });
     </script>
+    
+    <script src="assets/js/global-scripts.js"></script>
 </body>
-
 </html>

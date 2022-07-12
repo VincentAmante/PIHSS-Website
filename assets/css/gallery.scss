@@ -1,5 +1,7 @@
+// Import global variables
 @import "./scss/variables";
 
+/* Base Styling */
 body,
 html {
 	scroll-behavior: smooth;
@@ -11,13 +13,14 @@ section {
 	// @include flex-centered;
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 5vmax;
 	padding: 0;
 	width: 100%;
 }
 
-section {
-	padding: 2vw $global-margin;
-}
+// section {
+// 	padding: 2vw $global-margin;
+// }
 
 h1 {
 	font-family: $font-primary;
@@ -32,6 +35,8 @@ h2 {
 
 /* Gallery Overview */
 .gallery-overview {
+	padding: 2.5vmax $global-margin 0;
+
 	.h1-border {
 		align-self: flex-start;
 
@@ -43,27 +48,33 @@ h2 {
 }
 
 /* Custom Scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-	display: none;
-}
+// .custom-scrollbar::-webkit-scrollbar {
+// 	display: none;
+// }
 
-.custom-scrollbar {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
+// .custom-scrollbar {
+// 	-ms-overflow-style: none; /* IE and Edge */
+// 	scrollbar-width: none; /* Firefox */
+// }
+
+// .progress-indicator {
+// 	z-index: 3;
+// 	position: fixed;
+// 	bottom: 0;
+// 	left: 0;
+// 	width: 0px;
+// 	height: 6px;
+// 	background-color: pink;
+// 	// transition: height 0.1s ease;
+// }
 
 /* Image gallery */
 .container {
 	display: grid;
-	padding: 0vh 5vw;
+	padding: 0vh $global-margin;
 	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 15px;
 	margin-bottom: 5em;
-	width: 100vw;
-
-	height: 600px; // Adjust value later
-	overflow-y: scroll;
-	overflow-x: hidden;
 }
 
 .grid-item {
@@ -139,8 +150,6 @@ h2 {
 	height: 100vh;
 	overflow: hidden;
 	background-color: #383838c2;
-	// background-color: #383838;
-
 	opacity: 0;
 	pointer-events: none;
 
@@ -173,7 +182,7 @@ h2 {
 			}
 
 			a {
-				color:rgba(255, 255, 255, 0);
+				color: rgba(255, 255, 255, 0);
 			}
 		}
 	}
@@ -193,12 +202,8 @@ h2 {
 				height: 100vh;
 				width: auto;
 				overflow: visible;
-				transition: 0s;
 				will-change: transform;
 				object-fit: contain;
-
-				// transform-origin: 0px 0px;
-				// transform: scale(1) translate(0px, 0px);
 
 				// TODO: Figure out why this doesnt work
 				&:active {
@@ -252,8 +257,8 @@ h2 {
 // MEDIA QUERIES
 @media screen and (min-width: $breakpoint-tablet-portrait) {
 	.container {
-		padding: 0vh 2vw 0vh 5vw;
-		width: 95vw;
+		// padding: 0vh 2vw 0vh 5vw;
+		// width: 95vw;
 
 		.grid-item {
 			grid-column: span 6;
@@ -261,28 +266,27 @@ h2 {
 	}
 
 	/* Custom Scrollbar */
+	// .custom-scrollbar {
+	// 	-ms-overflow-style: scrollbar; /* IE and Edge */
+	// 	scrollbar-width: auto; /* Firefox */
+	// }
 
-	.custom-scrollbar {
-		-ms-overflow-style: scrollbar; /* IE and Edge */
-		scrollbar-width: auto; /* Firefox */
-	}
+	// .custom-scrollbar::-webkit-scrollbar-track {
+	// 	background-color: #c4c4c4;
+	// 	border-radius: 20px;
+	// }
 
-	.custom-scrollbar::-webkit-scrollbar-track {
-		background-color: #c4c4c4;
-		border-radius: 20px;
-	}
+	// .custom-scrollbar::-webkit-scrollbar {
+	// 	width: 10px;
+	// 	background-color: #c4c4c4;
+	// 	border-radius: 20px;
+	// 	display: block;
+	// }
 
-	.custom-scrollbar::-webkit-scrollbar {
-		width: 10px;
-		background-color: #c4c4c4;
-		border-radius: 20px;
-		display: block;
-	}
-
-	.custom-scrollbar::-webkit-scrollbar-thumb {
-		background-color: $primary-main;
-		border-radius: 20px;
-	}
+	// .custom-scrollbar::-webkit-scrollbar-thumb {
+	// 	background-color: $primary-main;
+	// 	border-radius: 20px;
+	// }
 }
 
 @media screen and (min-width: $breakpoint-tablet-landscape) and (max-width: $breakpoint-desktop-small) {

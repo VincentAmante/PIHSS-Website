@@ -1,9 +1,11 @@
-body, html {
+body,
+html {
   scroll-behavior: smooth;
   height: 100%;
 }
 
-main, section {
+main,
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,17 +32,17 @@ h2 {
   margin-bottom: 1em;
 }
 
+h3 {
+  font-weight: 600;
+}
+
 .subpage-banner {
   background-image: url("../images/placeholders/DSC07466.jpg");
 }
 
 .admissions-overview .internal-nav {
-  display: none;
-}
-
-.nav-breadcrumbs {
-  align-self: flex-start;
-  margin-left: 5vw;
+  padding: 2em 0em;
+  min-width: 18vw;
 }
 
 .table-wrapper {
@@ -60,38 +62,26 @@ h2 {
   display: none;
 }
 
-.admissions {
+.admissions,
+.fee-structure,
+.student-code {
   margin: 0;
   border-bottom: 0.1rem solid hsla(0deg, 0%, 22%, 0.7);
 }
 
 .admissions-container {
-  padding: 5vw;
+  padding: 2.5vmax 5vw 5vw;
 }
 .admissions-container > div {
   margin-bottom: 5vh;
 }
 
-.admissions-overview .h1-border span {
-  padding: 0vw 5ch;
-  border-bottom: 0.5rem solid #0F6938;
-}
-.admissions-overview ul {
+.admissions-overview .note {
   padding-left: 1em;
   list-style: "- ";
 }
 .admissions-overview p {
   margin-bottom: 1em;
-}
-
-.admissions-requirements h2 {
-  color: #0F6938;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  margin-block: 2em;
-}
-.admissions-requirements ol {
-  padding-left: 1em;
 }
 
 .admissions-process ul {
@@ -114,12 +104,12 @@ h2 {
   align-items: center;
   font-size: 1.8rem;
   font-weight: bold;
-  border: 0.4em solid #DDEDD5;
+  border: 0.4em solid #ddedd5;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   z-index: 1;
   transform: translateY(1.5em);
-  background-color: #BFDFAF;
+  background-color: #bfdfaf;
   aspect-ratio: 1;
   text-align: center;
   width: 3.2em;
@@ -130,7 +120,7 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #DDEDD5;
+  background-color: #ddedd5;
   width: 100%;
   padding: 2em;
   flex-grow: 1;
@@ -139,6 +129,39 @@ h2 {
 }
 .admissions-process ul li .card-content p {
   margin-top: 1em;
+}
+
+.admissions-requirements {
+  padding: 5vw 0 0;
+  align-items: flex-start;
+}
+.admissions-requirements h2,
+.admissions-requirements h3 {
+  font-family: "EB Garamond", serif;
+  text-transform: uppercase;
+  margin-block: 2em;
+}
+.admissions-requirements h2 {
+  color: #0F6938;
+}
+.admissions-requirements a {
+  color: #383838;
+}
+.admissions-requirements ol {
+  padding-left: 1em;
+}
+.admissions-requirements ol li::marker {
+  font-weight: 600;
+}
+.admissions-requirements ul {
+  list-style-type: disc;
+  padding-left: 2em;
+}
+.admissions-requirements ul ol {
+  padding: 0 1.5em;
+}
+.admissions-requirements ul ol li::marker {
+  content: "(" counter(list-item, lower-roman) ")  ";
 }
 
 table, table td, table th {
@@ -166,35 +189,68 @@ table th {
 .fee-structure {
   padding: 5vw;
   align-items: flex-start;
-  margin-bottom: 1vh;
-  padding-bottom: 1vh;
+}
+.fee-structure > div {
+  margin-bottom: 5vh;
 }
 .fee-structure .table-wrapper {
   align-self: center;
 }
-.fee-structure div {
-  margin-bottom: 5vh;
-}
-.fee-structure .discounts-refunds {
-  display: flex;
-  flex-direction: column;
-}
-.fee-structure .discounts-refunds div > * {
-  margin-bottom: 1em;
+.fee-structure .transport-note {
+  margin: 5vh 0 0;
 }
 .fee-structure ul {
   padding-left: 1em;
   list-style: disc;
 }
-.fee-structure h2, .fee-structure h3 {
-  color: #0F6938;
+.fee-structure ul ol {
+  padding: 0 1.5em;
 }
-.fee-structure h2 {
+.fee-structure ul ol li::marker {
+  content: counter(list-item, lower-alpha) ")  ";
+  font-weight: 600;
+}
+.fee-structure h2,
+.fee-structure h3 {
+  color: #0F6938;
   text-transform: uppercase;
 }
 
+.student-code-container {
+  padding: 5vw;
+  align-items: flex-start;
+}
+.student-code-container > div {
+  margin-bottom: 5vh;
+}
+.student-code-container p,
+.student-code-container ol,
+.student-code-container ul {
+  padding-bottom: 1.5em;
+}
+.student-code-container ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+.student-code-container ol {
+  padding-left: 1.25em;
+}
+.student-code-container ol li::marker {
+  content: counter(list-item, lower-alpha) ")  ";
+  font-weight: 600;
+}
+.student-code-container h2,
+.student-code-container h3 {
+  color: #0F6938;
+  text-transform: uppercase;
+}
+.student-code-container h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+}
+
 .registration {
-  padding-inline: 5vw;
+  padding: 5vw;
   align-items: flex-start;
 }
 .registration h2 {
@@ -227,14 +283,16 @@ table th {
 .registration-form .form-item .file-upload::after {
   content: "";
 }
-.registration-form .form-item input[type=text], .registration-form .form-item input[type=date] {
+.registration-form .form-item input[type=text],
+.registration-form .form-item input[type=date] {
   padding: 0.5em;
-  border-color: #C9C9C9;
+  border-color: #c9c9c9;
   border-style: solid;
   border-radius: 0.5em;
   border-width: 0.09rem;
 }
-.registration-form .form-item input[type=text]:invalid, .registration-form .form-item input[type=date]:invalid {
+.registration-form .form-item input[type=text]:invalid,
+.registration-form .form-item input[type=date]:invalid {
   border-color: #FF1F1F;
   border-width: 0.1rem;
 }
@@ -261,13 +319,13 @@ table th {
   display: inline-block;
   width: 1.25em;
   height: 1.25em;
-  border: 1px solid #C9C9C9;
+  border: 1px solid #c9c9c9;
   border-radius: 50%;
   margin-right: 0.5em;
   padding: 0.5em;
 }
 .registration-form .form-item .radio-group .input-group input[type=radio]:checked {
-  background-color: #C9C9C9;
+  background-color: #c9c9c9;
 }
 .registration-form .form-item .radio-group .input-group input[type=radio]:invalid {
   border-color: #FF1F1F;
@@ -284,11 +342,11 @@ table th {
   border: 0.01rem solid #959595;
   padding: 0.2em 2em;
   border-radius: 0.5em;
-  background-color: #DDDDDD;
+  background-color: #dddddd;
   cursor: pointer;
 }
 .registration-form .form-item .file-upload .upload-button:hover {
-  border-color: #DDDDDD;
+  border-color: #dddddd;
   background-color: rgba(255, 255, 255, 0.5);
 }
 .registration-form .form-item .file-upload .image-drop {
@@ -296,7 +354,7 @@ table th {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 0.01rem solid #C9C9C9;
+  border: 0.01rem solid #c9c9c9;
   text-align: center;
   padding-inline: 5vw;
   padding-block: 5vh;
@@ -316,19 +374,19 @@ table th {
   border: 0.01rem solid none;
 }
 .registration-form .form-item .form-submit {
-  background-color: #65B9E1;
+  background-color: #65b9e1;
   margin-left: 0vw;
   margin-right: 2.5vw;
 }
 .registration-form .form-item .form-submit:hover {
   background-color: hsla(199deg, 67%, 64%, 0.1);
-  color: #65B9E1;
-  border: 0.01rem solid #65B9E1;
+  color: #65b9e1;
+  border: 0.01rem solid #65b9e1;
 }
 .registration-form .form-item .form-reset {
   font-weight: bold;
   color: #FF1F1F;
-  border: 0.01rem solid #DDDDDD;
+  border: 0.01rem solid #dddddd;
 }
 .registration-form .form-item .form-reset:hover {
   background-color: #FF1F1F;
@@ -351,52 +409,20 @@ table th {
   .admissions-overview .content {
     max-width: 60%;
   }
-  .admissions-overview .internal-nav {
-    display: initial;
-    z-index: 2;
-    right: 5em;
-    align-self: flex-start;
-    background-color: white;
-  }
-  .admissions-overview .internal-nav div {
-    border-left: 0.3rem solid #0F6938;
-    padding-left: 1em;
-  }
-  .admissions-overview .internal-nav h2 {
-    font-weight: 500;
-  }
-  .admissions-overview .internal-nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  .admissions-overview .internal-nav ul li {
-    padding-bottom: 1ch;
-  }
-  .admissions-overview .internal-nav ul li a {
-    text-decoration: none;
-  }
-
   .admissions-process ul {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .table-wrapper {
     align-items: center;
   }
   .table-wrapper:after {
     background-image: none;
   }
-
-  .fee-structure .discounts-refunds {
-    flex-direction: row;
-    gap: 5vw;
-  }
 }
 @media screen and (min-width: 1200px) {
   .admissions-process ul {
     grid-template-columns: repeat(4, 1fr);
   }
-
   .registration-form {
     min-width: 50vw;
   }

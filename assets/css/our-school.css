@@ -38,6 +38,7 @@
   color: #62AC3B;
 }
 
+/* Base Styling */
 body,
 html {
   scroll-behavior: smooth;
@@ -48,11 +49,9 @@ main,
 section {
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin-bottom: 5vmax;
   width: 100%;
-}
-
-section {
-  padding: 2vw 5vw;
 }
 
 h1, h3, h2 {
@@ -77,7 +76,7 @@ h3 {
 }
 
 .active {
-  display: block;
+  display: flex;
 }
 
 /* Subpage Banner */
@@ -88,110 +87,109 @@ h3 {
 }
 
 /* Our School Overview */
-.our-school-overview .h1-border {
-  align-self: flex-start;
+.our-school-overview {
+  padding: 2.5vmax 5vw 0;
 }
 .our-school-overview .internal-nav {
   padding: 2em 0em;
   min-width: 18vw;
-  display: hidden;
 }
 
 /* Facilities */
 #facilities {
   padding: 0;
 }
-#facilities .facilities-slideshow {
+#facilities .slideshow-wrapper {
   background-color: #CFECC1;
-  position: static;
-  display: flex;
-  padding: 0 3vw;
-  padding-inline: 1vw;
-  align-items: center;
-  justify-content: center;
-  max-width: 100vw;
-}
-#facilities .facilities-slideshow .slider-btn, #facilities .facilities-slideshow .news-btn {
-  background-color: #FFFFFF;
-  color: #0F6938;
-}
-#facilities .facilities-slideshow .facilities-slider {
-  display: flex;
-  scroll-behavior: smooth;
-  -ms-scroll-snap-type: inline mandatory;
-      scroll-snap-type: inline mandatory;
-  overflow-x: scroll;
-  padding: 2vmax 0vw;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-#facilities .facilities-slideshow .facilities-slider::-webkit-scrollbar {
-  display: none;
-}
-#facilities .facilities-slideshow .card-wrapper {
+  padding: 3vh 5vw;
   width: 100%;
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-}
-#facilities .facilities-slideshow .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 5vw;
 }
-#facilities .facilities-slideshow .card img {
+#facilities .slideshow-wrapper .facilities-slideshow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider {
+  display: flex;
+  max-width: 80vw;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  transition: 0.3s ease-in-out;
+  scroll-behavior: smooth;
+  -ms-scroll-snap-type: inline mandatory;
+      scroll-snap-type: inline mandatory;
+}
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider::-webkit-scrollbar {
+  display: none;
+}
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider li {
+  width: 100%;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5vw 3vw;
+}
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 1rem;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: 5vw;
 }
-#facilities .facilities-slideshow .card .content {
-  padding: 2em 0;
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content {
   text-align: left;
-  max-height: 300px;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
-#facilities .facilities-slideshow .card .content::-webkit-scrollbar {
-  display: none;
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p {
+  padding-right: 0.5em;
+  max-height: 250px;
+  overflow-y: auto;
+  -ms-overflow-style: auto; /* IE and Edge */
+  scrollbar-width: auto; /* Firefox */
 }
-#facilities .facilities-slideshow .card .content h1, #facilities .facilities-slideshow .card .content h2, #facilities .facilities-slideshow .card .content h3 {
-  font-family: "EB Garamond", serif;
-  font-size: clamp(24px, 1.5vw, 2rem);
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  border: solid 3px transparent;
 }
-#facilities .facilities-slideshow .card .content p {
-  font-size: clamp(12px, 2vmax, 1rem);
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: block;
 }
-#facilities .facilities-slideshow .card .content ul li {
-  align-items: flex-start;
-}
-#facilities .facilities-slideshow .card .content ul {
-  list-style-type: "- ";
-  padding-left: 1em;
-}
-#facilities .facilities-slideshow .card .content ol {
-  list-style-type: decimal;
-  padding-left: 2em;
-}
-#facilities .facilities-slideshow .card .content p,
-#facilities .facilities-slideshow .card .content h3 {
-  margin-bottom: 1em;
+#facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p::-webkit-scrollbar-thumb {
+  background-color: #1B9B55;
+  border-radius: 10px;
 }
 
 /* Co-Curricular Activities */
 #co-curricular {
   padding: 0;
 }
+#co-curricular .co-curricular-heading {
+  margin: 0 5vw 2em;
+}
 #co-curricular .co-curricular-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 #co-curricular .co-curricular-list .activity-container {
   position: relative;
@@ -255,30 +253,98 @@ h3 {
   border-radius: 4px;
   justify-self: center;
   align-self: center;
+  transition: 0.2s ease-in-out;
+}
+#co-curricular .co-curricular-list .activity-container .content button:hover {
+  cursor: pointer;
+  border: 1px solid #383838;
 }
 
-/* Student Code of Behaviour */
-#student-code {
+/* Study Programme */
+#study-programme {
   padding: 0 5vw;
 }
-#student-code p,
-#student-code ol,
-#student-code ul {
-  padding-bottom: 1.5em;
+#study-programme .shift-container .card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#student-code ol,
-#student-code ul {
+#study-programme .shift-container .card-wrapper .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(207, 236, 193, 0.4);
+  margin: 5vw;
+  padding: 5vw;
+  border-radius: 0.5em;
+  width: 100%;
+  height: 250px;
+  flex-grow: 1;
+}
+#study-programme .shift-container .card-wrapper .card h2 {
+  text-align: center;
+  width: 90%;
+  padding-bottom: 1em;
+  border-bottom: black 1px solid;
+}
+#study-programme .programme-container p,
+#study-programme .programme-container ol,
+#study-programme .programme-container ul,
+#study-programme .programme-container .card-list {
+  margin-bottom: 1.5em;
+}
+#study-programme .programme-container ol {
+  padding-left: 1em;
+}
+#study-programme .programme-container ol li::marker,
+#study-programme .programme-container ol h2 {
+  color: #0F6938;
+  font-weight: bold;
+}
+#study-programme .programme-container ul {
   padding-left: 2.5em;
-}
-#student-code ul {
   list-style-type: disc;
 }
-#student-code h3 {
-  font-weight: 600;
-  font-family: "Raleway", sans-serif;
+#study-programme .programme-container h3 {
+  font-weight: bold;
+}
+#study-programme .programme-container .programme-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+#study-programme .programme-container .programme-list > * {
+  margin-bottom: 1.5em;
+}
+#study-programme .programme-container .programme-list li {
+  flex-grow: 1;
+}
+#study-programme .programme-container .card-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgba(207, 236, 193, 0.4);
+  border-radius: 0.5em;
+  width: 100%;
+}
+#study-programme .programme-container .card-list .card:first-child {
+  border: none;
+}
+#study-programme .programme-container .card-list .card {
+  padding: 5vw;
+  border: black solid;
+  border-width: 1px 0 0 0;
+}
+#study-programme .programme-container .card-list .card h3 {
+  text-align: center;
+}
+#study-programme .programme-container .card-list .card > ol > li {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 @media screen and (min-width: 768px) {
+  /* Our-School Overview */
   .our-school-overview {
     display: flex;
     flex-direction: column;
@@ -296,14 +362,20 @@ h3 {
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
-
-  /* Co-curricular Activities */
-  #co-curricular {
-    padding: 2vw 5vw;
+  /* Facilities */
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
+    aspect-ratio: initial;
+    height: 50vh;
+    margin-bottom: 0;
   }
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p {
+    max-height: 45vh;
+  }
+  /* Co-curricular Activities */
   #co-curricular .co-curricular-list {
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 2em 5vw;
   }
   #co-curricular .co-curricular-list .activity-container {
     border-radius: 1em;
@@ -315,42 +387,48 @@ h3 {
   #co-curricular .co-curricular-list .activity-container:nth-of-type(2n) {
     margin-left: 5%;
   }
-
-  /* Student Code of Behaviour */
-  #student-code {
-    max-width: 65%;
+  /* Study Programme */
+  #study-programme .shift-container {
     margin-top: -8em;
+  }
+  #study-programme .shift-container p {
+    max-width: 65%;
+  }
+  #study-programme .shift-container .card-wrapper {
+    flex-direction: row;
+  }
+  #study-programme .shift-container .card-wrapper .card {
+    justify-content: flex-start;
+  }
+  #study-programme .programme-container .col-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #study-programme .programme-container .col-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #study-programme .programme-container .card-list .card:first-child {
+    border: none;
+  }
+  #study-programme .programme-container .card-list .card {
+    border-width: 0 0 0 1px;
   }
 }
 @media screen and (min-width: 1024px) {
   /* Facilities */
-  #facilities .facilities-slideshow {
-    padding: 5vh 5vw;
-  }
-  #facilities .facilities-slideshow .slider-btn, #facilities .facilities-slideshow .news-btn {
-    background-color: #0F6938;
-    color: #FFFFFF;
-  }
-  #facilities .facilities-slideshow .card {
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card {
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
   }
-  #facilities .facilities-slideshow .card img {
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
     height: 50vh;
     width: 40vw;
+    margin-bottom: 0;
   }
-  #facilities .facilities-slideshow .card .content {
+  #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content {
     max-width: 40%;
   }
-
   /* Co-curricular Activities */
   #co-curricular .co-curricular-list .activity-container .content button {
     width: 75%;
-  }
-
-  /* Student Code of Behaviour */
-  #student-code {
-    max-width: 75%;
   }
 }/*# sourceMappingURL=our-school.css.map */

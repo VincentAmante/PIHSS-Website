@@ -8,10 +8,8 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -46,12 +44,9 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -59,10 +54,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -79,13 +72,10 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -103,10 +93,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -156,14 +144,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -171,8 +155,7 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -181,8 +164,7 @@ input {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -231,18 +213,12 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -265,10 +241,8 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -284,10 +258,8 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -302,10 +274,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -348,10 +318,8 @@ template {
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -386,12 +354,9 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -399,10 +364,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -419,13 +382,10 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -443,10 +403,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -496,14 +454,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -511,8 +465,7 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -521,8 +474,7 @@ input {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -571,18 +523,12 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -605,10 +551,8 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -624,10 +568,8 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -642,10 +584,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -701,9 +641,9 @@ header .top-header {
   transition: transform 0.5s ease-in-out;
   justify-content: space-between;
   align-items: center;
-  padding-block: 0.95vmin;
+  padding-block: 0.2em;
   padding-left: 0;
-  font-size: clamp(18px, 1.35vw, 12rem);
+  font-size: 1.15rem;
 }
 header .top-header .logo-container {
   display: flex;
@@ -715,8 +655,8 @@ header .top-header .logo-container .header-logo {
   border: 0;
 }
 header .top-header .logo-container .header-logo img {
-  width: clamp(25px, 3vw, 20rem);
-  max-width: 20rem;
+  width: 3.5em;
+  max-width: 5rem;
 }
 header .top-header .logo-container .header-title {
   display: flex;
@@ -757,7 +697,7 @@ header .top-header .header-contacts .contact svg {
   color: #0F6938;
 }
 header .top-header .header-contacts .contact span {
-  font-size: clamp(10px, 1vw, 9rem);
+  font-size: 0.9rem;
   margin-left: 0.4em;
   color: black;
 }
@@ -800,7 +740,7 @@ header .top-header .header-contacts .contact:hover * {
   opacity: 1;
   text-decoration: none;
   color: inherit;
-  font-size: clamp(10px, 1vw, 9rem);
+  font-size: 0.9rem;
   height: 100%;
   width: 100%;
   vertical-align: middle;
@@ -847,24 +787,20 @@ header .top-header .header-contacts .contact:hover * {
     margin-top: 0.5rem;
     background-color: black;
   }
-
   .toggle {
     opacity: 0;
   }
-
   header .header-content {
     transform: none;
     box-shadow: none;
   }
   header .top-header {
-    padding-block: 3.5vh;
     transform: none;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   }
   header .top-header .header-contacts {
     display: none;
   }
-
   .nav {
     z-index: 100;
     position: absolute;
@@ -877,12 +813,10 @@ header .top-header .header-contacts .contact:hover * {
     font-weight: 500;
     transition: transform 0.55s ease-in;
   }
-
   .nav-active {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transform: translateX(60vw);
   }
-
   .nav-links {
     padding: 0vw;
     display: flex;
@@ -918,7 +852,6 @@ header .top-header .header-contacts .contact:hover * {
   .nav-links .nav-sub-list:hover ul li {
     padding: 3vh 5vw;
   }
-
   .logo-container {
     padding-right: 5em;
   }
@@ -11288,9 +11221,8 @@ html {
 }
 
 main {
-  font-size: clamp(14px, 5vmin, 10%);
-  line-height: clamp(26px, 4vh, 10rem);
-  font-size: clamp(12px, 1.15vw, 10rem);
+  font-size: 0.95rem;
+  line-height: 26px;
 }
 
 * {
@@ -11332,13 +11264,13 @@ ul {
   color: #FFFFFF;
   margin: 1em 5vw;
   font-weight: 400;
-  font-size: clamp(2.7em, 1.4vw, 13rem);
+  font-size: 2.7em;
 }
 
 /* Navigation Breadcrumbs */
 .nav-breadcrumbs {
   align-self: flex-start;
-  padding: 1em 0;
+  padding: 0vh 5vw;
   text-transform: uppercase;
 }
 .nav-breadcrumbs li {
@@ -11357,8 +11289,11 @@ ul {
 }
 
 /* Heading Border */
+.h1-border {
+  align-items: flex-start;
+}
 .h1-border span {
-  padding: 0vw 5ch;
+  padding: 0ch 5ch;
   border-bottom: 0.5rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right, #0F6938, #62ac3b);
@@ -11398,7 +11333,4 @@ ul {
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
-}
-footer {
-  background-color: black;
 }/*# sourceMappingURL=global.css.map */

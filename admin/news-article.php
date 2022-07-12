@@ -99,22 +99,7 @@
                     </div>
                 </div>
                 <ul class="content" id="article-slider">
-                    <li>
-                        <article>
-                            <div class="article-img">
-                                <img src="../assets/images/placeholders/student_group_outdoors.jpg" alt="">
-                            </div>
-                            <div class="article-text">
-                                <div class="heading">
-                                    <div class="title">Title Here</div>
-                                    <div class="date">Date here</div>
-                                </div>
-                                <div class="main-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum nulla aut id vero dignissimos soluta esse praesentium! Doloremque, animi odit. Quo est quaerat, tempore praesentium provident incidunt facilis recusandae corporis!
-                                </div>
-                            </div>
-                        </article>
-                    </li>
+                    
                 </ul>
                 <div class="slider-btn" id="article-btn-right">
                     <div class="icon">
