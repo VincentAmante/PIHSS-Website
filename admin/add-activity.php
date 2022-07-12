@@ -19,7 +19,7 @@
         <div class="form-wrapper">
             <form class="admin-form" id="admin-form" action="./assets/functions/submit-gallery-page.php" method="POST" enctype="multipart/form-data">
                 <div class="form-item">
-                    <label for="gallery-title">Title</label>
+                    <label for="gallery-title">Activity Title</label>
                     <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required placeholder="Gallery Title">
                 </div>
                 <div class="form-item">
@@ -35,14 +35,7 @@
                         </div>                
                     </div>
                 </div>
-                <div class="form-item">
-                    <label for="">Upload Image</label>
-                    <label class="uploader-single" ondragover="return false">
-                        <i class="icon-upload icon"></i>
-                        <img src="" class="" id="form-img">
-                        <input type="file" accept="image/*" name="gallery-image" id="gallery-image" required>
-                    </label>
-                </div>
+                <input type="hidden" name="is-activity" value="true">
                 <div class="form-item form-item-empty">
                     <div class="buttons">
                         <button class="form-button form-submit" name="add-gallery">Publish</button>
@@ -52,8 +45,6 @@
             </form>
         </div>
         </section>
-
-        <div id="editorjs"></div>
     </main>
     
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>

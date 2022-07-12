@@ -33,6 +33,7 @@
         $imagesValid = true;
         $finalOutput = " ";
 
+        
         foreach($_FILES['gallery_images']['name'] as $index => $imgName){
             // echo $index . ' : ' . '<b>IMAGE NAME:</b> ' . $imgName .  ' | <b>TEMP NAME:</b> ' . $_FILES['image']['tmp_name'][$index] . '<br>';
 
@@ -82,9 +83,7 @@
         // Handles entries for deletion
         // Locates entries to be deleted, before updating the array
         if (isset($_POST['deletion-entries'])){
-
             $deletionEntries = $_POST['deletion-entries'];
-
             foreach ($deletionEntries as $deletionIndex => $entry) {
                 foreach ($galleryFiles as $galleryIndex => $record){
                     $imgPath = get_object_vars($record)['path'];
