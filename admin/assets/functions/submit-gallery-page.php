@@ -40,7 +40,7 @@
 
 
             if ($imgValid){
-                if (move_uploaded_file($_FILES['gallery-image']['tmp_name'], "../../" . $imgName)){
+                if (move_uploaded_file($_FILES['gallery-image']['tmp_name'], "../../../" . $imgName)){
                     
                 }
                 else {
@@ -59,17 +59,13 @@
                 $stmt->execute();
                 
                 $last_id = mysqli_insert_id($conn);
-                mkdir("../../assets/gallery-folders/" . $last_id . "_" . $galleryTitle);
+                mkdir("../../../assets/gallery-folders/" . $last_id . "_" . $galleryTitle);
                 $stmt->close();
                 $conn->close();
             }
         
             // Moves on to Edit Content
             header("Location: ../../update-gallery-content.php?id=" . $last_id);
-
-            // // Returns to page
-            // $referer = $_SERVER['HTTP_REFERER'];
-            // header("Location: $referer");
         }
     }
 ?>

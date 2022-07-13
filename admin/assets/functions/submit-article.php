@@ -26,18 +26,20 @@
         }
 
         if ($imgValid){
+            $last_id = "";
+
             if ($conn->connect_error){
                 die('Connection Failure : ' + $conn->connect_error);
             } else {
                 $stmt = $conn->prepare("INSERT INTO articles(title, creationDate, articleHtml, img) VALUES('$articleTitle','$articleCreationDate', '$articleHtml', '$imgName')");
                 $stmt->execute();
+                
+                $last_id = mysqli_insert_id($conn);
                 $stmt->close();
                 $conn->close();
             }
     
-            // Returns to page
-            $referer = $_SERVER['HTTP_REFERER'];
-            header("Location: $referer");
+            header("Location: ../../update-article.php?id=" . $last_id);
         }
     }
 ?>

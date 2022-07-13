@@ -459,24 +459,31 @@
           <label for="eid-copy-front">Upload EID - Frontview</label>
           <label class="file-upload">
             <div class="upload-button">Add Files</div>
-            <div class="image-drop">Drop files here to add</div>
-            <input type="file" name="eid-copy-front" class="image-dropzone" required>
+            <label class="uploader-single" ondragover="return false">
+            <i class="icon-upload icon"></i>
+            <img src="" class="" id="">
+            <input type="file" accept="image/*" name="eid-copy-front" id="eid-copy-front" required>
           </label>
         </div>
         <div class="form-item">
           <label for="eid-copy-back">Upload EID - Backview</label>
           <label class="file-upload">
             <div class="upload-button">Add Files</div>
-            <div class="image-drop">Drop files here to add</div>
-            <input type="file" name="eid-copy-back" id="" class="image-dropzone" required>
+            <label class="uploader-single" ondragover="return false">
+            <i class="icon-upload icon"></i>
+            <img src="" class="" id="">
+            <input type="file" accept="image/*" name="eid-copy-back" id="eid-copy-back" required>
+          </label>
           </label>
         </div>
         <div class="form-item form-item-file">
           <label for="passport-copy">Passport Copy</label>
-          <label class="file-upload" for="">
+          <label class="file-upload">
             <div class="upload-button">Add Files</div>
-            <div class="image-drop">Drop files here to add</div>
-            <input type="file" name="passport-copy" id="" class="image-dropzone" required>
+            <label class="uploader-single" ondragover="return false">
+            <i class="icon-upload icon"></i>
+            <img src="" class="" id="">
+            <input type="file" accept="image/*" name="passport-copy" id="passport-copy" required>
           </label>
         </div>
         <div class="form-item">
@@ -495,6 +502,20 @@
     <!-- Footer -->
     <?php include('./assets/php/footer.php')?>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/global-scripts.js"></script>
+    <script src="assets/js/file-uploader-single.js"></script>
+    <script>
+      const inputs = document.querySelectorAll("input, select, textarea");
+      inputs.forEach(input => {
+        input.addEventListener(
+          "invalid",
+          event => {
+            input.classList.add("error");
+          },
+          false
+        );
+      });
+    </script>
   </body>
 </html>

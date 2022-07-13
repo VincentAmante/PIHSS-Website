@@ -1,3 +1,52 @@
+.uploader-single {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5vw;
+  outline: 0.01rem solid #ccc;
+  outline-offset: 5px;
+  position: relative;
+  min-height: 20vh;
+  min-width: 50%;
+  max-width: 70%;
+  aspect-ratio: 5/3;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+.uploader-single input {
+  display: none;
+}
+.uploader-single img, .uploader-single .icon {
+  pointer-events: none;
+}
+.uploader-single .icon {
+  color: #eee;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 5em;
+}
+.uploader-single .dragging {
+  outline-color: orangered;
+}
+.uploader-single .dragging .icon {
+  color: orangered;
+}
+.uploader-single img {
+  opacity: 1;
+  border-radius: 0.5vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 300ms ease-in;
+  max-height: 100%;
+  max-width: 100%;
+}
+.uploader-single img .loaded {
+  opacity: 1;
+}
+
 body,
 html {
   scroll-behavior: smooth;
@@ -271,12 +320,12 @@ table th {
 .registration-form .form-item > * {
   flex: 1;
 }
-.registration-form .form-item label {
+.registration-form .form-item label:not(.uploader-single):not(.file-upload) {
   font-weight: 600;
   width: 15vw;
   flex-shrink: 0;
 }
-.registration-form .form-item label::after {
+.registration-form .form-item label:not(.uploader-single):not(.file-upload)::after {
   content: "*";
   color: #FF1F1F;
 }
@@ -291,8 +340,8 @@ table th {
   border-radius: 0.5em;
   border-width: 0.09rem;
 }
-.registration-form .form-item input[type=text]:invalid,
-.registration-form .form-item input[type=date]:invalid {
+.registration-form .form-item input[type=text].error,
+.registration-form .form-item input[type=date].error {
   border-color: #FF1F1F;
   border-width: 0.1rem;
 }
@@ -327,7 +376,7 @@ table th {
 .registration-form .form-item .radio-group .input-group input[type=radio]:checked {
   background-color: #c9c9c9;
 }
-.registration-form .form-item .radio-group .input-group input[type=radio]:invalid {
+.registration-form .form-item .radio-group .input-group input[type=radio].error {
   border-color: #FF1F1F;
 }
 .registration-form .form-item .file-upload {
@@ -337,6 +386,7 @@ table th {
   align-items: center;
   align-items: flex-start;
   gap: 1.5vh;
+  min-width: 400px;
 }
 .registration-form .form-item .file-upload .upload-button {
   border: 0.01rem solid #959595;
@@ -348,20 +398,6 @@ table th {
 .registration-form .form-item .file-upload .upload-button:hover {
   border-color: #dddddd;
   background-color: rgba(255, 255, 255, 0.5);
-}
-.registration-form .form-item .file-upload .image-drop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0.01rem solid #c9c9c9;
-  text-align: center;
-  padding-inline: 5vw;
-  padding-block: 5vh;
-  border-radius: 0.5em;
-}
-.registration-form .form-item .file-upload input[type=file] {
-  display: none;
 }
 .registration-form .form-item .form-button {
   border: none;

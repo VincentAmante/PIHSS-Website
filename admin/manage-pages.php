@@ -43,8 +43,10 @@
             $deleteSuccessful = removeFolder('gallery-folders', $gallery['ID'] . '_' . $gallery['title']);
 
             if ($deleteSuccessful){
-                if (!unlink($gallery['thumbnail'])){
-                    echo 'ERROR: Thumbnail was not deleted';
+                if (!$gallery['isActivity']){
+                    if (!unlink('../' . $gallery['thumbnail'])){
+                        // Unlink failed
+                    }
                 }
 
                 $sql = "DELETE FROM galleries WHERE id='$galleryId'";
@@ -193,6 +195,16 @@
                 dataType: "html",
                 success: (data) => {
                     $('#galleries-collection').html(data);
+                }
+            })
+        });
+        $(document).ready(() => {
+            $.ajax({
+                type: "GET",
+                url: "./assets/functions/get-activities-list.php",
+                dataType: "html",
+                success: (data) => {
+                    $('#activities-collection').html(data);
                 }
             })
         });

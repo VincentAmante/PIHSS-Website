@@ -286,7 +286,7 @@
                 <div class="nac-cards">
                     <div class="nac-events">
                         <article>
-                            <a href="./articles/news-article.php">
+                            <a href="./news-article.php">
                                 <div class="article-image">
                                     <img src="./assets/images/placeholders/DSC07512.jpg" alt="">
                                 </div>
@@ -306,7 +306,7 @@
                             </a>
                         </article>
                         <article>
-                            <a href="./articles/news-article.php">
+                            <a href="./news-article.php">
                                 <div class="article-image">
                                     <img src="./assets/images/placeholders/DSC07402.jpg" alt="">
                                 </div>
@@ -339,7 +339,7 @@
                                         </svg>
                                     </div>
                                     <h4>Upcoming Events</h4>
-                                    <a href="./articles/news-article.php" class="btn">View Details</a>
+                                    <a href="./news-article.php" class="btn">View Details</a>
                                 </div>
                             </div>
                         </article>
@@ -352,6 +352,5 @@
     <?php include('./assets/php/footer.php')?>
     <script src="assets/js/global-scripts.js"></script>
     <script src="assets/js/index-scripts.js"></script>
-    <?php include('./testFirebase.php')?>
 </body>
 </html>

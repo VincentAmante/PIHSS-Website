@@ -2,13 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #efefef;
-  background-color: rgba(0, 0, 0, 0.02);
-  height: 300px;
+  border-radius: 0.5vw;
   outline: 0.01rem solid #ccc;
   outline-offset: 5px;
   position: relative;
-  width: 300px;
+  min-height: 20vh;
+  min-width: 50%;
+  max-width: 70%;
+  aspect-ratio: 5/3;
+  overflow-y: hidden;
+  overflow-x: hidden;
   cursor: pointer;
 }
 .uploader-single input {
@@ -30,6 +33,7 @@
 }
 .uploader-single img {
   opacity: 1;
+  border-radius: 0.5vw;
   position: absolute;
   left: 50%;
   top: 50%;

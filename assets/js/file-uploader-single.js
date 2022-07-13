@@ -96,7 +96,13 @@
     
 } ());
 
-new FileUploader('.uploader-single');
+let counter = 0;
+$('.uploader-single').each((index, obj)=>{
+  let newClass = 'uploader-single-' + counter;
+  obj.classList.add(newClass);
+  new FileUploader('.' + newClass);
+  counter++;
+});
 // END OF ACQUIRED CODE
 
 // Code to reset img src

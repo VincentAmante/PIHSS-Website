@@ -4,7 +4,7 @@ function displayCurrentImages(currentFiles, currentGallery){
         let div = document.createElement('div');
         
         div.className = "img-preview-container";
-        img.src = currentFiles[i]['path'];
+        img.src = '../' + currentFiles[i]['path'];
         div.setAttribute('id', 'img-container-' + i);
         div.appendChild(img);
         div.setAttribute('onclick', 'deleteEntry(' + i + ')');

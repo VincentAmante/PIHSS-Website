@@ -46,6 +46,30 @@
             $finalOutput = json_encode(array_merge($galleryFiles, $imgArr));
         }
 
+        /// Handle Image Changes
+        $imgName = $_FILES['article-image']['name'];  
+        $origImgSrc = $_POST['img-src'];  
+        // Changes image if the thumbnails are not the same
+        if ($imgName != "" 
+        && ('../' . $imgName != $origImgSrc)){
+            $imgValid = true;
+
+            include "./assets/functions/handle-images.php";
+            $imgDirectory = "./assets/article-posts/";
+            $result = uploadImage($imgDirectory, $imgName, 'article-image', -1);
+
+            // Uploads new image, and deletes old one
+            if ($result != false){
+                $imgName = $result;
+                unlink('../' . $article['img']);
+
+                $updateQuery = $conn->prepare("UPDATE articles 
+                SET img = '$imgName'
+                WHERE id='$articleId'");
+                $updateQuery->execute();
+            }
+        }
+
         $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput' WHERE id='$galleryId'");
         $updateQuery->execute();
 
@@ -63,7 +87,16 @@
     if (isset($_POST['save-gallery-content'])
     && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
     && $galleryId != null){
+        $galleryTitle = $_POST['gallery-title'];
+        $galleryCreationDate = $_POST['gallery-doc'];
+        $galleryContent = $_POST['gallery-content'];
         
+        $updateQuery = $conn->prepare("UPDATE galleries 
+        SET title = '$galleryTitle',
+            creationDate = '$galleryCreationDate',
+            content = '$galleryContent'
+        WHERE id='$galleryId'");
+        $updateQuery->execute();
     }
 
     $currentFiles = $gallery['images'];
@@ -98,11 +131,11 @@
                         <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required value="<?php echo $gallery['title']?>">
                     </div>    
                     <div class="form-item">
-                        <label for="article-doc">Date of Creation</label>
-                        <input type="date" name="article-doc" required value=<?php echo $gallery['creationDate']?>>
+                        <label for="gallery-doc">Date of Creation</label>
+                        <input type="date" name="gallery-doc" required value=<?php echo $gallery['creationDate']?>>
                     </div>
                     <div class="form-item">
-                        <label for="article-content">Content</label>
+                        <label for="gallery-content">Content</label>
                         <div>          
                             <input name="input-delta" type="hidden">
                             <input name="input-html" type="hidden">
@@ -148,6 +181,8 @@
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="./assets/scripts/rich-text.js"></script>
+
+    <script src="../assets/js/file-uploader-single.js"></script>
 
     <!-- For handling the form gallery (displaying, deletion, addition) -->
     <script src="../assets/js/file-uploader-multiple.js"></script>

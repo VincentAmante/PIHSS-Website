@@ -170,11 +170,11 @@ header .header-content {
 .about-us .about-us-text h1 {
   font-family: "EB Garamond", serif;
   font-weight: 500;
-  font-size: clamp(18px, 10vw, 1.75rem);
+  font-size: clamp(18px, 2.1vw, 15rem);
 }
 .about-us .about-us-text p {
   margin: 1em 0;
-  font-size: clamp(12px, 1.15vw, 1.5rem);
+  font-size: clamp(12px, 1.15vw, 10rem);
   text-align: justify;
 }
 .about-us .about-us-statblock {
@@ -204,7 +204,7 @@ header .header-content {
 .about-us .about-us-statblock .number {
   padding-block: 0.5em;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(18px, 1.35vw, 12rem);
   padding-inline: 1.5em;
 }
 .about-us .about-us-statblock .label {
@@ -217,6 +217,7 @@ header .header-content {
   background-color: #CFECC1;
 }
 .more-info .more-info-text {
+  font-size: clamp(12px, 1.15vw, 10rem);
   padding-block: 2em;
   margin-inline: 5vw;
   font-weight: 500;

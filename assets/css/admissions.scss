@@ -1,5 +1,5 @@
 @import "./scss/_variables.scss";
-
+@import "../../assets/css/scss/_file-uploader.scss";
 body,
 html {
 	scroll-behavior: smooth;
@@ -301,7 +301,7 @@ table {
 			flex: 1;
 		}
 
-		label {
+		label:not(.uploader-single):not(.file-upload) {
 			font-weight: 600;
 			width: 15vw;
 			flex-shrink: 0;
@@ -326,7 +326,7 @@ table {
 			border-radius: 0.5em;
 			border-width: 0.09rem;
 
-			&:invalid {
+			&.error {
 				border-color: $alert;
 				border-width: 0.1rem;
 			}
@@ -366,7 +366,7 @@ table {
 					&:checked {
 						background-color: #c9c9c9;
 					}
-					&:invalid {
+					&.error {
 						border-color: $alert;
 					}
 				}
@@ -377,6 +377,7 @@ table {
 			@include flex-centered;
 			align-items: flex-start;
 			gap: 1.5vh;
+			min-width: 400px;
 
 			.upload-button {
 				border: 0.01rem solid #959595;
@@ -389,19 +390,6 @@ table {
 					border-color: #dddddd;
 					background-color: rgba(255, 255, 255, 0.5);
 				}
-			}
-
-			.image-drop {
-				@include flex-centered;
-				border: 0.01rem solid #c9c9c9;
-				text-align: center;
-				padding-inline: 5vw;
-				padding-block: 5vh;
-				border-radius: 0.5em;
-			}
-
-			input[type="file"] {
-				display: none;
 			}
 		}
 

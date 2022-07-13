@@ -4,15 +4,12 @@
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
-        $galleries = $conn->query("SELECT * from galleries WHERE isActivity=0");
+        $galleries = $conn->query("SELECT * from galleries WHERE isActivity=1");
     }
-?>
-    <?php 
     while ($data = $galleries->fetch_assoc()):?>
     <?php $updateUrl = "update-gallery-content.php?id=" . $data['ID'];?>
-    
     <div class="row-item">
-        <img src="<?php echo '../' . $data['thumbnail']?>">
+        <img>
         <div class="title"><?php echo $data['title']?></div>
         <div class="date"><?php echo $data['creationDate']?></div>
         <a href="<?php echo $updateUrl?>">
@@ -30,6 +27,7 @@
         </a>
     </div>
 <?php endwhile;?>
+
 <script>
     $('.delete-gallery').click(e => {
     event.preventDefault();

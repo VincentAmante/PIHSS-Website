@@ -2,15 +2,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: .5vw;
 
-    background-color: #efefef;
-    background-color: rgba(0, 0, 0, 0.02);
+    // background-color: #efefef;
+    // background-color: rgba(0, 0, 0, 0.02);
 
-    height: 300px;
     outline: .01rem solid $form-border-color;
     outline-offset: 5px;
     position: relative;
-    width: 300px;
+
+    min-height: 20vh;
+    min-width: 50%;
+    max-width: 70%;
+    aspect-ratio: 5/3;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
 
     cursor: pointer;
 
@@ -39,6 +46,7 @@
     img {
         opacity: 1;
 
+        border-radius: .5vw;
         position: absolute;
         left: 50%;
         top: 50%;

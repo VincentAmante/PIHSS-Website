@@ -5,14 +5,14 @@
         die('Connection Failure : ' + $conn->connect_error);
     } else {
         $galleries = $conn->query("SELECT * from galleries");
+        
     }
-?>
 
-<?php while ($data = $galleries->fetch_assoc()):?>
+while ($data = $galleries->fetch_assoc()):?>
     <div class="grid-item">
         <div class="item-image">
             <a href="<?php echo './gallery-history.php?id=' . $data['ID']?>">
-                <img src="<?php echo  './admin/' . $data['thumbnail']?>" alt="" />
+                <img src="<?php echo $data['thumbnail']?>" alt="" />
             </a>
         </div>
         <div class="item-text">

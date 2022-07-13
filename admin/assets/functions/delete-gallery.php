@@ -15,7 +15,7 @@
             return false;
         }
 
-        $dir = '.' 
+        $dir = '..' 
         . DIRECTORY_SEPARATOR . 'assets' 
         . DIRECTORY_SEPARATOR . $folderName
         . DIRECTORY_SEPARATOR . $folderEntry;

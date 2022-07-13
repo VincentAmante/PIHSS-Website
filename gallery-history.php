@@ -74,7 +74,9 @@
       <!-- Gallery Content -->
       <section class="container custom-scrollbar">
         
-      <?php foreach($galleryImages as $index => $image):?>
+      <?php 
+      if ($galleryImages != null):
+      foreach($galleryImages as $index => $image):?>
         <div class="grid-item">
           <div class="item-image section-image">
             <img
@@ -85,7 +87,9 @@
             />
           </div>
         </div>
-      <?php endforeach;?>
+      <?php 
+      endforeach;
+      endif; ?>
       </section>
 
       <!-- Modal/Lightbox -->
