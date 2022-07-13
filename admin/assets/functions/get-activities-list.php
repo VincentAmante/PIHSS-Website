@@ -9,7 +9,7 @@
     while ($data = $galleries->fetch_assoc()):?>
     <?php $updateUrl = "update-activity.php?id=" . $data['ID'];?>
     <div class="row-item">
-        <img>
+        <img src="<?php echo '../' . json_decode($data['images'], true)[0]['path']?>">
         <div class="title"><?php echo $data['title']?></div>
         <div class="date"><?php echo $data['creationDate']?></div>
         <a href="<?php echo $updateUrl?>">

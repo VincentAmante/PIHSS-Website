@@ -9,10 +9,19 @@
     }
 
 while ($data = $galleries->fetch_assoc()):?>
+<?php
+    $thumbnailSrc = "";
+    if ($data['isActivity']){
+        $thumbnailSrc = json_decode($data['images'], true)[0]['path'];
+    }
+    else {
+        $thumbnailSrc = $data['thumbnail'];
+    }
+?>
     <div class="grid-item">
         <div class="item-image">
             <a href="<?php echo './gallery-history.php?id=' . $data['ID']?>">
-                <img src="<?php echo $data['thumbnail']?>" alt="" />
+                <img src="<?php echo $thumbnailSrc?>" alt="" />
             </a>
         </div>
         <div class="item-text">

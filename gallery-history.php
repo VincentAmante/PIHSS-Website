@@ -81,8 +81,8 @@
           <div class="item-image section-image">
             <img
               class="lightbox-enabled"
-              src="<?php echo './admin' . $image->path?>"
-              data-imagesrc="<?php echo './admin' . $image->path?>"
+              src="<?php echo $image->path?>"
+              data-imagesrc="<?php echo $image->path?>"
               alt="insert desc"
             />
           </div>
