@@ -65,12 +65,23 @@
           </div>
           <nav class="nav" id="nav">        
               <ul class="nav-links">
-                  <li class="nav-element"><a href="../index.php">Website</a></li>
-                  <li class="nav-element"><a href="manage-pages.php">Manage Pages</a></li>
-                  <li class="nav-element"><a href="add-article.php">Add Article</a></li>
-                  <li class="nav-element"><a href="add-gallery.php">Add Gallery Content</a></li>
-                  <li class="nav-element"><a href="../news-article.php">Articles View</a></li>
-                  <li class="nav-element"><a href="./assets/functions/logout.php">Log Out</a></li>
+                <li class="nav-element"><a href="../index.php">Website</a></li>
+                <li class="nav-element"><a href="manage-pages.php">Manage Pages</a></li>
+                <li class="nav-element nav-sub-list"><a href="">Add Content</a>
+                    <ul>
+                        <li><a href="add-article.php">Add Article</a></li>
+                        <li><a href="add-gallery.php">Add Gallery</a></li>
+                        <li><a href="add-activity.php">Add Activity</a></li>
+                    </ul>
+                </li>
+                <li class="nav-element nav-sub-list"><a href="">View Content</a>
+                    <ul>
+                        <li><a href="../news-article.php">News Articles</a></li>
+                        <li><a href="../gallery.php">Galleries</a></li>
+                        <li><a href="../our-school.php#co-curricular">Co-curricular Activities</a></li>
+                    </ul>
+                </li>
+                <li class="nav-element"><a href="./assets/functions/logout.php">Log Out</a></li>
               </ul>
           </nav>
       </div>

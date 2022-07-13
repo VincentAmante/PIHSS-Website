@@ -78,10 +78,10 @@ header {
   border: 0.01rem solid #ccc;
   border-radius: 1em;
   font-family: "Raleway", sans-serif;
-  width: 80%;
+  width: 90%;
 }
 .admin-form .form-item {
-  padding-block: 0.5em;
+  padding-block: 1em;
   display: flex;
   flex-direction: column;
 }
@@ -116,6 +116,10 @@ header {
 .admin-form .form-item .editor-container {
   min-height: 30vh;
 }
+.admin-form h2 {
+  margin-top: 1em;
+  padding-bottom: 0.5em;
+}
 .admin-form .multiple-file-preview {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -123,6 +127,7 @@ header {
   padding: 1vw;
   border: 0.01vw solid #ccc;
   transition: all 0.15s ease-in-out;
+  padding-bottom: 5em;
 }
 .admin-form .multiple-file-preview .img-preview-container {
   margin: 0.5em;

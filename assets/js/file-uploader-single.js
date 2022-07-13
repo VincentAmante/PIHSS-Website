@@ -96,17 +96,17 @@
     
 } ());
 
-let counter = 0;
+let singleCounter = 0;
 $('.uploader-single').each((index, obj)=>{
-  let newClass = 'uploader-single-' + counter;
+  let newClass = 'uploader-single-' + singleCounter;
   obj.classList.add(newClass);
   new FileUploader('.' + newClass);
-  counter++;
+  singleCounter++;
 });
 // END OF ACQUIRED CODE
 
 // Code to reset img src
 var form = document.querySelector("form");
 form.onreset = () => {
-  document.getElementById('gallery').innerHTML = "";
+  // document.getElementById('gallery').innerHTML = "";
 }

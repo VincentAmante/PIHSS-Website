@@ -31,10 +31,10 @@ header {
     border: .01rem solid $form-border-color;
     border-radius: 1em;
     font-family: $font-secondary;
-    width: 80%;
+    width: 90%;
 
     .form-item {
-        padding-block: .5em;
+        padding-block: 1em;
         display: flex;
         flex-direction: column;
 
@@ -77,6 +77,11 @@ header {
         }
     }
     
+    h2 {
+        margin-top: 1em;
+        padding-bottom: .5em;
+    }
+
     .multiple-file-preview {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -84,6 +89,7 @@ header {
         padding: 1vw;
         border: .01vw solid $form-border-color;
         transition: all .15s ease-in-out;
+        padding-bottom: 5em;
 
         .img-preview-container {
             margin: .5em;

@@ -12,9 +12,9 @@
     $eidNumber = $_POST['eid-number'];
     $eidIssue = $_POST['eid-issue'];
     $eidExpiry = $_POST['eid-expiry'];
-    $eidCopyFront = $_POST['eid-copy-front'];
-    $eidCopyBack = $_POST['eid-copy-back'];
-    $passportCopy = $_POST['passport-copy'];
+    $eidCopyFront = $_FILES['eid-copy-front'];
+    $eidCopyBack = $_FILES['eid-copy-back'];
+    $passportCopy = $_FILES['passport-copy'];
     $studentClass = $_POST['student-class'];
 
     $conn = new mysqli($hostname, $username, '', $databasename);

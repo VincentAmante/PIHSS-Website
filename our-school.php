@@ -317,74 +317,9 @@
 					fun fair, field trips, school picnics etc.
 				</p>
 			</div>
-			<div class="co-curricular-list">
+			<div class="co-curricular-list" id="co-curricular-activities">
 
 				<!-- ** The activity images and headers are placeholders -->
-
-				<div class="activity-container">
-					<div class="content">
-						<div class="activity-heading">
-							<h3 class="decorated"><span>Sandwich Competition</span></h3>
-						</div>
-
-						<div class="activity-images">
-							<img src="./assets/images/gallery/sandwich-c-1.png" alt="" />
-							<img src="./assets/images/gallery/sandwich-c-2.png" alt="" />
-							<img src="./assets/images/gallery/sandwich-c-3.png" alt="" />
-
-							<button>View More >></button>
-						</div>
-					</div>
-				</div>
-
-				<div class="activity-container">
-					<div class="content">
-						<div class="activity-heading">
-							<h3 class="decorated"><span>Salad Competition</span></h3>
-						</div>
-
-						<div class="activity-images">
-							<img src="./assets/images/gallery/salad-c-1.png" alt="" />
-							<img src="./assets/images/gallery/salad-c-2.png" alt="" />
-							<img src="./assets/images/gallery/salad-c-3.png" alt="" />
-
-							<button>View More >></button>
-						</div>
-					</div>
-				</div>
-				<div class="activity-container">
-					<div class="content">
-						<div class="activity-heading">
-							<h3 class="decorated">
-								<span>Essay Writing Competition</span>
-							</h3>
-						</div>
-
-						<div class="activity-images">
-							<img src="https://source.unsplash.com/1600x900/?essay" alt="" />
-							<img src="https://source.unsplash.com/1600x900/?person writing" alt="" />
-							<img src="https://source.unsplash.com/1600x900/?exam" alt="" />
-
-							<button>View More >></button>
-						</div>
-					</div>
-				</div>
-
-				<div class="activity-container">
-					<div class="content">
-						<div class="activity-heading">
-							<h3 class="decorated"><span>Drama Concert</span></h3>
-						</div>
-
-						<div class="activity-images">
-							<img src="https://source.unsplash.com/1600x900/?concert" alt="" />
-							<img src="https://source.unsplash.com/1600x900/?theater" alt="" />
-							<img src="https://source.unsplash.com/1600x900/?actor" alt="" />
-
-							<button>View More >></button>
-						</div>
-					</div>
-				</div>
 			</div>
 		</section>
 
@@ -587,5 +522,19 @@
 
 		<script src="assets/js/global-scripts.js"></script>
 		<script src="assets/js/our-school-scripts.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $.ajax({
+                type: "GET",
+                url: "./admin/assets/functions/get-activities.php",
+                dataType: "html",
+                success: (data) => {
+                    $('#co-curricular-activities').html(data);
+                }
+            })
+        });
+    </script>
 	</body>
 </html>

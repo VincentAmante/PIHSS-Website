@@ -8,7 +8,7 @@
 
         // IMAGE HANDLING
         $imgValid = true;
-        $imgName = $_FILES['article-image']['name'];    
+        $imgName = $_FILES['article-image']['name'];        
 
         if ($imgName != ""){
             include "./handle-images.php";

@@ -417,84 +417,142 @@
     <section id="registration" class="registration">
       <h1>Registration</h1>
       <h2>Student Registration Form</h2>
+
       <form class="registration-form" id="registration-form" action="./assets/php/registration-submit.php"
         method="POST">
-        <div class="form-item">
-          <label for="student-name">Student Name</label>
-          <input type="text" id="student-name" name="student-name" spellcheck="false" autocomplete="off" required>
-        </div>
-        <div class="form-item">
-          <label for="gender">Gender</label>
-          <div class="radio-group">
-            <div class="input-group">
-              <!-- <label for="gender-female"></label> -->
-              <input id="gender-female" type="radio" name="gender" value="f" required>
-              Female
+        <table>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="student-name">Student name</label>
+            </td>
+            <td class="form-input">
+              <input type="text" id="student-name" name="student-name" spellcheck="false" autocomplete="off" required>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="gender">Gender</label>
+            </td>
+            <td class="form-input">
+              <div class="radio-group">
+              <div class="input-group">
+                <!-- <label for="gender-female"></label> -->
+                <input id="gender-female" type="radio" name="gender" value="f" required>
+                Female
+              </div>
+              <div class="input-group">
+                <!-- <label for="gender-female"></label> -->
+                <input id="gender-male" type="radio" name="gender" value="m" required>
+                Male
+              </div>
             </div>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label"><label for="date-of-birth">Date of Birth</label></td>
+            <td class="form-input">
+              <input type="date" name="date-of-birth" required>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="eid-number">Emirates ID Number</label>
+            </td>
+            <td class="form-input">
+              <input type="text" name="eid-number" required autocomplete="off" minlength="15" maxlength="15">
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="eid-issue">EID Issue Date</label>
+            </td>
+            <td class="form-input">
+              <input type="date" name="eid-issue" required>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="eid-expiry">EID Expiry Date</label>
+            </td>
+            <td class="form-input">
+              <input type="date" name="eid-expiry" required>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="eid-copy-front">Upload EID - Frontview</label>
+            </td>
+            <td class="form-input">
+              <label class="file-upload">
+              <div class="upload-button">Add Files</div>
+                <label class="uploader-single" ondragover="return false">
+                  <i class="icon-upload icon"></i>
+                  <img src="" class="" id="">
+                  <input type="file" accept="image/*" name="eid-copy-front" id="eid-copy-front" required>
+                </label>
+              </label>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="eid-copy-back">Upload EID - Backview</label>
+            </td>
+            <td class="form-input">
+              <label class="file-upload">
+              <div class="upload-button">Add Files</div>
+                <label class="uploader-single" ondragover="return false">
+                  <i class="icon-upload icon"></i>
+                  <img src="" class="" id="">
+                  <input type="file" accept="image/*" name="eid-copy-back" id="eid-copy-back" required>
+                </label>
+              </label>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="passport-copy">Passport Copy</label>
+            </td>
+            <td class="form-input">
+              <label class="file-upload">
+                <div class="upload-button">Add Files</div>
+                <label class="uploader-single" ondragover="return false">
+                <i class="icon-upload icon"></i>
+                <img src="" class="" id="">
+                <input type="file" accept="image/*" name="passport-copy" id="passport-copy" required>
+              </label>  
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="student-class">Student Class</label>
+            </td>
+            <td class="form-input">
+              <input type="text" name="student-class" id="" required>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="form-submit">Form Buttons</label>
+            </td>
+            <td class="form-input">    
+              <input class="form-button form-submit" type="submit" value="Submit">
+              <input class="form-button form-reset" type="reset" value="Clear All" required>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label"></td>
+            <td class="form-input"></td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label"></td>
+            <td class="form-input"></td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label"></td>
+            <td class="form-input"></td>
+          </tr>
 
-            <div class="input-group">
-              <!-- <label for="gender-female"></label> -->
-              <input id="gender-male" type="radio" name="gender" value="m" required>
-              Male
-            </div>
-          </div>
-        </div>
-        <div class="form-item">
-          <label for="date-of-birth">Date of Birth</label>
-          <input type="date" name="date-of-birth" required>
-        </div>
-        <div class="form-item">
-          <label for="eid-number">Emirates ID Number</label>
-          <input type="text" name="eid-number" required autocomplete="off" minlength="15" maxlength="15">
-        </div>
-        <div class="form-item">
-          <label for="eid-issue">EID Issue Date</label>
-          <input type="date" name="eid-issue" required>
-        </div>
-        <div class="form-item">
-          <label for="eid-expiry">EID Expiry Date</label>
-          <input type="date" name="eid-expiry" required>
-        </div>
-        <div class="form-item">
-          <label for="eid-copy-front">Upload EID - Frontview</label>
-          <label class="file-upload">
-            <div class="upload-button">Add Files</div>
-            <label class="uploader-single" ondragover="return false">
-            <i class="icon-upload icon"></i>
-            <img src="" class="" id="">
-            <input type="file" accept="image/*" name="eid-copy-front" id="eid-copy-front" required>
-          </label>
-        </div>
-        <div class="form-item">
-          <label for="eid-copy-back">Upload EID - Backview</label>
-          <label class="file-upload">
-            <div class="upload-button">Add Files</div>
-            <label class="uploader-single" ondragover="return false">
-            <i class="icon-upload icon"></i>
-            <img src="" class="" id="">
-            <input type="file" accept="image/*" name="eid-copy-back" id="eid-copy-back" required>
-          </label>
-          </label>
-        </div>
-        <div class="form-item form-item-file">
-          <label for="passport-copy">Passport Copy</label>
-          <label class="file-upload">
-            <div class="upload-button">Add Files</div>
-            <label class="uploader-single" ondragover="return false">
-            <i class="icon-upload icon"></i>
-            <img src="" class="" id="">
-            <input type="file" accept="image/*" name="passport-copy" id="passport-copy" required>
-          </label>
-        </div>
-        <div class="form-item">
-          <label for="student-class">Student Class</label>
-          <input type="text" name="student-class" id="" required>
-        </div>
-        <div class="form-item form-item-empty">
-          <label for="form-submit">Form Buttons</label>
-          <input class="form-button form-submit" type="submit" value="Submit">
-          <input class="form-button form-reset" type="reset" value="Clear All" required>
-        </div>
+        </table>
       </form>
     </section>
   </main>

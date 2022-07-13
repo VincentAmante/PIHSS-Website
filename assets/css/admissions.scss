@@ -177,28 +177,30 @@ h3 {
 	}
 }
 
-table {
-	border-collapse: collapse;
-	border: 0 black solid;
-	border-spacing: 0;
-	margin-bottom: 1em;
-	overflow-x: scroll;
+.table-wrapper {	
+	table {
+		border-collapse: collapse;
+		border: 0 black solid;
+		border-spacing: 0;
+		margin-bottom: 1em;
+		overflow-x: scroll;
 
-	td {
-		@extend table;
-		border: 0.01rem solid black;
-		width: max-content;
-		padding: 1vw 4vw;
-		font-size: clamp(12px, 1.1vw, 2rem);
-		text-align: center;
-		font-weight: 400;
+		td {
+			@extend table;
+			border: 0.01rem solid black;
+			width: max-content;
+			padding: 1vw 4vw;
+			font-size: clamp(12px, 1.1vw, 2rem);
+			text-align: center;
+			font-weight: 400;
 
-		overflow-x: initial;
-	}
+			overflow-x: initial;
+		}
 
-	th {
-		@extend td;
-		background-color: $accent;
+		th {
+			@extend td;
+			background-color: $accent;
+		}
 	}
 }
 
@@ -288,28 +290,39 @@ table {
 		font-weight: 500;
 	}
 }
+
 .registration-form {
-	min-width: 100%;
-	.form-item {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
+	min-width: 90%;
+	max-width: 80vw;
 
-		padding-block: 1em;
-		& > * {
-			flex: 1;
+	table {
+		min-width: 70%;
+	}
+	.form-row {
+		td {
+			border: none;
+			display: flex;
+			align-items: center;
+
+			padding: 1em;
 		}
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 
-		label:not(.uploader-single):not(.file-upload) {
+		.form-label:not(.uploader-single):not(.file-upload) {
+			display: flex;
+			align-items: center;
+			text-align:left;
 			font-weight: 600;
-			width: 15vw;
-			flex-shrink: 0;
 
 			&::after {
 				content: "*";
 				color: $alert;
 			}
+		}
+
+		.form-input {
+			padding: 1em;
 		}
 
 		.file-upload {
@@ -320,7 +333,10 @@ table {
 
 		input[type="text"],
 		input[type="date"] {
-			padding: 0.5em;
+			min-height: 2em;
+			width: 100%;
+
+			padding: .5em;
 			border-color: #c9c9c9;
 			border-style: solid;
 			border-radius: 0.5em;
@@ -374,10 +390,9 @@ table {
 		}
 
 		.file-upload {
-			@include flex-centered;
+			display: flex;
+			flex-direction: column;
 			align-items: flex-start;
-			gap: 1.5vh;
-			min-width: 400px;
 
 			.upload-button {
 				border: 0.01rem solid #959595;
@@ -385,6 +400,7 @@ table {
 				border-radius: 0.5em;
 				background-color: #dddddd;
 				cursor: pointer;
+				margin-bottom: 1em;
 
 				&:hover {
 					border-color: #dddddd;
@@ -474,6 +490,17 @@ table {
 	}
 
 	.registration-form {
-		min-width: 50vw;
+		min-width: 70vw;
+	}
+}
+
+@media screen and (max-width: $breakpoint-desktop-small) {
+	.registration-form {
+		table {
+			.form-row {
+				display: flex;
+				flex-direction: column;
+			}
+		}
 	}
 }

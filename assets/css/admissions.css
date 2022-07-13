@@ -213,14 +213,14 @@ h3 {
   content: "(" counter(list-item, lower-roman) ")  ";
 }
 
-table, table td, table th {
+.table-wrapper table, .table-wrapper table td, .table-wrapper table th {
   border-collapse: collapse;
   border: 0 black solid;
   border-spacing: 0;
   margin-bottom: 1em;
   overflow-x: scroll;
 }
-table td, table th {
+.table-wrapper table td, .table-wrapper table th {
   border: 0.01rem solid black;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -231,7 +231,7 @@ table td, table th {
   font-weight: 400;
   overflow-x: initial;
 }
-table th {
+.table-wrapper table th {
   background-color: #EEE1B2;
 }
 
@@ -308,60 +308,70 @@ table th {
 }
 
 .registration-form {
-  min-width: 100%;
+  min-width: 90%;
+  max-width: 80vw;
 }
-.registration-form .form-item {
+.registration-form table, .registration-form .table-wrapper table td, .table-wrapper table .registration-form td, .registration-form .table-wrapper table th, .table-wrapper table .registration-form th {
+  min-width: 70%;
+}
+.registration-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.registration-form .form-row td, .registration-form .form-row .table-wrapper table th, .table-wrapper table .registration-form .form-row th {
+  border: none;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  padding-block: 1em;
+  padding: 1em;
 }
-.registration-form .form-item > * {
-  flex: 1;
-}
-.registration-form .form-item label:not(.uploader-single):not(.file-upload) {
+.registration-form .form-row .form-label:not(.uploader-single):not(.file-upload) {
+  display: flex;
+  align-items: center;
+  text-align: left;
   font-weight: 600;
-  width: 15vw;
-  flex-shrink: 0;
 }
-.registration-form .form-item label:not(.uploader-single):not(.file-upload)::after {
+.registration-form .form-row .form-label:not(.uploader-single):not(.file-upload)::after {
   content: "*";
   color: #FF1F1F;
 }
-.registration-form .form-item .file-upload::after {
+.registration-form .form-row .form-input {
+  padding: 1em;
+}
+.registration-form .form-row .file-upload::after {
   content: "";
 }
-.registration-form .form-item input[type=text],
-.registration-form .form-item input[type=date] {
+.registration-form .form-row input[type=text],
+.registration-form .form-row input[type=date] {
+  min-height: 2em;
+  width: 100%;
   padding: 0.5em;
   border-color: #c9c9c9;
   border-style: solid;
   border-radius: 0.5em;
   border-width: 0.09rem;
 }
-.registration-form .form-item input[type=text].error,
-.registration-form .form-item input[type=date].error {
+.registration-form .form-row input[type=text].error,
+.registration-form .form-row input[type=date].error {
   border-color: #FF1F1F;
   border-width: 0.1rem;
 }
-.registration-form .form-item input[type=date] {
+.registration-form .form-row input[type=date] {
   text-transform: uppercase;
 }
-.registration-form .form-item .radio-group {
+.registration-form .form-row .radio-group {
   flex: 1;
   display: flex;
   align-items: center;
 }
-.registration-form .form-item .radio-group .input-group {
+.registration-form .form-row .radio-group .input-group {
   margin-right: 1em;
   display: flex;
   align-items: center;
 }
-.registration-form .form-item .radio-group .input-group label::after {
+.registration-form .form-row .radio-group .input-group label::after {
   content: none;
 }
-.registration-form .form-item .radio-group .input-group input[type=radio] {
+.registration-form .form-row .radio-group .input-group input[type=radio] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -373,33 +383,30 @@ table th {
   margin-right: 0.5em;
   padding: 0.5em;
 }
-.registration-form .form-item .radio-group .input-group input[type=radio]:checked {
+.registration-form .form-row .radio-group .input-group input[type=radio]:checked {
   background-color: #c9c9c9;
 }
-.registration-form .form-item .radio-group .input-group input[type=radio].error {
+.registration-form .form-row .radio-group .input-group input[type=radio].error {
   border-color: #FF1F1F;
 }
-.registration-form .form-item .file-upload {
+.registration-form .form-row .file-upload {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   align-items: flex-start;
-  gap: 1.5vh;
-  min-width: 400px;
 }
-.registration-form .form-item .file-upload .upload-button {
+.registration-form .form-row .file-upload .upload-button {
   border: 0.01rem solid #959595;
   padding: 0.2em 2em;
   border-radius: 0.5em;
   background-color: #dddddd;
   cursor: pointer;
+  margin-bottom: 1em;
 }
-.registration-form .form-item .file-upload .upload-button:hover {
+.registration-form .form-row .file-upload .upload-button:hover {
   border-color: #dddddd;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.registration-form .form-item .form-button {
+.registration-form .form-row .form-button {
   border: none;
   flex-grow: 0.25;
   padding: 1em 1.5em;
@@ -409,22 +416,22 @@ table th {
   cursor: pointer;
   border: 0.01rem solid none;
 }
-.registration-form .form-item .form-submit {
+.registration-form .form-row .form-submit {
   background-color: #65b9e1;
   margin-left: 0vw;
   margin-right: 2.5vw;
 }
-.registration-form .form-item .form-submit:hover {
+.registration-form .form-row .form-submit:hover {
   background-color: hsla(199deg, 67%, 64%, 0.1);
   color: #65b9e1;
   border: 0.01rem solid #65b9e1;
 }
-.registration-form .form-item .form-reset {
+.registration-form .form-row .form-reset {
   font-weight: bold;
   color: #FF1F1F;
   border: 0.01rem solid #dddddd;
 }
-.registration-form .form-item .form-reset:hover {
+.registration-form .form-row .form-reset:hover {
   background-color: #FF1F1F;
   color: #FFFFFF;
   border: 0.01rem solid #FF1F1F;
@@ -460,6 +467,12 @@ table th {
     grid-template-columns: repeat(4, 1fr);
   }
   .registration-form {
-    min-width: 50vw;
+    min-width: 70vw;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .registration-form table .form-row, .table-wrapper table .registration-form td .form-row, .table-wrapper table .registration-form th .form-row {
+    display: flex;
+    flex-direction: column;
   }
 }/*# sourceMappingURL=admissions.css.map */

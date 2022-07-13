@@ -29,7 +29,7 @@
             </div>
             <div class="action">
             <button name="login-btn">Sign in</button>
-            <button>Forgot Password</button>
+            <!-- <button>Forgot Password</button> -->
             </div>
         </form>
     </section>

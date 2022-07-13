@@ -21,8 +21,10 @@ html {
 }
 
 main {
-	font-size: 0.95rem;
-	line-height: 26px;
+	font-size: clamp(14px, 5vmin, 10%);
+	
+    line-height: clamp(26px, 4vh, 10rem);
+	font-size: $font-size-normal;
 }
 
 * {

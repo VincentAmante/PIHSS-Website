@@ -51,29 +51,6 @@
         $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput' WHERE id='$galleryId'");
         $updateQuery->execute();
 
-        /// Handle Image Changes
-        $imgName = $_FILES['gallery-thumbnail']['name'];  
-        $origImgSrc = $_POST['img-src'];
-
-        // Changes image if the thumbnails are not the same
-        if ($imgName != "" 
-        && ('../' . $imgName != $origImgSrc)){
-            $imgDirectory = "./assets/gallery-thumbnails/";
-            $resultThumbnail = uploadImage($imgDirectory, $imgName, 'gallery-thumbnail', -1);
-
-            // Uploads new image, and deletes old one
-            if ($resultThumbnail != false){
-                $imgName = $resultThumbnail;
-                unlink('../' . $gallery['thumbnail']);
-
-                $updateQuery = $conn->prepare("UPDATE galleries 
-                SET thumbnail = '$imgName'
-                WHERE id='$galleryId'");
-                $updateQuery->execute();
-            }
-        }
-
-
         // Repeats query to match update
         if ($conn->connect_error){
             die('Connection Failure : ' + $conn->connect_error);
@@ -145,16 +122,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-item">
-                    <label for="">Upload Image</label>
-                    <label class="uploader-single" ondragover="return false">
-                        <i class="icon-upload icon"></i>
-                        <img src="<?php echo '../' . $gallery['thumbnail']?>" class="" id="form-img" onchange="setImgSrc();">
-                        <input type="file" accept="image/*" name="gallery-thumbnail" id="gallery-thumbnail">
-                    </label>
-                    
-                    <input type="hidden" name="img-src" id="img-src">
-                </div>
 
                     <div class="form-item" id="gallery-view">
                         <label for="fileElem">Upload images to the gallery</label>

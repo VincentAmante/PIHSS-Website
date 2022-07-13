@@ -54,29 +54,29 @@ function handleDrop(e) {
   handleFiles(files);
 }
 
-let uploadProgress = []
-let progressBar = document.getElementById('progress-bar')
+// let uploadProgress = []
+// let progressBar = document.getElementById('progress-bar')
 
-function initializeProgress(numFiles) {
-  progressBar.value = 0
-  uploadProgress = []
+// function initializeProgress(numFiles) {
+//   progressBar.value = 0
+//   uploadProgress = []
 
-  for(let i = numFiles; i > 0; i--) {
-    uploadProgress.push(0)
-  }
-}
+//   for(let i = numFiles; i > 0; i--) {
+//     uploadProgress.push(0)
+//   }
+// }
 
-function updateProgress(fileNumber, percent) {
-  uploadProgress[fileNumber] = percent
-  let total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length
-  progressBar.value = total
-}
+// function updateProgress(fileNumber, percent) {
+//   uploadProgress[fileNumber] = percent
+//   let total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length
+//   progressBar.value = total
+// }
 
 let counter = 0;
 function handleFiles(files) {
   console.log(files);
   files = [...files]
-  initializeProgress(files.length);
+  // initializeProgress(files.length);
 
   files.forEach(file => {
     previewFile(file, counter);
