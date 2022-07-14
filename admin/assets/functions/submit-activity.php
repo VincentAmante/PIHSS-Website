@@ -3,6 +3,7 @@
 
     $galleryId = "";
     $galleryTitle = "";
+    $uploadValid = true;
 
     if (isset($_FILES['gallery_images'])){
         if (count($_FILES['gallery_images']['name']) < 3){
@@ -16,6 +17,7 @@
                     confirmButtonText: 'Ok'
                 });
                 </script>";
+                $uploadValid = false;
             }
     }
 
@@ -30,6 +32,7 @@
     // Edits the gallery's text content
     if (isset($_POST['add-gallery'])
     && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
+    && $uploadValid 
     ){
         $galleryTitle = $_POST['gallery-title'];
         $galleryCreationDate = $_POST['gallery-creation-date'];
@@ -51,7 +54,8 @@
     if (!empty($_FILES)
         && isset($_POST['add-gallery'])
         && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
-        && $galleryId != null){
+        && $galleryId != null
+        && $uploadValid ){
         include './assets/functions/image-class.php';
         include './assets/functions/handle-images.php';
 
