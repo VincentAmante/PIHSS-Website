@@ -123,13 +123,13 @@ header .header-content {
 }
 .hero-banner .hero-banner-container .hero-school-info h2 {
   margin: 0;
-  font-size: clamp(12px, 1.15vw, 10rem);
+  font-size: clamp(18px, 1.35vw, 12rem);
   font-weight: 100;
 }
 .hero-banner .hero-banner-container .hero-school-info p {
   margin-top: 0.7em;
   max-width: 60%;
-  font-size: clamp(10px, 1vw, 9rem);
+  font-size: clamp(12px, 1.15vw, 10rem);
   font-family: "Raleway", sans-serif;
   font-weight: 200;
 }
