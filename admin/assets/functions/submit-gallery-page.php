@@ -5,7 +5,7 @@
 
         $galleryTitle = $_POST['gallery-title'];
         $galleryCreationDate = $_POST['gallery-creation-date'];
-        $galleryDescription = $_POST['gallery-description'];
+        $galleryDescription = $_POST['input-html'];
 
         // IMAGE HANDLING
         $imgValid = true;

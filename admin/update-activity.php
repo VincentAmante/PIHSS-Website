@@ -57,7 +57,6 @@
             $galleryQuery = $conn->query("SELECT * from galleries WHERE id='$galleryId'");
             $gallery = mysqli_fetch_assoc($galleryQuery);
         }
-        unset($_POST);
     }
 
     // Edits the gallery's text content
@@ -66,7 +65,7 @@
     && $galleryId != null){
         $galleryTitle = $_POST['gallery-title'];
         $galleryCreationDate = $_POST['gallery-doc'];
-        $galleryContent = $_POST['gallery-content'];
+        $galleryContent = $_POST['input-html'];
         
         $updateQuery = $conn->prepare("UPDATE galleries 
         SET title = '$galleryTitle',
@@ -76,6 +75,7 @@
         $updateQuery->execute();
     }
 
+    unset($_POST);
     $currentFiles = $gallery['images'];
 ?>
 <!DOCTYPE html>

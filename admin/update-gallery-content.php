@@ -2,6 +2,7 @@
     include "./assets/functions/header.php";
     $galleryId = $_GET['id'];
 
+
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
@@ -81,25 +82,27 @@
             $galleryQuery = $conn->query("SELECT * from galleries WHERE id='$galleryId'");
             $gallery = mysqli_fetch_assoc($galleryQuery);
         }
-        unset($_POST);
     }
 
     // Edits the gallery's text content
     if (isset($_POST['save-gallery-content'])
     && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
     && $galleryId != null){
+
+
         $galleryTitle = $_POST['gallery-title'];
         $galleryCreationDate = $_POST['gallery-doc'];
-        $galleryContent = $_POST['gallery-content'];
-        
+        $galleryContent = $_POST['input-html'];
+
         $updateQuery = $conn->prepare("UPDATE galleries 
         SET title = '$galleryTitle',
             creationDate = '$galleryCreationDate',
-            content = '$galleryContent'
+            description = '$galleryContent'
         WHERE id='$galleryId'");
         $updateQuery->execute();
     }
 
+    unset($_POST);
     $currentFiles = $gallery['images'];
 ?>
 <!DOCTYPE html>
@@ -146,15 +149,15 @@
                         </div>
                     </div>
                     <div class="form-item">
-                    <label for="">Upload Image</label>
-                    <label class="uploader-single" ondragover="return false">
-                        <i class="icon-upload icon"></i>
-                        <img src="<?php echo '../' . $gallery['thumbnail']?>" class="" id="form-img" onchange="setImgSrc();">
-                        <input type="file" accept="image/*" name="gallery-thumbnail" id="gallery-thumbnail">
-                    </label>
-                    
-                    <input type="hidden" name="img-src" id="img-src">
-                </div>
+                        <label for="">Upload Image</label>
+                        <label class="uploader-single" ondragover="return false">
+                            <i class="icon-upload icon"></i>
+                            <img src="<?php echo '../' . $gallery['thumbnail']?>" class="" id="form-img" onchange="setImgSrc();">
+                            <input type="file" accept="image/*" name="gallery-thumbnail" id="gallery-thumbnail">
+                        </label>
+                        
+                        <input type="hidden" name="img-src" id="img-src">
+                    </div>
 
                     <div class="form-item" id="gallery-view">
                         <label for="fileElem">Upload images to the gallery</label>
