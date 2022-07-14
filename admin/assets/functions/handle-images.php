@@ -1,11 +1,20 @@
 <?php
+    /**
+     * Converts string to slug
+     */
+    function slug($z){
+        $z = strtolower($z);
+        $z = preg_replace('/[^a-z0-9 -]+/', '', $z);
+        $z = str_replace(' ', '-', $z);
+        return trim($z, '-');
+    }
 
     /**
      * Uploads an image to the website's files, ensures it is valid to upload first
      */
     function uploadImage($imgDirectory, $imgName, $getImgFrom, $index=0, $inAssets=false){
         $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
-        $imgName = $imgDirectory . uniqid() .basename($imgName);
+        $imgName = $imgDirectory . uniqid() .basename(slug($imgName));
         $imageValid = true;
         $MAX_FILE_SIZE = 10000000000;
 

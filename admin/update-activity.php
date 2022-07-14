@@ -47,7 +47,6 @@
             $finalOutput = json_encode(array_merge($galleryFiles, $imgArr));
         }
 
-  
         $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput' WHERE id='$galleryId'");
         $updateQuery->execute();
 
