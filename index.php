@@ -31,11 +31,11 @@
                    <p>Higher Secondary School</p> 
                 </div>
                 <div class="hero-school-info">
-                    <h2>Four Walls and a Future Inside</h2>
+                    <h2>Four walls and a future inside</h2>
                     <p>Established in 1974 Pakistan Islamia Higher Secondary School Sharjah, has provided quality education to the children of UAE.</p>
                 </div>
             </div>
-        </section>
+        </section> <!-- .hero-banner -->
         
         <section class="about-us">
             <div class="about-us-content">
@@ -71,8 +71,8 @@
                         </div>
                     </div>
                 </div>     
-            </div>
-        </section>
+            </div> <!-- .about-us-content -->
+        </section> <!-- .about-us -->
 
         <section class="more-info">
             <div class="more-info-text">
@@ -352,5 +352,6 @@
     <?php include('./assets/php/footer.php')?>
     <script src="assets/js/global-scripts.js"></script>
     <script src="assets/js/index-scripts.js"></script>
+    
 </body>
 </html>

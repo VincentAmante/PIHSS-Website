@@ -59,8 +59,10 @@ img {
      object-fit: cover;
 }
 
-header .header-content {
-  transform: translateY(-100%);
+@media screen and (min-width: 768px) {
+  header .header-content {
+    transform: translateY(-100%);
+  }
 }
 
 .hero-banner {
@@ -105,13 +107,13 @@ header .header-content {
 }
 .hero-banner .hero-banner-container .hero-school-name h2 {
   margin: 0;
-  font-weight: bold;
-  font-size: clamp(18px, 1.35vw, 12rem);
+  font-weight: 500;
+  font-size: clamp(24px, 2.1vw, 12rem);
 }
 .hero-banner .hero-banner-container .hero-school-name p {
   margin: 0;
   font-weight: 100;
-  font-size: clamp(0.8rem, 1.3vw, 1.5rem);
+  font-size: clamp(18px, 1.35vw, 12rem);
 }
 .hero-banner .hero-banner-container .hero-school-info {
   display: flex;
@@ -123,12 +125,13 @@ header .header-content {
 }
 .hero-banner .hero-banner-container .hero-school-info h2 {
   margin: 0;
-  font-size: clamp(18px, 1.35vw, 12rem);
+  font-size: clamp(42px, 4vw, 16rem);
   font-weight: 100;
 }
 .hero-banner .hero-banner-container .hero-school-info p {
   margin-top: 0.7em;
-  max-width: 60%;
+  max-width: 55ch;
+  padding-inline: 1em;
   font-size: clamp(12px, 1.15vw, 10rem);
   font-family: "Raleway", sans-serif;
   font-weight: 200;
@@ -422,8 +425,8 @@ header .header-content {
   padding: 1.25em;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   aspect-ratio: 1/1;
-  width: clamp(225px, 15vw, 275px);
-  height: clamp(225px, 15vw, 275px);
+  width: clamp(225px, 15vw, 40vw);
+  height: clamp(225px, 15vw, 40vw);
 }
 .why-pihss .why-pihss-selection .card .color {
   border-radius: 0.5em;
@@ -444,10 +447,10 @@ header .header-content {
 }
 .why-pihss .why-pihss-selection .card .content h1 {
   font-family: "EB Garamond", serif;
-  font-size: clamp(24px, 1.5vw, 2rem);
+  font-size: clamp(24px, 1.5vw, 12rem);
 }
 .why-pihss .why-pihss-selection .card .content p {
-  font-size: clamp(12px, 2vmax, 1rem);
+  font-size: clamp(12px, 1.15vmax, 12rem);
 }
 
 .administrative-affairs {
@@ -491,7 +494,7 @@ header .header-content {
 }
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li {
   flex-shrink: 0;
-  width: clamp(2rem, 100%, 350px);
+  width: clamp(250px, 30%, 1500px);
   scroll-snap-align: start;
   display: flex;
   justify-content: center;
@@ -502,7 +505,7 @@ header .header-content {
   border-radius: 6px 6px 0 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   aspect-ratio: 4/5;
-  max-width: 200px;
+  width: clamp(200px, 10vw, 1000px);
   line-height: initial;
 }
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card p {

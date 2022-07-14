@@ -1,7 +1,7 @@
 
 
 // Why Pihss Slider
-createCarousel('wp-btn-left', 'wp-btn-right', 'why-pihss-slider', 2);
+createCarousel('wp-btn-left', 'wp-btn-right', 'why-pihss-slider', 1.25);
 // Administrative Affairs Slider
 createCarousel('aac-btn-left', 'aac-btn-right', 'aac-slider', 3);
 
@@ -90,10 +90,21 @@ const fadeSlider = (cardClassName, containerName) => {
 window.onscroll = () => {scrollFunction()};
 window.onload = () => {scrollFunction()};
 window.onreset = () => {scrollFunction()};
+
+var mobileEdited = false;
+var desktopEdited = false;
 window.onresize = () => {
   scrollFunction();
   // Update size on resize
-  topHeaderHeight = document.getElementById('top-header').clientHeight + .25; 
+  topHeaderHeight = document.getElementById('top-header').clientHeight + .25;
+
+  // Undos edit made by mobile
+  if (mobileEdited && window.innerWidth >= 768){
+    document.getElementById("top-header").style.transform = "translate(0,0)"
+  } 
+  else if (desktopEdited && window.innerWidth<768){
+    document.getElementById("header-content").style.transform = "translate(0,0)";
+  }
 }
 
 function scrollFunction() {
@@ -107,10 +118,12 @@ function scrollFunction() {
     // Needs a better way but currently adapts to mobile version
     if (window.innerWidth >= 768){
       console.log("Over 768");
-      document.getElementById("header-content").style.transform = "translate(0,0)"
+      document.getElementById("header-content").style.transform = "translate(0,0)";
+      desktopEdited = false;
     } else {
       console.log("Under 768");
       document.getElementById("top-header").style.transform = "translate(0,0)"
+      mobileEdited = false;
     }
 
     // Changes colour of burger based on whether there is header or not
@@ -123,10 +136,12 @@ function scrollFunction() {
 
     // document.getElementById("top-header").style.display = "none";
     if (window.innerWidth >= 768){
-      document.getElementById("header-content").style.transform = 'translate(0,-' + topHeaderHeight + 'px)'
+      document.getElementById("header-content").style.transform = 'translate(0,-' + topHeaderHeight + 'px)';
+      desktopEdited = true;
     } else {
       console.log("And of height");
-      document.getElementById("top-header").style.transform = 'translate(0,-' + topHeaderHeight + 'px)'
+      document.getElementById("top-header").style.transform = 'translate(0,-' + topHeaderHeight + 'px)';
+      mobileEdited = true;
     }
 
 
