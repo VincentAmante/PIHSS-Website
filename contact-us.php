@@ -1,25 +1,20 @@
-<!-- 
-    CONTACT US
-    TODO: Replace icons (currently looks wonky on browser)
-    TODO: Needs to be responsive (look particularly into the map embed)
-    TODO: Improve markup structure
--->
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Contact Us - Pakistan Islamia Higher Secondary School</title>
 
-		<link rel="stylesheet" href="./assets/css/global.css" />
-		<link rel="stylesheet" href="./assets/css/contact-us.css" />
-		<link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
-	</head>
-	<body>
-    <!-- Header -->
-    <?php include('./assets/php/header.php')?>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Contact Us - Pakistan Islamia Higher Secondary School</title>
+
+	<link rel="stylesheet" href="./assets/css/global.css" />
+	<link rel="stylesheet" href="./assets/css/contact-us.css" />
+	<link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
+</head>
+
+<body>
+	<!-- Header -->
+	<?php include('./assets/php/header.php') ?>
 
 	<main>
 		<!-- Banner -->
@@ -32,7 +27,7 @@
 		<!-- Navigation Breadcrumbs -->
 		<div class="nav-breadcrumbs">
 			<ul>
-				<li><a href="./index.html">HOME</a></li>
+				<li><a href="./index.php">HOME</a></li>
 				<li><a href="javascript:window.location.reload(true)">CONTACT US</a></li>
 			</ul>
 		</div>
@@ -69,8 +64,7 @@
 								<a href="tel:+065661912">06 - 5661912</a>
 							</li>
 							<li>
-								<span class="fa-li fa-lg"><i class="fa-solid fa-location-dot"></i></span><a
-									href="https://goo.gl/maps/5H9LAeGYbvQU86bU8">P O Box 1493, Al Ghubaiba, Sharjah,
+								<span class="fa-li fa-lg"><i class="fa-solid fa-location-dot"></i></span><a href="https://goo.gl/maps/5H9LAeGYbvQU86bU8">P O Box 1493, Al Ghubaiba, Sharjah,
 									UAE</a>
 							</li>
 							<li>
@@ -81,9 +75,7 @@
 					</div>
 				</div>
 				<div class="contact-map">
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae"
-						allowfullscreen="" loading="lazy"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
 				</div>
 			</div>
 		</section>
@@ -131,9 +123,10 @@
 		</section>
 	</main>
 
-    <!-- Footer -->
-    <?php include('./assets/php/footer.php')?>
+	<!-- Footer -->
+	<?php include('./assets/php/footer.php') ?>
 
-		<script src="assets/js/global-scripts.js"></script>
-	</body>
+	<script src="assets/js/global-scripts.js"></script>
+</body>
+
 </html>

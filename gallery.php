@@ -1,8 +1,3 @@
-<!-- 
-    TODO: Replace images and text
-    TODO: Fill the alt of images with image descriptions
-    TODO: Implement custom scrollbar
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +14,7 @@
 
 <body>
     <!-- Header -->
-    <?php include('./assets/php/header.php')?>
+    <?php include('./assets/php/header.php') ?>
 
     <main>
         <!-- Banner -->
@@ -32,7 +27,7 @@
         <!-- Navigation Breadcrumbs -->
         <div id="nav-breadcrumbs" class="nav-breadcrumbs">
             <ul>
-                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./index.php">HOME</a></li>
                 <li><a href="javascript:window.location.reload(true)">GALLERY</a></li>
             </ul>
         </div>
@@ -54,12 +49,12 @@
         <!-- ** Majority of the gallery sub-pages are replaced with placeholder images and text  -->
         <!-- Image Gallery -->
         <section class="container custom-scrollbar" id="gallery-pages">
-            
+
         </section>
     </main>
-    
+
     <!-- Footer -->
-    <?php include('./assets/php/footer.php')?>
+    <?php include('./assets/php/footer.php') ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -74,7 +69,8 @@
             })
         });
     </script>
-    
+
     <script src="./assets/js/global-scripts.js"></script>
 </body>
+
 </html>

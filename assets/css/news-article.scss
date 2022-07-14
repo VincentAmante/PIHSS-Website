@@ -11,18 +11,26 @@ main,
 section {
 	@include flex-centered;
 	padding: 0;
-	// margin-bottom: 5vmax;
+	margin-bottom: 5vmax;
 	width: 100%;
 }
 
+h1 {
+	font-family: $font-primary;
+	font-weight: 500;
+}
+
+h2 {
+	@extend h1;
+	font-weight: 700;
+	margin-bottom: 1em;
+}
+
 .article-overview {
-	padding-inline: 15vmin;
+	padding: 2.5vmax $global-margin 0;
+
 	.h1-border {
 		align-self: flex-start;
-		span {
-			padding: 0vw 5ch;
-			border-bottom: 0.5rem solid $dark;
-		}
 	}
 }
 

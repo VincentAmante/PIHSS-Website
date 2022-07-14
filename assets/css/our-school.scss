@@ -218,6 +218,7 @@ h3 {
 					gap: 1em;
 					height: 100%;
 					align-items: stretch;
+					overflow: hidden;
 
 					img {
 						object-fit: cover;
@@ -242,6 +243,11 @@ h3 {
 					justify-self: center;
 					align-self: center;
 					transition: 0.2s ease-in-out;
+
+					a {
+						text-decoration: none;
+						color: $font-colour;
+					}
 
 					&:hover {
 						cursor: pointer;

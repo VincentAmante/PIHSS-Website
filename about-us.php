@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,11 @@
     <link rel="stylesheet" href="./assets/css/about-us.css">
     <link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
 </head>
+
 <body>
     <!-- Header -->
-    <?php include('./assets/php/header.php')?>
+    <?php include('./assets/php/header.php') ?>
+
     <main>
         <!-- Banner -->
         <section class="subpage-banner">
@@ -24,16 +27,19 @@
         <!-- Navigation Breadcrumbs -->
         <div id="nav-breadcrumbs" class="nav-breadcrumbs">
             <ul>
-                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./index.php">HOME</a></li>
                 <li><a href="javascript:window.location.reload(true)">ABOUT US</a></li>
             </ul>
         </div>
 
         <!-- About Us -->
         <div class="about-us-wrapper">
-            <div class="h1-border">
-                <span></span>
-                <h1>About Us</h1>
+            <!-- Overview -->
+            <div class="about-us-overview">
+                <div class="h1-border">
+                    <span></span>
+                    <h1>About Us</h1>
+                </div>
             </div>
 
             <!-- About Us Table -->
@@ -55,20 +61,16 @@
                     </div>
                     <div class="content">
                         <div id="about-us-tabs" class="content-headers">
-                            <input type="radio" id="tab-values" value="values" name="about-us-group" class="tab"
-                                checked>
+                            <input type="radio" id="tab-values" value="values" name="about-us-group" class="tab" checked>
                             <label for="tab-values">Values</label>
 
-                            <input type="radio" id="tab-vision-mission" value="vision-mission" name="about-us-group"
-                                class="tab">
+                            <input type="radio" id="tab-vision-mission" value="vision-mission" name="about-us-group" class="tab">
                             <label for="tab-vision-mission">Vision & Mission</label>
 
-                            <input type="radio" id="tab-our-history" value="our-history" name="about-us-group"
-                                class="tab">
+                            <input type="radio" id="tab-our-history" value="our-history" name="about-us-group" class="tab">
                             <label for="tab-our-history">Our History</label>
 
-                            <input type="radio" id="tab-religious-background" value="religious-background"
-                                name="about-us-group" class="tab">
+                            <input type="radio" id="tab-religious-background" value="religious-background" name="about-us-group" class="tab">
                             <label for="tab-religious-background">Religious Background</label>
                         </div>
                         <div class="content-text">
@@ -79,8 +81,7 @@
                                             <h1>Citizenship and Responsibilities:</h1>
                                             <p>
                                                 To strengthen/promote national identity and social responsibilities in
-                                                the
-                                                UAE.
+                                                the UAE.
                                             </p>
                                         </li>
                                         <li>
@@ -88,8 +89,7 @@
                                             <p>
                                                 Reinforce the human values in dialogue, tolerance, moderation, peace and
                                                 volunteerism (practice of volunteering of one's time or talent for
-                                                charitable,
-                                                educational or other worthwhile activity).
+                                                charitable, educational or other worthwhile activity).
                                             </p>
                                         </li>
                                         <li>
@@ -99,8 +99,7 @@
                                             </p>
                                             <p>
                                                 To strengthen/promote national identity and social responsibilities in
-                                                the
-                                                UAE.
+                                                the UAE.
                                             </p>
                                         </li>
                                     </ol>
@@ -109,26 +108,35 @@
                             <div id="vision-mission-content" class="tab-content">
                                 <div>
                                     <h1>Vision</h1>
-                                    <p>‘PIHSS’ be looked upon as a prestigious learning institute of choice for the
-                                        community.</p>
+                                    <p>
+                                        ‘PIHSS’ be looked upon as a prestigious learning institute of choice for the
+                                        community.
+                                    </p>
                                 </div>
                                 <div>
                                     <h1>Mission</h1>
                                     <p>
                                         Within a safe and secure school environment we seek:
                                     <ul>
-                                        <li>To provide equitable quality education to all students through teamwork
-                                            and
-                                            cooperation of all stakeholders.</li>
-                                        <li>To equip our students for the world of today and tomorrow.</li>
-                                        <li>To widen horizon of opportunities for students to achieve their goals
+                                        <li>
+                                            To provide equitable quality education to all students through teamwork
+                                            and cooperation of all stakeholders.
                                         </li>
-                                        <li>To inculcate in our students the noble sense of fairness, tolerance and
+                                        <li>
+                                            To equip our students for the world of today and tomorrow.
+                                        </li>
+                                        <li>
+                                            To widen horizon of opportunities for students to achieve their goals
+                                        </li>
+                                        <li>
+                                            To inculcate in our students the noble sense of fairness, tolerance and
                                             respect for other cultures while preserving our golden Islamic
                                             traditions.
                                         </li>
-                                        <li>To build up their personalities to make them responsible, confident and
-                                            productive citizens.</li>
+                                        <li>
+                                            To build up their personalities to make them responsible, confident and
+                                            productive citizens.
+                                        </li>
                                     </ul>
                                     </p>
                                 </div>
@@ -406,10 +414,11 @@
             </section>
         </div>
     </main>
-    
+
     <!-- Footer -->
-    <?php include('./assets/php/footer.php')?>
+    <?php include('./assets/php/footer.php') ?>
     <script src="./assets/js/global-scripts.js"></script>
     <script src="./assets/js/about-us-scripts.js"></script>
 </body>
+
 </html>

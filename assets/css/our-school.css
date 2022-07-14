@@ -232,6 +232,7 @@ h3 {
   gap: 1em;
   height: 100%;
   align-items: stretch;
+  overflow: hidden;
 }
 #co-curricular .co-curricular-list .activity-container .content .activity-images img {
   -o-object-fit: cover;
@@ -254,6 +255,10 @@ h3 {
   justify-self: center;
   align-self: center;
   transition: 0.2s ease-in-out;
+}
+#co-curricular .co-curricular-list .activity-container .content button a {
+  text-decoration: none;
+  color: #383838;
 }
 #co-curricular .co-curricular-list .activity-container .content button:hover {
   cursor: pointer;

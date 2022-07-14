@@ -1,34 +1,22 @@
-<!-- 
-    OUR SCHOOL
-    TODO: Confirm what method to use for short bgs
-    TODO: Confirm method for switching content
-    TODO: Add image sliders in facilities section
-    TODO: Change nav links to radio input (for checked state)
-
-    BUGS
-    - Not sure if it's just on my end but sometimes the internal nav links can't be clicked on (particularly on desktop view)
-    
-    ? Are captions required for images in lightbox?
--->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Our School - Pakistan Islamia Higher Secondary School</title>
 
-		<link rel="stylesheet" href="./assets/css/global.css" />
-		<link rel="stylesheet" href="./assets/css/our-school.css" />
-		<link
-			rel="shortcut icon"
-			href="./assets/images/global/logo_small.png"
-			type="image/x-icon"
-		/>
-	</head>
-	<body onload="selectionHandler(window.location.hash)">
-    <!-- Header -->
-    <?php include('./assets/php/header.php')?>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Our School - Pakistan Islamia Higher Secondary School</title>
+
+	<link rel="stylesheet" href="./assets/css/global.css" />
+	<link rel="stylesheet" href="./assets/css/our-school.css" />
+	<link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
+</head>
+
+<body onload="selectionHandler(window.location.hash)">
+
+	<!-- Header -->
+	<?php include('./assets/php/header.php') ?>
+
 	<main>
 		<!-- Banner -->
 		<section id="our-school-banner" class="subpage-banner">
@@ -40,8 +28,8 @@
 		<!-- Navigation Breadcrumbs -->
 		<div id="nav-breadcrumbs" class="nav-breadcrumbs">
 			<ul>
-				<li><a href="./index.html">HOME</a></li>
-				<li><a href="our-school.html#facilities">OUR SCHOOL</a></li>
+				<li><a href="./index.php">HOME</a></li>
+				<li><a href="our-school.php#facilities">OUR SCHOOL</a></li>
 				<li><a href="#" class="tab-breadcrumb"></a></li>
 			</ul>
 		</div>
@@ -95,17 +83,9 @@
 					<div>
 						<h2>Our School</h2>
 						<ul>
-							<li>
-								<a id="btn-facilities" class="tab-button active" href="#facilities">Facilities</a>
-							</li>
-							<li>
-								<a id="btn-co-curricular" class="tab-button" href="#co-curricular">Co-Curricular
-									Activities</a>
-							</li>
-							<li>
-								<a id="btn-study-programme" class="tab-button active" href="#study-programme">Study
-									Programme</a>
-							</li>
+							<li><a id="btn-facilities" class="tab-button active" href="#facilities">Facilities</a></li>
+							<li><a id="btn-co-curricular" class="tab-button" href="#co-curricular">Co-Curricular Activities</a></li>
+							<li><a id="btn-study-programme" class="tab-button active" href="#study-programme">Study Programme</a></li>
 						</ul>
 					</div>
 				</div>
@@ -120,8 +100,7 @@
 					<div class="slider-btn" id="wp-btn-left" type="button">
 						<div class="icon">
 							<svg style="width: 100%; height: 100%" viewBox="0 0 24 24">
-								<path fill="currentColor"
-									d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+								<path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
 							</svg>
 						</div>
 					</div>
@@ -517,24 +496,25 @@
 		</section>
 	</main>
 
-    <!-- Footer -->
-    <?php include('./assets/php/footer.php')?>
+	<!-- Footer -->
+	<?php include('./assets/php/footer.php') ?>
 
-		<script src="assets/js/global-scripts.js"></script>
-		<script src="assets/js/our-school-scripts.js"></script>
+	<script src="assets/js/global-scripts.js"></script>
+	<script src="assets/js/our-school-scripts.js"></script>
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(() => {
-            $.ajax({
-                type: "GET",
-                url: "./admin/assets/functions/get-activities.php",
-                dataType: "html",
-                success: (data) => {
-                    $('#co-curricular-activities').html(data);
-                }
-            })
-        });
-    </script>
-	</body>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(() => {
+			$.ajax({
+				type: "GET",
+				url: "./admin/assets/functions/get-activities.php",
+				dataType: "html",
+				success: (data) => {
+					$('#co-curricular-activities').html(data);
+				}
+			})
+		});
+	</script>
+</body>
+
 </html>

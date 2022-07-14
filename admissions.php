@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admissions - Pakistan Islamia Higher Secondary School</title>
 
-    <link rel="stylesheet" href="./assets/css/global.css" />
-    <link rel="stylesheet" href="./assets/css/admissions.css" />
-    <link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
-  </head>
-  <body>
-    <?php include('./assets/php/header.php')?>
-    <main>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions - Pakistan Islamia Higher Secondary School</title>
+
+  <link rel="stylesheet" href="./assets/css/global.css" />
+  <link rel="stylesheet" href="./assets/css/admissions.css" />
+  <link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
+</head>
+
+<body>
+  <?php include('./assets/php/header.php') ?>
+
+  <main>
     <!-- Banner -->
     <section id="admissions-banner" class="subpage-banner">
       <div class="banner-container">
@@ -23,7 +26,7 @@
     <!-- Navigation Breadcrumbs -->
     <div id="nav-breadcrumbs" class="nav-breadcrumbs">
       <ul>
-        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./index.php">HOME</a></li>
         <li><a href="javascript:window.location.reload(true)">ADMISSIONS</a></li>
       </ul>
     </div>
@@ -31,6 +34,7 @@
     <!-- Admissions -->
     <section id="admissions" class="admissions">
       <div class="admissions-container">
+        <!-- Overview -->
         <div class="admissions-overview">
           <div class="content">
             <div class="h1-border">
@@ -43,10 +47,7 @@
               straightforward and designed to give assurance to you and your
               child that PIHSS is the right choice for your family.
             </p>
-
-            <p>
-              <strong>NOTE:</strong>
-            </p>
+            <p><strong>NOTE:</strong></p>
 
             <ul class="note">
               <li>
@@ -67,11 +68,13 @@
               </li>
             </ul>
           </div>
+
+          <!-- Internal Navigation -->
           <div class="internal-nav">
             <div>
               <h2>Admissions</h2>
               <ul>
-                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#requirements">Requirements</a></li>
                 <li><a href="#fee-structure">Fee Structure</a></li>
                 <li><a href="#student-code">Student Code of Behavior</a></li>
                 <li><a href="#registration">Registration</a></li>
@@ -123,7 +126,7 @@
         </div>
 
         <!-- Admissions Requirements -->
-        <div class="admissions-requirements">
+        <div id="requirements" class="admissions-requirements">
           <h1>Requirements</h1>
           <h2>Documents Required</h2>
 
@@ -181,8 +184,7 @@
                 <li>“O” level student visit the website of ministry of education for equivalence certificate due to
                   change of Curriculum of Class: 11th admission.
                   <br>
-                  <a
-                    href="www.inoe.gov.ae/En/EServices/ServiceCard/pages/CertEquivalentMove.aspx">www.inoe.gov.ae/En/EServices/ServiceCard/pages/CertEquivalentMove.aspx</a>
+                  <a href="www.inoe.gov.ae/En/EServices/ServiceCard/pages/CertEquivalentMove.aspx">www.inoe.gov.ae/En/EServices/ServiceCard/pages/CertEquivalentMove.aspx</a>
                 </li>
               </ul>
             </li>
@@ -418,8 +420,7 @@
       <h1>Registration</h1>
       <h2>Student Registration Form</h2>
 
-      <form class="registration-form" id="registration-form" action="./assets/php/registration-submit.php"
-        method="POST">
+      <form class="registration-form" id="registration-form" action="./assets/php/registration-submit.php" method="POST">
         <table>
           <tr class="form-row">
             <td class="form-label">
@@ -435,17 +436,17 @@
             </td>
             <td class="form-input">
               <div class="radio-group">
-              <div class="input-group">
-                <!-- <label for="gender-female"></label> -->
-                <input id="gender-female" type="radio" name="gender" value="f" required>
-                Female
+                <div class="input-group">
+                  <!-- <label for="gender-female"></label> -->
+                  <input id="gender-female" type="radio" name="gender" value="f" required>
+                  Female
+                </div>
+                <div class="input-group">
+                  <!-- <label for="gender-female"></label> -->
+                  <input id="gender-male" type="radio" name="gender" value="m" required>
+                  Male
+                </div>
               </div>
-              <div class="input-group">
-                <!-- <label for="gender-female"></label> -->
-                <input id="gender-male" type="radio" name="gender" value="m" required>
-                Male
-              </div>
-            </div>
             </td>
           </tr>
           <tr class="form-row">
@@ -484,7 +485,7 @@
             </td>
             <td class="form-input">
               <label class="file-upload">
-              <div class="upload-button">Add Files</div>
+                <div class="upload-button">Add Files</div>
                 <label class="uploader-single" ondragover="return false">
                   <i class="icon-upload icon"></i>
                   <img src="" class="" id="">
@@ -499,7 +500,7 @@
             </td>
             <td class="form-input">
               <label class="file-upload">
-              <div class="upload-button">Add Files</div>
+                <div class="upload-button">Add Files</div>
                 <label class="uploader-single" ondragover="return false">
                   <i class="icon-upload icon"></i>
                   <img src="" class="" id="">
@@ -516,10 +517,10 @@
               <label class="file-upload">
                 <div class="upload-button">Add Files</div>
                 <label class="uploader-single" ondragover="return false">
-                <i class="icon-upload icon"></i>
-                <img src="" class="" id="">
-                <input type="file" accept="image/*" name="passport-copy" id="passport-copy" required>
-              </label>  
+                  <i class="icon-upload icon"></i>
+                  <img src="" class="" id="">
+                  <input type="file" accept="image/*" name="passport-copy" id="passport-copy" required>
+                </label>
             </td>
           </tr>
           <tr class="form-row">
@@ -534,7 +535,7 @@
             <td class="form-label">
               <label for="form-submit">Form Buttons</label>
             </td>
-            <td class="form-input">    
+            <td class="form-input">
               <input class="form-button form-submit" type="submit" value="Submit">
               <input class="form-button form-reset" type="reset" value="Clear All" required>
             </td>
@@ -557,23 +558,24 @@
     </section>
   </main>
 
-    <!-- Footer -->
-    <?php include('./assets/php/footer.php')?>
+  <!-- Footer -->
+  <?php include('./assets/php/footer.php') ?>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/global-scripts.js"></script>
-    <script src="assets/js/file-uploader-single.js"></script>
-    <script>
-      const inputs = document.querySelectorAll("input, select, textarea");
-      inputs.forEach(input => {
-        input.addEventListener(
-          "invalid",
-          event => {
-            input.classList.add("error");
-          },
-          false
-        );
-      });
-    </script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/global-scripts.js"></script>
+  <script src="assets/js/file-uploader-single.js"></script>
+  <script>
+    const inputs = document.querySelectorAll("input, select, textarea");
+    inputs.forEach(input => {
+      input.addEventListener(
+        "invalid",
+        event => {
+          input.classList.add("error");
+        },
+        false
+      );
+    });
+  </script>
+</body>
+
 </html>

@@ -51,18 +51,25 @@ section {
   justify-content: center;
   align-items: center;
   padding: 0;
+  margin-bottom: 5vmax;
   width: 100%;
 }
 
+h1, h2 {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
 .article-overview {
-  padding-inline: 15vmin;
+  padding: 2.5vmax 5vw 0;
 }
 .article-overview .h1-border {
   align-self: flex-start;
-}
-.article-overview .h1-border span {
-  padding: 0vw 5ch;
-  border-bottom: 0.5rem solid #0F6938;
 }
 
 .article-viewer-wrapper {
