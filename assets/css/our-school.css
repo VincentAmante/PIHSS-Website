@@ -359,7 +359,7 @@ h3 {
   }
   .our-school-overview .internal-nav div {
     padding-left: 1em;
-    border-left: 0.3rem solid;
+    border-left: 0.5vmax solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }

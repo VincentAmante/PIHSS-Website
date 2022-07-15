@@ -33,7 +33,7 @@ h2 {
 }
 .gallery-overview .h1-border span {
   padding: 0vw 5ch;
-  border-bottom: 0.5rem solid #0F6938;
+  border-bottom: 0.5vmax solid #0F6938;
 }
 
 /* Custom Scrollbar */
@@ -91,7 +91,7 @@ h2 {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #FFFFFF;
-  font-size: 0.7rem;
+  font-size: clamp(12px, 0.9vw, 10rem);
   pointer-events: none;
 }
 .grid-item .item-text h2 {

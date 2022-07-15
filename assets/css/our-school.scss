@@ -378,7 +378,7 @@ h3 {
 		.internal-nav {
 			div {
 				padding-left: 1em;
-				border-left: 0.3rem solid;
+				border-left: .5vmax solid;
 				border-image-slice: 1;
 				border-image-source: linear-gradient($dark, #62ac3b);
 			}

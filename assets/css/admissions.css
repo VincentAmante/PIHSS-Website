@@ -64,25 +64,22 @@ section {
   width: 100%;
 }
 
-img {
+main h1, main h2 {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+}
+main h2 {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+main h3 {
+  font-weight: 600;
+}
+main img {
   display: block;
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-h1, h2 {
-  font-family: "EB Garamond", serif;
-  font-weight: 500;
-}
-
-h2 {
-  font-weight: 700;
-  margin-bottom: 1em;
-}
-
-h3 {
-  font-weight: 600;
 }
 
 .subpage-banner {
@@ -174,7 +171,8 @@ h3 {
   padding: 2em;
   flex-grow: 1;
   border-radius: 1em;
-  padding: 3em 2em;
+  padding: 3em 1.5em;
+  font-weight: bold;
 }
 .admissions-process ul li .card-content p {
   margin-top: 1em;
@@ -472,6 +470,9 @@ h3 {
   }
 }
 @media screen and (max-width: 1200px) {
+  .internal-nav {
+    display: none;
+  }
   .registration-form table .form-row, .table-wrapper table .registration-form td .form-row, .table-wrapper table .registration-form th .form-row {
     display: flex;
     flex-direction: column;

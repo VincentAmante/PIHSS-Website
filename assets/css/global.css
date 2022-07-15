@@ -642,7 +642,7 @@ header .top-header {
   transition: transform 0.5s ease-in-out;
   justify-content: space-between;
   align-items: center;
-  padding-block: 0.95vmin;
+  padding-block: 0.5vmin;
   padding-left: 0;
   font-size: clamp(18px, 1.35vw, 12rem);
 }
@@ -799,7 +799,7 @@ header .top-header .header-contacts .contact:hover * {
     box-shadow: none;
   }
   header .top-header {
-    padding-block: 3vmax;
+    padding-block: 2vmax;
     transform: none;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   }
@@ -11230,7 +11230,7 @@ html {
 
 main {
   font-size: clamp(14px, 5vmin, 10%);
-  line-height: clamp(26px, 4vh, 10rem);
+  line-height: clamp(26px, 3.25vh, 10rem);
   font-size: clamp(12px, 1vw, 10rem);
 }
 

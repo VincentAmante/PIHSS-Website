@@ -42,7 +42,7 @@ h2 {
 
 		span {
 			padding: 0vw 5ch;
-			border-bottom: 0.5rem solid $dark;
+			border-bottom: .5vmax solid $dark;
 		}
 	}
 }
@@ -125,7 +125,7 @@ h2 {
 		transform: translate(-50%, -50%);
 		text-align: center;
 		color: $primary-secondary;
-		font-size: 0.7rem;
+		font-size: clamp(12px, .9vw, 10rem);
 		pointer-events: none;
 		// z-index: 0; // Adjust later
 

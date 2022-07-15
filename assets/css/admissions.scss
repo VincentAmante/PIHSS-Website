@@ -14,27 +14,30 @@ section {
 	width: 100%;
 }
 
-img {
-	display: block;
-	max-width: 100%;
-	object-fit: cover;
-}
+main {
+	
+	h1 {
+		font-family: $font-primary;
+		font-weight: 500;
+	}
 
-h1 {
-	font-family: $font-primary;
-	font-weight: 500;
-}
+	h2 {
+		@extend h1;
+		font-weight: 700;
+		margin-bottom: 1em;
+	}
 
-h2 {
-	@extend h1;
-	font-weight: 700;
-	margin-bottom: 1em;
-}
+	h3 {
+		font-weight: 600;
+	}
 
-h3 {
-	font-weight: 600;
-}
 
+	img {
+		display: block;
+		max-width: 100%;
+		object-fit: cover;
+	}
+}
 .subpage-banner {
 	background-image: url("../images/placeholders/DSC07466.jpg");
 }
@@ -126,7 +129,9 @@ h3 {
 				padding: 2em;
 				flex-grow: 1;
 				border-radius: 1em;
-				padding: 3em 2em;
+				padding: 3em 1.5em;
+				font-weight: bold;
+				
 
 				p {
 					margin-top: 1em;
@@ -497,6 +502,10 @@ h3 {
 }
 
 @media screen and (max-width: $breakpoint-desktop-small) {
+	.internal-nav {
+		display: none;
+	}
+
 	.registration-form {
 		table {
 			.form-row {
