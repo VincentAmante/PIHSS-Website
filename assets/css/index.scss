@@ -216,7 +216,8 @@ header {
                 scroll-snap-type: inline mandatory;
                 scroll-snap-align: none;
                 overflow-x: scroll;
-                padding: 2vw 0vw;
+                // padding: 2vw 0vw;
+                padding-inline: clamp(10px, 2vw, 16rem);
     
                 // Hide scrollbar
                 -ms-overflow-style: none;
@@ -238,7 +239,7 @@ header {
                 }
     
                 .card {
-                    max-width: 200px;
+                    width: clamp(200px, 10vw, 1000px);
                     position: relative;
     
                     .card-image {
@@ -302,7 +303,8 @@ header {
             justify-content: space-around;
 
             .paginator-item {
-                padding: clamp(1px, .2rem, 2vw);
+                width: $font-size-small;
+                // padding: clamp(1px, .2rem, 2vw);
                 border-radius: 50%;
                 
                 aspect-ratio: 1/1;

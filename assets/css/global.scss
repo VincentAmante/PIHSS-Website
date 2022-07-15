@@ -109,7 +109,7 @@ ul {
 
 	span {
 		padding: 0ch 5ch;
-		border-bottom: 0.5rem solid $dark;
+		border-bottom: .5vmax solid $dark;
 		border-image-slice: 1;
 		border-image-source: linear-gradient(to right, $dark, #62ac3b);
 	}
@@ -155,7 +155,7 @@ ul {
 	.internal-nav {
 		div {
 			padding-left: 1em;
-			border-left: 0.3rem solid;
+			border-left: 0.5vmax solid;
 			border-image-slice: 1;
 			border-image-source: linear-gradient($dark, #62ac3b);
 		}

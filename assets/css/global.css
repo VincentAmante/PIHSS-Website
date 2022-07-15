@@ -656,8 +656,7 @@ header .top-header .logo-container .header-logo {
   border: 0;
 }
 header .top-header .logo-container .header-logo img {
-  width: clamp(25px, 3vw, 20rem);
-  max-width: 20rem;
+  width: clamp(40px, 3vmax, 20rem);
 }
 header .top-header .logo-container .header-title {
   display: flex;
@@ -695,6 +694,7 @@ header .top-header .header-contacts .contact {
   padding-block: 1em;
 }
 header .top-header .header-contacts .contact svg {
+  width: clamp(18px, 1.35vw, 12rem);
   color: #0F6938;
 }
 header .top-header .header-contacts .contact span {
@@ -889,27 +889,27 @@ footer .footer-logo-container .footer-logo {
   padding: 5vmin 1vw;
 }
 footer .footer-logo-container .footer-logo img {
-  max-width: 4rem;
+  width: clamp(25px, 3vw, 20rem);
 }
 footer .footer-logo-container .footer-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: clamp(12px, 1.15vw, 10rem);
   margin: 0;
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
 }
 footer .footer-logo-container .footer-title h1 {
   margin: 0;
-  font-size: 1.25em;
-  font-weight: 400;
+  font-size: clamp(18px, 1.35vw, 12rem);
+  font-weight: 800;
   font-family: "Raleway", sans-serif !important;
 }
 footer .footer-logo-container .footer-title h2 {
   margin: 0;
-  font-weight: 800;
-  font-size: 0.75em;
+  font-weight: 400;
+  font-size: clamp(10px, 1vw, 9rem);
   font-family: "Raleway", sans-serif !important;
 }
 footer ul {
@@ -921,6 +921,9 @@ footer ul li {
   padding-block: 0.2em;
   transition: all 0.25s ease-in-out;
 }
+footer ul li span {
+  font-size: clamp(10px, 1vw, 9rem);
+}
 footer ul li * {
   margin: 0.5vmin;
 }
@@ -931,12 +934,12 @@ footer ul li a {
   text-decoration: none;
   color: #FFFFFF;
   font-weight: 300;
-  font-size: clamp(16px, 1vw, 1.2rem);
+  font-size: clamp(12px, 1.15vw, 10rem);
 }
 footer .footer-nav h2 {
   font-family: "EB Garamond", serif;
   font-weight: 500;
-  font-size: clamp(1.25rem, 4vw, 1.6rem);
+  font-size: clamp(18px, 1.35vw, 12rem);
   border-bottom: 0.01em solid #FFFFFF;
   padding-block: 0.5vw;
   margin-top: 1em;
@@ -11300,7 +11303,7 @@ ul {
 }
 .h1-border span {
   padding: 0ch 5ch;
-  border-bottom: 0.5rem solid #0F6938;
+  border-bottom: 0.5vmax solid #0F6938;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right, #0F6938, #62ac3b);
 }
@@ -11335,7 +11338,7 @@ ul {
 @media screen and (min-width: 768px) {
   .internal-nav div {
     padding-left: 1em;
-    border-left: 0.3rem solid;
+    border-left: 0.5vmax solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }

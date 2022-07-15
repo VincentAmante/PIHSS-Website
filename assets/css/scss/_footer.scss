@@ -35,7 +35,7 @@ footer {
             padding: 5vmin 1vw;
             // padding-right: 2vw;
             img {
-                max-width: 4rem;
+                width: $font-size-huge;
             }
         }
         
@@ -44,7 +44,7 @@ footer {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            font-size: 1.15rem;
+            font-size: $font-size-normal;
             margin: 0;
             text-transform: uppercase;
 
@@ -52,14 +52,14 @@ footer {
             
             h1 {
                 margin: 0;
-                font-size: 1.25em;
-                font-weight: 400;
+                font-size: $font-size-large;
+                font-weight: 800;
                 font-family: "Raleway", sans-serif !important;
             }
             h2 {
                 margin: 0;
-                font-weight: 800;
-                font-size: .75em;
+                font-weight: 400;
+                font-size: $font-size-small;
                 font-family: "Raleway", sans-serif !important;
             }
         }
@@ -75,6 +75,9 @@ footer {
             padding-block: .2em;
             transition: all .25s ease-in-out;
 
+            span {
+					font-size: $font-size-small;
+            }
             * {
                 margin: .5vmin;
             }
@@ -86,7 +89,7 @@ footer {
                 text-decoration: none;
                 color: $primary-secondary;
                 font-weight: 300;
-                font-size: clamp(16px, 1vw, 1.2rem);
+                font-size: $font-size-normal;
             }
         }
     }
@@ -96,7 +99,7 @@ footer {
             font-family: $font-primary;
             font-weight: 500;
             
-            font-size: clamp(1.25rem, 4vw, 1.6rem);
+            font-size: $font-size-large;
 
             border-bottom: .01em solid $primary-secondary;
             padding-block: .5vw;

@@ -39,8 +39,8 @@ header {
 			.header-logo {
 				border: 0;
 				img {
-					width: $font-size-huge;
-					max-width: 20rem;
+					width: clamp(40px, 3vmax, 20rem);
+					// max-width: 20rem;
 				}
 			}
 
@@ -88,6 +88,7 @@ header {
 				padding-block: 1em;
 
 				svg {
+					width: $font-size-large;
 					color: $dark;
 				}
 

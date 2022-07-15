@@ -14,42 +14,19 @@
             exit();
         }
 
+        include './handle-images.php';
+        $imgDirectory = "./assets/gallery-thumbnails/";
+        $getImgFrom = 'gallery-image';
+        
         if ($imgName != ""){
-             // Directory = Where image will end up when uploaded in the directory
-            $imgDirectory = "./assets/gallery-thumbnails/";
-            $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
-            $imgName = $imgDirectory . uniqid() .basename($imgName);
+            $result = uploadImage($imgDirectory, $imgName, $getImgFrom, -1, true);
+            if ($result != false){
+                $imgName = $result;
 
-            if($_FILES['gallery-image']['size'] > 10000000000){
-                echo "FILE TOO LARGE";
+            } else {
                 $imgValid = false;
             }
-
-            // Valid image types
-            switch(strtolower($imgType)){
-                case 'jpeg':
-                case 'png':
-                case 'jpg':
-                case 'jfif':
-                case 'gif':
-                break;
-                default:
-                echo 'Invalid filetype';
-                $imgValid = false;
-            }
-
-
-            if ($imgValid){
-                if (move_uploaded_file($_FILES['gallery-image']['tmp_name'], "../../../" . $imgName)){
-                    
-                }
-                else {
-                    // Img failed
-                    $imgValid = false;
-                    exit();
-                }
-            }
-        }
+       }
 
         if ($imgValid){
             if ($conn->connect_error){

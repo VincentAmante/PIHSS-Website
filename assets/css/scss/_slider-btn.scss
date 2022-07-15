@@ -5,9 +5,11 @@ $colour-news-btn: #62AC3B;
             border-radius: 50%;
             background-color: $dark;
 
-            min-width: 2rem;
-            width: 40%;
-            max-width: 3rem;
+            // min-width: 2rem;
+            // width: 40%;
+            // max-width: 3rem;
+            
+            width: clamp(20px, 4.5vw, 18rem);
 
             color: $primary-secondary;
             text-align: center;
@@ -37,9 +39,8 @@ $colour-news-btn: #62AC3B;
     .news-btn {
         @extend .slider-btn;
         background-color: $colour-news-btn;
-        min-width: 2rem;
-        width: 30%;
-        max-width: 4rem;
+        
+            width: clamp(20px, 4.5vw, 18rem);
 
         &:hover {
             box-sizing: border-box;

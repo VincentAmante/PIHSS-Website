@@ -113,7 +113,7 @@ function scrollFunction() {
 
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     // document.getElementById("top-header").style.display = "flex";
-
+    
     // Checks for a breakpoint before determining which element to hide/show
     // Needs a better way but currently adapts to mobile version
     if (window.innerWidth >= 768){

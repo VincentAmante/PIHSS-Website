@@ -1,9 +1,7 @@
 .slider-btn, .news-btn {
   border-radius: 50%;
   background-color: #0F6938;
-  min-width: 2rem;
-  width: 40%;
-  max-width: 3rem;
+  width: clamp(20px, 4.5vw, 18rem);
   color: #FFFFFF;
   text-align: center;
   border: 0.2rem solid rgba(255, 255, 255, 0);
@@ -27,9 +25,7 @@
 
 .news-btn {
   background-color: #62AC3B;
-  min-width: 2rem;
-  width: 30%;
-  max-width: 4rem;
+  width: clamp(20px, 4.5vw, 18rem);
 }
 .news-btn:hover {
   box-sizing: border-box;
@@ -253,7 +249,7 @@ img {
       scroll-snap-type: inline mandatory;
   scroll-snap-align: none;
   overflow-x: scroll;
-  padding: 2vw 0vw;
+  padding-inline: clamp(10px, 2vw, 16rem);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -272,7 +268,7 @@ img {
   margin-right: 100%;
 }
 .more-info .more-info-slideshow .selection .slider .card {
-  max-width: 200px;
+  width: clamp(200px, 10vw, 1000px);
   position: relative;
 }
 .more-info .more-info-slideshow .selection .slider .card .card-image {
@@ -321,7 +317,7 @@ img {
   justify-content: space-around;
 }
 .more-info .more-info-slideshow .paginator .paginator-item {
-  padding: clamp(1px, 0.2rem, 2vw);
+  width: clamp(10px, 1vw, 9rem);
   border-radius: 50%;
   aspect-ratio: 1/1;
   line-height: 0;

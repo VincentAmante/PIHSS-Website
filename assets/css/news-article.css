@@ -1,9 +1,7 @@
 .slider-btn, .news-btn {
   border-radius: 50%;
   background-color: #0F6938;
-  min-width: 2rem;
-  width: 40%;
-  max-width: 3rem;
+  width: clamp(20px, 4.5vw, 18rem);
   color: #FFFFFF;
   text-align: center;
   border: 0.2rem solid rgba(255, 255, 255, 0);
@@ -27,9 +25,7 @@
 
 .news-btn {
   background-color: #62AC3B;
-  min-width: 2rem;
-  width: 30%;
-  max-width: 4rem;
+  width: clamp(20px, 4.5vw, 18rem);
 }
 .news-btn:hover {
   box-sizing: border-box;
