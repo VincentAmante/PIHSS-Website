@@ -92,7 +92,7 @@ h3 {
 	ul {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 1em;
+		gap: 1vw;
 
 		li {
 			@include flex-centered;
@@ -101,7 +101,7 @@ h3 {
 
 			.card-number {
 				@include flex-centered;
-				font-size: 1.8rem;
+				font-size: $font-size-heading;
 				font-weight: bold;
 
 				border: 0.4em solid #ddedd5;
@@ -153,6 +153,8 @@ h3 {
 
 	a {
 		color: $font-colour;
+		// word-wrap: break-word;
+		word-break: break-all;
 	}
 
 	ol {
@@ -190,7 +192,7 @@ h3 {
 			border: 0.01rem solid black;
 			width: max-content;
 			padding: 1vw 4vw;
-			font-size: clamp(12px, 1.1vw, 2rem);
+			font-size: $font-size-normal;
 			text-align: center;
 			font-weight: 400;
 

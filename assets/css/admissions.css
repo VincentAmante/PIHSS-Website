@@ -136,7 +136,7 @@ h3 {
 .admissions-process ul {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1em;
+  gap: 1vw;
 }
 .admissions-process ul li {
   display: flex;
@@ -151,7 +151,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: clamp(18px, 2.1vw, 15rem);
   font-weight: bold;
   border: 0.4em solid #ddedd5;
   border-radius: 50%;
@@ -195,6 +195,7 @@ h3 {
 }
 .admissions-requirements a {
   color: #383838;
+  word-break: break-all;
 }
 .admissions-requirements ol {
   padding-left: 1em;
@@ -226,7 +227,7 @@ h3 {
   width: -moz-max-content;
   width: max-content;
   padding: 1vw 4vw;
-  font-size: clamp(12px, 1.1vw, 2rem);
+  font-size: clamp(12px, 1vw, 10rem);
   text-align: center;
   font-weight: 400;
   overflow-x: initial;

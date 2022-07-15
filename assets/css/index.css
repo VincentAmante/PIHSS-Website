@@ -128,7 +128,7 @@ img {
   margin-top: 0.7em;
   max-width: 55ch;
   padding-inline: 1em;
-  font-size: clamp(12px, 1.15vw, 10rem);
+  font-size: clamp(12px, 1vw, 10rem);
   font-family: "Raleway", sans-serif;
   font-weight: 200;
 }
@@ -171,7 +171,7 @@ img {
 }
 .about-us .about-us-text p {
   margin: 1em 0;
-  font-size: clamp(12px, 1.15vw, 10rem);
+  font-size: clamp(12px, 1vw, 10rem);
   text-align: justify;
 }
 .about-us .about-us-statblock {
@@ -214,7 +214,7 @@ img {
   background-color: #CFECC1;
 }
 .more-info .more-info-text {
-  font-size: clamp(12px, 1.15vw, 10rem);
+  font-size: clamp(12px, 1vw, 10rem);
   padding-block: 2em;
   margin-inline: 5vw;
   font-weight: 500;
