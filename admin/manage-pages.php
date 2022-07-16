@@ -2,7 +2,7 @@
     include "./assets/functions/header.php";
     include "./assets/functions/delete-gallery.php";
 
-    // Delete Article
+    // Handles article deletion
     if (isset($_GET['delete-article'])){
         $articleId = $_GET['delete-article'];
         if ($conn->connect_error){
@@ -30,6 +30,7 @@
         }
     }
 
+    // Handles gallery deletion
     if (isset($_GET['delete-gallery'])){
         $galleryId = $_GET['delete-gallery'];
         if ($conn->connect_error){
@@ -150,22 +151,17 @@
         </section>
         <section>
             <div class="section-container">    
-                <table id="table_id" class="display">
+                <table id="registrations-list" class="display">
                     <thead>
                         <tr class="row-item">
-                            <th>Column 1</th>
-                            <th>Column 2</th>
+                            <th>Name</th>
+                            <th>Time Stamp</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Row 1 Data 1</td>
-                            <td>Row 1 Data 2</td>
-                        </tr>
-                        <tr>
-                            <td>Row 2 Data 1</td>
-                            <td>Row 2 Data 2</td>
-                        </tr>
+                    <tbody id="registrations-collection">
+
                     </tbody>
                 </table>
             </div>
@@ -208,9 +204,16 @@
                 }
             })
         });
-        $(document).ready( function () {
-            $('#table_id').DataTable();
-        } );
+        $(document).ready(() => {
+            $.ajax({
+                type: "GET",
+                url: "./assets/functions/get-registrations-list.php",
+                dataType: "html",
+                success: (data) => {
+                    $('#registrations-collection').html(data);
+                }
+            })
+        });
     </script>
 </body>
 </html>

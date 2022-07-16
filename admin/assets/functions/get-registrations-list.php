@@ -4,11 +4,20 @@
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
-        $registrations = $conn->query("SELECT * from registrations ORDER BY creationDate DESC");
+        $registrations = $conn->query("SELECT * from registrations ORDER BY creationTime DESC");
     }
 ?>
     <?php 
     while ($data = $registrations->fetch_assoc()):?>
+
+    <tr>
+        <td><?php echo $data['studentName']?></td>
+        <td><?php echo $data['creationTime']?></td>
+        <td>
+            <a href="">Delete Entry</a>
+        </td>
+        <td><a href="">View Entry</a></td>
+    </tr>
 
     <!-- <div class="row-item">
         <img src="<?php echo '../' . $data['thumbnail']?>">
@@ -47,4 +56,8 @@
         }
     })
 })
+
+$(document).ready( function () {
+            $('#registrations-list').DataTable();
+        } );
 </script>
