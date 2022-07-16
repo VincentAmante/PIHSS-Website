@@ -61,8 +61,10 @@ registrationForm.submit(e=>{
     checkInputs();
 
     if (formIsValid){
+        // Unbinds submission before submitting
         registrationForm.off().submit();
     } else {
+        
     }
 
     return false;
