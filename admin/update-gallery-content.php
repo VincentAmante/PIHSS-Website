@@ -104,6 +104,7 @@
 
     unset($_POST);
     $currentFiles = $gallery['images'];
+    $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">

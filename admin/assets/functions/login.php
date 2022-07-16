@@ -5,8 +5,9 @@
     $adminUser = $_POST['pihss-admin-username'];
     $adminPass = $_POST['pihss-admin-password'];
 
-    $checkCredentials = "SELECT * FROM admins WHERE user = '$adminUser'";
+    $checkCredentials = "SELECT * FROM admins WHERE user = ?";
     $stmt = $conn->prepare($checkCredentials);
+    $stmt->bind_param('s', $adminUser);
     $stmt->execute();
     $queryResult = mysqli_fetch_assoc($stmt->get_result());
 

@@ -42,4 +42,6 @@
             header("Location: ../../update-article.php?id=" . $last_id);
         }
     }
+
+    $conn->close();
 ?>

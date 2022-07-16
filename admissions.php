@@ -420,8 +420,10 @@
       <h1>Registration</h1>
       <h2>Student Registration Form</h2>
 
-      <form class="registration-form" id="registration-form" action="./assets/php/registration-submit.php" method="POST" enctype="multipart/form-data" novalidate>
+      <form class="registration-form" id="registration-form" action="./admin/assets/functions/submit-registration.php" method="POST" enctype="multipart/form-data" novalidate>
         <table>
+          
+          <!-- Student Name -->
           <tr class="form-row">
             <td class="form-label">
               <label for="student-name">Student name</label>
@@ -437,6 +439,8 @@
               <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- Student Gender -->
           <tr class="form-row">
             <td class="form-label">
               <label for="gender">Gender</label>
@@ -461,6 +465,8 @@
               </div>
             </td>
           </tr>
+
+          <!-- Date of Birth -->
           <tr class="form-row">
             <td class="form-label"><label for="date-of-birth">Date of Birth</label></td>
             <td class="form-input">
@@ -474,6 +480,8 @@
               <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- Emirates ID Number -->
           <tr class="form-row">
             <td class="form-label">
               <label for="eid-number">Emirates ID Number</label>
@@ -489,6 +497,8 @@
               <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- Emirates Issue Date -->
           <tr class="form-row">
             <td class="form-label">
               <label for="eid-issue">EID Issue Date</label>
@@ -505,6 +515,7 @@
             </td>
           </tr>
 
+          <!-- Emirates Expiry Date -->
           <tr class="form-row">
             <td class="form-label">
               <label for="eid-expiry">EID Expiry Date</label>
@@ -521,11 +532,12 @@
             </td>
           </tr>
 
+          <!-- Emirates ID Image - Front -->
           <tr class="form-row">
             <td class="form-label">
               <label for="eid-copy-front">Upload EID - Frontview</label>
             </td>
-                    
+        
             <td class="form-input">
               <label class="file-upload">
                 <div class="upload-button">Add Files</div>
@@ -539,6 +551,7 @@
             </td>
           </tr>
 
+          <!-- Emirates ID Image - Back -->
           <tr class="form-row">
             <td class="form-label">
               <label for="eid-copy-back">Upload EID - Backview</label>
@@ -555,6 +568,8 @@
               </label>
             </td>
           </tr>
+
+          <!-- Passport Copy -->
           <tr class="form-row">
             <td class="form-label">
               <label for="passport-copy">Passport Copy</label>
@@ -570,11 +585,14 @@
                 <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- Student Class -->
           <tr class="form-row">
             <td class="form-label">
               <label for="student-class">Student Class</label>
             </td>
             <td class="form-input">
+              <!-- Class Options -->
               <select name="student-class" id="student-class" required>
                 <option value="">Choose grade</option>
                 <option value="kg-1">KG 1</option>
@@ -595,6 +613,8 @@
               <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- Father's Name -->
           <tr class="form-row">
             <td class="form-label">
               <label for="father-name">Father's Name</label>
@@ -610,6 +630,8 @@
               <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- Father's Mobile Number -->
           <tr class="form-row">
             <td class="form-label">
               <label for="father-number">Father's Mobile Number</label>
@@ -625,6 +647,8 @@
               <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- Mother's Mobile Number -->
           <tr class="form-row">
             <td class="form-label">
               <label for="father-number">Mother's Mobile Number</label>
@@ -640,6 +664,8 @@
               <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- Father's Email -->
           <tr class="form-row">
             <td class="form-label">
               <label for="father-email">Father's Email</label>
@@ -655,6 +681,8 @@
                 <small>Error Message</small>
             </td>
           </tr>
+
+          <!-- School Leave Certificate -->
           <tr class="form-row">
             <td class="form-label">
               <label for="leave-certificate">School Leaving Certificate</label>
@@ -671,6 +699,8 @@
               </label>
             </td>
           </tr>
+
+          <!-- Form Buttons -->
           <tr class="form-row">
             <td class="form-label">
               <label for="form-submit">Form Buttons</label>

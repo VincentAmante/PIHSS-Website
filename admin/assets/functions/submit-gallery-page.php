@@ -45,4 +45,6 @@
             header("Location: ../../update-gallery-content.php?id=" . $last_id);
         }
     }
+
+    $conn->close();
 ?>

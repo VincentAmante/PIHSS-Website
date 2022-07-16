@@ -4,7 +4,7 @@
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
-        $articles = $conn->query("SELECT * from articles");
+        $articles = $conn->query("SELECT * from articles ORDER BY creationDate DESC");
     }
 ?>
 

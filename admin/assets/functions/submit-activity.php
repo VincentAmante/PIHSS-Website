@@ -98,4 +98,6 @@
         $currentFiles = $finalOutput;
         header("Location: ./manage-pages.php");
     }
+
+    $conn->close();
 ?>

@@ -4,7 +4,7 @@
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
-        $activities = $conn->query("SELECT * from galleries WHERE isActivity=1");
+        $activities = $conn->query("SELECT * from galleries WHERE isActivity=1 ORDER BY creationDate DESC");
     }
 
 while ($data = $activities->fetch_assoc()):?>

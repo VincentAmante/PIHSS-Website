@@ -4,7 +4,7 @@
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
-        $galleries = $conn->query("SELECT * from galleries WHERE isActivity=1");
+        $galleries = $conn->query("SELECT * from galleries WHERE isActivity=1 ORDER BY creationDate DESC");
     }
     while ($data = $galleries->fetch_assoc()):?>
     <?php $updateUrl = "update-activity.php?id=" . $data['ID'];?>
