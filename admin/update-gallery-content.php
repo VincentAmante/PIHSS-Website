@@ -24,7 +24,7 @@
         $finalOutput = " ";
         $imgArr = array();
 
-        $imgDirectory = "./assets/gallery-folders/" . $gallery['ID'] . '_' . $gallery['title'] . '/';
+        $imgDirectory = "./assets/gallery-folders/" . $gallery['folderName'] . '/';
         $getImgFrom = 'gallery_images';
 
         foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
@@ -47,7 +47,6 @@
         if ($galleryFiles != null){
             $finalOutput = json_encode(array_merge($galleryFiles, $imgArr));
         }
-
   
         $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput' WHERE id='$galleryId'");
         $updateQuery->execute();

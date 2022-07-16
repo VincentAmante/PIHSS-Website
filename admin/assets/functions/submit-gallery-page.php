@@ -29,20 +29,26 @@
        }
 
         if ($imgValid){
+            $lastId = "";
+
             if ($conn->connect_error){
                 die('Connection Failure : ' + $conn->connect_error);
             } else {
                 $stmt = $conn->prepare("INSERT INTO galleries(title, creationDate, description, thumbnail) VALUES('$galleryTitle','$galleryCreationDate', '$galleryDescription', '$imgName')");
                 $stmt->execute();
                 
-                $last_id = mysqli_insert_id($conn);
-                mkdir("../../../assets/gallery-folders/" . $last_id . "_" . $galleryTitle);
+                $lastId = mysqli_insert_id($conn);
+                $folderName = $lastId . '_' . $galleryTitle;
                 $stmt->close();
+                mkdir("../../../assets/gallery-folders/" . $folderName);
+
+                $stmt = $conn->prepare("UPDATE galleries SET folderName = '$folderName' WHERE id='$lastId'");
+
                 $conn->close();
             }
         
             // Moves on to Edit Content
-            header("Location: ../../update-gallery-content.php?id=" . $last_id);
+            header("Location: ../../update-gallery-content.php?id=" . $lastId);
         }
     }
 

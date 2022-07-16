@@ -40,7 +40,7 @@
         }
 
         if ($gallery != NULL){
-            $deleteSuccessful = removeFolder('gallery-folders', $gallery['ID'] . '_' . $gallery['title']);
+            $deleteSuccessful = removeFolder('gallery-folders', $gallery['folderName']);
 
             if ($deleteSuccessful){
                 if (!$gallery['isActivity']){

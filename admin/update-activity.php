@@ -23,7 +23,7 @@
         $finalOutput = " ";
         $imgArr = array();
 
-        $imgDirectory = "./assets/gallery-folders/" . $gallery['ID'] . '_' . $gallery['title'] . '/';
+        $imgDirectory = "./assets/gallery-folders/" . $gallery['folderName'] . '/';
         $getImgFrom = 'gallery_images';
 
         foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
@@ -95,7 +95,7 @@
         <section>
             <div class="form-wrapper" id="drop-area">
                 <form class="admin-form" id="admin-form" 
-                    action="<?php echo 'update-gallery-content.php?id=' . $gallery['ID'];?>" 
+                    action="<?php echo 'update-activity.php?id=' . $gallery['ID'];?>" 
                     method="POST" 
                     enctype="multipart/form-data">
                     <?php

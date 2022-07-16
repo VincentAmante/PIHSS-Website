@@ -63,8 +63,9 @@
         $imagesValid = true;
         $finalOutput = " ";
         $imgArr = array();
+        $folderName = $galleryId . '_' . $galleryTitle;
 
-        $imgDirectory = "./assets/gallery-folders/" . $galleryId . '_' . $galleryTitle . '/';
+        $imgDirectory = "./assets/gallery-folders/" . $folderName . '/';
         $getImgFrom = 'gallery_images';
 
         foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
@@ -83,7 +84,7 @@
             deleteImages($galleryFiles, $_POST['deletion-entries']);
         }
 
-        $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput' WHERE id='$galleryId'");
+        $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput', folderName = '$folderName' WHERE id='$galleryId'");
         $updateQuery->execute();
 
         // Repeats query to match update
