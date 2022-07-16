@@ -754,6 +754,7 @@ header .top-header .header-contacts .contact:hover * {
   position: relative;
 }
 .nav-links .nav-sub-list a svg {
+  width: clamp(10px, 1vw, 9rem);
   margin-left: 1em;
 }
 .nav-links .nav-sub-list:hover ul {

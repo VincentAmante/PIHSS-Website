@@ -1,13 +1,14 @@
 <?php
-    // Server Stuff idk
+    // Server Stuff
     $hostname = 'localhost';
     $username = 'root';
     $password = '';
     $databasename = 'pihss';
     
 
+    // Form values
     $studentName = $_POST['student-name'];
-    $gender = $_POST['gender'];
+    $gender = $_POST['student-gender'];
     $dateOfBirth = $_POST['date-of-birth'];
     $eidNumber = $_POST['eid-number'];
     $eidIssue = $_POST['eid-issue'];
@@ -16,6 +17,7 @@
     $eidCopyBack = $_FILES['eid-copy-back'];
     $passportCopy = $_FILES['passport-copy'];
     $studentClass = $_POST['student-class'];
+    $leaveCertificate = $_FILES['leave-certificate'];
 
     $conn = new mysqli($hostname, $username, '', $databasename);
 

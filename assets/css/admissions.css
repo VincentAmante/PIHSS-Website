@@ -308,14 +308,15 @@ main img {
 
 .registration-form {
   min-width: 90%;
-  max-width: 80vw;
 }
 .registration-form table, .registration-form .table-wrapper table td, .table-wrapper table .registration-form td, .registration-form .table-wrapper table th, .table-wrapper table .registration-form th {
-  min-width: 70%;
+  min-width: 80%;
 }
 .registration-form .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
+  -moz-column-gap: 5vw;
+       column-gap: 5vw;
 }
 .registration-form .form-row td, .registration-form .form-row .table-wrapper table th, .table-wrapper table .registration-form .form-row th {
   border: none;
@@ -335,12 +336,62 @@ main img {
 }
 .registration-form .form-row .form-input {
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+.registration-form .form-row .form-input label.error {
+  color: #FF1F1F;
+}
+.registration-form .form-row .form-input .main-body {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.registration-form .form-row .form-input .main-body .input-alerts {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.registration-form .form-row .form-input .main-body .input-alerts i {
+  position: absolute;
+  left: 1vw;
+  visibility: hidden;
+}
+.registration-form .form-row .form-input small {
+  visibility: hidden;
+  font-weight: 500;
+}
+.registration-form .form-row .form-input.success input {
+  border-color: #6bbb5e;
+}
+.registration-form .form-row .form-input.success .main-body .input-alerts i.fa-check-circle {
+  color: #6bbb5e;
+  visibility: visible;
+}
+.registration-form .form-row .form-input.error input {
+  border-color: #FF1F1F;
+}
+.registration-form .form-row .form-input.error small {
+  color: #FF1F1F;
+  visibility: visible;
+}
+.registration-form .form-row .form-input.error .main-body .input-alerts i.fa-exclamation-circle {
+  color: #FF1F1F;
+  visibility: visible;
+}
+.registration-form .form-row .file-upload {
+  width: 100%;
 }
 .registration-form .form-row .file-upload::after {
   content: "";
 }
 .registration-form .form-row input[type=text],
-.registration-form .form-row input[type=date] {
+.registration-form .form-row input[type=date],
+.registration-form .form-row input[type=tel],
+.registration-form .form-row input[type=email],
+.registration-form .form-row select {
   min-height: 2em;
   width: 100%;
   padding: 0.5em;
@@ -350,7 +401,10 @@ main img {
   border-width: 0.09rem;
 }
 .registration-form .form-row input[type=text].error,
-.registration-form .form-row input[type=date].error {
+.registration-form .form-row input[type=date].error,
+.registration-form .form-row input[type=tel].error,
+.registration-form .form-row input[type=email].error,
+.registration-form .form-row select.error {
   border-color: #FF1F1F;
   border-width: 0.1rem;
 }
@@ -464,9 +518,6 @@ main img {
 @media screen and (min-width: 1200px) {
   .admissions-process ul {
     grid-template-columns: repeat(4, 1fr);
-  }
-  .registration-form {
-    min-width: 70vw;
   }
 }
 @media screen and (max-width: 1200px) {

@@ -31,7 +31,7 @@
                 <li class="nav-element"><a href="about-us.php">About Us</a></li>
                 <li class="nav-element nav-sub-list">
                     <a href="our-school.php">Our School
-                        <svg style="width: 10px;height: 10px;" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
                     </a>
@@ -44,7 +44,7 @@
                 <li class="nav-element"><a href="admissions.php">Admissions</a></li>
                 <li class="nav-element nav-sub-list">
                     <a href="gallery.php">Gallery
-                        <svg style="width: 10px;height: 10px;" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svgfill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
                     </a>

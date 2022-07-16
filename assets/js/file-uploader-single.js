@@ -96,17 +96,34 @@
     
 } ());
 
+let imageUploaders = [];
 let singleCounter = 0;
 $('.uploader-single').each((index, obj)=>{
   let newClass = 'uploader-single-' + singleCounter;
   obj.classList.add(newClass);
+  obj.id = newClass;
   new FileUploader('.' + newClass);
   singleCounter++;
 });
 // END OF ACQUIRED CODE
 
-// Code to reset img src
-var form = document.querySelector("form");
-form.onreset = () => {
-  // document.getElementById('gallery').innerHTML = "";
+function verifyImages(){
+  let imagesValid = true;
+  console.log('hello');
+
+  $('.uploader-single').children('input').each((index, obj)=>{
+    if(obj.files.length < 1){
+      imagesValid = false;
+      $(obj).parents('.form-input').addClass('error');
+      $(obj).parents('.file-upload').children('small').text('Image is required');
+
+      $(obj).change(function(){
+        $(this).parents('.form-input').removeClass('error');
+      })
+      
+      console.log('hello-2');
+    }
+  })
+
+  return imagesValid;
 }

@@ -420,14 +420,21 @@
       <h1>Registration</h1>
       <h2>Student Registration Form</h2>
 
-      <form class="registration-form" id="registration-form" action="./assets/php/registration-submit.php" method="POST">
+      <form class="registration-form" id="registration-form" action="./assets/php/registration-submit.php" method="POST" enctype="multipart/form-data" novalidate>
         <table>
           <tr class="form-row">
             <td class="form-label">
               <label for="student-name">Student name</label>
             </td>
             <td class="form-input">
-              <input type="text" id="student-name" name="student-name" spellcheck="false" autocomplete="off" required>
+              <div class="main-body">
+                <input type="text" id="student-name" name="student-name" spellcheck="false" autocomplete="off" required>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              </div>
+              <small>Error Message</small>
             </td>
           </tr>
           <tr class="form-row">
@@ -435,24 +442,36 @@
               <label for="gender">Gender</label>
             </td>
             <td class="form-input">
-              <div class="radio-group">
+              <div class="radio-group main-body">
                 <div class="input-group">
                   <!-- <label for="gender-female"></label> -->
-                  <input id="gender-female" type="radio" name="gender" value="f" required>
+                  <input id="gender-female" type="radio" name="student-gender" value="f" required>
                   Female
                 </div>
                 <div class="input-group">
                   <!-- <label for="gender-female"></label> -->
-                  <input id="gender-male" type="radio" name="gender" value="m" required>
+                  <input id="gender-male" type="radio" name="student-gender" value="m" required>
                   Male
                 </div>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              <small>Error Message</small>
               </div>
             </td>
           </tr>
           <tr class="form-row">
             <td class="form-label"><label for="date-of-birth">Date of Birth</label></td>
             <td class="form-input">
-              <input type="date" name="date-of-birth" required>
+              <div class="main-body">
+                <input type="date" name="date-of-birth" id="date-of-birth" required>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              </div>
+              <small>Error Message</small>
             </td>
           </tr>
           <tr class="form-row">
@@ -460,7 +479,14 @@
               <label for="eid-number">Emirates ID Number</label>
             </td>
             <td class="form-input">
-              <input type="text" name="eid-number" required autocomplete="off" minlength="15" maxlength="15">
+              <div class="main-body">
+                <input type="text" id="eid-number" name="eid-number" required autocomplete="off" minlength="15" maxlength="15">
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              </div>
+              <small>Error Message</small>
             </td>
           </tr>
           <tr class="form-row">
@@ -468,21 +494,38 @@
               <label for="eid-issue">EID Issue Date</label>
             </td>
             <td class="form-input">
-              <input type="date" name="eid-issue" required>
+              <div class="main-body">
+                <input type="date" id="eid-issue" name="eid-issue" required>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              </div>
+              <small>Error Message</small>
             </td>
           </tr>
+
           <tr class="form-row">
             <td class="form-label">
               <label for="eid-expiry">EID Expiry Date</label>
             </td>
             <td class="form-input">
-              <input type="date" name="eid-expiry" required>
+              <div class="main-body">
+                <input type="date" id="eid-expiry" name="eid-expiry" required>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              </div>
+              <small>Error Message</small>
             </td>
           </tr>
+
           <tr class="form-row">
             <td class="form-label">
               <label for="eid-copy-front">Upload EID - Frontview</label>
             </td>
+                    
             <td class="form-input">
               <label class="file-upload">
                 <div class="upload-button">Add Files</div>
@@ -491,9 +534,11 @@
                   <img src="" class="" id="">
                   <input type="file" accept="image/*" name="eid-copy-front" id="eid-copy-front" required>
                 </label>
+                <small>Error Message</small>
               </label>
             </td>
           </tr>
+
           <tr class="form-row">
             <td class="form-label">
               <label for="eid-copy-back">Upload EID - Backview</label>
@@ -506,6 +551,7 @@
                   <img src="" class="" id="">
                   <input type="file" accept="image/*" name="eid-copy-back" id="eid-copy-back" required>
                 </label>
+                <small>Error Message</small>
               </label>
             </td>
           </tr>
@@ -521,6 +567,7 @@
                   <img src="" class="" id="">
                   <input type="file" accept="image/*" name="passport-copy" id="passport-copy" required>
                 </label>
+                <small>Error Message</small>
             </td>
           </tr>
           <tr class="form-row">
@@ -528,7 +575,100 @@
               <label for="student-class">Student Class</label>
             </td>
             <td class="form-input">
-              <input type="text" name="student-class" id="" required>
+              <select name="student-class" id="student-class" required>
+                <option value="">Choose grade</option>
+                <option value="kg-1">KG 1</option>
+                <option value="kg-2">KG 2</option>
+                <option value="grade-1">Grade 1</option>
+                <option value="grade-2">Grade 2</option>
+                <option value="grade-3">Grade 3</option>
+                <option value="grade-4">Grade 4</option>
+                <option value="grade-5">Grade 5</option>
+                <option value="grade-6">Grade 6</option>
+                <option value="grade-7">Grade 7</option>
+                <option value="grade-8">Grade 8</option>
+                <option value="grade-9">Grade 9</option>
+                <option value="grade-10">Grade 10</option>
+                <option value="grade-11">Grade 11</option>
+                <option value="grade-12">Grade 12</option>
+              </select>
+              <small>Error Message</small>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="father-name">Father's Name</label>
+            </td>
+            <td class="form-input">
+              <div class="main-body">
+                <input type="text" id="father-name" name="father-name" spellcheck="false" autocomplete="off" required>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              </div>
+              <small>Error Message</small>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="father-number">Father's Mobile Number</label>
+            </td>
+            <td class="form-input">
+              <div class="main-body">
+                <input type="tel" id="father-number" name="father-number" autocomplete="on" required>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              </div>
+              <small>Error Message</small>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="father-number">Mother's Mobile Number</label>
+            </td>
+            <td class="form-input">
+              <div class="main-body">
+                <input type="tel" id="mother-number" name="mother-number" autocomplete="on" required>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                </div>
+              </div>
+              <small>Error Message</small>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="father-email">Father's Email</label>
+            </td>
+            <td class="form-input">
+              <div class="main-body">
+                  <input type="email" id="father-email" name="father-email" spellcheck="false" autocomplete="on" required>
+                  <div class="input-alerts">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                  </div>
+                </div>
+                <small>Error Message</small>
+            </td>
+          </tr>
+          <tr class="form-row">
+            <td class="form-label">
+              <label for="leave-certificate">School Leaving Certificate</label>
+            </td>
+            <td class="form-input">
+              <label class="file-upload">
+                <div class="upload-button">Add Files</div>
+                <label class="uploader-single" ondragover="return false">
+                  <i class="icon-upload icon"></i>
+                  <img src="" class="" id="">
+                  <input type="file" accept="image/*" name="leave-certificate" id="leave-certificate" required>
+                </label>
+                <small>Error Message</small>
+              </label>
             </td>
           </tr>
           <tr class="form-row">
@@ -539,18 +679,6 @@
               <input class="form-button form-submit" type="submit" value="Submit">
               <input class="form-button form-reset" type="reset" value="Clear All" required>
             </td>
-          </tr>
-          <tr class="form-row">
-            <td class="form-label"></td>
-            <td class="form-input"></td>
-          </tr>
-          <tr class="form-row">
-            <td class="form-label"></td>
-            <td class="form-input"></td>
-          </tr>
-          <tr class="form-row">
-            <td class="form-label"></td>
-            <td class="form-input"></td>
           </tr>
 
         </table>
@@ -564,17 +692,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/js/global-scripts.js"></script>
   <script src="assets/js/file-uploader-single.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="assets/js/registration.js"></script>
   <script>
-    const inputs = document.querySelectorAll("input, select, textarea");
-    inputs.forEach(input => {
-      input.addEventListener(
-        "invalid",
-        event => {
-          input.classList.add("error");
-        },
-        false
-      );
-    });
+
   </script>
 </body>
 

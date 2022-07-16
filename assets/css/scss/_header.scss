@@ -162,6 +162,8 @@ header {
 		position: relative;
 
 		a svg {
+			
+			width: $font-size-small;
 			margin-left: 1em;
 		}
 
@@ -257,6 +259,7 @@ header {
 		justify-self: flex-end;
 		position: fixed;
 
+
 		.nav-element {
 			text-align: left;
 			border-bottom: 1px solid hsla(0, 0%, 100%, 0.45);
@@ -273,6 +276,7 @@ header {
 		}
 
 		.nav-sub-list {
+
 			&:hover {
 				// padding-top: 3vh;
 				padding-bottom: 0;
