@@ -284,47 +284,8 @@
             <div class="news-and-events-container">
                 <h1>News and Events</h1>
                 <div class="nac-cards">
-                    <div class="nac-events">
-                        <article>
-                            <a href="./news-article.php">
-                                <div class="article-image">
-                                    <img src="./assets/images/placeholders/DSC07512.jpg" alt="">
-                                </div>
-                                <div class="article-content">
-                                    <div class="content-wrapper">
-                                        <div class="article-text">
-                                            <p>Lorem ipsum dolor sit.</p>
-                                            <p>Available Now</p>
-                                        </div>
-                                        <div class="news-btn">
-                                            <svg style="width:100%;height:100%" viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <article>
-                            <a href="./news-article.php">
-                                <div class="article-image">
-                                    <img src="./assets/images/placeholders/DSC07402.jpg" alt="">
-                                </div>
-                                <div class="article-content">
-                                    <div class="content-wrapper">
-                                        <div class="article-text">
-                                            <p>Lorem ipsum dolor sit.</p>
-                                            <p>Available Now</p>
-                                        </div>
-                                        <div class="news-btn">
-                                            <svg style="width:100%;height:100%" viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
+                    <div class="nac-events" id="nac-articles">
+
                     </div>
                     <div class="nac-upcoming-events">
                         <article>
@@ -351,7 +312,19 @@
     <!-- Footer -->
     <?php include('./assets/php/footer.php')?>
     <script src="assets/js/global-scripts.js"></script>
-    <script src="assets/js/index-scripts.js"></script>
-    
+    <script src="assets/js/index-scripts.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+            $(document).ready(() => {
+            $.ajax({
+                type: "GET",
+                url: "./admin/assets/functions/get-articles-gallery.php?articles-count=2",
+                dataType: "html",
+                success: (data) => {
+                    $('#nac-articles').html(data);
+                }
+            })
+        });
+    </script>
 </body>
 </html>

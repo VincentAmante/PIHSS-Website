@@ -1,1 +1,0 @@
-createCarousel('article-btn-left','article-btn-right','article-slider')

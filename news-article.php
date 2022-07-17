@@ -71,13 +71,22 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        <?php
+        // If there is a get, gets that first
+        $url = "./admin/assets/functions/get-article.php?";
+        if(isset($_GET['id'])){
+            $url = "./admin/assets/functions/get-article.php?id=" . $_GET['id'];
+        }?>
+
+        // Acquires article 
         $(document).ready(() => {
             $.ajax({
                 type: "GET",
-                url: "./admin/assets/functions/get-article.php",
+                url: "<?php echo $url?>",
                 dataType: "html",
                 success: (data) => {
                     $('#article-slider').html(data);
+                    createCarousel('article-btn-left','article-btn-right','article-slider')
                 }
             })
         });

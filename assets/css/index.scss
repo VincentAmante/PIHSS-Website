@@ -597,14 +597,13 @@ header {
                 
                 transition: all .5s ease-in-out;
             }
-
         }
-
 
         .article-text {
             display: flex;
             flex-direction: column;
-            max-width: 12rem;
+            font-size: $font-size-normal;
+            max-width: 12em;
 
             p {
                 margin-bottom: .5em;
@@ -640,6 +639,14 @@ header {
                 align-items: center;
                 justify-content: space-between;
                 padding-inline: 2em;
+            }
+        }
+
+        &.empty {
+            border: .01vw solid $primary-main;
+            
+            .article-content {
+                background: none;
             }
         }
     }
@@ -795,14 +802,24 @@ header {
 
     .news-and-events-container {
         .nac-cards {
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
         }
     
+        .nac-upcoming-events {
+            padding: 1em;
+        }
         .nac-events {
+            height: 100%;
             grid-template-columns: 1fr 1fr;
             column-gap: 2em;
             margin-bottom: 0em;
             margin-right: 2em;
+            padding: 1em;
+
+            article {
+                height: 100%;
+            }
         }
     }
 }

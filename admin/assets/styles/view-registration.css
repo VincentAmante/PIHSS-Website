@@ -1,0 +1,47 @@
+body, html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+main, section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+}
+
+section {
+  padding-inline: 5vw;
+}
+
+main {
+  padding-top: 15vh;
+}
+
+table {
+  margin-block: 2.5vw;
+  width: 100%;
+  border: 0.01rem solid #ccc;
+  border-collapse: collapse;
+}
+table tbody tr td {
+  padding: 1em;
+}
+table tbody tr th {
+  border-right: 0.01rem solid #ccc;
+  padding: 1em;
+  text-align: start;
+  text-transform: uppercase;
+}
+table tbody tr td img {
+  width: clamp(150px, 20vw, 80%);
+}
+table tbody tr:not(:last-of-type) {
+  border-bottom: 0.01rem solid #ccc;
+}
+table tbody .divider th {
+  border-block: 0.01rem solid #ccc;
+  background-color: #eee;
+}/*# sourceMappingURL=view-registration.css.map */

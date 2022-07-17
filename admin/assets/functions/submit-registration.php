@@ -41,10 +41,11 @@
                 studentClass,
                 fatherName,
                 fatherNumber,
-                motherNumber) 
-            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                motherNumber,
+                fatherEmail) 
+            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $stmt->bind_param('ssssssssss',
+        $stmt->bind_param('sssssssssss',
         $studentName,
         $gender,
         $dateOfBirth,
@@ -54,7 +55,8 @@
         $studentClass,
         $fatherName,
         $fatherNumber,
-        $motherNumber);
+        $motherNumber,
+        $fatherEmail);
         $stmt->execute();
         $lastId = mysqli_insert_id($conn);
 
@@ -126,7 +128,7 @@
 
 
     $conn->close();
-    // Returns to page
-    // $referer = $_SERVER['HTTP_REFERER'];
-    // header("Location: $referer");
+    // Returns to page  
+    $referer = $_SERVER['HTTP_REFERER'];
+    header("Location: $referer");
 ?>

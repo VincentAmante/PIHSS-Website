@@ -92,3 +92,5 @@
           <div class="line3"></div>
       </div>
   </header>
+  
+  <script src="../assets/js/global-scripts.js"></script>

@@ -19,12 +19,8 @@ main, section {
   width: 100%;
 }
 
-header {
-  position: static;
-}
-
 main {
-  padding-top: 8em;
+  padding-top: 20vh;
 }
 
 .section-container {
@@ -73,7 +69,6 @@ table a:hover {
 table thead {
   display: grid;
   border: 0.01rem solid #ccc;
-  border-bottom: none;
 }
 table tbody, table thead {
   padding-block: 0;
@@ -120,7 +115,35 @@ table tfoot {
   justify-content: center;
   align-items: center;
   border: 0.01rem solid #ccc;
-  border-top: none;
   width: 100%;
   padding: 1em;
+}
+
+.dataTables_wrapper {
+  border: 0.01rem solid #ccc;
+  padding: 1em;
+}
+.dataTables_wrapper .dataTables_length {
+  padding-bottom: 1em;
+}
+.dataTables_wrapper .row-item {
+  padding: 0.25em;
+  grid-template-columns: 3fr 1fr 1.5fr 1.5fr;
+}
+.dataTables_wrapper .row-item th:nth-of-type(n+3) {
+  visibility: hidden;
+}
+.dataTables_wrapper .row-item td {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  padding-inline: 0.25em;
+  text-align: left;
+  vertical-align: middle;
+}
+.dataTables_wrapper .dataTables_info {
+  padding-top: 1em;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: none;
 }/*# sourceMappingURL=manage-pages.css.map */

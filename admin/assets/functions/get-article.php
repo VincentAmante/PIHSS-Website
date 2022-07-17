@@ -4,15 +4,31 @@
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
-        $articles = $conn->query("SELECT * from articles ORDER BY creationDate DESC");
+        // If an id is present, gets that first
+        if (isset($_GET['id'])){
+            $articleQuery = "SELECT * from articles ORDER BY ID=? desc, creationDate DESC";
+        }
+        else {
+            $articleQuery = "SELECT * from articles ORDER BY creationDate DESC";
+        }
+        $stmt = $conn->prepare($articleQuery);
+
+
+        if (isset($_GET['id'])){
+            $articleId = $_GET['id'];
+            $stmt->bind_param('s', $articleId);
+        }
+
+        $stmt->execute();
+        $articles = $stmt->get_result();
     }
 ?>
 
 <?php while ($data = $articles->fetch_assoc()):?>
     <li>
-        <article>
+        <article id="<?php echo 'article-' . $data['ID'];?>">
             <div class="article-img">
-                <img src=<?php echo $data['img']?> alt="">
+                <img src="<?php echo $data['img']?>" alt="">
             </div>
             <div class="article-text">
                 <div class="heading">

@@ -1,8 +1,18 @@
 <?php
     // Including the folder name helps ensure the wrong file is not deleted
     function removeFolder($folderName, $folderEntry) {
+
+        // Safeguard against deleting the folder
+        if ($folderEntry == null
+        || $folderEntry == ""
+        || $folderEntry == "."
+        || $folderEntry == "./"
+        || $folderEntry == "/"){
+            return false;
+        }
+
         // Array of folders safe to delete
-        $safeDeletions = ['gallery-folders'];
+        $safeDeletions = ['gallery-folders', 'registration-forms'];
         $isSafe = false;
         // Checks if deletion entry is among safe deletes
         foreach ($safeDeletions as $index => $validDeletionEntry) {

@@ -1,0 +1,58 @@
+@import "../../../assets/css/scss/_variables.scss";
+
+body, html {
+	scroll-behavior: smooth;
+    height: 100%;
+}
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    width: 100%;
+}
+
+section {
+    padding-inline: $global-margin;
+}
+
+main {
+    padding-top: 15vh;
+}
+
+table {
+    margin-block: 2.5vw;
+    width: 100%;
+    border: .01rem solid $form-border-color;
+    border-collapse: collapse;
+
+    tbody {
+        tr {
+            td {
+                padding: 1em;
+            }
+            th {
+                border-right: .01rem solid $form-border-color;
+                padding: 1em;
+                text-align: start;
+                text-transform: uppercase;
+            }
+            td {
+                img {
+                    width: clamp(150px, 20vw, 80%);
+                    // max-width: 20vw;
+                }
+            }
+        }
+
+        tr:not(:last-of-type){
+            border-bottom: .01rem solid $form-border-color;
+        }
+        .divider {
+            th {
+                border-block: .01rem solid $form-border-color;
+                background-color: #eee;
+            }
+        }
+
+    }
+}

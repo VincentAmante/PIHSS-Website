@@ -60,6 +60,29 @@
             }
         }
     }
+
+    // Handles registration deletion
+    if (isset($_GET['delete-registration'])){
+        $registrationId = $_GET['delete-registration'];
+        if ($conn->connect_error){
+            die('Connection Failure : ' + $conn->connect_error);
+        } else {
+            $registrationQuery = $conn->query("SELECT * from registrations WHERE id='$registrationId'");
+            $result = mysqli_fetch_assoc($registrationQuery);
+        }
+
+        if ($result != NULL){
+            $deleteSuccessful = removeFolder('registration-forms', $registrationId . '_' . $result['studentName']);
+
+            $sql = "DELETE FROM registrations WHERE id='$registrationId'";
+            
+            if ($conn->query($sql) === TRUE) {
+                // echo "Record deleted successfully" . '<br>';
+              } else {
+                echo "Error deleting record: " . $conn->error . '<br>';
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,6 +92,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Manager</title>
     <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
     <link rel="stylesheet" href="./assets/styles/manage-pages.css">
     <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
 </head>
@@ -77,7 +101,7 @@
         <section>
             <div class="section-container">
                 <h1>Articles</h1>
-                <table>
+                <table class="table-simple">
                     <thead>
                         <tr class="row-item">
                             <th>Title</th>
@@ -102,7 +126,7 @@
         <section>
             <div class="section-container">
                 <h1>Galleries</h1>
-                <table>
+                <table class="table-simple">
                     <thead>
                         <tr class="row-item">
                             <th>Title</th>
@@ -127,7 +151,7 @@
         <section>
             <div class="section-container">
                 <h1>Co-Curricular Activities</h1>
-                <table>
+                <table class="table-simple">
                     <thead>
                         <tr class="row-item">
                             <th>Title</th>
@@ -151,11 +175,12 @@
         </section>
         <section>
             <div class="section-container">    
-                <table id="registrations-list" class="display">
+                <h1>Registration Form Submissions</h1>
+                <table id="registrations-list" class="data-table-display">
                     <thead>
                         <tr class="row-item">
                             <th>Name</th>
-                            <th>Time Stamp</th>
+                            <th>Class</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -170,8 +195,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
     <script>
         $(document).ready(() => {
