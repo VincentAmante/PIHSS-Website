@@ -28,49 +28,71 @@
         <div id="nav-breadcrumbs" class="nav-breadcrumbs">
             <ul>
                 <li><a href="./index.php">HOME</a></li>
-                <li><a href="javascript:window.location.reload(true)">GALLERY</a></li>
+                <li><a href="gallery.php#our-gallery">GALLERY</a></li>
+                <li><a href="#" class="tab-breadcrumb"></a></li>
             </ul>
         </div>
 
         <!-- Overview -->
         <section class="gallery-overview">
-            <div class="content">
-                <div class="h1-border">
-                    <span></span>
-                    <h1>Our Gallery</h1>
+            <div class="content main">
+                <div id="overview"></div>
+
+                <div class="internal-nav">
+                    <div>
+                        <h2>Gallery</h2>
+                        <ul id="nav">
+                            <li><a id="btn-our-gallery" class="tab-button" href="#our-gallery">Our Gallery</a></li>
+                            <li><a id="btn-news" class="tab-button" href="#news">News</a></li>
+                            <li><a id="btn-events" class="tab-button" href="#events">Events</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- TODO: Add vertical progress indicator -->
-        <!-- Scroll Progress Indicator -->
-        <!-- <div class="progress-indicator" id="progress-indicator"></div> -->
-
-        <!-- ** Majority of the gallery sub-pages are replaced with placeholder images and text  -->
-        <!-- Image Gallery -->
-        <section class="container custom-scrollbar" id="gallery-pages">
-
+        <!-- Content -->
+        <section id="content-wrapper">
+            <div id="content"></div>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
     <?php include('./assets/php/footer.php') ?>
 
+    <!-- Scripts -->
+    <script src="assets/js/global-scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
-        $(document).ready(() => {
+        $(document).ready(function() {
+            loadContent();
+        });
+
+        $(window).on("hashchange", function() {
+            loadContent();
+        });
+
+        function loadContent() {
+            var page = location.hash.substring(1);
+            console.log("page=" + page);
+            $(".tab-breadcrumb").html(page);
+
             $.ajax({
                 type: "GET",
-                url: "./admin/assets/functions/get-galleries.php",
+                url: "./subpages/" + page + ".php",
                 dataType: "html",
                 success: (data) => {
-                    $('#gallery-pages').html(data);
-                }
-            })
-        });
-    </script>
+                    var pageOverview = $("<div>").html(data).find("#overview");
+                    var pageContent = $("<div>").html($(data).not("#overview"));
 
-    <script src="./assets/js/global-scripts.js"></script>
+                    $("#overview").html(pageOverview);
+                    $("#content").html(pageContent);
+                },
+            });
+        }
+    </script>
 </body>
 
 </html>

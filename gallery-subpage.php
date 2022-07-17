@@ -40,7 +40,8 @@ if ($conn->connect_error) {
     <div class="nav-breadcrumbs">
       <ul>
         <li><a href="./index.php">HOME</a></li>
-        <li><a href="./gallery.php">GALLERY</a></li>
+        <li><a href="./gallery.php#our-gallery">GALLERY</a></li>
+        <li><a href="./gallery.php#our-gallery">OUR GALLERY</a></li>
         <li><a href="javascript:window.location.reload(true)"><?php echo $gallery['title'] ?></a></li>
       </ul>
     </div>

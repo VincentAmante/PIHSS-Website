@@ -28,12 +28,9 @@ h2 {
 .gallery-overview {
   padding: 2.5vmax 5vw 0;
 }
-.gallery-overview .h1-border {
-  align-self: flex-start;
-}
-.gallery-overview .h1-border span {
-  padding: 0vw 5ch;
-  border-bottom: 0.5vmax solid #0F6938;
+.gallery-overview .internal-nav {
+  padding: 2em 0em;
+  min-width: 18vw;
 }
 
 /* Custom Scrollbar */
@@ -203,10 +200,21 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
+  /* Gallery Overview */
+  .gallery-overview {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-overview .content.main {
+    display: flex;
+    justify-content: space-between;
+  }
+  .gallery-overview .content-text {
+    padding-right: 5vw;
+  }
   .container .grid-item {
     grid-column: span 6;
   }
-  /* Custom Scrollbar */
 }
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .container .grid-item {

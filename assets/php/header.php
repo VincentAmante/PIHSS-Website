@@ -30,7 +30,7 @@
                 <li class="nav-element"><a href="index.php">Home</a></li>
                 <li class="nav-element"><a href="about-us.php">About Us</a></li>
                 <li class="nav-element nav-sub-list">
-                    <a href="our-school.php">Our School
+                    <a href="our-school.php#facilities">Our School
                         <svg fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
@@ -43,19 +43,20 @@
                 </li>
                 <li class="nav-element"><a href="admissions.php">Admissions</a></li>
                 <li class="nav-element nav-sub-list">
-                    <a href="gallery.php">Gallery
-                        <svgfill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <a href="gallery.php#our-gallery">Gallery
+                        <svg fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
                     </a>
                     <ul>
                         <li><a href="gallery.php#our-gallery">Our Gallery</a></li>
-                        <li><a href="gallery.php#news-events">News and Events</a></li>
+                        <li><a href="gallery.php#news">News</a></li>
+                        <li><a href="gallery.php#events">Events</a></li>
                     </ul>
                 </li>
                 <li class="nav-element nav-sub-list">
                     <a href="">Login
-                        <svg style="width: 10px;height: 10px;" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
                     </a>

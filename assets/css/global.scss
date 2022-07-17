@@ -23,7 +23,7 @@ html {
 main {
 	font-size: clamp(14px, 5vmin, 10%);
 
-	line-height: clamp(26px, 3.25vh, 10rem);
+	line-height: clamp(26px, 4vh, 10rem);
 	font-size: $font-size-normal;
 }
 
@@ -109,7 +109,7 @@ ul {
 
 	span {
 		padding: 0ch 5ch;
-		border-bottom: .5vmax solid $dark;
+		border-bottom: 0.5vmax solid $dark;
 		border-image-slice: 1;
 		border-image-source: linear-gradient(to right, $dark, #62ac3b);
 	}
@@ -155,7 +155,7 @@ ul {
 	.internal-nav {
 		div {
 			padding-left: 1em;
-			border-left: 0.5vmax solid;
+			border-left: 0.5vmax solid $dark;
 			border-image-slice: 1;
 			border-image-source: linear-gradient($dark, #62ac3b);
 		}

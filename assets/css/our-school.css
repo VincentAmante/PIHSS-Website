@@ -65,14 +65,8 @@ h3 {
 }
 
 /* Tab Styling */
-.tab-header,
-.tab-overview,
-.tab-content {
-  display: none;
-}
-
-.active {
-  display: flex;
+.selected {
+  color: red;
 }
 
 /* Subpage Banner */
@@ -85,6 +79,9 @@ h3 {
 /* Our School Overview */
 .our-school-overview {
   padding: 2.5vmax 5vw 0;
+}
+.our-school-overview .tab-overview:first-of-type {
+  padding-bottom: 1em;
 }
 .our-school-overview .internal-nav {
   padding: 2em 0em;
@@ -137,7 +134,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5vw 3vw;
+  margin: 5vw;
 }
 #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
   width: 100%;
@@ -151,7 +148,7 @@ h3 {
   text-align: left;
 }
 #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p {
-  padding-right: 0.5em;
+  padding-right: 1em;
   max-height: 250px;
   overflow-y: auto;
   -ms-overflow-style: auto; /* IE and Edge */
@@ -169,14 +166,11 @@ h3 {
   display: block;
 }
 #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p::-webkit-scrollbar-thumb {
-  background-color: #1B9B55;
+  background-color: rgba(27, 155, 85, 0.6);
   border-radius: 10px;
 }
 
 /* Co-Curricular Activities */
-#co-curricular {
-  padding: 0;
-}
 #co-curricular .co-curricular-heading {
   margin: 0 5vw 2em;
 }
@@ -277,17 +271,17 @@ h3 {
   justify-content: center;
   align-items: center;
   background-color: rgba(207, 236, 193, 0.4);
-  margin: 5vw;
+  margin: 0 5vw 5vw;
   padding: 5vw;
   border-radius: 0.5em;
   width: 100%;
-  height: 250px;
   flex-grow: 1;
 }
 #study-programme .shift-container .card-wrapper .card h2 {
   text-align: center;
   width: 90%;
-  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
   border-bottom: black 1px solid;
 }
 #study-programme .programme-container p,
@@ -355,13 +349,7 @@ h3 {
     justify-content: space-between;
   }
   .our-school-overview .content-text {
-    max-width: 60%;
-  }
-  .our-school-overview .internal-nav div {
-    padding-left: 1em;
-    border-left: 0.5vmax solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(#0F6938, #62ac3b);
+    padding-right: 5vw;
   }
   /* Facilities */
   #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
@@ -389,12 +377,6 @@ h3 {
     margin-left: 5%;
   }
   /* Study Programme */
-  #study-programme .shift-container {
-    margin-top: -8em;
-  }
-  #study-programme .shift-container p {
-    max-width: 65%;
-  }
   #study-programme .shift-container .card-wrapper {
     flex-direction: row;
   }

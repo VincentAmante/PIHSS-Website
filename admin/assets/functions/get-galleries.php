@@ -1,32 +1,30 @@
 <?php
-    require "connect.php";
+require "connect.php";
 
-    if ($conn->connect_error){
-        die('Connection Failure : ' + $conn->connect_error);
-    } else {
-        $galleries = $conn->query("SELECT * from galleries ORDER BY creationDate DESC");
-        
-    }
+if ($conn->connect_error) {
+    die('Connection Failure : ' + $conn->connect_error);
+} else {
+    $galleries = $conn->query("SELECT * from galleries ORDER BY creationDate DESC");
+}
 
-while ($data = $galleries->fetch_assoc()):?>
-<?php
+while ($data = $galleries->fetch_assoc()) : ?>
+    <?php
     $thumbnailSrc = "";
-    if ($data['isActivity']){
+    if ($data['isActivity']) {
         $thumbnailSrc = json_decode($data['images'], true)[0]['path'];
-    }
-    else {
+    } else {
         $thumbnailSrc = $data['thumbnail'];
     }
-?>
+    ?>
     <div class="grid-item">
         <div class="item-image">
-            <a href="<?php echo './gallery-history.php?id=' . $data['ID']?>">
-                <img src="<?php echo $thumbnailSrc?>" alt="" />
+            <a href="<?php echo './gallery-subpage.php?id=' . $data['ID'] ?>">
+                <img src="<?php echo $thumbnailSrc ?>" alt="" />
             </a>
         </div>
         <div class="item-text">
-            <h2><?php echo $data['title']?></h2>
-            <p><?php echo $data['creationDate']?></p>
+            <h2><?php echo $data['title'] ?></h2>
+            <p><?php echo $data['creationDate'] ?></p>
         </div>
     </div>
-<?php endwhile;?>
+<?php endwhile; ?>

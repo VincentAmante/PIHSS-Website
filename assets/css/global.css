@@ -11231,7 +11231,7 @@ html {
 
 main {
   font-size: clamp(14px, 5vmin, 10%);
-  line-height: clamp(26px, 3.25vh, 10rem);
+  line-height: clamp(26px, 4vh, 10rem);
   font-size: clamp(12px, 1vw, 10rem);
 }
 
@@ -11339,7 +11339,7 @@ ul {
 @media screen and (min-width: 768px) {
   .internal-nav div {
     padding-left: 1em;
-    border-left: 0.5vmax solid;
+    border-left: 0.5vmax solid #0F6938;
     border-image-slice: 1;
     border-image-source: linear-gradient(#0F6938, #62ac3b);
   }
