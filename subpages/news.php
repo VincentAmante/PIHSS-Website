@@ -20,12 +20,14 @@
 <div id="news" class="news-container">
     <div class="news" id="news-gallery">
     </div>
-</div>
+</div> <!-- #news -->
+
 <!-- Stylesheet -->
 <link rel="stylesheet" href="./assets/css/news-events.css">
-
 <script>
-        $(document).ready(() => {
+
+    // Calls for article galleries
+    $(document).ready(() => {
         $.ajax({
             type: "GET",
             url: "../admin/assets/functions/get-articles-gallery.php",

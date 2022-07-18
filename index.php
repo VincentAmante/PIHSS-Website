@@ -275,17 +275,15 @@
                         </svg>
                     </button>
                 </div>
-                <!-- I have a feeling this would require images, so I added it -->
             </div>
         </section>
         
-        <!-- TODO: Figure out how this will operate -->
         <div id="news-and-events" class="news-and-events">
             <div class="news-and-events-container">
                 <h1>News and Events</h1>
                 <div class="nac-cards">
                     <div class="nac-events" id="nac-articles">
-
+                        <!-- Content here is dynamically loaded -->
                     </div>
                     <div class="nac-upcoming-events">
                         <article>
@@ -309,10 +307,13 @@
             </div>
         </div>
     </main>
+
     <!-- Footer -->
     <?php include('./assets/php/footer.php')?>
     <script src="assets/js/global-scripts.js"></script>
     <script src="assets/js/index-scripts.js"></script>    
+
+    <!-- Acquires news articles -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
             $(document).ready(() => {
