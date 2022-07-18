@@ -19,9 +19,9 @@
     <main>
         <!-- Hero Banner -->
         <section class="hero-banner">
-        <video autoplay muted loop>
-                    <source src="./assets/videos/hero.mp4" type="video/mp4">
-                </video>
+            <video autoplay muted loop>
+                <source src="./assets/videos/hero.mp4" type="video/mp4">
+            </video>
             <div class="video-container">
                 
             </div>
@@ -39,7 +39,7 @@
         </section> <!-- .hero-banner -->
         
         <!-- About Us -->
-        <section class="about-us">
+        <section id="about-us" class="about-us">
             <div class="about-us-content">
                 <div class="stripe"></div>
                 <div class="about-us-text">
@@ -347,11 +347,11 @@
 
     <!-- Footer -->
     <?php include('./assets/php/footer.php')?>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/global-scripts.js"></script>
     <script src="assets/js/index-scripts.js"></script>    
 
     <!-- Acquires news articles -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
             $(document).ready(() => {
             $.ajax({

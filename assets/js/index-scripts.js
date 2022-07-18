@@ -12,22 +12,21 @@ createCarousel('wp-btn-left', 'wp-btn-right', 'why-pihss-slider', 1.25);
 // Administrative Affairs Slider
 createCarousel('aac-btn-left', 'aac-btn-right', 'aac-slider', 3);
 
-// More Info Paginator
-// ! Not automated, likely sloppy
-const mi_slider = document.getElementById('more-info-selection');
-const mi_slider_max = mi_slider.children.length + 1;
-document.getElementById('paginator-1').onclick = () => {
-  mi_slider.scrollLeft = 0;
-}
-document.getElementById('paginator-2').onclick = () => {
-  mi_slider.scrollLeft = (mi_slider.scrollWidth / mi_slider_max) ;
-}
-document.getElementById('paginator-3').onclick = () => {
-  mi_slider.scrollLeft = (mi_slider.scrollWidth / mi_slider_max) * 2 ;
-}
-document.getElementById('paginator-4').onclick = () => {
-  mi_slider.scrollLeft = (mi_slider.scrollWidth / mi_slider_max) * 3 ;
-}
+
+// More Info Slider
+let miSlider = $('#more-info-selection');
+let miSliderMax = $(miSlider).children().length + 1;
+
+// On clicking each paginator button, scrolls slider to the corresponding element
+$('.paginator-item').each((index, obj)=>{
+
+  $(obj).addClass('paginator-item-' + index);
+  $(obj).click(()=>{
+    $(miSlider).scrollLeft(($(miSlider)[0].scrollWidth / miSliderMax) * index);
+  })
+})
+// Sets default to scroll to beginning
+$(miSlider).scrollLeft(0);
 
 
 // Counter that counts up on page load
