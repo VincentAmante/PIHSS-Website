@@ -17,6 +17,7 @@
     <?php include('./assets/php/header.php')?>
 
     <main>
+        <!-- Hero Banner -->
         <section class="hero-banner">
         <video autoplay muted loop>
                     <source src="./assets/videos/hero.mp4" type="video/mp4">
@@ -37,6 +38,7 @@
             </div>
         </section> <!-- .hero-banner -->
         
+        <!-- About Us -->
         <section class="about-us">
             <div class="about-us-content">
                 <div class="stripe"></div>
@@ -49,7 +51,7 @@
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, quibusdam quisquam impedit quas, tempora sint, maiores et inventore laudantium autem obcaecati. Praesentium laboriosam ratione odit sint non provident laudantium doloremque nobis in. Iste architecto nihil quis, officia quam distinctio quas.
                     </p>
-                </div>
+                </div>  <!-- about-us-text -->
 
                 
                 <!-- Image  -->
@@ -68,13 +70,16 @@
                             <p class="label">Classrooms</p>
                             <p class="label">Employees</p>
                             <p class="label">Alumni</p>
-                        </div>
-                    </div>
-                </div>     
+                        </div> 
+                    </div> <!-- .about-us-stat-block -->
+                </div> <!-- .about-us-img -->    
             </div> <!-- .about-us-content -->
         </section> <!-- .about-us -->
 
+        <!-- More Info -->
         <section class="more-info">
+            
+        
             <div class="more-info-text">
                 <img class="more-info-comma" src="./assets/icons/comma.svg" alt="">
                 <p>
@@ -83,7 +88,9 @@
                 <p>
                     Maecenas sed enim ut sem viverra aliquet eget. Urna et pharetra pharetra massa massa ultricies. Rutrum quisque non tellus orci ac auctor. Sollicitudin nibh sit amet commodo nulla facilisi. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus.
                 </p>
-            </div>
+            </div> <!-- .more-info-text -->
+
+            <!-- Carousel -->
             <div class="more-info-slideshow">
                 <img class="more-info-comma" src="./assets/icons/comma.svg" alt="">
                 <div class="selection">
@@ -102,6 +109,7 @@
                                 </div>
                             </a>
                         </div>
+
                         <div class="card-wrapper">
                             <a class="card" href="./about-us.php">
                                 
@@ -116,6 +124,7 @@
                                 </div>
                             </a>
                         </div>
+
                         <div class="card-wrapper">
                             <a class="card" href="./about-us.php">
                             <div class="card-anchor" id="mi-slider-registration"></div>
@@ -129,6 +138,7 @@
                                 </div>
                             </a>
                         </div>
+
                         <div class="card-wrapper">
                             <a class="card" href="./about-us.php">
                             <div class="card-anchor" id="mi-slider-other"></div>
@@ -142,18 +152,20 @@
                                 </div>
                             </a>
                         </div>
+
                     </div>
-                    <!-- TODO: Reposition where the anchor tags go so the clicks are smooth -->
+                    
                     <div class="paginator">
                         <a id="paginator-1" class="paginator-item" ></a>
                         <a id="paginator-2" class="paginator-item"></a>
                         <a id="paginator-3" class="paginator-item"></a>
                         <a id="paginator-4" class="paginator-item" ></a>
                     </div>
-                </div>
-            </div>
-        </section>
+                </div> <!-- .selection -->
+            </div> <!-- .more-info-slideshow -->
+        </section> <!-- .more-info -->
 
+        <!-- Why PIHSS -->
         <section class="why-pihss">
             <div class="why-pihss-container">
                 <div class="why-pihss-description">
@@ -168,8 +180,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- TODO: Have a better name for this -->
+                
+
                 <div class="why-pihss-selection">
+
+                    <!-- Button Left -->
                     <button class="slider-btn" id="wp-btn-left" type="button">
                         <div class="icon">
                             <svg style="width:100%;height:100%" viewBox="0 0 24 24">
@@ -177,6 +192,8 @@
                             </svg>
                         </div>
                     </button>
+
+                    <!-- Slider -->
                     <div class="why-pihss-slider" id="why-pihss-slider">
                         <div class="card-wrapper">
                             <div class="card">
@@ -187,6 +204,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="card-wrapper">
                             <div class="card">
                                 <div class="color color-2"></div>
@@ -196,6 +214,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="card-wrapper">
                             <div class="card">
                                 <div class="color color-3"></div>
@@ -205,6 +224,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="card-wrapper">
                             <div class="card">
                                 <div class="color color-4"></div>
@@ -214,7 +234,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+                    </div> <!-- #why-pihss-slider -->
+
+                    <!-- Button Right -->
                     <button class="slider-btn" id="wp-btn-right" type="button">
                         <svg style="width:100%;height:100%" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
@@ -222,12 +245,16 @@
                     </button>
                 </div>
             </div>
-        </section>
+        </section> <!-- .why-pihss -->
 
+        <!-- Administrative Affairs -->
         <section class="administrative-affairs">
+
             <div class="aac-affairs-container">
                 <h1>Administrative Affairs Committee (AAC)</h1>
                 <div class="staff">
+
+                    <!-- Button Left -->
                     <button class="slider-btn aac-btn-left" id="aac-btn-left" type="button">
                         <div class="icon">
                             <svg style="width:100%;height:100%" viewBox="0 0 24 24">
@@ -235,6 +262,8 @@
                             </svg>
                         </div>
                     </button>
+
+                    <!-- Slider -->
                     <div class="aac-slider-wrapper">
                         <ul class="aac-slider" id="aac-slider">
                             <li id="aac-1">
@@ -269,22 +298,30 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Button Right -->
                     <button class="slider-btn aac-btn-right" id="aac-btn-right" type="button">
                         <svg style="width:100%;height:100%" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                         </svg>
                     </button>
-                </div>
-            </div>
+                </div> <!-- .staff -->
+            </div> <!-- .aac-affairs-container -->
         </section>
         
+
+        <!-- News and Events -->
         <div id="news-and-events" class="news-and-events">
             <div class="news-and-events-container">
                 <h1>News and Events</h1>
                 <div class="nac-cards">
+
+                    <!-- News -->
                     <div class="nac-events" id="nac-articles">
                         <!-- Content here is dynamically loaded -->
                     </div>
+
+                    <!-- Upcoming Events -->
                     <div class="nac-upcoming-events">
                         <article>
                             <div class="article-image">
@@ -302,10 +339,10 @@
                                 </div>
                             </div>
                         </article>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div> <!-- .nac-upcoming-events -->
+                </div> <!-- .nac-cards -->
+            </div> <!-- .news-and-events-container -->
+        </div> <!-- #news-and-events -->
     </main>
 
     <!-- Footer -->

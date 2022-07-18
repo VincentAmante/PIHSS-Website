@@ -4,7 +4,11 @@
 
     // Handles article deletion
     if (isset($_GET['delete-article'])){
+
+        // ID to delete
         $articleId = $_GET['delete-article'];
+
+        // Connects and acquires article
         if ($conn->connect_error){
             die('Connection Failure : ' + $conn->connect_error);
         } else {
@@ -13,19 +17,17 @@
             $article = mysqli_fetch_assoc($articleQuery);
         }  
 
+
+
         if ($article != NULL){
+
+            // Deletes thumbnail
             if (unlink('../' . $article['img'])){
+                // Article deleted
             }
-            else {
-                echo 'File not deleted';
-            }
-        
             $sql = "DELETE FROM articles WHERE id='$articleId'";
-        
             if ($conn->query($sql) === TRUE) {
                 // echo "Record deleted successfully" . '<br>';
-              } else {
-                echo "Error deleting record: " . $conn->error . '<br>';
             }
         }
     }
@@ -41,6 +43,7 @@
         }
 
         if ($gallery != NULL){
+            // Deletes folder and contents
             $deleteSuccessful = removeFolder('gallery-folders', $gallery['folderName']);
 
             if ($deleteSuccessful){
@@ -49,13 +52,9 @@
                         // Unlink failed
                     }
                 }
-
                 $sql = "DELETE FROM galleries WHERE id='$galleryId'";
-            
                 if ($conn->query($sql) === TRUE) {
                     // echo "Record deleted successfully" . '<br>';
-                  } else {
-                    echo "Error deleting record: " . $conn->error . '<br>';
                 }
             }
         }
@@ -64,6 +63,7 @@
     // Handles registration deletion
     if (isset($_GET['delete-registration'])){
         $registrationId = $_GET['delete-registration'];
+
         if ($conn->connect_error){
             die('Connection Failure : ' + $conn->connect_error);
         } else {
@@ -78,8 +78,6 @@
             
             if ($conn->query($sql) === TRUE) {
                 // echo "Record deleted successfully" . '<br>';
-              } else {
-                echo "Error deleting record: " . $conn->error . '<br>';
             }
         }
     }
@@ -98,6 +96,8 @@
 </head>
 <body>
     <main>
+
+        <!-- Articles -->
         <section>
             <div class="section-container">
                 <h1>Articles</h1>
@@ -123,6 +123,8 @@
                 </table>
             </div>
         </section>
+
+        <!-- Galleries -->
         <section>
             <div class="section-container">
                 <h1>Galleries</h1>
@@ -148,6 +150,8 @@
                 </table>
             </div>
         </section>
+
+        <!-- Activities -->
         <section>
             <div class="section-container">
                 <h1>Co-Curricular Activities</h1>
@@ -173,6 +177,8 @@
                 </table>
             </div>
         </section>
+
+        <!-- Registration Form Submissions -->
         <section>
             <div class="section-container">    
                 <h1>Registration Form Submissions</h1>
@@ -227,6 +233,7 @@
                 }
             })
         });
+
         $(document).ready(() => {
             $.ajax({
                 type: "GET",

@@ -1,5 +1,10 @@
 <?php
-    // Including the folder name helps ensure the wrong file is not deleted
+    /***
+     * Removes folder from an assets directory, along with contents
+     * 
+     * @param mixed $folderName Name of folder, must be among those safe to delete
+     * @param mixed $folderEntry specific entry to be deleted
+     */
     function removeFolder($folderName, $folderEntry) {
 
         // Safeguard against deleting the folder
@@ -25,11 +30,14 @@
             return false;
         }
 
+        // Directory of all galleries
+        // ! Should be made more adaptable
         $dir = '..' 
         . DIRECTORY_SEPARATOR . 'assets' 
         . DIRECTORY_SEPARATOR . $folderName
         . DIRECTORY_SEPARATOR . $folderEntry;
 
+        // Deletes folder and contents
         $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
         $files = new RecursiveIteratorIterator($it,
                     RecursiveIteratorIterator::CHILD_FIRST);

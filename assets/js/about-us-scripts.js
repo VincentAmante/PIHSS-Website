@@ -1,21 +1,26 @@
-// Code for the tabs
-const tabs = document.querySelectorAll('input[name="about-us-group"]');
+/**
+ * PURPOSE: Handle the code in the about-us page (/about-us.php)
+ * 
+ * CONTENT: Code contains handling for the tabs system
+ */
 
-let selectedTab = "values";
+// Gets all radio inputs, each one representing a tab in the page
+const tabs = $('input[name="about-us-group"]');
 
-const tab_container = document.getElementById("about-us-tabs");
-tab_container.addEventListener("click", () => {
+// Container of tab inputs
+const tabContainer = $("#about-us-tabs");
+
+tabContainer.on("click", () => {
 	for (const btn of tabs) {
 		if (btn.checked) {
-			document.getElementById(selectedTab + "-content").classList.remove("active");
-			document.getElementById(selectedTab + "-img").classList.remove("active");
-			document.getElementById("tab-" + selectedTab).classList.remove("active");
+			// Removes all current elements with the 'active' class
+			$(".active").removeClass("active");
 
-			const value = btn.getAttribute("value");
-			document.getElementById(value + "-content").classList.add("active");
-			document.getElementById(value + "-img").classList.add("active");
-			document.getElementById("tab-" + value).classList.add("active");
-			selectedTab = value;
+			// Adds active class to elements with the following class names
+			const value = $(btn).attr("value");
+			$('#' + value + "-content").addClass("active");
+			$('#' + value + "-img").addClass("active");
+			$('#' + "tab-" + value).addClass("active");
 		}
 	}
 });

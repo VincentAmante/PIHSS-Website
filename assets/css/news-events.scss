@@ -1,6 +1,9 @@
+// Imports
 @import "./scss/_variables.scss";
 @import "./scss/_slider-btn.scss";
 
+
+// Base Styling
 body, html {
 	scroll-behavior: smooth;
     height: 100%
@@ -77,6 +80,7 @@ main, section {
                 }
             }
     
+            
             .article-content {
                 height: 100%;
                 width: 100%;
@@ -108,9 +112,9 @@ main, section {
                     padding-inline: 2em;
                 }
             }
-        }
-    }
-}
+        } // article
+    } // .news
+} // .news-container
 
 
 @media screen and (max-width: $breakpoint-tablet-landscape){

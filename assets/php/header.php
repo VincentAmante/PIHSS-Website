@@ -1,6 +1,12 @@
+<!-- Template for header -->
 <header class="header top-header-up" id="header">
+
+    <!-- Header Content -->
     <div class="header-content" id="header-content">
+
+        <!-- Top-Header -->
         <div class="top-header" id="top-header">
+
             <a class="logo-container" href="./index.php">
                 <div class="header-logo">
                     <img src="./assets/images/global/logo_main.png" alt="Logo of the school">
@@ -10,6 +16,8 @@
                     <h2>Higher Secondary School</h2>
                 </div>
             </a>
+
+            <!-- Contacts to the main webssite -->
             <div class="header-contacts">
                 <a href="mailto:info@pihss-shj.com" class="contact">
                     <svg viewBox="0 0 24 24">
@@ -25,6 +33,8 @@
                 </a>
             </div>
         </div>
+
+        <!-- Navigation Links -->
         <nav class="nav" id="nav">
             <ul class="nav-links">
                 <li class="nav-element"><a href="index.php">Home</a></li>
@@ -68,7 +78,7 @@
                 </li>
                 <li class="nav-element"><a href="contact-us.php">Contact Us</a></li>
             </ul>
-        </nav>
+        </nav> <!-- #nav -->
     </div>
     <!-- Burger -->
     <div class="burger burger-alone" id="burger">

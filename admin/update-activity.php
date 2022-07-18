@@ -21,28 +21,37 @@
         // Verifies images first
         $imagesValid = true;
         $finalOutput = " ";
+
+        // Array to store directories of images
         $imgArr = array();
 
         $imgDirectory = "./assets/gallery-folders/" . $gallery['folderName'] . '/';
         $getImgFrom = 'gallery_images';
 
+        // Uploads all new valid images to the folder
         foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
             if ($imgName != ""){
                 $result = uploadImage($imgDirectory, $imgName, $getImgFrom, $index);
                 if ($result != false){
+
+                    // Adds to images array
                     array_push($imgArr, new Image($result));
                 }
            }
         }
 
         $finalOutput = json_encode($imgArr);
+
+        // Gets existing array of images from database, if exists
         $galleryFiles = json_decode($gallery['images']);
+
         // Handles entries for deletion
         // Locates entries to be deleted, before updating the array
         if (isset($_POST['deletion-entries'])){
             deleteImages($galleryFiles, $_POST['deletion-entries']);
         }
 
+        // Merges existing and new image arrays
         if ($galleryFiles != null){
             $finalOutput = json_encode(array_merge($galleryFiles, $imgArr));
         }
@@ -59,10 +68,11 @@
         }
     }
 
-    // Edits the gallery's text content
+    // Updates gallery text content
     if (isset($_POST['save-gallery-content'])
     && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
     && $galleryId != null){
+
         $galleryTitle = $_POST['gallery-title'];
         $galleryCreationDate = $_POST['gallery-doc'];
         $galleryContent = $_POST['input-html'];
@@ -103,16 +113,21 @@
                         $rand = rand();
                         $_SESSION['rand'] = $rand;
                     ?>
+                    <!-- Title -->
                     <div class="form-item">
                         <label for="gallery-title">Title</label>
                         <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required value="<?php echo $gallery['title']?>">
                     </div>    
+
+                    <!-- Publishing Date -->
                     <div class="form-item">
                         <label for="gallery-doc">Date of Creation</label>
                         <input type="date" name="gallery-doc" required value=<?php echo $gallery['creationDate']?>>
                     </div>
+
+                    <!-- Description -->
                     <div class="form-item">
-                        <label for="gallery-content">Content</label>
+                        <label for="gallery-content">Description</label>
                         <div>          
                             <input name="input-delta" type="hidden">
                             <input name="input-html" type="hidden">
@@ -122,6 +137,7 @@
                         </div>
                     </div>
 
+                    <!-- Image Gallery -->
                     <div class="form-item" id="gallery-view">
                         <label for="fileElem">Upload images to the gallery</label>
                         <input type="file" 
@@ -130,26 +146,30 @@
                             id="fileElem" 
                             onchange="handleFiles(this.files)">
                     </div>
-                    <progress id="progress-bar" max=100 value=0></progress>
 
+                    <!-- New Images Preview -->
                     <h2>Image Additions</h2>
                     <div class="multiple-file-preview" id="gallery">
 
                     </div>
 
+                    <!-- Existing Images Preview -->
                     <h2>Existing Images</h2>
                     <div class="multiple-file-preview" id="current-gallery">
 
                     </div>
+
+                    <!-- Form Buttons -->
                     <div class="form-item form-item-empty">
                         <div class="buttons">
                             <button class="form-button form-submit" name="save-gallery-content">Save</button>
                             <button class="form-button form-reset" type="reset">Clear Input</button>
                         </div>
                     </div>
+
                     <input type="hidden" value="<?php echo $rand; ?>" name="rand-check">
-                </form>
-            </div>
+                </form> <!-- #admin-form -->
+            </div> <!-- .form-wrapper -->
         </section>
     </main>
     

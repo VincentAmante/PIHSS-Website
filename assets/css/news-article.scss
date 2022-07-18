@@ -1,6 +1,9 @@
+// Imports
 @import "./scss/_variables.scss";
 @import "./scss/_slider-btn.scss";
 
+
+// Base Stylings
 body,
 html {
 	scroll-behavior: smooth;
@@ -107,7 +110,7 @@ h2 {
 							transform: scale(1.1);
 						}
 					}
-				}
+				} // .article-img
 
 				.article-text {
 					margin-left: 2.5vw;
@@ -122,10 +125,10 @@ h2 {
 						margin-bottom: 2em;
 					}
 				}
-			}
-		}
-	}
-}
+			} // article
+		} // .content
+	} // .article-viewer
+} // .article-viewer-wrapper
 
 @media screen and (max-width: $breakpoint-tablet-portrait) {
 	.article-viewer-wrapper {

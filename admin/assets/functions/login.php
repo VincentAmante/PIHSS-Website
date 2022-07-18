@@ -12,6 +12,8 @@
     $queryResult = mysqli_fetch_assoc($stmt->get_result());
 
     if ($queryResult != null && password_verify($adminPass, $queryResult['password'])){
+
+        // Saves session variables
         $_SESSION['admin-user'] = $adminUser;
         $_SESSION['admin-is-primary'] = $queryResult['isPrimary'];
         header("Location: manage-pages.php");

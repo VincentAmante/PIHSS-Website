@@ -1,6 +1,13 @@
+/**
+ * PURPOSE: Handle client-side validation for the registration form
+ * 
+ * Easily modifiable
+ */
+
+// Form element
 const registrationForm = $('.registration-form');
 
-// All input elements of registration (excluding images)
+// All input elements of registration (excluding images, which are covered by validateImages())
 const studentName = $('#student-name');
 const studentGender = $("input[name='student-gender']");
 const birthDate = $('#date-of-birth');
@@ -13,45 +20,45 @@ const fatherNumber = $('#father-number');
 const motherNumber = $('#mother-number');
 const fatherEmail = $('#father-email');
 
-// State changes to verify on change
+// State changes to validate on change
 $(studentName).on("change focusout", function(){
-    verifyNotEmpty($(this), 'Student name');
+    checkNotEmpty($(this), 'Student name');
 });
 
 $(birthDate).on("change focusout", function(){
-    verifyNotEmpty($(this), 'Date of birth');
+    checkNotEmpty($(this), 'Date of birth');
 });
 
 $(eidNumber).on("change focusout", function(){
-    verifyEid();
+    validateEid();
 });
 
 $(eidIssue).on("change focusout", function(){
-    verifyNotEmpty($(this), 'EID issue date');
+    checkNotEmpty($(this), 'EID issue date');
 });
 
 $(eidExpiry).on("change focusout", function(){
-    verifyNotEmpty($(this), 'EID expiry date');
+    checkNotEmpty($(this), 'EID expiry date');
 });
 
 $(studentGrade).on("change focusout", function(){
-    verifyNotEmpty($(this), 'Student grade');
+    checkNotEmpty($(this), 'Student grade');
 });
 
 $(fatherName).on("change focusout", function(){
-    verifyNotEmpty($(this), 'Name');
+    checkNotEmpty($(this), 'Name');
 });
 
 $(fatherNumber).on("change focusout", function(){
-    verifyNotEmpty($(this), 'Mobile number');
+    checkNotEmpty($(this), 'Mobile number');
 });
 
 $(motherNumber).on("change focusout", function(){
-    verifyNotEmpty($(this), 'Mobile number');
+    checkNotEmpty($(this), 'Mobile number');
 });
 
 $(fatherEmail).on("change focusout", function(){
-    verifyEmail(fatherEmail);
+    validateEmail(fatherEmail);
 });
 
 // Checks everything before submitting, ensures all fields are valid
@@ -61,12 +68,10 @@ registrationForm.submit(e=>{
     checkInputs();
 
     if (formIsValid){
+
         // Unbinds submission before submitting
         registrationForm.off().submit();
-    } else {
-        
     }
-
     return false;
 })
   
@@ -84,6 +89,7 @@ function isEmail(email) {
 }
 
 /**
+ * Adds error classes when invalid
  * 
  * @param {*} input input html element
  * @param {*} message - message to display on error
@@ -100,6 +106,7 @@ function setErrorFor(input, message){
 }
 
 /**
+ * Adds success classes when valid
  * 
  * @param {*} input input html element
  */
@@ -114,7 +121,7 @@ function setSuccessFor(input){
 }
 
 // Quick verification just to make sure field is not empty
-function verifyNotEmpty(input, name) {
+function checkNotEmpty(input, name) {
     inputValue = input.val().trim();
 
     if (isEmpty(inputValue)) {
@@ -126,7 +133,7 @@ function verifyNotEmpty(input, name) {
 }
 
 // Verification process for EID number
-function verifyEid() {
+function validateEid() {
     let eidValue = $(eidNumber).val().trim().replace(/-/, "");
 
     if (isEmpty(eidValue)) {
@@ -144,7 +151,7 @@ function verifyEid() {
 }
 
 // Ensures an option is selected
-function verifyGender() {
+function validateGender() {
     let isChecked = false;
     $(studentGender).each((index, obj)=>{
         if ($(obj).is(':checked')){
@@ -160,7 +167,7 @@ function verifyGender() {
     }
 }
 
-function verifyEmail(input){
+function validateEmail(input){
     let emailValue = $(input).val().trim();
     if (isEmpty(emailValue)){
         setErrorFor(input, 'Email cannot be empty');
@@ -175,22 +182,48 @@ function verifyEmail(input){
     };
 }
 
+
+/**
+ * Validates all FileUploader instances
+ *    - Currently limited to checking if they have an image inside 
+ *    - Adds error message if applicable
+ * 
+ * @returns bool - TRUE if all images valid, FALSE otherwise
+ */
+function validateImages(){
+    let imagesValid = true;
+  
+    $('.uploader-single').children('input').each((index, obj)=>{
+      if(obj.files.length < 1){
+        imagesValid = false;
+        $(obj).parents('.form-input').addClass('error');
+        $(obj).parents('.file-upload').children('small').text('Image is required');
+  
+        $(obj).change(function(){
+          $(this).parents('.form-input').removeClass('error');
+        })
+      }
+    })
+  
+    return imagesValid;
+}
+
 function checkInputs(){
     formIsValid = true;
 
-    // Verifies if all images have a file uploaded
-    formIsValid = (verifyImages()) ? formIsValid : false;
+    // Checks if all images have a file uploaded
+    formIsValid = (validateImages()) ? formIsValid : false;
 
-    // Verifies the various fields
-    verifyNotEmpty(studentName, "Student's name");
-    verifyNotEmpty(birthDate, "Birth date")
-    verifyGender();
-    verifyEid();
-    verifyNotEmpty(eidIssue, "EID issue date");
-    verifyNotEmpty(eidExpiry, "EID expiry date");
-    verifyNotEmpty(studentGrade, 'Student grade');
-    verifyNotEmpty(fatherName, 'Name');
-    verifyNotEmpty(fatherNumber, 'Mobile number');
-    verifyNotEmpty(motherNumber, 'Mobile number');
-    verifyEmail(fatherEmail);
+    // Re-validates
+    checkNotEmpty(studentName, "Student's name");
+    checkNotEmpty(birthDate, "Birth date")
+    validateGender();
+    validateEid();
+    checkNotEmpty(eidIssue, "EID issue date");
+    checkNotEmpty(eidExpiry, "EID expiry date");
+    checkNotEmpty(studentGrade, 'Student grade');
+    checkNotEmpty(fatherName, 'Name');
+    checkNotEmpty(fatherNumber, 'Mobile number');
+    checkNotEmpty(motherNumber, 'Mobile number');
+    validateEmail(fatherEmail);
 }

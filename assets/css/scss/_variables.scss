@@ -17,11 +17,11 @@ $font-colour: #383838;
 
 
 // Font-Sizes
+// Not enforced, just quick templates for re-using
 $font-size-small: clamp(10px, 1vw, 9rem);
 $font-size-normal: clamp(12px, 1vw, 10rem);
 $font-size-large: clamp(18px, 1.35vw, 12rem);
 $font-size-heading: clamp(18px, 2.1vw, 15rem);
-
 $font-size-huge: clamp(25px, 3vw, 20rem);
 
 // Breakpoints (for media queries)
@@ -38,4 +38,5 @@ $breakpoint-desktop-large: 1400px;
     align-items: center;
 }
 
+// Global margin for consistency
 $global-margin: 5vw;

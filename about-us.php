@@ -43,7 +43,7 @@
             </div>
 
             <!-- About Us Table -->
-            <section class="about-us">
+            <section class="about-us">          
                 <div class="about-us-container">
                     <div class="image content-container">
                         <div class="tab-content active" id="values-img">
@@ -58,7 +58,7 @@
                         <div class="tab-content" id="religious-background-img">
                             <img src="./assets/images/placeholders/staff_5.jpg" alt="">
                         </div>
-                    </div>
+                    </div> <!-- content-container -->
                     <div class="content">
                         <div id="about-us-tabs" class="content-headers">
                             <input type="radio" id="tab-values" value="values" name="about-us-group" class="tab" checked>
@@ -72,7 +72,8 @@
 
                             <input type="radio" id="tab-religious-background" value="religious-background" name="about-us-group" class="tab">
                             <label for="tab-religious-background">Religious Background</label>
-                        </div>
+                        </div><!-- #about-us-tabs -->
+
                         <div class="content-text">
                             <div id="values-content" class="tab-content active">
                                 <div>
@@ -104,7 +105,7 @@
                                         </li>
                                     </ol>
                                 </div>
-                            </div>
+                            </div> <!-- #values-content -->
                             <div id="vision-mission-content" class="tab-content">
                                 <div>
                                     <h1>Vision</h1>
@@ -140,7 +141,7 @@
                                     </ul>
                                     </p>
                                 </div>
-                            </div>
+                            </div> <!-- #vision-mission-content -->
                             <div id="our-history-content" class="tab-content">
                                 <div>
                                     <p>
@@ -176,7 +177,7 @@
                                         Pakistan Islamia Higher Secondary School, Sharjah.
                                     </p>
                                 </div>
-                            </div>
+                            </div> <!-- #our-history-content -->
                             <div id="religious-background-content" class="tab-content">
                                 <div>
                                     <p>
@@ -191,11 +192,11 @@
                                         important features of our co-curricular activities.
                                     </p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                            </div> <!-- #religious-background-content -->
+                        </div> <!-- .content-text -->
+                    </div> <!-- .content -->
+                </div><!-- .about-us-container -->
+            </section> <!-- .about-us -->
 
             <!-- Principal's Message -->
             <section class="principal-message">
@@ -228,15 +229,15 @@
                                 expedita placeat, minima error nulla beatae numquam architecto laudantium. Veniam
                                 pariatur ipsam itaque, est tenetur ipsa ea veritatis praesentium incidunt placeat quis!
                             </p>
-                        </div>
+                        </div> <!-- message-content -->
 
                         <div class="message-signature">
                             <h2>PRINCIPAL'S NAME</h2>
                             <p>Principal, Pakistan Islamia Higher Secondary School</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        </div> <!-- message-container -->
+                    </div> <!-- .principal-text -->
+                </div> <!-- .principal-message-container -->
+            </section> <!-- .principal-message -->
 
             <!-- List of Principals -->
             <section class="principal-timeline">
@@ -410,14 +411,15 @@
                             </div>
                         </li>
                     </ul>
-                </div>
-            </section>
-        </div>
+                </div> <!-- principal-timeline-container -->
+            </section> <!-- principal-timeline -->
+        </div> <!-- about-us-wrapper -->
     </main>
 
     <!-- Footer -->
     <?php include('./assets/php/footer.php') ?>
     <script src="./assets/js/global-scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/about-us-scripts.js"></script>
 </body>
 

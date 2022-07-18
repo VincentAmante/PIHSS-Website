@@ -16,44 +16,52 @@
     <main>
         <section>
             
-        <div class="form-wrapper">
-            <form class="admin-form" id="admin-form" action="./assets/functions/submit-gallery-page.php" method="POST" enctype="multipart/form-data">
-                <div class="form-item">
-                    <label for="gallery-title">Title</label>
-                    <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required placeholder="Gallery Title">
-                </div>
-                <div class="form-item">
-                    <label for="gallery-creation-date">Publishing Date</label>
-                    <input type="date" name="gallery-creation-date" required value="<?php echo date("Y-m-d")?>">
-                </div>
-                <div class="form-item">
-                    <label for="gallery-description">Description</label>
-                    <div>
-                        <input name="input-delta" type="hidden">
-                        <input name="input-html" type="hidden">
-                        <div class="editor-container" id="editor-container">
-                        </div>                
-                    </div>
-                </div>
-                <div class="form-item">
-                    <label for="">Upload Image</label>
-                    <label class="uploader-single" ondragover="return false">
-                        <i class="icon-upload icon"></i>
-                        <img src="" class="" id="form-img">
-                        <input type="file" accept="image/*" name="gallery-image" id="gallery-image" required>
-                    </label>
-                </div>
-                <div class="form-item form-item-empty">
-                    <div class="buttons">
-                        <button class="form-button form-submit" name="add-gallery">Publish</button>
-                        <button class="form-button form-reset" type="reset">Clear</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        </section>
+            <div class="form-wrapper">
+                <form class="admin-form" id="admin-form" action="./assets/functions/submit-gallery-page.php" method="POST" enctype="multipart/form-data">
 
-        <div id="editorjs"></div>
+                    <!-- Title -->
+                    <div class="form-item">
+                        <label for="gallery-title">Title</label>
+                        <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required placeholder="Gallery Title">
+                    </div>
+
+                    <!-- Publishing Date -->
+                    <div class="form-item">
+                        <label for="gallery-creation-date">Publishing Date</label>
+                        <input type="date" name="gallery-creation-date" required value="<?php echo date("Y-m-d")?>">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-item">
+                        <label for="gallery-description">Description</label>
+                        <div>
+                            <input name="input-delta" type="hidden">
+                            <input name="input-html" type="hidden">
+                            <div class="editor-container" id="editor-container">
+                            </div>                
+                        </div>
+                    </div>
+
+                    <!-- Image Thumbnail -->
+                    <div class="form-item">
+                        <label for="">Upload Image</label>
+                        <label class="uploader-single" ondragover="return false">
+                            <i class="icon-upload icon"></i>
+                            <img src="" class="" id="form-img">
+                            <input type="file" accept="image/*" name="gallery-image" id="gallery-image" required>
+                        </label>
+                    </div>
+
+                    <!-- Form Buttons -->
+                    <div class="form-item form-item-empty">
+                        <div class="buttons">
+                            <button class="form-button form-submit" name="add-gallery">Publish</button>
+                            <button class="form-button form-reset" type="reset">Clear</button>
+                        </div>
+                    </div>
+                </form> <!-- #admin-form -->
+            </div> <!-- .form-wrapper -->
+        </section>
     </main>
     
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>

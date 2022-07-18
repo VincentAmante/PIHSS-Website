@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
+    <title>Admin Login Page</title>
 
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/admin-page.css">
@@ -19,20 +19,25 @@
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
             <h1>Login</h1>
             <div class="content">
-            <div class="input-field">
-                <input type="text" placeholder="User" autocomplete="nope" name="pihss-admin-username">
+                <!-- Username -->
+                <div class="input-field">
+                    <input type="text" placeholder="User" autocomplete="nope" name="pihss-admin-username">
+                </div>
+
+                <!-- Password -->
+                <div class="input-field">
+                    <input type="password" placeholder="Password" autocomplete="new-password" name="pihss-admin-password">
+                </div>
             </div>
-            <div class="input-field">
-                <input type="password" placeholder="Password" autocomplete="new-password" name="pihss-admin-password">
-            </div>
+            
             <!-- <a href="#" class="link">Forgot Your Password?</a> -->
-            </div>
+            <!-- Sign In Button -->
             <div class="action">
-            <button name="login-btn">Sign in</button>
-            <!-- <button>Forgot Password</button> -->
+                <button name="login-btn">Sign in</button>
+                <!-- <button>Forgot Password</button> -->
             </div>
         </form>
-    </section>
+    </section> <!-- .login-form -->
     </main>
 </body>
 </html>

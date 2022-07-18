@@ -67,7 +67,7 @@
                 documents within 3 days.
               </li>
             </ul>
-          </div>
+          </div> <!-- .content -->
 
           <!-- Internal Navigation -->
           <div class="internal-nav">
@@ -80,7 +80,7 @@
                 <li><a href="#registration">Registration</a></li>
               </ul>
             </div>
-          </div>
+          </div> <!-- .internal-nav -->
         </div>
 
         <!-- Admissions Process -->
@@ -123,7 +123,7 @@
               </div>
             </li>
           </ul>
-        </div>
+        </div> <!-- .admissions-process -->
 
         <!-- Admissions Requirements -->
         <div id="requirements" class="admissions-requirements">
@@ -188,10 +188,10 @@
                 </li>
               </ul>
             </li>
-          </ol>
+          </ol> <!-- .documents-list -->
         </div>
-      </div>
-    </section>
+      </div> <!-- .admissions-container -->
+    </section> <!-- #admissions -->
 
     <!-- Fee Structure -->
     <section id="fee-structure" class="fee-structure">
@@ -203,7 +203,7 @@
       </p>
 
       <!-- Table for Fees -->
-      <div class="table-wrapper">
+      <div id="fees-table" class="table-wrapper">
         <table>
           <tr>
             <th scope="col">S. No.</th>
@@ -241,7 +241,7 @@
             <td>AED 8,000</td>
           </tr>
         </table>
-      </div>
+      </div> <!-- #fees-table -->
 
       <div class="fees-note">
         <h3>Note:</h3>
@@ -263,7 +263,7 @@
             Fee paid at the time of admission is non-refundable if the student fails to join the School.
           </li>
         </ul>
-      </div>
+      </div> <!-- .fees-note -->
 
       <div class="sibling-concession">
         <h2>BROTHER / SISTER CONCESSION</h2>
@@ -273,7 +273,7 @@
           <li>Dhs.30/= from Class VI to Class: X Applicable from 3rd child onwards.</li>
           <li>Dhs.60/= for XI & XII Applicable from 2nd child onwards if both are studying in college section.</li>
         </ul>
-      </div>
+      </div> <!-- .sibling-concession -->
 
       <div class="school-transport">
         <h2>SCHOOL TRANSPORT</h2>
@@ -317,7 +317,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> <!-- .school-transport -->
     </section>
 
     <!-- Student Code of Behavior -->
@@ -370,7 +370,7 @@
               Lost or damaged library books and materials should be replaced
             </li>
           </ol>
-        </div>
+        </div> <!-- .student-code-content -->
 
         <div class="student-code-note">
           <h3>Note:</h3>
@@ -400,7 +400,7 @@
               A student expelled from the institute shall not be re-admitted.
             </li>
           </ul>
-        </div>
+        </div> <!-- .student-code-note -->
 
         <div class="leave-procedure">
           <h2>LEAVE PROCEDURE</h2>
@@ -412,8 +412,8 @@
             </li>
           </ol>
         </div>
-      </div>
-    </section>
+      </div> <!-- .student-code-container -->
+    </section> <!-- #student-code -->
 
     <!-- Registration -->
     <section id="registration" class="registration">
@@ -428,14 +428,20 @@
             <td class="form-label">
               <label for="student-name">Student name</label>
             </td>
+
             <td class="form-input">
               <div class="main-body">
                 <input type="text" id="student-name" name="student-name" spellcheck="false" autocomplete="off" required>
+                
+                <!-- Displays status of validation -->
                 <div class="input-alerts">
                   <i class="fas fa-check-circle"></i>
                   <i class="fas fa-exclamation-circle"></i>
                 </div>
-              </div>
+
+              </div> <!-- .main-body -->
+
+              <!-- Displays any errors from form validation -->
               <small>Error Message</small>
             </td>
           </tr>
@@ -447,13 +453,15 @@
             </td>
             <td class="form-input">
               <div class="radio-group main-body">
+
+                <!-- Female -->
                 <div class="input-group">
-                  <!-- <label for="gender-female"></label> -->
                   <input id="gender-female" type="radio" name="student-gender" value="f" required>
                   Female
                 </div>
+
+                <!-- Male  -->
                 <div class="input-group">
-                  <!-- <label for="gender-female"></label> -->
                   <input id="gender-male" type="radio" name="student-gender" value="m" required>
                   Male
                 </div>
@@ -541,6 +549,8 @@
             <td class="form-input">
               <label class="file-upload">
                 <div class="upload-button">Add Files</div>
+                
+                <!-- Drag and drop images -->
                 <label class="uploader-single" ondragover="return false">
                   <i class="icon-upload icon"></i>
                   <img src="" class="" id="">
@@ -592,6 +602,7 @@
               <label for="student-class">Student Class</label>
             </td>
             <td class="form-input">
+              
               <!-- Class Options -->
               <select name="student-class" id="student-class" required>
                 <option value="">Choose grade</option>
@@ -712,21 +723,18 @@
           </tr>
 
         </table>
-      </form>
-    </section>
+      </form> <!-- #registration-form -->
+    </section> <!-- #registration -->
   </main>
 
   <!-- Footer -->
   <?php include('./assets/php/footer.php') ?>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/js/global-scripts.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/js/file-uploader-single.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
   <script src="assets/js/registration.js"></script>
-  <script>
-
-  </script>
 </body>
 
 </html>

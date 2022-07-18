@@ -1,21 +1,27 @@
 <?php
+
+    // Page requires the account logged in to be a primary account
     include "./assets/functions/header.php";
     if (isset($_SESSION['admin-is-primary'])){
         $isPrimary = $_SESSION['admin-is-primary'];
+
+        // Leave page if non-primary account
         if (!$isPrimary){
             header("Location: ./manage-pages.php");
             exit();
         }
+    } else {
+        exit();
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
-    <title>Admin Page</title>
-
+    <title>Admin Page - Add Account</title>
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/add-article.css">
     <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
@@ -23,50 +29,60 @@
 <body>
     <main>
         <section>
-            
-        <div class="form-wrapper">
-            <form class="admin-form dropzone" id="admin-form" action="./assets/functions/create-account.php" method="POST">
-                <div class="form-item">
-                    <label for="su-user">User</label>
-                    <input type="text" id="user" name="username" spellcheck="false" autocomplete="off" required placeholder="Username">
-                </div>
-                <div class="form-item">
-                    <label for="su-email">Email</label>
-                    <input type="email" id="email" name="email" spellcheck="false" autocomplete="off" required placeholder="Username">
-                </div>
-                <br>
-                <div class="form-item">
-                    <label for="su-password">Password</label>
-                    <input type="password" id="password" name="password" spellcheck="false" autocomplete="off" required minlength="8">
-                </div>
-                <div class="form-item">
-                    <label for="su-password">Confirm Password</label>
-                    <input type="password" id="password-retyped" name="password-retyped" spellcheck="false" autocomplete="off" required minlength="8">
-                </div>
-                <div class="form-item">
-                    <div class="is-primary-explanation">
-                        <p>Both accounts are capable of editing the website contents, but only primary accounts can create or delete other accounts.</p>
-                        <p>Create secondary accounts for when you want to give someone editing capabilities</p>
+            <div class="form-wrapper">
+                <form class="admin-form dropzone" id="admin-form" action="./assets/functions/create-account.php" method="POST">
+
+                    <!-- User -->
+                    <div class="form-item">
+                        <label for="su-user">User</label>
+                        <input type="text" id="user" name="username" spellcheck="false" autocomplete="off" required placeholder="Username">
                     </div>
-                    <div class="is-primary-options">    
-                        <label for="primary">Primary</label>
-                        <input type="radio" id="primary-option" name="is-primary" value="primary" required selected>
-                        <label for="primary">Secondary</label>
-                        <input type="radio" id="primary-option" name="is-primary" value="secondary" required>
+
+                    <!-- Email -->
+                    <div class="form-item">
+                        <label for="su-email">Email</label>
+                        <input type="email" id="email" name="email" spellcheck="false" autocomplete="off" required placeholder="Username">
                     </div>
-                </div>
-                <!-- <div class="form-item">
-                    <label for="article-doc">Publishing Date</label>
-                    <input type="date" name="article-doc" required value="<?php echo date("Y-m-d")?>">
-                </div> -->
-                <div class="form-item form-item-empty">
-                    <div class="buttons">
-                        <button class="form-button form-submit" name="create-account" value="create-account">Create Account</button>
-                        <button class="form-button form-reset" type="reset">Clear</button>
+                    <br>
+
+                    <!-- Password -->
+                    <div class="form-item">
+                        <label for="su-password">Password</label>
+                        <input type="password" id="password" name="password" spellcheck="false" autocomplete="off" required minlength="8">
                     </div>
-                </div>
-            </form>
-        </div>
+
+                    <!-- Password Confirm -->
+                    <div class="form-item">
+                        <label for="su-password">Confirm Password</label>
+                        <input type="password" id="password-retyped" name="password-retyped" spellcheck="false" autocomplete="off" required minlength="8">
+                    </div>
+
+
+                    <!-- Account Type -->
+                    <div class="form-item">
+                        <div class="is-primary-explanation">
+                            <p>Both accounts are capable of editing the website contents, but only primary accounts can create or delete other accounts.</p>
+                            <p>Create secondary accounts for when you want to give someone editing capabilities</p>
+                        </div>
+
+                        <div class="is-primary-options">    
+                            <label for="primary">Primary</label>
+                            <input type="radio" id="primary-option" name="is-primary" value="primary" required selected>
+                            <label for="primary">Secondary</label>
+                            <input type="radio" id="primary-option" name="is-primary" value="secondary" required>
+                        </div>
+                    </div>
+
+                    <!-- Form Buttons -->
+                    <div class="form-item form-item-empty">
+                        <div class="buttons">
+                            <button class="form-button form-submit" name="create-account" value="create-account">Create Account</button>
+                            <button class="form-button form-reset" type="reset">Clear</button>
+                        </div>
+                    </div>
+
+                </form> <!-- #admin-form -->
+            </div> <!-- .form-wrapper -->
         </section>
     </main>
     

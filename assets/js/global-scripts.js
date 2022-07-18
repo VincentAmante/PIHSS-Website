@@ -5,8 +5,9 @@ const nav = document.querySelector("nav");
 const navSlide = () => {
   const navLinks = document.querySelectorAll(".nav-links li");
 
-  // Toggles navigation to bea ctive when the burger is clicked
+  // Toggles navigation to be active when the burger is clicked
   burger.addEventListener("click", () => {
+
     // Toggles Nav
     nav.classList.toggle("nav-active");
     burger.classList.toggle("toggle");
@@ -36,39 +37,43 @@ document.addEventListener('click', function(event) {
   }
 });
 
-// Carousel Template
-// - Imperfect but should be capable of adapting to all carousels
-const createCarousel = (leftBtn, rightBtn, slider, rightOffset = 0) => {
+/**
+ * Creates a 'infinite' carousel based on provided width and buttons
+ *    - Main requirements:
+ *        - Slider already contains all elements for scrolling through
+ *        - All elements are of the same width
+ * 
+ * @param {*} leftBtn - button to scroll left
+ * @param {*} rightBtn - button to scroll right
+ * @param {*} slider - container of elements to scroll through, width and first child is used as measurement for scrolling through
+ * @param {*} rightOffset - Default 0: Slightly offsets value, somehow fixes occassional sizing issues
+ */
+function createCarousel(leftBtn, rightBtn, slider, rightOffset = 0) {
   leftBtn = document.getElementById(leftBtn);
   rightBtn = document.getElementById(rightBtn);
   let elementWidth = document.getElementById(slider).children[0].clientWidth;
   slider = document.getElementById(slider);
 
   const scrollLeft = () => {
-    if (slider.scrollLeft - elementWidth / 2 < 0){
+    if (slider.scrollLeft - elementWidth / 2 < 0) {
       slider.insertBefore(slider.lastElementChild, slider.children[0]);
     }
     slider.scrollLeft -= elementWidth;
-  }
+  };
   const scrollRight = () => {
-    if ((slider.scrollLeft + slider.clientWidth + elementWidth) > slider.scrollWidth){
+    if ((slider.scrollLeft + slider.clientWidth + elementWidth) > slider.scrollWidth) {
 
       // Smoothens out going to the right by ensuring scroll is not at maximum
       // - Not sure why this works
-      if (rightOffset > 0){
+      if (rightOffset > 0) {
         slider.scrollLeft -= elementWidth / rightOffset;
       }
-      
+
       slider.insertBefore(slider.firstElementChild, slider.lastElementChild.nextSibling);
     }
     slider.scrollLeft += elementWidth;
   };
 
-  leftBtn.onclick = () => {scrollLeft()};
-  rightBtn.onclick = () => {scrollRight()};
-
-  // slider.addEventListener('scroll', () => {
-  //   if (slider.scrollLeft = 0) {scrollLeft()};
-  //   if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){scrollRight()};
-  // })
+  leftBtn.onclick = () => { scrollLeft(); };
+  rightBtn.onclick = () => { scrollRight(); };
 }

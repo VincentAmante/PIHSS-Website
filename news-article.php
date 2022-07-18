@@ -51,9 +51,12 @@
                         </svg>
                     </div>
                 </div>
+
+                <!-- Contains list of article -->
                 <ul class="content" id="article-slider">
 
                 </ul>
+
                 <div class="slider-btn" id="article-btn-right">
                     <div class="icon">
                         <svg style="width:100%;height:100%" viewBox="0 0 24 24">
@@ -69,6 +72,7 @@
     <?php include('./assets/php/footer.php') ?>
 
     <!-- Scripts -->
+    <script src="./assets/js/global-scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         <?php
@@ -91,8 +95,6 @@
             })
         });
     </script>
-    <script src="./assets/js/global-scripts.js"></script>
-    <script src="./assets/js/article-scripts.js"></script>
 </body>
 
 </html>

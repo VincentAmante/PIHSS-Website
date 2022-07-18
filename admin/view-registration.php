@@ -2,6 +2,7 @@
     include "./assets/functions/header.php";
     $registrationId = $_GET['id'];
 
+    // Fetches specific registration
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
@@ -29,8 +30,11 @@
 <body>
     <main>
         <section>
+
+            <!-- Student Information -->
             <table>
                 <tbody>
+                    <!-- Student General Information -->
                     <tr>
                         <th>Student Name</th>
                         <td><?php echo $regEntry['studentName']?></td>
@@ -47,6 +51,8 @@
                         <th>Class</th>
                         <td><?php echo $regEntry['studentClass']?></td>
                     </tr>
+
+                    <!-- Emirates ID Info -->
                     <tr class="divider">
                         <th colspan="2">Emirates ID Info</th>
                     </tr>
@@ -78,6 +84,8 @@
                             </div>
                         </td>
                     </tr>
+
+                    <!-- Parents Info -->
                     <tr class="divider">
                         <th colspan="2">Parents Info</th>
                     </tr>
@@ -97,6 +105,8 @@
                         <th>Father's Email</th>
                         <td><?php echo $regEntry['fatherEmail']?></td>
                     </tr>
+
+                    <!-- Other Info -->
                     <tr class="divider">
                         <th colspan="2">Other Info</th>
                     </tr>

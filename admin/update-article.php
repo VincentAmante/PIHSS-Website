@@ -2,6 +2,7 @@
     include "./assets/functions/header.php";
     $articleId = $_GET['id'];
 
+    // Connects to Database, fetches article data
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
@@ -13,6 +14,7 @@
     }
 
     if (isset($_POST['update-article'])){
+
         // Fetches form contents
         $articleTitle = $_POST['article-title'];
         $articleCreationDate = $_POST['article-doc'];
@@ -21,6 +23,7 @@
         /// Handle Image Changes
         $imgName = $_FILES['article-image']['name'];  
         $origImgSrc = $_POST['img-src'];  
+
         // Changes image if the thumbnails are not the same
         if ($imgName != "" 
         && ('../' . $imgName != $origImgSrc)){
@@ -77,14 +80,20 @@
     <main>
         <div class="form-wrapper">
             <form class="admin-form" id="admin-form" action="<?php echo 'update-article.php?id=' . $article['ID'];?>" method="POST" enctype="multipart/form-data">
+                
+                <!-- Title -->
                 <div class="form-item">
                     <label for="article-title">Title</label>
                     <input type="text" id="article-title" name="article-title" spellcheck="false" autocomplete="off" required value="<?php echo $article['title']?>">
                 </div>
+
+                <!-- Publishing Date -->
                 <div class="form-item">
                     <label for="article-doc">Date of Creation</label>
                     <input type="date" name="article-doc" required value="<?php echo $article['creationDate']?>">
                 </div>
+
+                <!-- Article Content -->
                 <div class="form-item">
                     <label for="article-content">Content</label>
                     <div>          
@@ -95,6 +104,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Thumbnail -->
                 <div class="form-item">
                     <label for="">Upload Image</label>
                     <label class="uploader-single" ondragover="return false">
@@ -105,6 +116,8 @@
                     
                     <input type="hidden" name="img-src" id="img-src">
                 </div>
+
+                <!-- Form Buttons -->
                 <div class="form-item form-item-empty">
                     <label for="form-submit">Form Buttons</label>
                     <div class="buttons">
@@ -112,8 +125,8 @@
                         <button class="form-button form-reset" type="reset" value="Clear All" required>Clear</button>
                     </div>
                 </div>
-            </form>
-        </div>
+            </form> <!-- #admin-form -->
+        </div> <!-- .form-wrapper -->
     </main>
 
     

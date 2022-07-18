@@ -130,16 +130,22 @@
                         $rand = rand();
                         $_SESSION['rand'] = $rand;
                     ?>
+
+                    <!-- Title -->
                     <div class="form-item">
                         <label for="gallery-title">Title</label>
                         <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required value="<?php echo $gallery['title']?>">
                     </div>    
+
+                    <!-- Publishing Date -->
                     <div class="form-item">
                         <label for="gallery-doc">Date of Creation</label>
                         <input type="date" name="gallery-doc" required value=<?php echo $gallery['creationDate']?>>
                     </div>
+
+                    <!-- Description -->
                     <div class="form-item">
-                        <label for="gallery-content">Content</label>
+                        <label for="gallery-content">Description</label>
                         <div>          
                             <input name="input-delta" type="hidden">
                             <input name="input-html" type="hidden">
@@ -148,6 +154,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Thumbnail -->
                     <div class="form-item">
                         <label for="">Upload Image</label>
                         <label class="uploader-single" ondragover="return false">
@@ -159,6 +167,7 @@
                         <input type="hidden" name="img-src" id="img-src">
                     </div>
 
+                    <!-- Gallery -->
                     <div class="form-item" id="gallery-view">
                         <label for="fileElem">Upload images to the gallery</label>
                         <input type="file" 
@@ -167,13 +176,14 @@
                             id="fileElem" 
                             onchange="handleFiles(this.files)">
                     </div>
-                    <progress id="progress-bar" max=100 value=0></progress>
 
+                    <!-- Image Addition Previews -->
                     <h2>Image Additions</h2>
                     <div class="multiple-file-preview" id="gallery">
 
                     </div>
 
+                    <!-- Current Images Preview -->
                     <h2>Existing Images</h2>
                     <div class="multiple-file-preview" id="current-gallery">
 
@@ -185,8 +195,8 @@
                         </div>
                     </div>
                     <input type="hidden" value="<?php echo $rand; ?>" name="rand-check">
-                </form>
-            </div>
+                </form> <!-- #admin-form -->
+            </div> <!-- .form-wrapper -->
         </section>
     </main>
     

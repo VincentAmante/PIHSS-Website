@@ -1,4 +1,6 @@
 <?php
+    // Returns list of activities (for overview)
+
     require 'connect.php';
 
     if ($conn->connect_error){
@@ -6,8 +8,11 @@
     } else {
         $galleries = $conn->query("SELECT * from galleries WHERE isActivity=1 ORDER BY creationDate DESC");
     }
+    
     while ($data = $galleries->fetch_assoc()):?>
     <?php $updateUrl = "update-activity.php?id=" . $data['ID'];?>
+
+
     <div class="row-item">
         <img src="<?php echo '../' . json_decode($data['images'], true)[0]['path']?>">
         <div class="title"><?php echo $data['title']?></div>
@@ -27,7 +32,6 @@
         </a>
     </div>
 <?php endwhile;?>
-
 <script>
     $('.delete-gallery').click(e => {
     event.preventDefault();

@@ -21,6 +21,8 @@
 ?>
     <main>
         <section>
+            
+            <!-- Accounts List -->
             <div class="section-container">
                 <h1>Accounts</h1>
                 <table>
@@ -44,10 +46,6 @@
                     </tfoot>
                 </table>
             </div>
-        </section>
-
-        <section>
-
         </section>
     </main>
     <script>

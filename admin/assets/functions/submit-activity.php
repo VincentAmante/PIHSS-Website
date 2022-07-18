@@ -5,6 +5,7 @@
     $galleryTitle = "";
     $uploadValid = true;
 
+    // Amount of images has to be more than 3
     if (isset($_FILES['gallery_images'])){
         if (count($_FILES['gallery_images']['name']) < 3){
             echo "

@@ -1,4 +1,8 @@
-// Source = 'https://codepen.io/coderalexis/pen/JvgrxN'
+/**
+ * PURPOSE: Handler for uploading single images
+ *   - Code sourced largely from https://codepen.io/coderalexis/pen/JvgrxN
+ *   - Contains modification near the end
+ */
 // START OF ACQUIRED CODE
 (function() {
   
@@ -96,34 +100,21 @@
     
 } ());
 
-let imageUploaders = [];
-let singleCounter = 0;
+// Heavy modification from source code this point on
+
+// Counter for single file uploaders
+let singleUploaderCount = 0;
+
+// Converts all elements with the provided class name to a FileUploader instance
 $('.uploader-single').each((index, obj)=>{
-  let newClass = 'uploader-single-' + singleCounter;
+  
+  // Creates a unique class name
+  // - Bandaid solution to FileUploaders not working with more than one FileUploaders in the page
+  let newClass = 'uploader-single-' + singleUploaderCount;
   obj.classList.add(newClass);
   obj.id = newClass;
+
   new FileUploader('.' + newClass);
-  singleCounter++;
+  singleUploaderCount++;
 });
 // END OF ACQUIRED CODE
-
-function verifyImages(){
-  let imagesValid = true;
-  console.log('hello');
-
-  $('.uploader-single').children('input').each((index, obj)=>{
-    if(obj.files.length < 1){
-      imagesValid = false;
-      $(obj).parents('.form-input').addClass('error');
-      $(obj).parents('.file-upload').children('small').text('Image is required');
-
-      $(obj).change(function(){
-        $(this).parents('.form-input').removeClass('error');
-      })
-      
-      console.log('hello-2');
-    }
-  })
-
-  return imagesValid;
-}
