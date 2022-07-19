@@ -80,7 +80,7 @@
         $updateQuery = $conn->prepare("UPDATE galleries 
         SET title = '$galleryTitle',
             creationDate = '$galleryCreationDate',
-            content = '$galleryContent'
+            description = '$galleryContent'
         WHERE id='$galleryId'");
         $updateQuery->execute();
     }
@@ -155,6 +155,7 @@
 
                     <!-- Existing Images Preview -->
                     <h2>Existing Images</h2>
+                    <p>Press image to delete</p>
                     <div class="multiple-file-preview" id="current-gallery">
 
                     </div>

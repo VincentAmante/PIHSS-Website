@@ -73,7 +73,6 @@
             }
         }
 
-
         // Repeats query to match update
         if ($conn->connect_error){
             die('Connection Failure : ' + $conn->connect_error);
@@ -185,6 +184,7 @@
 
                     <!-- Current Images Preview -->
                     <h2>Existing Images</h2>
+                    <p>Press image to delete</p>
                     <div class="multiple-file-preview" id="current-gallery">
 
                     </div>
