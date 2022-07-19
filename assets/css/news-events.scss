@@ -2,139 +2,184 @@
 @import "./scss/_variables.scss";
 @import "./scss/_slider-btn.scss";
 
-
 // Base Styling
-body, html {
+body,
+html {
 	scroll-behavior: smooth;
-    height: 100%
+	height: 100%;
 }
 
-main, section {
-    @include flex-centered;
-    padding: 0;
-    margin-bottom: 5vmax;
-    width: 100%;
+main,
+section {
+	@include flex-centered;
+	padding: 0;
+	margin-bottom: 5vmax;
+	width: 100%;
 }
 
+// News List
 .news-container {
-    @include flex-centered;
-    width: 100%;
-    padding-inline: $global-margin;
+	@include flex-centered;
+	width: 100%;
+	padding-inline: $global-margin;
 
-    .h1-border {
-        align-self: flex-start;
-        span {
-            padding: .00vw 5ch;
-            border-bottom: .5rem solid $dark;
-        }
-    }
+	.h1-border {
+		align-self: flex-start;
+		span {
+			padding: 0vw 5ch;
+			border-bottom: 0.5rem solid $dark;
+		}
+	}
 
-    .news {
-        @include flex-centered;
-        
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 2em;
-        row-gap: 1em;
+	.news {
+		@include flex-centered;
 
-        
-        article {
-            position: relative;
-    
-            border-radius: 0em 2em 0em 2em;
-    
-            overflow-x: hidden;
-            overflow-y: hidden;
-            aspect-ratio: 5/4;
-            transition: all .5 ease-in-out;
-            
-            &:hover {
-                img {
-                transform: scale(1.1);  
-                }
-            }
-    
-            .article-image {
-                height: 100%;
-    
-                img {
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                    aspect-ratio: 4/6;
-                    
-                    transition: all .5s ease-in-out;
-                }
-    
-            }
-    
-    
-            .article-text {
-                display: flex;
-                flex-direction: column;
-                max-width: 12rem;
-    
-                p {
-                    margin-bottom: .5em;
-                }
-            }
-    
-            
-            .article-content {
-                height: 100%;
-                width: 100%;
-    
-                position: absolute;
-                bottom: 0;
-    
-                display: flex;
-                align-items: flex-end;
-                
-    
-                    padding-bottom: 1em;
-                    padding-left: 1em;
-    
-                color: $primary-secondary;
-                background: rgb(0, 0, 0);
-                background: -moz-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
-                background: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
-                background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
-    
-    
-                .content-wrapper {
-                    flex-grow: 1;
-    
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding-inline: 2em;
-                }
-            }
-        } // article
-    } // .news
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 2em;
+		row-gap: 1em;
+
+		article {
+			position: relative;
+
+			border-radius: 0em 2em 0em 2em;
+
+			overflow-x: hidden;
+			overflow-y: hidden;
+			aspect-ratio: 5/4;
+			transition: all 0.5 ease-in-out;
+
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
+
+			.article-image {
+				height: 100%;
+
+				img {
+					object-fit: cover;
+					width: 100%;
+					height: 100%;
+					aspect-ratio: 4/6;
+
+					transition: all 0.5s ease-in-out;
+				}
+			}
+
+			.article-text {
+				display: flex;
+				flex-direction: column;
+				max-width: 12rem;
+
+				p {
+					margin-bottom: 0.5em;
+				}
+			}
+
+			.article-content {
+				height: 100%;
+				width: 100%;
+
+				position: absolute;
+				bottom: 0;
+
+				display: flex;
+				align-items: flex-end;
+
+				padding-bottom: 1em;
+				padding-left: 1em;
+
+				color: $primary-secondary;
+				background: rgb(0, 0, 0);
+				background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+				background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+
+				.content-wrapper {
+					flex-grow: 1;
+
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding-inline: 2em;
+				}
+			}
+		} // article
+	} // .news
 } // .news-container
 
+// Events Calendar
+#calendar {
+	margin: $global-margin;
+	width: 90vw;
+}
 
-@media screen and (max-width: $breakpoint-tablet-landscape){
-    .news-container {
-        .news {
-            grid-template-columns: repeat(2, 1fr);
-            article {
-                max-width: 45vw;
-            }
-        }
-    }
+.fc-state-default {
+	background-color: $dark;
+	background-image: none;
+	color: $primary-secondary;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0 1px 0 rgba($primary-main, 20%), 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.fc-head {
+	background-color: #dedede;
+}
+
+.fc-body {
+	background-color: #f9f9f9;
+}
+
+.fc-unthemed .fc-content,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-list-heading td,
+.fc-unthemed .fc-list-view,
+.fc-unthemed .fc-row,
+.fc-unthemed tbody,
+.fc-unthemed td {
+	border-color: rgba($font-colour, 50%);
+}
+
+.fc-content-skeleton thead {
+	background-color: $other;
+}
+
+.fc-basic-view .fc-day-number,
+.fc-basic-view .fc-week-number {
+	padding: 1px;
+	line-height: normal;
+}
+
+.fc-other-month {
+	background-color: #efefef;
+}
+
+.fc-body {
+	height: 80%;
+}
+
+@media screen and (max-width: $breakpoint-tablet-landscape) {
+	.news-container {
+		.news {
+			grid-template-columns: repeat(2, 1fr);
+			article {
+				max-width: 45vw;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $breakpoint-tablet-portrait) {
-    .news-container {
-        .news {
-            grid-template-columns: 1fr;
-            article {
-                max-width: 90vw;
-            }
-        }
-    }
+	.news-container {
+		.news {
+			grid-template-columns: 1fr;
+			article {
+				max-width: 90vw;
+			}
+		}
+	}
 }

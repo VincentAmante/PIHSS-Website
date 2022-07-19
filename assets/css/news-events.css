@@ -34,12 +34,14 @@
   color: #62AC3B;
 }
 
-body, html {
+body,
+html {
   scroll-behavior: smooth;
   height: 100%;
 }
 
-main, section {
+main,
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,6 +128,55 @@ main, section {
   align-items: center;
   justify-content: space-between;
   padding-inline: 2em;
+}
+
+#calendar {
+  margin: 5vw;
+  width: 90vw;
+}
+
+.fc-state-default {
+  background-color: #0F6938;
+  background-image: none;
+  color: #FFFFFF;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 0 rgba(27, 155, 85, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fc-head {
+  background-color: #dedede;
+}
+
+.fc-body {
+  background-color: #f9f9f9;
+}
+
+.fc-unthemed .fc-content,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-list-heading td,
+.fc-unthemed .fc-list-view,
+.fc-unthemed .fc-row,
+.fc-unthemed tbody,
+.fc-unthemed td {
+  border-color: rgba(56, 56, 56, 0.5);
+}
+
+.fc-content-skeleton thead {
+  background-color: #CFECC1;
+}
+
+.fc-basic-view .fc-day-number,
+.fc-basic-view .fc-week-number {
+  padding: 1px;
+  line-height: normal;
+}
+
+.fc-other-month {
+  background-color: #efefef;
+}
+
+.fc-body {
+  height: 80%;
 }
 
 @media screen and (max-width: 1024px) {

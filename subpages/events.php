@@ -21,30 +21,26 @@
     <div id='calendar'></div>
 </div>
 
-<!-- SCRIPTS -->
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- <script src="./calendarScript.js"></script> -->
+<!-- Scripts -->
 <script>
-    $('#calendar').fullCalendar();
-    $("#calendar").fullCalendar().appendTo("#calendar-container");
+    $(document).ready(function() {
 
-
-    document.addEventListener("DOMContentLoaded", function() {
-        console.log("scripts loading");
-        var calendarEl = document.getElementById("calendar");
-
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            headerToolbar: {
-                left: "prev,next today",
-                center: "title",
-                right: "dayGridMonth,listYear",
+        $('#calendar').fullCalendar({
+            themeSystem: 'standard',
+            header: {
+                left: 'prev, next',
+                center: 'title',
+                right: 'month,agendaWeek,listMonth'
             },
+            aspectRatio: 2,
+            weekNumbers: false,
+            eventLimit: true, // allow "more" link when too many events
             initialView: "dayGridMonth",
             eventColor: "#0f6938",
-            googleCalendarApiKey: "AIzaSyAsGenDe0TQE8hXkf5Z7o8mSN6gz5ut6v8",
-            events: "r715rphqoahom925dclifqcph0@group.calendar.google.com",
+            googleCalendarApiKey: "AIzaSyB0YUm15OfH1qIriXy_rDRLwrBgwkbYlxk",
+            events: {
+                googleCalendarId: "r715rphqoahom925dclifqcph0@group.calendar.google.com"
+            },
 
             eventClick: function(arg) {
                 // opens events in a popup window
@@ -52,11 +48,9 @@
 
                 // prevents current tab from navigating
                 arg.jsEvent.preventDefault();
-            },
+            }
         });
-        calendar.render();
+
+        $('#calendar').fullCalendar('render');
     });
 </script>
-
-<!-- STYLESHEET -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">

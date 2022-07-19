@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/gallery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" integrity="sha512-KXkS7cFeWpYwcoXxyfOumLyRGXMp7BTMTjwrgjMg0+hls4thG2JGzRgQtRfnAuKTn2KWTDZX4UdPg+xTs8k80Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/news-events.css">
     <link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
 </head>
 
@@ -65,6 +67,12 @@
     <script src="assets/js/global-scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- Scripts for FullCalendar-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js" integrity="sha512-o0rWIsZigOfRAgBxl4puyd0t6YKzeAw9em/29Ag7lhCQfaaua/mDwnpE2PVzwqJ08N7/wqrgdjc2E0mwdSY2Tg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/gcal.min.js" integrity="sha512-RNx7SF8EJxJ8DMmlgPg6bTZbMilWFlu883XE7OLXKAdEAlfRDjS4YPBHd0WMvCNHugxESvDZIlU+y1M06duXGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Load subpages -->
     <script>
         $(document).ready(function() {
             loadContent();
@@ -89,8 +97,11 @@
 
                     $("#overview").html(pageOverview);
                     $("#content").html(pageContent);
+                    $('#calendar').fullCalendar('render');
                 },
             });
+
+
         }
     </script>
 </body>
