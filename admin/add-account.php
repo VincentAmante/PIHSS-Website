@@ -41,7 +41,7 @@
                     <!-- Email -->
                     <div class="form-item">
                         <label for="su-email">Email</label>
-                        <input type="email" id="email" name="email" spellcheck="false" autocomplete="off" required placeholder="Username">
+                        <input type="email" id="email" name="email" spellcheck="false" autocomplete="off" required placeholder="Email">
                     </div>
                     <br>
 
@@ -49,6 +49,7 @@
                     <div class="form-item">
                         <label for="su-password">Password</label>
                         <input type="password" id="password" name="password" spellcheck="false" autocomplete="off" required minlength="8">
+                        <small>Password must be over 8 characters</small>
                     </div>
 
                     <!-- Password Confirm -->
