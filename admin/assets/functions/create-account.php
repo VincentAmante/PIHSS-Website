@@ -107,7 +107,7 @@
             $stmt->close();
             $conn->close();
 
-            header("Location: manage-accounts.php");
+            header("Location: ../manage-accounts.php");
         }
     }
 ?>
