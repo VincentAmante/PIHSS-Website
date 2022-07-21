@@ -28,7 +28,8 @@
         <div id="nav-breadcrumbs" class="nav-breadcrumbs">
             <ul>
                 <li><a href="./index.php">HOME</a></li>
-                <li><a href="./news-and-events.php">News and Events</a></li>
+                <li><a href="./gallery.php#our-gallery">GALLERY</a></li>
+                <li><a href="./gallery.php#news">NEWS</a></li>
                 <li><a href="javascript:window.location.reload(true)">Article</a></li>
             </ul>
         </div>
@@ -78,19 +79,19 @@
         <?php
         // If there is a get, gets that first
         $url = "./admin/assets/functions/get-article.php?";
-        if(isset($_GET['id'])){
+        if (isset($_GET['id'])) {
             $url = "./admin/assets/functions/get-article.php?id=" . $_GET['id'];
-        }?>
+        } ?>
 
         // Acquires article 
         $(document).ready(() => {
             $.ajax({
                 type: "GET",
-                url: "<?php echo $url?>",
+                url: "<?php echo $url ?>",
                 dataType: "html",
                 success: (data) => {
                     $('#article-slider').html(data);
-                    createCarousel('article-btn-left','article-btn-right','article-slider')
+                    createCarousel('article-btn-left', 'article-btn-right', 'article-slider')
                 }
             })
         });

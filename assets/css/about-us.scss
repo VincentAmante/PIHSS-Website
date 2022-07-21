@@ -22,6 +22,10 @@ h1 {
 
 .subpage-banner {
 	background-image: url("../images/placeholders/DSC07455.jpg");
+
+	h1 {
+		align-self: flex-end;
+	}
 }
 
 .about-us-wrapper {

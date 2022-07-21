@@ -43,8 +43,9 @@
 					<div>
 						<h2>Our School</h2>
 						<ul id="nav">
+							<!-- adjust the rest for school-activities -->
 							<li><a id="btn-facilities" class="tab-button" href="#facilities">Facilities</a></li>
-							<li><a id="btn-co-curricular" class="tab-button" href="#co-curricular">School Activities</a></li>
+							<li><a id="btn-school-activities" class="tab-button" href="#school-activities">School Activities</a></li>
 							<li><a id="btn-study-programme" class="tab-button" href="#study-programme">Study Programme</a></li>
 						</ul>
 					</div>
