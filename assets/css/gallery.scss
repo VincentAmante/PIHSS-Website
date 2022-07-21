@@ -18,15 +18,17 @@ section {
 	width: 100%;
 }
 
-h1 {
-	font-family: $font-primary;
-	font-weight: 500;
-}
+main {
+	h1 {
+		font-family: $font-primary;
+		font-weight: 500;
+	}
 
-h2 {
-	@extend h1;
-	font-weight: 700;
-	margin-bottom: 1em;
+	h2 {
+		@extend h1;
+		font-weight: 700;
+		margin-bottom: 1em;
+	}
 }
 
 #content {

@@ -15,7 +15,7 @@ section {
   width: 100%;
 }
 
-h1 {
+main h1 {
   font-family: "EB Garamond", serif;
   font-weight: 500;
   align-self: flex-start;

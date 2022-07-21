@@ -34,7 +34,7 @@
             <h2>Quick Links</h2>
             <ul>
                 <li><a href="./contact-us.php">Contact Us</a></li>
-                <li><a href="./our-school.php#co-curricular">Co-Curricular Activities</a></li>
+                <li><a href="./our-school.php#school-activities">School Activities</a></li>
                 <li><a href="">School Leaving Certificate</a></li>
                 <li><a href="./admin/index.php">Admin Page</a></li>
             </ul>
