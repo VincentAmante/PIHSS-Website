@@ -47,7 +47,7 @@
                     </a>
                     <ul>
                         <li><a href="our-school.php#facilities">Facilities</a></li>
-                        <li><a href="our-school.php#co-curricular">Co-Curricular Activities</a></li>
+                        <li><a href="our-school.php#school-activities">School Activities</a></li>
                         <li><a href="our-school.php#study-programme">Study Programme</a></li>
                     </ul>
                 </li>

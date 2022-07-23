@@ -75,7 +75,7 @@
 					</div>
 				</div>
 				<div class="contact-map">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae" allowfullscreen="" loading="lazy"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae" height="100%" width="100%" allowfullscreen="" loading="lazy"></iframe>
 				</div>
 			</div>
 		</section>
@@ -127,6 +127,24 @@
 	<?php include('./assets/php/footer.php') ?>
 
 	<script src="assets/js/global-scripts.js"></script>
+
+	<!-- Google Map API -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script>
+		var map;
+
+		function initialize() {
+			var mapOptions = {
+				zoom: 8,
+				center: new google.maps.LatLng(-34.397, 150.644),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			map = new google.maps.Map(document.getElementById('map_canvas'),
+				mapOptions);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </body>
 
 </html>

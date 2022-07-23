@@ -14,14 +14,20 @@ section {
 	width: 100%;
 }
 
-h1 {
-	font-family: $font-primary;
-	font-weight: 500;
-	align-self: flex-start;
+main {
+	h1 {
+		font-family: $font-primary;
+		font-weight: 500;
+		align-self: flex-start;
+	}
 }
 
 .subpage-banner {
 	background-image: url("../images/placeholders/DSC07455.jpg");
+
+	h1 {
+		align-self: flex-end;
+	}
 }
 
 .about-us-wrapper {

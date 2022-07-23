@@ -15,7 +15,7 @@ section {
   width: 100%;
 }
 
-h1 {
+main h1 {
   font-family: "EB Garamond", serif;
   font-weight: 500;
   align-self: flex-start;
@@ -23,6 +23,9 @@ h1 {
 
 .subpage-banner {
   background-image: url("../images/placeholders/DSC07455.jpg");
+}
+.subpage-banner h1 {
+  align-self: flex-end;
 }
 
 .about-us-wrapper {

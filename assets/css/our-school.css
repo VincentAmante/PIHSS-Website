@@ -50,17 +50,15 @@ section {
   width: 100%;
 }
 
-h1, h3, h2 {
+main h1, main h3, main h2 {
   font-family: "EB Garamond", serif;
   font-weight: 500;
 }
-
-h2 {
+main h2 {
   font-weight: 700;
   margin-bottom: 1em;
 }
-
-h3 {
+main h3 {
   margin-bottom: 1em;
 }
 
