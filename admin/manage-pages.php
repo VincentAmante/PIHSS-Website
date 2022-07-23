@@ -212,8 +212,7 @@
                     $('#articles-collection').html(data);
                 }
             })
-        });
-        $(document).ready(() => {
+
             $.ajax({
                 type: "GET",
                 url: "./assets/functions/get-galleries-list.php",
@@ -222,8 +221,7 @@
                     $('#galleries-collection').html(data);
                 }
             })
-        });
-        $(document).ready(() => {
+
             $.ajax({
                 type: "GET",
                 url: "./assets/functions/get-activities-list.php",
@@ -232,9 +230,7 @@
                     $('#activities-collection').html(data);
                 }
             })
-        });
 
-        $(document).ready(() => {
             $.ajax({
                 type: "GET",
                 url: "./assets/functions/get-registrations-list.php",

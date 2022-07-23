@@ -35,7 +35,7 @@
             </ul>
         </div>
 
-        <!-- Overview -->
+        <!-- Overview -->   
         <section class="gallery-overview">
             <div class="content main">
                 <div id="overview"></div>

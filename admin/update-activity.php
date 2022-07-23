@@ -5,8 +5,11 @@
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
-        $galleryQuery = $conn->query("SELECT * from galleries WHERE id='$galleryId'");
-        $gallery = mysqli_fetch_assoc($galleryQuery);
+        $galleryQuery = "SELECT * from galleries WHERE id=?";
+        $stmt = $conn->prepare($galleryQuery);
+        $stmt->bind_param('s', $galleryId);
+        $stmt->execute();
+        $gallery = mysqli_fetch_assoc($stmt->get_result());
     }
 
     include './assets/functions/handle-images.php';
@@ -19,32 +22,27 @@
         include './assets/functions/image-class.php';
 
         // Verifies images first
-        $imagesValid = true;
         $finalOutput = " ";
 
         // Array to store directories of images
         $imgArr = array();
-
         $imgDirectory = "./assets/gallery-folders/" . $gallery['folderName'] . '/';
         $getImgFrom = 'gallery_images';
-
+        
         // Uploads all new valid images to the folder
         foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
             if ($imgName != ""){
                 $result = uploadImage($imgDirectory, $imgName, $getImgFrom, $index);
                 if ($result != false){
-
                     // Adds to images array
                     array_push($imgArr, new Image($result));
                 }
            }
         }
-
         $finalOutput = json_encode($imgArr);
 
         // Gets existing array of images from database, if exists
         $galleryFiles = json_decode($gallery['images']);
-
         // Handles entries for deletion
         // Locates entries to be deleted, before updating the array
         if (isset($_POST['deletion-entries'])){
@@ -55,7 +53,6 @@
         if ($galleryFiles != null){
             $finalOutput = json_encode(array_merge($galleryFiles, $imgArr));
         }
-
         $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput' WHERE id='$galleryId'");
         $updateQuery->execute();
 
@@ -63,8 +60,11 @@
         if ($conn->connect_error){
             die('Connection Failure : ' + $conn->connect_error);
         } else {
-            $galleryQuery = $conn->query("SELECT * from galleries WHERE id='$galleryId'");
-            $gallery = mysqli_fetch_assoc($galleryQuery);
+            $galleryQuery = "SELECT * from galleries WHERE id=?";
+            $stmt = $conn->prepare($galleryQuery);
+            $stmt->bind_param('s', $galleryId);
+            $stmt->execute();
+            $gallery = mysqli_fetch_assoc($stmt->get_result());
         }
     }
 

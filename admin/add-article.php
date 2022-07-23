@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,13 +67,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/scripts/rich-text.js"></script>
     <script src="../assets/js/file-uploader-single.js"></script>
-
-    <script>
-        Dropzone.options.articleForm = { // camelized version of the `id`
-            paramName: "file", // The name that will be used to transfer the file
-            maxFilesize: 10, // MB
-            previewsContainer: "#sample",
-        };
-    </script>
 </body>
 </html>

@@ -11,6 +11,7 @@ if ($conn->connect_error) {
   $galleryImages = json_decode($gallery['images']);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

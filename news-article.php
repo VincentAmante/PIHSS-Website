@@ -28,7 +28,7 @@
         <div id="nav-breadcrumbs" class="nav-breadcrumbs">
             <ul>
                 <li><a href="./index.php">HOME</a></li>
-                <li><a href="./news-and-events.php">News and Events</a></li>
+                <li><a href="./gallery#news.php">News and Events</a></li>
                 <li><a href="javascript:window.location.reload(true)">Article</a></li>
             </ul>
         </div>
