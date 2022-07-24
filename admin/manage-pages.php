@@ -17,8 +17,6 @@
             $article = mysqli_fetch_assoc($articleQuery);
         }  
 
-
-
         if ($article != NULL){
 
             // Deletes thumbnail

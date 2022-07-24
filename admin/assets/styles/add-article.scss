@@ -13,6 +13,11 @@ main, section {
     width: 100%;
 }
 
+section {
+    padding-top: 2.5vw;
+    padding-inline: $global-margin;
+}
+
 .form-wrapper {
     min-width: 70%;
     display: flex;
@@ -23,6 +28,10 @@ main, section {
 
 header {
     position: static;
+}
+
+.calendar-wrapper {
+    margin-bottom: 1vw;
 }
 
 .admin-form {
@@ -106,4 +115,17 @@ header {
             }
         }
     }
+}
+
+  .delete-event {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $font-size-small;
+    height: $font-size-small;
+    text-align:center;
+    border-radius:50%;
+    font-size: 10px;
+    cursor: pointer;
 }

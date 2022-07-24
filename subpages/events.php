@@ -1,4 +1,5 @@
 <!-- Events -->
+<?php include '../admin/assets/functions/get-calendar-content.php'?>
 
 <!-- Overview -->
 <div class=" content-text" id="overview">
@@ -21,8 +22,18 @@
     <div id='calendar'></div>
 </div>
 
-<!-- Scripts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/add-to-calendar-button/assets/css/atcb.min.css">
 <script>
+    let eventsContent = JSON.parse(`<?php echo $eventsList?>`);
+    let eventsList = [];
+    let eventObjects = [];
+
+    eventsContent.forEach((element, index) => {
+        let newEvent = new CalendarEvent(element, index);
+        eventObjects.push(newEvent);
+        eventsList.push(newEvent.fullCalendarEvent);
+    });
+
     $(document).ready(function() {
 
         $('#calendar').fullCalendar({
@@ -38,17 +49,14 @@
             initialView: "dayGridMonth",
             eventColor: "#0f6938",
             googleCalendarApiKey: "AIzaSyB0YUm15OfH1qIriXy_rDRLwrBgwkbYlxk",
-            events: {
-                googleCalendarId: "r715rphqoahom925dclifqcph0@group.calendar.google.com"
+            events: eventsList,
+            
+            // Code for adding event to calendar
+            eventClick: function(event, jsEvent) {
+                let index = event.className[0].substr('id-'.length);
+                const eventConfig = eventObjects[index];
+                atcb_action(eventConfig.eventConfig, null);
             },
-
-            eventClick: function(arg) {
-                // opens events in a popup window
-                window.open(arg.event.url, "_blank", "width=600,height=600");
-
-                // prevents current tab from navigating
-                arg.jsEvent.preventDefault();
-            }
         });
 
         $('#calendar').fullCalendar('render');

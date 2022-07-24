@@ -1,5 +1,5 @@
 class CalendarEvent {
-    #className;
+    #id;
     #title;
     #startDate;
     #endDate;
@@ -12,19 +12,21 @@ class CalendarEvent {
         "Outlook.com",
         "Yahoo"
     ];
-    #timeZone = 'Asia/Dubai'; 
+    #timeZone = 'Asia/Dubai';
+    
+    index = 0;
 
-
-    constructor (event){
-        this.#className = event.id;
+    constructor (event, index=0){
+        this.#id = event.id;
         this.#title = event.title;
         this.#startDate = event.startDate;
         this.#endDate = (event.endDate == null) ? this.#startDate : event.endDate;
+        this.index = index;
     }
 
     get fullCalendarEvent(){
         return {
-            className: 'id-' + this.#className,
+            className: 'id-' + this.index,
             title: this.#title,
             start: this.#startDate,
             end: this.#endDate,
@@ -44,6 +46,10 @@ class CalendarEvent {
             "timeZone": this.#timeZone,
             "iCalFileName":"Reminder-Event"
           }
+    }
+    
+    get id(){
+        return this.#id;
     }
 }
 
