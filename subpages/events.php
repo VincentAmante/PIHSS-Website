@@ -1,5 +1,5 @@
 <!-- Events -->
-<?php include '../admin/assets/functions/get-calendar-content.php'?>
+<?php include '../admin/assets/functions/get-calendar-content.php' ?>
 
 <!-- Overview -->
 <div class=" content-text" id="overview">
@@ -18,13 +18,14 @@
 </div>
 
 <!-- Content -->
-<div id="calendar-container">
+<div class="tab-content" id="calendar-container">
     <div id='calendar'></div>
-</div>
+</div> <!-- #calendar-container -->
 
+<!-- Scripts -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/add-to-calendar-button/assets/css/atcb.min.css">
 <script>
-    let eventsContent = JSON.parse(`<?php echo $eventsList?>`);
+    let eventsContent = JSON.parse(`<?php echo $eventsList ?>`);
     let eventsList = [];
     let eventObjects = [];
 
@@ -50,7 +51,7 @@
             eventColor: "#0f6938",
             googleCalendarApiKey: "AIzaSyB0YUm15OfH1qIriXy_rDRLwrBgwkbYlxk",
             events: eventsList,
-            
+
             // Code for adding event to calendar
             eventClick: function(event, jsEvent) {
                 let index = event.className[0].substr('id-'.length);

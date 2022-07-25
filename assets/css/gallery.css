@@ -1,3 +1,4 @@
+/* Imports */
 /* Base Styling */
 body,
 html {
@@ -36,7 +37,6 @@ main h2 {
   min-width: 18vw;
 }
 
-/* Custom Scrollbar */
 /* Image gallery */
 .container {
   display: grid;

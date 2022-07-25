@@ -1,3 +1,5 @@
+/* Imports */
+/* Base Styling */
 body,
 html {
   scroll-behavior: smooth;
@@ -21,6 +23,7 @@ main h1 {
   align-self: flex-start;
 }
 
+/* Subpage Banner */
 .subpage-banner {
   background-image: url("../images/placeholders/DSC07455.jpg");
 }
@@ -28,6 +31,7 @@ main h1 {
   align-self: flex-end;
 }
 
+/* Wrapper */
 .about-us-wrapper {
   margin: 2.5vmax 5vw;
 }
@@ -38,6 +42,7 @@ main h1 {
   margin-bottom: 5vw;
 }
 
+/* About Us Table */
 .about-us .about-us-container {
   width: 100%;
   display: flex;
@@ -129,6 +134,7 @@ main h1 {
   font-weight: 600;
 }
 
+/* Principal's Message */
 .principal-message .principal-message-container {
   display: flex;
   flex-direction: row;
@@ -160,10 +166,7 @@ main h1 {
   font-size: 1em;
 }
 
-.hidden {
-  opacity: 0;
-}
-
+/* List of Principals */
 .principal-timeline .principal-timeline-container {
   display: flex;
   flex-wrap: wrap;

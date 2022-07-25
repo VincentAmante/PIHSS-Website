@@ -43,7 +43,7 @@
             </div>
 
             <!-- About Us Table -->
-            <section class="about-us">          
+            <section class="about-us">
                 <div class="about-us-container">
                     <div class="image content-container">
                         <div class="tab-content active" id="values-img">
@@ -418,6 +418,8 @@
 
     <!-- Footer -->
     <?php include('./assets/php/footer.php') ?>
+
+    <!-- Scripts -->
     <script src="./assets/js/global-scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/about-us-scripts.js"></script>

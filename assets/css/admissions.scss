@@ -1,5 +1,8 @@
+/* Imports */
 @import "./scss/_variables.scss";
 @import "../../assets/css/scss/_file-uploader.scss";
+
+/* Base Styling */
 body,
 html {
 	scroll-behavior: smooth;
@@ -15,7 +18,6 @@ section {
 }
 
 main {
-	
 	h1 {
 		font-family: $font-primary;
 		font-weight: 500;
@@ -31,40 +33,14 @@ main {
 		font-weight: 600;
 	}
 
-
 	img {
 		display: block;
 		max-width: 100%;
 		object-fit: cover;
 	}
 }
-.subpage-banner {
-	background-image: url("../images/placeholders/DSC07466.jpg");
-}
 
-.admissions-overview {
-	.internal-nav {
-		padding: 2em 0em;
-		min-width: 18vw;
-	}
-}
-
-.table-wrapper {
-	@include flex-centered;
-	align-items: flex-start;
-	position: relative;
-	overflow-x: scroll;
-	max-width: 85vw;
-
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	margin-block: 2.5em;
-}
-
+// Horizontal line seperator
 .admissions,
 .fee-structure,
 .student-code {
@@ -72,15 +48,18 @@ main {
 	border-bottom: 0.1rem solid hsla(0, 0%, 22%, 0.7);
 }
 
-.admissions-container {
-	padding: 2.5vmax $global-margin $global-margin;
-
-	& > div {
-		margin-bottom: 5vh;
-	}
+/* Subpage Banner */
+.subpage-banner {
+	background-image: url("../images/placeholders/DSC07466.jpg");
 }
 
+/* Admissions Overview */
 .admissions-overview {
+	.internal-nav {
+		padding: 2em 0em;
+		min-width: 18vw;
+	}
+
 	.note {
 		padding-left: 1em;
 		list-style: "- ";
@@ -91,6 +70,16 @@ main {
 	}
 }
 
+/* Admissions Container */
+.admissions-container {
+	padding: 2.5vmax $global-margin $global-margin;
+
+	& > div {
+		margin-bottom: 5vh;
+	}
+}
+
+/* Admissions Process */
 .admissions-process {
 	ul {
 		display: grid;
@@ -109,8 +98,7 @@ main {
 
 				border: 0.4em solid #ddedd5;
 				border-radius: 50%;
-				box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-					rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+				box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 				z-index: 1;
 				transform: translateY(1.5em);
 
@@ -131,16 +119,16 @@ main {
 				border-radius: 1em;
 				padding: 3em 1.5em;
 				font-weight: bold;
-				
 
 				p {
 					margin-top: 1em;
 				}
 			}
-		}
-	}
-}
+		} //li
+	} // ul
+} // .admissions-process
 
+/* Admissions Requirements */
 .admissions-requirements {
 	padding: $global-margin 0 0;
 	align-items: flex-start;
@@ -182,9 +170,23 @@ main {
 			}
 		}
 	}
-}
+} // .admissions-requirements
 
-.table-wrapper {	
+/* Table Styling */
+.table-wrapper {
+	@include flex-centered;
+	align-items: flex-start;
+	position: relative;
+	overflow-x: scroll;
+	max-width: 85vw;
+	margin-block: 2.5em;
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
 	table {
 		border-collapse: collapse;
 		border: 0 black solid;
@@ -208,9 +210,10 @@ main {
 			@extend td;
 			background-color: $accent;
 		}
-	}
-}
+	} // table
+} // .table-wrapper
 
+/* Fee Structure */
 .fee-structure {
 	padding: $global-margin;
 	align-items: flex-start;
@@ -246,8 +249,9 @@ main {
 		color: $dark;
 		text-transform: uppercase;
 	}
-}
+} // .fee-stucture
 
+/* Student Code */
 .student-code-container {
 	padding: $global-margin;
 	align-items: flex-start;
@@ -286,8 +290,9 @@ main {
 		font-family: $font-secondary;
 		font-size: 1.1rem;
 	}
-}
+} // .student-code-container
 
+/* Registration Form */
 .registration {
 	padding: $global-margin;
 	align-items: flex-start;
@@ -321,7 +326,7 @@ main {
 		.form-label:not(.uploader-single):not(.file-upload) {
 			display: flex;
 			align-items: center;
-			text-align:left;
+			text-align: left;
 			font-weight: 600;
 
 			&::after {
@@ -349,8 +354,8 @@ main {
 				.input-alerts {
 					display: flex;
 					align-items: center;
-					position: relative;	
-					
+					position: relative;
+
 					i {
 						position: absolute;
 						left: 1vw;
@@ -358,12 +363,11 @@ main {
 					}
 				}
 			}
-			
+
 			small {
 				visibility: hidden;
 				font-weight: 500;
 			}
-
 
 			// CSS Changes on success
 			&.success {
@@ -418,7 +422,7 @@ main {
 			min-height: 2em;
 			width: 100%;
 
-			padding: .5em;
+			padding: 0.5em;
 			border-color: #c9c9c9;
 			border-style: solid;
 			border-radius: 0.5em;
@@ -501,6 +505,7 @@ main {
 			cursor: pointer;
 			border: 0.01rem solid none;
 		}
+
 		.form-submit {
 			background-color: #65b9e1;
 			margin-left: 0vw;
@@ -512,6 +517,7 @@ main {
 				border: 0.01rem solid #65b9e1;
 			}
 		}
+
 		.form-reset {
 			font-weight: bold;
 			color: $alert;
@@ -523,7 +529,7 @@ main {
 				border: 0.01rem solid $alert;
 			}
 		}
-	}
+	} // .form-row
 
 	.form-item-empty {
 		label {
@@ -531,8 +537,9 @@ main {
 			opacity: 0;
 		}
 	}
-}
+} // .registration-form
 
+// Media Queries
 @media screen and (min-width: $breakpoint-tablet-portrait) {
 	.admissions-overview {
 		display: flex;
@@ -571,9 +578,9 @@ main {
 		}
 	}
 
-	.registration-form {
-		// min-width: 70vw;
-	}
+	// .registration-form {
+	// 	// min-width: 70vw;
+	// }
 }
 
 @media screen and (max-width: $breakpoint-desktop-small) {

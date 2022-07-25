@@ -1,3 +1,4 @@
+/* Imports */
 @import "./scss/_variables.scss";
 
 /* Base Styling */
@@ -110,8 +111,8 @@ main {
 						}
 					}
 				}
-			}
-		}
+			} // .info
+		} // .contact-details
 
 		/* Contact Map */
 		.contact-map {
@@ -130,9 +131,9 @@ main {
 				width: 100% !important;
 				height: 100% !important;
 			}
-		}
-	}
-}
+		} // .contact-map
+	} // .container
+} // .contact-us
 
 /* Contact Form */
 .contact-form {
@@ -199,11 +200,11 @@ main {
 					}
 				}
 			}
-		}
-	}
-}
+		} // form
+	} // .form-container
+} // .contact-form
 
-// MEDIA QUERIES
+// Media Queries
 @media screen and (min-width: $breakpoint-tablet-landscape) {
 	.contact-us {
 		.container {

@@ -22,10 +22,7 @@
     </div>
 </div> <!-- #news -->
 
-<!-- Stylesheet -->
-<link rel="stylesheet" href="./assets/css/news-events.css">
 <script>
-
     // Calls for article galleries
     $(document).ready(() => {
         $.ajax({

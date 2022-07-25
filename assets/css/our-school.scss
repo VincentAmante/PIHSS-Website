@@ -1,4 +1,4 @@
-// Import global variables and slider styling (for facilities)
+/* Imports */
 @import "./scss/variables";
 @import "./scss/_slider-btn.scss";
 
@@ -36,11 +36,6 @@ main {
 	}
 }
 
-/* Tab Styling */
-.selected {
-	color: red;
-}
-
 /* Subpage Banner */
 .subpage-banner {
 	background: url("../images/banners/banner-8.jpg") repeat fixed 100%;
@@ -59,7 +54,6 @@ main {
 	.internal-nav {
 		padding: 2em 0em;
 		min-width: 18vw;
-		// display: hidden;
 	}
 }
 
@@ -69,12 +63,12 @@ main {
 
 	.slideshow-wrapper {
 		background-color: $other;
-		padding: 3vh $global-margin;
-		width: 100%;
+
+		max-width: 100vw;
 		@include flex-centered;
 
 		.facilities-slideshow {
-			// padding-inline: $global-margin;
+			padding-inline: $global-margin;
 			width: 100%;
 			height: 100%;
 			display: flex;
@@ -147,16 +141,16 @@ main {
 								border-radius: 10px;
 							}
 						}
-					}
-				}
-			}
-		}
-	}
-}
+					} // .content
+				} // .card
+			} // .facilities-slider
+		} // .facilities-slideshow
+	} // .slideshow-wrapper
+} // #facilities
 
-/* Co-Curricular Activities */
-#co-curricular {
-	.co-curricular-heading {
+/* School Activities */
+#school-activities {
+	.school-activities-heading {
 		margin: 0 $global-margin 2em;
 	}
 
@@ -244,9 +238,9 @@ main {
 						border: 1px solid rgba($font-colour, 1);
 					}
 				}
-			}
-		}
-	}
+			} // .content
+		} // .activity-container
+	} // .co-curricular-list
 }
 
 /* Study Programme */
@@ -274,9 +268,9 @@ main {
 					padding-bottom: 0.5em;
 					border-bottom: black 1px solid;
 				}
-			}
-		}
-	}
+			} // .card
+		} // .card-wrapper
+	} // .shift-container
 
 	.programme-container {
 		p,
@@ -344,12 +338,12 @@ main {
 						padding-left: 0;
 					}
 				}
-			}
-		}
-	}
+			} // .card
+		} // .card-list
+	} // .programme-container
 }
 
-// MEDIA QUERIES
+// Media Queries
 @media screen and (min-width: $breakpoint-tablet-portrait) {
 	/* Our-School Overview */
 	.our-school-overview {
@@ -390,8 +384,8 @@ main {
 		}
 	}
 
-	/* Co-curricular Activities */
-	#co-curricular {
+	/* School Activities */
+	#school-activities {
 		.co-curricular-list {
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -471,8 +465,8 @@ main {
 		}
 	}
 
-	/* Co-curricular Activities */
-	#co-curricular {
+	/* School Activities */
+	#school-activities {
 		.co-curricular-list {
 			.activity-container {
 				.content {

@@ -1,5 +1,7 @@
+/* Imports */
 @import "./scss/_variables.scss";
 
+/* Base Styling */
 body,
 html {
 	scroll-behavior: smooth;
@@ -22,6 +24,7 @@ main {
 	}
 }
 
+/* Subpage Banner */
 .subpage-banner {
 	background-image: url("../images/placeholders/DSC07455.jpg");
 
@@ -30,11 +33,9 @@ main {
 	}
 }
 
+/* Wrapper */
 .about-us-wrapper {
 	margin: 2.5vmax $global-margin;
-	// max-width: 1920px;
-	// padding-block: 2.5vmax;
-	// margin-inline: $global-margin;
 }
 
 .h1-border,
@@ -45,6 +46,7 @@ main {
 	}
 }
 
+/* About Us Table */
 .about-us {
 	.about-us-container {
 		width: 100%;
@@ -117,7 +119,7 @@ main {
 				input:checked + label {
 					background-color: #f1f8ed;
 				}
-			}
+			} // .content-headers
 
 			.content-text {
 				display: flex;
@@ -154,11 +156,12 @@ main {
 						font-weight: 600;
 					}
 				}
-			}
-		}
-	}
-}
+			} // .content-text
+		} // .content
+	} // .about-us-container
+} // .about-us
 
+/* Principal's Message */
 .principal-message {
 	.principal-message-container {
 		display: flex;
@@ -193,13 +196,10 @@ main {
 				font-size: 1em;
 			}
 		}
-	}
-}
+	} // .principal-message-container
+} // .principal-message
 
-.hidden {
-	opacity: 0;
-}
-
+/* List of Principals */
 .principal-timeline {
 	.principal-timeline-container {
 		display: flex;
@@ -272,7 +272,7 @@ main {
 				transform: translateX(-50%) rotate(90deg);
 			}
 		}
-	}
+	} // .item-desc
 
 	.item-hidden {
 		width: 50%;
@@ -305,16 +305,13 @@ main {
 		.item-hidden {
 			order: 3;
 		}
-	}
-}
+	} // .item-flipped
+} // .principal-timeline
 
+// Media Queries
 @media screen and (max-width: $breakpoint-tablet-landscape) {
 	.about-us-wrapper {
 		padding: 0;
-
-		// & > div {
-		// 	padding-inline: 1em;
-		// }
 	}
 
 	.about-us {

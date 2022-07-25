@@ -49,11 +49,10 @@
 					<div class="timings">
 						<h2>Office Timings</h2>
 						<p>Sun-Thu: 7:30am - 1:30pm</p>
-					</div>
+					</div> <!-- .timings -->
 
 					<div class="info">
 						<ul>
-							<!-- TODO: Confirm contact details -->
 							<li>
 								<span class="fa-li fa-lg">
 									<i class="fa-solid fa-phone"></i></span>
@@ -72,11 +71,12 @@
 								<a href="mailto:info@pihss-shj.com">info@pihss-shj.com</a>
 							</li>
 						</ul>
-					</div>
-				</div>
+					</div> <!-- .info -->
+				</div> <!-- .contact-details -->
+
 				<div class="contact-map">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7211.843122839369!2d55.414977!3d25.340413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x29ab65796253f180!2sPakistan%20Islamia%20Secondary%20School!5e0!3m2!1sen!2sae!4v1645859780769!5m2!1sen!2sae" height="100%" width="100%" allowfullscreen="" loading="lazy"></iframe>
-				</div>
+				</div> <!-- .contact-map -->
 			</div>
 		</section>
 
@@ -90,61 +90,50 @@
 				</div>
 
 				<form class="form" action="./assets/php/contact-submit.php" method="POST">
+					<!-- Name -->
 					<div class="form-item">
 						<label for="name">Name <span>*</span></label>
 						<input type="text" id="name" name="name" required />
 					</div>
 
+					<!-- Email -->
 					<div class="form-item">
 						<label for="email">Email <span>*</span></label>
 						<input type="email" id="email" name="email" required />
 					</div>
 
+					<!-- Phone Number -->
 					<div class="form-item">
 						<label for="tel">Phone number <span>*</span></label>
 						<input type="tel" id="tel" name="tel" required />
 					</div>
 
+					<!-- Message Subject -->
 					<div class="form-item">
 						<label for="subject">Subject</label>
 						<input type="text" id="subject" name="subject" />
 					</div>
 
+					<!-- Message Content -->
 					<div class="form-item">
 						<label for="message">Message</label>
 						<textarea name="message" id="message" cols="30" rows="10"></textarea>
 					</div>
 
+					<!-- Submit Button -->
 					<div class="submit-button">
 						<button type="submit" name="submit">SUBMIT</button>
 					</div>
-				</form>
-			</div>
+				</form> <!-- .form -->
+			</div> <!-- .form-container -->
 		</section>
 	</main>
 
 	<!-- Footer -->
 	<?php include('./assets/php/footer.php') ?>
 
+	<!-- Scripts -->
 	<script src="assets/js/global-scripts.js"></script>
-
-	<!-- Google Map API -->
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-	<script>
-		var map;
-
-		function initialize() {
-			var mapOptions = {
-				zoom: 8,
-				center: new google.maps.LatLng(-34.397, 150.644),
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};
-			map = new google.maps.Map(document.getElementById('map_canvas'),
-				mapOptions);
-		}
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
 </body>
 
 </html>

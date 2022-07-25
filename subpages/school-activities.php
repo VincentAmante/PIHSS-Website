@@ -25,8 +25,8 @@
 </div>
 
 <!-- Content -->
-<div class="tab-content" id="co-curricular">
-    <div class="co-curricular-heading">
+<div class="tab-content" id="school-activities">
+    <div class="school-activities-heading">
         <h1>Extra-Curricular Activities</h1>
         <p>
             The school encourages all round development of its students with a planned series of extracurricular
@@ -34,11 +34,12 @@
             other students. The school offers a variety of extracurricular activities for its students including
             fun fair, field trips, school picnics etc.
         </p>
-    </div>
+    </div> <!-- .school-activities-heading -->
+
     <div class="co-curricular-list" id="co-curricular-activities">
 
-    </div>
-</div>
+    </div> <!-- #co-curricular-activities -->
+</div> <!-- #school-activities -->
 
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

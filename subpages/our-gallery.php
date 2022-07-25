@@ -18,7 +18,8 @@
 
 <!-- Content -->
 <div class="container custom-scrollbar" id="gallery-pages">
-</div>
+
+</div> <!-- #gallery-pages -->
 
 <!-- Scripts -->
 <script>

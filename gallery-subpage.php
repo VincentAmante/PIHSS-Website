@@ -86,8 +86,8 @@ if ($conn->connect_error) {
           <i id="zoom-in" class="fa-solid fa-magnifying-glass-plus fa-xl"></i>
           <a id="download" href="#" download><i class="fa-solid fa-download fa-xl"></i></a>
           <i id="close" class="fa-solid fa-xmark fa-2xl"></i>
-        </div>
-      </div>
+        </div> <!-- .modal-header-icons -->
+      </div> <!-- .modal-header -->
 
       <!-- Modal Content -->
       <div class="modal-content">
@@ -103,7 +103,7 @@ if ($conn->connect_error) {
 
         <!-- Next Slide -->
         <i id="next" class="lightbox-btn fa-solid fa-arrow-right-long fa-2xl"></i>
-      </div>
+      </div> <!-- .modal-content -->
     </div>
   </main>
 

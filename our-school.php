@@ -43,13 +43,12 @@
 					<div>
 						<h2>Our School</h2>
 						<ul id="nav">
-							<!-- adjust the rest for school-activities -->
 							<li><a id="btn-facilities" class="tab-button" href="#facilities">Facilities</a></li>
 							<li><a id="btn-school-activities" class="tab-button" href="#school-activities">School Activities</a></li>
 							<li><a id="btn-study-programme" class="tab-button" href="#study-programme">Study Programme</a></li>
 						</ul>
 					</div>
-				</div>
+				</div> <!-- .internal-nav -->
 			</div>
 		</section>
 
@@ -66,6 +65,7 @@
 	<script src="assets/js/global-scripts.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+	<!-- Load subpages -->
 	<script>
 		$(document).ready(function() {
 			loadContent();
@@ -77,7 +77,6 @@
 
 		function loadContent() {
 			var page = location.hash.substring(1);
-			console.log("page=" + page);
 			$(".tab-breadcrumb").html(page);
 
 			$.ajax({

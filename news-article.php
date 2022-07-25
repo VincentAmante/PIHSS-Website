@@ -45,6 +45,7 @@
         <!-- News Article -->
         <section class="article-viewer-wrapper">
             <div class="article-viewer">
+                <!-- Button Left -->
                 <div class="slider-btn" id="article-btn-left">
                     <div class="icon">
                         <svg style="width:100%;height:100%" viewBox="0 0 24 24">
@@ -58,6 +59,7 @@
 
                 </ul>
 
+                <!-- Button Right -->
                 <div class="slider-btn" id="article-btn-right">
                     <div class="icon">
                         <svg style="width:100%;height:100%" viewBox="0 0 24 24">

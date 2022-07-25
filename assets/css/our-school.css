@@ -1,3 +1,4 @@
+/* Imports */
 .slider-btn, .news-btn {
   border-radius: 50%;
   background-color: #0F6938;
@@ -62,11 +63,6 @@ main h3 {
   margin-bottom: 1em;
 }
 
-/* Tab Styling */
-.selected {
-  color: red;
-}
-
 /* Subpage Banner */
 .subpage-banner {
   background: url("../images/banners/banner-8.jpg") repeat fixed 100%;
@@ -92,14 +88,14 @@ main h3 {
 }
 #facilities .slideshow-wrapper {
   background-color: #CFECC1;
-  padding: 3vh 5vw;
-  width: 100%;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 #facilities .slideshow-wrapper .facilities-slideshow {
+  padding-inline: 5vw;
   width: 100%;
   height: 100%;
   display: flex;
@@ -168,18 +164,18 @@ main h3 {
   border-radius: 10px;
 }
 
-/* Co-Curricular Activities */
-#co-curricular .co-curricular-heading {
+/* School Activities */
+#school-activities .school-activities-heading {
   margin: 0 5vw 2em;
 }
-#co-curricular .co-curricular-list {
+#school-activities .co-curricular-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-#co-curricular .co-curricular-list .activity-container {
+#school-activities .co-curricular-list .activity-container {
   position: relative;
   background-color: #EEE1B2;
   width: 100%;
@@ -187,7 +183,7 @@ main h3 {
   overflow: hidden;
   margin-bottom: 5%;
 }
-#co-curricular .co-curricular-list .activity-container .content {
+#school-activities .co-curricular-list .activity-container .content {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -196,15 +192,15 @@ main h3 {
   flex-direction: column;
   justify-content: space-between;
 }
-#co-curricular .co-curricular-list .activity-container .content .decorated {
+#school-activities .co-curricular-list .activity-container .content .decorated {
   display: block;
   overflow: hidden;
 }
-#co-curricular .co-curricular-list .activity-container .content .decorated > span {
+#school-activities .co-curricular-list .activity-container .content .decorated > span {
   position: relative;
   display: inline-block;
 }
-#co-curricular .co-curricular-list .activity-container .content .decorated > span:after {
+#school-activities .co-curricular-list .activity-container .content .decorated > span:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -213,7 +209,7 @@ main h3 {
   margin: 0 20px;
   left: 100%;
 }
-#co-curricular .co-curricular-list .activity-container .content .activity-images {
+#school-activities .co-curricular-list .activity-container .content .activity-images {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -222,17 +218,17 @@ main h3 {
   align-items: stretch;
   overflow: hidden;
 }
-#co-curricular .co-curricular-list .activity-container .content .activity-images img {
+#school-activities .co-curricular-list .activity-container .content .activity-images img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   grid-row: span 2;
 }
-#co-curricular .co-curricular-list .activity-container .content .activity-images > img:nth-of-type(2) {
+#school-activities .co-curricular-list .activity-container .content .activity-images > img:nth-of-type(2) {
   grid-column: 2;
   grid-row: 1/span 3;
 }
-#co-curricular .co-curricular-list .activity-container .content button {
+#school-activities .co-curricular-list .activity-container .content button {
   grid-column: 2;
   grid-row: 4;
   padding: 10px;
@@ -244,11 +240,11 @@ main h3 {
   align-self: center;
   transition: 0.2s ease-in-out;
 }
-#co-curricular .co-curricular-list .activity-container .content button a {
+#school-activities .co-curricular-list .activity-container .content button a {
   text-decoration: none;
   color: #383838;
 }
-#co-curricular .co-curricular-list .activity-container .content button:hover {
+#school-activities .co-curricular-list .activity-container .content button:hover {
   cursor: pointer;
   border: 1px solid #383838;
 }
@@ -358,20 +354,20 @@ main h3 {
   #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p {
     max-height: 45vh;
   }
-  /* Co-curricular Activities */
-  #co-curricular .co-curricular-list {
+  /* School Activities */
+  #school-activities .co-curricular-list {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 2em 5vw;
   }
-  #co-curricular .co-curricular-list .activity-container {
+  #school-activities .co-curricular-list .activity-container {
     border-radius: 1em;
     border: 1px solid rgba(56, 56, 56, 0.4);
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
     width: 47%;
     padding-bottom: 47%;
   }
-  #co-curricular .co-curricular-list .activity-container:nth-of-type(2n) {
+  #school-activities .co-curricular-list .activity-container:nth-of-type(2n) {
     margin-left: 5%;
   }
   /* Study Programme */
@@ -408,8 +404,8 @@ main h3 {
   #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content {
     max-width: 40%;
   }
-  /* Co-curricular Activities */
-  #co-curricular .co-curricular-list .activity-container .content button {
+  /* School Activities */
+  #school-activities .co-curricular-list .activity-container .content button {
     width: 75%;
   }
 }/*# sourceMappingURL=our-school.css.map */

@@ -37,8 +37,8 @@
                         <li><b>Boys:</b> Class 5 to Class 12<br><br></li>
                     </ul>
                 </div>
-            </div>
-        </div>
+            </div> <!-- .card-wrapper -->
+        </div> <!-- .shift-container -->
 
         <!-- Programme Content -->
         <div class="programme-container">
@@ -73,8 +73,10 @@
 
                 <li>
                     <h2>CLASS IX & X</h2>
-                    <p>As per new scheme of studies enforced by the FBISE, Islamabad w.e.f. session 2007-2008,
-                        the subjects being taught in Class: IX & X are as follows:</p>
+                    <p>
+                        As per new scheme of studies enforced by the FBISE, Islamabad w.e.f. session 2007-2008,
+                        the subjects being taught in Class: IX & X are as follows:
+                    </p>
 
                     <div class="card-list col-2">
                         <div class="card">
@@ -109,7 +111,7 @@
                                 <li>Economics Part-II</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> <!-- .card-list.col-2 -->
                 </li>
 
                 <li>
@@ -122,17 +124,24 @@
                             <b>Note:</b>
 
                             <ol>
-                                <li>Arabic, Islamiat and Social Studies (U.A.E) are also taught to Board classes
+                                <li>
+                                    Arabic, Islamiat and Social Studies (U.A.E) are also taught to Board classes
                                     as per requirement of the SPEA Pak Culture are offered only if sufficient
-                                    number of students opt for these subjects.</li>
-                                <li>Pak Culture are offered only if sufficient number of students opt for these
-                                    subjects.</li>
+                                    number of students opt for these subjects.
+                                </li>
+                                <li>
+                                    Pak Culture are offered only if sufficient number of students opt for these
+                                    subjects.
+                                </li>
                             </ol>
                         </li>
                     </ul>
 
-                    <p>At Higher Secondary level (class XI & XII) students may opt for any one of the streams
-                        mentioned below:</p>
+                    <p>
+                        At Higher Secondary level (class XI & XII) students may opt for any one of the streams
+                        mentioned below:
+                    </p>
+
                     <div class="card-list col-3">
                         <div class="card">
                             <h3>SCIENCE STREAM</h3>
@@ -197,9 +206,9 @@
                                 <li>Home Economics Part-I & II</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> <!-- .card-list.col-3 -->
                 </li>
-            </ol>
-        </div>
-    </div>
-</div>
+            </ol> <!-- .programme-list -->
+        </div> <!-- .programme-container -->
+    </div> <!-- .wrapper -->
+</div> <!-- #study-programme -->

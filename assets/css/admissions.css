@@ -1,3 +1,4 @@
+/* Imports */
 .uploader-single {
   display: flex;
   align-items: center;
@@ -47,6 +48,7 @@
   opacity: 1;
 }
 
+/* Base Styling */
 body,
 html {
   scroll-behavior: smooth;
@@ -82,32 +84,6 @@ main img {
      object-fit: cover;
 }
 
-.subpage-banner {
-  background-image: url("../images/placeholders/DSC07466.jpg");
-}
-
-.admissions-overview .internal-nav {
-  padding: 2em 0em;
-  min-width: 18vw;
-}
-
-.table-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-items: flex-start;
-  position: relative;
-  overflow-x: scroll;
-  max-width: 85vw;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  margin-block: 2.5em;
-}
-.table-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
 .admissions,
 .fee-structure,
 .student-code {
@@ -115,13 +91,16 @@ main img {
   border-bottom: 0.1rem solid hsla(0deg, 0%, 22%, 0.7);
 }
 
-.admissions-container {
-  padding: 2.5vmax 5vw 5vw;
-}
-.admissions-container > div {
-  margin-bottom: 5vh;
+/* Subpage Banner */
+.subpage-banner {
+  background-image: url("../images/placeholders/DSC07466.jpg");
 }
 
+/* Admissions Overview */
+.admissions-overview .internal-nav {
+  padding: 2em 0em;
+  min-width: 18vw;
+}
 .admissions-overview .note {
   padding-left: 1em;
   list-style: "- ";
@@ -130,6 +109,15 @@ main img {
   margin-bottom: 1em;
 }
 
+/* Admissions Container */
+.admissions-container {
+  padding: 2.5vmax 5vw 5vw;
+}
+.admissions-container > div {
+  margin-bottom: 5vh;
+}
+
+/* Admissions Process */
 .admissions-process ul {
   display: grid;
   grid-template-columns: 1fr;
@@ -178,6 +166,7 @@ main img {
   margin-top: 1em;
 }
 
+/* Admissions Requirements */
 .admissions-requirements {
   padding: 5vw 0 0;
   align-items: flex-start;
@@ -212,6 +201,23 @@ main img {
   content: "(" counter(list-item, lower-roman) ")  ";
 }
 
+/* Table Styling */
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  position: relative;
+  overflow-x: scroll;
+  max-width: 85vw;
+  margin-block: 2.5em;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.table-wrapper::-webkit-scrollbar {
+  display: none;
+}
 .table-wrapper table, .table-wrapper table td, .table-wrapper table th {
   border-collapse: collapse;
   border: 0 black solid;
@@ -234,6 +240,7 @@ main img {
   background-color: #EEE1B2;
 }
 
+/* Fee Structure */
 .fee-structure {
   padding: 5vw;
   align-items: flex-start;
@@ -264,6 +271,7 @@ main img {
   text-transform: uppercase;
 }
 
+/* Student Code */
 .student-code-container {
   padding: 5vw;
   align-items: flex-start;
@@ -297,6 +305,7 @@ main img {
   font-size: 1.1rem;
 }
 
+/* Registration Form */
 .registration {
   padding: 5vw;
   align-items: flex-start;

@@ -21,6 +21,8 @@
 
     <div class="slideshow-wrapper">
         <div class="facilities-slideshow">
+
+            <!-- Button Left -->
             <div class="slider-btn" id="wp-btn-left" type="button">
                 <div class="icon">
                     <svg style="width: 100%; height: 100%" viewBox="0 0 24 24">
@@ -29,9 +31,9 @@
                 </div>
             </div>
 
-            <!-- ** Used placeholders for the slider images until the media is finalized -->
-
+            <!-- Slider Content -->
             <ul class="facilities-slider" id="facilities-slider">
+                <!-- ** Used placeholders for the slider images until the media is finalized -->
                 <li>
                     <div class="card">
                         <img src="https://source.unsplash.com/1600x900/?food" alt="" />
@@ -197,16 +199,18 @@
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul> <!-- #facilities-slider -->
 
+            <!-- Button Right -->
             <div class="slider-btn" id="wp-btn-right" type="button">
                 <svg style="width: 100%; height: 100%" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                 </svg>
             </div>
-        </div>
-    </div>
-</div>
+
+        </div> <!-- .facilities-slideshow -->
+    </div> <!-- .slideshow-wrapper -->
+</div> <!-- #facilities -->
 
 <!-- Scripts -->
 <script>
