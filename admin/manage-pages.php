@@ -43,6 +43,7 @@
         if ($gallery != NULL){
             // Deletes folder and contents
             $deleteSuccessful = removeFolder('gallery-folders', $gallery['folderName']);
+            var_dump('Result: ' . $deleteSuccessful);
 
             if ($deleteSuccessful){
                 if (!$gallery['isActivity']){
@@ -96,7 +97,7 @@
     <main>
 
         <!-- Articles -->
-        <section>
+        <section id='articles'>
             <div class="section-container">
                 <h1>Articles</h1>
                 <table class="table-simple">
@@ -123,7 +124,7 @@
         </section>
 
         <!-- Galleries -->
-        <section>
+        <section id='galleries'>
             <div class="section-container">
                 <h1>Galleries</h1>
                 <table class="table-simple">
@@ -150,7 +151,7 @@
         </section>
 
         <!-- Activities -->
-        <section>
+        <section id='activities'>
             <div class="section-container">
                 <h1>Co-Curricular Activities</h1>
                 <table class="table-simple">
@@ -177,7 +178,7 @@
         </section>
 
         <!-- Registration Form Submissions -->
-        <section>
+        <section id='registrations-container'>
             <div class="section-container">    
                 <h1>Registration Form Submissions</h1>
                 <table id="registrations-list" class="data-table-display">

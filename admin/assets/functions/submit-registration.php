@@ -1,13 +1,9 @@
 <?php
+    include './connect.php';
+
     $lastId = "";
     $folderName = "";
 
-    // Server Stuff
-    $hostname = 'localhost';
-    $username = 'root';
-    $password = '';
-    $databasename = 'pihss';
-    
     // Form values
     $studentName = $_POST['student-name'];
     $gender = $_POST['student-gender'];
@@ -25,7 +21,6 @@
     $fatherEmail = $_POST['father-email'];
     $leaveCertificate = "";
 
-    $conn = new mysqli($hostname, $username, '', $databasename);
 
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);

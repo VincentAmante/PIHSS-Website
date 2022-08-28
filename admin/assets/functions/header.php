@@ -6,7 +6,6 @@ if (!isset($_SESSION['SessionTime'])) {
     $_SESSION['SessionTime'] = time();
 } else if (time() - $_SESSION['SessionTime'] > 1800) {
     // Logs out after 30 mins
-
     // starts and destroys the session to logout
     session_start();
     session_destroy();

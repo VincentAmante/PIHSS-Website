@@ -9,6 +9,25 @@
         return trim($z, '-');
     }
 
+    class ImageResult {
+        public $isUploaded = true;
+        public $name = "";
+        public $error = "";
+
+        /**
+         * $resultingString = either the image name or the error
+         */
+        public function __construct(bool $isUploaded, string $resultingString)
+        {
+            $this->isUploaded = $isUploaded;
+            if ($isUploaded){
+                $this->name = $resultingString;
+            }
+            else {
+                $this->error = $resultingString;
+            }
+        }
+    }
     /**
      * Uploads an image to the website's files, ensures it is valid to upload first
      */
@@ -65,6 +84,66 @@
         }
         else {
             return false;
+        }
+    }
+
+    // Dupilcate copy, for improved functionality
+    function uploadImage__DEV(string $imgDirectory, string $imgName, string $getImgFrom, int $index=0, int $folderExits = 1){
+        $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
+        $imgName = $imgDirectory . uniqid() .basename(slug($imgName));
+        $imageValid = true;
+        $MAX_FILE_SIZE = 10000000000;
+
+        if ($index != -1) {
+            if($_FILES[$getImgFrom]['size'][$index] > $MAX_FILE_SIZE){
+                $imageValid = false;
+                return new ImageResult(false, "Image is too large!");
+            }
+        }
+        else {
+            if($_FILES[$getImgFrom]['size'] > $MAX_FILE_SIZE){
+                $imageValid = false;
+                return new ImageResult(false, "Image is too large!");
+            }
+        }
+        
+
+        // Valid image types
+        switch(strtolower($imgType)){
+            case 'jpeg':
+            case 'png':
+            case 'jpg':
+            case 'jfif':
+            case 'gif':
+            break;
+            default:
+            $imageValid = false;
+            return new ImageResult(false, "Invalid filetype! Currently accepting one of the following: [jpeg, jpg, png, jfif, gif]");
+        }
+
+        // Repeats folder exits
+        $addition = str_repeat('../', $folderExits);
+
+        if ($imageValid){
+            if ($index != -1) {    
+                if (move_uploaded_file($_FILES[$getImgFrom]['tmp_name'][$index], $addition . $imgName)){
+                    // Returns image name on successful upload
+                    return new ImageResult(true, $imgName);
+                } else {
+                    return new ImageResult(false, "Image could not upload successfully!");
+                }
+            }
+            else {
+                if (move_uploaded_file($_FILES[$getImgFrom]['tmp_name'], $addition . $imgName)){
+                    // Returns image name on successful upload
+                    return new ImageResult(true, $imgName);
+                } else {
+                    return new ImageResult(false, "Image could not upload successfully!");
+                }
+            }
+        }
+        else {
+            return new ImageResult(false, "Image was not considered valid!");
         }
     }
 

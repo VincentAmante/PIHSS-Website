@@ -268,32 +268,32 @@
                         <ul class="aac-slider" id="aac-slider">
                             <li id="aac-1">
                                 <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/staff_5_mini.jpg">
-                                    <div class="aac-person"><p class="name">Mr. Hamid Sultan Hamid Al Abdouli</p><p>Managing Director / Chairman <abbr title="Administrative Affairs Committee">AAC</abbr></p></div>
+                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
+                                    <div class="aac-person"><p class="name">Unknown</p><p>Role</p></div>
                                 </div>
                             </li>
                             <li id="aac-2">
                                 <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/staff_2.jpg">
-                                    <div class="aac-person"><p class="name">Mr. Ebrahim Tily</p></div>
+                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
+                                    <div class="aac-person"><p class="name">Unknown</p></div>
                                 </div>
                             </li>
                             <li id="aac-3">
                                 <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/staff_6.jpg">
-                                    <div class="aac-person"><p class="name">Mr. Farooq Ahmed</p></div>
+                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
+                                    <div class="aac-person"><p class="name">Unknown</p></div>
                                 </div>
                             </li>
                             <li id="aac-4">
                                 <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/staff_3.jpg">
-                                    <div class="aac-person"><p class="name">Mr. Mohammad Amin Tariq</p></div>
+                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
+                                    <div class="aac-person"><p class="name">Unknown</p></div>
                                 </div>
                             </li>
                             <li id="aac-5">
                                 <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/mission-vision-0.jpg">
-                                    <div class="aac-person"><p class="name">Mr. Gulzar Rana</p></div>
+                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
+                                    <div class="aac-person"><p class="name">Unknown</p></div>
                                 </div>
                             </li>
                         </ul>

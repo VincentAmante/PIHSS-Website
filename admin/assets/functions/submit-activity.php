@@ -98,7 +98,7 @@
         unset($_POST);
         
         $currentFiles = $finalOutput;
-        header("Location: ./manage-pages.php");
+        header("Location: ./update-activity.php?id=" . $last_id . '&result=success');
     }
 
     $conn->close();

@@ -23,10 +23,11 @@
                     $rand = rand();
                     $_SESSION['rand'] = $rand;?>
 
+                    <h1>Add Activity</h1>
                     <!-- Title -->
                     <div class="form-item">
                         <label for="gallery-title">Activity Title</label>
-                        <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required placeholder="Gallery Title">
+                        <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required placeholder="Activity Title">
                     </div>
 
                     <!-- Publishing Date -->

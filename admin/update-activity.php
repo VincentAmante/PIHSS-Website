@@ -99,8 +99,35 @@
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/add-article.css">
     <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <?php
+        if (isset($_GET['result'])){
+            $result = $_GET['result'];
+
+            if ($result == 'success'){
+                ?>
+                <script>
+                    Swal.fire({
+                    title: 'Gallery Created!',
+                    text: "View gallery?",
+                    icon: 'success',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Go to gallery',
+                    cancelButtonText: 'Stay here'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '/gallery-subpage.php?id=<?php echo $galleryId?>'; 
+                    }
+                    })
+                </script>
+                <?php
+            }
+        }
+    ?>
     <main>
         <section>
             <div class="form-wrapper" id="drop-area">

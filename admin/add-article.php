@@ -17,6 +17,7 @@
             <div class="form-wrapper">
                 <form class="admin-form" id="admin-form" action="./assets/functions/submit-article.php" method="POST" enctype="multipart/form-data">
 
+                    <h1>Add Article</h1>
                     <!-- Title -->
                     <div class="form-item">
                         <label for="article-title">Title</label>

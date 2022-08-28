@@ -19,6 +19,7 @@
             <div class="form-wrapper">
                 <form class="admin-form" id="admin-form" action="./assets/functions/submit-gallery-page.php" method="POST" enctype="multipart/form-data">
 
+                <h1>Add Gallery</h1>
                     <!-- Title -->
                     <div class="form-item">
                         <label for="gallery-title">Title</label>

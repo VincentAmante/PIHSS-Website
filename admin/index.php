@@ -34,6 +34,7 @@
             <!-- Sign In Button -->
             <div class="action">
                 <button name="login-btn">Sign in</button>
+                <button name="return-page">Return</button>
                 <!-- <button>Forgot Password</button> -->
             </div>
         </form>

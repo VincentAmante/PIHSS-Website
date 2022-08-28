@@ -75,8 +75,35 @@
 
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/add-article.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <?php
+        if (isset($_GET['result'])){
+            $result = $_GET['result'];
+
+            if ($result == 'success'){
+                ?>
+                <script>
+                    Swal.fire({
+                    title: 'Article Created!',
+                    text: "View article?",
+                    icon: 'success',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Go To Article',
+                    cancelButtonText: 'Stay here'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '/news-article.php?id=<?php echo $articleId?>'; 
+                    }
+                    })
+                </script>
+                <?php
+            }
+        }
+    ?>
     <main>
         <div class="form-wrapper">
             <form class="admin-form" id="admin-form" action="<?php echo 'update-article.php?id=' . $article['ID'];?>" method="POST" enctype="multipart/form-data">

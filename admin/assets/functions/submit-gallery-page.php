@@ -47,6 +47,7 @@
                 // Creates permanent folderName for assets
                 mkdir("../../../assets/gallery-folders/" . $folderName);
                 $stmt = $conn->prepare("UPDATE galleries SET folderName = '$folderName' WHERE id='$lastId'");
+                $stmt->execute();
 
                 $conn->close();
             }

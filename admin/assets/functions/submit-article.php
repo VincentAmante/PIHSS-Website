@@ -15,12 +15,15 @@
              // Directory = Where image will end up when uploaded in the directory
             $imgDirectory = "./assets/article-posts/";
 
-            $result = uploadImage($imgDirectory, $imgName, 'article-image', -1, true);
+            // $result = uploadImage($imgDirectory, $imgName, 'article-image', -1, true);
+            $result = uploadImage__DEV($imgDirectory, $imgName, 'article-image', -1, 3);
             var_dump($result);
+            echo ($result->isUploaded);
 
-            if ($result != false){
-                $imgName = $result;
-            } else {
+            if ($result->isUploaded){
+                $imgName = $result->name;
+            } else { 
+                echo "ERROR: " . $result->error;
                 exit();
             }
         }
@@ -39,7 +42,7 @@
                 $conn->close();
             }
     
-            header("Location: ../../update-article.php?id=" . $lastId);
+            header("Location: ../../update-article.php?id=" . $lastId . '&result=success');
         }
     }
 
