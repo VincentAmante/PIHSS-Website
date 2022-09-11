@@ -11,10 +11,9 @@ while ($data = $galleries->fetch_assoc()) : ?>
     <?php
     $thumbnailSrc = "";
     if ($data['isActivity']) {
-        $thumbnailSrc = $GALLERY_THUMBNAILS_DIR 
-        . json_decode($data['images'], true)[0]['path'];
+        $thumbnailSrc = $GALLERY_THUMBNAILS_DIR . json_decode($data['images'], true)[0]['path'];
     } else {
-        $thumbnailSrc = $data['thumbnail'];
+        $thumbnailSrc = $GALLERY_THUMBNAILS_DIR . $data['thumbnail'];
     }
     ?>
     <div class="grid-item">
