@@ -66,14 +66,14 @@
         $imgArr = array();
         $folderName = $galleryId . '_' . $galleryTitle;
 
-        $imgDirectory = "./assets/gallery-folders/" . $folderName . '/';
+        $imgDirectory = $GALLERY_FOLDERS_DIR . $folderName . '/';
         $getImgFrom = 'gallery_images';
 
         foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
             if ($imgName != ""){
                 $result = uploadImage($imgDirectory, $imgName, $getImgFrom, $index);
                 if ($result != false){
-                    array_push($imgArr, new Image($result));
+                    array_push($imgArr, new Image($result->name));
                 }
            }
         }
@@ -82,7 +82,7 @@
         // Handles entries for deletion
         // Locates entries to be deleted, before updating the array
         if (isset($_POST['deletion-entries'])){
-            deleteImages($galleryFiles, $_POST['deletion-entries']);
+            deleteImages($galleryFiles, $_POST['deletion-entries'], $imgDirectory);
         }
 
         $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput', folderName = '$folderName' WHERE id='$galleryId'");

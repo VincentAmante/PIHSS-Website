@@ -20,7 +20,7 @@
         if ($article != NULL){
 
             // Deletes thumbnail
-            if (unlink('../' . $article['img'])){
+            if (unlink('../' . $ARTICLE_IMG_DIR . $article['img'])){
                 // Article deleted
             }
             $sql = "DELETE FROM articles WHERE id='$articleId'";
@@ -47,7 +47,7 @@
 
             if ($deleteSuccessful){
                 if (!$gallery['isActivity']){
-                    if (!unlink('../' . $gallery['thumbnail'])){
+                    if (!unlink('../' .  $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail'])){
                         // Unlink failed
                     }
                 }

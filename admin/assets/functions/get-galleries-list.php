@@ -1,5 +1,5 @@
 <?php
-    require 'connect.php';
+    require 'config.php';
 
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
@@ -12,7 +12,7 @@
     <?php $updateUrl = "update-gallery-content.php?id=" . $data['ID'];?>
     
     <div class="row-item">
-        <img src="<?php echo '../' . $data['thumbnail']?>">
+        <img src="<?php echo getPathToRoot() . $GALLERY_THUMBNAILS_DIR . $data['thumbnail']?>">
         <div class="title"><?php echo $data['title']?></div>
         <div class="date"><?php echo $data['creationDate']?></div>
         <a href="<?php echo $updateUrl?>">

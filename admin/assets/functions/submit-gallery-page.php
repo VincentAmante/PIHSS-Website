@@ -1,7 +1,7 @@
 <?php
 
     if (isset($_POST['add-gallery'])){
-        require "connect.php";
+        require "config.php";
 
         $galleryTitle = $_POST['gallery-title'];
         $galleryCreationDate = $_POST['gallery-creation-date'];
@@ -15,15 +15,14 @@
         }
 
         include './handle-images.php';
-        $imgDirectory = "./assets/gallery-thumbnails/";
+        $imgDirectory = $GALLERY_THUMBNAILS_DIR;
         $getImgFrom = 'gallery-image';
         
         if ($imgName != ""){
-            $result = uploadImage($imgDirectory, $imgName, $getImgFrom, -1, true);
+            $result = uploadImage($imgDirectory, $imgName, $getImgFrom, -1);
             if ($result != false){
                 // Saves directory to be sent to database
-                $imgName = $result;
-
+                $imgName = $result->name;
             } else {
                 $imgValid = false;
             }
@@ -45,7 +44,7 @@
                 $stmt->close();
                 
                 // Creates permanent folderName for assets
-                mkdir("../../../assets/gallery-folders/" . $folderName);
+                mkdir(getPathToRoot() . "./assets/gallery-folders/" . $folderName);
                 $stmt = $conn->prepare("UPDATE galleries SET folderName = '$folderName' WHERE id='$lastId'");
                 $stmt->execute();
 

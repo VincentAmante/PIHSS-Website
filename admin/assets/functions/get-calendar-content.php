@@ -1,5 +1,5 @@
 <?php
-    include '../admin/assets/functions/connect.php';
+    include '../admin/assets/functions/config.php';
 
     if ($conn->connect_error) {
         die('Connection Failure : ' + $conn->connect_error);

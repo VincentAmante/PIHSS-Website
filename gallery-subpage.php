@@ -1,5 +1,5 @@
 <?php
-include "./admin/assets/functions/connect.php";
+include "./admin/assets/functions/config.php";
 $galleryId = $_GET['id'];
 
 if ($conn->connect_error) {
@@ -9,6 +9,7 @@ if ($conn->connect_error) {
   $gallery = mysqli_fetch_assoc($galleryQuery);
 
   $galleryImages = json_decode($gallery['images']);
+  $galleryDir = $GALLERY_FOLDERS_DIR . $gallery['folderName'] . '/';
 }
 ?>
 
@@ -67,7 +68,7 @@ if ($conn->connect_error) {
         foreach ($galleryImages as $index => $image) : ?>
           <div class="grid-item">
             <div class="item-image section-image">
-              <img class="lightbox-enabled" src="<?php echo $image->path ?>" data-imagesrc="<?php echo $image->path ?>" alt="insert desc" />
+              <img class="lightbox-enabled" src="<?php echo $galleryDir . $image->name ?>" data-imagesrc="<?php echo $galleryDir . $image->name ?>" alt="insert desc" />
             </div>
           </div>
       <?php

@@ -8,10 +8,11 @@
     } else {
         $galleryQuery = $conn->query("SELECT * from galleries WHERE id='$galleryId'");
         $gallery = mysqli_fetch_assoc($galleryQuery);
+        $galleryDir = $GALLERY_FOLDERS_DIR . $gallery['folderName'] . '/';
     }
 
     include './assets/functions/handle-images.php';
-    
+
     // UPLOADS IMAGE CONTENTS
     if (!empty($_FILES)
         && isset($_POST['save-gallery-content'])
@@ -31,7 +32,7 @@
             if ($imgName != ""){
                 $result = uploadImage($imgDirectory, $imgName, $getImgFrom, $index);
                 if ($result != false){
-                    array_push($imgArr, new Image($result));
+                    array_push($imgArr, new Image($result->name));
                 }
            }
         }
@@ -41,7 +42,7 @@
         // Handles entries for deletion
         // Locates entries to be deleted, before updating the array
         if (isset($_POST['deletion-entries'])){
-            deleteImages($galleryFiles, $_POST['deletion-entries']);
+            deleteImages($galleryFiles, $_POST['deletion-entries'], $imgDirectory);
         }
 
         if ($galleryFiles != null){
@@ -62,10 +63,10 @@
             $resultThumbnail = uploadImage($imgDirectory, $imgName, 'gallery-thumbnail', -1);
 
             // Uploads new image, and deletes old one
-            if ($resultThumbnail != false){
-                $imgName = $resultThumbnail;
-                unlink('../' . $gallery['thumbnail']);
-
+            if ($resultThumbnail->isUploaded){
+                $imgName = $resultThumbnail->name;
+                
+                unlink('../' . $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail']);
                 $updateQuery = $conn->prepare("UPDATE galleries 
                 SET thumbnail = '$imgName'
                 WHERE id='$galleryId'");
@@ -221,7 +222,7 @@
         
         let currentGallery = document.getElementById("current-gallery");
         if (currentGallery != null){
-            displayCurrentImages(currentFiles, currentGallery);
+            displayCurrentImages(currentFiles, currentGallery, "<?php echo $galleryDir?>");
         }
 
         const setImgSrc = () => {

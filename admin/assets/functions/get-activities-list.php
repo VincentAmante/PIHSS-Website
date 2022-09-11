@@ -1,7 +1,7 @@
 <?php
     // Returns list of activities (for overview)
 
-    require 'connect.php';
+    require 'config.php';
 
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
@@ -10,11 +10,17 @@
     }
     
     while ($data = $galleries->fetch_assoc()):?>
-    <?php $updateUrl = "update-activity.php?id=" . $data['ID'];?>
+    <?php 
+        $updateUrl = "update-activity.php?id=" . $data['ID'];
+        $thumbnailDir = getPathToRoot() 
+        . $GALLERY_FOLDERS_DIR 
+        . $data['folderName'] 
+        . '/'. json_decode($data['images'], true)[0]['name'];
+    ?>
 
 
     <div class="row-item">
-        <img src="<?php echo '../' . json_decode($data['images'], true)[0]['path']?>">
+        <img src="<?php echo $thumbnailDir?>">
         <div class="title"><?php echo $data['title']?></div>
         <div class="date"><?php echo $data['creationDate']?></div>
         <a href="<?php echo $updateUrl?>">

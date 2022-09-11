@@ -1,5 +1,5 @@
 <?php
-require "connect.php";
+require "config.php";
 
 if ($conn->connect_error) {
     die('Connection Failure : ' + $conn->connect_error);

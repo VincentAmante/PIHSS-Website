@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['publish-article'])){
-        require "connect.php";
+        require "config.php";
 
         $articleTitle = $_POST['article-title'];
         $articleCreationDate = $_POST['article-doc'];
@@ -12,11 +12,7 @@
 
         if ($imgName != ""){
             include "./handle-images.php";
-             // Directory = Where image will end up when uploaded in the directory
-            $imgDirectory = "./assets/article-posts/";
-
-            // $result = uploadImage($imgDirectory, $imgName, 'article-image', -1, true);
-            $result = uploadImage__DEV($imgDirectory, $imgName, 'article-image', -1, 3);
+            $result = uploadImage($ARTICLE_IMG_DIR, $imgName, 'article-image', -1, 3);
             var_dump($result);
             echo ($result->isUploaded);
 

@@ -10,11 +10,11 @@
         $stmt = $conn->prepare($articleQuery);
         $stmt->execute();
         $article = mysqli_fetch_assoc($stmt->get_result());
+        $articleImg = getPathToRoot() . $ARTICLE_IMG_DIR . $article['img'];
         $articleHtml = $article['articleHtml'];
     }
 
     if (isset($_POST['update-article'])){
-
         // Fetches form contents
         $articleTitle = $_POST['article-title'];
         $articleCreationDate = $_POST['article-doc'];
@@ -30,14 +30,12 @@
             $imgValid = true;
 
             include "./assets/functions/handle-images.php";
-            $imgDirectory = "./assets/article-posts/";
-            $result = uploadImage($imgDirectory, $imgName, 'article-image', -1);
+            $result = uploadImage($ARTICLE_IMG_DIR, $imgName, 'article-image', -1);
 
             // Uploads new image, and deletes old one
-            if ($result != false){
-                $imgName = $result;
-                unlink('../' . $article['img']);
-
+            if ($result->isUploaded){
+                $imgName = $result->name;
+                unlink(getPathToRoot() . $ARTICLE_IMG_DIR . $article['img']);
                 $updateQuery = $conn->prepare("UPDATE articles 
                 SET img = '$imgName'
                 WHERE id='$articleId'");
@@ -61,6 +59,7 @@
             $stmt = $conn->prepare($articleQuery);
             $stmt->execute();
             $article = mysqli_fetch_assoc($stmt->get_result());
+            $articleImg = getPathToRoot() . $ARTICLE_IMG_DIR . $article['img'];
             $articleHtml = $article['articleHtml'];
         }
     }
@@ -97,6 +96,8 @@
                     }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = '/news-article.php?id=<?php echo $articleId?>'; 
+                    } else {
+                        window.location.href = './update-article.php?id=<?php echo $articleId?>';
                     }
                     })
                 </script>
@@ -137,7 +138,7 @@
                     <label for="">Upload Image</label>
                     <label class="uploader-single" ondragover="return false">
                         <i class="icon-upload icon"></i>
-                        <img src="<?php echo '../' . $article['img']?>" class="" id="form-img" onchange="setImgSrc();">
+                        <img src="<?php echo $articleImg?>" class="" id="form-img" onchange="setImgSrc();">
                         <input type="file" accept="image/*" name="article-image" id="article-image">
                     </label>
                     
@@ -167,7 +168,6 @@
             $('#img-src').value = $('#form-img').src;
         }
         setImgSrc();
-
         setQuill("<?php echo $articleHtml?>");
     </script>
 </body>

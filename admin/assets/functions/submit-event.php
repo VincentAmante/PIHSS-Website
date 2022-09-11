@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['add-event'])){
-        require "connect.php";
+        require "config.php";
 
         $eventTitle = $_POST['event-title'];
         $eventStartDate = $_POST['start-date'];

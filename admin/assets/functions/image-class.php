@@ -1,11 +1,11 @@
 <?php
     // Class for storing image types
     class Image {
-        public $path;
+        public $name;
         public $description; // For when alt text is implemented
-        function __construct($path)
+        function __construct($name)
         {
-            $this->path = $path;
+            $this->name = $name;
         }
     };
 ?>

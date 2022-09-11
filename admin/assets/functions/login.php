@@ -1,5 +1,5 @@
 <?php
-    require './assets/functions/connect.php';
+    require './assets/functions/config.php';
 
     if(isset($_POST['return-page'])){
         header("Location: /index.php");

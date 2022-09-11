@@ -1,5 +1,5 @@
 <?php
-    include './connect.php';
+    include './config.php';
 
     $lastId = "";
     $folderName = "";
@@ -69,40 +69,45 @@
         $passportImg = $_FILES['passport-copy']['name'];
         $leaveCertificateImg = $_FILES['leave-certificate']['name'];
 
-        $imgDirectory = "./assets/registration-forms/" . $folderName . '/';
+        $imgDirectory = $REG_FORMS_DIR . $folderName . '/';
+
         if ($eidImgFront != ''){
-            $result = uploadImage($imgDirectory, $eidImgFront, 'eid-copy-front', -1, true);
+            $result = uploadImage($imgDirectory, $eidImgFront, 'eid-copy-front', -1);
 
-            if ($result == false){
-                $imagesValid = false;
+            if ($result->isUploaded){
+                $eidCopyFront = $result->name;
             } else {
-                $eidCopyFront = $result;
+                $imagesValid = false;
             }
         }
+
         if ($eidImgBack != ''){
-            $result = uploadImage($imgDirectory, $eidImgBack, 'eid-copy-back', -1, true);
+            $result = uploadImage($imgDirectory, $eidImgBack, 'eid-copy-back', -1);
 
-            if ($result == false){
-                $imagesValid = false;
+            if ($result->isUploaded){
+                $eidCopyBack = $result->name;
             } else {
-                $eidCopyBack = $result;
+                $imagesValid = false;
             }
         }
+
         if ($passportImg != ''){
             $result = uploadImage($imgDirectory, $passportImg, 'passport-copy', -1, true);
 
-            if ($result == false){
-                $imagesValid = false;
+            if ($result->isUploaded){
+                $passportCopy = $result->name;
             } else {
-                $passportCopy = $result;
+                $imagesValid = false;
             }
         }
+
         if ($leaveCertificateImg != ''){
             $result = uploadImage($imgDirectory, $leaveCertificateImg, 'leave-certificate', -1, true);
-            if ($result == false){
-                $imagesValid = false;
+            
+            if ($result->isUploaded){
+                $leaveCertificate = $result->name;
             } else {
-                $leaveCertificate = $result;
+                $imagesValid = false;
             }
         }
 
@@ -119,8 +124,6 @@
             $stmt->close();
         }
     }
-
-
 
     $conn->close();
     // Returns to page  

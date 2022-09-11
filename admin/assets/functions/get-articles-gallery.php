@@ -1,10 +1,11 @@
 <?php
-require "connect.php";
+require "config.php";
 
 if ($conn->connect_error) {
     die('Connection Failure : ' + $conn->connect_error);
 } else {
     $articles = $conn->query("SELECT * from articles ORDER BY creationDate DESC");
+    $imgFolderDir = getPathToRoot() . $ARTICLE_IMG_DIR;
 }
 
 // If there is no special request for a specific amount of articles
@@ -13,7 +14,7 @@ if (!isset($_GET['articles-count'])){
         <article>
             <a href="<?php echo './news-article.php?id=' . $data['ID']?>">
                 <div class="article-image">
-                    <img src="<?php echo $data['img']?>" alt="">
+                    <img src="<?php echo $imgFolderDir . $data['img']?>" alt="">
                 </div>
                 <div class="article-content">
                     <div class="content-wrapper">
@@ -43,7 +44,7 @@ else {
         <article>
             <a href="<?php echo './news-article.php?id=' . $data['ID']?>">
                 <div class="article-image">
-                    <img src="<?php echo $data['img']?>" alt="">
+                    <img src="<?php echo $imgFolderDir .  $data['img']?>" alt="">
                 </div>
                 <div class="article-content">
                     <div class="content-wrapper">
@@ -82,7 +83,7 @@ else {
             <article>
                 <a href="<?php echo './news-article.php?id=' . $articlesList[$i]['ID']?>">
                     <div class="article-image">
-                        <img src="<?php echo $articlesList[$i]['img']?>" alt="">
+                        <img src="<?php echo $imgFolderDir . $articlesList[$i]['img']?>" alt="">
                     </div>
                     <div class="article-content">
                         <div class="content-wrapper">

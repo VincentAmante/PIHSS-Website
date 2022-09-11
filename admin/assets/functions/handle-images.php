@@ -2,11 +2,11 @@
     /**
      * Converts string to slug
      */
-    function slug($z){
-        $z = strtolower($z);
-        $z = preg_replace('/[^a-z0-9 - .]+/', '', $z);
-        $z = str_replace(' ', '-', $z);
-        return trim($z, '-');
+    function slug(string $str){
+        $str = strtolower($str);
+        $str = preg_replace('/[^a-z0-9 - .]+/', '', $str);
+        $str = str_replace(' ', '-', $str);
+        return trim($str, '-');
     }
 
     class ImageResult {
@@ -31,66 +31,10 @@
     /**
      * Uploads an image to the website's files, ensures it is valid to upload first
      */
-    function uploadImage($imgDirectory, $imgName, $getImgFrom, $index=0, $inAssets=false){
+    function uploadImage(string $imgDirectory, string $imgName, string $getImgFrom, int $index=0){
         $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
-        $imgName = $imgDirectory . uniqid() .basename(slug($imgName));
-        $imageValid = true;
-        $MAX_FILE_SIZE = 10000000000;
-
-        if ($index != -1) {
-            if($_FILES[$getImgFrom]['size'][$index] > $MAX_FILE_SIZE){
-                $imageValid = false;
-            }
-        }
-        else {
-            if($_FILES[$getImgFrom]['size'] > $MAX_FILE_SIZE){
-                $imageValid = false;
-            }
-        }
-        
-
-        // Valid image types
-        switch(strtolower($imgType)){
-            case 'jpeg':
-            case 'png':
-            case 'jpg':
-            case 'jfif':
-            case 'gif':
-            break;
-            default:
-            echo 'Invalid filetype';
-            $imageValid = false;
-        }
-
-        $addition = ($inAssets) ? '../../../' : '../';
-
-        if ($imageValid){
-            if ($index != -1) {    
-                if (move_uploaded_file($_FILES[$getImgFrom]['tmp_name'][$index], $addition . $imgName)){
-                    // Returns image name on successful upload
-                    return $imgName;
-                } else {
-                    return false;
-                }
-            }
-            else {
-                if (move_uploaded_file($_FILES[$getImgFrom]['tmp_name'], $addition . $imgName)){
-                    // Returns image name on successful upload
-                    return $imgName;
-                } else {
-                    return false;
-                }
-            }
-        }
-        else {
-            return false;
-        }
-    }
-
-    // Dupilcate copy, for improved functionality
-    function uploadImage__DEV(string $imgDirectory, string $imgName, string $getImgFrom, int $index=0, int $folderExits = 1){
-        $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
-        $imgName = $imgDirectory . uniqid() .basename(slug($imgName));
+        $uniqueName = uniqid() . basename(slug($imgName));
+        $imgPath = $imgDirectory . $uniqueName;
         $imageValid = true;
         $MAX_FILE_SIZE = 10000000000;
 
@@ -122,21 +66,21 @@
         }
 
         // Repeats folder exits
-        $addition = str_repeat('../', $folderExits);
+        // $addition = str_repeat('../', $folderExits);
 
         if ($imageValid){
             if ($index != -1) {    
-                if (move_uploaded_file($_FILES[$getImgFrom]['tmp_name'][$index], $addition . $imgName)){
+                if (move_uploaded_file($_FILES[$getImgFrom]['tmp_name'][$index], getPathToRoot() . $imgPath)){
                     // Returns image name on successful upload
-                    return new ImageResult(true, $imgName);
+                    return new ImageResult(true, $uniqueName);
                 } else {
                     return new ImageResult(false, "Image could not upload successfully!");
                 }
             }
             else {
-                if (move_uploaded_file($_FILES[$getImgFrom]['tmp_name'], $addition . $imgName)){
+                if (move_uploaded_file($_FILES[$getImgFrom]['tmp_name'], getPathToRoot() . $imgPath)){
                     // Returns image name on successful upload
-                    return new ImageResult(true, $imgName);
+                    return new ImageResult(true, $uniqueName);
                 } else {
                     return new ImageResult(false, "Image could not upload successfully!");
                 }
@@ -147,14 +91,14 @@
         }
     }
 
-    function deleteImages(&$files, $deletionEntries){
+    function deleteImages(&$files, $deletionEntries, $imgPath){
         foreach ($deletionEntries as $deletionIndex => $entry) {
             foreach ($files as $galleryIndex => $record){
-                $imgPath = get_object_vars($record)['path'];
-                if ($imgPath == $entry){
+                $imgName = get_object_vars($record)['name'];
+                if ($imgName == $entry){
                     array_splice($files, $galleryIndex, 1);
                     // Deletes image from folder
-                    if (unlink('../' . $imgPath)){
+                    if (unlink(getPathToRoot() . $imgPath . $imgName)){
                         // Deletion successful
                     }
                     else {

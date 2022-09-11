@@ -10,6 +10,8 @@
         $stmt->bind_param('s', $galleryId);
         $stmt->execute();
         $gallery = mysqli_fetch_assoc($stmt->get_result());
+        $galleryDir = $GALLERY_FOLDERS_DIR . $gallery['folderName'] . '/';
+
     }
 
     include './assets/functions/handle-images.php';
@@ -26,16 +28,16 @@
 
         // Array to store directories of images
         $imgArr = array();
-        $imgDirectory = "./assets/gallery-folders/" . $gallery['folderName'] . '/';
+        $imgDirectory = $GALLERY_FOLDERS_DIR . $gallery['folderName'] . '/';
         $getImgFrom = 'gallery_images';
         
         // Uploads all new valid images to the folder
         foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
             if ($imgName != ""){
                 $result = uploadImage($imgDirectory, $imgName, $getImgFrom, $index);
-                if ($result != false){
+                if ($result->isUploaded){
                     // Adds to images array
-                    array_push($imgArr, new Image($result));
+                    array_push($imgArr, new Image($result->name));
                 }
            }
         }
@@ -46,7 +48,7 @@
         // Handles entries for deletion
         // Locates entries to be deleted, before updating the array
         if (isset($_POST['deletion-entries'])){
-            deleteImages($galleryFiles, $_POST['deletion-entries']);
+            deleteImages($galleryFiles, $_POST['deletion-entries'], $imgDirectory);
         }
 
         // Merges existing and new image arrays
@@ -207,9 +209,7 @@
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="./assets/scripts/rich-text.js"></script>
-
     <script src="../assets/js/file-uploader-single.js"></script>
-
     <!-- For handling the form gallery (displaying, deletion, addition) -->
     <script src="../assets/js/file-uploader-multiple.js"></script>
     <script src="./assets/scripts/handle-form-gallery.js"></script> 
@@ -222,7 +222,7 @@
         
         let currentGallery = document.getElementById("current-gallery");
         if (currentGallery != null){
-            displayCurrentImages(currentFiles, currentGallery);
+            displayCurrentImages(currentFiles, currentGallery, "<?php echo $galleryDir?>");
         }
 
         const setImgSrc = () => {

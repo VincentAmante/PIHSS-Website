@@ -1,5 +1,5 @@
 <?php
-require "connect.php";
+require "config.php";
 
 if ($conn->connect_error) {
     die('Connection Failure : ' + $conn->connect_error);
@@ -11,7 +11,8 @@ while ($data = $galleries->fetch_assoc()) : ?>
     <?php
     $thumbnailSrc = "";
     if ($data['isActivity']) {
-        $thumbnailSrc = json_decode($data['images'], true)[0]['path'];
+        $thumbnailSrc = $GALLERY_THUMBNAILS_DIR 
+        . json_decode($data['images'], true)[0]['path'];
     } else {
         $thumbnailSrc = $data['thumbnail'];
     }

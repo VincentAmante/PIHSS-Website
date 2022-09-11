@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require 'config.php';
 
 // Handles timed session
 if (!isset($_SESSION['SessionTime'])) {

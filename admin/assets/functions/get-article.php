@@ -1,5 +1,5 @@
 <?php
-    require "connect.php";
+    require "config.php";
 
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
@@ -21,6 +21,7 @@
 
         $stmt->execute();
         $articles = $stmt->get_result();
+        $imgFolderDir = getPathToRoot() . $ARTICLE_IMG_DIR;
     }
 ?>
 
@@ -28,7 +29,7 @@
     <li>
         <article id="<?php echo 'article-' . $data['ID'];?>">
             <div class="article-img">
-                <img src="<?php echo $data['img']?>" alt="">
+                <img src="<?php echo $imgFolderDir . $data['img']?>" alt="">
             </div>
             <div class="article-text">
                 <div class="heading">

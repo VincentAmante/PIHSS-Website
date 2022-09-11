@@ -1,5 +1,5 @@
 <?php
-    require 'connect.php';
+    require 'config.php';
 
     // declaring variables to prevent errors
     $email = "";
