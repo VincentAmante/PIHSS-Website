@@ -56,7 +56,7 @@
         $lastId = mysqli_insert_id($conn);
 
         $studentNameTrimmed = trim($studentName);
-        mkdir("../../../assets/registration-forms/" . $lastId . "_" . $studentNameTrimmed);
+        mkdir(getPathToRoot() . $REG_FORMS_DIR . $lastId . "_" . $studentNameTrimmed);
         $folderName = $lastId . '_' . $studentNameTrimmed;
         $stmt->close();
 
@@ -92,7 +92,7 @@
         }
 
         if ($passportImg != ''){
-            $result = uploadImage($imgDirectory, $passportImg, 'passport-copy', -1, true);
+            $result = uploadImage($imgDirectory, $passportImg, 'passport-copy', -1);
 
             if ($result->isUploaded){
                 $passportCopy = $result->name;
@@ -102,7 +102,7 @@
         }
 
         if ($leaveCertificateImg != ''){
-            $result = uploadImage($imgDirectory, $leaveCertificateImg, 'leave-certificate', -1, true);
+            $result = uploadImage($imgDirectory, $leaveCertificateImg, 'leave-certificate', -1);
             
             if ($result->isUploaded){
                 $leaveCertificate = $result->name;

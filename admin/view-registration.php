@@ -11,6 +11,8 @@
         $stmt->bind_param('i', $registrationId);
         $stmt->execute();
         $regEntry = mysqli_fetch_assoc($stmt->get_result());
+        $folderName = $regEntry['ID'] . '_' . trim($regEntry['studentName']) . '/';
+        $regDir = getPathToRoot() . $REG_FORMS_DIR . $folderName;
     }
 
     $conn->close();
@@ -72,7 +74,7 @@
                         <th>Photo Copy Front</th>
                         <td>
                             <div>
-                                <img src="<?php echo '../' . $regEntry['eidCopyFront']?>" alt="">
+                                <img src="<?php echo $regDir . $regEntry['eidCopyFront']?>" alt="">
                             </div>
                         </td>
                     </tr>
@@ -80,7 +82,7 @@
                         <th>Photo Copy Back</th>
                         <td>
                             <div>
-                                <img src="<?php echo '../' . $regEntry['eidCopyBack']?>" alt="">
+                                <img src="<?php echo $regDir . $regEntry['eidCopyBack']?>" alt="">
                             </div>
                         </td>
                     </tr>
@@ -114,7 +116,7 @@
                         <th>Passport Copy</th>
                         <td>
                             <div>
-                                <img src="<?php echo '../' . $regEntry['passportCopy']?>" alt="">
+                                <img src="<?php echo $regDir . $regEntry['passportCopy']?>" alt="">
                             </div>
                         </td>
                     </tr>
@@ -122,7 +124,7 @@
                         <th>Leave Certificate</th>
                         <td>
                             <div>
-                                <img src="<?php echo '../' . $regEntry['leaveCertificate']?>" alt="">
+                                <img src="<?php echo $regDir . $regEntry['leaveCertificate']?>" alt="">
                             </div>
                         </td>
                     </tr>
