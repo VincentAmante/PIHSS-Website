@@ -162,6 +162,18 @@ section {
 	height: 80%;
 }
 
+.fc-list-item {
+	position: relative;
+	.delete-event {
+		width: 1.75em;
+		height: 1.75em;
+		position: absolute;
+		transform: translateY(50%);
+		right: 2.5%;
+		color: $alert;
+	}
+}
+
 // Media Queries
 @media screen and (max-width: $breakpoint-tablet-landscape) {
 	.news-container {

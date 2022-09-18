@@ -36,7 +36,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/news-events.css">
+    <link rel="stylesheet" href="../assets/css/news-events.css">
     <link rel="stylesheet" href="./assets/styles/add-article.css">
 </head>
 <body>
@@ -150,7 +150,7 @@
                                 url: './assets/functions/delete-event.php',
                                 data: {id: id},
                                 success : function (){
-                                    $('#calendar').fullCalendar('removeEvents',event._id);
+                                    $('#calendar').fullCalendar('removeEvents', event._id);
                                 }
                             })
                         }

@@ -9,6 +9,11 @@ if ($conn->connect_error) {
 
 while ($data = $activities->fetch_assoc()) : ?>
     <?php $images = json_decode($data['images'], true);
+        $updateUrl = "update-activity.php?id=" . $data['ID'];
+        $imagesDir = getPathToRoot() 
+        . $GALLERY_FOLDERS_DIR
+        . $data['folderName']
+        . '/';
     ?>
     <div class="activity-container">
         <div class="content">
@@ -17,9 +22,9 @@ while ($data = $activities->fetch_assoc()) : ?>
             </div>
 
             <div class="activity-images">
-                <img src="<?php echo $images[0]['path']; ?>" alt="" />
-                <img src="<?php echo $images[1]['path']; ?>" alt="" />
-                <img src="<?php echo $images[2]['path']; ?>" alt="" />
+                <img src="<?php echo $imagesDir . $images[0]['img']; ?>" alt="" />
+                <img src="<?php echo $imagesDir . $images[1]['img']; ?>" alt="" />
+                <img src="<?php echo $imagesDir . $images[2]['img']; ?>" alt="" />
                 <button><a href="<?php echo './gallery-subpage.php?id=' . $data['ID'] ?>">View More >></a></button>
             </div>
         </div>
