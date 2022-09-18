@@ -153,20 +153,16 @@ main h2 {
   flex: 1;
 }
 .modal .modal-content .slide-container .lightbox-slide {
-  cursor: -webkit-grab;
-  cursor: grab;
   height: 100vh;
   width: auto;
-  overflow: visible;
+  overflow: hidden;
   will-change: transform;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.modal .modal-content .slide-container .lightbox-slide:active {
-  cursor: grabbing;
-  cursor: -webkit-grabbing;
-}
-.modal .modal-content .slide-container .lightbox-slide img {
+.modal .modal-content .slide-container .lightbox-slide .lightbox-image {
+  cursor: -webkit-grab;
+  cursor: grab;
   position: absolute;
   height: 100%;
   width: 100%;

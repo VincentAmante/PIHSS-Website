@@ -116,6 +116,9 @@ main h1 {
   height: 70vh;
   padding: 2.5rem;
   background-color: #ddedd5;
+  /* Custom Scrollbar */
+  -ms-overflow-style: auto;
+  scrollbar-width: auto;
 }
 .about-us .about-us-container .content .content-text h1 {
   font-size: 1.5em;
@@ -132,6 +135,21 @@ main h1 {
 }
 .about-us .about-us-container .content .content-text ol li::marker {
   font-weight: 600;
+}
+.about-us .about-us-container .content .content-text::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 20px;
+  border: solid 3px transparent;
+}
+.about-us .about-us-container .content .content-text::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  display: block;
+}
+.about-us .about-us-container .content .content-text::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 /* Principal's Message */

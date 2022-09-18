@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <!-- Header -->
   <?php include('./assets/php/header.php') ?>
 
   <main>
@@ -34,6 +35,7 @@
     <!-- Admissions -->
     <section id="admissions" class="admissions">
       <div class="admissions-container">
+
         <!-- Overview -->
         <div class="admissions-overview">
           <div class="content">
@@ -66,7 +68,7 @@
                 Parents have to submit the due fees along with any pending
                 documents within 3 days.
               </li>
-            </ul>
+            </ul> <!-- .note -->
           </div> <!-- .content -->
 
           <!-- Internal Navigation -->
@@ -81,7 +83,7 @@
               </ul>
             </div>
           </div> <!-- .internal-nav -->
-        </div>
+        </div> <!-- .admissions-overview -->
 
         <!-- Admissions Process -->
         <div class="admissions-process">
@@ -97,12 +99,14 @@
                 </p>
               </div>
             </li>
+
             <li>
               <span class="card-number">2</span>
               <div class="card-content">
                 <p>Answer papers will NOT be shown to parents</p>
               </div>
             </li>
+
             <li>
               <span class="card-number">3</span>
               <div class="card-content">
@@ -112,6 +116,7 @@
                 </p>
               </div>
             </li>
+
             <li>
               <span class="card-number">4</span>
               <div class="card-content">
@@ -189,7 +194,7 @@
               </ul>
             </li>
           </ol> <!-- .documents-list -->
-        </div>
+        </div> <!-- #requirements -->
       </div> <!-- .admissions-container -->
     </section> <!-- #admissions -->
 
@@ -202,7 +207,7 @@
         will be applicable from start of the academic year i.e. from April.
       </p>
 
-      <!-- Table for Fees -->
+      <!-- Fees Table -->
       <div id="fees-table" class="table-wrapper">
         <table>
           <tr>
@@ -210,31 +215,37 @@
             <th scope="col">Grade</th>
             <th scope="col">Fee / Annum</th>
           </tr>
+
           <tr>
             <td>1</td>
             <td>KG 1 - Grade 3</td>
             <td>AED 4,500</td>
           </tr>
+
           <tr>
             <td>2</td>
             <td>Grade 4 - Grade 5</td>
             <td>AED 4,700</td>
           </tr>
+
           <tr>
             <td>3</td>
             <td>Grade 6 - Grade 8</td>
             <td>AED 5,200</td>
           </tr>
+
           <tr>
             <td>4</td>
             <td>Grade 9</td>
             <td>AED 5,800</td>
           </tr>
+
           <tr>
             <td>5</td>
             <td>Grade 10</td>
             <td>AED 6,000</td>
           </tr>
+
           <tr>
             <td>6</td>
             <td>Grade 11 - Grade 12</td>
@@ -277,8 +288,10 @@
 
       <div class="school-transport">
         <h2>SCHOOL TRANSPORT</h2>
-        <p>The School has its own fleet of air-conditioned buses to provide safe and secure transportation for both
-          sections.</p>
+        <p>
+          The School has its own fleet of air-conditioned buses to provide safe and secure transportation for both
+          sections.
+        </p>
         <p>The transportation charges are as follows:</p>
 
         <ul>
@@ -316,7 +329,7 @@
               </ol>
             </li>
           </ul>
-        </div>
+        </div> <!-- .transport-note -->
       </div> <!-- .school-transport -->
     </section>
 
@@ -369,7 +382,7 @@
             <li>
               Lost or damaged library books and materials should be replaced
             </li>
-          </ol>
+          </ol> <!-- .student-code-list -->
         </div> <!-- .student-code-content -->
 
         <div class="student-code-note">
@@ -411,7 +424,7 @@
               A leave application for more than three days leave will be sanctioned by the Vice Principal/Principal.
             </li>
           </ol>
-        </div>
+        </div> <!-- .leave-procedure -->
       </div> <!-- .student-code-container -->
     </section> <!-- #student-code -->
 
@@ -422,7 +435,7 @@
 
       <form class="registration-form" id="registration-form" action="./admin/assets/functions/submit-registration.php" method="POST" enctype="multipart/form-data" novalidate>
         <table>
-          
+
           <!-- Student Name -->
           <tr class="form-row">
             <td class="form-label">
@@ -432,7 +445,7 @@
             <td class="form-input">
               <div class="main-body">
                 <input type="text" id="student-name" name="student-name" spellcheck="false" autocomplete="off" required>
-                
+
                 <!-- Displays status of validation -->
                 <div class="input-alerts">
                   <i class="fas fa-check-circle"></i>
@@ -469,7 +482,7 @@
                   <i class="fas fa-check-circle"></i>
                   <i class="fas fa-exclamation-circle"></i>
                 </div>
-              <small>Error Message</small>
+                <small>Error Message</small>
               </div>
             </td>
           </tr>
@@ -545,11 +558,11 @@
             <td class="form-label">
               <label for="eid-copy-front">Upload EID - Frontview</label>
             </td>
-        
+
             <td class="form-input">
               <label class="file-upload">
                 <div class="upload-button">Add Files</div>
-                
+
                 <!-- Drag and drop images -->
                 <label class="uploader-single" ondragover="return false">
                   <i class="icon-upload icon"></i>
@@ -602,7 +615,7 @@
               <label for="student-class">Student Class</label>
             </td>
             <td class="form-input">
-              
+
               <!-- Class Options -->
               <select name="student-class" id="student-class" required>
                 <option value="">Choose grade</option>
@@ -683,13 +696,13 @@
             </td>
             <td class="form-input">
               <div class="main-body">
-                  <input type="email" id="father-email" name="father-email" spellcheck="false" autocomplete="on" required>
-                  <div class="input-alerts">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                  </div>
+                <input type="email" id="father-email" name="father-email" spellcheck="false" autocomplete="on" required>
+                <div class="input-alerts">
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
                 </div>
-                <small>Error Message</small>
+              </div>
+              <small>Error Message</small>
             </td>
           </tr>
 
@@ -730,8 +743,9 @@
   <!-- Footer -->
   <?php include('./assets/php/footer.php') ?>
 
+  <!-- Scripts -->
   <script src="assets/js/global-scripts.js"></script>
-  
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="assets/js/file-uploader-single.js"></script>
   <script src="assets/js/registration.js"></script>

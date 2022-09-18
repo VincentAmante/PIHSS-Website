@@ -1,135 +1,138 @@
 @import "./_variables.scss";
 
 footer {
-    color: $primary-secondary;
+	color: $primary-secondary;
 
-    // Gradient Background
-    background: rgb(15,105,56);
-    background: -moz-linear-gradient(0deg, rgba(15,105,56,1) 100%, rgba(15,105,56,0.75) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(15,105,56,1) 100%, rgba(15,105,56,0.75) 100%);
-    background: linear-gradient(0deg, rgba(15,105,56,1) 100%, rgba(15,105,56,0.75) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#0f6938",GradientType=1);
-    
-    display: flex;
-    flex-direction: column;
-    
-    padding-inline: $global-margin;
+	// Gradient Background
+	background: rgb(15, 105, 56);
+	background: -moz-linear-gradient(0deg, rgba(15, 105, 56, 1) 100%, rgba(15, 105, 56, 0.75) 100%);
+	background: -webkit-linear-gradient(
+		0deg,
+		rgba(15, 105, 56, 1) 100%,
+		rgba(15, 105, 56, 0.75) 100%
+	);
+	background: linear-gradient(0deg, rgba(15, 105, 56, 1) 100%, rgba(15, 105, 56, 0.75) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#0f6938",GradientType=1);
 
-    li {
-        cursor: pointer;
-        padding-left: .1rem;
+	display: flex;
+	flex-direction: column;
 
-        &:hover {
-            border-radius: .5em;
-            background-color: $primary-main;
-        }
-        img{
-            width: 1em;
-        }
-    }
-    .footer-logo-container {
-        display: flex;
-        align-items: center;
+	padding-inline: $global-margin;
 
-        .footer-logo {
-            padding: 5vmin 1vw;
-            // padding-right: 2vw;
-            img {
-                width: $font-size-huge;
-            }
-        }
-        
-        .footer-title {
-            
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-size: $font-size-normal;
-            margin: 0;
-            text-transform: uppercase;
+	li {
+		cursor: pointer;
+		padding-left: 0.1rem;
 
-            font-family: $font-secondary;
-            
-            h1 {
-                margin: 0;
-                font-size: $font-size-large;
-                font-weight: 800;
-                font-family: "Raleway", sans-serif !important;
-            }
-            h2 {
-                margin: 0;
-                font-weight: 400;
-                font-size: $font-size-small;
-                font-family: "Raleway", sans-serif !important;
-            }
-        }
-    }
+		&:hover {
+			border-radius: 0.5em;
+			background-color: $primary-main;
+		}
+		img {
+			width: 1em;
+		}
+	}
 
+	.footer-logo-container {
+		display: flex;
+		align-items: center;
 
-    ul {
-        padding: 0;
+		.footer-logo {
+			padding: 5vmin 1vw;
+			// padding-right: 2vw;
+			img {
+				width: $font-size-huge;
+			}
+		}
 
-        li {
-            display: flex;
-            align-items: center;
-            padding-block: .2em;
-            transition: all .25s ease-in-out;
+		.footer-title {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			font-size: $font-size-normal;
+			margin: 0;
+			text-transform: uppercase;
 
-            span {
-					font-size: $font-size-small;
-            }
-            * {
-                margin: .5vmin;
-            }
+			font-family: $font-secondary;
 
-            a {
-                height: 100%;
-                width: 100%;
-                padding: .2em 0em;
-                text-decoration: none;
-                color: $primary-secondary;
-                font-weight: 300;
-                font-size: $font-size-normal;
-            }
-        }
-    }
+			h1 {
+				margin: 0;
+				font-size: $font-size-large;
+				font-weight: 800;
+				font-family: "Raleway", sans-serif !important;
+			}
+			h2 {
+				margin: 0;
+				font-weight: 400;
+				font-size: $font-size-small;
+				font-family: "Raleway", sans-serif !important;
+			}
+		}
+	}
 
-    .footer-nav {
-        h2 {
-            font-family: $font-primary;
-            font-weight: 500;
-            
-            font-size: $font-size-large;
+	ul {
+		padding: 0;
 
-            border-bottom: .01em solid $primary-secondary;
-            padding-block: .5vw;
-            margin-top: 1em;
-        }
-    }
+		li {
+			display: flex;
+			align-items: center;
+			padding-block: 0.2em;
+			transition: all 0.25s ease-in-out;
 
-    // .footer-contacts{
-    //     padding-left: 3em;
-    // }
+			span {
+				font-size: $font-size-small;
+			}
+			* {
+				margin: 0.5vmin;
+			}
 
-    .footer-contact-map {
-        width: 35%;
-        position: relative;
-        overflow: hidden;
-  
-        iframe {
-          border: 0;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-      }
+			a {
+				height: 100%;
+				width: 100%;
+				padding: 0.2em 0em;
+				text-decoration: none;
+				color: $primary-secondary;
+				font-weight: 300;
+				font-size: $font-size-normal;
+			}
+		}
+	}
+
+	.footer-nav {
+		h2 {
+			font-family: $font-primary;
+			font-weight: 500;
+
+			font-size: $font-size-large;
+
+			border-bottom: 0.01em solid $primary-secondary;
+			padding-block: 0.5vw;
+			margin-top: 1em;
+		}
+	}
+
+	// .footer-contacts{
+	//     padding-left: 3em;
+	// }
+
+	.footer-contact-map {
+		width: 35%;
+		position: relative;
+		overflow: hidden;
+
+		iframe {
+			border: 0;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
 }
 
 @media screen and (min-width: $breakpoint-tablet-landscape) {
-    footer {
-        flex-direction: row;
-        justify-content: space-between;
-        padding-block: 2vmax;
-    }
+	footer {
+		flex-direction: row;
+		justify-content: space-between;
+		padding-block: 2vmax;
+	}
 }

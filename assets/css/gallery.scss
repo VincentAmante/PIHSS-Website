@@ -10,7 +10,6 @@ html {
 
 main,
 section {
-	// @include flex-centered;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 5vmax;
@@ -173,28 +172,20 @@ main {
 			flex: 1;
 
 			.lightbox-slide {
-				// position: relative;
-				cursor: grab;
 				height: 100vh;
 				width: auto;
-				overflow: visible;
+				overflow: hidden;
 				will-change: transform;
 				object-fit: contain;
 
-				// TODO: Figure out why this doesnt work
-				&:active {
-					cursor: grabbing;
-					cursor: -moz-grabbing;
-					cursor: -webkit-grabbing;
-				}
-
-				img {
+				.lightbox-image {
+					cursor: grab;
 					position: absolute;
 					height: 100%;
 					width: 100%;
 					will-change: transform;
 					transition: 0.4s ease-in-out;
-					transform: scale(0); // added translateX(0%)
+					transform: scale(0);
 					object-fit: contain;
 				}
 			}

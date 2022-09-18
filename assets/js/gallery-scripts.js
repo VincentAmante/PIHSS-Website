@@ -1,4 +1,16 @@
-/* QUERY SELECTORS */
+/**
+ * PURPOSE: Handle the lightbox functionality in the gallery pages (/gallery-subpages.php)
+ *
+ * CONTENT:
+ *    - Handler for toggling the lightbox modal
+ *    - Handler for switching between slides
+ *    - Handlers for the header buttons (zoom in, zoom out, download)
+ *    - Handler for the image drag functionality
+ *    - Implementation of keyboard and touch functionality
+ */
+
+/*========== QUERY SELECTORS ==========*/
+
 const lightboxEnabled = document.querySelectorAll(".lightbox-enabled");
 const lightboxArray = Array.from(lightboxEnabled);
 const lastImage = lightboxArray.length - 1;
@@ -23,14 +35,18 @@ const lightboxBtnNext = document.querySelector("#next");
 
 let activeImage;
 let changeZoom = 1;
+var state = { distX: 0, distY: 0 };
+var flag = false;
 
-/* FUNCTIONS */
+/*========== FUNCTIONS ==========*/
+
+// Functions to toggle lightbox
 const showLightBox = () => {
 	document.querySelector("body").style.overflow = "hidden";
 	lightboxContainer.classList.add("active");
 	lightboxImage.style.transform = "scale(1)";
+	lightboxImage.style.cursor = "grab";
 	lightboxHeader.style.display = "none";
-	lightboxSlide.style.cursor = "grab";
 	lightboxSlide.style.pointerEvents = "initial";
 };
 
@@ -38,10 +54,11 @@ const hideLightBox = () => {
 	document.querySelector("body").style.overflow = "auto";
 	lightboxContainer.classList.remove("active");
 	lightboxImage.style.transform = "scale(0.5)";
+	lightboxImage.style.cursor = "default";
 	lightboxHeader.style.display = "flex";
-	lightboxSlide.style.cursor = "default";
 };
 
+// Functions for slide handling
 const setActiveImage = (image) => {
 	lightboxImage.style.transform = "scale(1)";
 	lightboxSlide.style.transform = "none";
@@ -70,16 +87,57 @@ const transitionSlideHandler = (moveItem) => {
 	moveItem.includes("prev") ? transitionSlidePrev() : transitionSlideNext();
 };
 
+// Function to download image
 const downloadSlide = (image) => {
 	lightboxBtnDownload.href = lightboxArray[image].src;
 };
 
+// Function to change image zoom
 const zoomSlide = (changeZoom) => {
 	console.log(changeZoom);
 	lightboxImage.style.transform = "scale(" + changeZoom + ")";
 };
 
-/* EVENT LISTENERS */
+// Functions for dragging images
+const dragDown = (e) => {
+	// Prevent unexpected behaviors on mobile devices
+	e.preventDefault();
+
+	// Get the correct event source regardless the device:
+	var evt = e.type === "touchstart" ? e.changedTouches[0] : e;
+
+	// Get the size of the slide
+	const rect = lightboxSlide.getBoundingClientRect();
+
+	// Get the distance of the x/y
+	state.distX = Math.abs(rect.left - evt.clientX);
+	state.distY = Math.abs(rect.top - evt.clientY);
+
+	flag = true;
+	lightboxSlide.style.transition = "0s";
+	lightboxImage.style.cursor = "grabbing";
+};
+
+const dragUp = (e) => {
+	flag = false;
+	lightboxImage.style.cursor = "grab";
+};
+
+const dragMove = (e) => {
+	// Update the position x/y
+	if (flag === true) {
+		// Get the correct event source regardless the device:
+		var evt = e.type === "touchmove" ? e.changedTouches[0] : e;
+
+		// Translate container to new position
+		lightboxSlide.style.transform = `translate(
+			${evt.clientX - state.distX}px,
+			${evt.clientY - state.distY}px)`;
+	}
+};
+
+/*========== EVENT LISTENERS ==========*/
+
 // Click input
 lightboxEnabled.forEach((image) => {
 	image.addEventListener("click", (e) => {
@@ -137,76 +195,13 @@ window.addEventListener("keydown", (e) => {
 	}
 });
 
-//-----------------------------------------
-//SCROLL
-//TODO: Make it functional
-// var scrollElement = document.querySelector("#progress-indicator");
-
-// // window.addEventListener("scroll", function () {
-// // 	var winScroll = document.body.scrollHeight;
-// // 	var scrolledPixels = this.scrollY;
-// // 	var height = ((scrolledPixels / winScroll) * 100).toFixed(2);
-// // 	scrollElement.style.height = height + "%";
-// // });
-
-// window.addEventListener("scroll", function () {
-// 	var height = document.body.scrollHeight - this.innerHeight;
-// 	var scrolledPixels = this.scrollY;
-// 	var width = ((scrolledPixels / height) * 100).toFixed(2);
-// 	scrollElement.style.width = width + "%";
-// });
-
-// -----------------------------
-// IMAGE PANNING
-// TODO: Fix awkward behavior
-// TODO: Organise code
-// TODO: Make touch events work on pan
-// TODO: Stop image from automatically dragging when reopening the modal
-
-// Distance between last and new position
-var state = { distX: 0, distY: 0 };
-
-function onDown(e) {
-	// Stop bubbling, this is important to avoid
-	// unexpected behaviours on mobile browsers:
-	e.preventDefault();
-
-	// Get the correct event source regardless the device:
-	var evt = e.type === "touchstart" ? e.changedTouches[0] : e;
-
-	// Get the distance of the x/y
-	state.distX = Math.abs(lightboxSlide.offsetLeft - evt.clientX);
-	state.distY = Math.abs(lightboxSlide.offsetTop - evt.clientY);
-
-	// Disable pointer events in the circle to avoid
-	// a bug whenever it's moving.
-	lightboxSlide.style.pointerEvents = "none";
-
-	// Remove delay when dragging image
-	lightboxSlide.style.transition = "0s";
-}
-function onUp(e) {
-	// Re-enable the "pointerEvents" in the circle element.
-	// If this is not enabled, then the element won't move.
-	lightboxSlide.style.pointerEvents = "initial";
-}
-function onMove(e) {
-	// Update the position x/y
-	if (lightboxSlide.style.pointerEvents === "none") {
-		// Get the correct event source regardless the device:
-		var evt = e.type === "touchmove" ? e.changedTouches[0] : e;
-
-		// Update top/left directly in the dom element:
-		lightboxSlide.style.transform = `translate(${
-			evt.clientX - state.distX
-		}px, ${evt.clientY - state.distY}px)`;
-	}
-}
-
+// Image drag input
 // FOR MOUSE DEVICES:
-lightboxSlide.addEventListener("mousedown", onDown);
-lightboxContainer.addEventListener("mousemove", onMove);
-lightboxContainer.addEventListener("mouseup", onUp);
+lightboxImage.addEventListener("mousedown", dragDown);
+lightboxContainer.addEventListener("mousemove", dragMove);
+lightboxContainer.addEventListener("mouseup", dragUp);
 
 // FOR TOUCH DEVICES:
-lightboxContainer.addEventListener("touchmove", onMove);
+lightboxImage.addEventListener("touchstart", dragDown);
+lightboxContainer.addEventListener("touchmove", dragMove);
+lightboxContainer.addEventListener("touchend", dragUp);

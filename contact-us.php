@@ -81,7 +81,7 @@
 		</section>
 
 		<!-- Contact Form -->
-		<section class="contact-form">
+		<section id="contact-form" class="contact-form">
 			<h2>Do you have any queries?</h2>
 
 			<div class="form-container">
@@ -126,7 +126,7 @@
 					</div>
 				</form> <!-- .form -->
 			</div> <!-- .form-container -->
-		</section>
+		</section> <!-- #contact-form -->
 	</main>
 
 	<!-- Footer -->

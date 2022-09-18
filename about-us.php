@@ -32,8 +32,9 @@
             </ul>
         </div>
 
-        <!-- About Us -->
+        <!-- About Us Wrapper -->
         <div class="about-us-wrapper">
+
             <!-- Overview -->
             <div class="about-us-overview">
                 <div class="h1-border">
@@ -44,7 +45,9 @@
 
             <!-- About Us Table -->
             <section class="about-us">
+
                 <div class="about-us-container">
+                    <!-- Table Images -->
                     <div class="image content-container">
                         <div class="tab-content active" id="values-img">
                             <img src="./assets/images/placeholders/why_pihss.jpg" alt="">
@@ -59,7 +62,11 @@
                             <img src="./assets/images/placeholders/staff_5.jpg" alt="">
                         </div>
                     </div> <!-- content-container -->
+
+                    <!-- Table Text -->
                     <div class="content">
+
+                        <!-- Table Headers -->
                         <div id="about-us-tabs" class="content-headers">
                             <input type="radio" id="tab-values" value="values" name="about-us-group" class="tab" checked>
                             <label for="tab-values">Values</label>
@@ -74,6 +81,7 @@
                             <label for="tab-religious-background">Religious Background</label>
                         </div><!-- #about-us-tabs -->
 
+                        <!-- Table Content -->
                         <div class="content-text">
                             <div id="values-content" class="tab-content active">
                                 <div>
@@ -106,6 +114,7 @@
                                     </ol>
                                 </div>
                             </div> <!-- #values-content -->
+
                             <div id="vision-mission-content" class="tab-content">
                                 <div>
                                     <h1>Vision</h1>
@@ -142,6 +151,7 @@
                                     </p>
                                 </div>
                             </div> <!-- #vision-mission-content -->
+
                             <div id="our-history-content" class="tab-content">
                                 <div>
                                     <p>
@@ -178,6 +188,7 @@
                                     </p>
                                 </div>
                             </div> <!-- #our-history-content -->
+
                             <div id="religious-background-content" class="tab-content">
                                 <div>
                                     <p>
@@ -260,6 +271,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content item-flipped">
                             <div class="item-hidden"></div>
 
@@ -275,6 +287,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content">
                             <div class="item-hidden"></div>
 
@@ -290,6 +303,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content item-flipped">
                             <div class="item-hidden"></div>
 
@@ -305,6 +319,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content">
                             <div class="item-hidden"></div>
 
@@ -320,6 +335,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content item-flipped">
                             <div class="item-hidden"></div>
 
@@ -335,6 +351,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content">
                             <div class="item-hidden"></div>
 
@@ -350,6 +367,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content item-flipped">
                             <div class="item-hidden"></div>
 
@@ -365,6 +383,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content">
                             <div class="item-hidden"></div>
 
@@ -380,6 +399,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="timeline-content item-flipped">
                             <div class="item-hidden"></div>
 

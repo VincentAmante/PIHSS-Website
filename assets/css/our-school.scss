@@ -119,9 +119,9 @@ main {
 							max-height: 250px;
 							overflow-y: auto;
 
-							// /* Custom Scrollbar */
-							-ms-overflow-style: auto; /* IE and Edge */
-							scrollbar-width: auto; /* Firefox */
+							/* Custom Scrollbar */
+							-ms-overflow-style: auto; // IE and Edge
+							scrollbar-width: auto; // Firefox
 
 							&::-webkit-scrollbar-track {
 								background-color: rgba($primary-secondary, 0.3);

@@ -43,7 +43,6 @@ if ($conn->connect_error) {
       <ul>
         <li><a href="./index.php">HOME</a></li>
         <li><a href="./gallery.php#our-gallery">GALLERY</a></li>
-        <li><a href="./gallery.php#our-gallery">OUR GALLERY</a></li>
         <li><a href="javascript:window.location.reload(true)"><?php echo $gallery['title'] ?></a></li>
       </ul>
     </div>
@@ -55,6 +54,7 @@ if ($conn->connect_error) {
           <span></span>
           <h1><?php echo $gallery['title'] ?></h1>
         </div>
+
         <p>
           <?php echo $gallery['description'] ?>
         </p>
@@ -92,6 +92,7 @@ if ($conn->connect_error) {
 
       <!-- Modal Content -->
       <div class="modal-content">
+
         <!-- Previous Slide -->
         <i id="prev" class="lightbox-btn fa-solid fa-arrow-left-long fa-2xl"></i>
 
@@ -104,6 +105,7 @@ if ($conn->connect_error) {
 
         <!-- Next Slide -->
         <i id="next" class="lightbox-btn fa-solid fa-arrow-right-long fa-2xl"></i>
+
       </div> <!-- .modal-content -->
     </div>
   </main>

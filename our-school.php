@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
 	<!-- Header -->
 	<?php include('./assets/php/header.php') ?>
 
@@ -78,6 +77,7 @@
 		function loadContent() {
 			var page = location.hash.substring(1);
 			$(".tab-breadcrumb").html(page);
+			$(".tab-breadcrumb").attr("href", "our-school.php#" + page);
 
 			$.ajax({
 				type: "GET",

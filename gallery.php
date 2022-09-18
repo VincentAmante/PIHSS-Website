@@ -88,8 +88,8 @@
 
         function loadContent() {
             var page = location.hash.substring(1);
-            console.log("page=" + page);
             $(".tab-breadcrumb").html(page);
+            $(".tab-breadcrumb").attr("href", "gallery.php#" + page);
 
             $.ajax({
                 type: "GET",
@@ -104,8 +104,6 @@
                     $('#calendar').fullCalendar('render');
                 },
             });
-
-
         }
     </script>
 </body>
