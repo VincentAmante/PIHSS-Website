@@ -194,6 +194,8 @@
                         <div class="buttons">
                             <button class="form-button form-submit" name="save-gallery-content">Save</button>
                             <button class="form-button form-reset" type="reset">Clear Input</button>
+                            <a class="form-button" href="/gallery-subpage.php?id=<?php echo $galleryId?>">View Page</a>
+                            <a class="delete-article form-button delete-button" href="./manage-pages.php?delete-gallery=<?php echo $galleryId?>">Delete Gallery</a>
                         </div>
                     </div>
 
@@ -232,6 +234,28 @@
 
         // Handles redisplaying the description
         setQuill("<?php echo $gallery['description']?>");
+
+        $('.delete-gallery').click(e => {
+                // Ensures the click doesn't do anything else
+                event.preventDefault();
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Once deleted, this gallery cannot be restored',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#1B9B55',
+                    cancelButtonColor: '#FF1F1F',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed){
+
+                        // If confirmed is press, the window will switch pages
+                        // Here it's going to the click's targeted link
+                        window.location = e.currentTarget.href;
+                    }
+                })
+            })
     </script>
 </body>
 </html>

@@ -151,6 +151,8 @@
                     <div class="buttons">
                         <button class="form-button form-submit" name="update-article">Publish</button>
                         <button class="form-button form-reset" type="reset" value="Clear All" required>Clear</button>
+                        <a class="form-button" href="/news-article.php?id=<?php echo $articleId?>">View Page</a>
+                        <a class="delete-article form-button delete-button" href="./manage-pages.php?delete-article=<?php echo $articleId?>">Delete Article</a>
                     </div>
                 </div>
             </form> <!-- #admin-form -->
@@ -169,6 +171,29 @@
         }
         setImgSrc();
         setQuill("<?php echo $articleHtml?>");
+
+        // All list items here will have this onclick event
+        $('.delete-article').click(e => {
+                // Ensures the click doesn't do anything else
+                event.preventDefault();
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Once deleted, this article cannot be restored',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#1B9B55',
+                    cancelButtonColor: '#FF1F1F',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed){
+
+                        // If confirmed is press, the window will switch pages
+                        // Here it's going to the click's targeted link
+                        window.location = e.currentTarget.href;
+                    }
+                })
+            })
     </script>
 </body>
 </html>

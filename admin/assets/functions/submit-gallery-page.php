@@ -14,7 +14,7 @@
             exit();
         }
 
-        include './handle-images.php';
+        require './handle-images.php';
         $imgDirectory = $GALLERY_THUMBNAILS_DIR;
         $getImgFrom = 'gallery-image';
         

@@ -160,7 +160,7 @@
                         <label for="">Upload Image</label>
                         <label class="uploader-single" ondragover="return false">
                             <i class="icon-upload icon"></i>
-                            <img src="<?php echo '../' . $gallery['thumbnail']?>" class="" id="form-img" onchange="setImgSrc();">
+                            <img src="<?php echo getPathToRoot() . $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail']?>" class="" id="form-img" onchange="setImgSrc();">
                             <input type="file" accept="image/*" name="gallery-thumbnail" id="gallery-thumbnail">
                         </label>
                         
@@ -193,6 +193,8 @@
                         <div class="buttons">
                             <button class="form-button form-submit" name="save-gallery-content">Save</button>
                             <button class="form-button form-reset" type="reset">Clear Input</button>
+                            <a class="form-button" href="/gallery-subpage.php?id=<?php echo $galleryId?>">View Page</a>
+                            <a class="delete-gallery form-button delete-button" href="./manage-pages.php?delete-gallery=<?php echo $galleryId?>">Delete Gallery</a>
                         </div>
                     </div>
                     <input type="hidden" value="<?php echo $rand; ?>" name="rand-check">
@@ -229,6 +231,29 @@
             $('#img-src').value = $('#form-img').src;
         }
         setImgSrc();
+
+
+        $('.delete-gallery').click(e => {
+                // Ensures the click doesn't do anything else
+                event.preventDefault();
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'Once deleted, this gallery cannot be restored',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#1B9B55',
+                    cancelButtonColor: '#FF1F1F',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed){
+
+                        // If confirmed is press, the window will switch pages
+                        // Here it's going to the click's targeted link
+                        window.location = e.currentTarget.href;
+                    }
+                })
+            })
 
         // Handles redisplaying the description
         setQuill("<?php echo $gallery['description']?>");

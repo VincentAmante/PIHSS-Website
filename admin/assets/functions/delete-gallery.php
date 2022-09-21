@@ -32,7 +32,10 @@
 
         // Directory of all galleries
         // ! Should be made more adaptable
-        $dir = '../assets/' . $folderName . '/' . $folderEntry;
+        $dir = './assets/' . $folderName . '/' . $folderEntry;
+        if ($folderName == 'gallery-folders'){
+            $dir = '../assets/' . $folderName . '/' . $folderEntry;
+        }
 
         // Deletes folder and contents
         $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);

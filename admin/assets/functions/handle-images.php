@@ -1,4 +1,25 @@
 <?php
+
+class ImageResult {
+    public $isUploaded = true;
+    public $name = "";
+    public $error = "";
+
+    /**
+     * $resultingString = either the image name or the error
+     */
+    public function __construct(bool $isUploaded, string $resultingString)
+    {
+        $this->isUploaded = $isUploaded;
+        if ($isUploaded){
+            $this->name = $resultingString;
+        }
+        else {
+            $this->error = $resultingString;
+        }
+    }
+}
+
     /**
      * Converts string to slug
      */
@@ -7,26 +28,6 @@
         $str = preg_replace('/[^a-z0-9 - .]+/', '', $str);
         $str = str_replace(' ', '-', $str);
         return trim($str, '-');
-    }
-
-    class ImageResult {
-        public $isUploaded = true;
-        public $name = "";
-        public $error = "";
-
-        /**
-         * $resultingString = either the image name or the error
-         */
-        public function __construct(bool $isUploaded, string $resultingString)
-        {
-            $this->isUploaded = $isUploaded;
-            if ($isUploaded){
-                $this->name = $resultingString;
-            }
-            else {
-                $this->error = $resultingString;
-            }
-        }
     }
     /**
      * Uploads an image to the website's files, ensures it is valid to upload first

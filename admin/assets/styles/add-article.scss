@@ -71,6 +71,7 @@ header {
             padding: .75em;
             padding-inline: 1.25em;
             text-transform: uppercase;
+            text-decoration: none;
             border: none;
             background-color: $primary-main;
             color: $primary-secondary;
@@ -79,7 +80,16 @@ header {
             &:hover {
                 background-color: lighten($primary-main, 10%);
             }
+
+            &.delete-button {
+                background-color: $alert;
+
+                &:hover {
+                    background-color: lighten($alert, 10%);
+                }
+            }
         }
+
         .editor-container {
             min-height: 30vh;
         }

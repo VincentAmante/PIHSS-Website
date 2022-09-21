@@ -14,7 +14,7 @@
 
 <body>
     <!-- Header -->
-    <?php include('./assets/php/header.php') ?>
+    <?php require('./assets/php/header.php') ?>
 
     <main>
         <!-- Banner -->

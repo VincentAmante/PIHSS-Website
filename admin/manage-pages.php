@@ -43,11 +43,10 @@
         if ($gallery != NULL){
             // Deletes folder and contents
             $deleteSuccessful = removeFolder('gallery-folders', $gallery['folderName']);
-            var_dump('Result: ' . $deleteSuccessful);
 
             if ($deleteSuccessful){
                 if (!$gallery['isActivity']){
-                    if (!unlink('../' .  $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail'])){
+                    if (!unlink(getPathToRoot() .  $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail'])){
                         // Unlink failed
                     }
                 }

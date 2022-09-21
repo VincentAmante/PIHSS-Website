@@ -1,5 +1,5 @@
 <?php
-    require 'config.php';
+    require_once('./config.php');
 
     // declaring variables to prevent errors
     $email = "";
@@ -20,6 +20,21 @@
         case UNKNOWN;
     }
     $creationResult = Result::UNKNOWN;
+
+    // require_once('./token-class.php');
+
+    // $urlRoot = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+    // $mailAuthor = preg_replace("(^https?://)", "", $urlRoot);
+    // $newToken = new Token();
+    // $message = `Verify account here: ` + $urlRoot + 'admin/account-verification.php?token=' + $newToken->getToken();
+
+    // // TODO: implement all this
+    // $sendThisToDatabase = json_encode($newToken->getTokenData());
+
+    // $headers = "From: " . $mailAuthor . '\r\n';
+    // $headers .= "Content-type: text/html\r\n";
+    // END OF TODO
+    // mail($email, 'Account Verification', $message, $headers);
 
     if(isset($_POST['create-account'])){
         // signup form values
