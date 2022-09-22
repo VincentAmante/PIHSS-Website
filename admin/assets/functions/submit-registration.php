@@ -1,6 +1,7 @@
 <?php
-    require './config.php';
+    require_once './config.php';
 
+    $errorMessages = [];
     $lastId = "";
     $folderName = "";
 
@@ -60,7 +61,7 @@
         $folderName = $lastId . '_' . $studentNameTrimmed;
         $stmt->close();
 
-        include "./handle-images.php";
+        require_once "./handle-images.php";
         
         $imagesValid = true;
 
@@ -77,6 +78,7 @@
             if ($result->isUploaded){
                 $eidCopyFront = $result->name;
             } else {
+                array_push($errorMessages, "Emirates ID Front-Image Error: " . $result->error);
                 $imagesValid = false;
             }
         }
@@ -87,6 +89,7 @@
             if ($result->isUploaded){
                 $eidCopyBack = $result->name;
             } else {
+                array_push($errorMessages, "Emirates ID Back-Image Error: " . $result->error);
                 $imagesValid = false;
             }
         }
@@ -97,6 +100,7 @@
             if ($result->isUploaded){
                 $passportCopy = $result->name;
             } else {
+                array_push($errorMessages, "Passport Image Error: " . $result->error);
                 $imagesValid = false;
             }
         }
@@ -107,6 +111,7 @@
             if ($result->isUploaded){
                 $leaveCertificate = $result->name;
             } else {
+                array_push($errorMessages, "Leave Certificate Image Error: " . $result->error);
                 $imagesValid = false;
             }
         }

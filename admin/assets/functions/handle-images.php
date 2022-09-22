@@ -60,10 +60,11 @@ class ImageResult {
             case 'jpg':
             case 'jfif':
             case 'gif':
+            case 'webp':
             break;
             default:
             $imageValid = false;
-            return new ImageResult(false, "Invalid filetype! Currently accepting one of the following: [jpeg, jpg, png, jfif, gif]");
+            return new ImageResult(false, "Invalid filetype! Currently accepting one of the following: [jpeg, jpg, png, jfif, gif, webp]");
         }
 
         // Repeats folder exits
@@ -75,7 +76,7 @@ class ImageResult {
                     // Returns image name on successful upload
                     return new ImageResult(true, $uniqueName);
                 } else {
-                    return new ImageResult(false, "Image could not upload successfully!");
+                    return new ImageResult(false, "Image could not upload successfully to database!");
                 }
             }
             else {
@@ -83,12 +84,12 @@ class ImageResult {
                     // Returns image name on successful upload
                     return new ImageResult(true, $uniqueName);
                 } else {
-                    return new ImageResult(false, "Image could not upload successfully!");
+                    return new ImageResult(false, "Image could not upload successfully to database!");
                 }
             }
         }
         else {
-            return new ImageResult(false, "Image was not considered valid!");
+            return new ImageResult(false, "Image was not considered valid for unknown reasons!");
         }
     }
 
