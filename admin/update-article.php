@@ -1,5 +1,5 @@
 <?php
-    include "./assets/functions/header.php";
+    require_once "./assets/functions/header.php";
     $articleId = $_GET['id'];
 
     // Connects to Database, fetches article data

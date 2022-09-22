@@ -1,5 +1,5 @@
 <?php
-    include "./assets/functions/header.php";
+    require_once "./assets/functions/header.php";
     $galleryId = $_GET['id'];
 
 
@@ -11,7 +11,7 @@
         $galleryDir = $GALLERY_FOLDERS_DIR . $gallery['folderName'] . '/';
     }
 
-    include './assets/functions/handle-images.php';
+    require_once './assets/functions/handle-images.php';
 
     // UPLOADS IMAGE CONTENTS
     if (!empty($_FILES)

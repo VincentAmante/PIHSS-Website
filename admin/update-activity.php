@@ -1,20 +1,20 @@
 <?php
-    include "./assets/functions/header.php";
+    require_once "./assets/functions/header.php";
     $galleryId = $_GET['id'];
 
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);
     } else {
+
         $galleryQuery = "SELECT * from galleries WHERE id=?";
         $stmt = $conn->prepare($galleryQuery);
         $stmt->bind_param('s', $galleryId);
         $stmt->execute();
         $gallery = mysqli_fetch_assoc($stmt->get_result());
         $galleryDir = $GALLERY_FOLDERS_DIR . $gallery['folderName'] . '/';
-
     }
 
-    include './assets/functions/handle-images.php';
+    require_once './assets/functions/handle-images.php';
     
     // UPLOADS IMAGE CONTENTS
     if (!empty($_FILES)
