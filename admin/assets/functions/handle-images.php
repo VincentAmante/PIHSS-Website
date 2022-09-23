@@ -1,7 +1,11 @@
 <?php
 
+define('KB', 1024);
+define('MB', 1048576);
+define('GB', 1073741824);
+
 class ImageResult {
-    public $isUploaded = true;
+    public bool $isUploaded;
     public $name = "";
     public $error = "";
 
@@ -29,16 +33,15 @@ class ImageResult {
         $str = str_replace(' ', '-', $str);
         return trim($str, '-');
     }
+
     /**
      * Uploads an image to the website's files, ensures it is valid to upload first
      */
     function uploadImage(string $imgDirectory, string $imgName, string $getImgFrom, int $index=0){
+        
         $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
-        $uniqueName = uniqid() . basename(slug($imgName));
-        $imgPath = $imgDirectory . $uniqueName;
         $imageValid = true;
-        $MAX_FILE_SIZE = 10000000000;
-
+        $MAX_FILE_SIZE = 4 * MB;
         if ($index != -1) {
             if($_FILES[$getImgFrom]['size'][$index] > $MAX_FILE_SIZE){
                 $imageValid = false;
@@ -67,8 +70,9 @@ class ImageResult {
             return new ImageResult(false, "Invalid filetype! Currently accepting one of the following: [jpeg, jpg, png, jfif, gif, webp]");
         }
 
-        // Repeats folder exits
-        // $addition = str_repeat('../', $folderExits);
+        // Unique name is provided along with file path
+        $uniqueName = uniqid() . basename(slug($imgName));
+        $imgPath = $imgDirectory . $uniqueName;
 
         if ($imageValid){
             if ($index != -1) {    

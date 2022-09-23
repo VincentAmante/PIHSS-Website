@@ -62,8 +62,9 @@ function handleDrop(e) {
   handleFiles(files);
 }
 
-let counter = 0; // For giving id to images (to handle deletion)
 function handleFiles(files) {
+  // For giving id to images (to handle deletion)
+  let counter = 0;
 
   files = [...files]
   files.forEach(file => {
@@ -89,9 +90,6 @@ function deleteFile(filesId, fileIndex){
   });
   let newListFiles = newList.files;
   document.getElementById(filesId).files = newListFiles;
-
-  // Resets counter to regenerate ids
-  counter = 0;
 
   // Re-renders list
   document.getElementById('gallery').innerHTML = "";

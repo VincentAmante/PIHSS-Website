@@ -92,12 +92,10 @@ function scrollFunction() {
       document.getElementById("top-header").style.transform = "translate(0,0)"
       mobileEdited = false;
     }
-
     // Changes colour of burger based on whether there is header or not
     if (burger.classList.contains("burger-alone")){
       burger.classList.remove("burger-alone");
     }
-
   } else {
     // document.getElementById("top-header").style.display = "none";
     if (window.innerWidth >= 768){
@@ -107,8 +105,6 @@ function scrollFunction() {
       document.getElementById("top-header").style.transform = 'translate(0,-' + topHeaderHeight + 'px)';
       mobileEdited = true;
     }
-
-
     if (!burger.classList.contains("burger-alone")){
       burger.classList.add("burger-alone");
     }

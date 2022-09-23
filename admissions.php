@@ -509,7 +509,7 @@
             </td>
             <td class="form-input">
               <div class="main-body">
-                <input type="text" id="eid-number" name="eid-number" required autocomplete="off" minlength="15" maxlength="15">
+                <input type="text" id="eid-number" name="eid-number" required autocomplete="off" minlength="15">
                 <div class="input-alerts">
                   <i class="fas fa-check-circle"></i>
                   <i class="fas fa-exclamation-circle"></i>
@@ -561,7 +561,7 @@
 
             <td class="form-input">
               <label class="file-upload">
-                <div class="upload-button">Add Files</div>
+                <div class="upload-button">Add File</div>
 
                 <!-- Drag and drop images -->
                 <label class="uploader-single" ondragover="return false">
@@ -581,7 +581,7 @@
             </td>
             <td class="form-input">
               <label class="file-upload">
-                <div class="upload-button">Add Files</div>
+                <div class="upload-button">Add File</div>
                 <label class="uploader-single" ondragover="return false">
                   <i class="icon-upload icon"></i>
                   <img src="" class="" id="">
@@ -599,7 +599,7 @@
             </td>
             <td class="form-input">
               <label class="file-upload">
-                <div class="upload-button">Add Files</div>
+                <div class="upload-button">Add File</div>
                 <label class="uploader-single" ondragover="return false">
                   <i class="icon-upload icon"></i>
                   <img src="" class="" id="">
@@ -713,7 +713,7 @@
             </td>
             <td class="form-input">
               <label class="file-upload">
-                <div class="upload-button">Add Files</div>
+                <div class="upload-button">Add File</div>
                 <label class="uploader-single" ondragover="return false">
                   <i class="icon-upload icon"></i>
                   <img src="" class="" id="">

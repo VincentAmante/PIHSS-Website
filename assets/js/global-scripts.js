@@ -1,4 +1,4 @@
-// This is code for handling the burger menu
+// Handles the burger menu
 const burger = document.querySelector(".burger");
 const nav = document.querySelector("nav");
 
@@ -20,7 +20,6 @@ const navSlide = () => {
         link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7}s`;
       }
     });
-
   });
 };
 
@@ -46,7 +45,7 @@ document.addEventListener('click', function(event) {
  * @param {*} leftBtn - button to scroll left
  * @param {*} rightBtn - button to scroll right
  * @param {*} slider - container of elements to scroll through, width and first child is used as measurement for scrolling through
- * @param {*} rightOffset - Default 0: Slightly offsets value, somehow fixes occassional sizing issues
+ * @param {*} rightOffset - Default 0: A value greater than 0 offsets the children's width by a percentage (1 = 100% of width)
  */
 function createCarousel(leftBtn, rightBtn, slider, rightOffset = 0) {
   leftBtn = document.getElementById(leftBtn);
@@ -64,7 +63,6 @@ function createCarousel(leftBtn, rightBtn, slider, rightOffset = 0) {
     if ((slider.scrollLeft + slider.clientWidth + elementWidth) > slider.scrollWidth) {
 
       // Smoothens out going to the right by ensuring scroll is not at maximum
-      // - Not sure why this works
       if (rightOffset > 0) {
         slider.scrollLeft -= elementWidth / rightOffset;
       }

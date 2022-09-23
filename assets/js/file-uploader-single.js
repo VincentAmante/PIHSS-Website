@@ -14,16 +14,16 @@
     
     FileUploader.prototype.init = function(selector) {
       if (undefined !== this.$el) {
-        this.unsuscribe();
+        this.unsubscribe();
       }
       
       this.$el = document.querySelector(selector);
       this.$fileInput = this.$el.querySelector('input');
       this.$img = this.$el.querySelector('img');
-      this.suscribe();
+      this.subscribe();
     }
 
-    FileUploader.prototype.suscribe = function() {
+    FileUploader.prototype.subscribe = function() {
       this.$fileInput.addEventListener('change', _handleInputChange.bind(this));
       this.$img.addEventListener('load', _handleImageLoaded.bind(this));
       this.$el.addEventListener('dragenter', _handleDragEnter.bind(this));
@@ -31,7 +31,7 @@
       this.$el.addEventListener('drop', _handleDrop.bind(this));
     }
     
-    FileUploader.prototype.unsuscribe = function() {
+    FileUploader.prototype.unsubscribe = function() {
       this.$fileInput.removeEventListener('change', _handleInputChange.bind(this));
       this.$img.removeEventListener('load', _handleImageLoaded.bind(this));
       this.$el.removeEventListener('dragenter', _handleDragEnter.bind(this));
@@ -100,7 +100,7 @@
     
 } ());
 
-// Heavy modification from source code this point on
+// Deviation from source code this point on
 
 // Counter for single file uploaders
 let singleUploaderCount = 0;
