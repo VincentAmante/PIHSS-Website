@@ -22,9 +22,9 @@ while ($data = $activities->fetch_assoc()) : ?>
             </div>
 
             <div class="activity-images">
-                <img src="<?php echo $imagesDir . $images[0]['img']; ?>" alt="" />
-                <img src="<?php echo $imagesDir . $images[1]['img']; ?>" alt="" />
-                <img src="<?php echo $imagesDir . $images[2]['img']; ?>" alt="" />
+                <img src="<?php echo $imagesDir . $images[0]['name']; ?>" alt="" />
+                <img src="<?php echo $imagesDir . $images[1]['name']; ?>" alt="" />
+                <img src="<?php echo $imagesDir . $images[2]['name']; ?>" alt="" />
                 <button><a href="<?php echo './gallery-subpage.php?id=' . $data['ID'] ?>">View More >></a></button>
             </div>
         </div>
