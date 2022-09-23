@@ -3,7 +3,7 @@
     if (isset($_POST['add-gallery'])){
         require "config.php";
 
-        $galleryTitle = $_POST['gallery-title'];
+        $galleryTitle = htmlspecialchars($_POST['gallery-title']);
         $galleryCreationDate = $_POST['gallery-creation-date'];
         $galleryDescription = $_POST['input-html'];
 

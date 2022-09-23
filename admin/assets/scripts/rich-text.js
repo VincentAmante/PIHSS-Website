@@ -20,8 +20,10 @@ form.onsubmit = () => {
     let inputDelta = document.querySelector('input[name=input-delta]');
     inputDelta.value = JSON.stringify(quill.getContents());
 
+    let parser = new DOMParser();
+
     // Saves the input html, this is for displaying the content
-    let quillContent = document.querySelector(quillEditorId).innerHTML;
+    let quillContent = parser.parseFromString(document.querySelector(quillEditorId).innerHTML);
     let inputHtml = document.querySelector('input[name=input-html]');
     inputHtml.value = quillContent;
 

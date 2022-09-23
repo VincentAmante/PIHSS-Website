@@ -6,20 +6,20 @@
     $folderName = "";
 
     // Form values
-    $studentName = $_POST['student-name'];
+    $studentName = htmlspecialchars($_POST['student-name']);
     $gender = $_POST['student-gender'];
     $dateOfBirth = $_POST['date-of-birth'];
-    $eidNumber = $_POST['eid-number'];
+    $eidNumber = htmlspecialchars($_POST['eid-number']);
     $eidIssue = $_POST['eid-issue'];
     $eidExpiry = $_POST['eid-expiry'];
     $eidCopyFront = "";
     $eidCopyBack = "";
     $passportCopy = "";
     $studentClass = $_POST['student-class'];
-    $fatherName = $_POST['father-name'];
-    $fatherNumber = $_POST['father-number'];
-    $motherNumber = $_POST['mother-number'];
-    $fatherEmail = $_POST['father-email'];
+    $fatherName = htmlspecialchars($_POST['father-name']);
+    $fatherNumber = htmlspecialchars($_POST['father-number']);
+    $motherNumber = htmlspecialchars($_POST['mother-number']);
+    $fatherEmail = htmlspecialchars($_POST['father-email']);
     $leaveCertificate = "";
 
 

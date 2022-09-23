@@ -16,7 +16,7 @@
 
     if (isset($_POST['update-article'])){
         // Fetches form contents
-        $articleTitle = $_POST['article-title'];
+        $articleTitle = htmlspecialchars($_POST['article-title']);
         $articleCreationDate = $_POST['article-doc'];
         $articleContent = $_POST['input-html'];
 

@@ -2,7 +2,7 @@
     if (isset($_POST['add-event'])){
         require "config.php";
 
-        $eventTitle = $_POST['event-title'];
+        $eventTitle = htmlspecialchars($_POST['event-title']);
         $eventStartDate = $_POST['start-date'];
         $eventEndDate = $_POST['end-date'];
 

@@ -75,7 +75,7 @@
     && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
     && $galleryId != null){
 
-        $galleryTitle = $_POST['gallery-title'];
+        $galleryTitle = htmlspecialchars($_POST['gallery-title']);
         $galleryCreationDate = $_POST['gallery-doc'];
         $galleryContent = $_POST['input-html'];
         

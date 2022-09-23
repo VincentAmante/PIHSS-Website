@@ -35,7 +35,7 @@
     && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
     && $uploadValid 
     ){
-        $galleryTitle = $_POST['gallery-title'];
+        $galleryTitle = htmlspecialchars($_POST['gallery-title']);
         $galleryCreationDate = $_POST['gallery-creation-date'];
         $galleryContent = $_POST['input-html'];
         $isTrue = true;
