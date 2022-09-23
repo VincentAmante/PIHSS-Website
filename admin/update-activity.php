@@ -195,7 +195,7 @@
                             <button class="form-button form-submit" name="save-gallery-content">Save</button>
                             <button class="form-button form-reset" type="reset">Clear Input</button>
                             <a class="form-button" href="/gallery-subpage.php?id=<?php echo $galleryId?>">View Page</a>
-                            <a class="delete-article form-button delete-button" href="./manage-pages.php?delete-gallery=<?php echo $galleryId?>">Delete Gallery</a>
+                            <a class="delete-gallery form-button delete-button" href="./manage-pages.php?delete-gallery=<?php echo $galleryId?>">Delete Gallery</a>
                         </div>
                     </div>
 
