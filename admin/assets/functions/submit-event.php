@@ -1,6 +1,7 @@
 <?php
     if (isset($_POST['add-event'])){
         require "config.php";
+        require_once "validate-user.php";
 
         $eventTitle = htmlspecialchars($_POST['event-title']);
         $eventStartDate = $_POST['start-date'];

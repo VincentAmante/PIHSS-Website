@@ -1,15 +1,14 @@
 <?php
     if (isset($_POST['publish-article'])){
-        require "config.php";
+        require_once "config.php";
+        require_once "validate-user.php";
 
         $articleTitle = htmlspecialchars($_POST['article-title']);
-        $articleCreationDate = $_POST['article-doc'];
+        $articleCreationDate = htmlspecialchars($_POST['article-doc']);
         $articleHtml = $_POST['input-html'];
 
-        // IMAGE HANDLING
-        $imgValid = true;
-        $imgName = $_FILES['article-image']['name'];        
-
+        // Attempt image upload
+        $imgName = $_FILES['article-image']['name'];
         if ($imgName != ""){
             require_once "./handle-images.php";
             $result = uploadImage($ARTICLE_IMG_DIR, $imgName, 'article-image', -1);
@@ -19,9 +18,11 @@
             } else { 
                 exit();
             }
+        } else {
+            exit();
         }
 
-        if ($imgValid){
+        if ($result->isUploaded){
             $lastId = "";
 
             if ($conn->connect_error){

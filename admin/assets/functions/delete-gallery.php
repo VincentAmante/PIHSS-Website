@@ -1,4 +1,5 @@
 <?php
+    require_once "validate-user.php";
     /***
      * Removes folder from an assets directory, along with contents
      * 

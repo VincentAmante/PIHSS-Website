@@ -1,7 +1,7 @@
 <?php
-
     if (isset($_POST['add-gallery'])){
         require "config.php";
+        require_once "validate-user.php";
 
         $galleryTitle = htmlspecialchars($_POST['gallery-title']);
         $galleryCreationDate = $_POST['gallery-creation-date'];

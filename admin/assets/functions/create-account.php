@@ -1,5 +1,6 @@
 <?php
     require_once('./config.php');
+    require_once('./validate-user.php');
 
     // declaring variables to prevent errors
     $email = "";

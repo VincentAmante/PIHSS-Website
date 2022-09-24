@@ -1,5 +1,6 @@
 <?php
-    include "./assets/functions/header.php";
+
+    require_once "./assets/functions/header.php";
 
     $galleryId = "";
     $galleryTitle = "";

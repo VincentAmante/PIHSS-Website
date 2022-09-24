@@ -1,5 +1,5 @@
 <?php
-    include "./assets/functions/header.php";
+    require_once "./assets/functions/header.php";
     $registrationId = $_GET['id'];
 
     // Fetches specific registration

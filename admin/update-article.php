@@ -17,7 +17,7 @@
     if (isset($_POST['update-article'])){
         // Fetches form contents
         $articleTitle = htmlspecialchars($_POST['article-title']);
-        $articleCreationDate = $_POST['article-doc'];
+        $articleCreationDate = htmlspecialchars($_POST['article-doc']);
         $articleContent = $_POST['input-html'];
 
         /// Handle Image Changes
@@ -26,7 +26,7 @@
 
         // Changes image if the thumbnails are not the same
         if ($imgName != "" 
-        && ('../' . $imgName != $origImgSrc)){
+        && ($imgName != $origImgSrc)){
             $imgValid = true;
 
             include "./assets/functions/handle-images.php";

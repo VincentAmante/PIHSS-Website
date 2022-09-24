@@ -1,6 +1,6 @@
 <?php
-    include '../admin/assets/functions/config.php';
-
+    require_once '../admin/assets/functions/config.php';
+    
     if ($conn->connect_error) {
         die('Connection Failure : ' + $conn->connect_error);
     } else {

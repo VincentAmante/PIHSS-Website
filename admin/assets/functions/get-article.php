@@ -1,5 +1,6 @@
 <?php
     require "config.php";
+    require_once "./allow-only-ajax.php";
 
     if ($conn->connect_error){
         die('Connection Failure : ' + $conn->connect_error);

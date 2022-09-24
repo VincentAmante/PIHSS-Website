@@ -1,5 +1,6 @@
 <?php
     require "config.php";
+    require_once "validate-user.php";
 
     if ($conn->connect_error) {
         die('Connection Failure : ' + $conn->connect_error);
