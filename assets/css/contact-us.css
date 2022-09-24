@@ -173,6 +173,7 @@ main h2 {
 .contact-form .form-container form .form-row .form-input .main-body .input-alerts i {
   position: absolute;
   right: 10px;
+  top: -1px;
   visibility: hidden;
 }
 .contact-form .form-container form .form-row .form-input input[type=text],

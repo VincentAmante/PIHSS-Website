@@ -56,6 +56,7 @@ const hideLightBox = () => {
 	lightboxImage.style.transform = "scale(0.5)";
 	lightboxImage.style.cursor = "default";
 	lightboxHeader.style.display = "flex";
+	lightboxSlide.style.pointerEvents = "none";
 };
 
 // Functions for slide handling
@@ -114,12 +115,14 @@ const dragDown = (e) => {
 	state.distY = Math.abs(rect.top - evt.clientY);
 
 	flag = true;
+
 	lightboxSlide.style.transition = "0s";
 	lightboxImage.style.cursor = "grabbing";
 };
 
 const dragUp = (e) => {
 	flag = false;
+
 	lightboxImage.style.cursor = "grab";
 };
 

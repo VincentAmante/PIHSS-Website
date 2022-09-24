@@ -90,7 +90,7 @@ main h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: clamp(12px, 0.9vw, 10rem);
   pointer-events: none;
 }
@@ -138,7 +138,7 @@ main h2 {
 }
 .modal .modal-header .modal-header-icons i {
   padding-left: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .modal .modal-header .modal-header-icons a {
   color: rgba(255, 255, 255, 0);
@@ -161,8 +161,6 @@ main h2 {
      object-fit: contain;
 }
 .modal .modal-content .slide-container .lightbox-slide .lightbox-image {
-  cursor: -webkit-grab;
-  cursor: grab;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -181,7 +179,7 @@ main h2 {
        user-select: none;
   -webkit-user-select: none;
   background-color: rgba(56, 56, 56, 0.5843137255);
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 5vh 1.5vw;
   margin: 3%;
   position: absolute;

@@ -43,7 +43,6 @@ contactForm.submit((e) => {
 
 	if (formIsValid) {
 		// Unbinds submission before submitting
-		console.log("sending!");
 		contactForm.off().submit();
 	}
 	return false;
@@ -66,8 +65,8 @@ function isEmail(email) {
 // Verifies if phone number
 /**
  * Accepted Formats:
- * - XXXXXXXXXX
- * - +XXXXXXXXXXXX
+ * 1. XXXXXXXXXX
+ * 2. +XXXXXXXXXXXX
  */
 function isTel(tel) {
 	var regex = /^([+]\d{2})?\d{10}$/;
