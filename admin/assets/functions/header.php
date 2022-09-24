@@ -44,7 +44,7 @@ require_once 'validate-user.php';
                     <ul>
                         <li><a href="../news-article.php">News Articles</a></li>
                         <li><a href="../gallery.php#our-gallery">Galleries</a></li>
-                        <li><a href="../our-school.php#co-curricular">Co-curricular Activities</a></li>
+                        <li><a href="../our-school.php#school-activities">School Activities</a></li>
                     </ul>
                 </li>
                 <li class="nav-element"><a href="./assets/functions/logout.php">Log Out</a></li>

@@ -49,7 +49,6 @@
             eventLimit: true, // allow "more" link when too many events
             initialView: "dayGridMonth",
             eventColor: "#0f6938",
-            googleCalendarApiKey: "AIzaSyB0YUm15OfH1qIriXy_rDRLwrBgwkbYlxk",
             events: eventsList,
 
             // Code for adding event to calendar
