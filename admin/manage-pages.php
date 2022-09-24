@@ -45,11 +45,11 @@
             $deleteSuccessful = removeFolder('gallery-folders', $gallery['folderName']);
 
             if ($deleteSuccessful){
-                if (!$gallery['isActivity']){
-                    if (!unlink(getPathToRoot() .  $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail'])){
-                        // Unlink failed
-                    }
-                }
+                // if (!$gallery['isActivity']){
+                //     if (!unlink(getPathToRoot() .  $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail'])){
+                //         // Unlink failed
+                //     }
+                // }
                 $sql = "DELETE FROM galleries WHERE id='$galleryId'";
                 if ($conn->query($sql) === TRUE) {
                     // echo "Record deleted successfully" . '<br>';

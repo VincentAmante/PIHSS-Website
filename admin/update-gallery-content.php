@@ -87,8 +87,6 @@
     if (isset($_POST['save-gallery-content'])
     && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
     && $galleryId != null){
-
-
         $galleryTitle = htmlspecialchars($_POST['gallery-title']);
         $galleryCreationDate = $_POST['gallery-doc'];
         $galleryContent = $_POST['input-html'];
@@ -158,7 +156,7 @@
                     </div>
 
                     <!-- Thumbnail -->
-                    <div class="form-item">
+                    <!-- <div class="form-item">
                         <label for="">Upload Image</label>
                         <label class="uploader-single" ondragover="return false">
                             <i class="icon-upload icon"></i>
@@ -167,7 +165,7 @@
                         </label>
                         
                         <input type="hidden" name="img-src" id="img-src">
-                    </div>
+                    </div> -->
 
                     <!-- Gallery -->
                     <div class="form-item" id="gallery-view">

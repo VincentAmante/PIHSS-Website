@@ -29,7 +29,7 @@
         && ($imgName != $origImgSrc)){
             $imgValid = true;
 
-            include "./assets/functions/handle-images.php";
+            include "./assets/functions/handle-images.php";   
             $result = uploadImage($ARTICLE_IMG_DIR, $imgName, 'article-image', -1);
 
             // Uploads new image, and deletes old one

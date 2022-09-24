@@ -10,12 +10,11 @@ if ($conn->connect_error) {
 
 while ($data = $galleries->fetch_assoc()) : ?>
     <?php
-    $thumbnailSrc = "";
-    if ($data['isActivity']) {
-        $thumbnailSrc = $GALLERY_THUMBNAILS_DIR . json_decode($data['images'], true)[0]['path'];
-    } else {
-        $thumbnailSrc = $GALLERY_THUMBNAILS_DIR . $data['thumbnail'];
-    }
+    $images = json_decode($data['images'], true);
+    $thumbnailSrc = getPathToRoot() 
+    . $GALLERY_FOLDERS_DIR
+    . $data['folderName']
+    . '/' .  $images[0]['name'];
     ?>
     <div class="grid-item">
         <div class="item-image">

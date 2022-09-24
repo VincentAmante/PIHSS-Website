@@ -12,18 +12,21 @@
     <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
 </head>
 <body>
-<?php include './assets/functions/header.php'?>
+    
+    <?php require_once './assets/functions/submit-gallery-page.php'?>
     <main>
-        <section>
-            
-            <div class="form-wrapper">
-                <form class="admin-form" id="admin-form" action="./assets/functions/submit-gallery-page.php" method="POST" enctype="multipart/form-data">
+        <section>    
+            <div class="form-wrapper" id="drop-area">
+                <form class="admin-form" id="admin-form" action="./add-gallery.php" method="POST" enctype="multipart/form-data">
+                    <?php // Prevents resubmission on refresh
+                    $rand = rand();
+                    $_SESSION['rand'] = $rand;?>
 
-                <h1>Add Gallery</h1>
+                    <h1>Add Activity</h1>
                     <!-- Title -->
                     <div class="form-item">
-                        <label for="gallery-title">Title</label>
-                        <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required placeholder="Gallery Title">
+                        <label for="gallery-title">Activity Title</label>
+                        <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required placeholder="Activity Title">
                     </div>
 
                     <!-- Publishing Date -->
@@ -43,15 +46,22 @@
                         </div>
                     </div>
 
-                    <!-- Image Thumbnail -->
-                    <div class="form-item">
-                        <label for="">Upload Image</label>
-                        <label class="uploader-single" ondragover="return false">
-                            <i class="icon-upload icon"></i>
-                            <img src="" class="" id="form-img">
-                            <input type="file" accept="image/*" name="gallery-image" id="gallery-image" required>
-                        </label>
-                    </div>
+                    <!-- Images -->
+                    <div class="form-item" id="gallery-view">
+                            <label for="fileElem">Upload images to the gallery</label>
+                            <p>You need at least 1 image for the gallery!</p>
+                            <input type="file" 
+                                accept="image/*" 
+                                multiple name="gallery_images[]" 
+                                id="fileElem" 
+                                onchange="handleFiles(this.files)">
+                        </div>
+
+                        <h2>Image Additions</h2>
+                        <div class="multiple-file-preview" id="gallery">
+
+                        </div>
+                        <input type="hidden" name="is-activity" value="false">
 
                     <!-- Form Buttons -->
                     <div class="form-item form-item-empty">
@@ -60,16 +70,20 @@
                             <button class="form-button form-reset" type="reset">Clear</button>
                         </div>
                     </div>
+                    <input type="hidden" value="<?php echo $rand; ?>" name="rand-check">
                 </form> <!-- #admin-form -->
             </div> <!-- .form-wrapper -->
         </section>
     </main>
-    
+
+    <!-- Rich Text -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/scripts/rich-text.js"></script>
-    <script src="../assets/js/file-uploader-single.js"></script>
+
+    <!-- For handling the form gallery (displaying, deletion, addition) -->
+    <script src="../assets/js/file-uploader-multiple.js"></script>
+    <script src="./assets/scripts/handle-form-gallery.js"></script>
 </body>
 </html>

@@ -6,15 +6,22 @@
         die('Connection Failure : ' + $conn->connect_error);
     } else {
         $galleries = $conn->query("SELECT * from galleries WHERE isActivity=0 ORDER BY creationDate DESC");
-        $thumbnailsDir = getPathToRoot() . $GALLERY_THUMBNAILS_DIR;
+        // $thumbnailsDir = getPathToRoot() . $GALLERY_THUMBNAILS_DIR;
+        
     }
 ?>
     <?php 
     while ($data = $galleries->fetch_assoc()):?>
-    <?php $updateUrl = "update-gallery-content.php?id=" . $data['ID'];?>
+    <?php 
+    $updateUrl = "update-gallery-content.php?id=" . $data['ID'];
+    $thumbnailDir = getPathToRoot() 
+    . $GALLERY_FOLDERS_DIR 
+    . $data['folderName'] 
+    . '/'. json_decode($data['images'], true)[0]['name'];
+    ?>
     
     <div class="row-item">
-        <img src="<?php echo $thumbnailsDir . $data['thumbnail']?>">
+        <img src="<?php echo $thumbnailDir?>">
         <div class="title"><?php echo $data['title']?></div>
         <div class="date"><?php echo $data['creationDate']?></div>
         <a href="<?php echo $updateUrl?>">
