@@ -116,15 +116,15 @@ header {
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-  background-color: #1B9B55;
-  color: #FFFFFF;
+  background-color: #1b9b55;
+  color: #ffffff;
   cursor: pointer;
 }
 .admin-form .form-item .form-button:hover {
   background-color: #23c66d;
 }
 .admin-form .form-item .form-button.delete-button {
-  background-color: #FF1F1F;
+  background-color: #ff1f1f;
 }
 .admin-form .form-item .form-button.delete-button:hover {
   background-color: #ff5252;

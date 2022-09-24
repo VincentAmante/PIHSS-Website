@@ -212,7 +212,7 @@ header {
         .selection {
             @include flex-centered;
             overflow-x: hidden;
-            max-width: 90vw;
+            max-width: 60vw;
 
             .slider {
                 display: flex;

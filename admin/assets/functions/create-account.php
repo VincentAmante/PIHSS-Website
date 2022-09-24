@@ -115,7 +115,7 @@
             $creationResult = Result::FAILED;
         }
         if ($creationResult != Result::FAILED){
-            $creationResult == Result::SUCCESS;
+            $creationResult = Result::SUCCESS;
             $passwordHashed = password_hash($password, PASSWORD_BCRYPT); 
 
             $stmt = $conn->prepare("INSERT INTO admins(user, password, email, isPrimary) VALUES('$username','$passwordHashed', '$email', '$isPrimary')");

@@ -7,7 +7,7 @@
 
         public function __construct()
         {
-            $this->token = random_bytes(20);
+            $this->token = bin2hex(random_bytes(8));
             $this->expiryDate = strtotime('+1 day', time());
         }
 
@@ -20,7 +20,6 @@
                 'token' => password_hash($this->token, PASSWORD_BCRYPT),
                 'expirationDate' => $this->expiryDate
             ];
-
             return $tokenData;
         }
     }

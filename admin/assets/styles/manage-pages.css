@@ -55,12 +55,12 @@ table a {
   padding: 0.5em;
   text-decoration: none;
   text-transform: uppercase;
-  color: #0F6938;
+  color: #0f6938;
   font-weight: 600;
   transition: all 0.15s ease-in-out;
 }
 table a.delete {
-  color: #FF1F1F;
+  color: #ff1f1f;
   font-weight: 800;
 }
 table a:hover {

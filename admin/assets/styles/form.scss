@@ -1,0 +1,53 @@
+@import "../../../assets/css/scss/_variables.scss";
+
+.form-item {
+    .input-body {
+        display: flex;
+        align-items: center;
+
+        .input-alerts {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            i {
+                position: absolute;
+                left: 1vw;
+                visibility: hidden;
+            }
+        }
+    }
+
+    small {
+        visibility: hidden;
+        font-weight: 500;
+    }
+
+    
+    &.error {
+        input {
+            border-color: $alert;
+        }
+
+        i.fa-exclamation-circle {
+            color: $alert;
+            visibility: visible;
+        }
+
+        small {
+            visibility: visible;
+            color: $alert;
+        }
+    }
+
+    &.success {
+        input {
+            border-color: $success;
+        }
+
+        i.fa-check-circle {
+            color: $success;
+            visibility: visible;
+        }
+    }
+}

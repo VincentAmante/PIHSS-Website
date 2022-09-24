@@ -12,17 +12,18 @@
         return $rootPath;
     }
 
+    // Output buffering to improve performance
+    ob_start();
+    session_start();
+
+    // ! Maybe best to move these to an env file or somewhere safer
+ 
     $ARTICLE_IMG_DIR = "./assets/article-posts/";
     $GALLERY_FOLDERS_DIR = "./assets/gallery-folders/";
     $GALLERY_THUMBNAILS_DIR = "./assets/gallery-thumbnails/";
     $REG_FORMS_DIR = "./admin/assets/registration-forms/";
 
-    // Output buffering to improve performance
-    ob_start();
-    session_start();
-
     // Change these variables depending on the databse
-    // ! Maybe best to move these to an env file or somewhere safer
     $CONFIG_HOST = "localhost";
     $CONFIG_USERNAME = "root";
     $CONFIG_PASSWORD = "";

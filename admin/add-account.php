@@ -25,37 +25,65 @@
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/add-article.css">
     <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/styles/form.css">
 </head>
 <body>
     <main>
         <section>
             <div class="form-wrapper">
-                <form class="admin-form dropzone" id="admin-form" action="./assets/functions/create-account.php" method="POST">
+                <form class="admin-form dropzone" id="admin-form" action="./assets/functions/create-account.php" method="POST" autocomplete="off">
 
                     <!-- User -->
                     <div class="form-item">
-                        <label for="su-user">User</label>
-                        <input type="text" id="user" name="username" spellcheck="false" autocomplete="off" required placeholder="Username">
+                        <label for="user">User</label>
+                        <div class="input-body">
+                            <input type="text" id="user" name="username" spellcheck="false" autocomplete="off" required placeholder="Username">
+                            <div class="input-alerts">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                        </div>
+                        <small>Error Message</small>
                     </div>
 
                     <!-- Email -->
                     <div class="form-item">
-                        <label for="su-email">Email</label>
-                        <input type="email" id="email" name="email" spellcheck="false" autocomplete="off" required placeholder="Email">
+                        <label for="email">Email</label>
+                        <div class="input-body">
+                            <input type="email" id="email" name="email" spellcheck="false" autocomplete="off" required placeholder="Email">
+                            <div class="input-alerts">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                        </div>
+                        <small>Error Message</small>
                     </div>
                     <br>
 
                     <!-- Password -->
                     <div class="form-item">
-                        <label for="su-password">Password</label>
-                        <input type="password" id="password" name="password" spellcheck="false" autocomplete="off" required minlength="8">
-                        <small>Password must be over 8 characters</small>
+                        <label for="password">Password</label>
+                        <div class="input-body">
+                            <input type="password" id="password" name="new-password" spellcheck="false" autocomplete="off" required minlength="8">
+                            <div class="input-alerts">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                        </div>
+                        <small>Error Message</small>
                     </div>
 
                     <!-- Password Confirm -->
                     <div class="form-item">
-                        <label for="su-password">Confirm Password</label>
-                        <input type="password" id="password-retyped" name="password-retyped" spellcheck="false" autocomplete="off" required minlength="8">
+                        <label for="password-retyped">Confirm Password</label>
+                        <div class="input-body">
+                            <input type="password" id="password-retyped" name="password-retyped" spellcheck="false" autocomplete="off" required minlength="8">
+                            <div class="input-alerts">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                        </div>
+                        <small>Error Message</small>
                     </div>
 
 
@@ -77,7 +105,7 @@
                     <!-- Form Buttons -->
                     <div class="form-item form-item-empty">
                         <div class="buttons">
-                            <button class="form-button form-submit" name="create-account" value="create-account">Create Account</button>
+                            <button type="submit" class="form-button form-submit" name="create-account" value="create-account">Create Account</button>
                             <button class="form-button form-reset" type="reset">Clear</button>
                         </div>
                     </div>
@@ -91,6 +119,8 @@
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script src="./assets/scripts/account-verification.js"></script>
     <script src="./assets/scripts/rich-text.js"></script>
     <script src="../assets/js/file-uploader-single.js"></script>
 </body>

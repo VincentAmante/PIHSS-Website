@@ -14,31 +14,28 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <?php include './assets/functions/login.php'?>
+    <?php require_once './assets/functions/reset-password.php'?>
     <main>
     <section class="login-form">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
-            <h1>Login</h1>
+            <?php // Prevents resubmission on refresh
+                $rand = rand();
+                $_SESSION['rand'] = $rand;?>
+            <h1>Reset Password Here</h1>
             <div class="content">
                 <!-- Username -->
                 <div class="input-field">
-                    <input type="text" placeholder="User" autocomplete="nope" name="pihss-admin-username">
-                </div>
-
-                <!-- Password -->
-                <div class="input-field">
-                    <input type="password" placeholder="Password" autocomplete="new-password" name="pihss-admin-password">
+                    <input type="text" placeholder="email" autocomplete="nope" name="email" required>
                 </div>
             </div>
             
             <!-- <a href="#" class="link">Forgot Your Password?</a> -->
             <!-- Sign In Button -->
             <div class="action">
-                <button name="login-btn">Sign in</button>
-                <button name="return-page">Return</button>
+                <button name="reset-password">Reset</button>
             </div>
+            <input type="hidden" value="<?php echo $rand; ?>" name="rand-check">
         </form>
-        <a href="./forgot-password">Forgot Password?</a>
     </section> <!-- .login-form -->
     </main>
 </body>

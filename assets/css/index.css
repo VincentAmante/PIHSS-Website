@@ -1,8 +1,8 @@
 .slider-btn, .news-btn {
   border-radius: 50%;
-  background-color: #0F6938;
+  background-color: #0f6938;
   width: clamp(20px, 4.5vw, 18rem);
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   border: 0.2rem solid rgba(255, 255, 255, 0);
   display: flex;
@@ -18,9 +18,9 @@
 }
 .slider-btn:hover, .news-btn:hover {
   box-sizing: border-box;
-  border: 0.2rem solid #0F6938;
+  border: 0.2rem solid #0f6938;
   background-color: rgba(0, 0, 0, 0.1);
-  color: #0F6938;
+  color: #0f6938;
 }
 
 .news-btn {
@@ -71,7 +71,7 @@ img {
   background-size: cover;
   background-position: center;
   font-family: "EB Garamond", serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .hero-banner video {
   z-index: -1;
@@ -138,7 +138,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0F6938;
+  background-color: #0f6938;
   padding: 0;
 }
 .about-us .about-us-content {
@@ -161,7 +161,7 @@ img {
 .about-us .about-us-text {
   padding-block: 5vmin;
   padding-inline: 5vw;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: "Raleway", sans-serif;
 }
 .about-us .about-us-text h1 {
@@ -175,7 +175,7 @@ img {
   text-align: justify;
 }
 .about-us .about-us-statblock {
-  background-color: #EEE1B2;
+  background-color: #eee1b2;
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -211,7 +211,7 @@ img {
 }
 
 .more-info {
-  background-color: #CFECC1;
+  background-color: #cfecc1;
 }
 .more-info .more-info-text {
   font-size: clamp(12px, 1vw, 10rem);
@@ -240,7 +240,7 @@ img {
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-  max-width: 90vw;
+  max-width: 60vw;
 }
 .more-info .more-info-slideshow .selection .slider {
   display: flex;
@@ -305,7 +305,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #FFFFFF;
+  color: #ffffff;
   background: rgb(15, 105, 56);
   background: linear-gradient(180deg, rgba(15, 105, 56, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f6938",endColorstr="#000000",GradientType=1);
@@ -321,8 +321,8 @@ img {
   border-radius: 50%;
   aspect-ratio: 1/1;
   line-height: 0;
-  border: 0.2rem solid #0F6938;
-  background-color: #0F6938;
+  border: 0.2rem solid #0f6938;
+  background-color: #0f6938;
   cursor: pointer;
 }
 .more-info .more-info-slideshow .paginator .paginator-item:hover {
@@ -356,7 +356,7 @@ img {
   padding-inline: 5vw;
 }
 .why-pihss .why-pihss-description .content {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .why-pihss .why-pihss-description .content h1 {
   font-family: "EB Garamond", serif;
@@ -375,7 +375,7 @@ img {
   cursor: pointer;
   text-decoration: none;
   padding: 0.75em 2em;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 0.5em;
   text-transform: uppercase;
@@ -385,8 +385,8 @@ img {
   color: black;
 }
 .why-pihss .why-pihss-description .btn .btn-wrapper a:hover {
-  background-color: #1B9B55;
-  color: #FFFFFF;
+  background-color: #1b9b55;
+  color: #ffffff;
 }
 .why-pihss .why-pihss-selection {
   position: static;
@@ -416,7 +416,7 @@ img {
   justify-content: center;
 }
 .why-pihss .why-pihss-selection .card {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 0.5em;
   padding: 1.25em;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -430,7 +430,7 @@ img {
   width: 20%;
 }
 .why-pihss .why-pihss-selection .card .color-1 {
-  background-color: #0F6938;
+  background-color: #0f6938;
 }
 .why-pihss .why-pihss-selection .card .color-2 {
   background-color: #0E9447;
@@ -450,7 +450,7 @@ img {
 }
 
 .administrative-affairs {
-  background: #EEE1B2;
+  background: #eee1b2;
 }
 .administrative-affairs .aac-affairs-container {
   padding: 1vw;
@@ -497,7 +497,7 @@ img {
   padding: 5vw 0vw;
 }
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 6px 6px 0 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   aspect-ratio: 4/5;
@@ -516,7 +516,7 @@ img {
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card .aac-person {
   padding: 1em;
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .administrative-affairs .staff .aac-slider-wrapper .aac-slider li .card .aac-person .name {
   font-weight: bold;
@@ -590,7 +590,7 @@ img {
   align-items: flex-end;
   padding-bottom: 1em;
   padding-left: 1em;
-  color: #FFFFFF;
+  color: #ffffff;
   background: rgb(0, 0, 0);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
@@ -603,7 +603,7 @@ img {
   padding-inline: 2em;
 }
 .news-and-events-container article.empty {
-  border: 0.01vw solid #1B9B55;
+  border: 0.01vw solid #1b9b55;
 }
 .news-and-events-container article.empty .article-content {
   background: none;
@@ -631,7 +631,7 @@ img {
 }
 .news-and-events-container .nac-upcoming-events article .article-content .content-wrapper .btn {
   text-decoration: none;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: black;
   border-radius: 0.5em;
   padding: 0.75em 1.25em;
@@ -643,7 +643,7 @@ img {
 
 @media screen and (max-width: 768px) {
   .burger-alone div {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 }

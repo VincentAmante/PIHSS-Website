@@ -1,0 +1,36 @@
+.form-item .input-body {
+  display: flex;
+  align-items: center;
+}
+.form-item .input-body .input-alerts {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.form-item .input-body .input-alerts i {
+  position: absolute;
+  left: 1vw;
+  visibility: hidden;
+}
+.form-item small {
+  visibility: hidden;
+  font-weight: 500;
+}
+.form-item.error input {
+  border-color: #ff1f1f;
+}
+.form-item.error i.fa-exclamation-circle {
+  color: #ff1f1f;
+  visibility: visible;
+}
+.form-item.error small {
+  visibility: visible;
+  color: #ff1f1f;
+}
+.form-item.success input {
+  border-color: #6bbb5e;
+}
+.form-item.success i.fa-check-circle {
+  color: #6bbb5e;
+  visibility: visible;
+}/*# sourceMappingURL=form.css.map */
