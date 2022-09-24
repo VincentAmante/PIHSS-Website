@@ -22,10 +22,11 @@
     session_start();
 
     // Change these variables depending on the databse
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $databaseName = "pihss";
+    // ! Maybe best to move these to an env file or somewhere safer
+    $CONFIG_HOST = "localhost";
+    $CONFIG_USERNAME = "root";
+    $CONFIG_PASSWORD = "";
+    $CONFIG_DATABASE_NAME = "pihss";
 
-    $conn = new mysqli($host, $username, $password, $databaseName);
+    $conn = new mysqli($CONFIG_HOST, $CONFIG_USERNAME, $CONFIG_PASSWORD, $CONFIG_DATABASE_NAME);
 ?>
