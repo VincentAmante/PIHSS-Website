@@ -28,17 +28,14 @@
 
     }
 
-
-
     // Edits the gallery's text content
     if (isset($_POST['add-gallery'])
     && $_POST['rand-check'] == $_SESSION['rand'] // Form is not submitted on a refresh
     && $uploadValid 
     ){
         $galleryTitle = htmlspecialchars($_POST['gallery-title']);
-        $galleryCreationDate = $_POST['gallery-creation-date'];
+        $galleryCreationDate =  htmlspecialchars($_POST['gallery-creation-date']);
         $galleryContent = $_POST['input-html'];
-        $isTrue = true;
         
         $updateQuery = $conn->prepare("INSERT INTO galleries(title, creationDate, description, isActivity) 
         VALUES('$galleryTitle', '$galleryCreationDate', '$galleryContent', 
@@ -61,32 +58,25 @@
         require_once './assets/functions/handle-images.php';
 
         // Verifies images first
-        $imagesValid = true;
         $finalOutput = " ";
+
         $imgArr = array();
         $folderName = $galleryId . '_' . $galleryTitle;
-
         $imgDirectory = $GALLERY_FOLDERS_DIR . $folderName . '/';
         $getImgFrom = 'gallery_images';
 
         foreach($_FILES[$getImgFrom]['name'] as $index => $imgName){
             if ($imgName != ""){
                 $result = uploadImage($imgDirectory, $imgName, $getImgFrom, $index);
-                if ($result != false){
+                if ($result->isUploaded){
                     array_push($imgArr, new Image($result->name));
                 }
            }
         }
-
         $finalOutput = json_encode($imgArr);
-        // Handles entries for deletion
-        // Locates entries to be deleted, before updating the array
-        if (isset($_POST['deletion-entries'])){
-            deleteImages($galleryFiles, $_POST['deletion-entries'], $imgDirectory);
-        }
-
         $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput', folderName = '$folderName' WHERE id='$galleryId'");
         $updateQuery->execute();
+
 
         // Repeats query to match update
         if ($conn->connect_error){

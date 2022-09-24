@@ -11,7 +11,7 @@
         $imgName = $_FILES['article-image']['name'];
         if ($imgName != ""){
             require_once "./handle-images.php";
-            $result = uploadImage($ARTICLE_IMG_DIR, $imgName, 'article-image', -1);
+            $result = uploadImage($ARTICLE_IMG_DIR, $imgName, 'article-image');
 
             if ($result->isUploaded){
                 $imgName = $result->name;

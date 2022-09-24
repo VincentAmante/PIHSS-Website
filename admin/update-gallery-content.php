@@ -52,28 +52,6 @@
         $updateQuery = $conn->prepare("UPDATE galleries SET images = '$finalOutput' WHERE id='$galleryId'");
         $updateQuery->execute();
 
-        /// Handle Image Changes
-        $imgName = $_FILES['gallery-thumbnail']['name'];  
-        $origImgSrc = $_POST['img-src'];
-
-        // Changes image if the thumbnails are not the same
-        if ($imgName != "" 
-        && ('../' . $imgName != $origImgSrc)){
-            $imgDirectory = "./assets/gallery-thumbnails/";
-            $resultThumbnail = uploadImage($imgDirectory, $imgName, 'gallery-thumbnail', -1);
-
-            // Uploads new image, and deletes old one
-            if ($resultThumbnail->isUploaded){
-                $imgName = $resultThumbnail->name;
-                
-                unlink('../' . $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail']);
-                $updateQuery = $conn->prepare("UPDATE galleries 
-                SET thumbnail = '$imgName'
-                WHERE id='$galleryId'");
-                $updateQuery->execute();
-            }
-        }
-
         // Repeats query to match update
         if ($conn->connect_error){
             die('Connection Failure : ' + $conn->connect_error);

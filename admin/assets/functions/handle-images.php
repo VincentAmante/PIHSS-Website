@@ -37,7 +37,7 @@ class ImageResult {
     /**
      * Uploads an image to the website's files, ensures it is valid to upload first
      */
-    function uploadImage(string $imgDirectory, string $imgName, string $getImgFrom, int $index=0){
+    function uploadImage(string $imgDirectory, string $imgName, string $getImgFrom, int $index = -1){
         
         $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
         $imageValid = true;

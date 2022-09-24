@@ -73,7 +73,7 @@
         $imgDirectory = $REG_FORMS_DIR . $folderName . '/';
 
         if ($eidImgFront != ''){
-            $result = uploadImage($imgDirectory, $eidImgFront, 'eid-copy-front', -1);
+            $result = uploadImage($imgDirectory, $eidImgFront, 'eid-copy-front');
 
             if ($result->isUploaded){
                 $eidCopyFront = $result->name;
@@ -84,7 +84,7 @@
         }
 
         if ($eidImgBack != ''){
-            $result = uploadImage($imgDirectory, $eidImgBack, 'eid-copy-back', -1);
+            $result = uploadImage($imgDirectory, $eidImgBack, 'eid-copy-back');
 
             if ($result->isUploaded){
                 $eidCopyBack = $result->name;
@@ -95,7 +95,7 @@
         }
 
         if ($passportImg != ''){
-            $result = uploadImage($imgDirectory, $passportImg, 'passport-copy', -1);
+            $result = uploadImage($imgDirectory, $passportImg, 'passport-copy');
 
             if ($result->isUploaded){
                 $passportCopy = $result->name;
@@ -106,7 +106,7 @@
         }
 
         if ($leaveCertificateImg != ''){
-            $result = uploadImage($imgDirectory, $leaveCertificateImg, 'leave-certificate', -1);
+            $result = uploadImage($imgDirectory, $leaveCertificateImg, 'leave-certificate');
             
             if ($result->isUploaded){
                 $leaveCertificate = $result->name;
