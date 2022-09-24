@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="./assets/styles/add-article.css">
     <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     
@@ -22,10 +26,11 @@
                     $rand = rand();
                     $_SESSION['rand'] = $rand;?>
 
-                    <h1>Add Activity</h1>
+                    <h1>Add Gallery</h1>
+
                     <!-- Title -->
                     <div class="form-item">
-                        <label for="gallery-title">Activity Title</label>
+                        <label for="gallery-title">Gallery Title</label>
                         <input type="text" id="gallery-title" name="gallery-title" spellcheck="false" autocomplete="off" required placeholder="Activity Title">
                     </div>
 
@@ -49,7 +54,7 @@
                     <!-- Images -->
                     <div class="form-item" id="gallery-view">
                             <label for="fileElem">Upload images to the gallery</label>
-                            <p>You need at least 1 image for the gallery!</p>
+                            <p>You need at least 3 images for the gallery!</p>
                             <input type="file" 
                                 accept="image/*" 
                                 multiple name="gallery_images[]" 

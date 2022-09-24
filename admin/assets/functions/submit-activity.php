@@ -1,5 +1,4 @@
 <?php
-
     require_once "./assets/functions/header.php";
 
     $galleryId = "";

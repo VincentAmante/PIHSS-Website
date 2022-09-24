@@ -7,12 +7,12 @@
 
     // Amount of images has to be more than 1
     if (isset($_FILES['gallery_images'])){
-        if (count($_FILES['gallery_images']['name']) < 1){
+        if (count($_FILES['gallery_images']['name']) < 3){
             echo "
             <script>
                 Swal.fire({
                     title: 'Insufficient Images!',
-                    text: 'Activities needs at least 1 image!',
+                    text: 'Gallery needs at least 3 images!',
                     icon: 'warning',
                     confirmButtonColor: '#1B9B55',
                     confirmButtonText: 'Ok'
@@ -28,7 +28,7 @@
 
     }
 
-    // FUNCTIONALLY, galleries are just activities but with an image limit
+
 
     // Edits the gallery's text content
     if (isset($_POST['add-gallery'])
