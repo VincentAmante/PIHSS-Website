@@ -45,7 +45,7 @@ main h2 {
   align-items: center;
 }
 .contact-us .container {
-  background-color: #EEE1B2;
+  background-color: #eee1b2;
   display: flex;
   width: 100%;
   max-width: 700px;
@@ -71,7 +71,7 @@ main h2 {
   margin-right: 0;
 }
 .contact-us .container .contact-details .timings p {
-  color: #0F6938;
+  color: #0f6938;
 }
 .contact-us .container .contact-details .info {
   padding: 1em 3em;
@@ -85,11 +85,11 @@ main h2 {
   margin: 0.5em 0em;
 }
 .contact-us .container .contact-details .info ul li i {
-  color: #0F6938;
+  color: #0f6938;
   height: 2em;
   width: 2em;
   padding-top: 0.45em;
-  border: 1px solid #0F6938;
+  border: 1px solid #0f6938;
   border-radius: 50%;
 }
 .contact-us .container .contact-details .info ul li * {
@@ -133,11 +133,6 @@ main h2 {
   max-width: 700px;
   padding: 40px 8vmin;
 }
-.contact-form .form-container span {
-  color: red;
-  font-weight: 700;
-  font-size: large;
-}
 .contact-form .form-container .form-note {
   font-size: small;
   width: 100%;
@@ -146,38 +141,91 @@ main h2 {
 .contact-form .form-container form {
   padding: 10px 0;
 }
-.contact-form .form-container form .form-item {
+.contact-form .form-container form table {
   width: 100%;
-  padding: 8px;
 }
-.contact-form .form-container form .form-item label {
+.contact-form .form-container form .form-row {
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-form .form-container form .form-row .form-label {
+  width: 100%;
   display: block;
   font-weight: 600;
 }
-.contact-form .form-container form .form-item input,
-.contact-form .form-container form .form-item textarea {
+.contact-form .form-container form .form-row .form-label::after {
+  content: "*";
+  color: #ff1f1f;
+}
+.contact-form .form-container form .form-row .form-input .main-body {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.contact-form .form-container form .form-row .form-input .main-body .input-alerts {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.contact-form .form-container form .form-row .form-input .main-body .input-alerts i {
+  position: absolute;
+  right: 10px;
+  visibility: hidden;
+}
+.contact-form .form-container form .form-row .form-input input[type=text],
+.contact-form .form-container form .form-row .form-input input[type=email],
+.contact-form .form-container form .form-row .form-input input[type=tel],
+.contact-form .form-container form .form-row .form-input textarea {
   padding: 1vw;
   width: 100%;
-  border: 1px solid #0F6938;
+  border: 1px solid #0f6938;
   min-height: 40px;
   border-radius: 5px;
   margin-top: 10px;
   resize: none;
 }
-.contact-form .form-container form .submit-button {
+.contact-form .form-container form .form-row .form-input .form-button {
+  width: 45%;
   margin-top: 30px;
   text-align: center;
-}
-.contact-form .form-container form .submit-button button {
-  background-color: #EEE1B2;
+  background-color: #eee1b2;
   padding: 10px 50px;
   border-radius: 5px;
   font-weight: 600;
   transition: 0.2s ease-in-out;
 }
-.contact-form .form-container form .submit-button button:hover {
+.contact-form .form-container form .form-row .form-input .form-button:hover {
   cursor: pointer;
   background-color: #e9d99d;
+}
+.contact-form .form-container form .form-row .form-input small {
+  visibility: hidden;
+  font-weight: 500;
+}
+.contact-form .form-container form .form-row .form-input.success input {
+  border-color: #6bbb5e;
+}
+.contact-form .form-container form .form-row .form-input.success .main-body .input-alerts i.fa-check-circle {
+  color: #6bbb5e;
+  visibility: visible;
+}
+.contact-form .form-container form .form-row .form-input.error input {
+  border-color: #ff1f1f;
+}
+.contact-form .form-container form .form-row .form-input.error small {
+  color: #ff1f1f;
+  visibility: visible;
+}
+.contact-form .form-container form .form-row .form-input.error .main-body .input-alerts i.fa-exclamation-circle {
+  color: #ff1f1f;
+  visibility: visible;
+}
+.contact-form .form-container form .form-row .button-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 1024px) {

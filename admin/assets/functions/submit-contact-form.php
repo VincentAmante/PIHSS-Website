@@ -1,26 +1,25 @@
 <?php
 
-// !WIP
-// Note: Can only be tested if the site is online
-
 if (isset($_POST['submit'])) {
+    require_once './config.php';
+
+    // Form values
     $name = $_POST['name'];
     $emailFrom = $_POST['email'];
     $tel = $_POST['tel'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    $mailTo = "princellebinobo@gmail.com"; // TODO: Change to PIHSS email
+    $mailTo = "info@pihss-shj.com";
     $headers = "From: " . $emailFrom;
 
-    // TODO: Confirm custom message
+    // Message template 
     $txt = "You have received an e-mail from " . $name . ".\n\n" . $message;
 
     mail($mailTo, $subject, $txt, $headers)
         or die("Error!");
-    
+
     // Returns to page
     $referer = $_SERVER['HTTP_REFERER'];
     header("Location: $referer");
-    // header("Location: index.php?mailsent");
 }

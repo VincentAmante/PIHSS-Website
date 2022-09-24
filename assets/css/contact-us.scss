@@ -141,17 +141,11 @@ main {
 	@include flex-centered;
 
 	.form-container {
-		background-color: #efefef; //adjust later
+		background-color: $form-background-color;
 		border-radius: 15px;
 		width: 100%;
 		max-width: 700px;
 		padding: 40px 8vmin;
-
-		span {
-			color: red;
-			font-weight: 700;
-			font-size: large;
-		}
 
 		.form-note {
 			font-size: small;
@@ -162,42 +156,122 @@ main {
 		form {
 			padding: 10px 0;
 
-			.form-item {
+			table {
 				width: 100%;
-				padding: 8px;
-
-				label {
-					display: block;
-					font-weight: 600;
-				}
-
-				input,
-				textarea {
-					padding: 1vw;
-					width: 100%;
-					border: 1px solid $dark;
-					min-height: 40px;
-					border-radius: 5px;
-					margin-top: 10px;
-					resize: none;
-				}
 			}
 
-			.submit-button {
-				margin-top: 30px;
-				text-align: center;
+			.form-row {
+				padding: 8px;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 
-				button {
-					background-color: $accent;
-					padding: 10px 50px;
-					border-radius: 5px;
+				.form-label {
+					width: 100%;
+					display: block;
 					font-weight: 600;
-					transition: 0.2s ease-in-out;
 
-					&:hover {
-						cursor: pointer;
-						background-color: darken($accent, 5%);
+					&::after {
+						content: "*";
+						color: $alert;
 					}
+				}
+
+				.form-input {
+					.main-body {
+						display: flex;
+						align-items: center;
+						position: relative;
+
+						.input-alerts {
+							display: flex;
+							align-items: center;
+							position: relative;
+
+							i {
+								position: absolute;
+								right: 10px;
+								visibility: hidden;
+							}
+						}
+					}
+
+					input[type="text"],
+					input[type="email"],
+					input[type="tel"],
+					textarea {
+						padding: 1vw;
+						width: 100%;
+						border: 1px solid $dark;
+						min-height: 40px;
+						border-radius: 5px;
+						margin-top: 10px;
+						resize: none;
+					}
+
+					.form-button {
+						width: 45%;
+						margin-top: 30px;
+						text-align: center;
+						background-color: $accent;
+						padding: 10px 50px;
+						border-radius: 5px;
+						font-weight: 600;
+						transition: 0.2s ease-in-out;
+
+						&:hover {
+							cursor: pointer;
+							background-color: darken($accent, 5%);
+						}
+					}
+
+					small {
+						visibility: hidden;
+						font-weight: 500;
+					}
+
+					// CSS Changes on success
+					&.success {
+						input {
+							border-color: $success;
+						}
+
+						.main-body {
+							.input-alerts {
+								i.fa-check-circle {
+									color: $success;
+									visibility: visible;
+								}
+							}
+						}
+					}
+
+					// CSS changes on error
+					&.error {
+						input {
+							border-color: $alert;
+						}
+
+						small {
+							color: $alert;
+							visibility: visible;
+						}
+
+						.main-body {
+							.input-alerts {
+								i.fa-exclamation-circle {
+									color: $alert;
+									visibility: visible;
+								}
+							}
+						}
+					}
+				}
+
+				.button-wrapper {
+					display: flex;
+					justify-content: space-between;
 				}
 			}
 		} // form

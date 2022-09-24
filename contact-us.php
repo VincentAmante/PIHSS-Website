@@ -89,41 +89,127 @@
 					<em><span>*</span> indicates a required field</em>
 				</div>
 
-				<form class="form" action="./assets/php/contact-submit.php" method="POST">
-					<!-- Name -->
-					<div class="form-item">
-						<label for="name">Name <span>*</span></label>
-						<input type="text" id="name" name="name" required />
-					</div>
+				<form class="form" action="./admin/assets/functions/submit-contact-form.php" method="POST">
+					<table>
 
-					<!-- Email -->
-					<div class="form-item">
-						<label for="email">Email <span>*</span></label>
-						<input type="email" id="email" name="email" required />
-					</div>
+						<!-- Name -->
+						<tr class="form-row">
+							<td class="form-label">
+								<label for="name">Name</label>
+							</td>
 
-					<!-- Phone Number -->
-					<div class="form-item">
-						<label for="tel">Phone number <span>*</span></label>
-						<input type="tel" id="tel" name="tel" required />
-					</div>
+							<td class="form-input">
+								<div class="main-body">
+									<input type="text" id="name" name="name" spellcheck="false" autocomplete="off" required />
 
-					<!-- Message Subject -->
-					<div class="form-item">
-						<label for="subject">Subject</label>
-						<input type="text" id="subject" name="subject" />
-					</div>
+									<!-- Displays status of validation -->
+									<div class="input-alerts">
+										<i class="fas fa-check-circle"></i>
+										<i class="fas fa-exclamation-circle"></i>
+									</div>
+								</div> <!-- .main-body -->
 
-					<!-- Message Content -->
-					<div class="form-item">
-						<label for="message">Message</label>
-						<textarea name="message" id="message" cols="30" rows="10"></textarea>
-					</div>
+								<!-- Displays any errors from form validation -->
+								<small>Error Message</small>
+							</td>
+						</tr>
 
-					<!-- Submit Button -->
-					<div class="submit-button">
-						<button type="submit" name="submit">SUBMIT</button>
-					</div>
+						<!-- Email -->
+						<tr class="form-row">
+							<td class="form-label">
+								<label for="email">Email</label>
+							</td>
+
+							<td class="form-input">
+								<div class="main-body">
+									<input type="email" id="email" name="email" spellcheck="false" autocomplete="on" required />
+
+									<!-- Displays status of validation -->
+									<div class="input-alerts">
+										<i class="fas fa-check-circle"></i>
+										<i class="fas fa-exclamation-circle"></i>
+									</div>
+								</div> <!-- .main-body -->
+
+								<!-- Displays any errors from form validation -->
+								<small>Error Message</small>
+							</td>
+						</tr>
+
+						<!-- Phone Number -->
+						<tr class="form-row">
+							<td class="form-label">
+								<label for="tel">Phone number</label>
+							</td>
+
+							<td class="form-input">
+								<div class="main-body">
+									<input type="tel" id="tel" name="tel" autocomplete="on" required />
+
+									<!-- Displays status of validation -->
+									<div class="input-alerts">
+										<i class="fas fa-check-circle"></i>
+										<i class="fas fa-exclamation-circle"></i>
+									</div>
+								</div> <!-- .main-body -->
+
+								<!-- Displays any errors from form validation -->
+								<small>Error Message</small>
+							</td>
+						</tr>
+
+						<!-- Message Subject -->
+						<tr class="form-row">
+							<td class="form-label">
+								<label for="subject">Subject</label>
+							</td>
+
+							<td class="form-input">
+								<div class="main-body">
+									<input type="text" id="subject" name="subject" />
+
+									<!-- Displays status of validation -->
+									<div class="input-alerts">
+										<i class="fas fa-check-circle"></i>
+										<i class="fas fa-exclamation-circle"></i>
+									</div>
+								</div> <!-- .main-body -->
+
+								<!-- Displays any errors from form validation -->
+								<small>Error Message</small>
+							</td>
+						</tr>
+
+						<!-- Message Content -->
+						<tr class="form-row">
+							<td class="form-label">
+								<label for="message">Message</label>
+							</td>
+
+							<td class="form-input">
+								<div class="main-body">
+									<textarea name="message" id="message" cols="30" rows="10" required></textarea>
+
+									<!-- Displays status of validation -->
+									<div class="input-alerts">
+										<i class="fas fa-check-circle"></i>
+										<i class="fas fa-exclamation-circle"></i>
+									</div>
+								</div> <!-- .main-body -->
+
+								<!-- Displays any errors from form validation -->
+								<small>Error Message</small>
+							</td>
+						</tr>
+
+						<!-- Form Buttons -->
+						<tr class="form-row">
+							<td class="form-input button-wrapper">
+								<input class="form-button form-submit" type="submit" value="Submit">
+								<input class="form-button form-reset" type="reset" value="Clear All" required>
+							</td>
+						</tr>
+					</table>
 				</form> <!-- .form -->
 			</div> <!-- .form-container -->
 		</section> <!-- #contact-form -->
@@ -133,7 +219,10 @@
 	<?php include('./assets/php/footer.php') ?>
 
 	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="assets/js/global-scripts.js"></script>
+	<script src="assets/js/contact-form.js"></script>
+
 </body>
 
 </html>
