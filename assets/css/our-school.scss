@@ -99,7 +99,9 @@ main {
 
 				.card {
 					flex-grow: 1;
-					@include flex-centered;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
 					margin: $global-margin;
 
 					img {
@@ -112,7 +114,6 @@ main {
 
 					.content {
 						text-align: left;
-						// overflow-y: visible;
 
 						p {
 							padding-right: 1em;
@@ -368,9 +369,6 @@ main {
 					.card {
 						img {
 							aspect-ratio: initial;
-							height: 50vh;
-							// width: 40vw;
-							margin-bottom: 0;
 						}
 
 						.content {
@@ -449,6 +447,7 @@ main {
 					.card {
 						flex-direction: row;
 						justify-content: space-between;
+						margin: 5vh 2vw;
 
 						img {
 							height: 50vh;
@@ -458,6 +457,7 @@ main {
 
 						.content {
 							max-width: 40%;
+							align-self: center;
 						}
 					}
 				}

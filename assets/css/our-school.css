@@ -1,9 +1,9 @@
 /* Imports */
 .slider-btn, .news-btn {
   border-radius: 50%;
-  background-color: #0F6938;
+  background-color: #0f6938;
   width: clamp(20px, 4.5vw, 18rem);
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   border: 0.2rem solid rgba(255, 255, 255, 0);
   display: flex;
@@ -19,9 +19,9 @@
 }
 .slider-btn:hover, .news-btn:hover {
   box-sizing: border-box;
-  border: 0.2rem solid #0F6938;
+  border: 0.2rem solid #0f6938;
   background-color: rgba(0, 0, 0, 0.1);
-  color: #0F6938;
+  color: #0f6938;
 }
 
 .news-btn {
@@ -87,7 +87,7 @@ main h3 {
   padding: 0;
 }
 #facilities .slideshow-wrapper {
-  background-color: #CFECC1;
+  background-color: #cfecc1;
   max-width: 100vw;
   display: flex;
   flex-direction: column;
@@ -125,9 +125,8 @@ main h3 {
 #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
   margin: 5vw;
 }
 #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
@@ -178,7 +177,7 @@ main h3 {
 }
 #school-activities .co-curricular-list .activity-container {
   position: relative;
-  background-color: #EEE1B2;
+  background-color: #eee1b2;
   width: 100%;
   padding-bottom: 100%;
   overflow: hidden;
@@ -290,7 +289,7 @@ main h3 {
 }
 #study-programme .programme-container ol li::marker,
 #study-programme .programme-container ol h2 {
-  color: #0F6938;
+  color: #0f6938;
   font-weight: bold;
 }
 #study-programme .programme-container ul {
@@ -349,8 +348,6 @@ main h3 {
   /* Facilities */
   #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
     aspect-ratio: initial;
-    height: 50vh;
-    margin-bottom: 0;
   }
   #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content p {
     max-height: 45vh;
@@ -396,6 +393,7 @@ main h3 {
   #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card {
     flex-direction: row;
     justify-content: space-between;
+    margin: 5vh 2vw;
   }
   #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card img {
     height: 50vh;
@@ -404,6 +402,7 @@ main h3 {
   }
   #facilities .slideshow-wrapper .facilities-slideshow .facilities-slider .card .content {
     max-width: 40%;
+    align-self: center;
   }
   /* School Activities */
   #school-activities .co-curricular-list .activity-container .content button {
