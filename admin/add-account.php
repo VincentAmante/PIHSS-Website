@@ -120,7 +120,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
-    <script src="./assets/scripts/account-verification.js"></script>
+    <script src="./assets/scripts/account-validation.js"></script>
     <script src="./assets/scripts/rich-text.js"></script>
     <script src="../assets/js/file-uploader-single.js"></script>
 </body>

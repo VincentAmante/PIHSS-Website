@@ -84,13 +84,13 @@ function checkPassword(){
     let passMaxLength = 64;
 
     if (isEmpty(mainPassword)){
-        setErrorFor(input, 'Password cannot be empty');
+        setErrorFor(password, 'Password cannot be empty');
         formIsValid = false;
     } else if (mainPassword.length < passMinLength){
-        setErrorFor(input, 'Password is too short');
+        setErrorFor(password, 'Password is too short');
         formIsValid = false;
     } else if (mainPassword.length > passMaxLength){
-        setErrorFor(input, 'Password is too long');
+        setErrorFor(password, 'Password is too long');
         formIsValid = false;
     } else {
         setSuccessFor(password);

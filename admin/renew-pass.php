@@ -26,6 +26,7 @@
         $queryResult = mysqli_fetch_assoc($stmt->get_result());
 
         if ($queryResult != null){
+            
             $tokenData = json_decode($queryResult['tokenData']);
 
             if (password_verify($token, $tokenData->token) 
@@ -54,6 +55,8 @@
                         $stmt->execute();
                         $stmt->close();
                         $conn->close();
+
+                        header("Location: ./index.php");
                     }
             } else {
                 if ($tokenData->expirationDate < time()){
@@ -61,7 +64,7 @@
                 }
             }
         } else {
-            exit();
+            die("Account does not exist");
         }
     }else if (isset($_GET['token']) && isset($_GET['id'])){
         $token = $_GET['token'];
@@ -77,10 +80,12 @@
             $tokenData = json_decode($queryResult['tokenData']);
 
             if (password_verify($token, $tokenData->token) 
-                && $tokenData->expirationDate > time()){
-                    echo 'WOOO';
+                && $tokenData->expirationDate > time()){ 
+                    
+            } else if ($tokenData->expirationDate < time()) {
+                die("Token expired");
             } else {
-                exit();
+                die("Token not valid");
             }
         } else {
             exit();
@@ -99,7 +104,9 @@
     <title>Admin Login Page</title>
 
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="./assets/styles/admin-page.css">
+    <link rel="stylesheet" href="./assets/styles/account-form.css">
+    <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/styles/form.css">
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -107,33 +114,61 @@
 <body>
     <main>
     <section class="login-form">
-        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
-            <h1>Login</h1>
-            <div class="content">
-                <!-- Username -->
-                <div class="input-field">
-                    <input type="password" placeholder="Password" autocomplete="off" name="new-pass" minlength="8">
-                </div>
+        <div class="form-wrapper">
+            <form class="admin-form" method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
+                <h1>Reset Password</h1>
+                <div class="content">
+                    <!-- Username -->
+                    <div class="form-item">
+                        <label for="new-pass">New Password</label>
+                        <div class="input-body">
+                            <input id="password" type="password" placeholder="Password" autocomplete="off" name="new-pass" minlength="8">
+                            <div class="input-alerts">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                        </div>
+                        <small>Error Message</small>
+                    </div>
 
-                <!-- Password -->
-                <div class="input-field">
-                    <input type="password" placeholder="Password" name="new-pass-confirm" minlength="8">
+                    <div class="form-item">
+                        <label for="new-pass-confirm">Confirm Password</label>
+                        <div class="input-body">
+                            <input id="password-retyped" type="password" placeholder="Password" autocomplete="off" name="new-pass-confirm" minlength="8">
+                            <div class="input-alerts">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                        </div>
+                        <small>Error Message</small>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- <a href="#" class="link">Forgot Your Password?</a> -->
-            <!-- Sign In Button -->
-            <div class="action">
-                <button name="reset-pass">Reset Password</button>
-            </div>
-            <?php
-                if (isset($_GET['token']) && isset($_GET['id']))
-            :?>
-            <input type="hidden" value="<?php echo $_GET['token'];?>" name="token">
-            <input type="hidden" value="<?php echo $_GET['id'];?>" name="id">
-            <?php endif ?>
-        </form>
+                
+                <!-- <a href="#" class="link">Forgot Your Password?</a> -->
+                <!-- Sign In Button -->
+                <div class="form-item form-item-empty">
+                    <div class="action buttons">
+                        <button type="submit" class="form-button" name="reset-pass">Reset Password</button>
+                    </div>
+                </div>
+                <?php
+                    if (isset($_GET['token']) && isset($_GET['id']))
+                :?>
+                <input type="hidden" value="<?php echo $_GET['token'];?>" name="token">
+                <input type="hidden" value="<?php echo $_GET['id'];?>" name="id">
+                <?php endif ?>
+
+                <?php
+                    if (isset($_POST['token']) && isset($_POST['id']))
+                :?>
+                <input type="hidden" value="<?php echo $_POST['token'];?>" name="token">
+                <input type="hidden" value="<?php echo $_POST['id'];?>" name="id">
+                <?php endif ?>
+            </form>
+        </div>
     </section> <!-- .login-form -->
     </main>
+
+    <script src="./assets/scripts/reset-pass-validation.js"></script>
 </body>
 </html>

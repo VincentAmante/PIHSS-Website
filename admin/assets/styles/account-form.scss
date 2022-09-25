@@ -1,0 +1,102 @@
+@import "../../../assets/css/scss/_variables.scss";
+@import "../../../assets/css/scss/_file-uploader.scss";
+
+body, html {
+	scroll-behavior: smooth;
+    height: 100%;
+}
+
+main, section {
+    @include flex-centered;
+    padding: 0;
+    // margin-bottom: 8vmax;
+    width: 100%;
+}
+
+section {
+    padding-top: 2.5vw;
+    padding-inline: $global-margin;
+}
+
+.form-wrapper {
+    min-width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw;
+}
+
+header {
+    position: static;
+}
+
+.calendar-wrapper {
+    margin-bottom: 1vw;
+}
+
+.admin-form {
+    padding: 2em;
+    border: .01rem solid $form-border-color;
+    border-radius: 1em;
+    font-family: $font-secondary;
+    width: 100%;
+
+    .form-item {
+        padding-block: 1em;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        input {
+            padding: .75em;
+            align-self: flex-start;
+            border: .01rem solid $form-border-color;
+
+            &[type="password"]{
+                min-width: 60%;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+
+        .form-button {
+            background: none;
+            padding: .75em;
+            padding-inline: 1.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            background-color: $primary-main;
+            color: $primary-secondary;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten($primary-main, 10%);
+            }
+
+            &.delete-button {
+                background-color: $alert;
+
+                &:hover {
+                    background-color: lighten($alert, 10%);
+                }
+            }
+        }
+
+        .editor-container {
+            min-height: 30vh;
+        }
+    }
+    
+    h2 {
+        margin-top: 1em;
+        padding-bottom: .5em;
+    }
+}
