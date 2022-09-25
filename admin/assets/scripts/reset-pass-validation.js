@@ -96,21 +96,22 @@ function checkInputs(){
 accountForm.submit(e => {
     e.preventDefault();
 
+    console.log('hello');
+
     checkInputs();
 
+    console.log(formIsValid);
     if (formIsValid){
-        
-        let formData = $(accountForm).serialize();
-        $.ajax({
-            url: './renew-pass.php',
-            type: 'POST',
-            data: formData,
-            dataType: 'json',
-            encode: true,
-            success: function (r){
 
-            }
-        });
+        $.post("renew-pass.php", {
+            [password.attr('name')]: password.val(),
+            [passwordRetyped.attr('name')]: passwordRetyped.val(),
+            [$("#token").attr('name')] : $("#token").val(),
+            [$("#id").attr('name')] : $("#id").val(),
+            [$("#submit-button").attr('name')] : true
+        }).done(() => {
+            window.location.href="./index.php?passReset=success";
+        })
         // accountForm.off().submit();
     }
 

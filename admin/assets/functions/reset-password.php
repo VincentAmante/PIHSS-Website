@@ -1,20 +1,18 @@
 <?php
+    require_once('config.php');
 
     if (isset($_POST['reset-password'])){
         ?>           
             <script>
                 Swal.fire({
                             title: 'Thank you!',
-                            text: 'An email will be sent to reset your password',
-                            icon: 'warning',
+                            text: 'If valid, an email will be sent to reset your password',
+                            icon: 'success',
                             confirmButtonColor: '#1B9B55',
                             confirmButtonText: 'Ok' 
                         });
             </script>
             <?php
-
-
-        require_once('config.php');
         $email = $_POST['email'];
 
         $checkEmails = "SELECT * FROM admins WHERE email = ?";

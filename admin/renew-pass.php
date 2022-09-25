@@ -14,6 +14,7 @@
     }
     else if (isset($_POST['reset-pass'])){
 
+        echo $token;
         $token = $_POST['token'];
         $id = $_POST['id'];
         $newPass = $_POST['new-pass'];
@@ -26,6 +27,7 @@
         $queryResult = mysqli_fetch_assoc($stmt->get_result());
 
         if ($queryResult != null){
+            echo 'Not null';
             
             $tokenData = json_decode($queryResult['tokenData']);
 
@@ -34,15 +36,19 @@
 
                     if ($newPass != $newPassConfirm){
                         $creationResult = Result::FAILED;
+                        echo 'Failed';
                     }
 
                     $minPasswordLength = 8;
                     $maxPasswordLength = 64;
                     if (strlen($newPass) < $minPasswordLength || strlen($newPass) > $maxPasswordLength){
                         $creationResult = Result::FAILED;
+                        echo 'Failed';
                     }
 
                     if ($creationResult != Result::FAILED){
+                        echo 'Hello';
+
                         $creationResult = Result::SUCCESS;
                         $passHashed = password_hash($newPass, PASSWORD_BCRYPT);
                         $updatePass = "UPDATE admins SET password = '$passHashed' WHERE email = ?";
@@ -55,8 +61,6 @@
                         $stmt->execute();
                         $stmt->close();
                         $conn->close();
-
-                        header("Location: ./index.php");
                     }
             } else {
                 if ($tokenData->expirationDate < time()){
@@ -88,9 +92,11 @@
                 die("Token not valid");
             }
         } else {
+            die('Token expired');
             exit();
         }
     } else {
+        die('Forbidden');
         exit();
     }
 ?>
@@ -144,26 +150,28 @@
                     </div>
                 </div>
                 
-                <!-- <a href="#" class="link">Forgot Your Password?</a> -->
-                <!-- Sign In Button -->
-                <div class="form-item form-item-empty">
-                    <div class="action buttons">
-                        <button type="submit" class="form-button" name="reset-pass">Reset Password</button>
-                    </div>
-                </div>
+
                 <?php
                     if (isset($_GET['token']) && isset($_GET['id']))
                 :?>
-                <input type="hidden" value="<?php echo $_GET['token'];?>" name="token">
-                <input type="hidden" value="<?php echo $_GET['id'];?>" name="id">
+                <input id="token" type="hidden" value="<?php echo $_GET['token'];?>" name="token">
+                <input id="id" type="hidden" value="<?php echo $_GET['id'];?>" name="id">
                 <?php endif ?>
 
                 <?php
                     if (isset($_POST['token']) && isset($_POST['id']))
                 :?>
-                <input type="hidden" value="<?php echo $_POST['token'];?>" name="token">
-                <input type="hidden" value="<?php echo $_POST['id'];?>" name="id">
+                <input id="token" type="hidden" value="<?php echo $_POST['token'];?>" name="token">
+                <input id="id" type="hidden" value="<?php echo $_POST['id'];?>" name="id">
                 <?php endif ?>
+
+                <!-- <a href="#" class="link">Forgot Your Password?</a> -->
+                <!-- Sign In Button -->
+                <div class="form-item form-item-empty">
+                    <div class="action buttons">
+                        <button id="submit-button" class="form-button" name="reset-pass">Reset Password</button>
+                    </div>
+                </div>
             </form>
         </div>
     </section> <!-- .login-form -->
