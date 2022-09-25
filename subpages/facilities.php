@@ -36,8 +36,8 @@
                 <!-- ** Used placeholders for the slider images until the media is finalized -->
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?food" alt="" />
-                        <div class="content">
+                        <img src="https://dummyimage.com/600x600/b0b0b0/545454.png&text=Insert+Canteen+Image" alt="School Canteen" aria-describedby="canteen" />
+                        <div class="content" id="canteen">
                             <h2>Canteen</h2>
                             <p>
                                 It provides wholesome snacks and drinks in the most hygienic conditions. It
@@ -53,8 +53,8 @@
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?medical clinic" alt="" />
-                        <div class="content">
+                        <img src="../assets/images/general/clinic.jpg" alt="School Medical Clinic" aria-describedby="clinic" />
+                        <div class="content" id="clinic">
                             <h2>Medical Facility</h2>
                             <p>
                                 There is a fully equipped clinic to provide first-aid and basic health
@@ -73,8 +73,8 @@
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?school uniform" alt="" />
-                        <div class="content">
+                        <img src="../assets/images/general/uniform-shop.jpg" alt="School Uniform Shop" aria-describedby="uniform-shop" />
+                        <div class="content" id="uniform-shop">
                             <h2>Uniform Shop</h2>
                             <p>
                                 A well stocked uniform shop is providing school & sports uniform.
@@ -84,8 +84,8 @@
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?laboratory" alt="" />
-                        <div class="content">
+                        <img src="../assets/images/general/laboratory.jpg" alt="Four students working on an assignment in the laboratory" aria-describedby="laboratory" />
+                        <div class="content" id="laboratory">
                             <h2>Laboratories</h2>
                             <p>
                                 Spacious Physics, Chemistry, Biology, Computer and Home Economics laboratories
@@ -100,8 +100,8 @@
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?library" alt="" />
-                        <div class="content">
+                        <img src="../assets/images/general/library.png" alt="School Library" aria-describedby="library" />
+                        <div class="content" id="library">
                             <h2>Libraries</h2>
                             <p>
                                 No educational institution is complete without a good, well stocked library, nor
@@ -124,8 +124,8 @@
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?computer" alt="" />
-                        <div class="content">
+                        <img src="../assets/images/general/computer-lab.png" alt="Students doing an assignment on the lab's computers" aria-describedby="computer-lab" />
+                        <div class="content" id="computer-lab">
                             <h2>Audio - Visual Aids & Computer Lab</h2>
                             <p>
                                 Well equipped computer labs are made accessible to the students in both the
@@ -146,8 +146,8 @@
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?sports" alt="" />
-                        <div class="content">
+                        <img src="../assets/images/general/sports.png" alt="A group of students playing basketball in the school courtyard" aria-describedby="sports" />
+                        <div class="content" id="sports">
                             <h2>Sports</h2>
                             <p>
                                 Sports form an integral part of the education system. Sports play a pivotal role
@@ -165,8 +165,8 @@
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?auditorium" alt="" />
-                        <div class="content">
+                        <img src="https://dummyimage.com/600x600/b0b0b0/545454.png&text=Insert+Auditorium+Image" alt="School Auditorium" aria-describedby="auditorium" />
+                        <div class="content" id="auditorium">
                             <h2>Auditorium</h2>
                             <p>
                                 The institute is equipped with the audio - visual auditorium facilities. It is a
@@ -181,8 +181,8 @@
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://source.unsplash.com/1600x900/?playground" alt="" />
-                        <div class="content">
+                        <img src="../assets/images/general/junior-activity-room.jpg" alt="Young students sitting in front of a tv in the activity room" aria-describedby="junior-activity-room" />
+                        <div class="content" id="junior-activity-room">
                             <h2>Junior Activity Room</h2>
                             <p>
                                 An activity room is every child's favourite place and this spacious and well

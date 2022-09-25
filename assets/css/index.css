@@ -34,12 +34,14 @@
   color: #62AC3B;
 }
 
-body, html {
+body,
+html {
   scroll-behavior: smooth;
   height: 100%;
 }
 
-main, section {
+main,
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,7 +198,7 @@ img {
   padding-block: 1em;
 }
 .about-us .about-us-statblock > div:first-of-type {
-  border-right: 0.01rem solid #B5872E;
+  border-right: 0.01rem solid #b5872e;
 }
 .about-us .about-us-statblock .number {
   padding-block: 0.5em;
@@ -335,7 +337,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("../images/homepage/image_61.jpg") repeat fixed 100%;
+  background: url("../images/general/why-pihss-bg.jpg") repeat fixed 100%;
   background-size: cover;
 }
 .why-pihss .why-pihss-container {
@@ -433,13 +435,13 @@ img {
   background-color: #0f6938;
 }
 .why-pihss .why-pihss-selection .card .color-2 {
-  background-color: #0E9447;
+  background-color: #0e9447;
 }
 .why-pihss .why-pihss-selection .card .color-3 {
-  background-color: #3AB44B;
+  background-color: #3ab44b;
 }
 .why-pihss .why-pihss-selection .card .color-4 {
-  background-color: #6BBB41;
+  background-color: #6bbb41;
 }
 .why-pihss .why-pihss-selection .card .content h1 {
   font-family: "EB Garamond", serif;
@@ -527,7 +529,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #FFF;
+  background-color: #fff;
   padding-inline: 5vw;
   width: 100%;
 }

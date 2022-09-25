@@ -93,7 +93,9 @@ main img {
 
 /* Subpage Banner */
 .subpage-banner {
-  background-image: url("../images/placeholders/DSC07466.jpg");
+  background: url("../images/banners/banner-4.jpg") repeat fixed 100%;
+  background-size: cover;
+  background-position: bottom;
 }
 
 /* Admissions Overview */
@@ -178,7 +180,7 @@ main img {
   margin-block: 2em;
 }
 .admissions-requirements h2 {
-  color: #0F6938;
+  color: #0f6938;
 }
 .admissions-requirements a {
   color: #383838;
@@ -237,7 +239,7 @@ main img {
   overflow-x: initial;
 }
 .table-wrapper table th {
-  background-color: #EEE1B2;
+  background-color: #eee1b2;
 }
 
 /* Fee Structure */
@@ -267,7 +269,7 @@ main img {
 }
 .fee-structure h2,
 .fee-structure h3 {
-  color: #0F6938;
+  color: #0f6938;
   text-transform: uppercase;
 }
 
@@ -297,7 +299,7 @@ main img {
 }
 .student-code-container h2,
 .student-code-container h3 {
-  color: #0F6938;
+  color: #0f6938;
   text-transform: uppercase;
 }
 .student-code-container h3 {
@@ -311,7 +313,7 @@ main img {
   align-items: flex-start;
 }
 .registration h2 {
-  color: #0F6938;
+  color: #0f6938;
   font-weight: 500;
 }
 
@@ -341,7 +343,7 @@ main img {
 }
 .registration-form .form-row .form-label:not(.uploader-single):not(.file-upload)::after {
   content: "*";
-  color: #FF1F1F;
+  color: #ff1f1f;
 }
 .registration-form .form-row .form-input {
   padding: 1em;
@@ -351,7 +353,7 @@ main img {
   position: relative;
 }
 .registration-form .form-row .form-input label.error {
-  color: #FF1F1F;
+  color: #ff1f1f;
 }
 .registration-form .form-row .form-input .main-body {
   display: flex;
@@ -380,14 +382,14 @@ main img {
   visibility: visible;
 }
 .registration-form .form-row .form-input.error input {
-  border-color: #FF1F1F;
+  border-color: #ff1f1f;
 }
 .registration-form .form-row .form-input.error small {
-  color: #FF1F1F;
+  color: #ff1f1f;
   visibility: visible;
 }
 .registration-form .form-row .form-input.error .main-body .input-alerts i.fa-exclamation-circle {
-  color: #FF1F1F;
+  color: #ff1f1f;
   visibility: visible;
 }
 .registration-form .form-row .file-upload {
@@ -414,7 +416,7 @@ main img {
 .registration-form .form-row input[type=tel].error,
 .registration-form .form-row input[type=email].error,
 .registration-form .form-row select.error {
-  border-color: #FF1F1F;
+  border-color: #ff1f1f;
   border-width: 0.1rem;
 }
 .registration-form .form-row input[type=date] {
@@ -449,7 +451,7 @@ main img {
   background-color: #c9c9c9;
 }
 .registration-form .form-row .radio-group .input-group input[type=radio].error {
-  border-color: #FF1F1F;
+  border-color: #ff1f1f;
 }
 .registration-form .form-row .file-upload {
   display: flex;
@@ -472,7 +474,7 @@ main img {
   border: none;
   flex-grow: 0.25;
   padding: 1em 1.5em;
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: uppercase;
   border-radius: 0.5em;
   cursor: pointer;
@@ -490,13 +492,13 @@ main img {
 }
 .registration-form .form-row .form-reset {
   font-weight: bold;
-  color: #FF1F1F;
+  color: #ff1f1f;
   border: 0.01rem solid #dddddd;
 }
 .registration-form .form-row .form-reset:hover {
-  background-color: #FF1F1F;
-  color: #FFFFFF;
-  border: 0.01rem solid #FF1F1F;
+  background-color: #ff1f1f;
+  color: #ffffff;
+  border: 0.01rem solid #ff1f1f;
 }
 .registration-form .form-item-empty label {
   -webkit-user-select: none;

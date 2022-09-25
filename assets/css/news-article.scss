@@ -2,7 +2,6 @@
 @import "./scss/_variables.scss";
 @import "./scss/_slider-btn.scss";
 
-
 // Base Stylings
 body,
 html {
@@ -27,6 +26,13 @@ h2 {
 	@extend h1;
 	font-weight: 700;
 	margin-bottom: 1em;
+}
+
+/* Subpage Banner */
+.subpage-banner {
+	background: url("../images/banners/banner-1.jpg") repeat fixed 100%;
+	background-size: cover;
+	background-position: center;
 }
 
 .article-overview {
