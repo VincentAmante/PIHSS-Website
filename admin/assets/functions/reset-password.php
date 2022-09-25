@@ -49,8 +49,8 @@
             
             $msg = "Reset password here:\n" . $siteUrl;
 
-            // mail($email, 'Reset Password', $msg);
-            echo $msg;
+            mail($email, 'Reset Password', $msg);
+            // echo $msg;
         }
 
 
