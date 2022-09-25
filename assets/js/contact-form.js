@@ -41,10 +41,22 @@ contactForm.submit((e) => {
 
 	checkInputs();
 
+	// Success message after form submission
 	if (formIsValid) {
-		// Unbinds submission before submitting
-		contactForm.off().submit();
+		Swal.fire({
+			title: "Thank you!",
+			text: "Your contact request has been submitted successfully.",
+			icon: "success",
+			confirmButtonColor: "#3085d6",
+			confirmButtonText: "OK",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				// Unbinds submission before submitting
+				contactForm.off().submit();
+			}
+		});
 	}
+
 	return false;
 });
 

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./assets/css/global.css" />
   <link rel="stylesheet" href="./assets/css/admissions.css" />
   <link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
