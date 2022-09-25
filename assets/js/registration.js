@@ -74,8 +74,8 @@ registrationForm.submit((e) => {
 	// Success message after form submission
 	if (formIsValid) {
 		Swal.fire({
-			title: "Registration success!",
-			text: "Your registration has been successfully completed.",
+			title: "Registration sent!",
+			text: "Your registration will be processed.",
 			icon: "success",
 			confirmButtonColor: "#3085d6",
 			confirmButtonText: "OK",

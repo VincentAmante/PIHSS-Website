@@ -5,6 +5,22 @@
     $lastId = "";
     $folderName = "";
 
+    if (!isset($_POST['student-name'])
+    || !isset($_POST['student-gender'])
+    || !isset($_POST['eid-number'])
+    || !isset($_POST['eid-issue'])
+    || !isset($_POST['eid-expiry'])
+    || !isset($_POST['student-class'])
+    || !isset($_POST['father-name'])
+    || !isset($_POST['father-number'])
+    || !isset($_POST['father-email'])){
+
+        // Returns to page  
+        $referer = '/admissions.php?error=true';
+        header("Location: $referer");
+        exit();
+    }
+
     // Form values
     $studentName = htmlspecialchars($_POST['student-name']);
     $gender = $_POST['student-gender'];
@@ -127,11 +143,16 @@
             $stmt = $conn->prepare($imageQuery);
             $stmt->execute();
             $stmt->close();
+
+            
+            $referer = '/admissions.php?success=true';
+            header("Location: $referer");
+            exit();
         }
     }
 
-    $conn->close();
     // Returns to page  
-    $referer = $_SERVER['HTTP_REFERER'];
+    $referer = '/admissions.php?error=true';
     header("Location: $referer");
+    $conn->close();
 ?>

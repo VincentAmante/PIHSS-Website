@@ -16,7 +16,28 @@
 <body>
   <!-- Header -->
   <?php include('./assets/php/header.php') ?>
-
+  <?php 
+    if (isset($_GET['error'])):?>
+      <script>
+          Swal.fire({
+            title: "Registration failed!",
+            text: "Something went wrong, please try again!",
+            icon: "warning",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "OK",
+          })
+      </script>
+    <?php elseif (isset($_GET['success'])):?>
+      <script>
+          Swal.fire({
+            title: "Registration successful!",
+            text: "The school has received your form",
+            icon: "success",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "OK",
+          })
+      </script>
+      <?php endif; ?>
   <main>
     <!-- Banner -->
     <section id="admissions-banner" class="subpage-banner">
@@ -731,7 +752,7 @@
               <label for="form-submit">Form Buttons</label>
             </td>
             <td class="form-input">
-              <input class="form-button form-submit" type="submit" value="Submit">
+              <input id="submit-button" class="form-button form-submit" type="submit" value="Submit">
               <input class="form-button form-reset" type="reset" value="Clear All" required>
             </td>
           </tr>
