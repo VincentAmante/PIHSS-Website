@@ -50,7 +50,9 @@ main {
 
 /* Subpage Banner */
 .subpage-banner {
-	background-image: url("../images/placeholders/DSC07466.jpg");
+	background: url("../images/banners/banner-4.jpg") repeat fixed 100%;
+	background-size: cover;
+	background-position: bottom;
 }
 
 /* Admissions Overview */

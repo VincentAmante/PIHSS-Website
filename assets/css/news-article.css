@@ -1,8 +1,8 @@
 .slider-btn, .news-btn {
   border-radius: 50%;
-  background-color: #0F6938;
+  background-color: #0f6938;
   width: clamp(20px, 4.5vw, 18rem);
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   border: 0.2rem solid rgba(255, 255, 255, 0);
   display: flex;
@@ -18,9 +18,9 @@
 }
 .slider-btn:hover, .news-btn:hover {
   box-sizing: border-box;
-  border: 0.2rem solid #0F6938;
+  border: 0.2rem solid #0f6938;
   background-color: rgba(0, 0, 0, 0.1);
-  color: #0F6938;
+  color: #0f6938;
 }
 
 .news-btn {
@@ -59,6 +59,13 @@ h1, h2 {
 h2 {
   font-weight: 700;
   margin-bottom: 1em;
+}
+
+/* Subpage Banner */
+.subpage-banner {
+  background: url("../images/banners/banner-1.jpg") repeat fixed 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 .article-overview {

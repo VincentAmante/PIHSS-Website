@@ -50,16 +50,16 @@
                     <!-- Table Images -->
                     <div class="image content-container">
                         <div class="tab-content active" id="values-img">
-                            <img src="./assets/images/placeholders/why_pihss.jpg" alt="">
+                            <img src="./assets/images/general/values.jpg" alt="Students walking in the school courtyard">
                         </div>
                         <div class="tab-content" id="vision-mission-img">
-                            <img src="./assets/images/placeholders/library.jpg" alt="">
+                            <img src="./assets/images/general/mission-vision.jpg" alt="Close-up of a young student doing an activity in a classroom">
                         </div>
                         <div class="tab-content" id="our-history-img">
-                            <img src="./assets/images/placeholders/mission-vision-0.jpg" alt="">
+                            <img src="./assets/images/general/our-history.jpg" alt="School building when it was first established in 1974">
                         </div>
                         <div class="tab-content" id="religious-background-img">
-                            <img src="./assets/images/placeholders/staff_5.jpg" alt="">
+                            <img src="./assets/images/general/religious-background.jpg" alt="Young student standing in front of a board depicting arabic alphabets">
                         </div>
                     </div> <!-- content-container -->
 
@@ -215,7 +215,7 @@
 
                 <div class="principal-message-container">
                     <div class="principal-image">
-                        <img src="./assets/images/placeholders/staff_5.jpg" alt="Principal's Portrait">
+                        <img src="https://dummyimage.com/600x600/b0b0b0/545454.png&text=Insert+Principal's+Portrait" alt="Portrait of the current principal">
                     </div>
 
                     <div class="principal-text">

@@ -28,6 +28,13 @@ main h2 {
   width: 100%;
 }
 
+/* Subpage Banner */
+.subpage-banner {
+  background: url("../images/banners/banner-1.jpg") repeat fixed 100%;
+  background-size: cover;
+  background-position: center;
+}
+
 /* Gallery Overview */
 .gallery-overview {
   padding: 2.5vmax 5vw 0;
@@ -196,6 +203,11 @@ main h2 {
   pointer-events: all;
 }
 
+@media screen and (min-width: 428px) {
+  .container .grid-item {
+    grid-column: span 6;
+  }
+}
 @media screen and (min-width: 768px) {
   /* Gallery Overview */
   .gallery-overview {
@@ -208,9 +220,6 @@ main h2 {
   }
   .gallery-overview .content-text {
     padding-right: 5vw;
-  }
-  .container .grid-item {
-    grid-column: span 6;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1200px) {

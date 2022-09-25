@@ -25,7 +25,9 @@ main h1 {
 
 /* Subpage Banner */
 .subpage-banner {
-  background-image: url("../images/placeholders/DSC07455.jpg");
+  background: url("../images/banners/banner-3.jpg") repeat fixed 100%;
+  background-size: cover;
+  background-position: bottom;
 }
 .subpage-banner h1 {
   align-self: flex-end;
@@ -203,7 +205,7 @@ main h1 {
 }
 .principal-timeline .item-date {
   order: 2;
-  background-color: #CFECC1;
+  background-color: #cfecc1;
   font-family: "EB Garamond", serif;
   flex-basis: 100px;
   display: flex;
@@ -223,14 +225,14 @@ main h1 {
   position: relative;
 }
 .principal-timeline .item-desc .content {
-  border: 3px solid #0F6938;
+  border: 3px solid #0f6938;
   border-radius: 1em;
   padding: 3em 1em;
 }
 .principal-timeline .item-desc .line {
   border: none;
   align-self: center;
-  background-color: #0F6938;
+  background-color: #0f6938;
   width: 30%;
   height: 3px;
   transform: scaleX(1);
@@ -238,7 +240,7 @@ main h1 {
 .principal-timeline .item-desc .line::before {
   content: "";
   display: inline-block;
-  border-bottom: 6px solid #0F6938;
+  border-bottom: 6px solid #0f6938;
   width: 50%;
   position: absolute;
   left: 0;
@@ -257,13 +259,13 @@ main h1 {
 .principal-timeline .item-flipped .item-desc .line {
   order: 2;
   transform: scaleX(-1);
-  background-color: #1B9B55;
+  background-color: #1b9b55;
 }
 .principal-timeline .item-flipped .item-desc .line::before {
-  border-bottom: 6px solid #1B9B55;
+  border-bottom: 6px solid #1b9b55;
 }
 .principal-timeline .item-flipped .item-desc .content {
-  border: 3px solid #1B9B55;
+  border: 3px solid #1b9b55;
 }
 .principal-timeline .item-flipped .item-hidden {
   order: 3;

@@ -2,19 +2,21 @@
 
 <!-- Landing Page -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Pakistan Islamia Higher Secondary School</title>
-    
+
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="shortcut icon" href="./assets/images/global/logo_small.png" type="image/x-icon" />
 </head>
+
 <body>
     <!-- Header -->
-    <?php include('./assets/php/header.php')?>
+    <?php include('./assets/php/header.php') ?>
 
     <main>
         <!-- Hero Banner -->
@@ -23,13 +25,13 @@
                 <source src="./assets/videos/hero.mp4" type="video/mp4">
             </video>
             <div class="video-container">
-                
+
             </div>
             <div class="hero-banner-container">
                 <img class="hero-logo" src="./assets/images/global/logo_white.png">
                 <div class="hero-school-name">
-                   <h2>Pakistan Islamia</h2>
-                   <p>Higher Secondary School</p> 
+                    <h2>Pakistan Islamia</h2>
+                    <p>Higher Secondary School</p>
                 </div>
                 <div class="hero-school-info">
                     <h2>Four walls and a future inside</h2>
@@ -37,7 +39,7 @@
                 </div>
             </div>
         </section> <!-- .hero-banner -->
-        
+
         <!-- About Us -->
         <section id="about-us" class="about-us">
             <div class="about-us-content">
@@ -47,20 +49,20 @@
                     <p>
                         We at Pakistan Islamia Higher Secondary School are proud of catering to the educational needs of the Pakistani community.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non nulla eos? Ad et eos tenetur dolorem aut voluptas, minima, ipsa dolorum nulla veniam explicabo facilis earum laudantium possimus ipsum perferendis maxime animi iusto sed eius? Tenetur deserunt, nemo officiis illo eaque ipsa? Adipisci odio earum aspernatur dolorem debitis alias!
-                    </p>  
+                    </p>
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, quibusdam quisquam impedit quas, tempora sint, maiores et inventore laudantium autem obcaecati. Praesentium laboriosam ratione odit sint non provident laudantium doloremque nobis in. Iste architecto nihil quis, officia quam distinctio quas.
                     </p>
-                </div>  <!-- about-us-text -->
+                </div> <!-- about-us-text -->
 
-                
+
                 <!-- Image  -->
                 <div class="about-us-img">
-                    <img src="./assets/images/placeholders/group-students.jpg" alt="">
+                    <img src="./assets/images/general/about-us.jpg" alt="PIHSS school building">
                     <div class="about-us-statblock">
                         <div class="stats">
-                            <p id="building-count" data-count="4" data-unit="" class="number"></p>                            
-                            <p id="classroom-count" data-count="72" data-unit="" class="number"></p>                       
+                            <p id="building-count" data-count="4" data-unit="" class="number"></p>
+                            <p id="classroom-count" data-count="72" data-unit="" class="number"></p>
                             <p id="employee-count" data-count="1800" data-unit="" class="number"></p>
                             <p id="alumni-count" data-count="1900" data-unit="+" class="number"></p>
                         </div>
@@ -70,20 +72,20 @@
                             <p class="label">Classrooms</p>
                             <p class="label">Employees</p>
                             <p class="label">Alumni</p>
-                        </div> 
+                        </div>
                     </div> <!-- .about-us-stat-block -->
-                </div> <!-- .about-us-img -->    
+                </div> <!-- .about-us-img -->
             </div> <!-- .about-us-content -->
         </section> <!-- .about-us -->
 
         <!-- More Info -->
         <section class="more-info">
-            
-        
+
+
             <div class="more-info-text">
                 <img class="more-info-comma" src="./assets/icons/comma.svg" alt="">
                 <p>
-                    Vitae auctor eu augue ut lectus arcu. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Aliquam etiam erat velit scelerisque in. Pharetra vel turpis nunc eget lorem dolor sed viverra ipsum. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est. 
+                    Vitae auctor eu augue ut lectus arcu. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Volutpat consequat mauris nunc congue nisi vitae suscipit tellus. Aliquam etiam erat velit scelerisque in. Pharetra vel turpis nunc eget lorem dolor sed viverra ipsum. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est.
                 </p>
                 <p>
                     Maecenas sed enim ut sem viverra aliquet eget. Urna et pharetra pharetra massa massa ultricies. Rutrum quisque non tellus orci ac auctor. Sollicitudin nibh sit amet commodo nulla facilisi. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus.
@@ -95,13 +97,13 @@
                 <img class="more-info-comma" src="./assets/icons/comma.svg" alt="">
                 <div class="selection">
                     <div class="slider" id="more-info-selection">
-                        <div class="card-wrapper" >
+                        <div class="card-wrapper">
                             <a class="card" href="./about-us.php">
-                                
-                            <div class="card-anchor"  id="mi-slider-about-us"></div>
+
+                                <div class="card-anchor" id="mi-slider-about-us"></div>
                                 <div class="card-image">
                                     <div>
-                                        <img src="./assets/images/placeholders/staff_1.jpg" alt="" loading="lazy">
+                                        <img src="./assets/images/general/principals-desk.jpg" alt="Front view of the school building" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="card-text">
@@ -112,11 +114,11 @@
 
                         <div class="card-wrapper">
                             <a class="card" href="./about-us.php">
-                                
-                            <div class="card-anchor" id="mi-slider-mission-vision"></div>
+
+                                <div class="card-anchor" id="mi-slider-mission-vision"></div>
                                 <div class="card-image">
                                     <div>
-                                        <img src="./assets/images/placeholders/mission-vision-1.jpg" alt="" loading="lazy">
+                                        <img src="./assets/images/general/mission-vision.jpg" alt="Close-up of a young student doing an activity in a classroom" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="card-text">
@@ -126,11 +128,11 @@
                         </div>
 
                         <div class="card-wrapper">
-                            <a class="card" href="./about-us.php">
-                            <div class="card-anchor" id="mi-slider-registration"></div>
+                            <a class="card" href="./admissions.php#registration">
+                                <div class="card-anchor" id="mi-slider-registration"></div>
                                 <div class="card-image">
                                     <div>
-                                        <img src="./assets/images/placeholders/desk-books.jpg" alt="" loading="lazy">
+                                        <img src="./assets/images/general/registration.jpg" alt="Parent standing outside the accounts office" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="card-text">
@@ -141,10 +143,10 @@
 
                         <div class="card-wrapper">
                             <a class="card" href="./about-us.php">
-                            <div class="card-anchor" id="mi-slider-other"></div>
+                                <div class="card-anchor" id="mi-slider-other"></div>
                                 <div class="card-image">
                                     <div>
-                                        <img src="./assets/images/placeholders/whiteboard.jpg" alt="" loading="lazy">
+                                        <img src="./assets/images/general/other-content.jpg" alt="School building with a 'UAE GOLDEN JUBILEE, SPIRIT OF THE UNION' banner" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="card-text">
@@ -154,12 +156,12 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="paginator">
-                        <a id="paginator-1" class="paginator-item" ></a>
+                        <a id="paginator-1" class="paginator-item"></a>
                         <a id="paginator-2" class="paginator-item"></a>
                         <a id="paginator-3" class="paginator-item"></a>
-                        <a id="paginator-4" class="paginator-item" ></a>
+                        <a id="paginator-4" class="paginator-item"></a>
                     </div>
                 </div> <!-- .selection -->
             </div> <!-- .more-info-slideshow -->
@@ -180,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-                
+
 
                 <div class="why-pihss-selection">
 
@@ -267,33 +269,43 @@
                     <div class="aac-slider-wrapper">
                         <ul class="aac-slider" id="aac-slider">
                             <li id="aac-1">
-                                <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
-                                    <div class="aac-person"><p class="name">Unknown</p><p>Role</p></div>
+                                <div class="card">
+                                    <img class="aac-image" src="https://dummyimage.com/400x600/b0b0b0/545454.png&text=Insert+Staff+Portrait">
+                                    <div class="aac-person">
+                                        <p class="name">Unknown</p>
+                                    </div>
                                 </div>
                             </li>
                             <li id="aac-2">
-                                <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
-                                    <div class="aac-person"><p class="name">Unknown</p></div>
+                                <div class="card">
+                                    <img class="aac-image" src="https://dummyimage.com/400x600/b0b0b0/545454.png&text=Insert+Staff+Portrait">
+                                    <div class="aac-person">
+                                        <p class="name">Unknown</p>
+                                    </div>
                                 </div>
                             </li>
                             <li id="aac-3">
-                                <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
-                                    <div class="aac-person"><p class="name">Unknown</p></div>
+                                <div class="card">
+                                    <img class="aac-image" src="https://dummyimage.com/400x600/b0b0b0/545454.png&text=Insert+Staff+Portrait">
+                                    <div class="aac-person">
+                                        <p class="name">Unknown</p>
+                                    </div>
                                 </div>
                             </li>
                             <li id="aac-4">
-                                <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
-                                    <div class="aac-person"><p class="name">Unknown</p></div>
+                                <div class="card">
+                                    <img class="aac-image" src="https://dummyimage.com/400x600/b0b0b0/545454.png&text=Insert+Staff+Portrait">
+                                    <div class="aac-person">
+                                        <p class="name">Unknown</p>
+                                    </div>
                                 </div>
                             </li>
                             <li id="aac-5">
-                                <div class="card">    
-                                    <img class="aac-image" src="./assets/images/placeholders/silhouette.jpg">
-                                    <div class="aac-person"><p class="name">Unknown</p></div>
+                                <div class="card">
+                                    <img class="aac-image" src="https://dummyimage.com/400x600/b0b0b0/545454.png&text=Insert+Staff+Portrait">
+                                    <div class="aac-person">
+                                        <p class="name">Unknown</p>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -308,7 +320,7 @@
                 </div> <!-- .staff -->
             </div> <!-- .aac-affairs-container -->
         </section>
-        
+
 
         <!-- News and Events -->
         <div id="news-and-events" class="news-and-events">
@@ -346,14 +358,14 @@
     </main>
 
     <!-- Footer -->
-    <?php include('./assets/php/footer.php')?>
+    <?php include('./assets/php/footer.php') ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/global-scripts.js"></script>
-    <script src="assets/js/index-scripts.js"></script>    
+    <script src="assets/js/index-scripts.js"></script>
 
     <!-- Acquires news articles -->
     <script>
-            $(document).ready(() => {
+        $(document).ready(() => {
             $.ajax({
                 type: "GET",
                 url: "./admin/assets/functions/get-articles-gallery.php?articles-count=2",
@@ -365,4 +377,5 @@
         });
     </script>
 </body>
+
 </html>
