@@ -347,7 +347,7 @@
                                         </svg>
                                     </div>
                                     <h4>Upcoming Events</h4>
-                                    <a href="./news-article.php" class="btn">View Details</a>
+                                    <a href="./gallery.php#events" class="btn">View Details</a>
                                 </div>
                             </div>
                         </article>

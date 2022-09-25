@@ -74,6 +74,7 @@
                         <li><a href="https://orison.school/">Parents Portal</a></li>
                         <li><a href="https://orison.school/">Staff Portal</a></li>
                         <li><a href="http://mail.pihss-shj.com:2095/">Staff Email</a></li>
+                        <li><a href="./admin/index.php">Admin Pages</a></li>
                     </ul>
                 </li>
                 <li class="nav-element"><a href="contact-us.php">Contact Us</a></li>
