@@ -36,6 +36,7 @@
         $galleryTitle = htmlspecialchars($_POST['gallery-title']);
         $galleryCreationDate =  htmlspecialchars($_POST['gallery-creation-date']);
         $galleryContent = $_POST['input-html'];
+
         
         $updateQuery = $conn->prepare("INSERT INTO galleries(title, creationDate, description, isActivity) 
         VALUES('$galleryTitle', '$galleryCreationDate', '$galleryContent', 

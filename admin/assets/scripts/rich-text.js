@@ -22,7 +22,8 @@ form.onsubmit = () => {
 
     // Parses and saves the HTML safely
     let parser = new DOMParser();
-    let quillContent = parser.parseFromString(document.querySelector(quillEditorId).innerHTML);
+    let quillContent = parser.parseFromString(document.querySelector(quillEditorId).innerHTML, 
+      'text/html').body.innerHTML;
 
     let inputHtml = document.querySelector('input[name=input-html]');
     inputHtml.value = quillContent;
