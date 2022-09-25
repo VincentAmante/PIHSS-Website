@@ -133,18 +133,6 @@
                         </div>
                     </div>
 
-                    <!-- Thumbnail -->
-                    <!-- <div class="form-item">
-                        <label for="">Upload Image</label>
-                        <label class="uploader-single" ondragover="return false">
-                            <i class="icon-upload icon"></i>
-                            <img src="<?php // echo getPathToRoot() . $GALLERY_THUMBNAILS_DIR . $gallery['thumbnail']?>" class="" id="form-img" onchange="setImgSrc();">
-                            <input type="file" accept="image/*" name="gallery-thumbnail" id="gallery-thumbnail">
-                        </label>
-                        
-                        <input type="hidden" name="img-src" id="img-src">
-                    </div> -->
-
                     <!-- Gallery -->
                     <div class="form-item" id="gallery-view">
                         <label for="fileElem">Upload images to the gallery</label>

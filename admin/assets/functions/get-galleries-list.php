@@ -6,7 +6,6 @@
         die('Connection Failure : ' + $conn->connect_error);
     } else {
         $galleries = $conn->query("SELECT * from galleries WHERE isActivity=0 ORDER BY creationDate DESC");
-        // $thumbnailsDir = getPathToRoot() . $GALLERY_THUMBNAILS_DIR;
         
     }
 ?>

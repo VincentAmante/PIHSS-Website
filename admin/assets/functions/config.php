@@ -20,7 +20,6 @@
  
     $ARTICLE_IMG_DIR = "./assets/article-posts/";
     $GALLERY_FOLDERS_DIR = "./assets/gallery-folders/";
-    $GALLERY_THUMBNAILS_DIR = "./assets/gallery-thumbnails/";
     $REG_FORMS_DIR = "./admin/assets/registration-forms/";
 
     // Change these variables depending on the databse
