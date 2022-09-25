@@ -61,6 +61,10 @@ $(fatherEmail).on("change focusout", function () {
 	validateEmail(fatherEmail);
 });
 
+$(studentGender).on("change focusout"), function(){
+	validateGender();
+}
+
 // Checks everything before submitting, ensures all fields are valid
 registrationForm.submit((e) => {
 	e.preventDefault();
@@ -169,7 +173,7 @@ function validateGender() {
 		}
 	});
 	if (!isChecked) {
-		setErrorFor(studentGender, "Select gender");
+		setErrorFor(studentGender, "Please select gender");
 		formIsValid = false;
 	} else {
 		setSuccessFor(studentGender);

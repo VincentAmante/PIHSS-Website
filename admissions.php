@@ -483,8 +483,8 @@
                   <i class="fas fa-check-circle"></i>
                   <i class="fas fa-exclamation-circle"></i>
                 </div>
-                <small>Error Message</small>
               </div>
+                <small>Error Message</small>
             </td>
           </tr>
 

@@ -22,7 +22,6 @@
         if (isset($_GET['passwordLengthIssue'])){
             array_push($errors, "Password is " . $_GET['passwordLengthIssue']);
         }
-
         
         $errorHtml = "";
         foreach ($errors as $key => $error) {

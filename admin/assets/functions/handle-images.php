@@ -41,7 +41,7 @@ class ImageResult {
         
         $imgType = pathinfo($imgName, PATHINFO_EXTENSION);
         $imageValid = true;
-        $MAX_FILE_SIZE = 4 * MB;
+        $MAX_FILE_SIZE = 30 * MB;
         if ($index != -1) {
             if($_FILES[$getImgFrom]['size'][$index] > $MAX_FILE_SIZE){
                 $imageValid = false;
