@@ -73,7 +73,7 @@ function validateEmail(input){
         formIsValid = false;
     }
     else {
-        setSuccessFor(fatherEmail);
+        setSuccessFor(email);
     };
 }
 
@@ -137,14 +137,24 @@ function checkInputs(){
     confirmPassword();
 }
 
-accountForm.submit(e => {
-    e.preventDefault();
+// accountForm.submit(e => {
+//     e.preventDefault();
 
-    checkInputs();
+//     checkInputs();
 
-    if (formIsValid){
-        accountForm.off().submit();
-    }
+//     if (formIsValid){
+//         $.post("./assets/functions/create-account.php", {
+//             [password.attr('name')]: password.val(),
+//             [passwordRetyped.attr('name')]: passwordRetyped.val(),
+//             [user.attr('name')]: user.val(),
+//             [email.attr('name')]: email.val(),
+//             [$("#submit-button").attr('name')] : true
+//         }).done() => {
+//             console.log("attempted")
+//         }
 
-    return false;
-});
+//         // accountForm.off().submit();
+//     }
+
+//     return false;
+// });

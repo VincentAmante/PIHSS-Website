@@ -26,8 +26,12 @@
     <link rel="stylesheet" href="./assets/styles/add-article.css">
     <link rel="shortcut icon" href="../assets/images/global/logo_small.png" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/styles/form.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <?php include './assets/functions/account-creation-errors.php'?>
     <main>
         <section>
             <div class="form-wrapper">
@@ -98,14 +102,14 @@
                             <label for="primary">Primary</label>
                             <input type="radio" id="primary-option" name="is-primary" value="primary" required selected>
                             <label for="primary">Secondary</label>
-                            <input type="radio" id="primary-option" name="is-primary" value="secondary" required>
+                            <input type="radio" id="secondary-option" name="is-primary" value="secondary" required>
                         </div>
                     </div>
 
                     <!-- Form Buttons -->
                     <div class="form-item form-item-empty">
                         <div class="buttons">
-                            <button type="submit" class="form-button form-submit" name="create-account" value="create-account">Create Account</button>
+                            <button id="submit-button" type="submit" class="form-button form-submit" name="create-account" value="create-account">Create Account</button>
                             <button class="form-button form-reset" type="reset">Clear</button>
                         </div>
                     </div>
@@ -115,13 +119,6 @@
         </section>
     </main>
     
-    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
     <script src="./assets/scripts/account-validation.js"></script>
-    <script src="./assets/scripts/rich-text.js"></script>
-    <script src="../assets/js/file-uploader-single.js"></script>
 </body>
 </html>

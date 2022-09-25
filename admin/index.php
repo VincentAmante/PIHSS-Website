@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +14,24 @@
 </head>
 <body>
     <?php include './assets/functions/login.php'?>
+    <?php
+    if (isset($_GET['passReset'])):?>
+            <script>
+                Swal.fire({
+                title: 'Password Reset!',
+                text: "Login in with your new password",
+                icon: 'success',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ok!',
+                }).then((result) => {
+                
+                })
+            </script>
+        <?php     
+    endif;
+?>
     <main>
     <section class="login-form">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">

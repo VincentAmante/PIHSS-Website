@@ -21,21 +21,9 @@
         case UNKNOWN;
     }
     $creationResult = Result::UNKNOWN;
+    $errors = "?errors=true&";
 
-    // require_once('./token-class.php');
-
-    // $urlRoot = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
-    // $mailAuthor = preg_replace("(^https?://)", "", $urlRoot);
-    // $newToken = new Token();
-    // $message = `Verify account here: ` + $urlRoot + 'admin/account-verification.php?token=' + $newToken->getToken();
-
-    // // TODO: implement all this
-    // $sendThisToDatabase = json_encode($newToken->getTokenData());
-
-    // $headers = "From: " . $mailAuthor . '\r\n';
-    // $headers .= "Content-type: text/html\r\n";
-    // END OF TODO
-    // mail($email, 'Account Verification', $message, $headers);
+    echo 'Reached here';
 
     if(isset($_POST['create-account'])){
         // signup form values
@@ -53,7 +41,7 @@
         // $_SESSION['username'] = $username;
 
         // password
-        $password = strip_tags($_POST['password']);
+        $password = strip_tags($_POST['new-password']);
         $passwordRetyped = strip_tags($_POST['password-retyped']);
 
         if ($_POST['is-primary'] == "primary"){
@@ -73,6 +61,7 @@
             if($num_rows > 0){
                 // Email taken
                 $creationResult = Result::FAILED;
+                $errors .= "emailTaken=true&";
             }
         }
         else{
@@ -86,23 +75,27 @@
         if($num_rows_user > 0){
             // User Taken
             $creationResult = Result::FAILED;   
+            $errors .= "userTaken=true&";
         }
         
         // checks if username length is enough
         if(strlen($username) > 20 || strlen($username) < 2){
             $creationResult = Result::FAILED;
-            // MESSAGE: Insufficient user length
+            $userErrorMessage = (strlen($username) > 20) ? 'too long!' : 'too short!';
+            $errors .= "userLengthIssue=$userErrorMessage&";
         }
 
         // checks if passwords match
         if($password != $passwordRetyped){
             // Password does not match
             $creationResult = Result::FAILED;
+            $errors .= "passwordMismatch=true&";
         }
         else{ // checks if password contains non-english characters
             if(preg_match('/[^A-Za-z0-9]/', $password)){
                 // Non-english password
                 $creationResult = Result::FAILED;
+                $errors .= "passwordNonEng=true&";
             }
         }
 
@@ -111,10 +104,17 @@
         // checks if password length is enough
         if(strlen($password) > $maxPasswordLength || strlen($password) < $minPasswordLength){
             // Password length insufficient
-            $passwordErrorMessage = (strlen($password) > $maxPasswordLength) ? 'Too long!' : 'Too short!';
+            $passwordErrorMessage = (strlen($password) > $maxPasswordLength) ? 'too long!' : 'too short!';
             $creationResult = Result::FAILED;
+            $errors .= "passwordLengthIssue='$passwordErrorMessage'&";
         }
-        if ($creationResult != Result::FAILED){
+
+        if ($creationResult == Result::FAILED){
+
+            $url = "Location: ../../add-account.php" . $errors;
+            header($url);
+        }
+        else if ($creationResult != Result::FAILED){
             $creationResult = Result::SUCCESS;
             $passwordHashed = password_hash($password, PASSWORD_BCRYPT); 
 
@@ -122,8 +122,12 @@
             $stmt->execute();
             $stmt->close();
             $conn->close();
-        }
 
-        header("Location: ../../manage-accounts.php");
+
+            header("Location: ../../manage-accounts.php?hello");
+        }
     }
+
+    
+    echo 'Reached here again';
 ?>
