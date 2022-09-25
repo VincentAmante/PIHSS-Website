@@ -41,7 +41,8 @@
 
             $newToken = "INSERT INTO passwordResets(tokenData, email) VALUES(?, ?)";
             $stmt = $conn->prepare($newToken);
-            $stmt->bind_param('ss', json_encode($token->getTokenData()), $email);
+            $tokenData = json_encode($token->getTokenData());
+            $stmt->bind_param('ss', $tokenData, $email);
             $stmt->execute();
             $lastId = mysqli_insert_id($conn);
 

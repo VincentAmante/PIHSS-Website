@@ -29,6 +29,8 @@
                 <div class="input-field">
                     <input type="password" placeholder="Password" autocomplete="new-password" name="pihss-admin-password">
                 </div>
+                
+                <a href="./forgot-password.php">Forgot Password?</a>
             </div>
             
             <!-- <a href="#" class="link">Forgot Your Password?</a> -->
@@ -38,7 +40,6 @@
                 <button name="return-page">Return</button>
             </div>
         </form>
-        <a href="./forgot-password">Forgot Password?</a>
     </section> <!-- .login-form -->
     </main>
 </body>

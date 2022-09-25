@@ -1,4 +1,10 @@
-
+<?php
+    require_once './assets/functions/reset-password.php';
+    
+    // Prevents resubmission on refresh
+    $rand = rand();
+    $_SESSION['rand'] = $rand;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,13 +20,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <?php require_once './assets/functions/reset-password.php'?>
     <main>
     <section class="login-form">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
-            <?php // Prevents resubmission on refresh
-                $rand = rand();
-                $_SESSION['rand'] = $rand;?>
             <h1>Reset Password Here</h1>
             <div class="content">
                 <!-- Username -->
